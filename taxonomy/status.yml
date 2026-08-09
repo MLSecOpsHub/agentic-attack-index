@@ -1,0 +1,20 @@
+# Controlled vocabulary: verification status.
+# Must stay in sync with schema/incident.schema.json (enforced by `npm run validate`).
+key: status
+title: Verification status
+values:
+  - id: confirmed
+    label: Confirmed
+    description: >-
+      Confirmed by a first-party disclosure or multiple independent credible
+      sources.
+  - id: reported
+    label: Reported
+    description: >-
+      Publicly reported but not independently confirmed. Never present a
+      reported incident as confirmed.
+  - id: test-eval
+    label: Test / evaluation
+    description: >-
+      Occurred in a controlled lab test, red-team exercise, or evaluation —
+      not a real-world attack.

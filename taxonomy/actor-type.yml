@@ -1,0 +1,25 @@
+# Controlled vocabulary: actor type.
+# Must stay in sync with schema/incident.schema.json (enforced by `npm run validate`).
+key: actor_type
+title: Actor type
+values:
+  - id: nation-state
+    label: Nation-state
+    description: State-sponsored or state-directed actor, as attributed by sources.
+  - id: cybercriminal
+    label: Cybercriminal
+    description: Financially motivated criminal actor or group.
+  - id: single-operator
+    label: Single operator
+    description: An individual acting alone, per sources.
+  - id: lab-test-eval
+    label: Lab test / evaluation
+    description: The "actor" is a research lab or evaluator in a controlled setting.
+  - id: researcher
+    label: Researcher
+    description: Security researcher acting in a disclosure or proof-of-concept context.
+  - id: unknown
+    label: Unknown
+    description: >-
+      Attribution not established by sources. Unknown is a valid and common
+      value — never attribute beyond what sources state.

@@ -1,0 +1,36 @@
+# Controlled vocabulary: attack lifecycle phases.
+# Descriptive lifecycle level only — records never contain operational how-to detail.
+# Must stay in sync with schema/incident.schema.json (enforced by `npm run validate`).
+key: lifecycle_phases
+title: Attack lifecycle phase
+values:
+  - id: recon
+    label: Reconnaissance
+    description: Target discovery and information gathering.
+  - id: resource-dev
+    label: Resource development
+    description: Building or acquiring capability and infrastructure for the operation.
+  - id: initial-access
+    label: Initial access
+    description: First foothold in the target environment.
+  - id: execution
+    label: Execution
+    description: Running attacker-controlled logic in the target environment.
+  - id: credential-access
+    label: Credential access
+    description: Theft or harvesting of credentials.
+  - id: privilege-escalation
+    label: Privilege escalation
+    description: Gaining higher levels of permission.
+  - id: persistence
+    label: Persistence
+    description: Maintaining access across restarts or remediation attempts.
+  - id: exfiltration
+    label: Exfiltration
+    description: Removal of data from the target environment.
+  - id: deception-social-eng
+    label: Deception / social engineering
+    description: Manipulating humans — phishing, impersonation, fraud.
+  - id: impact
+    label: Impact
+    description: Destruction, disruption, extortion, or other end effects.

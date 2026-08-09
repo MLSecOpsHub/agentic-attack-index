@@ -1,0 +1,26 @@
+# Controlled vocabulary: source types.
+# Must stay in sync with schema/incident.schema.json (enforced by `npm run validate`).
+key: source_type
+title: Source type
+values:
+  - id: first-party-disclosure
+    label: First-party disclosure
+    description: Disclosure by the victim, the platform, or another directly involved party.
+  - id: vendor-report
+    label: Vendor report
+    description: Incident or threat-intelligence report by a security or AI vendor.
+  - id: government-advisory
+    label: Government advisory
+    description: Advisory, alert, or indictment from a government body.
+  - id: research-paper
+    label: Research paper
+    description: Peer-reviewed paper or formal technical report.
+  - id: news
+    label: News
+    description: Journalistic reporting.
+  - id: blog
+    label: Blog
+    description: Informal write-up by a researcher or practitioner.
+  - id: other
+    label: Other
+    description: Anything else — prefer a more specific type when possible.

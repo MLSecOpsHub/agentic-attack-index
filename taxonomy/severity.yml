@@ -1,0 +1,19 @@
+# Controlled vocabulary: severity.
+# Must stay in sync with schema/incident.schema.json (enforced by `npm run validate`).
+key: severity
+title: Severity
+values:
+  - id: critical
+    label: Critical
+    description: >-
+      Broad real-world harm — e.g. many organizations compromised, large-scale
+      exfiltration, or critical-infrastructure impact.
+  - id: high
+    label: High
+    description: Significant confirmed harm to one or more organizations.
+  - id: medium
+    label: Medium
+    description: Limited or contained harm, or high-signal capability demonstration.
+  - id: low
+    label: Low
+    description: Minimal direct harm; primarily notable as a precedent or signal.

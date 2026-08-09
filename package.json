@@ -1,0 +1,28 @@
+{
+  "name": "agentic-attack-index",
+  "version": "0.1.0",
+  "description": "Open, source-linked dataset of real-world cyberattacks executed or orchestrated by AI agents. Data layer for the Rogue Agent Watch tracker.",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MLSecOpsHub/agentic-attack-index.git"
+  },
+  "homepage": "https://mlsecopshub.com",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "validate": "node scripts/validate.mjs",
+    "build": "node scripts/build.mjs",
+    "linkcheck": "node scripts/linkcheck.mjs",
+    "new:incident": "node scripts/new-incident.mjs",
+    "test": "npm run validate && npm run build"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "yaml": "^2.8.0"
+  }
+}

@@ -1,0 +1,30 @@
+name: Data correction
+description: Report a factual error, sourcing problem, or victim-naming concern in an existing record.
+title: "[correction] <incident id>"
+labels: ["data-correction", "triage"]
+body:
+  - type: input
+    id: incident-id
+    attributes:
+      label: Incident id
+      description: The record's id (filename in data/incidents/).
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong
+      description: Field(s) affected and why the current value is incorrect or improperly sourced.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Supporting sources
+      description: URLs supporting the correction. Corrections without sources can only remove claims, not change them.
+  - type: checkboxes
+    id: victim
+    attributes:
+      label: Victim-naming concern
+      options:
+        - label: This correction concerns the naming of a victim organization (handled with priority).

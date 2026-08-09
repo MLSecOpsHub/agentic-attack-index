@@ -1,0 +1,18 @@
+# Controlled vocabulary: sourcing confidence.
+# Must stay in sync with schema/incident.schema.json (enforced by `npm run validate`).
+key: confidence
+title: Sourcing confidence
+values:
+  - id: primary
+    label: Primary
+    description: >-
+      Backed by primary sourcing — first-party disclosure, vendor incident
+      report, government advisory, or court documents.
+  - id: secondary
+    label: Secondary
+    description: >-
+      Backed by secondhand reporting (news, analyst write-ups) without a
+      primary source.
+  - id: unverified
+    label: Unverified
+    description: A single unconfirmed source. Treat claims with caution.

@@ -1,0 +1,33 @@
+# Controlled vocabulary: model families.
+# Must stay in sync with schema/incident.schema.json (enforced by `npm run validate`).
+key: model_families
+title: Model family
+values:
+  - id: claude
+    label: Claude (Anthropic)
+    description: Anthropic Claude models.
+  - id: openai-gpt
+    label: GPT (OpenAI)
+    description: OpenAI GPT-series chat/completions models.
+  - id: openai-codex
+    label: Codex (OpenAI)
+    description: OpenAI Codex coding models/agents.
+  - id: gemini
+    label: Gemini (Google)
+    description: Google Gemini models.
+  - id: deepseek
+    label: DeepSeek
+    description: DeepSeek models.
+  - id: llama
+    label: Llama (Meta)
+    description: Meta Llama open-weight models and derivatives.
+  - id: mistral
+    label: Mistral
+    description: Mistral AI models and derivatives.
+  - id: hermes
+    label: Hermes (Nous Research)
+    description: Nous Research Hermes fine-tunes.
+  - id: other
+    label: Other / unspecified
+    description: >-
+      A model family not listed above, or sources do not name the model family.

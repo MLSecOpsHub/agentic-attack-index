@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below."
+title: "Agentic Attack Index"
+type: dataset
+abstract: >-
+  Open, source-linked dataset of real-world cyberattacks executed or
+  orchestrated by AI agents. Data layer for the Rogue Agent Watch tracker.
+authors:
+  - name: "MLSecOpsHub"
+    website: "https://mlsecopshub.com"
+repository-code: "https://github.com/MLSecOpsHub/agentic-attack-index"
+url: "https://mlsecopshub.com"
+license: CC-BY-SA-4.0
+keywords:
+  - ai-security
+  - agentic-ai
+  - cyberattacks
+  - incident-database
+  - threat-intelligence

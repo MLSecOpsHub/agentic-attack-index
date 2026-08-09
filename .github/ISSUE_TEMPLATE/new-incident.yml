@@ -1,0 +1,68 @@
+name: New incident
+description: Propose an AI-agent attack incident for the index.
+title: "[incident] <short name>"
+labels: ["incident", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        Only already-public incidents are cataloged. Every fact needs a
+        resolvable source. Do NOT include exploit code, payloads, prompts, or
+        step-by-step offensive detail — lifecycle-level description only.
+  - type: input
+    id: name
+    attributes:
+      label: Incident name
+      description: Short human-readable name.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources (≥1 required)
+      description: One URL per line, with publisher and date. First-party disclosures preferred.
+      placeholder: |
+        https://example.com/disclosure — Publisher — 2026-01-01
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened (lifecycle level)
+      description: Defensive framing only. What role did the AI agent play?
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Proposed category
+      options:
+        - ai-orchestrated-campaign
+        - autonomous-attack
+        - lab-escape-eval
+        - agent-hijack-prompt-injection
+        - infrastructure-abuse-supply-chain
+        - not sure
+    validations:
+      required: true
+  - type: dropdown
+    id: status
+    attributes:
+      label: Proposed status
+      description: A single unconfirmed report is "reported", not "confirmed".
+      options:
+        - confirmed
+        - reported
+        - test-eval
+        - not sure
+    validations:
+      required: true
+  - type: checkboxes
+    id: rules
+    attributes:
+      label: Sourcing rules
+      options:
+        - label: Every fact above is stated in the linked sources (nothing guessed or inferred).
+          required: true
+        - label: No exploit code, payloads, prompts, or offensive how-to detail is included.
+          required: true

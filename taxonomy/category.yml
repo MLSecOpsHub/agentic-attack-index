@@ -1,0 +1,31 @@
+# Controlled vocabulary: incident category.
+# Must stay in sync with schema/incident.schema.json (enforced by `npm run validate`).
+key: category
+title: Incident category
+values:
+  - id: ai-orchestrated-campaign
+    label: AI-orchestrated campaign
+    description: >-
+      A human-directed attack campaign in which an AI agent orchestrated or
+      executed substantial portions of the operation across multiple phases.
+  - id: autonomous-attack
+    label: Autonomous attack
+    description: >-
+      An attack executed largely or wholly by an AI agent with minimal human
+      intervention during the operation itself.
+  - id: lab-escape-eval
+    label: Lab escape / evaluation
+    description: >-
+      A controlled test or evaluation in which an AI system exhibited offensive
+      capability, escaped intended constraints, or was red-teamed into attack
+      behavior. Not a real-world attack; pair with status: test-eval.
+  - id: agent-hijack-prompt-injection
+    label: Agent hijack / prompt injection
+    description: >-
+      A deployed AI agent subverted by an attacker — e.g. via prompt injection,
+      poisoned context, or tool abuse — to act against its operator or users.
+  - id: infrastructure-abuse-supply-chain
+    label: Infrastructure abuse / supply chain
+    description: >-
+      Abuse of AI infrastructure, platforms, models, or the AI supply chain
+      (model registries, agent tooling, MCP servers, plugins) to enable attacks.
