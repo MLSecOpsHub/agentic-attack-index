@@ -1,0 +1,82 @@
+{
+  "actor": "Unknown",
+  "actor_type": "unknown",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-08-13"
+  },
+  "ai_role": "significant",
+  "autonomy_level": "supervised-autonomous",
+  "autonomy_pct": null,
+  "category": "infrastructure-abuse-supply-chain",
+  "confidence": "primary",
+  "date_disclosed": "2025-11-06",
+  "guardrail_bypass": [
+    "legitimate-tool-abuse"
+  ],
+  "id": "promptflux-gemini-selfmod",
+  "impact": "No successful compromise: Google assessed PROMPTFLUX as experimental. Notable as an early example of malware that outsources its own obfuscation/evasion to a hosted LLM at runtime.",
+  "last_updated": "2026-08-13",
+  "lifecycle_phases": [
+    "resource-dev",
+    "execution",
+    "persistence"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [
+      "AML.T0016.002",
+      "AML.T0102"
+    ],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [],
+  "model_families": [
+    "gemini"
+  ],
+  "models": [
+    "gemini-1.5-flash-latest"
+  ],
+  "name": "PROMPTFLUX — experimental self-modifying malware abusing the Gemini API",
+  "related": [
+    "promptsteal-apt28-lamehug"
+  ],
+  "severity": "low",
+  "sources": [
+    {
+      "archive_url": "https://web.archive.org/web/20260813084718/https://cloud.google.com/blog/topics/threat-intelligence/threat-actor-usage-of-ai-tools/",
+      "date": "2025-11-06",
+      "publisher": "Google Threat Intelligence Group",
+      "title": "GTIG AI Threat Tracker: Advances in Threat Actor Usage of AI Tools",
+      "type": "vendor-report",
+      "url": "https://cloud.google.com/blog/topics/threat-intelligence/threat-actor-usage-of-ai-tools/"
+    },
+    {
+      "archive_url": "https://web.archive.org/web/20260304061518/https://www.theregister.com/2025/11/05/attackers_experiment_with_gemini_ai/",
+      "date": "2025-11-05",
+      "publisher": "The Register",
+      "title": "Attackers abuse Gemini AI to develop 'Thinking Robot' malware",
+      "type": "news",
+      "url": "https://www.theregister.com/2025/11/05/attackers_experiment_with_gemini_ai/"
+    },
+    {
+      "archive_url": "https://web.archive.org/web/20260813050312/https://thehackernews.com/2025/11/google-uncovers-promptflux-malware-that.html",
+      "date": "2025-11-05",
+      "publisher": "The Hacker News",
+      "title": "Google Uncovers PROMPTFLUX Malware That Uses Gemini AI to Rewrite Its Code Hourly",
+      "type": "news",
+      "url": "https://thehackernews.com/2025/11/google-uncovers-promptflux-malware-that.html"
+    }
+  ],
+  "status": "reported",
+  "summary": "In its November 2025 GTIG AI Threat Tracker, Google's Threat Intelligence Group described PROMPTFLUX, an experimental VBScript dropper that queries the Google Gemini API at runtime (via a hard-coded key) to request obfuscation code and rewrite its own source for antivirus evasion — a \"metamorphic\" self-modification technique — before persisting to the Startup folder. Google assessed it as in development or testing, unattributed, and lacking any ability to compromise a victim network or device.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": []
+  }
+}

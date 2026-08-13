@@ -52,6 +52,7 @@ impact: >-
 sources:
   - title: "First known AI-powered ransomware uncovered by ESET Research"
     url: "https://www.welivesecurity.com/en/ransomware/first-known-ai-powered-ransomware-uncovered-eset-research/"
+    archive_url: "https://web.archive.org/web/20260813090309/https://www.welivesecurity.com/en/ransomware/first-known-ai-powered-ransomware-uncovered-eset-research/"
     publisher: "ESET WeLiveSecurity"
     type: vendor-report
     date: 2025-08-26

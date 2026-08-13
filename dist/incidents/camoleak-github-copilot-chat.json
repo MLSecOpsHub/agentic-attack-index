@@ -48,6 +48,7 @@
   "severity": "critical",
   "sources": [
     {
+      "archive_url": "https://web.archive.org/web/20260813085632/https://www.legitsecurity.com/blog/camoleak-critical-github-copilot-vulnerability-leaks-private-source-code",
       "date": "2025-10-08",
       "publisher": "Legit Security",
       "title": "CamoLeak: Critical GitHub Copilot Vulnerability Leaks Private Source Code",
@@ -55,6 +56,7 @@
       "url": "https://www.legitsecurity.com/blog/camoleak-critical-github-copilot-vulnerability-leaks-private-source-code"
     },
     {
+      "archive_url": "https://web.archive.org/web/20260112194646/https://www.theregister.com/2025/10/09/github_copilot_chat_vulnerability/",
       "date": "2025-10-09",
       "publisher": "The Register",
       "title": "GitHub patches Copilot Chat flaw that could leak secrets",

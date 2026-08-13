@@ -70,6 +70,7 @@ impact: >-
 sources:
   - title: "Disrupting the first reported AI-orchestrated cyber espionage campaign"
     url: "https://www.anthropic.com/news/disrupting-AI-espionage"
+    archive_url: "https://web.archive.org/web/20260813085905/https://www.anthropic.com/news/disrupting-AI-espionage"
     publisher: "Anthropic"
     type: first-party-disclosure
     date: 2025-11-13

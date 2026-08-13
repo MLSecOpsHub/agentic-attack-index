@@ -67,6 +67,7 @@ sources:
     date: 2025-09-05
   - title: "Nx security advisory (GHSA-cxm3-wv7p-598c)"
     url: "https://github.com/nrwl/nx/security/advisories/GHSA-cxm3-wv7p-598c"
+    archive_url: "https://web.archive.org/web/20260813090118/https://github.com/nrwl/nx/security/advisories/GHSA-cxm3-wv7p-598c"
     publisher: "Nx / GitHub"
     type: first-party-disclosure
     date: 2025-08-27

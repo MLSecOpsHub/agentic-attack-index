@@ -62,6 +62,7 @@
       "url": "https://nx.dev/blog/s1ngularity-postmortem"
     },
     {
+      "archive_url": "https://web.archive.org/web/20260813090118/https://github.com/nrwl/nx/security/advisories/GHSA-cxm3-wv7p-598c",
       "date": "2025-08-27",
       "publisher": "Nx / GitHub",
       "title": "Nx security advisory (GHSA-cxm3-wv7p-598c)",

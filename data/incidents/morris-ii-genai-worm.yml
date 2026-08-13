@@ -1,0 +1,77 @@
+id: morris-ii-genai-worm
+name: "Morris II — self-replicating worm targeting GenAI-powered applications"
+summary: >-
+  Academic researchers (Stav Cohen, Ron Bitton, Ben Nassi) disclosed "Morris II"
+  in March 2024 — a research proof-of-concept for the first worm designed to
+  target generative-AI ecosystems. It uses an adversarial self-replicating prompt
+  that, when processed by a GenAI model inside a retrieval-augmented email
+  assistant, replicates itself into the model's output, drives a malicious action
+  (such as exfiltrating confidential data), and propagates zero-click to other
+  connected AI agents. Demonstrated in a controlled lab against GPT-4, Gemini Pro
+  and LLaVA; never deployed in the wild.
+date_disclosed: 2024-03-05
+status: test-eval
+confidence: primary
+category: lab-escape-eval
+severity: medium
+models:
+  - GPT-4
+  - Gemini Pro
+  - LLaVA
+model_families:
+  - openai-gpt
+  - gemini
+  - other
+actor: "Researchers (Cohen, Bitton, Nassi — Technion / Intuit / Cornell Tech)"
+actor_type: researcher
+autonomy_pct: null
+autonomy_level: not-applicable
+guardrail_bypass:
+  - indirect-prompt-injection
+ai_role: load-bearing
+related: []
+mitigations:
+  - "The researchers proposed a detection guardrail ('Virtual Donkey') and disclosed to OpenAI and Google before publication."
+targets:
+  orgs_affected: null
+  records_exfiltrated: null
+  sectors: []
+  countries: []
+lifecycle_phases:
+  - initial-access
+  - execution
+  - exfiltration
+  - impact
+mappings:
+  mitre_atlas:
+    - AML.T0051.001 # LLM Prompt Injection: Indirect
+    - AML.T0057 # LLM Data Leakage
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: []
+  cve: []
+  aiid: []
+impact: >-
+  Research demonstration only: no real-world victims. Showed that a self-
+  replicating prompt can exfiltrate confidential data and propagate between
+  GenAI-powered email assistants without user interaction.
+sources:
+  - title: "Here Comes The AI Worm: Unleashing Zero-click Worms that Target GenAI-Powered Applications"
+    url: "https://arxiv.org/abs/2403.02817"
+    publisher: "arXiv"
+    type: research-paper
+    date: 2024-03-05
+  - title: "ComPromptMized — Here Comes the AI Worm"
+    url: "https://sites.google.com/view/compromptmized"
+    archive_url: "https://web.archive.org/web/20260708085943/https://sites.google.com/view/compromptmized"
+    publisher: "Cohen, Bitton, Nassi"
+    type: first-party-disclosure
+  - title: "AI worm infects users via AI-enabled email clients — Morris II generative AI worm steals confidential data as it spreads"
+    url: "https://www.tomshardware.com/tech-industry/artificial-intelligence/ai-worm-infects-users-via-ai-enabled-email-clients-morris-ii-generative-ai-worm-steals-confidential-data-as-it-spreads"
+    archive_url: "https://web.archive.org/web/20260309084729/https://www.tomshardware.com/tech-industry/artificial-intelligence/ai-worm-infects-users-via-ai-enabled-email-clients-morris-ii-generative-ai-worm-steals-confidential-data-as-it-spreads"
+    publisher: "Tom's Hardware"
+    type: news
+added:
+  date: 2026-08-13
+  by: "MLSecOpsHub"
+last_updated: 2026-08-13

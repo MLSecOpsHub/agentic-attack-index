@@ -54,10 +54,13 @@
     "Qwen2.5-Coder-32B-Instruct"
   ],
   "name": "PROMPTSTEAL / LAMEHUG — LLM-enabled data miner used against Ukraine",
-  "related": [],
+  "related": [
+    "promptflux-gemini-selfmod"
+  ],
   "severity": "high",
   "sources": [
     {
+      "archive_url": "https://web.archive.org/web/20260813084718/https://cloud.google.com/blog/topics/threat-intelligence/threat-actor-usage-of-ai-tools/",
       "date": "2025-11-05",
       "publisher": "Google Threat Intelligence Group",
       "title": "GTIG AI Threat Tracker: Advances in Threat Actor Usage of AI Tools",

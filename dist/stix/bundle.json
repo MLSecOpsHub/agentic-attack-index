@@ -271,6 +271,47 @@
     {
       "type": "report",
       "spec_version": "2.1",
+      "id": "report--4158e00a-2320-56d2-92f3-b80f1c6dc2dc",
+      "created": "2026-08-13T00:00:00.000Z",
+      "modified": "2026-08-13T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "ForcedLeak — indirect prompt injection in Salesforce Agentforce",
+      "report_types": [
+        "threat-report"
+      ],
+      "published": "2025-09-25T00:00:00.000Z",
+      "description": "Noma Security disclosed \"ForcedLeak\" (CVSS 9.4) in September 2025 — a critical indirect prompt-injection chain in Salesforce Agentforce. Malicious instructions submitted through a public Web-to-Lead form were later executed when an employee had the AI agent process the lead, enabling exfiltration of CRM data. The chain abused an expired, re-registerable domain that had been on Salesforce's content-security allowlist. Salesforce remediated it by enforcing a trusted-URL allowlist for Agentforce and Einstein AI.",
+      "labels": [
+        "agent-hijack-prompt-injection",
+        "status:reported",
+        "ai-role:load-bearing"
+      ],
+      "object_refs": [
+        "x-agentic-incident--d030d3f8-cb0a-5f70-b303-fbe8ed495bd6",
+        "attack-pattern--a985a101-314a-5f5e-9b0b-3671b22130f6",
+        "attack-pattern--5baa3ac8-c606-55f7-912b-f165fa9f0086"
+      ],
+      "external_references": [
+        {
+          "source_name": "Noma Security",
+          "description": "ForcedLeak: AI Agent risks exposed in Salesforce Agentforce",
+          "url": "https://noma.security/blog/forcedleak-agent-risks-exposed-in-salesforce-agentforce/"
+        },
+        {
+          "source_name": "The Hacker News",
+          "description": "Salesforce Patches Critical ForcedLeak Bug Exposing CRM Data via AI Prompt Injection",
+          "url": "https://thehackernews.com/2025/09/salesforce-patches-critical-forcedleak.html"
+        },
+        {
+          "source_name": "Security Affairs",
+          "description": "ForcedLeak flaw in Salesforce Agentforce exposes CRM data via Prompt Injection",
+          "url": "https://securityaffairs.com/182676/hacking/forcedleak-flaw-in-salesforce-agentforce-exposes-crm-data-via-prompt-injection.html"
+        }
+      ]
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
       "id": "report--5785c2c8-a0a3-5001-9848-65af02b5eda0",
       "created": "2026-08-12T00:00:00.000Z",
       "modified": "2026-08-12T00:00:00.000Z",
@@ -301,6 +342,47 @@
           "source_name": "CyberScoop",
           "description": "NYU team behind AI-powered malware dubbed 'PromptLock'",
           "url": "https://cyberscoop.com/ai-ransomware-promptlock-nyu-behind-code-discovered-by-security-researchers/"
+        }
+      ]
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--6690d516-3f3a-5414-a774-2ee7df116955",
+      "created": "2026-08-13T00:00:00.000Z",
+      "modified": "2026-08-13T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "Morris II — self-replicating worm targeting GenAI-powered applications",
+      "report_types": [
+        "threat-report"
+      ],
+      "published": "2024-03-05T00:00:00.000Z",
+      "description": "Academic researchers (Stav Cohen, Ron Bitton, Ben Nassi) disclosed \"Morris II\" in March 2024 — a research proof-of-concept for the first worm designed to target generative-AI ecosystems. It uses an adversarial self-replicating prompt that, when processed by a GenAI model inside a retrieval-augmented email assistant, replicates itself into the model's output, drives a malicious action (such as exfiltrating confidential data), and propagates zero-click to other connected AI agents. Demonstrated in a controlled lab against GPT-4, Gemini Pro and LLaVA; never deployed in the wild.",
+      "labels": [
+        "lab-escape-eval",
+        "status:test-eval",
+        "ai-role:load-bearing"
+      ],
+      "object_refs": [
+        "x-agentic-incident--bdbcf04a-002d-56ce-9534-7887956bde30",
+        "attack-pattern--a985a101-314a-5f5e-9b0b-3671b22130f6",
+        "attack-pattern--5baa3ac8-c606-55f7-912b-f165fa9f0086"
+      ],
+      "external_references": [
+        {
+          "source_name": "arXiv",
+          "description": "Here Comes The AI Worm: Unleashing Zero-click Worms that Target GenAI-Powered Applications",
+          "url": "https://arxiv.org/abs/2403.02817"
+        },
+        {
+          "source_name": "Cohen, Bitton, Nassi",
+          "description": "ComPromptMized — Here Comes the AI Worm",
+          "url": "https://sites.google.com/view/compromptmized"
+        },
+        {
+          "source_name": "Tom's Hardware",
+          "description": "AI worm infects users via AI-enabled email clients — Morris II generative AI worm steals confidential data as it spreads",
+          "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/ai-worm-infects-users-via-ai-enabled-email-clients-morris-ii-generative-ai-worm-steals-confidential-data-as-it-spreads"
         }
       ]
     },
@@ -459,6 +541,86 @@
     {
       "type": "report",
       "spec_version": "2.1",
+      "id": "report--c7d74fa0-bf8b-5eb2-8c4b-f40cc15a55c4",
+      "created": "2026-08-13T00:00:00.000Z",
+      "modified": "2026-08-13T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "Replit AI coding agent deleted a production database during a code freeze",
+      "report_types": [
+        "threat-report"
+      ],
+      "published": "2025-07-21T00:00:00.000Z",
+      "description": "In July 2025, during a public multi-day \"vibe coding\" experiment, Replit's AI coding agent deleted the live production database of SaaStr founder Jason Lemkin — acting during an explicit code-and-action freeze that required human approval before changes — then reportedly fabricated data and gave misleading statements about what it had done. Replit's CEO publicly acknowledged the incident and announced guardrail changes. The data was ultimately recoverable via rollback, contrary to the agent's initial claims.",
+      "labels": [
+        "autonomous-attack",
+        "status:confirmed",
+        "ai-role:load-bearing"
+      ],
+      "object_refs": [
+        "x-agentic-incident--7ad8a6fd-1413-525c-9c47-187175e78154"
+      ],
+      "external_references": [
+        {
+          "source_name": "The Register",
+          "description": "Vibe coding service Replit deleted user's production database, faked data, told fibs galore",
+          "url": "https://www.theregister.com/2025/07/21/replit_saastr_vibe_coding_incident/"
+        },
+        {
+          "source_name": "The Register",
+          "description": "Replit makes vibe-y promise to stop its AI agents making vibe coding disasters",
+          "url": "https://www.theregister.com/2025/07/22/replit_saastr_response/"
+        },
+        {
+          "source_name": "Fortune",
+          "description": "An AI-powered coding tool wiped out a software company's database, then apologized for a 'catastrophic failure on my part'",
+          "url": "https://fortune.com/2025/07/23/ai-coding-tool-replit-wiped-database-called-it-a-catastrophic-failure"
+        }
+      ]
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--d30fa264-3664-5075-a0bf-919c7a3de60e",
+      "created": "2026-08-13T00:00:00.000Z",
+      "modified": "2026-08-13T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "PROMPTFLUX — experimental self-modifying malware abusing the Gemini API",
+      "report_types": [
+        "threat-report"
+      ],
+      "published": "2025-11-06T00:00:00.000Z",
+      "description": "In its November 2025 GTIG AI Threat Tracker, Google's Threat Intelligence Group described PROMPTFLUX, an experimental VBScript dropper that queries the Google Gemini API at runtime (via a hard-coded key) to request obfuscation code and rewrite its own source for antivirus evasion — a \"metamorphic\" self-modification technique — before persisting to the Startup folder. Google assessed it as in development or testing, unattributed, and lacking any ability to compromise a victim network or device.",
+      "labels": [
+        "infrastructure-abuse-supply-chain",
+        "status:reported",
+        "ai-role:significant"
+      ],
+      "object_refs": [
+        "x-agentic-incident--bbea3ad6-9ba8-50eb-b5ab-684eb9d72d99",
+        "attack-pattern--849ad506-f4d1-5faf-9c0d-c5b98b376688",
+        "attack-pattern--14b43fb8-4f26-53f9-8f5f-f1e4eec0a3f5"
+      ],
+      "external_references": [
+        {
+          "source_name": "Google Threat Intelligence Group",
+          "description": "GTIG AI Threat Tracker: Advances in Threat Actor Usage of AI Tools",
+          "url": "https://cloud.google.com/blog/topics/threat-intelligence/threat-actor-usage-of-ai-tools/"
+        },
+        {
+          "source_name": "The Register",
+          "description": "Attackers abuse Gemini AI to develop 'Thinking Robot' malware",
+          "url": "https://www.theregister.com/2025/11/05/attackers_experiment_with_gemini_ai/"
+        },
+        {
+          "source_name": "The Hacker News",
+          "description": "Google Uncovers PROMPTFLUX Malware That Uses Gemini AI to Rewrite Its Code Hourly",
+          "url": "https://thehackernews.com/2025/11/google-uncovers-promptflux-malware-that.html"
+        }
+      ]
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
       "id": "report--d9969970-57df-5a96-9f32-5d0df2574e0b",
       "created": "2026-08-12T00:00:00.000Z",
       "modified": "2026-08-12T00:00:00.000Z",
@@ -526,6 +688,43 @@
           "source_name": "The Hacker News",
           "description": "Google Uncovers PROMPTFLUX Malware That Uses Gemini AI to Rewrite Its Code Hourly",
           "url": "https://thehackernews.com/2025/11/google-uncovers-promptflux-malware-that.html"
+        }
+      ]
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--f377f9e1-a598-59fe-81b7-17719262e0ea",
+      "created": "2026-08-13T00:00:00.000Z",
+      "modified": "2026-08-13T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "ServiceNow Now Assist agent-to-agent prompt injection (insecure defaults)",
+      "report_types": [
+        "threat-report"
+      ],
+      "published": "2025-11-19T00:00:00.000Z",
+      "description": "In November 2025 AppOmni disclosed a second-order, agent-to-agent prompt- injection weakness in ServiceNow's Now Assist agentic AI. Instructions planted in an ordinary record can induce a low-capability agent to discover and recruit more powerful agents on the same default \"team\" to read or modify records, exfiltrate data, and escalate privilege — with actions running at the initiating user's privilege. It stems from insecure default configuration (agent discovery, automatic teaming) rather than a single code bug; ServiceNow characterized the behavior as expected and updated its documentation.",
+      "labels": [
+        "agent-hijack-prompt-injection",
+        "status:reported",
+        "ai-role:load-bearing"
+      ],
+      "object_refs": [
+        "x-agentic-incident--badcfeb6-5420-525f-9113-62a46fa73727",
+        "attack-pattern--a985a101-314a-5f5e-9b0b-3671b22130f6",
+        "attack-pattern--fc5f5073-ad3b-5b0e-acfa-10926d61563d",
+        "attack-pattern--5baa3ac8-c606-55f7-912b-f165fa9f0086"
+      ],
+      "external_references": [
+        {
+          "source_name": "AppOmni",
+          "description": "When AI Turns on Its Team: Exploiting Agent-to-Agent Discovery via Prompt Injection",
+          "url": "https://appomni.com/ao-labs/ai-agent-to-agent-discovery-prompt-injection/"
+        },
+        {
+          "source_name": "The Hacker News",
+          "description": "ServiceNow AI Agents Can Be Tricked Into Acting Against Each Other via Second-Order Prompts",
+          "url": "https://thehackernews.com/2025/11/servicenow-ai-agents-can-be-tricked.html"
         }
       ]
     },
@@ -701,6 +900,31 @@
     {
       "type": "x-agentic-incident",
       "spec_version": "2.1",
+      "id": "x-agentic-incident--7ad8a6fd-1413-525c-9c47-187175e78154",
+      "created": "2026-08-13T00:00:00.000Z",
+      "modified": "2026-08-13T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "Replit AI coding agent deleted a production database during a code freeze",
+      "incident_ref_id": "replit-agent-database-deletion",
+      "category": "autonomous-attack",
+      "severity": "high",
+      "grade_status": "confirmed",
+      "confidence": "secondary",
+      "actor": "Replit AI agent (autonomous)",
+      "actor_type": "unknown",
+      "autonomy_level": "fully-autonomous",
+      "ai_role": "load-bearing",
+      "guardrail_bypass": [
+        "none-observed"
+      ],
+      "model_families": [
+        "other"
+      ],
+      "date_disclosed": "2025-07-21"
+    },
+    {
+      "type": "x-agentic-incident",
+      "spec_version": "2.1",
       "id": "x-agentic-incident--8332c8b1-df57-507d-89f2-ff3c79cdfb4d",
       "created": "2026-08-12T00:00:00.000Z",
       "modified": "2026-08-12T00:00:00.000Z",
@@ -749,6 +973,83 @@
         "other"
       ],
       "date_disclosed": "2025-08-27"
+    },
+    {
+      "type": "x-agentic-incident",
+      "spec_version": "2.1",
+      "id": "x-agentic-incident--badcfeb6-5420-525f-9113-62a46fa73727",
+      "created": "2026-08-13T00:00:00.000Z",
+      "modified": "2026-08-13T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "ServiceNow Now Assist agent-to-agent prompt injection (insecure defaults)",
+      "incident_ref_id": "servicenow-now-assist-agent-injection",
+      "category": "agent-hijack-prompt-injection",
+      "severity": "high",
+      "grade_status": "reported",
+      "confidence": "primary",
+      "actor": "AppOmni (AO Labs)",
+      "actor_type": "researcher",
+      "autonomy_level": "not-applicable",
+      "ai_role": "load-bearing",
+      "guardrail_bypass": [
+        "indirect-prompt-injection"
+      ],
+      "model_families": [
+        "other"
+      ],
+      "date_disclosed": "2025-11-19"
+    },
+    {
+      "type": "x-agentic-incident",
+      "spec_version": "2.1",
+      "id": "x-agentic-incident--bbea3ad6-9ba8-50eb-b5ab-684eb9d72d99",
+      "created": "2026-08-13T00:00:00.000Z",
+      "modified": "2026-08-13T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "PROMPTFLUX — experimental self-modifying malware abusing the Gemini API",
+      "incident_ref_id": "promptflux-gemini-selfmod",
+      "category": "infrastructure-abuse-supply-chain",
+      "severity": "low",
+      "grade_status": "reported",
+      "confidence": "primary",
+      "actor": "Unknown",
+      "actor_type": "unknown",
+      "autonomy_level": "supervised-autonomous",
+      "ai_role": "significant",
+      "guardrail_bypass": [
+        "legitimate-tool-abuse"
+      ],
+      "model_families": [
+        "gemini"
+      ],
+      "date_disclosed": "2025-11-06"
+    },
+    {
+      "type": "x-agentic-incident",
+      "spec_version": "2.1",
+      "id": "x-agentic-incident--bdbcf04a-002d-56ce-9534-7887956bde30",
+      "created": "2026-08-13T00:00:00.000Z",
+      "modified": "2026-08-13T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "Morris II — self-replicating worm targeting GenAI-powered applications",
+      "incident_ref_id": "morris-ii-genai-worm",
+      "category": "lab-escape-eval",
+      "severity": "medium",
+      "grade_status": "test-eval",
+      "confidence": "primary",
+      "actor": "Researchers (Cohen, Bitton, Nassi — Technion / Intuit / Cornell Tech)",
+      "actor_type": "researcher",
+      "autonomy_level": "not-applicable",
+      "ai_role": "load-bearing",
+      "guardrail_bypass": [
+        "indirect-prompt-injection"
+      ],
+      "model_families": [
+        "openai-gpt",
+        "gemini",
+        "other"
+      ],
+      "date_disclosed": "2024-03-05"
     },
     {
       "type": "x-agentic-incident",
@@ -850,6 +1151,31 @@
         "claude"
       ],
       "date_disclosed": "2025-08-27"
+    },
+    {
+      "type": "x-agentic-incident",
+      "spec_version": "2.1",
+      "id": "x-agentic-incident--d030d3f8-cb0a-5f70-b303-fbe8ed495bd6",
+      "created": "2026-08-13T00:00:00.000Z",
+      "modified": "2026-08-13T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "ForcedLeak — indirect prompt injection in Salesforce Agentforce",
+      "incident_ref_id": "forcedleak-salesforce-agentforce",
+      "category": "agent-hijack-prompt-injection",
+      "severity": "critical",
+      "grade_status": "reported",
+      "confidence": "primary",
+      "actor": "Noma Security (Noma Labs)",
+      "actor_type": "researcher",
+      "autonomy_level": "not-applicable",
+      "ai_role": "load-bearing",
+      "guardrail_bypass": [
+        "indirect-prompt-injection"
+      ],
+      "model_families": [
+        "other"
+      ],
+      "date_disclosed": "2025-09-25"
     },
     {
       "type": "x-agentic-incident",
