@@ -20,6 +20,14 @@ model_families:
 actor: "North Korean operatives (DPRK IT workers)"
 actor_type: nation-state
 autonomy_pct: null
+autonomy_level: tool-assisted
+guardrail_bypass:
+  - legitimate-tool-abuse
+ai_role: significant
+related:
+  - gtg-2002-vibe-hacking-extortion
+  - gtg-5004-ai-ransomware-raas
+mitigations: []
 targets:
   orgs_affected: null # "Fortune 500 companies (according to public reporting)"; no count stated.
   records_exfiltrated: null

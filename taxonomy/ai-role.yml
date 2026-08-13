@@ -1,0 +1,31 @@
+# Controlled vocabulary: AI role.
+# An editorial skepticism axis — how central AI actually was to the incident,
+# independent of verification status. Vendors and researchers sometimes overstate
+# AI's centrality; this field records an honest assessment.
+# Must stay in sync with schema/incident.schema.json (enforced by `npm run validate`).
+key: ai_role
+title: AI role
+values:
+  - id: load-bearing
+    label: Load-bearing
+    description: >-
+      AI was central — the operation as described could not have happened at this
+      scale or in this form without it.
+  - id: significant
+    label: Significant
+    description: >-
+      AI materially enabled or accelerated the operation, but was one of several
+      important components.
+  - id: incidental
+    label: Incidental
+    description: >-
+      AI played a minor or supporting role (e.g. a productivity aid); sources
+      indicate it did not provide novel capability.
+  - id: disputed
+    label: Disputed
+    description: >-
+      Sources conflict on AI's role, or a vendor's framing of AI's centrality is
+      contested.
+  - id: unknown
+    label: Unknown
+    description: Sources do not support an assessment of how central AI was.

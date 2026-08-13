@@ -22,6 +22,15 @@ model_families:
 actor: "Five state-affiliated actors: Forest Blizzard, Emerald Sleet, Crimson Sandstorm, Charcoal Typhoon, Salmon Typhoon"
 actor_type: nation-state
 autonomy_pct: null
+autonomy_level: tool-assisted
+guardrail_bypass:
+  - legitimate-tool-abuse
+# Both Microsoft and OpenAI stated no novel AI-enabled attack techniques were
+# observed — AI functioned as a productivity aid, not a load-bearing capability.
+ai_role: incidental
+related: []
+mitigations:
+  - "The provider terminated the accounts associated with the identified actors."
 targets:
   orgs_affected: null
   records_exfiltrated: null
@@ -32,7 +41,8 @@ lifecycle_phases:
   - resource-dev
   - deception-social-eng
 mappings:
-  mitre_atlas: []
+  mitre_atlas:
+    - AML.T0016.002 # Generative AI (assisting operations)
   # Microsoft published named LLM-themed technique descriptions (e.g. "LLM-informed
   # reconnaissance") contributed to ATT&CK/ATLAS, but no numeric IDs, so none recorded.
   mitre_attack: []

@@ -11,17 +11,28 @@ const incidents = listIncidentFiles()
   .sort((a, b) => a.id.localeCompare(b.id))
   .map(sortKeysDeep);
 
-const countBy = (key) => {
+const tally = (values) => {
   const counts = {};
-  for (const inc of incidents) counts[inc[key]] = (counts[inc[key]] ?? 0) + 1;
+  for (const v of values) {
+    if (v === undefined || v === null || v === '') continue;
+    counts[v] = (counts[v] ?? 0) + 1;
+  }
   return sortKeysDeep(counts);
 };
+const countBy = (key) => tally(incidents.map((i) => i[key]));
+const countByArray = (key) =>
+  tally(incidents.flatMap((i) => (Array.isArray(i[key]) ? i[key] : [])));
 
 const summary = {
   total: incidents.length,
   by_category: countBy('category'),
   by_severity: countBy('severity'),
   by_status: countBy('status'),
+  by_actor_type: countBy('actor_type'),
+  by_autonomy_level: tally(incidents.map((i) => i.autonomy_level ?? 'unknown')),
+  by_ai_role: tally(incidents.map((i) => i.ai_role ?? 'unknown')),
+  by_model_family: countByArray('model_families'),
+  by_year: tally(incidents.map((i) => (i.date_disclosed ?? '').slice(0, 4))),
   ids: incidents.map((i) => i.id),
 };
 

@@ -1,0 +1,35 @@
+# Controlled vocabulary: agentic autonomy level.
+# A discrete class for how much of the operation the AI executed without human
+# intervention — the qualitative complement to the numeric autonomy_pct.
+# Must stay in sync with schema/incident.schema.json (enforced by `npm run validate`).
+key: autonomy_level
+title: Agentic autonomy level
+values:
+  - id: tool-assisted
+    label: Tool-assisted
+    description: >-
+      The AI was used as a productivity aid (code generation, drafting,
+      research) while humans performed the operation. The AI did not act.
+  - id: human-in-the-loop
+    label: Human-in-the-loop
+    description: >-
+      The AI executed steps of the operation but a human approved or directed
+      each significant action.
+  - id: supervised-autonomous
+    label: Supervised-autonomous
+    description: >-
+      The AI executed the majority of tactical actions on its own, with humans
+      intervening only at occasional decision points or checkpoints.
+  - id: fully-autonomous
+    label: Fully-autonomous
+    description: >-
+      The AI executed the operation end-to-end with negligible human
+      intervention. Rare; grade conservatively and only where sources support it.
+  - id: not-applicable
+    label: Not applicable
+    description: >-
+      The AI is the victim/target of the incident (e.g. agent-hijack or a
+      vulnerability), not the operator — an autonomy level does not apply.
+  - id: unknown
+    label: Unknown
+    description: Sources do not support an autonomy-level assessment.

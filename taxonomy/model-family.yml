@@ -18,6 +18,9 @@ values:
   - id: deepseek
     label: DeepSeek
     description: DeepSeek models.
+  - id: qwen
+    label: Qwen (Alibaba)
+    description: Alibaba Qwen open-weight models and derivatives (e.g. Qwen2.5-Coder).
   - id: llama
     label: Llama (Meta)
     description: Meta Llama open-weight models and derivatives.

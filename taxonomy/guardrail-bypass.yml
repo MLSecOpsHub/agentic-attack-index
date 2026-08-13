@@ -1,0 +1,35 @@
+# Controlled vocabulary: guardrail bypass.
+# How the model's safety controls were circumvented or sidestepped. An incident
+# may involve more than one (the field is a list).
+# Must stay in sync with schema/incident.schema.json (enforced by `npm run validate`).
+key: guardrail_bypass
+title: Guardrail bypass
+values:
+  - id: jailbreak
+    label: Jailbreak
+    description: >-
+      The attacker defeated a hosted model's safety training/policy via crafted
+      prompts, roleplay, task decomposition, or similar.
+  - id: open-weight-model
+    label: Open-weight model
+    description: >-
+      An open-weight or self-hostable model (run locally or via an inference API)
+      was used, sidestepping a provider's usage controls entirely.
+  - id: legitimate-tool-abuse
+    label: Legitimate tool abuse
+    description: >-
+      A sanctioned AI product or agent (e.g. a coding agent) was used for its
+      intended capabilities but toward malicious ends.
+  - id: indirect-prompt-injection
+    label: Indirect prompt injection
+    description: >-
+      A deployed AI agent was subverted through untrusted content it processed
+      (email, documents, repository data, tool output).
+  - id: none-observed
+    label: None observed
+    description: >-
+      No guardrail was bypassed — e.g. the model was used within policy, or the
+      relevant control did not exist.
+  - id: unknown
+    label: Unknown
+    description: Sources do not describe how safety controls were handled.

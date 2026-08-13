@@ -2,14 +2,17 @@
 // Validate every incident record (including _TEMPLATE.yml) against
 // schema/incident.schema.json, enforce id/filename/uniqueness rules, and
 // cross-check taxonomy files against the schema enums.
+import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import Ajv2020 from 'ajv/dist/2020.js';
 import addFormats from 'ajv-formats';
+import { parse } from 'yaml';
 import {
   listIncidentFiles,
   loadIncident,
   loadSchema,
   loadTaxonomies,
+  ROOT,
 } from './lib.mjs';
 
 const errors = [];
@@ -29,6 +32,9 @@ const enumFromSchema = {
   model_families: schema.properties.model_families.items.enum,
   lifecycle_phases: schema.properties.lifecycle_phases.items.enum,
   source_type: schema.properties.sources.items.properties.type.enum,
+  autonomy_level: schema.properties.autonomy_level.enum,
+  guardrail_bypass: schema.properties.guardrail_bypass.items.enum,
+  ai_role: schema.properties.ai_role.enum,
 };
 
 const taxonomies = loadTaxonomies();
@@ -43,6 +49,20 @@ for (const [key, schemaEnum] of Object.entries(enumFromSchema)) {
   const extra = taxIds.filter((v) => !schemaEnum.includes(v));
   if (missing.length) errors.push(`taxonomy ${tax.file}: missing schema enum values: ${missing.join(', ')}`);
   if (extra.length) errors.push(`taxonomy ${tax.file}: values not in schema enum: ${extra.join(', ')}`);
+}
+
+// --- dataset version sync ----------------------------------------------------
+// The dataset version lives in two files; a release is only coherent if they agree.
+try {
+  const pkg = JSON.parse(readFileSync(path.join(ROOT, 'package.json'), 'utf8'));
+  const cff = parse(readFileSync(path.join(ROOT, 'CITATION.cff'), 'utf8'));
+  if (String(pkg.version) !== String(cff.version)) {
+    errors.push(
+      `version mismatch: package.json (${pkg.version}) != CITATION.cff (${cff.version})`
+    );
+  }
+} catch (e) {
+  errors.push(`version sync check failed: ${e.message}`);
 }
 
 // --- editorial invariants ----------------------------------------------------
@@ -132,6 +152,7 @@ function editorialErrors(record, rel) {
 // --- incident records --------------------------------------------------------
 const files = listIncidentFiles({ includeUnderscore: true });
 const seenIds = new Map();
+const relatedRefs = []; // { rel, id, related: string[] } — checked after all ids are known.
 let checked = 0;
 
 for (const file of files) {
@@ -170,6 +191,18 @@ for (const file of files) {
     const editorial = editorialErrors(record, rel);
     errors.push(...editorial.errors);
     warnings.push(...editorial.warnings);
+    if (Array.isArray(record.related) && record.related.length) {
+      relatedRefs.push({ rel, id: record.id, related: record.related });
+    }
+  }
+}
+
+// --- record relationships ----------------------------------------------------
+// related[] ids must resolve to real records and never point at themselves.
+for (const { rel, id, related } of relatedRefs) {
+  for (const ref of related) {
+    if (ref === id) errors.push(`${rel}: related[] references itself ("${ref}")`);
+    else if (!seenIds.has(ref)) errors.push(`${rel}: related[] id "${ref}" has no matching record`);
   }
 }
 

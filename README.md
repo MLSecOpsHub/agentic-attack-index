@@ -19,6 +19,8 @@ Defenders, researchers, journalists, and policymakers who need a grounded, citab
 
 Each record carries a stable `id` (its permanent citation key), a lifecycle-level defensive summary, verification `status` (`confirmed` / `reported` / `test-eval`), sourcing `confidence` (`primary` / `secondary` / `unverified`), and at least one resolvable source.
 
+Records also carry an analytical layer for defenders: an agentic **`autonomy_level`**, a **`guardrail_bypass`** classification (how safety controls were circumvented), an **`ai_role`** skepticism axis (how central AI actually was, independent of status), **MITRE ATLAS / ATT&CK** mappings, OWASP references, `related[]` links between records from the same report or campaign, and `mitigations`. `dist/summary.json` rolls these up (by category, severity, status, actor type, autonomy level, AI role, model family, and year).
+
 ## Using the data
 
 ```sh

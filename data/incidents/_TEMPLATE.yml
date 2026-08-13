@@ -66,6 +66,28 @@ actor_type: unknown
 # Integer 0–100 only if a source states an autonomy figure; otherwise null.
 autonomy_pct: null
 
+# Agentic autonomy level — qualitative class (see taxonomy/autonomy-level.yml):
+# tool-assisted | human-in-the-loop | supervised-autonomous | fully-autonomous |
+# not-applicable (AI is the victim, e.g. agent-hijack) | unknown
+autonomy_level: unknown
+
+# How the model's safety controls were bypassed (0+; taxonomy/guardrail-bypass.yml):
+# jailbreak | open-weight-model | legitimate-tool-abuse |
+# indirect-prompt-injection | none-observed | unknown
+guardrail_bypass:
+  - unknown
+
+# Editorial skepticism axis — how central AI really was (taxonomy/ai-role.yml):
+# load-bearing | significant | incidental | disputed | unknown
+ai_role: unknown
+
+# Ids of related records in this dataset (same report/campaign/actor/technique).
+# Each must reference an existing record — enforced by `npm run validate`.
+related: []
+
+# Defensive measures or detections as stated by sources. Defensive framing only.
+mitigations: []
+
 targets:
   # Integers only if a source states them; otherwise null.
   orgs_affected: null
@@ -98,7 +120,8 @@ lifecycle_phases: []
 mappings:
   mitre_atlas: []
   mitre_attack: []
-  owasp_asi: []
+  owasp_llm: [] # OWASP Top 10 for LLM Apps, e.g. LLM01
+  owasp_asi: [] # OWASP Agentic Security Initiative ids
   cve: []
   aiid: []
 

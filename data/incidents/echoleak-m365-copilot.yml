@@ -20,6 +20,14 @@ model_families:
 actor: "Aim Labs (Aim Security)"
 actor_type: researcher
 autonomy_pct: null
+autonomy_level: not-applicable
+guardrail_bypass:
+  - indirect-prompt-injection
+ai_role: load-bearing
+related:
+  - camoleak-github-copilot-chat
+mitigations:
+  - "Microsoft mitigated the vulnerability server-side; no customer action was required."
 targets:
   orgs_affected: 0 # Microsoft: "no customers were affected"; researcher discovery.
   records_exfiltrated: null
@@ -30,10 +38,13 @@ lifecycle_phases:
   - execution
   - exfiltration
 mappings:
-  mitre_atlas: []
+  mitre_atlas:
+    - AML.T0051.001 # LLM Prompt Injection: Indirect
+    - AML.T0057 # LLM Data Leakage
   mitre_attack: []
-  owasp_asi:
-    - "LLM01" # Prompt injection, per the Aim Labs research post (OWASP Top 10 for LLM Apps).
+  owasp_llm:
+    - "LLM01" # OWASP Top 10 for LLM Apps: prompt injection (per the Aim Labs research).
+  owasp_asi: []
   cve:
     - CVE-2025-32711
   aiid: []

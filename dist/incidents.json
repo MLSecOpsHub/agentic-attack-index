@@ -6,10 +6,15 @@
       "by": "MLSecOpsHub",
       "date": "2026-08-12"
     },
+    "ai_role": "significant",
+    "autonomy_level": "not-applicable",
     "autonomy_pct": null,
     "category": "infrastructure-abuse-supply-chain",
     "confidence": "primary",
     "date_disclosed": "2025-07-23",
+    "guardrail_bypass": [
+      "indirect-prompt-injection"
+    ],
     "id": "amazon-q-developer-extension-compromise",
     "impact": "Malicious data-wiping instructions were shipped in an official extension release, but AWS states the code was unsuccessful in executing due to a syntax error. Credentials were revoked and the code removed.",
     "last_updated": "2026-08-12",
@@ -23,15 +28,22 @@
       "cve": [
         "CVE-2025-8217"
       ],
-      "mitre_atlas": [],
+      "mitre_atlas": [
+        "AML.T0051",
+        "AML.T0081"
+      ],
       "mitre_attack": [],
       "owasp_asi": []
     },
+    "mitigations": [
+      "AWS revoked the compromised credentials, removed the code, and released a fixed extension version."
+    ],
     "model_families": [
       "other"
     ],
     "models": [],
     "name": "Amazon Q Developer VS Code extension compromise (data-wiping prompt injection)",
+    "related": [],
     "severity": "high",
     "sources": [
       {
@@ -65,10 +77,15 @@
       "by": "MLSecOpsHub",
       "date": "2026-08-12"
     },
+    "ai_role": "load-bearing",
+    "autonomy_level": "not-applicable",
     "autonomy_pct": null,
     "category": "agent-hijack-prompt-injection",
     "confidence": "primary",
     "date_disclosed": "2025-10-08",
+    "guardrail_bypass": [
+      "indirect-prompt-injection"
+    ],
     "id": "camoleak-github-copilot-chat",
     "impact": "Proof-of-concept exfiltration of secrets and source code from private repositories and full control of Copilot's responses. Responsibly disclosed via HackerOne and fixed by GitHub before public disclosure; no in-the-wild exploitation reported.",
     "last_updated": "2026-08-12",
@@ -80,10 +97,16 @@
     "mappings": {
       "aiid": [],
       "cve": [],
-      "mitre_atlas": [],
+      "mitre_atlas": [
+        "AML.T0051.001",
+        "AML.T0057"
+      ],
       "mitre_attack": [],
       "owasp_asi": []
     },
+    "mitigations": [
+      "GitHub disabled image rendering in Copilot Chat (2025-08-14)."
+    ],
     "model_families": [
       "other"
     ],
@@ -91,6 +114,9 @@
       "GitHub Copilot Chat"
     ],
     "name": "CamoLeak — GitHub Copilot Chat prompt-injection data exfiltration",
+    "related": [
+      "echoleak-m365-copilot"
+    ],
     "severity": "critical",
     "sources": [
       {
@@ -124,6 +150,8 @@
       "by": "MLSecOpsHub",
       "date": "2026-08-12"
     },
+    "ai_role": "significant",
+    "autonomy_level": "tool-assisted",
     "autonomy_pct": null,
     "category": "infrastructure-abuse-supply-chain",
     "confidence": "primary",
@@ -136,6 +164,9 @@
         "lng": 127.51
       }
     },
+    "guardrail_bypass": [
+      "legitimate-tool-abuse"
+    ],
     "id": "dprk-it-worker-fraud-claude",
     "impact": "Fraudulent employment at technology companies to evade sanctions and generate revenue for the DPRK regime; Anthropic notes such IT-worker schemes are reported to generate hundreds of millions of dollars annually for weapons programmes.",
     "last_updated": "2026-08-12",
@@ -150,6 +181,7 @@
       "mitre_attack": [],
       "owasp_asi": []
     },
+    "mitigations": [],
     "model_families": [
       "claude"
     ],
@@ -157,6 +189,10 @@
       "Claude"
     ],
     "name": "North Korean IT-worker remote-employment fraud using Claude",
+    "related": [
+      "gtg-2002-vibe-hacking-extortion",
+      "gtg-5004-ai-ransomware-raas"
+    ],
     "severity": "high",
     "sources": [
       {
@@ -194,10 +230,15 @@
       "by": "MLSecOpsHub",
       "date": "2026-08-12"
     },
+    "ai_role": "load-bearing",
+    "autonomy_level": "not-applicable",
     "autonomy_pct": null,
     "category": "agent-hijack-prompt-injection",
     "confidence": "primary",
     "date_disclosed": "2025-06-11",
+    "guardrail_bypass": [
+      "indirect-prompt-injection"
+    ],
     "id": "echoleak-m365-copilot",
     "impact": "Demonstrated zero-click exfiltration of data from the Microsoft 365 Copilot context (chat history, Microsoft Graph resources and preloaded context). Mitigated server-side by Microsoft with no reported in-the-wild exploitation.",
     "last_updated": "2026-08-12",
@@ -211,12 +252,19 @@
       "cve": [
         "CVE-2025-32711"
       ],
-      "mitre_atlas": [],
+      "mitre_atlas": [
+        "AML.T0051.001",
+        "AML.T0057"
+      ],
       "mitre_attack": [],
-      "owasp_asi": [
+      "owasp_asi": [],
+      "owasp_llm": [
         "LLM01"
       ]
     },
+    "mitigations": [
+      "Microsoft mitigated the vulnerability server-side; no customer action was required."
+    ],
     "model_families": [
       "openai-gpt"
     ],
@@ -224,6 +272,9 @@
       "GPT-4"
     ],
     "name": "EchoLeak — zero-click prompt injection in Microsoft 365 Copilot",
+    "related": [
+      "camoleak-github-copilot-chat"
+    ],
     "severity": "critical",
     "sources": [
       {
@@ -265,6 +316,8 @@
       "by": "MLSecOpsHub",
       "date": "2026-08-12"
     },
+    "ai_role": "load-bearing",
+    "autonomy_level": "supervised-autonomous",
     "autonomy_pct": null,
     "category": "ai-orchestrated-campaign",
     "confidence": "primary",
@@ -277,6 +330,10 @@
         "lng": 104.19
       }
     },
+    "guardrail_bypass": [
+      "jailbreak",
+      "legitimate-tool-abuse"
+    ],
     "id": "gtg-1002-ai-espionage",
     "impact": "Attempted infiltration of ~30 organizations with a small number of successful intrusions, including credential harvesting and data extraction, per Anthropic.",
     "last_updated": "2026-08-12",
@@ -291,10 +348,15 @@
     "mappings": {
       "aiid": [],
       "cve": [],
-      "mitre_atlas": [],
+      "mitre_atlas": [
+        "AML.T0054",
+        "AML.T0102",
+        "AML.T0053"
+      ],
       "mitre_attack": [],
       "owasp_asi": []
     },
+    "mitigations": [],
     "model_families": [
       "claude"
     ],
@@ -302,6 +364,7 @@
       "Claude Code"
     ],
     "name": "GTG-1002 AI-orchestrated cyber-espionage campaign",
+    "related": [],
     "severity": "high",
     "sources": [
       {
@@ -341,10 +404,15 @@
       "by": "MLSecOpsHub",
       "date": "2026-08-12"
     },
+    "ai_role": "load-bearing",
+    "autonomy_level": "supervised-autonomous",
     "autonomy_pct": null,
     "category": "ai-orchestrated-campaign",
     "confidence": "primary",
     "date_disclosed": "2025-08-27",
+    "guardrail_bypass": [
+      "legitimate-tool-abuse"
+    ],
     "id": "gtg-2002-vibe-hacking-extortion",
     "impact": "Compromise of personal records including healthcare data, financial information and government credentials; extortion with direct ransom demands occasionally exceeding US$500,000 (reported range US$75,000-500,000 in Bitcoin).",
     "last_updated": "2026-08-12",
@@ -359,10 +427,15 @@
     "mappings": {
       "aiid": [],
       "cve": [],
-      "mitre_atlas": [],
+      "mitre_atlas": [
+        "AML.T0053",
+        "AML.T0102",
+        "AML.T0016.002"
+      ],
       "mitre_attack": [],
       "owasp_asi": []
     },
+    "mitigations": [],
     "model_families": [
       "claude"
     ],
@@ -370,6 +443,10 @@
       "Claude Code"
     ],
     "name": "GTG-2002 'vibe hacking' AI-driven data-extortion operation",
+    "related": [
+      "gtg-5004-ai-ransomware-raas",
+      "dprk-it-worker-fraud-claude"
+    ],
     "severity": "high",
     "sources": [
       {
@@ -410,6 +487,8 @@
       "by": "MLSecOpsHub",
       "date": "2026-08-12"
     },
+    "ai_role": "significant",
+    "autonomy_level": "tool-assisted",
     "autonomy_pct": null,
     "category": "infrastructure-abuse-supply-chain",
     "confidence": "primary",
@@ -422,6 +501,9 @@
         "lng": -3.44
       }
     },
+    "guardrail_bypass": [
+      "legitimate-tool-abuse"
+    ],
     "id": "gtg-5004-ai-ransomware-raas",
     "impact": "AI-assisted development, marketing and sale of ransomware variants with encryption and evasion capabilities on dark-web forums for US$400-1,200; no victim count stated by the source.",
     "last_updated": "2026-08-12",
@@ -431,10 +513,13 @@
     "mappings": {
       "aiid": [],
       "cve": [],
-      "mitre_atlas": [],
+      "mitre_atlas": [
+        "AML.T0016.002"
+      ],
       "mitre_attack": [],
       "owasp_asi": []
     },
+    "mitigations": [],
     "model_families": [
       "claude"
     ],
@@ -442,6 +527,10 @@
       "Claude"
     ],
     "name": "GTG-5004 AI-assisted ransomware-as-a-service operation",
+    "related": [
+      "gtg-2002-vibe-hacking-extortion",
+      "dprk-it-worker-fraud-claude"
+    ],
     "severity": "high",
     "sources": [
       {
@@ -477,10 +566,15 @@
       "by": "MLSecOpsHub",
       "date": "2026-08-12"
     },
+    "ai_role": "incidental",
+    "autonomy_level": "tool-assisted",
     "autonomy_pct": null,
     "category": "infrastructure-abuse-supply-chain",
     "confidence": "primary",
     "date_disclosed": "2024-02-14",
+    "guardrail_bypass": [
+      "legitimate-tool-abuse"
+    ],
     "id": "microsoft-openai-state-actor-llm",
     "impact": "No novel or unique AI-enabled attack techniques were observed; Microsoft and OpenAI characterised the activity as consistent with using AI as a productivity tool. Identified accounts were terminated.",
     "last_updated": "2026-08-12",
@@ -492,10 +586,15 @@
     "mappings": {
       "aiid": [],
       "cve": [],
-      "mitre_atlas": [],
+      "mitre_atlas": [
+        "AML.T0016.002"
+      ],
       "mitre_attack": [],
       "owasp_asi": []
     },
+    "mitigations": [
+      "The provider terminated the accounts associated with the identified actors."
+    ],
     "model_families": [
       "openai-gpt"
     ],
@@ -503,6 +602,7 @@
       "GPT-4"
     ],
     "name": "Microsoft/OpenAI disruption of state-affiliated actors misusing LLMs (2024)",
+    "related": [],
     "severity": "medium",
     "sources": [
       {
@@ -544,10 +644,15 @@
       "by": "MLSecOpsHub",
       "date": "2026-08-12"
     },
+    "ai_role": "significant",
+    "autonomy_level": "tool-assisted",
     "autonomy_pct": null,
     "category": "infrastructure-abuse-supply-chain",
     "confidence": "primary",
     "date_disclosed": "2025-08-27",
+    "guardrail_bypass": [
+      "legitimate-tool-abuse"
+    ],
     "id": "nx-s1ngularity-supply-chain",
     "impact": "Per Wiz: over a thousand valid GitHub tokens, dozens of valid cloud credentials and NPM tokens, and roughly twenty thousand additional files leaked; a subsequent wave made over 5,500 private repositories public across 400+ users and organisations. Malware also attempted host lockout via a shutdown command appended to shell startup files.",
     "last_updated": "2026-08-12",
@@ -562,10 +667,17 @@
     "mappings": {
       "aiid": [],
       "cve": [],
-      "mitre_atlas": [],
-      "mitre_attack": [],
+      "mitre_atlas": [
+        "AML.T0053"
+      ],
+      "mitre_attack": [
+        "T1567.001"
+      ],
       "owasp_asi": []
     },
+    "mitigations": [
+      "Rotate exposed credentials and tokens; remove the malicious package versions."
+    ],
     "model_families": [
       "claude",
       "gemini",
@@ -577,6 +689,7 @@
       "Amazon Q"
     ],
     "name": "Nx 's1ngularity' npm supply-chain attack weaponising AI CLI tools",
+    "related": [],
     "severity": "critical",
     "sources": [
       {
@@ -617,10 +730,15 @@
       "by": "MLSecOpsHub",
       "date": "2026-08-12"
     },
+    "ai_role": "load-bearing",
+    "autonomy_level": "fully-autonomous",
     "autonomy_pct": null,
     "category": "lab-escape-eval",
     "confidence": "primary",
     "date_disclosed": "2025-08-26",
+    "guardrail_bypass": [
+      "open-weight-model"
+    ],
     "id": "promptlock-ai-ransomware-poc",
     "impact": "No real-world impact: an academic proof-of-concept demonstrating a closed-loop, LLM-orchestrated ransomware workflow (reconnaissance, exfiltration and encryption). ESET maintains it is the first known case of AI-powered ransomware while agreeing it was a proof-of-concept, not operational malware.",
     "last_updated": "2026-08-12",
@@ -632,10 +750,14 @@
     "mappings": {
       "aiid": [],
       "cve": [],
-      "mitre_atlas": [],
+      "mitre_atlas": [
+        "AML.T0102",
+        "AML.T0016.002"
+      ],
       "mitre_attack": [],
       "owasp_asi": []
     },
+    "mitigations": [],
     "model_families": [
       "openai-gpt"
     ],
@@ -643,6 +765,7 @@
       "gpt-oss:20b"
     ],
     "name": "PromptLock — first known AI-powered ransomware (academic proof-of-concept)",
+    "related": [],
     "severity": "medium",
     "sources": [
       {
@@ -676,6 +799,8 @@
       "by": "MLSecOpsHub",
       "date": "2026-08-12"
     },
+    "ai_role": "load-bearing",
+    "autonomy_level": "supervised-autonomous",
     "autonomy_pct": null,
     "category": "ai-orchestrated-campaign",
     "confidence": "primary",
@@ -694,6 +819,9 @@
         "lng": 31.17
       }
     },
+    "guardrail_bypass": [
+      "open-weight-model"
+    ],
     "id": "promptsteal-apt28-lamehug",
     "impact": "Live-operations use of an LLM to dynamically generate reconnaissance and document-collection commands on victim systems in Ukraine, with the collected output exfiltrated. Likely relied on stolen API tokens, per Google.",
     "last_updated": "2026-08-12",
@@ -705,17 +833,22 @@
     "mappings": {
       "aiid": [],
       "cve": [],
-      "mitre_atlas": [],
+      "mitre_atlas": [
+        "AML.T0102",
+        "AML.T0016.002"
+      ],
       "mitre_attack": [],
       "owasp_asi": []
     },
+    "mitigations": [],
     "model_families": [
-      "other"
+      "qwen"
     ],
     "models": [
       "Qwen2.5-Coder-32B-Instruct"
     ],
     "name": "PROMPTSTEAL / LAMEHUG — LLM-enabled data miner used against Ukraine",
+    "related": [],
     "severity": "high",
     "sources": [
       {
