@@ -1,0 +1,73 @@
+{
+  "actor": "Omer Mayraz (Legit Security)",
+  "actor_type": "researcher",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-08-12"
+  },
+  "ai_role": "load-bearing",
+  "autonomy_level": "not-applicable",
+  "autonomy_pct": null,
+  "category": "agent-hijack-prompt-injection",
+  "confidence": "primary",
+  "date_disclosed": "2025-10-08",
+  "guardrail_bypass": [
+    "indirect-prompt-injection"
+  ],
+  "id": "camoleak-github-copilot-chat",
+  "impact": "Proof-of-concept exfiltration of secrets and source code from private repositories and full control of Copilot's responses. Responsibly disclosed via HackerOne and fixed by GitHub before public disclosure; no in-the-wild exploitation reported.",
+  "last_updated": "2026-08-12",
+  "lifecycle_phases": [
+    "initial-access",
+    "execution",
+    "exfiltration"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0057"
+    ],
+    "mitre_attack": [],
+    "owasp_asi": []
+  },
+  "mitigations": [
+    "GitHub disabled image rendering in Copilot Chat (2025-08-14)."
+  ],
+  "model_families": [
+    "other"
+  ],
+  "models": [
+    "GitHub Copilot Chat"
+  ],
+  "name": "CamoLeak — GitHub Copilot Chat prompt-injection data exfiltration",
+  "related": [
+    "echoleak-m365-copilot"
+  ],
+  "severity": "critical",
+  "sources": [
+    {
+      "date": "2025-10-08",
+      "publisher": "Legit Security",
+      "title": "CamoLeak: Critical GitHub Copilot Vulnerability Leaks Private Source Code",
+      "type": "first-party-disclosure",
+      "url": "https://www.legitsecurity.com/blog/camoleak-critical-github-copilot-vulnerability-leaks-private-source-code"
+    },
+    {
+      "date": "2025-10-09",
+      "publisher": "The Register",
+      "title": "GitHub patches Copilot Chat flaw that could leak secrets",
+      "type": "news",
+      "url": "https://www.theregister.com/2025/10/09/github_copilot_chat_vulnerability/"
+    }
+  ],
+  "status": "reported",
+  "summary": "Legit Security researcher Omer Mayraz disclosed CamoLeak, a critical GitHub Copilot Chat vulnerability (reported CVSS 9.6). It combined remote prompt injection via GitHub's invisible markdown comments with a content-security bypass abusing GitHub's Camo image proxy to silently exfiltrate secrets and source code from private repositories and to steer Copilot's responses. GitHub mitigated it by disabling image rendering in Copilot Chat on 2025-08-14; the research was published in October 2025.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": []
+  }
+}

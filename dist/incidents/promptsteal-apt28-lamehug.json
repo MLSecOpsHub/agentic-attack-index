@@ -1,0 +1,85 @@
+{
+  "actor": "APT28 (FROZENLAKE), Russian government-backed",
+  "actor_type": "nation-state",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-08-12"
+  },
+  "ai_role": "load-bearing",
+  "autonomy_level": "supervised-autonomous",
+  "autonomy_pct": null,
+  "category": "ai-orchestrated-campaign",
+  "confidence": "primary",
+  "date_disclosed": "2025-11-05",
+  "geo": {
+    "origin": {
+      "illustrative": true,
+      "label": "Russia (APT28 attribution)",
+      "lat": 61.52,
+      "lng": 105.32
+    },
+    "target": {
+      "illustrative": true,
+      "label": "Ukraine (target)",
+      "lat": 48.38,
+      "lng": 31.17
+    }
+  },
+  "guardrail_bypass": [
+    "open-weight-model"
+  ],
+  "id": "promptsteal-apt28-lamehug",
+  "impact": "Live-operations use of an LLM to dynamically generate reconnaissance and document-collection commands on victim systems in Ukraine, with the collected output exfiltrated. Likely relied on stolen API tokens, per Google.",
+  "last_updated": "2026-08-12",
+  "lifecycle_phases": [
+    "recon",
+    "execution",
+    "exfiltration"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [
+      "AML.T0102",
+      "AML.T0016.002"
+    ],
+    "mitre_attack": [],
+    "owasp_asi": []
+  },
+  "mitigations": [],
+  "model_families": [
+    "qwen"
+  ],
+  "models": [
+    "Qwen2.5-Coder-32B-Instruct"
+  ],
+  "name": "PROMPTSTEAL / LAMEHUG — LLM-enabled data miner used against Ukraine",
+  "related": [],
+  "severity": "high",
+  "sources": [
+    {
+      "date": "2025-11-05",
+      "publisher": "Google Threat Intelligence Group",
+      "title": "GTIG AI Threat Tracker: Advances in Threat Actor Usage of AI Tools",
+      "type": "vendor-report",
+      "url": "https://cloud.google.com/blog/topics/threat-intelligence/threat-actor-usage-of-ai-tools/"
+    },
+    {
+      "date": "2025-11-05",
+      "publisher": "The Hacker News",
+      "title": "Google Uncovers PROMPTFLUX Malware That Uses Gemini AI to Rewrite Its Code Hourly",
+      "type": "news",
+      "url": "https://thehackernews.com/2025/11/google-uncovers-promptflux-malware-that.html"
+    }
+  ],
+  "status": "confirmed",
+  "summary": "In its November 2025 GTIG AI Threat Tracker, Google's Threat Intelligence Group reported that in June 2025 the Russian government-backed actor APT28 (FROZENLAKE) used new malware it tracks as PROMPTSTEAL — reported by CERT-UA as LAMEHUG — against Ukraine. The malware queried a large language model (Qwen2.5-Coder-32B-Instruct via the Hugging Face API) to generate Windows commands at runtime for system reconnaissance and document collection, which were executed and the output exfiltrated. Google describes it as its first observation of malware querying an LLM deployed in live operations.",
+  "targets": {
+    "countries": [
+      "UA"
+    ],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": []
+  }
+}

@@ -391,8 +391,8 @@
       "records_exfiltrated": null,
       "sectors": [
         "technology",
-        "financial services",
-        "chemical manufacturing",
+        "financial-services",
+        "chemical-manufacturing",
         "government"
       ]
     }
@@ -475,8 +475,8 @@
       "sectors": [
         "government",
         "healthcare",
-        "emergency services",
-        "religious institutions"
+        "emergency-services",
+        "religious-institutions"
       ]
     }
   },

@@ -1,0 +1,53 @@
+# Recommended vocabulary: target sectors.
+# Unlike the enum taxonomies, this is a SOFT reference — targets.sectors stays
+# free-text in the schema, but `npm run validate` warns (does not fail) when a
+# record uses a sector outside this list, to keep aggregation consistent.
+# Add new sectors here as needed.
+key: sectors
+title: Target sector
+values:
+  - id: technology
+    label: Technology
+    description: Software, hardware, cloud, and IT service companies.
+  - id: financial-services
+    label: Financial services
+    description: Banks, insurers, payment providers, and financial institutions.
+  - id: government
+    label: Government
+    description: Public-sector bodies and agencies.
+  - id: healthcare
+    label: Healthcare
+    description: Hospitals, providers, health systems, and medical data holders.
+  - id: emergency-services
+    label: Emergency services
+    description: Police, fire, EMS, and emergency response organizations.
+  - id: chemical-manufacturing
+    label: Chemical manufacturing
+    description: Chemical producers and industrial manufacturers.
+  - id: defense
+    label: Defense
+    description: Defense contractors and military-adjacent organizations.
+  - id: energy
+    label: Energy / utilities
+    description: Power, oil and gas, water, and utility providers.
+  - id: telecommunications
+    label: Telecommunications
+    description: Telecom carriers and network operators.
+  - id: education
+    label: Education
+    description: Schools, universities, and research/education institutions.
+  - id: retail
+    label: Retail / e-commerce
+    description: Consumer retail and online commerce.
+  - id: media
+    label: Media
+    description: News, publishing, and media organizations.
+  - id: legal
+    label: Legal
+    description: Law firms and legal-services organizations.
+  - id: religious-institutions
+    label: Religious institutions
+    description: Churches, faith-based organizations, and religious bodies.
+  - id: critical-infrastructure
+    label: Critical infrastructure
+    description: Infrastructure not covered by a more specific sector above.

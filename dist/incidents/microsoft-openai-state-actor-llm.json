@@ -1,0 +1,78 @@
+{
+  "actor": "Five state-affiliated actors: Forest Blizzard, Emerald Sleet, Crimson Sandstorm, Charcoal Typhoon, Salmon Typhoon",
+  "actor_type": "nation-state",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-08-12"
+  },
+  "ai_role": "incidental",
+  "autonomy_level": "tool-assisted",
+  "autonomy_pct": null,
+  "category": "infrastructure-abuse-supply-chain",
+  "confidence": "primary",
+  "date_disclosed": "2024-02-14",
+  "guardrail_bypass": [
+    "legitimate-tool-abuse"
+  ],
+  "id": "microsoft-openai-state-actor-llm",
+  "impact": "No novel or unique AI-enabled attack techniques were observed; Microsoft and OpenAI characterised the activity as consistent with using AI as a productivity tool. Identified accounts were terminated.",
+  "last_updated": "2026-08-12",
+  "lifecycle_phases": [
+    "recon",
+    "resource-dev",
+    "deception-social-eng"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [
+      "AML.T0016.002"
+    ],
+    "mitre_attack": [],
+    "owasp_asi": []
+  },
+  "mitigations": [
+    "The provider terminated the accounts associated with the identified actors."
+  ],
+  "model_families": [
+    "openai-gpt"
+  ],
+  "models": [
+    "GPT-4"
+  ],
+  "name": "Microsoft/OpenAI disruption of state-affiliated actors misusing LLMs (2024)",
+  "related": [],
+  "severity": "medium",
+  "sources": [
+    {
+      "archive_url": "https://web.archive.org/web/20260714223950/https://www.microsoft.com/en-us/security/blog/2024/02/14/staying-ahead-of-threat-actors-in-the-age-of-ai/",
+      "date": "2024-02-14",
+      "publisher": "Microsoft Threat Intelligence",
+      "title": "Staying ahead of threat actors in the age of AI",
+      "type": "first-party-disclosure",
+      "url": "https://www.microsoft.com/en-us/security/blog/2024/02/14/staying-ahead-of-threat-actors-in-the-age-of-ai/"
+    },
+    {
+      "date": "2024-02-15",
+      "publisher": "Cybersecurity Dive",
+      "title": "OpenAI, Microsoft warn of state-linked actors' AI use",
+      "type": "news",
+      "url": "https://www.cybersecuritydive.com/news/openai-microsoft-state-actors-ai/707661/"
+    },
+    {
+      "date": "2024-02-14",
+      "publisher": "SC Media",
+      "title": "Microsoft, OpenAI reveal ChatGPT use by state-sponsored hackers",
+      "type": "news",
+      "url": "https://www.scworld.com/news/microsoft-openai-reveal-chatgpt-use-by-state-sponsored-hackers"
+    }
+  ],
+  "status": "confirmed",
+  "summary": "On 2024-02-14 Microsoft Threat Intelligence and OpenAI jointly disclosed that they had detected and disrupted five state-affiliated threat actors using OpenAI's large language models to support cyber operations: Forest Blizzard (Russia), Emerald Sleet (North Korea), Crimson Sandstorm (Iran) and the China-affiliated Charcoal Typhoon and Salmon Typhoon. Reported uses included reconnaissance, scripting help, vulnerability research and social-engineering content. Both companies stated the activity amounted to productivity support rather than novel AI-enabled attack techniques, and OpenAI terminated the associated accounts.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": []
+  }
+}

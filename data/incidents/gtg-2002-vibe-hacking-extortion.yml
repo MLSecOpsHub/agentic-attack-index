@@ -35,8 +35,8 @@ targets:
   sectors:
     - government
     - healthcare
-    - emergency services
-    - religious institutions
+    - emergency-services
+    - religious-institutions
   countries: [] # "multiple international targets"; none named specifically.
 lifecycle_phases:
   - recon

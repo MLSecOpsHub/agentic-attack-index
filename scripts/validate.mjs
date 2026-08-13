@@ -38,6 +38,10 @@ const enumFromSchema = {
 };
 
 const taxonomies = loadTaxonomies();
+// Recommended (soft) vocabulary for free-text target sectors.
+const allowedSectors = new Set(
+  (taxonomies.find((t) => t.key === 'sectors')?.values ?? []).map((v) => v.id)
+);
 for (const [key, schemaEnum] of Object.entries(enumFromSchema)) {
   const tax = taxonomies.find((t) => t.key === key);
   if (!tax) {
@@ -193,6 +197,13 @@ for (const file of files) {
     warnings.push(...editorial.warnings);
     if (Array.isArray(record.related) && record.related.length) {
       relatedRefs.push({ rel, id: record.id, related: record.related });
+    }
+    for (const sec of record.targets?.sectors ?? []) {
+      if (allowedSectors.size && !allowedSectors.has(sec)) {
+        warnings.push(
+          `${rel}: sector "${sec}" not in taxonomy/sector.yml (free-text allowed; add it there for consistent aggregation)`
+        );
+      }
     }
   }
 }

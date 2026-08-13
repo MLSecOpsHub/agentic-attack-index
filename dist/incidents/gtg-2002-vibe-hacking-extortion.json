@@ -1,0 +1,83 @@
+{
+  "actor": "Unknown cybercriminal (tracked by Anthropic as GTG-2002)",
+  "actor_type": "cybercriminal",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-08-12"
+  },
+  "ai_role": "load-bearing",
+  "autonomy_level": "supervised-autonomous",
+  "autonomy_pct": null,
+  "category": "ai-orchestrated-campaign",
+  "confidence": "primary",
+  "date_disclosed": "2025-08-27",
+  "guardrail_bypass": [
+    "legitimate-tool-abuse"
+  ],
+  "id": "gtg-2002-vibe-hacking-extortion",
+  "impact": "Compromise of personal records including healthcare data, financial information and government credentials; extortion with direct ransom demands occasionally exceeding US$500,000 (reported range US$75,000-500,000 in Bitcoin).",
+  "last_updated": "2026-08-12",
+  "lifecycle_phases": [
+    "recon",
+    "initial-access",
+    "execution",
+    "credential-access",
+    "exfiltration",
+    "impact"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [
+      "AML.T0053",
+      "AML.T0102",
+      "AML.T0016.002"
+    ],
+    "mitre_attack": [],
+    "owasp_asi": []
+  },
+  "mitigations": [],
+  "model_families": [
+    "claude"
+  ],
+  "models": [
+    "Claude Code"
+  ],
+  "name": "GTG-2002 'vibe hacking' AI-driven data-extortion operation",
+  "related": [
+    "gtg-5004-ai-ransomware-raas",
+    "dprk-it-worker-fraud-claude"
+  ],
+  "severity": "high",
+  "sources": [
+    {
+      "archive_url": "https://web.archive.org/web/20260813045655/https://www.anthropic.com/news/detecting-countering-misuse-aug-2025",
+      "date": "2025-08-27",
+      "publisher": "Anthropic",
+      "title": "Detecting and countering misuse of AI: August 2025",
+      "type": "first-party-disclosure",
+      "url": "https://www.anthropic.com/news/detecting-countering-misuse-aug-2025"
+    },
+    {
+      "archive_url": "https://web.archive.org/web/20260724043514/https://www-cdn.anthropic.com/b2a76c6f6992465c09a6f2fce282f6c0cea8c200.pdf",
+      "date": "2025-08-27",
+      "publisher": "Anthropic",
+      "title": "Threat Intelligence Report: August 2025",
+      "type": "vendor-report",
+      "url": "https://www-cdn.anthropic.com/b2a76c6f6992465c09a6f2fce282f6c0cea8c200.pdf"
+    }
+  ],
+  "status": "confirmed",
+  "summary": "In its August 2025 Threat Intelligence Report, Anthropic disclosed a cybercriminal operation it tracked as GTG-2002 that used Claude Code as an active operator to run a scaled data-extortion campaign — a practice Anthropic terms \"vibe hacking.\" The agent supported reconnaissance, credential harvesting, network intrusion, and data exfiltration, then analysed stolen financial data to set ransom amounts and generated extortion notes. Anthropic reports the operation potentially affected at least 17 organisations in a single month, with direct ransom demands occasionally exceeding US$500,000.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": 17,
+    "records_exfiltrated": null,
+    "sectors": [
+      "government",
+      "healthcare",
+      "emergency-services",
+      "religious-institutions"
+    ]
+  }
+}

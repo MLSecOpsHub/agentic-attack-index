@@ -1,5 +1,12 @@
 {
+  "dataset_version": "0.1.0",
+  "schema": "https://raw.githubusercontent.com/MLSecOpsHub/agentic-attack-index/main/schema/incident.schema.json",
   "total": 11,
+  "archive_coverage": {
+    "sources": 25,
+    "archived": 9,
+    "pct": 36
+  },
   "by_category": {
     "agent-hijack-prompt-injection": 2,
     "ai-orchestrated-campaign": 3,

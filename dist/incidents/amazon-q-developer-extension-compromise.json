@@ -1,0 +1,71 @@
+{
+  "actor": "lkmanka58",
+  "actor_type": "single-operator",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-08-12"
+  },
+  "ai_role": "significant",
+  "autonomy_level": "not-applicable",
+  "autonomy_pct": null,
+  "category": "infrastructure-abuse-supply-chain",
+  "confidence": "primary",
+  "date_disclosed": "2025-07-23",
+  "guardrail_bypass": [
+    "indirect-prompt-injection"
+  ],
+  "id": "amazon-q-developer-extension-compromise",
+  "impact": "Malicious data-wiping instructions were shipped in an official extension release, but AWS states the code was unsuccessful in executing due to a syntax error. Credentials were revoked and the code removed.",
+  "last_updated": "2026-08-12",
+  "lifecycle_phases": [
+    "initial-access",
+    "execution",
+    "impact"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [
+      "CVE-2025-8217"
+    ],
+    "mitre_atlas": [
+      "AML.T0051",
+      "AML.T0081"
+    ],
+    "mitre_attack": [],
+    "owasp_asi": []
+  },
+  "mitigations": [
+    "AWS revoked the compromised credentials, removed the code, and released a fixed extension version."
+  ],
+  "model_families": [
+    "other"
+  ],
+  "models": [],
+  "name": "Amazon Q Developer VS Code extension compromise (data-wiping prompt injection)",
+  "related": [],
+  "severity": "high",
+  "sources": [
+    {
+      "date": "2025-07-23",
+      "publisher": "Amazon Web Services",
+      "title": "AWS Security Bulletin AWS-2025-015",
+      "type": "vendor-report",
+      "url": "https://aws.amazon.com/security/security-bulletins/AWS-2025-015/"
+    },
+    {
+      "date": "2025-07-25",
+      "publisher": "BleepingComputer",
+      "title": "Amazon AI coding agent hacked to inject data wiping commands",
+      "type": "news",
+      "url": "https://www.bleepingcomputer.com/news/security/amazon-ai-coding-agent-hacked-to-inject-data-wiping-commands/"
+    }
+  ],
+  "status": "confirmed",
+  "summary": "An attacker used an inappropriately scoped GitHub token to merge malicious content into the open-source repository behind the Amazon Q Developer extension for Visual Studio Code, shipping it in release 1.84.0. The injected content was a system prompt instructing the AI coding agent to wipe local files and cloud resources. AWS confirmed the compromise in security bulletin AWS-2025-015 (CVE-2025-8217), revoked the credentials, removed the code and released a fixed version; per AWS the injected code failed to execute due to a syntax error.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": []
+  }
+}

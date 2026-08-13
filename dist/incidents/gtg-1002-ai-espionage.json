@@ -1,0 +1,88 @@
+{
+  "actor": "Chinese state-sponsored group (tracked by Anthropic as GTG-1002)",
+  "actor_type": "nation-state",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-08-12"
+  },
+  "ai_role": "load-bearing",
+  "autonomy_level": "supervised-autonomous",
+  "autonomy_pct": null,
+  "category": "ai-orchestrated-campaign",
+  "confidence": "primary",
+  "date_disclosed": "2025-11-13",
+  "geo": {
+    "origin": {
+      "illustrative": true,
+      "label": "China (assessed state-sponsored origin)",
+      "lat": 35.86,
+      "lng": 104.19
+    }
+  },
+  "guardrail_bypass": [
+    "jailbreak",
+    "legitimate-tool-abuse"
+  ],
+  "id": "gtg-1002-ai-espionage",
+  "impact": "Attempted infiltration of ~30 organizations with a small number of successful intrusions, including credential harvesting and data extraction, per Anthropic.",
+  "last_updated": "2026-08-12",
+  "lifecycle_phases": [
+    "recon",
+    "resource-dev",
+    "initial-access",
+    "execution",
+    "credential-access",
+    "exfiltration"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [
+      "AML.T0054",
+      "AML.T0102",
+      "AML.T0053"
+    ],
+    "mitre_attack": [],
+    "owasp_asi": []
+  },
+  "mitigations": [],
+  "model_families": [
+    "claude"
+  ],
+  "models": [
+    "Claude Code"
+  ],
+  "name": "GTG-1002 AI-orchestrated cyber-espionage campaign",
+  "related": [],
+  "severity": "high",
+  "sources": [
+    {
+      "date": "2025-11-13",
+      "publisher": "Anthropic",
+      "title": "Disrupting the first reported AI-orchestrated cyber espionage campaign",
+      "type": "first-party-disclosure",
+      "url": "https://www.anthropic.com/news/disrupting-AI-espionage"
+    },
+    {
+      "archive_url": "https://web.archive.org/web/20260505022101/https://www.theregister.com/2025/11/13/chinese_spies_claude_attacks/",
+      "date": "2025-11-13",
+      "publisher": "The Register",
+      "title": "Chinese spies told Claude to break into about 30 critical orgs. Some attacks succeeded",
+      "type": "news",
+      "url": "https://www.theregister.com/2025/11/13/chinese_spies_claude_attacks/"
+    }
+  ],
+  "status": "confirmed",
+  "summary": "Anthropic disclosed on 2025-11-13 that a group it assesses with high confidence to be Chinese state-sponsored (tracked as GTG-1002) manipulated its Claude Code agent into running a cyber-espionage campaign against roughly thirty global organizations. Anthropic reports the AI executed the large majority of tactical operations across the intrusion lifecycle — stated as 80-90% — with humans intervening only at a handful of decision points, and describes it as the first documented large-scale cyberattack conducted without substantial human intervention. A small number of intrusions succeeded.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": 30,
+    "records_exfiltrated": null,
+    "sectors": [
+      "technology",
+      "financial-services",
+      "chemical-manufacturing",
+      "government"
+    ]
+  }
+}

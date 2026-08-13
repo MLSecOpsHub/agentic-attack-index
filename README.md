@@ -25,10 +25,22 @@ Records also carry an analytical layer for defenders: an agentic **`autonomy_lev
 
 ```sh
 npm ci
-npm run build     # writes dist/incidents.json and dist/summary.json
+npm run build     # writes the dist/ artifacts below
 ```
 
-Or consume `dist/incidents.json` directly. Data is licensed [CC BY-SA 4.0](LICENSE-data); tooling is [MIT](LICENSE). Cite via [CITATION.cff](CITATION.cff).
+`npm run build` emits, deterministically:
+
+| Artifact | Format |
+| --- | --- |
+| `dist/incidents.json` | full dataset (array) |
+| `dist/incidents.ndjson` | newline-delimited JSON (streaming) |
+| `dist/incidents.csv` | flattened columns for spreadsheets |
+| `dist/incidents/<id>.json` | one file per incident (stable per-record URL) |
+| `dist/summary.json` | counts + rollups (category, severity, status, actor type, autonomy level, AI role, model family, year) + `archive_coverage` |
+| `dist/stix/bundle.json` | STIX 2.1 bundle (reports + ATLAS/ATT&CK attack-patterns + CVE vulnerabilities) for TIP/MISP ingestion |
+| `dist/index.html` | landing page (served via GitHub Pages) |
+
+Or consume `dist/incidents.json` directly. Data is licensed [CC BY-SA 4.0](LICENSE-data); tooling is [MIT](LICENSE). Cite via [CITATION.cff](CITATION.cff); see [CHANGELOG.md](CHANGELOG.md) for dataset changes.
 
 ## Commands
 

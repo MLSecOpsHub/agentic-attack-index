@@ -1,0 +1,69 @@
+{
+  "actor": "NYU Tandon School of Engineering research team",
+  "actor_type": "researcher",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-08-12"
+  },
+  "ai_role": "load-bearing",
+  "autonomy_level": "fully-autonomous",
+  "autonomy_pct": null,
+  "category": "lab-escape-eval",
+  "confidence": "primary",
+  "date_disclosed": "2025-08-26",
+  "guardrail_bypass": [
+    "open-weight-model"
+  ],
+  "id": "promptlock-ai-ransomware-poc",
+  "impact": "No real-world impact: an academic proof-of-concept demonstrating a closed-loop, LLM-orchestrated ransomware workflow (reconnaissance, exfiltration and encryption). ESET maintains it is the first known case of AI-powered ransomware while agreeing it was a proof-of-concept, not operational malware.",
+  "last_updated": "2026-08-12",
+  "lifecycle_phases": [
+    "recon",
+    "exfiltration",
+    "impact"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [
+      "AML.T0102",
+      "AML.T0016.002"
+    ],
+    "mitre_attack": [],
+    "owasp_asi": []
+  },
+  "mitigations": [],
+  "model_families": [
+    "openai-gpt"
+  ],
+  "models": [
+    "gpt-oss:20b"
+  ],
+  "name": "PromptLock — first known AI-powered ransomware (academic proof-of-concept)",
+  "related": [],
+  "severity": "medium",
+  "sources": [
+    {
+      "date": "2025-08-26",
+      "publisher": "ESET WeLiveSecurity",
+      "title": "First known AI-powered ransomware uncovered by ESET Research",
+      "type": "vendor-report",
+      "url": "https://www.welivesecurity.com/en/ransomware/first-known-ai-powered-ransomware-uncovered-eset-research/"
+    },
+    {
+      "date": "2025-09-05",
+      "publisher": "CyberScoop",
+      "title": "NYU team behind AI-powered malware dubbed 'PromptLock'",
+      "type": "news",
+      "url": "https://cyberscoop.com/ai-ransomware-promptlock-nyu-behind-code-discovered-by-security-researchers/"
+    }
+  ],
+  "status": "test-eval",
+  "summary": "ESET Research disclosed \"PromptLock\" on 2025-08-26 as the first known AI-powered ransomware after discovering samples uploaded to VirusTotal. The Go-based code used a locally hosted large language model (OpenAI's gpt-oss:20b via the Ollama API) to generate malicious Lua scripts at runtime for file enumeration, exfiltration and encryption. ESET assessed it as a proof-of- concept; researchers at NYU Tandon subsequently confirmed it originated from their academic project \"Ransomware 3.0\" and was never deployed in a real attack.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": []
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "actor": "Aim Labs (Aim Security)",
+  "actor_type": "researcher",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-08-12"
+  },
+  "ai_role": "load-bearing",
+  "autonomy_level": "not-applicable",
+  "autonomy_pct": null,
+  "category": "agent-hijack-prompt-injection",
+  "confidence": "primary",
+  "date_disclosed": "2025-06-11",
+  "guardrail_bypass": [
+    "indirect-prompt-injection"
+  ],
+  "id": "echoleak-m365-copilot",
+  "impact": "Demonstrated zero-click exfiltration of data from the Microsoft 365 Copilot context (chat history, Microsoft Graph resources and preloaded context). Mitigated server-side by Microsoft with no reported in-the-wild exploitation.",
+  "last_updated": "2026-08-12",
+  "lifecycle_phases": [
+    "initial-access",
+    "execution",
+    "exfiltration"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [
+      "CVE-2025-32711"
+    ],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0057"
+    ],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": [
+      "LLM01"
+    ]
+  },
+  "mitigations": [
+    "Microsoft mitigated the vulnerability server-side; no customer action was required."
+  ],
+  "model_families": [
+    "openai-gpt"
+  ],
+  "models": [
+    "GPT-4"
+  ],
+  "name": "EchoLeak — zero-click prompt injection in Microsoft 365 Copilot",
+  "related": [
+    "camoleak-github-copilot-chat"
+  ],
+  "severity": "critical",
+  "sources": [
+    {
+      "date": "2025-05-31",
+      "publisher": "Cato Networks (Aim Labs)",
+      "title": "Breaking down 'EchoLeak', the First Zero-Click AI Vulnerability Enabling Data Exfiltration from Microsoft 365 Copilot",
+      "type": "first-party-disclosure",
+      "url": "https://www.catonetworks.com/blog/breaking-down-echoleak/"
+    },
+    {
+      "archive_url": "https://web.archive.org/web/20260813045804/https://nvd.nist.gov/vuln/detail/CVE-2025-32711",
+      "date": "2025-06-11",
+      "publisher": "NVD / NIST",
+      "title": "CVE-2025-32711 Detail",
+      "type": "government-advisory",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-32711"
+    },
+    {
+      "date": "2025-06-12",
+      "publisher": "SecurityWeek",
+      "title": "'EchoLeak' AI Attack Enabled Theft of Sensitive Data via Microsoft 365 Copilot",
+      "type": "news",
+      "url": "https://www.securityweek.com/echoleak-ai-attack-enabled-theft-of-sensitive-data-via-microsoft-365-copilot/"
+    }
+  ],
+  "status": "confirmed",
+  "summary": "Aim Labs (Aim Security) disclosed EchoLeak, assigned CVE-2025-32711, a zero-click indirect prompt-injection vulnerability in Microsoft 365 Copilot. A single crafted email could cause the retrieval-augmented Copilot agent to pull sensitive organisational data from the user's context and exfiltrate it with no user interaction. Aim Labs termed the underlying class \"LLM Scope Violation.\" Microsoft patched it server-side and states no customers were affected.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": 0,
+    "records_exfiltrated": null,
+    "sectors": []
+  }
+}

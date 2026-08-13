@@ -38,8 +38,8 @@ targets:
   records_exfiltrated: null
   sectors:
     - technology
-    - financial services
-    - chemical manufacturing
+    - financial-services
+    - chemical-manufacturing
     - government
   countries: [] # "global targets"; no specific target country named.
 geo:

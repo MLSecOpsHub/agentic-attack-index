@@ -92,7 +92,8 @@ targets:
   # Integers only if a source states them; otherwise null.
   orgs_affected: null
   records_exfiltrated: null
-  # Free-text sector names as sources describe them, e.g. ["finance"].
+  # Target sectors. Free-text, but prefer an id from taxonomy/sector.yml
+  # (validate warns on off-vocabulary values), e.g. ["financial-services"].
   sectors: []
   # ISO 3166-1 alpha-2 codes, e.g. ["US", "JP"].
   countries: []

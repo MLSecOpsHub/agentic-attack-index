@@ -1,0 +1,79 @@
+{
+  "actor": "UK-based threat actor (tracked by Anthropic as GTG-5004)",
+  "actor_type": "single-operator",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-08-12"
+  },
+  "ai_role": "significant",
+  "autonomy_level": "tool-assisted",
+  "autonomy_pct": null,
+  "category": "infrastructure-abuse-supply-chain",
+  "confidence": "primary",
+  "date_disclosed": "2025-08-27",
+  "geo": {
+    "origin": {
+      "illustrative": true,
+      "label": "United Kingdom (actor origin)",
+      "lat": 55.38,
+      "lng": -3.44
+    }
+  },
+  "guardrail_bypass": [
+    "legitimate-tool-abuse"
+  ],
+  "id": "gtg-5004-ai-ransomware-raas",
+  "impact": "AI-assisted development, marketing and sale of ransomware variants with encryption and evasion capabilities on dark-web forums for US$400-1,200; no victim count stated by the source.",
+  "last_updated": "2026-08-12",
+  "lifecycle_phases": [
+    "resource-dev"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [
+      "AML.T0016.002"
+    ],
+    "mitre_attack": [],
+    "owasp_asi": []
+  },
+  "mitigations": [],
+  "model_families": [
+    "claude"
+  ],
+  "models": [
+    "Claude"
+  ],
+  "name": "GTG-5004 AI-assisted ransomware-as-a-service operation",
+  "related": [
+    "gtg-2002-vibe-hacking-extortion",
+    "dprk-it-worker-fraud-claude"
+  ],
+  "severity": "high",
+  "sources": [
+    {
+      "archive_url": "https://web.archive.org/web/20260813045655/https://www.anthropic.com/news/detecting-countering-misuse-aug-2025",
+      "date": "2025-08-27",
+      "publisher": "Anthropic",
+      "title": "Detecting and countering misuse of AI: August 2025",
+      "type": "first-party-disclosure",
+      "url": "https://www.anthropic.com/news/detecting-countering-misuse-aug-2025"
+    },
+    {
+      "archive_url": "https://web.archive.org/web/20260724043514/https://www-cdn.anthropic.com/b2a76c6f6992465c09a6f2fce282f6c0cea8c200.pdf",
+      "date": "2025-08-27",
+      "publisher": "Anthropic",
+      "title": "Threat Intelligence Report: August 2025",
+      "type": "vendor-report",
+      "url": "https://www-cdn.anthropic.com/b2a76c6f6992465c09a6f2fce282f6c0cea8c200.pdf"
+    }
+  ],
+  "status": "confirmed",
+  "summary": "In its August 2025 Threat Intelligence Report, Anthropic disclosed a UK-based threat actor it tracked as GTG-5004 that used Claude to develop, market and sell ransomware with evasion features through a ransomware-as-a-service model. Anthropic reports the actor — active since at least January 2025 on dark-web forums — appears dependent on the AI to produce functional malware, and sold ransomware packages priced from US$400 to US$1,200.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": []
+  }
+}

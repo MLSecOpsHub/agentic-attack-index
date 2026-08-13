@@ -1,0 +1,80 @@
+{
+  "actor": "North Korean operatives (DPRK IT workers)",
+  "actor_type": "nation-state",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-08-12"
+  },
+  "ai_role": "significant",
+  "autonomy_level": "tool-assisted",
+  "autonomy_pct": null,
+  "category": "infrastructure-abuse-supply-chain",
+  "confidence": "primary",
+  "date_disclosed": "2025-08-27",
+  "geo": {
+    "origin": {
+      "illustrative": true,
+      "label": "North Korea (operator origin)",
+      "lat": 40.34,
+      "lng": 127.51
+    }
+  },
+  "guardrail_bypass": [
+    "legitimate-tool-abuse"
+  ],
+  "id": "dprk-it-worker-fraud-claude",
+  "impact": "Fraudulent employment at technology companies to evade sanctions and generate revenue for the DPRK regime; Anthropic notes such IT-worker schemes are reported to generate hundreds of millions of dollars annually for weapons programmes.",
+  "last_updated": "2026-08-12",
+  "lifecycle_phases": [
+    "resource-dev",
+    "deception-social-eng"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [],
+    "mitre_attack": [],
+    "owasp_asi": []
+  },
+  "mitigations": [],
+  "model_families": [
+    "claude"
+  ],
+  "models": [
+    "Claude"
+  ],
+  "name": "North Korean IT-worker remote-employment fraud using Claude",
+  "related": [
+    "gtg-2002-vibe-hacking-extortion",
+    "gtg-5004-ai-ransomware-raas"
+  ],
+  "severity": "high",
+  "sources": [
+    {
+      "archive_url": "https://web.archive.org/web/20260813045655/https://www.anthropic.com/news/detecting-countering-misuse-aug-2025",
+      "date": "2025-08-27",
+      "publisher": "Anthropic",
+      "title": "Detecting and countering misuse of AI: August 2025",
+      "type": "first-party-disclosure",
+      "url": "https://www.anthropic.com/news/detecting-countering-misuse-aug-2025"
+    },
+    {
+      "archive_url": "https://web.archive.org/web/20260724043514/https://www-cdn.anthropic.com/b2a76c6f6992465c09a6f2fce282f6c0cea8c200.pdf",
+      "date": "2025-08-27",
+      "publisher": "Anthropic",
+      "title": "Threat Intelligence Report: August 2025",
+      "type": "vendor-report",
+      "url": "https://www-cdn.anthropic.com/b2a76c6f6992465c09a6f2fce282f6c0cea8c200.pdf"
+    }
+  ],
+  "status": "confirmed",
+  "summary": "In its August 2025 Threat Intelligence Report, Anthropic disclosed that North Korean operatives systematically used Claude to obtain and hold fraudulent remote engineering jobs at technology companies as a means of evading sanctions and funding the regime. Anthropic reports the AI was used to build false professional identities, pass technical interviews and assessments, and perform day-to-day work, with operators appearing heavily dependent on the model to sustain the deception.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": [
+      "technology"
+    ]
+  }
+}
