@@ -90,7 +90,7 @@ function editorialErrors(record, rel) {
 
   // No unfilled template placeholders in real records.
   const scan = [record.name, record.summary, record.actor, record.added?.by]
-    .concat(sources.flatMap((s) => [s?.title, s?.url, s?.publisher]))
+    .concat(sources.flatMap((s) => [s?.title, s?.url, s?.archive_url, s?.publisher]))
     .filter((v) => typeof v === 'string');
   for (const value of scan) {
     const lower = value.toLowerCase();

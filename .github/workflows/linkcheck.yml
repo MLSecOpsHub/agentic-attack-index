@@ -40,14 +40,37 @@ jobs:
             const title = 'linkcheck: broken source URL(s) detected';
             const marker = '<!-- linkcheck-bot -->';
             const body = `${marker}\nThe scheduled linkcheck found unreachable source URLs. ` +
-              `Fix or add an \`archive_url\` for each affected record.\n\n` +
+              `Fix the broken \`sources[].url\` value(s) (and optionally add an \`archive_url\` snapshot for resilience).\n\n` +
               `Run: [${context.runId}](${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId})\n\n` +
               '```\n' + log + '\n```';
+            const label = 'linkcheck';
+
+            // Ensure the label exists (issue creation fails if it doesn't).
+            try {
+              await github.rest.issues.getLabel({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                name: label,
+              });
+            } catch (e) {
+              if (e.status === 404) {
+                await github.rest.issues.createLabel({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  name: label,
+                  color: 'd73a4a',
+                  description: 'Automated linkcheck failures',
+                });
+              } else {
+                throw e;
+              }
+            }
+
             const existing = await github.paginate(github.rest.issues.listForRepo, {
               owner: context.repo.owner,
               repo: context.repo.repo,
               state: 'open',
-              labels: 'linkcheck',
+              labels: label,
               per_page: 100,
             });
             const found = existing.find((i) => i.body && i.body.includes(marker));
@@ -63,7 +86,7 @@ jobs:
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 title,
-                labels: ['linkcheck'],
+                labels: [label],
                 body,
               });
             }

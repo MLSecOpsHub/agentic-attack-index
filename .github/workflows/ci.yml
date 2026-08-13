@@ -23,7 +23,8 @@ jobs:
       # dist/ is generated and committed; fail if it drifted from the data.
       - name: Check dist/ is up to date
         run: |
-          if ! git diff --exit-code -- dist/; then
+          if [ -n "$(git status --porcelain -- dist/)" ]; then
             echo "::error::dist/ is stale. Run 'npm run build' and commit the result."
+            git status --porcelain -- dist/
             exit 1
           fi
