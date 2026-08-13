@@ -200,11 +200,14 @@ for (const file of files) {
     if (Array.isArray(record.related) && record.related.length) {
       relatedRefs.push({ rel, id: record.id, related: record.related });
     }
-    if (record.record_status === 'superseded' && !record.superseded_by) {
-      errors.push(`${rel}: record_status "superseded" requires superseded_by`);
-    }
-    if (record.superseded_by) {
-      supersedeRefs.push({ rel, id: record.id, target: record.superseded_by });
+    if (record.record_status === 'superseded') {
+      if (!record.superseded_by) {
+        errors.push(`${rel}: record_status "superseded" requires superseded_by`);
+      } else {
+        supersedeRefs.push({ rel, id: record.id, target: record.superseded_by });
+      }
+    } else if (record.superseded_by) {
+      errors.push(`${rel}: superseded_by is only valid when record_status is "superseded"`);
     }
     for (const sec of record.targets?.sectors ?? []) {
       if (allowedSectors.size && !allowedSectors.has(sec)) {
