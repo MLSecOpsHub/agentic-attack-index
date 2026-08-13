@@ -1,0 +1,59 @@
+id: camoleak-github-copilot-chat
+name: "CamoLeak — GitHub Copilot Chat prompt-injection data exfiltration"
+summary: >-
+  Legit Security researcher Omer Mayraz disclosed CamoLeak, a critical GitHub
+  Copilot Chat vulnerability (reported CVSS 9.6). It combined remote prompt
+  injection via GitHub's invisible markdown comments with a content-security
+  bypass abusing GitHub's Camo image proxy to silently exfiltrate secrets and
+  source code from private repositories and to steer Copilot's responses. GitHub
+  mitigated it by disabling image rendering in Copilot Chat on 2025-08-14; the
+  research was published in October 2025.
+date_disclosed: 2025-10-08
+status: reported
+confidence: primary
+category: agent-hijack-prompt-injection
+severity: critical # Reported CVSS 9.6.
+models:
+  - GitHub Copilot Chat
+model_families:
+  - other # Underlying model not named by the sources.
+actor: "Omer Mayraz (Legit Security)"
+actor_type: researcher
+autonomy_pct: null
+targets:
+  orgs_affected: null
+  records_exfiltrated: null
+  sectors: []
+  countries: []
+lifecycle_phases:
+  - initial-access
+  - execution
+  - exfiltration
+mappings:
+  mitre_atlas: []
+  mitre_attack: []
+  owasp_asi: []
+  # No CVE stated in the sources fetched; some secondary blogs cite CVE-2025-59145
+  # but it was not present in any verified source, so it is omitted.
+  cve: []
+  aiid: []
+impact: >-
+  Proof-of-concept exfiltration of secrets and source code from private
+  repositories and full control of Copilot's responses. Responsibly disclosed
+  via HackerOne and fixed by GitHub before public disclosure; no in-the-wild
+  exploitation reported.
+sources:
+  - title: "CamoLeak: Critical GitHub Copilot Vulnerability Leaks Private Source Code"
+    url: "https://www.legitsecurity.com/blog/camoleak-critical-github-copilot-vulnerability-leaks-private-source-code"
+    publisher: "Legit Security"
+    type: first-party-disclosure
+    date: 2025-10-08
+  - title: "GitHub patches Copilot Chat flaw that could leak secrets"
+    url: "https://www.theregister.com/2025/10/09/github_copilot_chat_vulnerability/"
+    publisher: "The Register"
+    type: news
+    date: 2025-10-09
+added:
+  date: 2026-08-12
+  by: "MLSecOpsHub"
+last_updated: 2026-08-12

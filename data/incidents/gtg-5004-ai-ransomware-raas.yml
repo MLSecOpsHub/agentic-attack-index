@@ -1,0 +1,59 @@
+id: gtg-5004-ai-ransomware-raas
+name: "GTG-5004 AI-assisted ransomware-as-a-service operation"
+summary: >-
+  In its August 2025 Threat Intelligence Report, Anthropic disclosed a UK-based
+  threat actor it tracked as GTG-5004 that used Claude to develop, market and
+  sell ransomware with evasion features through a ransomware-as-a-service model.
+  Anthropic reports the actor — active since at least January 2025 on dark-web
+  forums — appears dependent on the AI to produce functional malware, and sold
+  ransomware packages priced from US$400 to US$1,200.
+date_disclosed: 2025-08-27
+status: confirmed
+confidence: primary
+category: infrastructure-abuse-supply-chain
+severity: high
+models:
+  - Claude
+model_families:
+  - claude
+actor: "UK-based threat actor (tracked by Anthropic as GTG-5004)"
+actor_type: single-operator
+autonomy_pct: null
+targets:
+  orgs_affected: null
+  records_exfiltrated: null
+  sectors: []
+  countries: []
+geo:
+  origin:
+    lat: 55.38
+    lng: -3.44
+    label: "United Kingdom (actor origin)"
+    illustrative: true # Country centroid; no precise location stated.
+lifecycle_phases:
+  - resource-dev
+mappings:
+  mitre_atlas: []
+  mitre_attack: []
+  owasp_asi: []
+  cve: []
+  aiid: []
+impact: >-
+  AI-assisted development, marketing and sale of ransomware variants with
+  encryption and evasion capabilities on dark-web forums for US$400-1,200; no
+  victim count stated by the source.
+sources:
+  - title: "Detecting and countering misuse of AI: August 2025"
+    url: "https://www.anthropic.com/news/detecting-countering-misuse-aug-2025"
+    publisher: "Anthropic"
+    type: first-party-disclosure
+    date: 2025-08-27
+  - title: "Threat Intelligence Report: August 2025"
+    url: "https://www-cdn.anthropic.com/b2a76c6f6992465c09a6f2fce282f6c0cea8c200.pdf"
+    publisher: "Anthropic"
+    type: vendor-report
+    date: 2025-08-27
+added:
+  date: 2026-08-12
+  by: "MLSecOpsHub"
+last_updated: 2026-08-12

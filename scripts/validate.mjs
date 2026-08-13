@@ -44,6 +44,66 @@ for (const [key, schemaEnum] of Object.entries(enumFromSchema)) {
   if (extra.length) errors.push(`taxonomy ${tax.file}: values not in schema enum: ${extra.join(', ')}`);
 }
 
+// --- editorial invariants ----------------------------------------------------
+// Source types that count as authoritative first-party/primary evidence.
+const PRIMARY_SOURCE_TYPES = new Set([
+  'first-party-disclosure',
+  'vendor-report',
+  'government-advisory',
+  'research-paper',
+]);
+// Substrings that betray an unfilled template field slipping into a real record.
+const PLACEHOLDER_MARKERS = [
+  'example.com',
+  'replace-me',
+  'replace with',
+  'placeholder',
+  'todo:',
+  'template-incident',
+  'your-github-handle',
+];
+
+function editorialErrors(record, rel) {
+  const out = [];
+  const sources = record.sources ?? [];
+  const types = sources.map((s) => s?.type);
+
+  // confirmed must be well-supported: ≥2 sources, or a first-party/government
+  // disclosure. A single secondary report is not "confirmed".
+  if (record.status === 'confirmed') {
+    const hasAuthoritative = types.some(
+      (t) => t === 'first-party-disclosure' || t === 'government-advisory'
+    );
+    if (sources.length < 2 && !hasAuthoritative) {
+      out.push(
+        `${rel}: status "confirmed" needs ≥2 sources or a first-party/government source`
+      );
+    }
+  }
+
+  // primary confidence requires an actual primary-grade source.
+  if (record.confidence === 'primary' && !types.some((t) => PRIMARY_SOURCE_TYPES.has(t))) {
+    out.push(
+      `${rel}: confidence "primary" needs a source of type ${[...PRIMARY_SOURCE_TYPES].join('/')}`
+    );
+  }
+
+  // No unfilled template placeholders in real records.
+  const scan = [record.name, record.summary, record.actor, record.added?.by]
+    .concat(sources.flatMap((s) => [s?.title, s?.url, s?.publisher]))
+    .filter((v) => typeof v === 'string');
+  for (const value of scan) {
+    const lower = value.toLowerCase();
+    const hit = PLACEHOLDER_MARKERS.find((m) => lower.includes(m));
+    if (hit) {
+      out.push(`${rel}: placeholder value "${hit}" left in a real record ("${value.slice(0, 40)}")`);
+      break;
+    }
+  }
+
+  return out;
+}
+
 // --- incident records --------------------------------------------------------
 const files = listIncidentFiles({ includeUnderscore: true });
 const seenIds = new Map();
@@ -77,6 +137,11 @@ for (const file of files) {
   } else {
     seenIds.set(record.id, rel);
   }
+
+  // Editorial invariants (CLAUDE.md non-negotiable #3: grade honesty).
+  // These express rules the JSON Schema cannot, and apply only to real
+  // records — the template legitimately carries placeholder values.
+  if (!isTemplate) errors.push(...editorialErrors(record, rel));
 }
 
 if (files.length === 0) {

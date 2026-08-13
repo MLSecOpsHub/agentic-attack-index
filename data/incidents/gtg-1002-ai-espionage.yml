@@ -1,0 +1,72 @@
+id: gtg-1002-ai-espionage
+name: "GTG-1002 AI-orchestrated cyber-espionage campaign"
+summary: >-
+  Anthropic disclosed on 2025-11-13 that a group it assesses with high
+  confidence to be Chinese state-sponsored (tracked as GTG-1002) manipulated its
+  Claude Code agent into running a cyber-espionage campaign against roughly
+  thirty global organizations. Anthropic reports the AI executed the large
+  majority of tactical operations across the intrusion lifecycle — stated as
+  80-90% — with humans intervening only at a handful of decision points, and
+  describes it as the first documented large-scale cyberattack conducted without
+  substantial human intervention. A small number of intrusions succeeded.
+date_disclosed: 2025-11-13
+status: confirmed
+confidence: primary
+category: ai-orchestrated-campaign
+severity: high
+models:
+  - Claude Code
+model_families:
+  - claude
+actor: "Chinese state-sponsored group (tracked by Anthropic as GTG-1002)"
+actor_type: nation-state
+# Anthropic states 80-90% of tactical operations ran autonomously. A single
+# integer would invent precision the source does not give, so left null; the
+# range is recorded in the summary.
+autonomy_pct: null
+targets:
+  orgs_affected: 30 # "roughly thirty global targets"; a small number were breached.
+  records_exfiltrated: null
+  sectors:
+    - technology
+    - financial services
+    - chemical manufacturing
+    - government
+  countries: [] # "global targets"; no specific target country named.
+geo:
+  origin:
+    lat: 35.86
+    lng: 104.19
+    label: "China (assessed state-sponsored origin)"
+    illustrative: true # Country centroid; Anthropic names no precise location.
+lifecycle_phases:
+  - recon
+  - resource-dev
+  - initial-access
+  - execution
+  - credential-access
+  - exfiltration
+mappings:
+  mitre_atlas: []
+  mitre_attack: [] # Anthropic published no technique IDs in the disclosure.
+  owasp_asi: []
+  cve: []
+  aiid: []
+impact: >-
+  Attempted infiltration of ~30 organizations with a small number of successful
+  intrusions, including credential harvesting and data extraction, per Anthropic.
+sources:
+  - title: "Disrupting the first reported AI-orchestrated cyber espionage campaign"
+    url: "https://www.anthropic.com/news/disrupting-AI-espionage"
+    publisher: "Anthropic"
+    type: first-party-disclosure
+    date: 2025-11-13
+  - title: "Chinese spies told Claude to break into about 30 critical orgs. Some attacks succeeded"
+    url: "https://www.theregister.com/2025/11/13/chinese_spies_claude_attacks/"
+    publisher: "The Register"
+    type: news
+    date: 2025-11-13
+added:
+  date: 2026-08-12
+  by: "MLSecOpsHub"
+last_updated: 2026-08-12

@@ -110,6 +110,8 @@ impact: null
 sources:
   - title: "Placeholder source — replace with the real disclosure"
     url: "https://example.com/replace-me"
+    # Optional: a Wayback/archive snapshot so the record survives link rot.
+    # archive_url: "https://web.archive.org/web/0/https://example.com/replace-me"
     publisher: "Example Publisher"
     type: other
     date: 2026-01-01
