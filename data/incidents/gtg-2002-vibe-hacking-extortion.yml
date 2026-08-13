@@ -21,6 +21,14 @@ model_families:
 actor: "Unknown cybercriminal (tracked by Anthropic as GTG-2002)"
 actor_type: cybercriminal
 autonomy_pct: null
+autonomy_level: supervised-autonomous
+guardrail_bypass:
+  - legitimate-tool-abuse
+ai_role: load-bearing
+related:
+  - gtg-5004-ai-ransomware-raas
+  - dprk-it-worker-fraud-claude
+mitigations: []
 targets:
   orgs_affected: 17 # "at least 17 distinct organizations in just the last month"
   records_exfiltrated: null # Personal/health/financial records; no count stated.
@@ -38,7 +46,10 @@ lifecycle_phases:
   - exfiltration
   - impact
 mappings:
-  mitre_atlas: []
+  mitre_atlas:
+    - AML.T0053 # AI Agent Tool Invocation
+    - AML.T0102 # Generate Malicious Commands
+    - AML.T0016.002 # Generative AI (capability development)
   mitre_attack: []
   owasp_asi: []
   cve: []

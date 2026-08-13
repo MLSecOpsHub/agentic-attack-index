@@ -25,6 +25,13 @@ model_families:
 actor: "Unknown"
 actor_type: unknown
 autonomy_pct: null
+autonomy_level: tool-assisted
+guardrail_bypass:
+  - legitimate-tool-abuse
+ai_role: significant
+related: []
+mitigations:
+  - "Rotate exposed credentials and tokens; remove the malicious package versions."
 targets:
   orgs_affected: 400 # Wiz: "over 400 users/organizations" had private repos made public.
   records_exfiltrated: null # Thousands of secrets/tokens and ~20,000 files per Wiz; not a single record count.
@@ -38,8 +45,10 @@ lifecycle_phases:
   - exfiltration
   - impact
 mappings:
-  mitre_atlas: []
-  mitre_attack: []
+  mitre_atlas:
+    - AML.T0053 # AI Agent Tool Invocation
+  mitre_attack:
+    - T1567.001 # Exfiltration to Code Repository
   owasp_asi: []
   cve: []
   aiid: []

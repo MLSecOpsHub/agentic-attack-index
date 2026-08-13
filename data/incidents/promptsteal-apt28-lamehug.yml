@@ -17,10 +17,16 @@ severity: high
 models:
   - "Qwen2.5-Coder-32B-Instruct"
 model_families:
-  - other # Qwen is not in the schema's model-family enum.
+  - qwen
 actor: "APT28 (FROZENLAKE), Russian government-backed"
 actor_type: nation-state
 autonomy_pct: null
+autonomy_level: supervised-autonomous
+guardrail_bypass:
+  - open-weight-model
+ai_role: load-bearing
+related: []
+mitigations: []
 targets:
   orgs_affected: null
   records_exfiltrated: null
@@ -43,7 +49,9 @@ lifecycle_phases:
   - execution
   - exfiltration
 mappings:
-  mitre_atlas: []
+  mitre_atlas:
+    - AML.T0102 # Generate Malicious Commands
+    - AML.T0016.002 # Generative AI
   mitre_attack: []
   owasp_asi: []
   cve: []

@@ -19,6 +19,14 @@ model_families:
 actor: "UK-based threat actor (tracked by Anthropic as GTG-5004)"
 actor_type: single-operator
 autonomy_pct: null
+autonomy_level: tool-assisted
+guardrail_bypass:
+  - legitimate-tool-abuse
+ai_role: significant
+related:
+  - gtg-2002-vibe-hacking-extortion
+  - dprk-it-worker-fraud-claude
+mitigations: []
 targets:
   orgs_affected: null
   records_exfiltrated: null
@@ -33,7 +41,8 @@ geo:
 lifecycle_phases:
   - resource-dev
 mappings:
-  mitre_atlas: []
+  mitre_atlas:
+    - AML.T0016.002 # Generative AI (malware development)
   mitre_attack: []
   owasp_asi: []
   cve: []

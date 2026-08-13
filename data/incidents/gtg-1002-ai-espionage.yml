@@ -24,6 +24,15 @@ actor_type: nation-state
 # integer would invent precision the source does not give, so left null; the
 # range is recorded in the summary.
 autonomy_pct: null
+autonomy_level: supervised-autonomous
+guardrail_bypass:
+  - jailbreak
+  - legitimate-tool-abuse
+# Central per Anthropic (80-90% of tactical ops); note Anthropic's own caveat that
+# Claude sometimes fabricated/overstated findings during autonomous operation.
+ai_role: load-bearing
+related: []
+mitigations: []
 targets:
   orgs_affected: 30 # "roughly thirty global targets"; a small number were breached.
   records_exfiltrated: null
@@ -47,8 +56,11 @@ lifecycle_phases:
   - credential-access
   - exfiltration
 mappings:
-  mitre_atlas: []
-  mitre_attack: [] # Anthropic published no technique IDs in the disclosure.
+  mitre_atlas:
+    - AML.T0054 # LLM Jailbreak
+    - AML.T0102 # Generate Malicious Commands
+    - AML.T0053 # AI Agent Tool Invocation
+  mitre_attack: [] # Anthropic published no ATT&CK IDs in the disclosure.
   owasp_asi: []
   cve: []
   aiid: []

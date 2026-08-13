@@ -20,6 +20,13 @@ model_families:
 actor: "lkmanka58" # GitHub handle used to submit the malicious change, per reporting.
 actor_type: single-operator
 autonomy_pct: null
+autonomy_level: not-applicable
+guardrail_bypass:
+  - indirect-prompt-injection
+ai_role: significant
+related: []
+mitigations:
+  - "AWS revoked the compromised credentials, removed the code, and released a fixed extension version."
 targets:
   orgs_affected: null
   records_exfiltrated: null
@@ -30,7 +37,9 @@ lifecycle_phases:
   - execution
   - impact
 mappings:
-  mitre_atlas: []
+  mitre_atlas:
+    - AML.T0051 # LLM Prompt Injection
+    - AML.T0081 # Modify AI Agent Configuration
   mitre_attack: []
   owasp_asi: []
   cve:
