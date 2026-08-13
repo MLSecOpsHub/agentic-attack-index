@@ -61,6 +61,7 @@ impact: >-
 sources:
   - title: "S1ngularity - What Happened, How We Responded, What We Learned"
     url: "https://nx.dev/blog/s1ngularity-postmortem"
+    archive_url: "https://web.archive.org/web/20260813050126/https://nx.dev/blog/s1ngularity-postmortem"
     publisher: "Nx"
     type: first-party-disclosure
     date: 2025-09-05
@@ -71,6 +72,7 @@ sources:
     date: 2025-08-27
   - title: "s1ngularity: supply chain attack leaks secrets on GitHub"
     url: "https://www.wiz.io/blog/s1ngularity-supply-chain-attack"
+    archive_url: "https://web.archive.org/web/20260813050206/https://www.wiz.io/blog/s1ngularity-supply-chain-attack"
     publisher: "Wiz"
     type: vendor-report
     date: 2025-08-27

@@ -57,6 +57,7 @@ sources:
     date: 2025-07-23
   - title: "Amazon AI coding agent hacked to inject data wiping commands"
     url: "https://www.bleepingcomputer.com/news/security/amazon-ai-coding-agent-hacked-to-inject-data-wiping-commands/"
+    archive_url: "https://web.archive.org/web/20260813045537/https://www.bleepingcomputer.com/news/security/amazon-ai-coding-agent-hacked-to-inject-data-wiping-commands/"
     publisher: "BleepingComputer"
     type: news
     date: 2025-07-25

@@ -7,7 +7,12 @@ dataset version tracks `package.json` and `CITATION.cff` (kept in sync by
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-08-13
+
 ### Added
+- **Record lifecycle & provenance governance:** `record_status`
+  (active / disputed / retracted / superseded), `superseded_by` (validated to
+  resolve), and an append-only `revisions[]` correction trail.
 - **Provenance durability:** optional `sources[].archive_url`, a Wayback archiver
   (`npm run archive`, with availability/CDX/Save-Page-Now resolution), and a
   three-state `linkcheck` (OK / ARCHIVED / DEAD) that falls back to the snapshot

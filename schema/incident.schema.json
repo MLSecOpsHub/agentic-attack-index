@@ -161,6 +161,29 @@
       "items": { "type": "string", "minLength": 1 },
       "uniqueItems": true
     },
+    "record_status": {
+      "type": "string",
+      "description": "Lifecycle of this dataset record itself (not the incident). Omitted means 'active'. 'disputed' = sources conflict or the framing is contested; 'retracted' = withdrawn but kept for citation stability; 'superseded' = replaced by another record (set superseded_by).",
+      "enum": ["active", "disputed", "retracted", "superseded"]
+    },
+    "superseded_by": {
+      "type": "string",
+      "description": "Id of the record that supersedes this one. Required when record_status is 'superseded'; must resolve to an existing record (enforced by validate).",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "revisions": {
+      "type": "array",
+      "description": "Append-only audit trail of material corrections or retractions. Routine edits just bump last_updated; use this for substantive changes reviewers should see.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["date", "note"],
+        "properties": {
+          "date": { "type": "string", "format": "date" },
+          "note": { "type": "string", "minLength": 3 }
+        }
+      }
+    },
     "targets": {
       "type": "object",
       "additionalProperties": false,

@@ -62,11 +62,13 @@ sources:
     date: 2024-02-14
   - title: "OpenAI, Microsoft warn of state-linked actors' AI use"
     url: "https://www.cybersecuritydive.com/news/openai-microsoft-state-actors-ai/707661/"
+    archive_url: "https://web.archive.org/web/20260813050018/https://www.cybersecuritydive.com/news/openai-microsoft-state-actors-ai/707661/"
     publisher: "Cybersecurity Dive"
     type: news
     date: 2024-02-15
   - title: "Microsoft, OpenAI reveal ChatGPT use by state-sponsored hackers"
     url: "https://www.scworld.com/news/microsoft-openai-reveal-chatgpt-use-by-state-sponsored-hackers"
+    archive_url: "https://web.archive.org/web/20260813084511/https://www.scworld.com/news/microsoft-openai-reveal-chatgpt-use-by-state-sponsored-hackers"
     publisher: "SC Media"
     type: news
     date: 2024-02-14

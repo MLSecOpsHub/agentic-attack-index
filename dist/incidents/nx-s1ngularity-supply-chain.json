@@ -54,6 +54,7 @@
   "severity": "critical",
   "sources": [
     {
+      "archive_url": "https://web.archive.org/web/20260813050126/https://nx.dev/blog/s1ngularity-postmortem",
       "date": "2025-09-05",
       "publisher": "Nx",
       "title": "S1ngularity - What Happened, How We Responded, What We Learned",
@@ -68,6 +69,7 @@
       "url": "https://github.com/nrwl/nx/security/advisories/GHSA-cxm3-wv7p-598c"
     },
     {
+      "archive_url": "https://web.archive.org/web/20260813050206/https://www.wiz.io/blog/s1ngularity-supply-chain-attack",
       "date": "2025-08-27",
       "publisher": "Wiz",
       "title": "s1ngularity: supply chain attack leaks secrets on GitHub",

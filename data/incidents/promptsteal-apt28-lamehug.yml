@@ -68,6 +68,7 @@ sources:
     date: 2025-11-05
   - title: "Google Uncovers PROMPTFLUX Malware That Uses Gemini AI to Rewrite Its Code Hourly"
     url: "https://thehackernews.com/2025/11/google-uncovers-promptflux-malware-that.html"
+    archive_url: "https://web.archive.org/web/20260813050312/https://thehackernews.com/2025/11/google-uncovers-promptflux-malware-that.html"
     publisher: "The Hacker News"
     type: news
     date: 2025-11-05

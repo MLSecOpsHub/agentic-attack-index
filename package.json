@@ -1,6 +1,6 @@
 {
   "name": "agentic-attack-index",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Open, source-linked dataset of real-world cyberattacks executed or orchestrated by AI agents. Data layer for the Rogue Agent Watch tracker.",
   "type": "module",
   "private": true,

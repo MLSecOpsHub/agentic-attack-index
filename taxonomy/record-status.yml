@@ -1,0 +1,26 @@
+# Controlled vocabulary: record status.
+# The lifecycle of the dataset RECORD (not the incident it describes). Omitting
+# record_status means 'active'. Ids are permanent citation keys, so records are
+# never deleted — they are retracted or superseded instead.
+# Must stay in sync with schema/incident.schema.json (enforced by `npm run validate`).
+key: record_status
+title: Record status
+values:
+  - id: active
+    label: Active
+    description: The current, maintained record. The default when record_status is omitted.
+  - id: disputed
+    label: Disputed
+    description: >-
+      The record's facts or framing are contested by credible sources. Kept
+      visible with the dispute noted; grade cautiously.
+  - id: retracted
+    label: Retracted
+    description: >-
+      Withdrawn after the underlying claim did not hold up. Retained (not deleted)
+      for citation stability; explain in revisions[].
+  - id: superseded
+    label: Superseded
+    description: >-
+      Replaced by another record (set superseded_by). Kept so existing citations
+      still resolve.
