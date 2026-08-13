@@ -50,11 +50,13 @@ impact: >-
 sources:
   - title: "Detecting and countering misuse of AI: August 2025"
     url: "https://www.anthropic.com/news/detecting-countering-misuse-aug-2025"
+    archive_url: "https://web.archive.org/web/20260813045655/https://www.anthropic.com/news/detecting-countering-misuse-aug-2025"
     publisher: "Anthropic"
     type: first-party-disclosure
     date: 2025-08-27
   - title: "Threat Intelligence Report: August 2025"
     url: "https://www-cdn.anthropic.com/b2a76c6f6992465c09a6f2fce282f6c0cea8c200.pdf"
+    archive_url: "https://web.archive.org/web/20260724043514/https://www-cdn.anthropic.com/b2a76c6f6992465c09a6f2fce282f6c0cea8c200.pdf"
     publisher: "Anthropic"
     type: vendor-report
     date: 2025-08-27

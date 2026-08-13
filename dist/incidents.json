@@ -160,6 +160,7 @@
     "severity": "high",
     "sources": [
       {
+        "archive_url": "https://web.archive.org/web/20260813045655/https://www.anthropic.com/news/detecting-countering-misuse-aug-2025",
         "date": "2025-08-27",
         "publisher": "Anthropic",
         "title": "Detecting and countering misuse of AI: August 2025",
@@ -167,6 +168,7 @@
         "url": "https://www.anthropic.com/news/detecting-countering-misuse-aug-2025"
       },
       {
+        "archive_url": "https://web.archive.org/web/20260724043514/https://www-cdn.anthropic.com/b2a76c6f6992465c09a6f2fce282f6c0cea8c200.pdf",
         "date": "2025-08-27",
         "publisher": "Anthropic",
         "title": "Threat Intelligence Report: August 2025",
@@ -232,6 +234,7 @@
         "url": "https://www.catonetworks.com/blog/breaking-down-echoleak/"
       },
       {
+        "archive_url": "https://web.archive.org/web/20260813045804/https://nvd.nist.gov/vuln/detail/CVE-2025-32711",
         "date": "2025-06-11",
         "publisher": "NVD / NIST",
         "title": "CVE-2025-32711 Detail",
@@ -309,6 +312,7 @@
         "url": "https://www.anthropic.com/news/disrupting-AI-espionage"
       },
       {
+        "archive_url": "https://web.archive.org/web/20260505022101/https://www.theregister.com/2025/11/13/chinese_spies_claude_attacks/",
         "date": "2025-11-13",
         "publisher": "The Register",
         "title": "Chinese spies told Claude to break into about 30 critical orgs. Some attacks succeeded",
@@ -369,6 +373,7 @@
     "severity": "high",
     "sources": [
       {
+        "archive_url": "https://web.archive.org/web/20260813045655/https://www.anthropic.com/news/detecting-countering-misuse-aug-2025",
         "date": "2025-08-27",
         "publisher": "Anthropic",
         "title": "Detecting and countering misuse of AI: August 2025",
@@ -376,6 +381,7 @@
         "url": "https://www.anthropic.com/news/detecting-countering-misuse-aug-2025"
       },
       {
+        "archive_url": "https://web.archive.org/web/20260724043514/https://www-cdn.anthropic.com/b2a76c6f6992465c09a6f2fce282f6c0cea8c200.pdf",
         "date": "2025-08-27",
         "publisher": "Anthropic",
         "title": "Threat Intelligence Report: August 2025",
@@ -439,6 +445,7 @@
     "severity": "high",
     "sources": [
       {
+        "archive_url": "https://web.archive.org/web/20260813045655/https://www.anthropic.com/news/detecting-countering-misuse-aug-2025",
         "date": "2025-08-27",
         "publisher": "Anthropic",
         "title": "Detecting and countering misuse of AI: August 2025",
@@ -446,6 +453,7 @@
         "url": "https://www.anthropic.com/news/detecting-countering-misuse-aug-2025"
       },
       {
+        "archive_url": "https://web.archive.org/web/20260724043514/https://www-cdn.anthropic.com/b2a76c6f6992465c09a6f2fce282f6c0cea8c200.pdf",
         "date": "2025-08-27",
         "publisher": "Anthropic",
         "title": "Threat Intelligence Report: August 2025",
@@ -498,6 +506,7 @@
     "severity": "medium",
     "sources": [
       {
+        "archive_url": "https://web.archive.org/web/20260714223950/https://www.microsoft.com/en-us/security/blog/2024/02/14/staying-ahead-of-threat-actors-in-the-age-of-ai/",
         "date": "2024-02-14",
         "publisher": "Microsoft Threat Intelligence",
         "title": "Staying ahead of threat actors in the age of AI",

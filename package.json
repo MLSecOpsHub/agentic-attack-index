@@ -17,6 +17,7 @@
     "validate": "node scripts/validate.mjs",
     "build": "node scripts/build.mjs",
     "linkcheck": "node scripts/linkcheck.mjs",
+    "archive": "node scripts/archive.mjs",
     "new:incident": "node scripts/new-incident.mjs",
     "test": "npm run validate && npm run build"
   },

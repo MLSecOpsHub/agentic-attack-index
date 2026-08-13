@@ -31,12 +31,18 @@ Or consume `dist/incidents.json` directly. Data is licensed [CC BY-SA 4.0](LICEN
 ## Commands
 
 ```sh
-npm run validate       # schema + taxonomy + id checks (no network)
+npm run validate       # schema + taxonomy + id + editorial checks (no network)
 npm run build          # deterministic dist/ build
-npm run linkcheck      # verify every source URL resolves (network)
+npm run linkcheck      # verify every source URL resolves, falling back to archive_url (network)
+npm run archive        # propose Wayback snapshots for sources (add --write to save them)
 npm test               # validate + build — CI gate
 npm run new:incident -- <id> "Name"   # scaffold a record from the template
 ```
+
+Source citations are protected against link rot: each source can carry an `archive_url`
+(a Wayback snapshot, populated by `npm run archive`). `linkcheck` treats a source as
+healthy when either its live URL or its archive snapshot resolves, and only fails when
+both are unreachable.
 
 ## Contributing
 

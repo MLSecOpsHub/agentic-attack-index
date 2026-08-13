@@ -1,0 +1,20 @@
+# Code owners for the Agentic Attack Index.
+#
+# This dataset's product is trust, so every change to the data, its contract,
+# the controlled vocabularies, the tooling that enforces them, or CI must be
+# reviewed by a maintainer. CODEOWNERS only *enforces* review once the repo's
+# branch protection enables "Require review from Code Owners" (and "Require
+# status checks to pass" for CI) — see CONTRIBUTING.md.
+#
+# NOTE: replace @MLSecOpsHub/maintainers with your real team or owner handle
+# (e.g. @RiccardoBiosas) — an unresolvable owner silently enforces nothing.
+
+# Everything, by default.
+*                       @MLSecOpsHub/maintainers
+
+# Trust-critical paths (explicit for clarity; already covered by * above).
+/data/                  @MLSecOpsHub/maintainers
+/schema/                @MLSecOpsHub/maintainers
+/taxonomy/              @MLSecOpsHub/maintainers
+/scripts/               @MLSecOpsHub/maintainers
+/.github/               @MLSecOpsHub/maintainers

@@ -46,6 +46,7 @@ impact: >-
 sources:
   - title: "Staying ahead of threat actors in the age of AI"
     url: "https://www.microsoft.com/en-us/security/blog/2024/02/14/staying-ahead-of-threat-actors-in-the-age-of-ai/"
+    archive_url: "https://web.archive.org/web/20260714223950/https://www.microsoft.com/en-us/security/blog/2024/02/14/staying-ahead-of-threat-actors-in-the-age-of-ai/"
     publisher: "Microsoft Threat Intelligence"
     type: first-party-disclosure
     date: 2024-02-14

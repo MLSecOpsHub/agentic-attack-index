@@ -13,6 +13,7 @@ import {
 } from './lib.mjs';
 
 const errors = [];
+const warnings = [];
 const schema = loadSchema();
 const ajv = new Ajv2020({ allErrors: true, strict: true });
 addFormats(ajv);
@@ -65,26 +66,42 @@ const PLACEHOLDER_MARKERS = [
 
 function editorialErrors(record, rel) {
   const out = [];
+  const warn = [];
   const sources = record.sources ?? [];
   const types = sources.map((s) => s?.type);
+  const publishers = new Set(sources.map((s) => s?.publisher).filter(Boolean));
+  const hasAuthoritative = types.some(
+    (t) => t === 'first-party-disclosure' || t === 'government-advisory'
+  );
 
-  // confirmed must be well-supported: ≥2 sources, or a first-party/government
-  // disclosure. A single secondary report is not "confirmed".
-  if (record.status === 'confirmed') {
-    const hasAuthoritative = types.some(
-      (t) => t === 'first-party-disclosure' || t === 'government-advisory'
+  // confirmed must be independently supported: ≥2 sources from DISTINCT
+  // publishers, or a first-party/government disclosure. Two sources from the
+  // same publisher (or a single secondary report) is not "confirmed" — this is
+  // the anti-poisoning bar against a lone outlet laundering a claim.
+  if (record.status === 'confirmed' && publishers.size < 2 && !hasAuthoritative) {
+    out.push(
+      `${rel}: status "confirmed" needs ≥2 sources from distinct publishers or a first-party/government source`
     );
-    if (sources.length < 2 && !hasAuthoritative) {
-      out.push(
-        `${rel}: status "confirmed" needs ≥2 sources or a first-party/government source`
-      );
-    }
   }
 
   // primary confidence requires an actual primary-grade source.
   if (record.confidence === 'primary' && !types.some((t) => PRIMARY_SOURCE_TYPES.has(t))) {
     out.push(
       `${rel}: confidence "primary" needs a source of type ${[...PRIMARY_SOURCE_TYPES].join('/')}`
+    );
+  }
+
+  // No duplicate source URLs within one record — a padded source list can fake
+  // independence.
+  const urls = sources.map((s) => s?.url).filter(Boolean);
+  const dupUrl = urls.find((u, i) => urls.indexOf(u) !== i);
+  if (dupUrl) out.push(`${rel}: duplicate source url "${dupUrl}"`);
+
+  // Dates must be internally consistent (compared as ISO strings — hermetic,
+  // no wall clock).
+  if (record.added?.date && record.last_updated && record.last_updated < record.added.date) {
+    out.push(
+      `${rel}: last_updated (${record.last_updated}) is before added.date (${record.added.date})`
     );
   }
 
@@ -101,7 +118,15 @@ function editorialErrors(record, rel) {
     }
   }
 
-  return out;
+  // Soft signal (non-failing): a record leaning on a single non-authoritative
+  // publisher is the shape most vulnerable to a planted claim.
+  if (publishers.size === 1 && !hasAuthoritative) {
+    warn.push(
+      `${rel}: all sources are from one publisher (${[...publishers][0]}) and none is first-party/government — add an independent corroborating source`
+    );
+  }
+
+  return { errors: out, warnings: warn };
 }
 
 // --- incident records --------------------------------------------------------
@@ -141,7 +166,11 @@ for (const file of files) {
   // Editorial invariants (CLAUDE.md non-negotiable #3: grade honesty).
   // These express rules the JSON Schema cannot, and apply only to real
   // records — the template legitimately carries placeholder values.
-  if (!isTemplate) errors.push(...editorialErrors(record, rel));
+  if (!isTemplate) {
+    const editorial = editorialErrors(record, rel);
+    errors.push(...editorial.errors);
+    warnings.push(...editorial.warnings);
+  }
 }
 
 if (files.length === 0) {
@@ -149,6 +178,13 @@ if (files.length === 0) {
 }
 
 // --- report ------------------------------------------------------------------
+// Warnings are soft signals — they print but never change the exit code.
+if (warnings.length) {
+  console.warn(`validate: ${warnings.length} warning(s):`);
+  for (const w of warnings) console.warn(`  ⚠ ${w}`);
+  console.warn('');
+}
+
 if (errors.length) {
   console.error(`validate: FAIL — ${errors.length} error(s):\n`);
   for (const e of errors) console.error(`  ✗ ${e}`);
