@@ -35,6 +35,7 @@ const enumFromSchema = {
   autonomy_level: schema.properties.autonomy_level.enum,
   guardrail_bypass: schema.properties.guardrail_bypass.items.enum,
   ai_role: schema.properties.ai_role.enum,
+  record_status: schema.properties.record_status.enum,
 };
 
 const taxonomies = loadTaxonomies();
@@ -157,6 +158,7 @@ function editorialErrors(record, rel) {
 const files = listIncidentFiles({ includeUnderscore: true });
 const seenIds = new Map();
 const relatedRefs = []; // { rel, id, related: string[] } — checked after all ids are known.
+const supersedeRefs = []; // { rel, id, target } — checked after all ids are known.
 let checked = 0;
 
 for (const file of files) {
@@ -198,6 +200,12 @@ for (const file of files) {
     if (Array.isArray(record.related) && record.related.length) {
       relatedRefs.push({ rel, id: record.id, related: record.related });
     }
+    if (record.record_status === 'superseded' && !record.superseded_by) {
+      errors.push(`${rel}: record_status "superseded" requires superseded_by`);
+    }
+    if (record.superseded_by) {
+      supersedeRefs.push({ rel, id: record.id, target: record.superseded_by });
+    }
     for (const sec of record.targets?.sectors ?? []) {
       if (allowedSectors.size && !allowedSectors.has(sec)) {
         warnings.push(
@@ -215,6 +223,10 @@ for (const { rel, id, related } of relatedRefs) {
     if (ref === id) errors.push(`${rel}: related[] references itself ("${ref}")`);
     else if (!seenIds.has(ref)) errors.push(`${rel}: related[] id "${ref}" has no matching record`);
   }
+}
+for (const { rel, id, target } of supersedeRefs) {
+  if (target === id) errors.push(`${rel}: superseded_by points at itself ("${target}")`);
+  else if (!seenIds.has(target)) errors.push(`${rel}: superseded_by "${target}" has no matching record`);
 }
 
 if (files.length === 0) {

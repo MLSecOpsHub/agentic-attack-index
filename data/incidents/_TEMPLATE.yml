@@ -88,6 +88,17 @@ related: []
 # Defensive measures or detections as stated by sources. Defensive framing only.
 mitigations: []
 
+# Record lifecycle (this record, not the incident). Omit for the default 'active'.
+# active | disputed | retracted | superseded  (see taxonomy/record-status.yml)
+# record_status: active
+# When record_status is 'superseded', the id of the replacement (must exist):
+# superseded_by: replacement-record-id
+# Append-only audit trail of MATERIAL corrections/retractions (routine edits just
+# bump last_updated):
+# revisions:
+#   - date: 2026-01-01
+#     note: "What changed and why."
+
 targets:
   # Integers only if a source states them; otherwise null.
   orgs_affected: null
