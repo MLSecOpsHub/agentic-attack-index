@@ -220,6 +220,12 @@
         "properties": {
           "title": { "type": "string", "minLength": 3 },
           "url": { "type": "string", "format": "uri", "pattern": "^https?://" },
+          "archive_url": {
+            "type": "string",
+            "format": "uri",
+            "pattern": "^https?://",
+            "description": "Optional archival snapshot (e.g. Wayback Machine) so the record survives link rot. Must resolve independently of url."
+          },
           "publisher": { "type": "string", "minLength": 1 },
           "type": {
             "type": "string",

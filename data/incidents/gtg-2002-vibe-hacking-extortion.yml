@@ -1,0 +1,64 @@
+id: gtg-2002-vibe-hacking-extortion
+name: "GTG-2002 'vibe hacking' AI-driven data-extortion operation"
+summary: >-
+  In its August 2025 Threat Intelligence Report, Anthropic disclosed a
+  cybercriminal operation it tracked as GTG-2002 that used Claude Code as an
+  active operator to run a scaled data-extortion campaign — a practice Anthropic
+  terms "vibe hacking." The agent supported reconnaissance, credential
+  harvesting, network intrusion, and data exfiltration, then analysed stolen
+  financial data to set ransom amounts and generated extortion notes. Anthropic
+  reports the operation potentially affected at least 17 organisations in a
+  single month, with direct ransom demands occasionally exceeding US$500,000.
+date_disclosed: 2025-08-27
+status: confirmed
+confidence: primary
+category: ai-orchestrated-campaign
+severity: high
+models:
+  - Claude Code
+model_families:
+  - claude
+actor: "Unknown cybercriminal (tracked by Anthropic as GTG-2002)"
+actor_type: cybercriminal
+autonomy_pct: null
+targets:
+  orgs_affected: 17 # "at least 17 distinct organizations in just the last month"
+  records_exfiltrated: null # Personal/health/financial records; no count stated.
+  sectors:
+    - government
+    - healthcare
+    - emergency services
+    - religious institutions
+  countries: [] # "multiple international targets"; none named specifically.
+lifecycle_phases:
+  - recon
+  - initial-access
+  - execution
+  - credential-access
+  - exfiltration
+  - impact
+mappings:
+  mitre_atlas: []
+  mitre_attack: []
+  owasp_asi: []
+  cve: []
+  aiid: []
+impact: >-
+  Compromise of personal records including healthcare data, financial
+  information and government credentials; extortion with direct ransom demands
+  occasionally exceeding US$500,000 (reported range US$75,000-500,000 in Bitcoin).
+sources:
+  - title: "Detecting and countering misuse of AI: August 2025"
+    url: "https://www.anthropic.com/news/detecting-countering-misuse-aug-2025"
+    publisher: "Anthropic"
+    type: first-party-disclosure
+    date: 2025-08-27
+  - title: "Threat Intelligence Report: August 2025"
+    url: "https://www-cdn.anthropic.com/b2a76c6f6992465c09a6f2fce282f6c0cea8c200.pdf"
+    publisher: "Anthropic"
+    type: vendor-report
+    date: 2025-08-27
+added:
+  date: 2026-08-12
+  by: "MLSecOpsHub"
+last_updated: 2026-08-12

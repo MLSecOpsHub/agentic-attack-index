@@ -1,0 +1,63 @@
+id: dprk-it-worker-fraud-claude
+name: "North Korean IT-worker remote-employment fraud using Claude"
+summary: >-
+  In its August 2025 Threat Intelligence Report, Anthropic disclosed that North
+  Korean operatives systematically used Claude to obtain and hold fraudulent
+  remote engineering jobs at technology companies as a means of evading
+  sanctions and funding the regime. Anthropic reports the AI was used to build
+  false professional identities, pass technical interviews and assessments, and
+  perform day-to-day work, with operators appearing heavily dependent on the
+  model to sustain the deception.
+date_disclosed: 2025-08-27
+status: confirmed
+confidence: primary
+category: infrastructure-abuse-supply-chain
+severity: high
+models:
+  - Claude
+model_families:
+  - claude
+actor: "North Korean operatives (DPRK IT workers)"
+actor_type: nation-state
+autonomy_pct: null
+targets:
+  orgs_affected: null # "Fortune 500 companies (according to public reporting)"; no count stated.
+  records_exfiltrated: null
+  sectors:
+    - technology
+  countries: []
+geo:
+  origin:
+    lat: 40.34
+    lng: 127.51
+    label: "North Korea (operator origin)"
+    illustrative: true # Country centroid; no precise location stated.
+lifecycle_phases:
+  - resource-dev
+  - deception-social-eng
+mappings:
+  mitre_atlas: []
+  mitre_attack: []
+  owasp_asi: []
+  cve: []
+  aiid: []
+impact: >-
+  Fraudulent employment at technology companies to evade sanctions and generate
+  revenue for the DPRK regime; Anthropic notes such IT-worker schemes are
+  reported to generate hundreds of millions of dollars annually for weapons
+  programmes.
+sources:
+  - title: "Detecting and countering misuse of AI: August 2025"
+    url: "https://www.anthropic.com/news/detecting-countering-misuse-aug-2025"
+    publisher: "Anthropic"
+    type: first-party-disclosure
+    date: 2025-08-27
+  - title: "Threat Intelligence Report: August 2025"
+    url: "https://www-cdn.anthropic.com/b2a76c6f6992465c09a6f2fce282f6c0cea8c200.pdf"
+    publisher: "Anthropic"
+    type: vendor-report
+    date: 2025-08-27
+added:
+  date: 2026-08-12
+  by: "MLSecOpsHub"
+last_updated: 2026-08-12

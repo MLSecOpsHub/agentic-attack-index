@@ -1,0 +1,71 @@
+id: nx-s1ngularity-supply-chain
+name: "Nx 's1ngularity' npm supply-chain attack weaponising AI CLI tools"
+summary: >-
+  On 2025-08-26 attackers exploited a flawed GitHub Actions workflow in the Nx
+  build tool to publish malicious versions of nx and related npm packages. A
+  postinstall script scanned victim machines for secrets and, notably,
+  weaponised locally installed AI CLI tools (Claude, Gemini, Amazon Q) as
+  file-search agents to locate sensitive files, then exfiltrated stolen data to
+  attacker-created public GitHub repositories and appended a shutdown command to
+  shell configuration files. Disclosed via Nx's GitHub security advisory and
+  postmortem and analysed by Wiz Research.
+date_disclosed: 2025-08-27
+status: confirmed
+confidence: primary
+category: infrastructure-abuse-supply-chain
+severity: critical
+models:
+  - Claude
+  - Gemini
+  - Amazon Q
+model_families:
+  - claude
+  - gemini
+  - other
+actor: "Unknown"
+actor_type: unknown
+autonomy_pct: null
+targets:
+  orgs_affected: 400 # Wiz: "over 400 users/organizations" had private repos made public.
+  records_exfiltrated: null # Thousands of secrets/tokens and ~20,000 files per Wiz; not a single record count.
+  sectors: []
+  countries: []
+lifecycle_phases:
+  - resource-dev
+  - initial-access
+  - execution
+  - credential-access
+  - exfiltration
+  - impact
+mappings:
+  mitre_atlas: []
+  mitre_attack: []
+  owasp_asi: []
+  cve: []
+  aiid: []
+impact: >-
+  Per Wiz: over a thousand valid GitHub tokens, dozens of valid cloud
+  credentials and NPM tokens, and roughly twenty thousand additional files
+  leaked; a subsequent wave made over 5,500 private repositories public across
+  400+ users and organisations. Malware also attempted host lockout via a
+  shutdown command appended to shell startup files.
+sources:
+  - title: "S1ngularity - What Happened, How We Responded, What We Learned"
+    url: "https://nx.dev/blog/s1ngularity-postmortem"
+    publisher: "Nx"
+    type: first-party-disclosure
+    date: 2025-09-05
+  - title: "Nx security advisory (GHSA-cxm3-wv7p-598c)"
+    url: "https://github.com/nrwl/nx/security/advisories/GHSA-cxm3-wv7p-598c"
+    publisher: "Nx / GitHub"
+    type: first-party-disclosure
+    date: 2025-08-27
+  - title: "s1ngularity: supply chain attack leaks secrets on GitHub"
+    url: "https://www.wiz.io/blog/s1ngularity-supply-chain-attack"
+    publisher: "Wiz"
+    type: vendor-report
+    date: 2025-08-27
+added:
+  date: 2026-08-12
+  by: "MLSecOpsHub"
+last_updated: 2026-08-12
