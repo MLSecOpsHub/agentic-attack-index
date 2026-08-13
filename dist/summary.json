@@ -4,8 +4,8 @@
   "total": 11,
   "archive_coverage": {
     "sources": 25,
-    "archived": 9,
-    "pct": 36
+    "archived": 18,
+    "pct": 72
   },
   "by_category": {
     "agent-hijack-prompt-injection": 2,

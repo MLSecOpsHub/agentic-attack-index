@@ -54,6 +54,7 @@
         "url": "https://aws.amazon.com/security/security-bulletins/AWS-2025-015/"
       },
       {
+        "archive_url": "https://web.archive.org/web/20260813045537/https://www.bleepingcomputer.com/news/security/amazon-ai-coding-agent-hacked-to-inject-data-wiping-commands/",
         "date": "2025-07-25",
         "publisher": "BleepingComputer",
         "title": "Amazon AI coding agent hacked to inject data wiping commands",
@@ -278,6 +279,7 @@
     "severity": "critical",
     "sources": [
       {
+        "archive_url": "https://web.archive.org/web/20260813045737/https://www.catonetworks.com/blog/breaking-down-echoleak/",
         "date": "2025-05-31",
         "publisher": "Cato Networks (Aim Labs)",
         "title": "Breaking down 'EchoLeak', the First Zero-Click AI Vulnerability Enabling Data Exfiltration from Microsoft 365 Copilot",
@@ -293,6 +295,7 @@
         "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-32711"
       },
       {
+        "archive_url": "https://web.archive.org/web/20260813045842/https://www.securityweek.com/echoleak-ai-attack-enabled-theft-of-sensitive-data-via-microsoft-365-copilot/",
         "date": "2025-06-12",
         "publisher": "SecurityWeek",
         "title": "'EchoLeak' AI Attack Enabled Theft of Sensitive Data via Microsoft 365 Copilot",
@@ -614,6 +617,7 @@
         "url": "https://www.microsoft.com/en-us/security/blog/2024/02/14/staying-ahead-of-threat-actors-in-the-age-of-ai/"
       },
       {
+        "archive_url": "https://web.archive.org/web/20260813050018/https://www.cybersecuritydive.com/news/openai-microsoft-state-actors-ai/707661/",
         "date": "2024-02-15",
         "publisher": "Cybersecurity Dive",
         "title": "OpenAI, Microsoft warn of state-linked actors' AI use",
@@ -621,6 +625,7 @@
         "url": "https://www.cybersecuritydive.com/news/openai-microsoft-state-actors-ai/707661/"
       },
       {
+        "archive_url": "https://web.archive.org/web/20260813084511/https://www.scworld.com/news/microsoft-openai-reveal-chatgpt-use-by-state-sponsored-hackers",
         "date": "2024-02-14",
         "publisher": "SC Media",
         "title": "Microsoft, OpenAI reveal ChatGPT use by state-sponsored hackers",
@@ -693,6 +698,7 @@
     "severity": "critical",
     "sources": [
       {
+        "archive_url": "https://web.archive.org/web/20260813050126/https://nx.dev/blog/s1ngularity-postmortem",
         "date": "2025-09-05",
         "publisher": "Nx",
         "title": "S1ngularity - What Happened, How We Responded, What We Learned",
@@ -707,6 +713,7 @@
         "url": "https://github.com/nrwl/nx/security/advisories/GHSA-cxm3-wv7p-598c"
       },
       {
+        "archive_url": "https://web.archive.org/web/20260813050206/https://www.wiz.io/blog/s1ngularity-supply-chain-attack",
         "date": "2025-08-27",
         "publisher": "Wiz",
         "title": "s1ngularity: supply chain attack leaks secrets on GitHub",
@@ -776,6 +783,7 @@
         "url": "https://www.welivesecurity.com/en/ransomware/first-known-ai-powered-ransomware-uncovered-eset-research/"
       },
       {
+        "archive_url": "https://web.archive.org/web/20260813050621/https://cyberscoop.com/ai-ransomware-promptlock-nyu-behind-code-discovered-by-security-researchers/",
         "date": "2025-09-05",
         "publisher": "CyberScoop",
         "title": "NYU team behind AI-powered malware dubbed 'PromptLock'",
@@ -859,6 +867,7 @@
         "url": "https://cloud.google.com/blog/topics/threat-intelligence/threat-actor-usage-of-ai-tools/"
       },
       {
+        "archive_url": "https://web.archive.org/web/20260813050312/https://thehackernews.com/2025/11/google-uncovers-promptflux-malware-that.html",
         "date": "2025-11-05",
         "publisher": "The Hacker News",
         "title": "Google Uncovers PROMPTFLUX Malware That Uses Gemini AI to Rewrite Its Code Hourly",

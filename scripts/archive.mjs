@@ -12,7 +12,6 @@
 // archived at all.
 import { readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
-import { parseDocument } from 'yaml';
 import { listIncidentFiles, loadIncident } from './lib.mjs';
 
 const WRITE = process.argv.includes('--write');
@@ -121,24 +120,26 @@ for (const file of files) {
     else console.log(`  ✗ ${u.url}\n      → could not archive (${u.how})`);
   }
 
-  // Second pass: write back, preserving comments/formatting via the YAML CST.
+  // Second pass: insert `archive_url` as a new line right after the matching
+  // `url:` line. Targeted text edit (not a YAML re-serialization) so all other
+  // formatting — folded block scalars, comments, quoting — is byte-preserved.
   if (WRITE) {
-    const doc = parseDocument(readFileSync(file, 'utf8'));
-    const seq = doc.get('sources');
+    const lines = readFileSync(file, 'utf8').split('\n');
     let wrote = 0;
     for (const u of updates) {
       if (!u.archiveUrl) continue;
-      const node = seq?.items?.[u.index];
-      // Guard against index drift: only write when the url still matches.
-      if (node && node.get('url') === u.url && !node.get('archive_url')) {
-        node.set('archive_url', u.archiveUrl);
-        wrote++;
+      for (let i = 0; i < lines.length; i++) {
+        const m = lines[i].match(/^(\s*)url:\s*"?([^"\s]+)"?\s*$/);
+        if (m && m[2] === u.url) {
+          if (/^\s*archive_url:/.test(lines[i + 1] ?? '')) break; // already present
+          lines.splice(i + 1, 0, `${m[1]}archive_url: "${u.archiveUrl}"`);
+          wrote++;
+          break;
+        }
       }
     }
     if (wrote) {
-      // lineWidth: 0 disables line folding so long source URLs are never wrapped
-      // across lines — keeps diffs to exactly the added archive_url lines.
-      writeFileSync(file, doc.toString({ lineWidth: 0 }));
+      writeFileSync(file, lines.join('\n'));
       console.log(`  wrote ${wrote} archive_url value(s) to ${rel}`);
     }
   }

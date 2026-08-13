@@ -53,6 +53,7 @@
   "severity": "critical",
   "sources": [
     {
+      "archive_url": "https://web.archive.org/web/20260813045737/https://www.catonetworks.com/blog/breaking-down-echoleak/",
       "date": "2025-05-31",
       "publisher": "Cato Networks (Aim Labs)",
       "title": "Breaking down 'EchoLeak', the First Zero-Click AI Vulnerability Enabling Data Exfiltration from Microsoft 365 Copilot",
@@ -68,6 +69,7 @@
       "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-32711"
     },
     {
+      "archive_url": "https://web.archive.org/web/20260813045842/https://www.securityweek.com/echoleak-ai-attack-enabled-theft-of-sensitive-data-via-microsoft-365-copilot/",
       "date": "2025-06-12",
       "publisher": "SecurityWeek",
       "title": "'EchoLeak' AI Attack Enabled Theft of Sensitive Data via Microsoft 365 Copilot",

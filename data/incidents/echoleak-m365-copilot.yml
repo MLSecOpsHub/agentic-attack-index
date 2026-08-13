@@ -55,6 +55,7 @@ impact: >-
 sources:
   - title: "Breaking down 'EchoLeak', the First Zero-Click AI Vulnerability Enabling Data Exfiltration from Microsoft 365 Copilot"
     url: "https://www.catonetworks.com/blog/breaking-down-echoleak/"
+    archive_url: "https://web.archive.org/web/20260813045737/https://www.catonetworks.com/blog/breaking-down-echoleak/"
     publisher: "Cato Networks (Aim Labs)"
     type: first-party-disclosure
     date: 2025-05-31
@@ -66,6 +67,7 @@ sources:
     date: 2025-06-11
   - title: "'EchoLeak' AI Attack Enabled Theft of Sensitive Data via Microsoft 365 Copilot"
     url: "https://www.securityweek.com/echoleak-ai-attack-enabled-theft-of-sensitive-data-via-microsoft-365-copilot/"
+    archive_url: "https://web.archive.org/web/20260813045842/https://www.securityweek.com/echoleak-ai-attack-enabled-theft-of-sensitive-data-via-microsoft-365-copilot/"
     publisher: "SecurityWeek"
     type: news
     date: 2025-06-12
