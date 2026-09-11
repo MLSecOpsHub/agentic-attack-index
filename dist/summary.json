@@ -1,11 +1,25 @@
 {
-  "dataset_version": "0.2.0",
+  "dataset_version": "0.3.0",
   "schema": "https://raw.githubusercontent.com/MLSecOpsHub/agentic-attack-index/main/schema/incident.schema.json",
   "total": 11,
   "archive_coverage": {
     "sources": 25,
     "archived": 18,
     "pct": 72
+  },
+  "geo_coverage": {
+    "records": 5,
+    "points": 10,
+    "illustrative": 10,
+    "by_role": {
+      "origin": 8,
+      "target": 2
+    },
+    "by_basis": {
+      "actor-location": 1,
+      "sponsor-attribution": 7,
+      "victim-location": 2
+    }
   },
   "by_category": {
     "agent-hijack-prompt-injection": 2,

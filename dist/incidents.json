@@ -158,19 +158,35 @@
     "confidence": "primary",
     "date_disclosed": "2025-08-27",
     "geo": {
-      "origin": {
-        "illustrative": true,
-        "label": "North Korea (operator origin)",
-        "lat": 40.34,
-        "lng": 127.51
-      }
+      "points": [
+        {
+          "attributed_by": "Anthropic",
+          "basis": "sponsor-attribution",
+          "country": "KP",
+          "illustrative": true,
+          "label": "North Korea (state sponsor, per Anthropic)",
+          "lat": 40.34,
+          "lng": 127.51,
+          "role": "origin"
+        },
+        {
+          "attributed_by": "Anthropic",
+          "basis": "victim-location",
+          "country": "US",
+          "illustrative": true,
+          "label": "United States (victim employers, per Anthropic)",
+          "lat": 37.09,
+          "lng": -95.71,
+          "role": "target"
+        }
+      ]
     },
     "guardrail_bypass": [
       "legitimate-tool-abuse"
     ],
     "id": "dprk-it-worker-fraud-claude",
     "impact": "Fraudulent employment at technology companies to evade sanctions and generate revenue for the DPRK regime; Anthropic notes such IT-worker schemes are reported to generate hundreds of millions of dollars annually for weapons programmes.",
-    "last_updated": "2026-08-12",
+    "last_updated": "2026-09-11",
     "lifecycle_phases": [
       "resource-dev",
       "deception-social-eng"
@@ -194,6 +210,12 @@
       "gtg-2002-vibe-hacking-extortion",
       "gtg-5004-ai-ransomware-raas"
     ],
+    "revisions": [
+      {
+        "date": "2026-09-11",
+        "note": "Map point basis corrected: the origin point was labelled \"operator origin\" but the cited sources state regime affiliation and funding, not where the operators were located. Re-typed as sponsor-attribution. Added a US victim-location point and targets.countries from the same source."
+      }
+    ],
     "severity": "high",
     "sources": [
       {
@@ -216,7 +238,9 @@
     "status": "confirmed",
     "summary": "In its August 2025 Threat Intelligence Report, Anthropic disclosed that North Korean operatives systematically used Claude to obtain and hold fraudulent remote engineering jobs at technology companies as a means of evading sanctions and funding the regime. Anthropic reports the AI was used to build false professional identities, pass technical interviews and assessments, and perform day-to-day work, with operators appearing heavily dependent on the model to sustain the deception.",
     "targets": {
-      "countries": [],
+      "countries": [
+        "US"
+      ],
       "orgs_affected": null,
       "records_exfiltrated": null,
       "sectors": [
@@ -326,12 +350,18 @@
     "confidence": "primary",
     "date_disclosed": "2025-11-13",
     "geo": {
-      "origin": {
-        "illustrative": true,
-        "label": "China (assessed state-sponsored origin)",
-        "lat": 35.86,
-        "lng": 104.19
-      }
+      "points": [
+        {
+          "attributed_by": "Anthropic",
+          "basis": "sponsor-attribution",
+          "country": "CN",
+          "illustrative": true,
+          "label": "China (state sponsor, per Anthropic)",
+          "lat": 35.86,
+          "lng": 104.19,
+          "role": "origin"
+        }
+      ]
     },
     "guardrail_bypass": [
       "jailbreak",
@@ -339,7 +369,7 @@
     ],
     "id": "gtg-1002-ai-espionage",
     "impact": "Attempted infiltration of ~30 organizations with a small number of successful intrusions, including credential harvesting and data extraction, per Anthropic.",
-    "last_updated": "2026-08-12",
+    "last_updated": "2026-09-11",
     "lifecycle_phases": [
       "recon",
       "resource-dev",
@@ -497,19 +527,25 @@
     "confidence": "primary",
     "date_disclosed": "2025-08-27",
     "geo": {
-      "origin": {
-        "illustrative": true,
-        "label": "United Kingdom (actor origin)",
-        "lat": 55.38,
-        "lng": -3.44
-      }
+      "points": [
+        {
+          "attributed_by": "Anthropic",
+          "basis": "actor-location",
+          "country": "GB",
+          "illustrative": true,
+          "label": "United Kingdom (actor location, per Anthropic)",
+          "lat": 55.38,
+          "lng": -3.44,
+          "role": "origin"
+        }
+      ]
     },
     "guardrail_bypass": [
       "legitimate-tool-abuse"
     ],
     "id": "gtg-5004-ai-ransomware-raas",
     "impact": "AI-assisted development, marketing and sale of ransomware variants with encryption and evasion capabilities on dark-web forums for US$400-1,200; no victim count stated by the source.",
-    "last_updated": "2026-08-12",
+    "last_updated": "2026-09-11",
     "lifecycle_phases": [
       "resource-dev"
     ],
@@ -575,12 +611,56 @@
     "category": "infrastructure-abuse-supply-chain",
     "confidence": "primary",
     "date_disclosed": "2024-02-14",
+    "geo": {
+      "points": [
+        {
+          "attributed_by": "Microsoft Threat Intelligence",
+          "basis": "sponsor-attribution",
+          "country": "RU",
+          "illustrative": true,
+          "label": "Russia (state sponsor of Forest Blizzard, per Microsoft)",
+          "lat": 61.52,
+          "lng": 105.32,
+          "role": "origin"
+        },
+        {
+          "attributed_by": "Microsoft Threat Intelligence",
+          "basis": "sponsor-attribution",
+          "country": "KP",
+          "illustrative": true,
+          "label": "North Korea (state sponsor of Emerald Sleet, per Microsoft)",
+          "lat": 40.34,
+          "lng": 127.51,
+          "role": "origin"
+        },
+        {
+          "attributed_by": "Microsoft Threat Intelligence",
+          "basis": "sponsor-attribution",
+          "country": "IR",
+          "illustrative": true,
+          "label": "Iran (state sponsor of Crimson Sandstorm, per Microsoft)",
+          "lat": 32.43,
+          "lng": 53.69,
+          "role": "origin"
+        },
+        {
+          "attributed_by": "Microsoft Threat Intelligence",
+          "basis": "sponsor-attribution",
+          "country": "CN",
+          "illustrative": true,
+          "label": "China (state sponsor of Charcoal Typhoon and Salmon Typhoon, per Microsoft)",
+          "lat": 35.86,
+          "lng": 104.19,
+          "role": "origin"
+        }
+      ]
+    },
     "guardrail_bypass": [
       "legitimate-tool-abuse"
     ],
     "id": "microsoft-openai-state-actor-llm",
     "impact": "No novel or unique AI-enabled attack techniques were observed; Microsoft and OpenAI characterised the activity as consistent with using AI as a productivity tool. Identified accounts were terminated.",
-    "last_updated": "2026-08-12",
+    "last_updated": "2026-09-11",
     "lifecycle_phases": [
       "recon",
       "resource-dev",
@@ -814,25 +894,35 @@
     "confidence": "primary",
     "date_disclosed": "2025-11-05",
     "geo": {
-      "origin": {
-        "illustrative": true,
-        "label": "Russia (APT28 attribution)",
-        "lat": 61.52,
-        "lng": 105.32
-      },
-      "target": {
-        "illustrative": true,
-        "label": "Ukraine (target)",
-        "lat": 48.38,
-        "lng": 31.17
-      }
+      "points": [
+        {
+          "attributed_by": "Google Threat Intelligence Group",
+          "basis": "sponsor-attribution",
+          "country": "RU",
+          "illustrative": true,
+          "label": "Russia (state sponsor of APT28, per GTIG)",
+          "lat": 61.52,
+          "lng": 105.32,
+          "role": "origin"
+        },
+        {
+          "attributed_by": "Google Threat Intelligence Group",
+          "basis": "victim-location",
+          "country": "UA",
+          "illustrative": true,
+          "label": "Ukraine (target, per GTIG)",
+          "lat": 48.38,
+          "lng": 31.17,
+          "role": "target"
+        }
+      ]
     },
     "guardrail_bypass": [
       "open-weight-model"
     ],
     "id": "promptsteal-apt28-lamehug",
     "impact": "Live-operations use of an LLM to dynamically generate reconnaissance and document-collection commands on victim systems in Ukraine, with the collected output exfiltrated. Likely relied on stolen API tokens, per Google.",
-    "last_updated": "2026-08-12",
+    "last_updated": "2026-09-11",
     "lifecycle_phases": [
       "recon",
       "execution",

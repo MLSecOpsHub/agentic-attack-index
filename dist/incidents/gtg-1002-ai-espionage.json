@@ -12,12 +12,18 @@
   "confidence": "primary",
   "date_disclosed": "2025-11-13",
   "geo": {
-    "origin": {
-      "illustrative": true,
-      "label": "China (assessed state-sponsored origin)",
-      "lat": 35.86,
-      "lng": 104.19
-    }
+    "points": [
+      {
+        "attributed_by": "Anthropic",
+        "basis": "sponsor-attribution",
+        "country": "CN",
+        "illustrative": true,
+        "label": "China (state sponsor, per Anthropic)",
+        "lat": 35.86,
+        "lng": 104.19,
+        "role": "origin"
+      }
+    ]
   },
   "guardrail_bypass": [
     "jailbreak",
@@ -25,7 +31,7 @@
   ],
   "id": "gtg-1002-ai-espionage",
   "impact": "Attempted infiltration of ~30 organizations with a small number of successful intrusions, including credential harvesting and data extraction, per Anthropic.",
-  "last_updated": "2026-08-12",
+  "last_updated": "2026-09-11",
   "lifecycle_phases": [
     "recon",
     "resource-dev",

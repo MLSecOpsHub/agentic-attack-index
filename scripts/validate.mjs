@@ -14,6 +14,7 @@ import {
   loadTaxonomies,
   ROOT,
 } from './lib.mjs';
+import { editorialErrors, geoErrors } from './rules.mjs';
 
 const errors = [];
 const warnings = [];
@@ -36,6 +37,7 @@ const enumFromSchema = {
   guardrail_bypass: schema.properties.guardrail_bypass.items.enum,
   ai_role: schema.properties.ai_role.enum,
   record_status: schema.properties.record_status.enum,
+  geo_basis: schema.$defs.geoPoint.properties.basis.enum,
 };
 
 const taxonomies = loadTaxonomies();
@@ -68,90 +70,6 @@ try {
   }
 } catch (e) {
   errors.push(`version sync check failed: ${e.message}`);
-}
-
-// --- editorial invariants ----------------------------------------------------
-// Source types that count as authoritative first-party/primary evidence.
-const PRIMARY_SOURCE_TYPES = new Set([
-  'first-party-disclosure',
-  'vendor-report',
-  'government-advisory',
-  'research-paper',
-]);
-// Substrings that betray an unfilled template field slipping into a real record.
-const PLACEHOLDER_MARKERS = [
-  'example.com',
-  'replace-me',
-  'replace with',
-  'placeholder',
-  'todo:',
-  'template-incident',
-  'your-github-handle',
-];
-
-function editorialErrors(record, rel) {
-  const out = [];
-  const warn = [];
-  const sources = record.sources ?? [];
-  const types = sources.map((s) => s?.type);
-  const publishers = new Set(sources.map((s) => s?.publisher).filter(Boolean));
-  const hasAuthoritative = types.some(
-    (t) => t === 'first-party-disclosure' || t === 'government-advisory'
-  );
-
-  // confirmed must be independently supported: ≥2 sources from DISTINCT
-  // publishers, or a first-party/government disclosure. Two sources from the
-  // same publisher (or a single secondary report) is not "confirmed" — this is
-  // the anti-poisoning bar against a lone outlet laundering a claim.
-  if (record.status === 'confirmed' && publishers.size < 2 && !hasAuthoritative) {
-    out.push(
-      `${rel}: status "confirmed" needs ≥2 sources from distinct publishers or a first-party/government source`
-    );
-  }
-
-  // primary confidence requires an actual primary-grade source.
-  if (record.confidence === 'primary' && !types.some((t) => PRIMARY_SOURCE_TYPES.has(t))) {
-    out.push(
-      `${rel}: confidence "primary" needs a source of type ${[...PRIMARY_SOURCE_TYPES].join('/')}`
-    );
-  }
-
-  // No duplicate source URLs within one record — a padded source list can fake
-  // independence.
-  const urls = sources.map((s) => s?.url).filter(Boolean);
-  const dupUrl = urls.find((u, i) => urls.indexOf(u) !== i);
-  if (dupUrl) out.push(`${rel}: duplicate source url "${dupUrl}"`);
-
-  // Dates must be internally consistent (compared as ISO strings — hermetic,
-  // no wall clock).
-  if (record.added?.date && record.last_updated && record.last_updated < record.added.date) {
-    out.push(
-      `${rel}: last_updated (${record.last_updated}) is before added.date (${record.added.date})`
-    );
-  }
-
-  // No unfilled template placeholders in real records.
-  const scan = [record.name, record.summary, record.actor, record.added?.by]
-    .concat(sources.flatMap((s) => [s?.title, s?.url, s?.archive_url, s?.publisher]))
-    .filter((v) => typeof v === 'string');
-  for (const value of scan) {
-    const lower = value.toLowerCase();
-    const hit = PLACEHOLDER_MARKERS.find((m) => lower.includes(m));
-    if (hit) {
-      out.push(`${rel}: placeholder value "${hit}" left in a real record ("${value.slice(0, 40)}")`);
-      break;
-    }
-  }
-
-  // Soft signal (non-failing): a record leaning on a single non-authoritative
-  // publisher is the shape most vulnerable to a planted claim.
-  if (publishers.size === 1 && !hasAuthoritative) {
-    warn.push(
-      `${rel}: all sources are from one publisher (${[...publishers][0]}) and none is first-party/government — add an independent corroborating source`
-    );
-  }
-
-  return { errors: out, warnings: warn };
 }
 
 // --- incident records --------------------------------------------------------
@@ -197,6 +115,8 @@ for (const file of files) {
     const editorial = editorialErrors(record, rel);
     errors.push(...editorial.errors);
     warnings.push(...editorial.warnings);
+    // Map points: basis/role/attribution rules (see scripts/rules.mjs).
+    errors.push(...geoErrors(record, rel).errors);
     if (Array.isArray(record.related) && record.related.length) {
       relatedRefs.push({ rel, id: record.id, related: record.related });
     }

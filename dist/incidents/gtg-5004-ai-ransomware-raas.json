@@ -12,19 +12,25 @@
   "confidence": "primary",
   "date_disclosed": "2025-08-27",
   "geo": {
-    "origin": {
-      "illustrative": true,
-      "label": "United Kingdom (actor origin)",
-      "lat": 55.38,
-      "lng": -3.44
-    }
+    "points": [
+      {
+        "attributed_by": "Anthropic",
+        "basis": "actor-location",
+        "country": "GB",
+        "illustrative": true,
+        "label": "United Kingdom (actor location, per Anthropic)",
+        "lat": 55.38,
+        "lng": -3.44,
+        "role": "origin"
+      }
+    ]
   },
   "guardrail_bypass": [
     "legitimate-tool-abuse"
   ],
   "id": "gtg-5004-ai-ransomware-raas",
   "impact": "AI-assisted development, marketing and sale of ransomware variants with encryption and evasion capabilities on dark-web forums for US$400-1,200; no victim count stated by the source.",
-  "last_updated": "2026-08-12",
+  "last_updated": "2026-09-11",
   "lifecycle_phases": [
     "resource-dev"
   ],

@@ -12,19 +12,35 @@
   "confidence": "primary",
   "date_disclosed": "2025-08-27",
   "geo": {
-    "origin": {
-      "illustrative": true,
-      "label": "North Korea (operator origin)",
-      "lat": 40.34,
-      "lng": 127.51
-    }
+    "points": [
+      {
+        "attributed_by": "Anthropic",
+        "basis": "sponsor-attribution",
+        "country": "KP",
+        "illustrative": true,
+        "label": "North Korea (state sponsor, per Anthropic)",
+        "lat": 40.34,
+        "lng": 127.51,
+        "role": "origin"
+      },
+      {
+        "attributed_by": "Anthropic",
+        "basis": "victim-location",
+        "country": "US",
+        "illustrative": true,
+        "label": "United States (victim employers, per Anthropic)",
+        "lat": 37.09,
+        "lng": -95.71,
+        "role": "target"
+      }
+    ]
   },
   "guardrail_bypass": [
     "legitimate-tool-abuse"
   ],
   "id": "dprk-it-worker-fraud-claude",
   "impact": "Fraudulent employment at technology companies to evade sanctions and generate revenue for the DPRK regime; Anthropic notes such IT-worker schemes are reported to generate hundreds of millions of dollars annually for weapons programmes.",
-  "last_updated": "2026-08-12",
+  "last_updated": "2026-09-11",
   "lifecycle_phases": [
     "resource-dev",
     "deception-social-eng"
@@ -48,6 +64,12 @@
     "gtg-2002-vibe-hacking-extortion",
     "gtg-5004-ai-ransomware-raas"
   ],
+  "revisions": [
+    {
+      "date": "2026-09-11",
+      "note": "Map point basis corrected: the origin point was labelled \"operator origin\" but the cited sources state regime affiliation and funding, not where the operators were located. Re-typed as sponsor-attribution. Added a US victim-location point and targets.countries from the same source."
+    }
+  ],
   "severity": "high",
   "sources": [
     {
@@ -70,7 +92,9 @@
   "status": "confirmed",
   "summary": "In its August 2025 Threat Intelligence Report, Anthropic disclosed that North Korean operatives systematically used Claude to obtain and hold fraudulent remote engineering jobs at technology companies as a means of evading sanctions and funding the regime. Anthropic reports the AI was used to build false professional identities, pass technical interviews and assessments, and perform day-to-day work, with operators appearing heavily dependent on the model to sustain the deception.",
   "targets": {
-    "countries": [],
+    "countries": [
+      "US"
+    ],
     "orgs_affected": null,
     "records_exfiltrated": null,
     "sectors": [

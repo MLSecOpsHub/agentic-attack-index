@@ -12,25 +12,35 @@
   "confidence": "primary",
   "date_disclosed": "2025-11-05",
   "geo": {
-    "origin": {
-      "illustrative": true,
-      "label": "Russia (APT28 attribution)",
-      "lat": 61.52,
-      "lng": 105.32
-    },
-    "target": {
-      "illustrative": true,
-      "label": "Ukraine (target)",
-      "lat": 48.38,
-      "lng": 31.17
-    }
+    "points": [
+      {
+        "attributed_by": "Google Threat Intelligence Group",
+        "basis": "sponsor-attribution",
+        "country": "RU",
+        "illustrative": true,
+        "label": "Russia (state sponsor of APT28, per GTIG)",
+        "lat": 61.52,
+        "lng": 105.32,
+        "role": "origin"
+      },
+      {
+        "attributed_by": "Google Threat Intelligence Group",
+        "basis": "victim-location",
+        "country": "UA",
+        "illustrative": true,
+        "label": "Ukraine (target, per GTIG)",
+        "lat": 48.38,
+        "lng": 31.17,
+        "role": "target"
+      }
+    ]
   },
   "guardrail_bypass": [
     "open-weight-model"
   ],
   "id": "promptsteal-apt28-lamehug",
   "impact": "Live-operations use of an LLM to dynamically generate reconnaissance and document-collection commands on victim systems in Ukraine, with the collected output exfiltrated. Likely relied on stolen API tokens, per Google.",
-  "last_updated": "2026-08-12",
+  "last_updated": "2026-09-11",
   "lifecycle_phases": [
     "recon",
     "execution",

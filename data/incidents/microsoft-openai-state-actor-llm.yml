@@ -36,6 +36,49 @@ targets:
   records_exfiltrated: null
   sectors: []
   countries: []
+geo:
+  # Microsoft states a state affiliation for each of the five actors. These are
+  # sponsor attributions only: the disclosure names no operator locations, and
+  # the actors' general targeting profiles are not victims of the LLM misuse
+  # described, so no target points are recorded.
+  points:
+    # "Russian military intelligence actor linked to GRU Unit 26165" (Forest Blizzard).
+    - role: origin
+      basis: sponsor-attribution
+      attributed_by: "Microsoft Threat Intelligence"
+      country: RU
+      lat: 61.52
+      lng: 105.32
+      label: "Russia (state sponsor of Forest Blizzard, per Microsoft)"
+      illustrative: true # Country centroid.
+    # "North Korean threat actor" (Emerald Sleet).
+    - role: origin
+      basis: sponsor-attribution
+      attributed_by: "Microsoft Threat Intelligence"
+      country: KP
+      lat: 40.34
+      lng: 127.51
+      label: "North Korea (state sponsor of Emerald Sleet, per Microsoft)"
+      illustrative: true # Country centroid.
+    # "Iranian threat actor assessed to be connected to the Islamic Revolutionary
+    # Guard Corps (IRGC)" (Crimson Sandstorm).
+    - role: origin
+      basis: sponsor-attribution
+      attributed_by: "Microsoft Threat Intelligence"
+      country: IR
+      lat: 32.43
+      lng: 53.69
+      label: "Iran (state sponsor of Crimson Sandstorm, per Microsoft)"
+      illustrative: true # Country centroid.
+    # "Chinese state-affiliated threat actor" (Charcoal Typhoon and Salmon Typhoon).
+    - role: origin
+      basis: sponsor-attribution
+      attributed_by: "Microsoft Threat Intelligence"
+      country: CN
+      lat: 35.86
+      lng: 104.19
+      label: "China (state sponsor of Charcoal Typhoon and Salmon Typhoon, per Microsoft)"
+      illustrative: true # Country centroid.
 lifecycle_phases:
   - recon
   - resource-dev
@@ -75,4 +118,4 @@ sources:
 added:
   date: 2026-08-12
   by: "MLSecOpsHub"
-last_updated: 2026-08-12
+last_updated: 2026-09-11
