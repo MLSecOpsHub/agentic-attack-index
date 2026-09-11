@@ -57,6 +57,7 @@
   "severity": "high",
   "sources": [
     {
+      "archive_url": "https://web.archive.org/web/20260813085905/https://www.anthropic.com/news/disrupting-AI-espionage",
       "date": "2025-11-13",
       "publisher": "Anthropic",
       "title": "Disrupting the first reported AI-orchestrated cyber espionage campaign",

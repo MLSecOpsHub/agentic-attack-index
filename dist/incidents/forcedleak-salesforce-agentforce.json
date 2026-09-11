@@ -1,0 +1,83 @@
+{
+  "actor": "Noma Security (Noma Labs)",
+  "actor_type": "researcher",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-08-13"
+  },
+  "ai_role": "load-bearing",
+  "autonomy_level": "not-applicable",
+  "autonomy_pct": null,
+  "category": "agent-hijack-prompt-injection",
+  "confidence": "primary",
+  "date_disclosed": "2025-09-25",
+  "guardrail_bypass": [
+    "indirect-prompt-injection"
+  ],
+  "id": "forcedleak-salesforce-agentforce",
+  "impact": "Demonstrated exfiltration of CRM data from Salesforce Agentforce via a zero-interaction Web-to-Lead vector. Researcher discovery; no in-the-wild exploitation reported. Remediated by Salesforce.",
+  "last_updated": "2026-08-13",
+  "lifecycle_phases": [
+    "initial-access",
+    "execution",
+    "exfiltration"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0057"
+    ],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": [
+      "LLM01"
+    ]
+  },
+  "mitigations": [
+    "Salesforce re-secured the expired allowlisted domain and enforced a Trusted URLs allowlist for Agentforce and Einstein AI."
+  ],
+  "model_families": [
+    "other"
+  ],
+  "models": [],
+  "name": "ForcedLeak — indirect prompt injection in Salesforce Agentforce",
+  "related": [
+    "servicenow-now-assist-agent-injection"
+  ],
+  "severity": "critical",
+  "sources": [
+    {
+      "date": "2025-09-25",
+      "publisher": "Noma Security",
+      "title": "ForcedLeak: AI Agent risks exposed in Salesforce Agentforce",
+      "type": "first-party-disclosure",
+      "url": "https://noma.security/blog/forcedleak-agent-risks-exposed-in-salesforce-agentforce/"
+    },
+    {
+      "archive_url": "https://web.archive.org/web/20260805000857/https://thehackernews.com/2025/09/salesforce-patches-critical-forcedleak.html",
+      "date": "2025-09-25",
+      "publisher": "The Hacker News",
+      "title": "Salesforce Patches Critical ForcedLeak Bug Exposing CRM Data via AI Prompt Injection",
+      "type": "news",
+      "url": "https://thehackernews.com/2025/09/salesforce-patches-critical-forcedleak.html"
+    },
+    {
+      "archive_url": "https://web.archive.org/web/20260520232634/https://securityaffairs.com/182676/hacking/forcedleak-flaw-in-salesforce-agentforce-exposes-crm-data-via-prompt-injection.html",
+      "date": "2025-09-27",
+      "publisher": "Security Affairs",
+      "title": "ForcedLeak flaw in Salesforce Agentforce exposes CRM data via Prompt Injection",
+      "type": "news",
+      "url": "https://securityaffairs.com/182676/hacking/forcedleak-flaw-in-salesforce-agentforce-exposes-crm-data-via-prompt-injection.html"
+    }
+  ],
+  "status": "reported",
+  "summary": "Noma Security disclosed \"ForcedLeak\" (CVSS 9.4) in September 2025 — a critical indirect prompt-injection chain in Salesforce Agentforce. Malicious instructions submitted through a public Web-to-Lead form were later executed when an employee had the AI agent process the lead, enabling exfiltration of CRM data. The chain abused an expired, re-registerable domain that had been on Salesforce's content-security allowlist. Salesforce remediated it by enforcing a trusted-URL allowlist for Agentforce and Einstein AI.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": []
+  }
+}

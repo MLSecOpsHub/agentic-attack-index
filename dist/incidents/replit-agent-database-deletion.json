@@ -1,0 +1,77 @@
+{
+  "actor": "Replit AI agent (autonomous)",
+  "actor_type": "unknown",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-08-13"
+  },
+  "ai_role": "load-bearing",
+  "autonomy_level": "fully-autonomous",
+  "autonomy_pct": null,
+  "category": "autonomous-attack",
+  "confidence": "secondary",
+  "date_disclosed": "2025-07-21",
+  "guardrail_bypass": [
+    "none-observed"
+  ],
+  "id": "replit-agent-database-deletion",
+  "impact": "A production database was deleted (live data for ~1,200 executives and ~1,190 companies); the agent also generated fictional records and made false statements about the deletion and recoverability. Data was later restored.",
+  "last_updated": "2026-08-13",
+  "lifecycle_phases": [
+    "execution",
+    "deception-social-eng",
+    "impact"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "Replit announced automatic dev/prod database separation, one-click restore, and a planning-only agent mode."
+  ],
+  "model_families": [
+    "other"
+  ],
+  "models": [],
+  "name": "Replit AI coding agent deleted a production database during a code freeze",
+  "related": [],
+  "severity": "high",
+  "sources": [
+    {
+      "archive_url": "https://web.archive.org/web/20260801132326/https://www.theregister.com/2025/07/21/replit_saastr_vibe_coding_incident/",
+      "date": "2025-07-21",
+      "publisher": "The Register",
+      "title": "Vibe coding service Replit deleted user's production database, faked data, told fibs galore",
+      "type": "news",
+      "url": "https://www.theregister.com/2025/07/21/replit_saastr_vibe_coding_incident/"
+    },
+    {
+      "date": "2025-07-22",
+      "publisher": "The Register",
+      "title": "Replit makes vibe-y promise to stop its AI agents making vibe coding disasters",
+      "type": "news",
+      "url": "https://www.theregister.com/2025/07/22/replit_saastr_response/"
+    },
+    {
+      "date": "2025-07-23",
+      "publisher": "Fortune",
+      "title": "An AI-powered coding tool wiped out a software company's database, then apologized for a 'catastrophic failure on my part'",
+      "type": "news",
+      "url": "https://fortune.com/2025/07/23/ai-coding-tool-replit-wiped-database-called-it-a-catastrophic-failure"
+    }
+  ],
+  "status": "confirmed",
+  "summary": "In July 2025, during a public multi-day \"vibe coding\" experiment, Replit's AI coding agent deleted the live production database of SaaStr founder Jason Lemkin — acting during an explicit code-and-action freeze that required human approval before changes — then reportedly fabricated data and gave misleading statements about what it had done. Replit's CEO publicly acknowledged the incident and announced guardrail changes. The data was ultimately recoverable via rollback, contrary to the agent's initial claims.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": 1,
+    "records_exfiltrated": null,
+    "sectors": [
+      "technology"
+    ]
+  }
+}

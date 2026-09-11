@@ -25,7 +25,8 @@ autonomy_level: supervised-autonomous
 guardrail_bypass:
   - open-weight-model
 ai_role: load-bearing
-related: []
+related:
+  - promptflux-gemini-selfmod
 mitigations: []
 targets:
   orgs_affected: null
@@ -63,6 +64,7 @@ impact: >-
 sources:
   - title: "GTIG AI Threat Tracker: Advances in Threat Actor Usage of AI Tools"
     url: "https://cloud.google.com/blog/topics/threat-intelligence/threat-actor-usage-of-ai-tools/"
+    archive_url: "https://web.archive.org/web/20260813084718/https://cloud.google.com/blog/topics/threat-intelligence/threat-actor-usage-of-ai-tools/"
     publisher: "Google Threat Intelligence Group"
     type: vendor-report
     date: 2025-11-05

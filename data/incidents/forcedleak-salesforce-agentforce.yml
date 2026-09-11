@@ -1,0 +1,74 @@
+id: forcedleak-salesforce-agentforce
+name: "ForcedLeak — indirect prompt injection in Salesforce Agentforce"
+summary: >-
+  Noma Security disclosed "ForcedLeak" (CVSS 9.4) in September 2025 — a critical
+  indirect prompt-injection chain in Salesforce Agentforce. Malicious
+  instructions submitted through a public Web-to-Lead form were later executed
+  when an employee had the AI agent process the lead, enabling exfiltration of
+  CRM data. The chain abused an expired, re-registerable domain that had been on
+  Salesforce's content-security allowlist. Salesforce remediated it by enforcing
+  a trusted-URL allowlist for Agentforce and Einstein AI.
+date_disclosed: 2025-09-25
+status: reported
+confidence: primary
+category: agent-hijack-prompt-injection
+severity: critical # CVSS 9.4 per Noma and coverage.
+models: [] # Underlying model not named by sources.
+model_families:
+  - other
+actor: "Noma Security (Noma Labs)"
+actor_type: researcher
+autonomy_pct: null
+autonomy_level: not-applicable
+guardrail_bypass:
+  - indirect-prompt-injection
+ai_role: load-bearing
+related:
+  - servicenow-now-assist-agent-injection
+mitigations:
+  - "Salesforce re-secured the expired allowlisted domain and enforced a Trusted URLs allowlist for Agentforce and Einstein AI."
+targets:
+  orgs_affected: null
+  records_exfiltrated: null
+  sectors: []
+  countries: []
+lifecycle_phases:
+  - initial-access
+  - execution
+  - exfiltration
+mappings:
+  mitre_atlas:
+    - AML.T0051.001 # LLM Prompt Injection: Indirect
+    - AML.T0057 # LLM Data Leakage
+  mitre_attack: []
+  owasp_llm:
+    - "LLM01" # Prompt injection (OWASP Top 10 for LLM Apps)
+  owasp_asi: []
+  cve: [] # No CVE published in the sources.
+  aiid: []
+impact: >-
+  Demonstrated exfiltration of CRM data from Salesforce Agentforce via a
+  zero-interaction Web-to-Lead vector. Researcher discovery; no in-the-wild
+  exploitation reported. Remediated by Salesforce.
+sources:
+  - title: "ForcedLeak: AI Agent risks exposed in Salesforce Agentforce"
+    url: "https://noma.security/blog/forcedleak-agent-risks-exposed-in-salesforce-agentforce/"
+    publisher: "Noma Security"
+    type: first-party-disclosure
+    date: 2025-09-25
+  - title: "Salesforce Patches Critical ForcedLeak Bug Exposing CRM Data via AI Prompt Injection"
+    url: "https://thehackernews.com/2025/09/salesforce-patches-critical-forcedleak.html"
+    archive_url: "https://web.archive.org/web/20260805000857/https://thehackernews.com/2025/09/salesforce-patches-critical-forcedleak.html"
+    publisher: "The Hacker News"
+    type: news
+    date: 2025-09-25
+  - title: "ForcedLeak flaw in Salesforce Agentforce exposes CRM data via Prompt Injection"
+    url: "https://securityaffairs.com/182676/hacking/forcedleak-flaw-in-salesforce-agentforce-exposes-crm-data-via-prompt-injection.html"
+    archive_url: "https://web.archive.org/web/20260520232634/https://securityaffairs.com/182676/hacking/forcedleak-flaw-in-salesforce-agentforce-exposes-crm-data-via-prompt-injection.html"
+    publisher: "Security Affairs"
+    type: news
+    date: 2025-09-27
+added:
+  date: 2026-08-13
+  by: "MLSecOpsHub"
+last_updated: 2026-08-13
