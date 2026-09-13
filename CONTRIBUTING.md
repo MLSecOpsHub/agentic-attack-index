@@ -27,7 +27,7 @@ npm run archive -- --write   # snapshot sources to the Wayback Machine (optional
 - YAML style: 2-space indent, ISO 8601 dates, comment any uncertainty.
 - `mappings` IDs (MITRE ATLAS/ATT&CK, CVE, AIID) must exist exactly as published — prefer ATLAS for AI-native techniques.
 - Every incident marked `status: confirmed` needs either two sources from **distinct publishers** or a first-party/government source — this is enforced by `npm run validate`.
-- Sources rot. Run `npm run archive -- --write` to record a `sources[].archive_url` snapshot; `linkcheck` falls back to it when the live URL later dies.
+- Sources rot. Run `npm run archive -- --write` to record a `sources[].archive_url` snapshot; `linkcheck` falls back to it when the live URL later dies. A weekly `archive` workflow also snapshots anything still missing and opens a PR.
 - Never hand-edit `dist/`; run `npm run build` and commit the result.
 
 ## Map points

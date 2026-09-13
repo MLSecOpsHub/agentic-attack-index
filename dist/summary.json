@@ -4,8 +4,8 @@
   "total": 16,
   "archive_coverage": {
     "sources": 39,
-    "archived": 32,
-    "pct": 82
+    "archived": 39,
+    "pct": 100
   },
   "geo_coverage": {
     "records": 5,

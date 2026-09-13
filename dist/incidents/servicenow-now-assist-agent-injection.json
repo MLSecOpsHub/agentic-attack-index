@@ -51,6 +51,7 @@
   "severity": "high",
   "sources": [
     {
+      "archive_url": "https://web.archive.org/web/20260913050509/https://appomni.com/ao-labs/ai-agent-to-agent-discovery-prompt-injection/",
       "date": "2025-11-19",
       "publisher": "AppOmni",
       "title": "When AI Turns on Its Team: Exploiting Agent-to-Agent Discovery via Prompt Injection",
@@ -58,6 +59,7 @@
       "url": "https://appomni.com/ao-labs/ai-agent-to-agent-discovery-prompt-injection/"
     },
     {
+      "archive_url": "https://web.archive.org/web/20260822055258/https://thehackernews.com/2025/11/servicenow-ai-agents-can-be-tricked.html",
       "date": "2025-11-19",
       "publisher": "The Hacker News",
       "title": "ServiceNow AI Agents Can Be Tricked Into Acting Against Each Other via Second-Order Prompts",

@@ -52,6 +52,7 @@ impact: >-
 sources:
   - title: "AWS Security Bulletin AWS-2025-015"
     url: "https://aws.amazon.com/security/security-bulletins/AWS-2025-015/"
+    archive_url: "https://web.archive.org/web/20260824023710/https://aws.amazon.com/security/security-bulletins/AWS-2025-015/"
     publisher: "Amazon Web Services"
     type: vendor-report
     date: 2025-07-23

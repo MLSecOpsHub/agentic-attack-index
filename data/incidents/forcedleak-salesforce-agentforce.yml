@@ -53,6 +53,7 @@ impact: >-
 sources:
   - title: "ForcedLeak: AI Agent risks exposed in Salesforce Agentforce"
     url: "https://noma.security/blog/forcedleak-agent-risks-exposed-in-salesforce-agentforce/"
+    archive_url: "https://web.archive.org/web/20260910034819/https://noma.security/blog/forcedleak-agent-risks-exposed-in-salesforce-agentforce"
     publisher: "Noma Security"
     type: first-party-disclosure
     date: 2025-09-25

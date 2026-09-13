@@ -58,6 +58,7 @@ impact: >-
 sources:
   - title: "Here Comes The AI Worm: Unleashing Zero-click Worms that Target GenAI-Powered Applications"
     url: "https://arxiv.org/abs/2403.02817"
+    archive_url: "https://web.archive.org/web/20260909163233/https://arxiv.org/abs/2403.02817"
     publisher: "arXiv"
     type: research-paper
     date: 2024-03-05

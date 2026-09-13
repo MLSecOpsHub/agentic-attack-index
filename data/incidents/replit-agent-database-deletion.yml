@@ -56,11 +56,13 @@ sources:
     date: 2025-07-21
   - title: "Replit makes vibe-y promise to stop its AI agents making vibe coding disasters"
     url: "https://www.theregister.com/2025/07/22/replit_saastr_response/"
+    archive_url: "https://web.archive.org/web/20260412120110/https://www.theregister.com/2025/07/22/replit_saastr_response/"
     publisher: "The Register"
     type: news
     date: 2025-07-22
   - title: "An AI-powered coding tool wiped out a software company's database, then apologized for a 'catastrophic failure on my part'"
     url: "https://fortune.com/2025/07/23/ai-coding-tool-replit-wiped-database-called-it-a-catastrophic-failure"
+    archive_url: "https://web.archive.org/web/20260831123744/https://fortune.com/2025/07/23/ai-coding-tool-replit-wiped-database-called-it-a-catastrophic-failure/"
     publisher: "Fortune"
     type: news
     date: 2025-07-23
