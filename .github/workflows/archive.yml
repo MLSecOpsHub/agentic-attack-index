@@ -1,0 +1,58 @@
+name: archive
+
+# Sources rot. Snapshot every sources[].url that lacks an archive_url to the
+# Wayback Machine on a schedule and propose the additions as a PR for human
+# review. Network-dependent, so kept out of the deterministic `npm test` gate.
+#
+# Repo setting required once: Settings → Actions → General → Workflow
+# permissions → "Allow GitHub Actions to create and approve pull requests".
+on:
+  schedule:
+    - cron: '41 6 * * 1' # Mondays 06:41 UTC, after linkcheck
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  archive:
+    name: snapshot unarchived sources
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+
+      # The archiver is idempotent and non-fatal; archive.org rate-limits, so a
+      # second pass often fills what the first one could not.
+      - name: Archive missing snapshots (two passes)
+        run: |
+          npm run archive -- --write || true
+          npm run archive -- --write || true
+
+      - name: Rebuild dist and verify
+        run: |
+          npm run build
+          npm test
+
+      - name: Open PR if anything changed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet -- data dist; then
+            echo "archive: nothing to add"; exit 0
+          fi
+          branch="bot/archive-$(date -u +%Y%m%d)"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$branch"
+          git add data dist
+          git commit -m "data: add Wayback archive_url snapshots ($(git diff --cached --numstat -- data | wc -l) record(s))"
+          git push -u origin "$branch"
+          gh pr create --base main --head "$branch" \
+            --title "data: backfill Wayback archive_url snapshots" \
+            --body "Scheduled archiver run. Every added \`archive_url\` was returned by archive.org (availability/CDX/Save Page Now); nothing is fabricated. Review that each snapshot renders the cited page, then merge. Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"

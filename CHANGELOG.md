@@ -7,6 +7,17 @@ dataset version tracks `package.json` and `CITATION.cff` (kept in sync by
 
 ## [Unreleased]
 
+### Added
+- Scheduled `archive` workflow (`.github/workflows/archive.yml`): snapshots
+  every `sources[].url` lacking an `archive_url` to the Wayback Machine weekly
+  and opens a PR for review. Until now no job ran the archiver, which is why
+  coverage had stalled.
+
+### Data
+- Backfilled the 7 remaining `archive_url` snapshots (AWS bulletin, Noma
+  Security, arXiv, The Register, Fortune, AppOmni, The Hacker News); archive
+  coverage is now 39/39 sources.
+
 ## [0.3.0] - 2026-09-11
 
 ### Changed (breaking)
