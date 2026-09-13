@@ -30,6 +30,18 @@ npm run archive -- --write   # snapshot sources to the Wayback Machine (optional
 - Sources rot. Run `npm run archive -- --write` to record a `sources[].archive_url` snapshot; `linkcheck` falls back to it when the live URL later dies.
 - Never hand-edit `dist/`; run `npm run build` and commit the result.
 
+## Map points
+
+Map points (`geo.points[]`) exist only where a cited source states a location. Omit the `geo` block otherwise; never geocode `targets.countries`, an actor name, or a sector into a point.
+
+- Every point needs a `role` (`origin` / `target`), a `basis`, an `attributed_by` that exactly matches a `sources[].publisher` on the record, an ISO 3166-1 alpha-2 `country` (null only for a non-country region centroid), coordinates, a label, and `illustrative`.
+- The six bases (`taxonomy/geo-basis.yml`): `sponsor-attribution` (a source attributes the operation to a state sponsor), `operator-location` (a source states where the operators were based), `actor-location` (a source states a criminal or individual actor's country without claiming state sponsorship), `infrastructure` (where attack infrastructure was hosted; use sparingly), `victim-location` (the target's country or region), `stated-location` (a source names a precise city or facility).
+- **Sponsor ≠ location.** "State-sponsored" or "government-backed" is `sponsor-attribution`, plotted at the state's centroid. It says nothing about where the operators sat; do not write `operator-location` unless a source says where they were.
+- Role rules: `sponsor-attribution`, `operator-location`, `actor-location`, and `infrastructure` are origin-only; `victim-location` is target-only; `stated-location` may be either.
+- Coordinates are never inferred. Every basis except `stated-location` is a centroid and must be `illustrative: true`; `stated-location` must be `illustrative: false` and may name a victim site only if a first-party or public disclosure already did.
+- `researcher` and `lab-test-eval` records carry target points only (a test has no attack origin). `actor_type: unknown` records cannot carry `sponsor-attribution`, `operator-location`, or `actor-location` points.
+- All of the above is enforced by `npm run validate` and unit-tested in `test/`.
+
 ## Updating an incident
 
 Update the fields, add the new source(s), bump `last_updated`, and keep the `id` unchanged. Corrections are welcome — accuracy beats pride of authorship.

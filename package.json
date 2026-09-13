@@ -1,6 +1,6 @@
 {
   "name": "agentic-attack-index",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Open, source-linked dataset of real-world cyberattacks executed or orchestrated by AI agents. Data layer for the Rogue Agent Watch tracker.",
   "type": "module",
   "private": true,
@@ -19,7 +19,7 @@
     "linkcheck": "node scripts/linkcheck.mjs",
     "archive": "node scripts/archive.mjs",
     "new:incident": "node scripts/new-incident.mjs",
-    "test": "npm run validate && npm run build"
+    "test": "npm run validate && npm run build && node --test test/"
   },
   "dependencies": {
     "ajv": "^8.17.1",

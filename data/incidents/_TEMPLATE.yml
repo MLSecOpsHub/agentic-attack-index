@@ -109,16 +109,32 @@ targets:
   # ISO 3166-1 alpha-2 codes, e.g. ["US", "JP"].
   countries: []
 
+# Map points for the tracker. OMIT the whole geo block unless a cited source
+# states a location. Every point must say why it exists (basis) and who said it
+# (attributed_by = a sources[].publisher on this record). Rules enforced by
+# `npm run validate` (see taxonomy/geo-basis.yml and CONTRIBUTING.md):
+#   * A state sponsor is NOT an operator location. "State-sponsored" =
+#     sponsor-attribution; "based in / located in" = operator-location or
+#     actor-location; hosting = infrastructure; target country = victim-location;
+#     a named city/facility = stated-location (illustrative: false).
+#   * origin-only bases: sponsor-attribution, operator-location, actor-location,
+#     infrastructure. target-only: victim-location. either: stated-location.
+#   * Coordinates are never inferred. Every basis except stated-location is a
+#     country/region centroid and must be illustrative: true.
+#   * country: ISO 3166-1 alpha-2; null only for a non-country region centroid.
+#   * Never geocode targets.countries into points. Researcher and lab-test-eval
+#     records carry target points only. actor_type: unknown records cannot carry
+#     sponsor-attribution / operator-location / actor-location points.
 geo:
-  # Map point for the tracker. Set illustrative: true when the point is a
-  # sector/region centroid rather than a precise, source-stated location.
-  target:
-    lat: 0
-    lng: 0
-    label: "Placeholder — replace or remove"
-    illustrative: true
-  # Same shape as target, or null when sources state no origin.
-  origin: null
+  points:
+    - role: target
+      basis: victim-location
+      attributed_by: "Example Publisher"
+      country: US
+      lat: 37.09
+      lng: -95.71
+      label: "Placeholder — replace or remove the geo block"
+      illustrative: true
 
 # Phases observed, per sources: recon | resource-dev | initial-access |
 # execution | credential-access | privilege-escalation | persistence |

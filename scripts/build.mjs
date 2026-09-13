@@ -44,6 +44,17 @@ for (const inc of incidents) {
   }
 }
 
+// Map-point coverage: counts only (no scores). Points exist only where a cited
+// source states a location, so these numbers describe sourcing, not risk.
+const allPoints = incidents.flatMap((i) => i.geo?.points ?? []);
+const geoCoverage = {
+  records: incidents.filter((i) => (i.geo?.points ?? []).length > 0).length,
+  points: allPoints.length,
+  illustrative: allPoints.filter((p) => p.illustrative).length,
+  by_role: tally(allPoints.map((p) => p.role)),
+  by_basis: tally(allPoints.map((p) => p.basis)),
+};
+
 const summary = {
   dataset_version: pkg.version,
   schema: schema.$id,
@@ -53,6 +64,7 @@ const summary = {
     archived: archivedCount,
     pct: sourceCount ? Math.round((archivedCount / sourceCount) * 100) : 0,
   },
+  geo_coverage: geoCoverage,
   by_category: countBy('category'),
   by_severity: countBy('severity'),
   by_status: countBy('status'),
@@ -86,6 +98,9 @@ const CSV_COLUMNS = [
   ['cve', (i) => i.mappings?.cve],
   ['countries', (i) => i.targets?.countries],
   ['sectors', (i) => i.targets?.sectors],
+  // One entry per map point: role:basis:country (country "-" for a region
+  // centroid). Arrays join with "; " like every other list column.
+  ['geo_points', (i) => (i.geo?.points ?? []).map((p) => `${p.role}:${p.basis}:${p.country ?? '-'}`)],
 ];
 const csvCell = (v) => {
   const s = Array.isArray(v) ? v.join('; ') : `${v ?? ''}`;

@@ -21,6 +21,8 @@ Each record carries a stable `id` (its permanent citation key), a lifecycle-leve
 
 Records also carry an analytical layer for defenders: an agentic **`autonomy_level`**, a **`guardrail_bypass`** classification (how safety controls were circumvented), an **`ai_role`** skepticism axis (how central AI actually was, independent of status), **MITRE ATLAS / ATT&CK** mappings, OWASP references, `related[]` links between records from the same report or campaign, and `mitigations`. `dist/summary.json` rolls these up (by category, severity, status, actor type, autonomy level, AI role, model family, and year).
 
+**Map points (`geo.points[]`, schema 0.3.0).** A record carries map points only where a cited source states a location. Every point has a `role` (origin / target), an explicit **`basis`** saying why it exists (`sponsor-attribution`, `operator-location`, `actor-location`, `infrastructure`, `victim-location`, `stated-location`; see `taxonomy/geo-basis.yml`), the publisher that stated it (`attributed_by`, always one of the record's sources), an ISO `country`, and `illustrative: true` for any centroid. A state sponsor is not an operator location, and `targets.countries` is never turned into points. Consumers must read `geo.points[]`; the pre-0.3.0 `geo.target` / `geo.origin` slots are gone.
+
 ## Using the data
 
 ```sh
@@ -34,9 +36,9 @@ npm run build     # writes the dist/ artifacts below
 | --- | --- |
 | `dist/incidents.json` | full dataset (array) |
 | `dist/incidents.ndjson` | newline-delimited JSON (streaming) |
-| `dist/incidents.csv` | flattened columns for spreadsheets |
+| `dist/incidents.csv` | flattened columns for spreadsheets (map points as `geo_points` = `role:basis:country`) |
 | `dist/incidents/<id>.json` | one file per incident (stable per-record URL) |
-| `dist/summary.json` | counts + rollups (category, severity, status, actor type, autonomy level, AI role, model family, year) + `archive_coverage` |
+| `dist/summary.json` | counts + rollups (category, severity, status, actor type, autonomy level, AI role, model family, year) + `archive_coverage` + `geo_coverage` (points by role and basis) |
 | `dist/stix/bundle.json` | STIX 2.1 bundle (reports + ATLAS/ATT&CK attack-patterns + CVE vulnerabilities) for TIP/MISP ingestion |
 | `dist/index.html` | landing page (served via GitHub Pages) |
 
@@ -45,7 +47,7 @@ Or consume `dist/incidents.json` directly. Data is licensed [CC BY-SA 4.0](LICEN
 ## Commands
 
 ```sh
-npm run validate       # schema + taxonomy + id + editorial checks (no network)
+npm run validate       # schema + taxonomy + id + editorial + map-point checks (no network)
 npm run build          # deterministic dist/ build
 npm run linkcheck      # verify every source URL resolves, falling back to archive_url (network)
 npm run archive        # propose Wayback snapshots for sources (add --write to save them)

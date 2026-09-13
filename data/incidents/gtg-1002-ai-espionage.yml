@@ -43,11 +43,17 @@ targets:
     - government
   countries: [] # "global targets"; no specific target country named.
 geo:
-  origin:
-    lat: 35.86
-    lng: 104.19
-    label: "China (assessed state-sponsored origin)"
-    illustrative: true # Country centroid; Anthropic names no precise location.
+  points:
+    # Anthropic: "we assess with high confidence was a Chinese state-sponsored
+    # group". Sponsorship, not operator location — no location is stated.
+    - role: origin
+      basis: sponsor-attribution
+      attributed_by: "Anthropic"
+      country: CN
+      lat: 35.86
+      lng: 104.19
+      label: "China (state sponsor, per Anthropic)"
+      illustrative: true # Country centroid.
 lifecycle_phases:
   - recon
   - resource-dev
@@ -83,4 +89,4 @@ sources:
 added:
   date: 2026-08-12
   by: "MLSecOpsHub"
-last_updated: 2026-08-12
+last_updated: 2026-09-11

@@ -35,16 +35,25 @@ targets:
   countries:
     - UA
 geo:
-  target:
-    lat: 48.38
-    lng: 31.17
-    label: "Ukraine (target)"
-    illustrative: true # Country centroid; no precise victim location named.
-  origin:
-    lat: 61.52
-    lng: 105.32
-    label: "Russia (APT28 attribution)"
-    illustrative: true
+  points:
+    # GTIG: "the Russian government-backed actor APT28 ... using new malware
+    # against Ukraine". Sponsorship only; no operator location is stated.
+    - role: origin
+      basis: sponsor-attribution
+      attributed_by: "Google Threat Intelligence Group"
+      country: RU
+      lat: 61.52
+      lng: 105.32
+      label: "Russia (state sponsor of APT28, per GTIG)"
+      illustrative: true # Country centroid.
+    - role: target
+      basis: victim-location
+      attributed_by: "Google Threat Intelligence Group"
+      country: UA
+      lat: 48.38
+      lng: 31.17
+      label: "Ukraine (target, per GTIG)"
+      illustrative: true # Country centroid; no precise victim location named.
 lifecycle_phases:
   - recon
   - execution
@@ -77,4 +86,4 @@ sources:
 added:
   date: 2026-08-12
   by: "MLSecOpsHub"
-last_updated: 2026-08-12
+last_updated: 2026-09-11

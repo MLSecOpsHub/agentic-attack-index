@@ -11,12 +11,56 @@
   "category": "infrastructure-abuse-supply-chain",
   "confidence": "primary",
   "date_disclosed": "2024-02-14",
+  "geo": {
+    "points": [
+      {
+        "attributed_by": "Microsoft Threat Intelligence",
+        "basis": "sponsor-attribution",
+        "country": "RU",
+        "illustrative": true,
+        "label": "Russia (state sponsor of Forest Blizzard, per Microsoft)",
+        "lat": 61.52,
+        "lng": 105.32,
+        "role": "origin"
+      },
+      {
+        "attributed_by": "Microsoft Threat Intelligence",
+        "basis": "sponsor-attribution",
+        "country": "KP",
+        "illustrative": true,
+        "label": "North Korea (state sponsor of Emerald Sleet, per Microsoft)",
+        "lat": 40.34,
+        "lng": 127.51,
+        "role": "origin"
+      },
+      {
+        "attributed_by": "Microsoft Threat Intelligence",
+        "basis": "sponsor-attribution",
+        "country": "IR",
+        "illustrative": true,
+        "label": "Iran (state sponsor of Crimson Sandstorm, per Microsoft)",
+        "lat": 32.43,
+        "lng": 53.69,
+        "role": "origin"
+      },
+      {
+        "attributed_by": "Microsoft Threat Intelligence",
+        "basis": "sponsor-attribution",
+        "country": "CN",
+        "illustrative": true,
+        "label": "China (state sponsor of Charcoal Typhoon and Salmon Typhoon, per Microsoft)",
+        "lat": 35.86,
+        "lng": 104.19,
+        "role": "origin"
+      }
+    ]
+  },
   "guardrail_bypass": [
     "legitimate-tool-abuse"
   ],
   "id": "microsoft-openai-state-actor-llm",
   "impact": "No novel or unique AI-enabled attack techniques were observed; Microsoft and OpenAI characterised the activity as consistent with using AI as a productivity tool. Identified accounts were terminated.",
-  "last_updated": "2026-08-12",
+  "last_updated": "2026-09-11",
   "lifecycle_phases": [
     "recon",
     "resource-dev",

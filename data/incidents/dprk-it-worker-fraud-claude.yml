@@ -33,13 +33,31 @@ targets:
   records_exfiltrated: null
   sectors:
     - technology
-  countries: []
+  countries:
+    - US # Anthropic: "remote employment positions at US Fortune 500 technology companies".
 geo:
-  origin:
-    lat: 40.34
-    lng: 127.51
-    label: "North Korea (operator origin)"
-    illustrative: true # Country centroid; no precise location stated.
+  points:
+    # Anthropic: "North Korean operatives" running schemes "designed to ...
+    # generate profit for the regime" and "fund North Korea's weapons programs".
+    # That is state attribution. Neither source states where the operators were
+    # physically located, so this is NOT operator-location.
+    - role: origin
+      basis: sponsor-attribution
+      attributed_by: "Anthropic"
+      country: KP
+      lat: 40.34
+      lng: 127.51
+      label: "North Korea (state sponsor, per Anthropic)"
+      illustrative: true # Country centroid.
+    # Anthropic: "remote employment positions at US Fortune 500 technology companies".
+    - role: target
+      basis: victim-location
+      attributed_by: "Anthropic"
+      country: US
+      lat: 37.09
+      lng: -95.71
+      label: "United States (victim employers, per Anthropic)"
+      illustrative: true # Country centroid; no employer is named by the source.
 lifecycle_phases:
   - resource-dev
   - deception-social-eng
@@ -70,4 +88,11 @@ sources:
 added:
   date: 2026-08-12
   by: "MLSecOpsHub"
-last_updated: 2026-08-12
+revisions:
+  - date: 2026-09-11
+    note: >-
+      Map point basis corrected: the origin point was labelled "operator
+      origin" but the cited sources state regime affiliation and funding, not
+      where the operators were located. Re-typed as sponsor-attribution. Added
+      a US victim-location point and targets.countries from the same source.
+last_updated: 2026-09-11
