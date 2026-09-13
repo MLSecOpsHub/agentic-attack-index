@@ -59,11 +59,13 @@ impact: >-
 sources:
   - title: "When AI Turns on Its Team: Exploiting Agent-to-Agent Discovery via Prompt Injection"
     url: "https://appomni.com/ao-labs/ai-agent-to-agent-discovery-prompt-injection/"
+    archive_url: "https://web.archive.org/web/20260913050509/https://appomni.com/ao-labs/ai-agent-to-agent-discovery-prompt-injection/"
     publisher: "AppOmni"
     type: first-party-disclosure
     date: 2025-11-19
   - title: "ServiceNow AI Agents Can Be Tricked Into Acting Against Each Other via Second-Order Prompts"
     url: "https://thehackernews.com/2025/11/servicenow-ai-agents-can-be-tricked.html"
+    archive_url: "https://web.archive.org/web/20260822055258/https://thehackernews.com/2025/11/servicenow-ai-agents-can-be-tricked.html"
     publisher: "The Hacker News"
     type: news
     date: 2025-11-19
