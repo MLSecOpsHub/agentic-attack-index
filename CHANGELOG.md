@@ -34,6 +34,12 @@ dataset version tracks `package.json` and `CITATION.cff` (kept in sync by
   so they can be unit-tested; behaviour unchanged.
 
 ### Added
+- Coverage expansion from 11 to 16 incidents: Morris II (research GenAI worm
+  PoC), PROMPTFLUX (experimental Gemini self-modifying malware, cross-linked to
+  PROMPTSTEAL), the Replit AI agent production-database deletion, ForcedLeak
+  (Salesforce Agentforce indirect injection), and ServiceNow Now Assist
+  agent-to-agent injection (cross-linked to ForcedLeak) — each with MITRE ATLAS
+  mappings, autonomy/guardrail/AI-role classification, and Wayback snapshots.
 - `taxonomy/geo-basis.yml`.
 - `dist/summary.json` gained `geo_coverage { records, points, illustrative,
   by_role, by_basis }` (counts only).

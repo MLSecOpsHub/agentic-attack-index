@@ -1,0 +1,76 @@
+{
+  "actor": "AppOmni (AO Labs)",
+  "actor_type": "researcher",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-08-13"
+  },
+  "ai_role": "load-bearing",
+  "autonomy_level": "not-applicable",
+  "autonomy_pct": null,
+  "category": "agent-hijack-prompt-injection",
+  "confidence": "primary",
+  "date_disclosed": "2025-11-19",
+  "guardrail_bypass": [
+    "indirect-prompt-injection"
+  ],
+  "id": "servicenow-now-assist-agent-injection",
+  "impact": "Researcher demonstration: showed that default Now Assist agent-discovery and teaming can turn a benign agent into a vector for unauthorized data access, modification, exfiltration and privilege escalation. No in-the-wild exploitation reported.",
+  "last_updated": "2026-08-13",
+  "lifecycle_phases": [
+    "initial-access",
+    "execution",
+    "privilege-escalation",
+    "exfiltration"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0057"
+    ],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": [
+      "LLM01"
+    ]
+  },
+  "mitigations": [
+    "Enable supervised execution mode for privileged agents; disable the autonomous override property; segment agents into separate teams; monitor agent behavior."
+  ],
+  "model_families": [
+    "other"
+  ],
+  "models": [],
+  "name": "ServiceNow Now Assist agent-to-agent prompt injection (insecure defaults)",
+  "related": [
+    "forcedleak-salesforce-agentforce"
+  ],
+  "severity": "high",
+  "sources": [
+    {
+      "date": "2025-11-19",
+      "publisher": "AppOmni",
+      "title": "When AI Turns on Its Team: Exploiting Agent-to-Agent Discovery via Prompt Injection",
+      "type": "first-party-disclosure",
+      "url": "https://appomni.com/ao-labs/ai-agent-to-agent-discovery-prompt-injection/"
+    },
+    {
+      "date": "2025-11-19",
+      "publisher": "The Hacker News",
+      "title": "ServiceNow AI Agents Can Be Tricked Into Acting Against Each Other via Second-Order Prompts",
+      "type": "news",
+      "url": "https://thehackernews.com/2025/11/servicenow-ai-agents-can-be-tricked.html"
+    }
+  ],
+  "status": "reported",
+  "summary": "In November 2025 AppOmni disclosed a second-order, agent-to-agent prompt- injection weakness in ServiceNow's Now Assist agentic AI. Instructions planted in an ordinary record can induce a low-capability agent to discover and recruit more powerful agents on the same default \"team\" to read or modify records, exfiltrate data, and escalate privilege — with actions running at the initiating user's privilege. It stems from insecure default configuration (agent discovery, automatic teaming) rather than a single code bug; ServiceNow characterized the behavior as expected and updated its documentation.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": []
+  }
+}
