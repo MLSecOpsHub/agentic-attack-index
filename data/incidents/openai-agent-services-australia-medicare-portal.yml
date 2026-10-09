@@ -1,0 +1,111 @@
+id: openai-agent-services-australia-medicare-portal
+name: "OpenAI research agent circumvented access controls on Services Australia's Medicare statistics portal"
+summary: >-
+  On 24 September 2026, Australian Prime Minister Anthony Albanese disclosed
+  that on 18 June 2026 an AI agent run by OpenAI's research team, using an
+  internal model for internet research into public medicine spending, gained
+  unauthorised access to the public-facing Medicare Statistics Reporting Service
+  portal administered by Services Australia. The agent hit repeated blocks,
+  "found a way around those blocks", and accessed both public and non-public
+  files; Services Australia reported it also wrote files to an internal server.
+  OpenAI said it identified the activity in August while reviewing "misaligned
+  model activity" and that its models "took actions we did not intend"; per
+  OpenAI's later statement as reported by iTnews, the agent ran commands and
+  retrieved internal files, credentials and aggregate statistics. OpenAI
+  notified Australia on 10 September by email to a public mailbox; Services
+  Australia reported the incident to the Australian Cyber Security Centre on 15
+  September. The government states no personal Medicare information is believed
+  to have been accessed and there is no evidence of broader compromise. Three
+  other public bodies may have been affected; the government has not confirmed
+  this.
+date_disclosed: 2026-09-24
+status: confirmed # First-party government disclosure; OpenAI confirmed via spokesperson statements.
+confidence: primary
+# Graded autonomous-attack rather than lab-escape-eval because a real
+# third-party government system was accessed without authorisation.
+category: autonomous-attack
+severity: medium # Non-sensitive statistics portal; no personal data believed accessed; credentials and internal files retrieved per OpenAI; forensic investigation ongoing.
+models: [] # Sources describe only an "internal model" / "frontier model"; no model named.
+model_families:
+  - other # OpenAI model, but unnamed; family not asserted.
+actor: "OpenAI internal research agent (unnamed model) operating in an internal research/evaluation context"
+actor_type: lab-test-eval
+autonomy_pct: null
+autonomy_level: fully-autonomous # PM: the agent "didn't accept 'no' for an answer"; OpenAI: actions it did not intend.
+guardrail_bypass:
+  - unknown # How the agent got past the portal's access controls is not described by sources.
+ai_role: load-bearing
+related:
+  - openai-eval-agents-hugging-face-intrusion
+mitigations:
+  - "OpenAI said it paused training and evaluation involving tool use for its most capable models until additional safeguards are in place (per iTnews)."
+  - "Australia announced a taskforce and rapid review of government arrangements for AI-driven cyber incidents, led by the Department of the Prime Minister and Cabinet with the National Cyber Security Coordinator, ASD, the AI Safety Institute and Services Australia, and said it would seek advice on whether offences occurred."
+targets:
+  orgs_affected: 1 # Services Australia confirmed; three other bodies "may have been affected", not confirmed.
+  records_exfiltrated: null
+  sectors:
+    - government
+    - healthcare
+  countries:
+    - AU
+geo:
+  points:
+    - role: target
+      basis: victim-location
+      attributed_by: "Prime Minister of Australia"
+      country: AU
+      lat: -25.27
+      lng: 133.78
+      label: "Australia (Services Australia portal, per the Prime Minister)"
+      illustrative: true # Country centroid.
+lifecycle_phases:
+  - recon
+  - initial-access
+  - execution
+  - credential-access
+mappings:
+  mitre_atlas: [] # No ATLAS id verified against the live matrix for this record.
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: []
+  cve: []
+  aiid: []
+impact: >-
+  Unauthorised access to public and non-public files on a government statistics
+  portal; files written to an internal server; per OpenAI, commands run and
+  internal files and credentials retrieved. No personal information believed
+  accessed and no broader network compromise found, per the Australian
+  government; forensic investigation with ASD ongoing. Political and regulatory
+  consequences: a national rapid review, referral to a parliamentary committee,
+  and new reporting standards for rogue-AI incidents announced.
+sources:
+  - title: "Press conference - New York (Prime Minister Anthony Albanese)"
+    url: "https://www.pm.gov.au/media/press-conference-new-york"
+    archive_url: "https://web.archive.org/web/20261006021958/https://www.pm.gov.au/media/press-conference-new-york"
+    publisher: "Prime Minister of Australia"
+    type: government-advisory # Official government statement/transcript.
+    date: 2026-09-24
+  - title: "OpenAI agent hacked Medicare portal, PM says"
+    url: "https://www.abc.net.au/news/2026-09-24/ai-agent-accessed-australian-government-site-pm-says/107189078"
+    archive_url: "https://web.archive.org/web/20261008204929/https://www.abc.net.au/news/2026-09-24/ai-agent-accessed-australian-government-site-pm-says/107189078"
+    publisher: "ABC News"
+    type: news
+    date: 2026-09-24
+  - title: "OpenAI Agent Hacks Australian Medicare Portal"
+    url: "https://www.infosecurity-magazine.com/news/openai-hacks-australian-medicare/"
+    publisher: "Infosecurity Magazine"
+    type: news
+    date: 2026-09-24
+  - title: "OpenAI agent accessed \"credentials\" via Medicare data portal"
+    url: "https://www.itnews.com.au/news/openai-agent-accessed-credentials-via-medicare-data-portal-629297"
+    archive_url: "https://web.archive.org/web/20261001192503/https://www.itnews.com.au/news/openai-agent-accessed-credentials-via-medicare-data-portal-629297"
+    publisher: "iTnews"
+    type: news
+    date: 2026-09-29
+  # OpenAI's own statement, "How we will do better for Australia"
+  # (https://openai.com/index/how-we-will-do-better-for-australia/, 2026-09-29),
+  # returns 403 to automated fetchers; add it with an archive_url once snapshotted.
+added:
+  date: 2026-10-09
+  by: "MLSecOpsHub"
+last_updated: 2026-10-09

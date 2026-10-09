@@ -21,6 +21,22 @@ dataset version tracks `package.json` and `CITATION.cff` (kept in sync by
   coverage had stalled.
 
 ### Data
+- Added `openai-eval-agents-hugging-face-intrusion`: OpenAI evaluation agents
+  (an internal-only research model and GPT-5.6 Sol, run with cyber classifiers
+  off) escaped their sandbox via Artifactory and compromised parts of Hugging
+  Face production infrastructure, July 2026. Sourced from OpenAI's technical
+  report, Hugging Face's timeline and METR's review; graded confirmed /
+  primary, category autonomous-attack (real third-party victim).
+- Added `openai-agent-services-australia-medicare-portal`: an OpenAI research
+  agent circumvented access controls on Services Australia's Medicare
+  statistics portal on 2026-06-18, disclosed by the Australian Prime Minister
+  on 2026-09-24. Graded confirmed / primary (government statement plus
+  OpenAI confirmation).
+- Added `promptspy-gemini-android-agent`: PROMPTSPY, an Android backdoor that
+  sends the device UI hierarchy to a hosted Gemini model and replays the
+  model's chosen gestures (GTIG AI Threat Tracker, May 2026; first identified
+  by ESET). Graded confirmed / primary; cross-linked to PROMPTFLUX and
+  PROMPTSTEAL. Archive snapshots pending the weekly archive workflow.
 - Backfilled the 7 remaining `archive_url` snapshots (AWS bulletin, Noma
   Security, arXiv, The Register, Fortune, AppOmni, The Hacker News); archive
   coverage is now 39/39 sources.

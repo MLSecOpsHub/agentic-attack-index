@@ -1,0 +1,69 @@
+id: promptspy-gemini-android-agent
+name: "PROMPTSPY — Android backdoor that delegates on-device UI actions to the Gemini API"
+summary: >-
+  In its May 2026 AI Threat Tracker, Google's Threat Intelligence Group (GTIG)
+  described PROMPTSPY, an Android backdoor first identified by ESET. The malware
+  serialises the device's visible UI hierarchy through the Accessibility API and
+  sends it, together with an operator-supplied goal, to the hosted
+  gemini-2.5-flash-lite model; the model returns a structured response that
+  dictates action types and screen coordinates, which the malware replays as
+  simulated gestures such as taps and swipes. ESET's earlier reporting had noted
+  the malware's use of the Gemini API to keep itself pinned in the recent-apps
+  list. Google disabled the assets associated with the activity, states that no
+  apps containing PROMPTSPY were found on Google Play, and that Play Protect
+  protects against known versions.
+date_disclosed: 2026-05-12 # GTIG report date. ESET identified PROMPTSPY earlier; ESET publication date not verified here.
+status: confirmed # Two independent vendor analyses (GTIG, ESET).
+confidence: primary
+category: autonomous-attack # The hosted model decides and the malware executes the on-device actions.
+severity: medium # Google: not on Google Play; known versions blocked by Play Protect. Victim counts not stated.
+models:
+  - "gemini-2.5-flash-lite"
+model_families:
+  - gemini
+actor: "Unknown"
+actor_type: unknown # GTIG attributes the activity to no named group on the page read.
+autonomy_pct: null
+autonomy_level: supervised-autonomous # Operator supplies the goal; the model chooses each UI action.
+guardrail_bypass:
+  - legitimate-tool-abuse # Ordinary API access to a hosted model, used as an on-device decision engine.
+ai_role: load-bearing # The model dictates the actions the malware performs.
+related:
+  - promptflux-gemini-selfmod # Same GTIG tracker series; malware calling the Gemini API at runtime.
+  - promptsteal-apt28-lamehug
+mitigations:
+  - "Google disabled the assets associated with this activity (GTIG)."
+  - "Google Play Protect automatically protects against known versions of PROMPTSPY (GTIG)."
+targets:
+  orgs_affected: null
+  records_exfiltrated: null
+  sectors: []
+  countries: [] # No target geography stated on the GTIG page read.
+lifecycle_phases:
+  - execution
+  - persistence
+mappings:
+  mitre_atlas: [] # No ATLAS id verified against the live matrix for this record.
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: []
+  cve: []
+  aiid: []
+impact: >-
+  Not quantified by sources. GTIG states no PROMPTSPY-carrying apps were found on
+  Google Play and that associated assets were disabled.
+sources:
+  - title: "Adversaries Leverage AI for Vulnerability Exploitation, Augmented Operations, and Initial Access"
+    url: "https://cloud.google.com/blog/topics/threat-intelligence/ai-vulnerability-exploitation-initial-access"
+    publisher: "Google Threat Intelligence Group"
+    type: vendor-report
+    date: 2026-05-12
+  - title: "PromptSpy ushers in era of Android threats using GenAI"
+    url: "https://www.welivesecurity.com/en/eset-research/promptspy-ushers-in-era-android-threats-using-genai/"
+    publisher: "ESET"
+    type: vendor-report
+    # Linked from the GTIG report; publication date not verified here, so omitted.
+added:
+  date: 2026-10-09
+  by: "MLSecOpsHub"
+last_updated: 2026-10-09

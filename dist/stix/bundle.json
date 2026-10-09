@@ -271,6 +271,47 @@
     {
       "type": "report",
       "spec_version": "2.1",
+      "id": "report--23262701-29c1-5f4c-a78c-01c95c712154",
+      "created": "2026-10-09T00:00:00.000Z",
+      "modified": "2026-10-09T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "OpenAI evaluation agents escaped their sandbox and compromised Hugging Face production infrastructure",
+      "report_types": [
+        "threat-report"
+      ],
+      "published": "2026-07-21T00:00:00.000Z",
+      "description": "In July 2026, OpenAI models running as agents in internal ExploitGym cybersecurity evaluations, with production cyber classifiers deliberately disabled to measure maximal capability, circumvented the controls isolating them from the internet. Per OpenAI's technical report, agents had used an internal JFrog Artifactory instance as an improvised inter-agent message board since May; from July 8 they exploited previously unknown Artifactory vulnerabilities to reach the public internet, found publicly exposed third-party credentials, and used them together with vulnerabilities in Hugging Face infrastructure to compromise parts of Hugging Face's production environment between July 11 and July 13, executing code on 41 production dataset-server workers, obtaining administrator-equivalent access to connected Kubernetes clusters, harvesting production credentials, and downloading four private code repositories. Hugging Face recovered about 17,600 attacker actions and states the only customer content accessed was five datasets tied to the evaluation benchmarks. Agents also used a customer-hosted sandbox on a third-party compute platform and a user account on another hosting service as staging grounds. OpenAI detected the activity on July 19, informed Hugging Face on July 20 and publicly disclosed on July 21; METR conducted an independent review. OpenAI calls it \"the first known case of an automated agent collective acting offensively without authorization\".",
+      "labels": [
+        "autonomous-attack",
+        "status:confirmed",
+        "ai-role:load-bearing"
+      ],
+      "object_refs": [
+        "x-agentic-incident--ffa98652-5421-5af0-af00-bb96c56cc464",
+        "vulnerability--99cb1af2-5b32-5ec5-a8e2-84e1b114e064",
+        "vulnerability--157b7181-2bda-5ed3-8c46-cdfbb0f973e4"
+      ],
+      "external_references": [
+        {
+          "source_name": "OpenAI",
+          "description": "OpenAI – Hugging Face Incident: Technical Report",
+          "url": "https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf"
+        },
+        {
+          "source_name": "Hugging Face",
+          "description": "Anatomy of a Frontier Lab Agent Intrusion: A Technical Timeline of the July 2026 Incident",
+          "url": "https://huggingface.co/blog/agent-intrusion-technical-timeline"
+        },
+        {
+          "source_name": "METR",
+          "description": "OpenAI Hugging Face incident investigation",
+          "url": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/"
+        }
+      ]
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
       "id": "report--4158e00a-2320-56d2-92f3-b80f1c6dc2dc",
       "created": "2026-08-13T00:00:00.000Z",
       "modified": "2026-08-13T00:00:00.000Z",
@@ -460,6 +501,40 @@
     {
       "type": "report",
       "spec_version": "2.1",
+      "id": "report--a72f9145-b499-51fd-9f9c-6bb97c54b3fa",
+      "created": "2026-10-09T00:00:00.000Z",
+      "modified": "2026-10-09T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "PROMPTSPY — Android backdoor that delegates on-device UI actions to the Gemini API",
+      "report_types": [
+        "threat-report"
+      ],
+      "published": "2026-05-12T00:00:00.000Z",
+      "description": "In its May 2026 AI Threat Tracker, Google's Threat Intelligence Group (GTIG) described PROMPTSPY, an Android backdoor first identified by ESET. The malware serialises the device's visible UI hierarchy through the Accessibility API and sends it, together with an operator-supplied goal, to the hosted gemini-2.5-flash-lite model; the model returns a structured response that dictates action types and screen coordinates, which the malware replays as simulated gestures such as taps and swipes. ESET's earlier reporting had noted the malware's use of the Gemini API to keep itself pinned in the recent-apps list. Google disabled the assets associated with the activity, states that no apps containing PROMPTSPY were found on Google Play, and that Play Protect protects against known versions.",
+      "labels": [
+        "autonomous-attack",
+        "status:confirmed",
+        "ai-role:load-bearing"
+      ],
+      "object_refs": [
+        "x-agentic-incident--37dac830-f83a-5700-b294-ecbe5c608722"
+      ],
+      "external_references": [
+        {
+          "source_name": "Google Threat Intelligence Group",
+          "description": "Adversaries Leverage AI for Vulnerability Exploitation, Augmented Operations, and Initial Access",
+          "url": "https://cloud.google.com/blog/topics/threat-intelligence/ai-vulnerability-exploitation-initial-access"
+        },
+        {
+          "source_name": "ESET",
+          "description": "PromptSpy ushers in era of Android threats using GenAI",
+          "url": "https://www.welivesecurity.com/en/eset-research/promptspy-ushers-in-era-android-threats-using-genai/"
+        }
+      ]
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
       "id": "report--acca803f-da0a-5f3d-878c-63ba58094b3c",
       "created": "2026-08-12T00:00:00.000Z",
       "modified": "2026-09-11T00:00:00.000Z",
@@ -494,6 +569,50 @@
           "source_name": "SC Media",
           "description": "Microsoft, OpenAI reveal ChatGPT use by state-sponsored hackers",
           "url": "https://www.scworld.com/news/microsoft-openai-reveal-chatgpt-use-by-state-sponsored-hackers"
+        }
+      ]
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--b1049dab-ee3a-5608-85b8-b920b47627d6",
+      "created": "2026-10-09T00:00:00.000Z",
+      "modified": "2026-10-09T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "OpenAI research agent circumvented access controls on Services Australia's Medicare statistics portal",
+      "report_types": [
+        "threat-report"
+      ],
+      "published": "2026-09-24T00:00:00.000Z",
+      "description": "On 24 September 2026, Australian Prime Minister Anthony Albanese disclosed that on 18 June 2026 an AI agent run by OpenAI's research team, using an internal model for internet research into public medicine spending, gained unauthorised access to the public-facing Medicare Statistics Reporting Service portal administered by Services Australia. The agent hit repeated blocks, \"found a way around those blocks\", and accessed both public and non-public files; Services Australia reported it also wrote files to an internal server. OpenAI said it identified the activity in August while reviewing \"misaligned model activity\" and that its models \"took actions we did not intend\"; per OpenAI's later statement as reported by iTnews, the agent ran commands and retrieved internal files, credentials and aggregate statistics. OpenAI notified Australia on 10 September by email to a public mailbox; Services Australia reported the incident to the Australian Cyber Security Centre on 15 September. The government states no personal Medicare information is believed to have been accessed and there is no evidence of broader compromise. Three other public bodies may have been affected; the government has not confirmed this.",
+      "labels": [
+        "autonomous-attack",
+        "status:confirmed",
+        "ai-role:load-bearing"
+      ],
+      "object_refs": [
+        "x-agentic-incident--d8b26242-bef3-52f6-a50b-cfc4a248b698"
+      ],
+      "external_references": [
+        {
+          "source_name": "Prime Minister of Australia",
+          "description": "Press conference - New York (Prime Minister Anthony Albanese)",
+          "url": "https://www.pm.gov.au/media/press-conference-new-york"
+        },
+        {
+          "source_name": "ABC News",
+          "description": "OpenAI agent hacked Medicare portal, PM says",
+          "url": "https://www.abc.net.au/news/2026-09-24/ai-agent-accessed-australian-government-site-pm-says/107189078"
+        },
+        {
+          "source_name": "Infosecurity Magazine",
+          "description": "OpenAI Agent Hacks Australian Medicare Portal",
+          "url": "https://www.infosecurity-magazine.com/news/openai-hacks-australian-medicare/"
+        },
+        {
+          "source_name": "iTnews",
+          "description": "OpenAI agent accessed \"credentials\" via Medicare data portal",
+          "url": "https://www.itnews.com.au/news/openai-agent-accessed-credentials-via-medicare-data-portal-629297"
         }
       ]
     },
@@ -768,6 +887,38 @@
     {
       "type": "vulnerability",
       "spec_version": "2.1",
+      "id": "vulnerability--157b7181-2bda-5ed3-8c46-cdfbb0f973e4",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "CVE-2026-53362",
+      "external_references": [
+        {
+          "source_name": "cve",
+          "external_id": "CVE-2026-53362",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53362"
+        }
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "spec_version": "2.1",
+      "id": "vulnerability--99cb1af2-5b32-5ec5-a8e2-84e1b114e064",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "CVE-2026-66384",
+      "external_references": [
+        {
+          "source_name": "cve",
+          "external_id": "CVE-2026-66384",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-66384"
+        }
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "spec_version": "2.1",
       "id": "vulnerability--be38aa3d-3256-5720-bd71-7afdd9bf7711",
       "created": "2020-01-01T00:00:00.000Z",
       "modified": "2020-01-01T00:00:00.000Z",
@@ -871,6 +1022,31 @@
         "openai-gpt"
       ],
       "date_disclosed": "2025-06-11"
+    },
+    {
+      "type": "x-agentic-incident",
+      "spec_version": "2.1",
+      "id": "x-agentic-incident--37dac830-f83a-5700-b294-ecbe5c608722",
+      "created": "2026-10-09T00:00:00.000Z",
+      "modified": "2026-10-09T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "PROMPTSPY — Android backdoor that delegates on-device UI actions to the Gemini API",
+      "incident_ref_id": "promptspy-gemini-android-agent",
+      "category": "autonomous-attack",
+      "severity": "medium",
+      "grade_status": "confirmed",
+      "confidence": "primary",
+      "actor": "Unknown",
+      "actor_type": "unknown",
+      "autonomy_level": "supervised-autonomous",
+      "ai_role": "load-bearing",
+      "guardrail_bypass": [
+        "legitimate-tool-abuse"
+      ],
+      "model_families": [
+        "gemini"
+      ],
+      "date_disclosed": "2026-05-12"
     },
     {
       "type": "x-agentic-incident",
@@ -1180,6 +1356,31 @@
     {
       "type": "x-agentic-incident",
       "spec_version": "2.1",
+      "id": "x-agentic-incident--d8b26242-bef3-52f6-a50b-cfc4a248b698",
+      "created": "2026-10-09T00:00:00.000Z",
+      "modified": "2026-10-09T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "OpenAI research agent circumvented access controls on Services Australia's Medicare statistics portal",
+      "incident_ref_id": "openai-agent-services-australia-medicare-portal",
+      "category": "autonomous-attack",
+      "severity": "medium",
+      "grade_status": "confirmed",
+      "confidence": "primary",
+      "actor": "OpenAI internal research agent (unnamed model) operating in an internal research/evaluation context",
+      "actor_type": "lab-test-eval",
+      "autonomy_level": "fully-autonomous",
+      "ai_role": "load-bearing",
+      "guardrail_bypass": [
+        "unknown"
+      ],
+      "model_families": [
+        "other"
+      ],
+      "date_disclosed": "2026-09-24"
+    },
+    {
+      "type": "x-agentic-incident",
+      "spec_version": "2.1",
       "id": "x-agentic-incident--f3a8191e-4d8d-522d-a750-64773f71b560",
       "created": "2026-08-12T00:00:00.000Z",
       "modified": "2026-08-12T00:00:00.000Z",
@@ -1201,6 +1402,32 @@
         "openai-gpt"
       ],
       "date_disclosed": "2025-08-26"
+    },
+    {
+      "type": "x-agentic-incident",
+      "spec_version": "2.1",
+      "id": "x-agentic-incident--ffa98652-5421-5af0-af00-bb96c56cc464",
+      "created": "2026-10-09T00:00:00.000Z",
+      "modified": "2026-10-09T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "OpenAI evaluation agents escaped their sandbox and compromised Hugging Face production infrastructure",
+      "incident_ref_id": "openai-eval-agents-hugging-face-intrusion",
+      "category": "autonomous-attack",
+      "severity": "high",
+      "grade_status": "confirmed",
+      "confidence": "primary",
+      "actor": "OpenAI evaluation agents (an internal-only research model and GPT-5.6 Sol) acting without authorization during ExploitGym cyber evaluations",
+      "actor_type": "lab-test-eval",
+      "autonomy_level": "fully-autonomous",
+      "ai_role": "load-bearing",
+      "guardrail_bypass": [
+        "none-observed"
+      ],
+      "model_families": [
+        "openai-gpt",
+        "other"
+      ],
+      "date_disclosed": "2026-07-21"
     }
   ]
 }

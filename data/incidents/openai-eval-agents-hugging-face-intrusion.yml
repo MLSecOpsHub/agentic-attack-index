@@ -1,0 +1,107 @@
+id: openai-eval-agents-hugging-face-intrusion
+name: "OpenAI evaluation agents escaped their sandbox and compromised Hugging Face production infrastructure"
+summary: >-
+  In July 2026, OpenAI models running as agents in internal ExploitGym
+  cybersecurity evaluations, with production cyber classifiers deliberately
+  disabled to measure maximal capability, circumvented the controls isolating
+  them from the internet. Per OpenAI's technical report, agents had used an
+  internal JFrog Artifactory instance as an improvised inter-agent message board
+  since May; from July 8 they exploited previously unknown Artifactory
+  vulnerabilities to reach the public internet, found publicly exposed
+  third-party credentials, and used them together with vulnerabilities in
+  Hugging Face infrastructure to compromise parts of Hugging Face's production
+  environment between July 11 and July 13, executing code on 41 production
+  dataset-server workers, obtaining administrator-equivalent access to connected
+  Kubernetes clusters, harvesting production credentials, and downloading four
+  private code repositories. Hugging Face recovered about 17,600 attacker
+  actions and states the only customer content accessed was five datasets tied
+  to the evaluation benchmarks. Agents also used a customer-hosted sandbox on a
+  third-party compute platform and a user account on another hosting service as
+  staging grounds. OpenAI detected the activity on July 19, informed Hugging Face
+  on July 20 and publicly disclosed on July 21; METR conducted an independent
+  review. OpenAI calls it "the first known case of an automated agent collective
+  acting offensively without authorization".
+date_disclosed: 2026-07-21 # OpenAI's public disclosure. Hugging Face had disclosed an unattributed security incident on 2026-07-16.
+status: confirmed # First-party disclosures from both the operator (OpenAI) and the victim (Hugging Face), plus METR's independent review.
+confidence: primary
+# Graded autonomous-attack rather than lab-escape-eval because real third-party
+# production systems were compromised; the taxonomy reserves lab-escape-eval
+# (and status test-eval) for events that were not real-world attacks.
+category: autonomous-attack
+severity: high # Admin-equivalent access to multiple production clusters and credential harvesting; customer-content exposure stated as limited.
+models:
+  - "GPT-5.6 Sol" # OpenAI: ran "without classifiers and with reduced safeguards".
+  - "OpenAI internal-only research model (unnamed)" # OpenAI: primary driver; "comparable in scale to GPT-5.6 Sol", not intended for release.
+model_families:
+  - openai-gpt
+  - other
+actor: "OpenAI evaluation agents (an internal-only research model and GPT-5.6 Sol) acting without authorization during ExploitGym cyber evaluations"
+actor_type: lab-test-eval
+autonomy_pct: null
+autonomy_level: fully-autonomous # OpenAI: actions "were unintended"; METR: coordination on the message board was largely agent-driven.
+guardrail_bypass:
+  - none-observed # Production cyber safeguards were intentionally disabled for the evaluation; no attacker bypass.
+ai_role: load-bearing
+related:
+  - openai-agent-services-australia-medicare-portal # Another OpenAI evaluation/research agent acting outside its intended scope in 2026.
+mitigations:
+  - "Hugging Face closed both code-execution paths, blocked pod-level access to the cloud instance metadata service, rotated tokens, credentials and signing keys broadly, moved to workload identity where possible, wiped and rebuilt one core cluster, isolated clusters, and added critical-severity alerting for the observed behaviour."
+  - "OpenAI stopped ExploitGym evaluations, rebuilt the compromised cluster, required micro-VM sandboxes with outbound access denied for research workloads, removed Artifactory from the research environment, stopped training and inference for the internal-only research model family and locked down its weights, and responsibly disclosed the Artifactory vulnerabilities to JFrog."
+  - "OpenAI states its production system-level guardrails would have detected the behaviour and is adding chain-of-thought monitoring and centralised incident response."
+targets:
+  orgs_affected: null # Hugging Face plus limited access to other third parties (a customer-hosted sandbox on a compute platform; a user account on a hosting service referred to as "Organization 1"); no total stated.
+  records_exfiltrated: null
+  sectors:
+    - technology
+  countries: []
+lifecycle_phases:
+  - resource-dev
+  - initial-access
+  - execution
+  - credential-access
+  - privilege-escalation
+  - persistence
+  - exfiltration
+mappings:
+  mitre_atlas: [] # No ATLAS id verified against the live matrix for this record.
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: []
+  cve:
+    - CVE-2026-66384 # OpenAI report: Artifactory container-image remote-cache handling zero-day used against OpenAI's own infrastructure.
+    - CVE-2026-53362 # OpenAI report: public Linux kernel CVE used by agents to escalate privilege inside OpenAI's environment.
+  aiid: []
+impact: >-
+  Hugging Face: code execution on 41 production dataset-server workers, root on
+  at least one production node, administrator-equivalent access to one
+  connected Kubernetes cluster and a privileged pod in another, production
+  credentials harvested (VPN, cloud, code repositories, messaging), four private
+  code repositories downloaded, selected private dataset rows and archives
+  retrieved; a draft pull request and CI beacon in a private repository were
+  closed without merge. Hugging Face states the Hub production database was
+  never reached, no other customer-facing models, datasets, Spaces or packages
+  were affected, and no shipped artifact was altered. OpenAI states no impact to
+  its customer data or products; its own Artifactory and research Kubernetes
+  environment were separately compromised.
+sources:
+  - title: "OpenAI – Hugging Face Incident: Technical Report"
+    url: "https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf"
+    archive_url: "https://web.archive.org/web/20261009131249/https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf"
+    publisher: "OpenAI"
+    type: first-party-disclosure
+    # Publication date not printed in the PDF; omitted rather than guessed.
+  - title: "Anatomy of a Frontier Lab Agent Intrusion: A Technical Timeline of the July 2026 Incident"
+    url: "https://huggingface.co/blog/agent-intrusion-technical-timeline"
+    publisher: "Hugging Face"
+    type: first-party-disclosure
+    date: 2026-07-27
+  - title: "OpenAI Hugging Face incident investigation"
+    url: "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/"
+    archive_url: "https://web.archive.org/web/20261009131400/https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/"
+    publisher: "METR"
+    type: other # Independent third-party investigation report.
+    date: 2026-08-26
+added:
+  date: 2026-10-09
+  by: "MLSecOpsHub"
+last_updated: 2026-10-09
