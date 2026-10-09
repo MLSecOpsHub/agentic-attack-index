@@ -4,8 +4,8 @@
   "total": 19,
   "archive_coverage": {
     "sources": 48,
-    "archived": 39,
-    "pct": 81
+    "archived": 44,
+    "pct": 92
   },
   "geo_coverage": {
     "records": 6,
@@ -72,9 +72,9 @@
   },
   "evidence_split": {
     "basis": "status == confirmed AND ai_role == load-bearing; retracted/superseded records excluded",
-    "total": 16,
-    "confirmed_load_bearing": 5,
-    "pct": 31,
+    "total": 19,
+    "confirmed_load_bearing": 8,
+    "pct": 42,
     "by_year": {
       "2024": {
         "total": 2,
@@ -85,12 +85,17 @@
         "total": 14,
         "confirmed_load_bearing": 5,
         "pct": 36
+      },
+      "2026": {
+        "total": 3,
+        "confirmed_load_bearing": 3,
+        "pct": 100
       }
     },
     "by_status_ai_role": {
       "confirmed": {
         "incidental": 1,
-        "load-bearing": 5,
+        "load-bearing": 8,
         "significant": 4
       },
       "reported": {
@@ -105,6 +110,9 @@
       "echoleak-m365-copilot",
       "gtg-1002-ai-espionage",
       "gtg-2002-vibe-hacking-extortion",
+      "openai-agent-services-australia-medicare-portal",
+      "openai-eval-agents-hugging-face-intrusion",
+      "promptspy-gemini-android-agent",
       "promptsteal-apt28-lamehug",
       "replit-agent-database-deletion"
     ]

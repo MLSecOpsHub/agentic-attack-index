@@ -57,6 +57,7 @@
   "severity": "high",
   "sources": [
     {
+      "archive_url": "https://web.archive.org/web/20261009131249/https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf",
       "publisher": "OpenAI",
       "title": "OpenAI – Hugging Face Incident: Technical Report",
       "type": "first-party-disclosure",
@@ -70,6 +71,7 @@
       "url": "https://huggingface.co/blog/agent-intrusion-technical-timeline"
     },
     {
+      "archive_url": "https://web.archive.org/web/20261009131400/https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/",
       "date": "2026-08-26",
       "publisher": "METR",
       "title": "OpenAI Hugging Face incident investigation",

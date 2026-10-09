@@ -1046,6 +1046,7 @@
     "severity": "medium",
     "sources": [
       {
+        "archive_url": "https://web.archive.org/web/20261006021958/https://www.pm.gov.au/media/press-conference-new-york",
         "date": "2026-09-24",
         "publisher": "Prime Minister of Australia",
         "title": "Press conference - New York (Prime Minister Anthony Albanese)",
@@ -1053,6 +1054,7 @@
         "url": "https://www.pm.gov.au/media/press-conference-new-york"
       },
       {
+        "archive_url": "https://web.archive.org/web/20261008204929/https://www.abc.net.au/news/2026-09-24/ai-agent-accessed-australian-government-site-pm-says/107189078",
         "date": "2026-09-24",
         "publisher": "ABC News",
         "title": "OpenAI agent hacked Medicare portal, PM says",
@@ -1067,6 +1069,7 @@
         "url": "https://www.infosecurity-magazine.com/news/openai-hacks-australian-medicare/"
       },
       {
+        "archive_url": "https://web.archive.org/web/20261001192503/https://www.itnews.com.au/news/openai-agent-accessed-credentials-via-medicare-data-portal-629297",
         "date": "2026-09-29",
         "publisher": "iTnews",
         "title": "OpenAI agent accessed \"credentials\" via Medicare data portal",
@@ -1147,6 +1150,7 @@
     "severity": "high",
     "sources": [
       {
+        "archive_url": "https://web.archive.org/web/20261009131249/https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf",
         "publisher": "OpenAI",
         "title": "OpenAI – Hugging Face Incident: Technical Report",
         "type": "first-party-disclosure",
@@ -1160,6 +1164,7 @@
         "url": "https://huggingface.co/blog/agent-intrusion-technical-timeline"
       },
       {
+        "archive_url": "https://web.archive.org/web/20261009131400/https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/",
         "date": "2026-08-26",
         "publisher": "METR",
         "title": "OpenAI Hugging Face incident investigation",
