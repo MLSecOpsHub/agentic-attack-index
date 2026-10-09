@@ -68,6 +68,45 @@
     "2024": 2,
     "2025": 14
   },
+  "evidence_split": {
+    "basis": "status == confirmed AND ai_role == load-bearing; retracted/superseded records excluded",
+    "total": 16,
+    "confirmed_load_bearing": 5,
+    "pct": 31,
+    "by_year": {
+      "2024": {
+        "total": 2,
+        "confirmed_load_bearing": 0,
+        "pct": 0
+      },
+      "2025": {
+        "total": 14,
+        "confirmed_load_bearing": 5,
+        "pct": 36
+      }
+    },
+    "by_status_ai_role": {
+      "confirmed": {
+        "incidental": 1,
+        "load-bearing": 5,
+        "significant": 4
+      },
+      "reported": {
+        "load-bearing": 3,
+        "significant": 1
+      },
+      "test-eval": {
+        "load-bearing": 2
+      }
+    },
+    "ids": [
+      "echoleak-m365-copilot",
+      "gtg-1002-ai-espionage",
+      "gtg-2002-vibe-hacking-extortion",
+      "promptsteal-apt28-lamehug",
+      "replit-agent-database-deletion"
+    ]
+  },
   "ids": [
     "amazon-q-developer-extension-compromise",
     "camoleak-github-copilot-chat",

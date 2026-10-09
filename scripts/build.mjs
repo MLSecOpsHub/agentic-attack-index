@@ -13,6 +13,7 @@ import {
   sortKeysDeep,
 } from './lib.mjs';
 import { buildStixBundle } from './stix.mjs';
+import { evidenceSplit } from './summary.mjs';
 
 const pkg = JSON.parse(readFileSync(path.join(ROOT, 'package.json'), 'utf8'));
 const schema = loadSchema();
@@ -73,6 +74,9 @@ const summary = {
   by_ai_role: tally(incidents.map((i) => i.ai_role ?? 'unknown')),
   by_model_family: countByArray('model_families'),
   by_year: tally(incidents.map((i) => (i.date_disclosed ?? '').slice(0, 4))),
+  // Headline honesty figure (confirmed AND load-bearing). Consumers must read
+  // this rather than recompute it, so every surface quotes the same number.
+  evidence_split: evidenceSplit(incidents),
   ids: incidents.map((i) => i.id),
 };
 
