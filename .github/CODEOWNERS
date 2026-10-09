@@ -6,15 +6,16 @@
 # branch protection enables "Require review from Code Owners" (and "Require
 # status checks to pass" for CI) — see CONTRIBUTING.md.
 #
-# NOTE: replace @MLSecOpsHub/maintainers with your real team or owner handle
-# (e.g. @RiccardoBiosas) — an unresolvable owner silently enforces nothing.
+# Owners must be resolvable handles: an unresolvable owner (e.g. a team that
+# does not exist in the org) silently enforces nothing. Switch to an org team
+# (@MLSecOpsHub/<team>) once one exists and holds write access to this repo.
 
 # Everything, by default.
-*                       @MLSecOpsHub/maintainers
+*                       @RiccardoBiosas
 
 # Trust-critical paths (explicit for clarity; already covered by * above).
-/data/                  @MLSecOpsHub/maintainers
-/schema/                @MLSecOpsHub/maintainers
-/taxonomy/              @MLSecOpsHub/maintainers
-/scripts/               @MLSecOpsHub/maintainers
-/.github/               @MLSecOpsHub/maintainers
+/data/                  @RiccardoBiosas
+/schema/                @RiccardoBiosas
+/taxonomy/              @RiccardoBiosas
+/scripts/               @RiccardoBiosas
+/.github/               @RiccardoBiosas
