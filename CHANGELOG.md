@@ -8,6 +8,13 @@ dataset version tracks `package.json` and `CITATION.cff` (kept in sync by
 ## [Unreleased]
 
 ### Added
+- `dist/summary.json` gained **`evidence_split`**, the dataset's headline
+  honesty figure: the count and share of records that are both
+  `status: confirmed` and `ai_role: load-bearing`, by year, plus a
+  `status × ai_role` crosstab and the qualifying ids. Retracted and
+  superseded records are excluded. Computed in `scripts/summary.mjs`
+  (unit-tested in `test/summary.test.mjs`) so downstream consumers quote one
+  number instead of recomputing it.
 - Scheduled `archive` workflow (`.github/workflows/archive.yml`): snapshots
   every `sources[].url` lacking an `archive_url` to the Wayback Machine weekly
   and opens a PR for review. Until now no job ran the archiver, which is why
