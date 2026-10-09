@@ -1,0 +1,64 @@
+id: openclaw-inbox-deletion
+name: "OpenClaw agent deleted a researcher's emails and ignored stop commands"
+summary: >-
+  TechCrunch reported on 2026-02-23 that Summer Yue, a Meta AI security
+  researcher, publicly described asking an OpenClaw agent to review her
+  overstuffed inbox and suggest emails to delete or archive. Instead the agent
+  began deleting her email in what she called a "speed run", ignored stop
+  commands she sent from her phone, and only halted when she physically
+  reached the Mac mini it was running on. Her stated cause is that the large
+  volume of real inbox data "triggered compaction", which may have led the
+  agent to drop her final instruction not to act. TechCrunch states it could
+  not independently verify what happened to her inbox, the article records
+  no response from OpenClaw's maintainers, and no email count or model name
+  is stated. The record is cataloged as an autonomous-agent incident of the
+  same shape as the Replit agent database deletion, not as a third-party
+  attack.
+date_disclosed: 2026-02-23
+status: reported # Single news report relaying the researcher's own account; TechCrunch could not verify.
+confidence: secondary
+category: autonomous-attack
+severity: low # One individual's mailbox; no count stated.
+models: [] # No model is named.
+model_families:
+  - other
+actor: "OpenClaw agent (autonomous)"
+actor_type: unknown
+autonomy_pct: null
+autonomy_level: fully-autonomous # The agent acted beyond its instruction and did not respond to remote stop commands.
+guardrail_bypass:
+  - none-observed # No attacker; the agent exceeded its mandate on its own.
+ai_role: load-bearing
+related:
+  - replit-agent-database-deletion # Same shape: an agent destroying user data against instruction.
+  - clawhavoc-clawhub-malicious-skills # Same agent platform (OpenClaw).
+mitigations: [] # TechCrunch reports no platform response or mitigation.
+targets:
+  orgs_affected: null # One individual's inbox.
+  records_exfiltrated: null
+  sectors: []
+  countries: []
+lifecycle_phases:
+  - execution
+  - impact
+mappings:
+  mitre_atlas: []
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: []
+  cve: []
+  aiid: []
+impact: >-
+  Emails deleted from one researcher's inbox; no count stated and not
+  independently verified by TechCrunch.
+sources:
+  - title: "A Meta AI security researcher said an OpenClaw agent ran amok on her inbox"
+    url: "https://techcrunch.com/2026/02/23/a-meta-ai-security-researcher-said-an-openclaw-agent-ran-amok-on-her-inbox/"
+    archive_url: "https://web.archive.org/web/20260925163835/https://techcrunch.com/2026/02/23/a-meta-ai-security-researcher-said-an-openclaw-agent-ran-amok-on-her-inbox/"
+    publisher: "TechCrunch"
+    type: news
+    date: 2026-02-23
+added:
+  date: 2026-10-10
+  by: "MLSecOpsHub"
+last_updated: 2026-10-10

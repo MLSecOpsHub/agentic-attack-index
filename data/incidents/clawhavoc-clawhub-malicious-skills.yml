@@ -1,0 +1,81 @@
+id: clawhavoc-clawhub-malicious-skills
+name: "ClawHavoc: large-scale poisoning of the OpenClaw ClawHub skill marketplace with credential-stealing skills"
+summary: >-
+  Koi Security disclosed on 2026-02-01 a campaign it named ClawHavoc, in which
+  malicious "skills" were uploaded at scale to ClawHub, the skill marketplace
+  for the OpenClaw AI agent. eSecurity Planet reported on 2026-02-03 that Koi
+  had flagged 341 of 2,857 audited skills, 335 tied to one campaign. Antiy
+  CERT's 2026-02-06 analysis counted at least 1,184 malicious skills from 12
+  author ids as of 2026-02-05, with the first upload on 2026-01-27 and 677
+  skills from a single uploader. The skills delivered information stealers,
+  remote access tools and lures for further malware, targeting cryptocurrency
+  wallets and exchange API keys, developer cloud and SSH credentials, browser
+  sessions, corporate documents, email and credentials for paid AI services.
+  Antiy states that 60 packages from one uploader had accumulated 14,285
+  downloads; no source gives a victim count or names a victim. Motive is
+  described as financial; operators are identified only by platform handles.
+  The AI agent platform is the attack surface rather than the attacker.
+date_disclosed: 2026-02-01 # Koi Security's initial disclosure; the Koi URL redirected in this session and is not cited.
+status: confirmed # Two distinct publishers (Antiy CERT vendor analysis; eSecurity Planet reporting Koi's findings).
+confidence: primary
+category: infrastructure-abuse-supply-chain
+severity: high # Over a thousand malicious skills and more than 14,000 downloads of one uploader's packages; stealers targeting wallets and developer credentials.
+models: [] # No model is named as generating or running the attack.
+model_families:
+  - other # OpenClaw agent platform; Claude and OpenAI are named only as services whose credentials were targeted.
+actor: "Unknown (operators identified only by ClawHub handles; financially motivated per Antiy CERT)"
+actor_type: cybercriminal
+autonomy_pct: null
+autonomy_level: not-applicable # The agent platform's users were the victims; no AI operated the attack.
+guardrail_bypass:
+  - legitimate-tool-abuse # The marketplace's normal skill-publishing path was used to distribute malware.
+ai_role: incidental # The agent ecosystem is the attack surface; the malware is conventional.
+related:
+  - amazon-q-developer-extension-compromise # Malicious code delivered through an AI developer tool's distribution channel.
+  - nx-s1ngularity-supply-chain
+mitigations:
+  - "Antiy CERT advises users to audit recent skill installs, remove malicious skills, rotate credentials, deploy endpoint security and avoid connecting sensitive platforms to agent tools; and advises platform operators to add automated static, semantic and sandbox review plus manual review and user-report handling."
+  - "Antiy CERT states the reporting measures OpenClaw added are necessary but not sufficient."
+targets:
+  orgs_affected: null # No victim count is stated by any source.
+  records_exfiltrated: null
+  sectors:
+    - technology # OpenClaw users and developers; no victim sector is stated.
+  countries: []
+lifecycle_phases:
+  - resource-dev
+  - initial-access
+  - execution
+  - credential-access
+  - exfiltration
+mappings:
+  mitre_atlas: []
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: []
+  cve: []
+  aiid: []
+impact: >-
+  At least 1,184 malicious skills on ClawHub as of 2026-02-05 per Antiy CERT
+  (341 flagged in Koi Security's audit per eSecurity Planet); 14,285 downloads
+  of 60 packages from one uploader; credential and wallet theft capability on
+  affected systems. No confirmed victim count.
+sources:
+  - title: "ClawHavoc: Analysis of Large-Scale Poisoning Campaign Targeting the OpenClaw Skill Market for AI Agents"
+    url: "https://www.antiy.net/p/clawhavoc-analysis-of-large-scale-poisoning-campaign-targeting-the-openclaw-skill-market-for-ai-agents/"
+    archive_url: "https://web.archive.org/web/20260904125516/https://www.antiy.net/p/clawhavoc-analysis-of-large-scale-poisoning-campaign-targeting-the-openclaw-skill-market-for-ai-agents/"
+    publisher: "Antiy CERT"
+    type: vendor-report
+    date: 2026-02-06
+  - title: "Hundreds of Malicious Skills Found in OpenClaw's ClawHub"
+    url: "https://www.esecurityplanet.com/threats/hundreds-of-malicious-skills-found-in-openclaws-clawhub"
+    publisher: "eSecurity Planet"
+    type: news
+    date: 2026-02-03
+  # Koi Security's original 2026-02-01 disclosure
+  # (https://www.koi.ai/blog/clawhavoc-341-malicious-clawedbot-skills-found-by-the-bot-they-were-targeting)
+  # redirected when fetched in the editor session and is not cited.
+added:
+  date: 2026-10-10
+  by: "MLSecOpsHub"
+last_updated: 2026-10-10

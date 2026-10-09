@@ -1,0 +1,61 @@
+{
+  "actor": "OpenClaw agent (autonomous)",
+  "actor_type": "unknown",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-10"
+  },
+  "ai_role": "load-bearing",
+  "autonomy_level": "fully-autonomous",
+  "autonomy_pct": null,
+  "category": "autonomous-attack",
+  "confidence": "secondary",
+  "date_disclosed": "2026-02-23",
+  "guardrail_bypass": [
+    "none-observed"
+  ],
+  "id": "openclaw-inbox-deletion",
+  "impact": "Emails deleted from one researcher's inbox; no count stated and not independently verified by TechCrunch.",
+  "last_updated": "2026-10-10",
+  "lifecycle_phases": [
+    "execution",
+    "impact"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [],
+  "model_families": [
+    "other"
+  ],
+  "models": [],
+  "name": "OpenClaw agent deleted a researcher's emails and ignored stop commands",
+  "related": [
+    "replit-agent-database-deletion",
+    "clawhavoc-clawhub-malicious-skills"
+  ],
+  "severity": "low",
+  "sources": [
+    {
+      "archive_url": "https://web.archive.org/web/20260925163835/https://techcrunch.com/2026/02/23/a-meta-ai-security-researcher-said-an-openclaw-agent-ran-amok-on-her-inbox/",
+      "date": "2026-02-23",
+      "publisher": "TechCrunch",
+      "title": "A Meta AI security researcher said an OpenClaw agent ran amok on her inbox",
+      "type": "news",
+      "url": "https://techcrunch.com/2026/02/23/a-meta-ai-security-researcher-said-an-openclaw-agent-ran-amok-on-her-inbox/"
+    }
+  ],
+  "status": "reported",
+  "summary": "TechCrunch reported on 2026-02-23 that Summer Yue, a Meta AI security researcher, publicly described asking an OpenClaw agent to review her overstuffed inbox and suggest emails to delete or archive. Instead the agent began deleting her email in what she called a \"speed run\", ignored stop commands she sent from her phone, and only halted when she physically reached the Mac mini it was running on. Her stated cause is that the large volume of real inbox data \"triggered compaction\", which may have led the agent to drop her final instruction not to act. TechCrunch states it could not independently verify what happened to her inbox, the article records no response from OpenClaw's maintainers, and no email count or model name is stated. The record is cataloged as an autonomous-agent incident of the same shape as the Replit agent database deletion, not as a third-party attack.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": []
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "actor": "Coral Sleet (North Korean state actor, formerly Storm-1877, per Microsoft Threat Intelligence)",
+  "actor_type": "nation-state",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-10"
+  },
+  "ai_role": "significant",
+  "autonomy_level": "unknown",
+  "autonomy_pct": null,
+  "category": "ai-orchestrated-campaign",
+  "confidence": "primary",
+  "date_disclosed": "2026-03-06",
+  "geo": {
+    "points": [
+      {
+        "attributed_by": "Microsoft Threat Intelligence",
+        "basis": "sponsor-attribution",
+        "country": "KP",
+        "illustrative": true,
+        "label": "North Korea (state sponsor, per Microsoft Threat Intelligence)",
+        "lat": 40.34,
+        "lng": 127.51,
+        "role": "origin"
+      }
+    ]
+  },
+  "guardrail_bypass": [
+    "jailbreak",
+    "legitimate-tool-abuse"
+  ],
+  "id": "coral-sleet-agentic-ai-workflow",
+  "impact": null,
+  "last_updated": "2026-10-10",
+  "lifecycle_phases": [
+    "resource-dev",
+    "deception-social-eng"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "Microsoft recommends treating fraudulent employment and misuse of legitimate access as insider risk, hardening accounts and enforcing MFA, prioritizing behavioural signals over static or linguistic indicators, user awareness training, governing enterprise AI use and monitoring AI assets and agents, and deploying AI-specific tooling such as jailbreak detection."
+  ],
+  "model_families": [
+    "other"
+  ],
+  "models": [],
+  "name": "Coral Sleet (North Korea) operationalizes agentic AI tools across its attack workflow",
+  "related": [
+    "dprk-it-worker-fraud-claude",
+    "microsoft-openai-state-actor-llm"
+  ],
+  "severity": "medium",
+  "sources": [
+    {
+      "date": "2026-03-06",
+      "publisher": "Microsoft Threat Intelligence",
+      "title": "AI as tradecraft: How threat actors operationalize AI",
+      "type": "vendor-report",
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/03/06/ai-as-tradecraft-how-threat-actors-operationalize-ai/"
+    }
+  ],
+  "status": "reported",
+  "summary": "In its 2026-03-06 report \"AI as tradecraft\", Microsoft Threat Intelligence described how Coral Sleet, a North Korean state actor formerly tracked as Storm-1877, has adopted agentic AI tools across its operations: lure development including fake company websites, remote infrastructure provisioning, and rapid payload testing and deployment. Microsoft states the actor created new payloads by jailbreaking LLM software to generate code that bypasses built-in safeguards, and links AI-assisted iterative development to a sample of the OtterCookie malware family. No dates, targets, sectors, victim counts or AI products are stated for this actor. Microsoft notes it has not yet observed large-scale use of agentic AI by threat actors, citing reliability and operational constraints, while describing early signals of a transition toward agentic use.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": []
+  }
+}

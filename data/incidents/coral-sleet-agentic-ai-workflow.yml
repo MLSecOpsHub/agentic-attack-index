@@ -1,0 +1,73 @@
+id: coral-sleet-agentic-ai-workflow
+name: "Coral Sleet (North Korea) operationalizes agentic AI tools across its attack workflow"
+summary: >-
+  In its 2026-03-06 report "AI as tradecraft", Microsoft Threat Intelligence
+  described how Coral Sleet, a North Korean state actor formerly tracked as
+  Storm-1877, has adopted agentic AI tools across its operations: lure
+  development including fake company websites, remote infrastructure
+  provisioning, and rapid payload testing and deployment. Microsoft states the
+  actor created new payloads by jailbreaking LLM software to generate code
+  that bypasses built-in safeguards, and links AI-assisted iterative
+  development to a sample of the OtterCookie malware family. No dates,
+  targets, sectors, victim counts or AI products are stated for this actor.
+  Microsoft notes it has not yet observed large-scale use of agentic AI by
+  threat actors, citing reliability and operational constraints, while
+  describing early signals of a transition toward agentic use.
+date_disclosed: 2026-03-06
+status: reported # Single vendor publisher.
+confidence: primary # Vendor threat-intelligence report.
+category: ai-orchestrated-campaign
+severity: medium # Capability development and tradecraft rather than a stated intrusion outcome.
+models: [] # Microsoft names only generic "AI coding tools" and "development platforms".
+model_families:
+  - other
+actor: "Coral Sleet (North Korean state actor, formerly Storm-1877, per Microsoft Threat Intelligence)"
+actor_type: nation-state
+autonomy_pct: null
+autonomy_level: unknown # Agentic tools are used across the workflow; Microsoft gives no account of how much ran unattended.
+guardrail_bypass:
+  - jailbreak # Microsoft: payloads created "by jailbreaking LLM software".
+  - legitimate-tool-abuse # AI coding and development platforms used as intended for offensive development.
+ai_role: significant
+related:
+  - dprk-it-worker-fraud-claude # North Korean AI-enabled operations.
+  - microsoft-openai-state-actor-llm # Earlier Microsoft reporting on state-actor LLM use.
+mitigations:
+  - "Microsoft recommends treating fraudulent employment and misuse of legitimate access as insider risk, hardening accounts and enforcing MFA, prioritizing behavioural signals over static or linguistic indicators, user awareness training, governing enterprise AI use and monitoring AI assets and agents, and deploying AI-specific tooling such as jailbreak detection."
+targets:
+  orgs_affected: null
+  records_exfiltrated: null
+  sectors: []
+  countries: []
+geo:
+  points:
+    # Microsoft: "North Korean state actor". Sponsorship, not operator location.
+    - role: origin
+      basis: sponsor-attribution
+      attributed_by: "Microsoft Threat Intelligence"
+      country: KP
+      lat: 40.34
+      lng: 127.51
+      label: "North Korea (state sponsor, per Microsoft Threat Intelligence)"
+      illustrative: true # Country centroid.
+lifecycle_phases:
+  - resource-dev
+  - deception-social-eng
+mappings:
+  mitre_atlas: []
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: []
+  cve: []
+  aiid: []
+impact: null # Microsoft states no outcome figures for Coral Sleet.
+sources:
+  - title: "AI as tradecraft: How threat actors operationalize AI"
+    url: "https://www.microsoft.com/en-us/security/blog/2026/03/06/ai-as-tradecraft-how-threat-actors-operationalize-ai/"
+    publisher: "Microsoft Threat Intelligence"
+    type: vendor-report
+    date: 2026-03-06
+added:
+  date: 2026-10-10
+  by: "MLSecOpsHub"
+last_updated: 2026-10-10

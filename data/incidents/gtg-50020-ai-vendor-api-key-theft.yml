@@ -1,0 +1,82 @@
+id: gtg-50020-ai-vendor-api-key-theft
+name: "GTG-50020 autonomous exploitation pipeline against ~30 AI companies and theft of production API keys"
+summary: >-
+  In its September 2026 report "Countering misuse of AI", Anthropic disclosed a
+  cluster it tracks as GTG-50020, "a Russian-speaking, financially-motivated
+  actor" with a history of intrusions against hotel booking and financial
+  technology platforms. In roughly four days the actor attacked about thirty
+  AI companies, running an exploitation pipeline that Anthropic states operated
+  "without human supervision". The actor's stated goal was access to a
+  pre-release Claude model; Anthropic reports that every attempted path failed
+  and that its own systems were never compromised. Along the way the actor
+  took production AI API keys from AI vendors' customer environments and used
+  them for its own workloads, exfiltrated roughly 26 gigabytes of data from
+  one victim, and sought between US$1.5 and 2.5 million through extortion or
+  sale on dark-web forums. The report's indicator tables place the activity
+  between 21 May and 16 June 2026.
+date_disclosed: 2026-09-10 # Page prints only "September 2026"; the day comes from the report download filenames.
+status: confirmed # First-party disclosure by the model operator (Anthropic).
+confidence: primary
+# Graded infrastructure-abuse-supply-chain: the core of the case is theft and
+# reuse of AI vendors' production API keys, with the vendors' customers'
+# environments as the entry point.
+category: infrastructure-abuse-supply-chain
+severity: high
+models: [] # Only "a pre-release Claude model" (the actor's target, never reached) is named.
+model_families:
+  - claude
+actor: "Russian-speaking, financially motivated actor (tracked by Anthropic as GTG-50020)"
+actor_type: cybercriminal
+autonomy_pct: null
+autonomy_level: fully-autonomous # Anthropic: an exploitation pipeline ran "without human supervision"; targeting and extortion remained human-directed.
+guardrail_bypass:
+  - legitimate-tool-abuse # Stolen production API keys were used to run the actor's own workloads.
+ai_role: significant # The unsupervised exploitation pipeline is stated, but no share-of-work figure is given and the headline objective failed.
+related:
+  - gtg-2002-vibe-hacking-extortion
+  - gtg-5004-ai-ransomware-raas
+  - gtg-20006-agentic-espionage
+  - gtg-50014-agentic-mass-exfiltration
+  - gtg-10007-agent-swarm-intrusions
+  - gtg-50029-hacktivist-agentic-recon
+mitigations:
+  - "Anthropic states the actor never compromised Anthropic's own systems; the stolen keys were customers' keys taken from customers' environments. The report publishes egress indicators for the cluster."
+targets:
+  orgs_affected: 30 # "roughly thirty AI companies in about four days"; the number compromised is not stated.
+  records_exfiltrated: null
+  sectors:
+    - technology # AI companies; the actor's historical targets were hotel booking and fintech platforms.
+  countries: [] # No target country is named.
+# No geo block: the actor is described only as Russian-speaking; no location
+# or state sponsor is stated, and no target country is named.
+lifecycle_phases:
+  - recon
+  - initial-access
+  - execution
+  - credential-access
+  - exfiltration
+  - impact
+mappings:
+  mitre_atlas: []
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: []
+  cve: []
+  aiid: []
+impact: >-
+  Per Anthropic: roughly 26 gigabytes of data exfiltrated from one victim;
+  production AI API keys stolen from AI vendors' customer environments and
+  reused for the actor's own workloads; extortion or dark-web sale sought at
+  US$1.5 to 2.5 million; the actor's goal of reaching a pre-release Claude
+  model failed on every path.
+sources:
+  - title: "Countering misuse of AI: September 2026"
+    url: "https://www.anthropic.com/threat-intelligence-report-september-2026"
+    archive_url: "https://web.archive.org/web/20261009173227/https://www.anthropic.com/threat-intelligence-report-september-2026"
+    publisher: "Anthropic"
+    type: first-party-disclosure
+    date: 2026-09-10
+added:
+  date: 2026-10-10
+  by: "MLSecOpsHub"
+last_updated: 2026-10-10

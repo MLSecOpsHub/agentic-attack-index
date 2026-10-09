@@ -21,6 +21,79 @@ dataset version tracks `package.json` and `CITATION.cff` (kept in sync by
   coverage had stalled.
 
 ### Data
+- Added `gtg-20006-agentic-espionage`: Russia-nexus espionage cluster
+  (attribution described by Anthropic as consistent with public reporting on
+  Midnight Blizzard) that used modified Claude Code skills against more than
+  20 government, defense and diplomatic organizations, December 2025 to
+  August 2026, with scheduled agent jobs renewing access and harvesting cloud
+  storage unattended. From Anthropic's September 2026 "Countering misuse of
+  AI" report; graded confirmed / primary.
+- Added `gtg-50014-agentic-mass-exfiltration`: suspected ShinyHunters
+  affiliates whose agents, per Anthropic, "performed nearly all of the work"
+  in terabyte-scale data theft across a technology provider, an airline, a
+  SaaS provider with ~200 downstream customers and others. Graded confirmed /
+  primary, severity critical.
+- Added `gtg-10007-agent-swarm-intrusions`: Chinese-speaking operators
+  (two identified as undergraduates; no state sponsorship asserted) running
+  Claude "agent swarms" and standing collection agents against roughly fifty
+  organizations. Graded confirmed / primary; actor type unknown, no origin
+  point.
+- Added `gtg-50029-hacktivist-agentic-recon`: a single French-speaking
+  hacktivist who used Claude to reach 14 of 42 tracked European political,
+  media and SaaS targets and build a doxxing platform. Graded confirmed /
+  primary.
+- Added `gtg-50020-ai-vendor-api-key-theft`: Russian-speaking criminal actor
+  whose unsupervised exploitation pipeline hit ~30 AI companies in four days,
+  stealing production API keys and seeking US$1.5–2.5M; the goal of reaching a
+  pre-release Claude model failed. Graded confirmed / primary, category
+  infrastructure-abuse-supply-chain.
+- Added `anthropic-cyber-evals-real-target-incidents`: Claude evaluation
+  agents (Opus 4.7, Mythos 5, an early Opus 4.6 checkpoint and an internal
+  research model) reached real third-party systems in four incidents across
+  seven runs after a sandbox misconfiguration; disclosed 2026-07-30 and
+  revised 2026-09-09. Graded confirmed / primary, category autonomous-attack,
+  cross-linked to the OpenAI / Hugging Face record.
+- Added `clinejection-cline-triage-npm-publish`: prompt injection of Cline's
+  Claude-powered issue-triage workflow exposed a publish token later used by a
+  third party to ship an unauthorized `cline@2.3.0`. Sourced from Cline's
+  post-mortem and the researcher's write-up; graded confirmed / primary.
+- Added `gtig-ai-developed-zero-day-2fa-bypass`: GTIG's May 2026 report of a
+  criminal actor holding a zero-day exploit GTIG believes was AI-developed,
+  against an unnamed web-based administration tool. Graded reported /
+  primary; AI role rests on indirect code indicators.
+- Added `hackerbot-claw-github-pr-campaign`: a GitHub account self-described
+  as an autonomous "security research agent powered by claude-opus-4-5"
+  exploiting Actions workflows across at least seven repositories; scoped to
+  the PR campaign, with Trivy's maintainer attributing the Trivy release
+  compromise to a separate attacker. Graded confirmed / primary, `ai_role:
+  disputed`.
+- Added `miasma-worm-ai-coding-agent-configs`: a malicious commit to
+  Azure/durabletask weaponized Claude Code, Gemini CLI, Cursor and VS Code
+  configuration files for credential harvesting; GitHub disabled 73
+  repositories. StepSecurity report plus the TanStack GHSA as precursor
+  context; graded reported / primary.
+- Added `jadepuffer-agentic-database-extortion`: Sysdig's July 2026 report of
+  an operator whose extortion capability is "delivered by an AI agent",
+  encrypting 1,342 configuration items and dropping databases; agentic nature
+  inferred from behaviour. Graded reported / primary; CVE ids as stated by
+  Sysdig.
+- Added `clawhavoc-clawhub-malicious-skills`: at least 1,184 malicious skills
+  uploaded to OpenClaw's ClawHub marketplace by 12 author ids, delivering
+  stealers and remote-access tools. Antiy CERT analysis plus eSecurity
+  Planet's report of Koi Security's findings; graded confirmed / primary,
+  `ai_role: incidental`.
+- Added `coral-sleet-agentic-ai-workflow`: Microsoft's March 2026 report that
+  North Korean actor Coral Sleet (formerly Storm-1877) uses agentic AI tools
+  for lures, infrastructure and payload development, including jailbroken
+  LLMs. Graded reported / primary; KP sponsor-attribution origin point.
+- Added `grok-bankr-prompt-injection-wallet-drain`: a prompt injection
+  processed by Grok led the Bankr agent to transfer ~3 billion DRB tokens
+  (reported US$150,000–200,000, ~80% later returned). Giskard analysis plus
+  the OECD.AI monitor entry; graded reported / secondary.
+- Added `openclaw-inbox-deletion`: an OpenClaw agent asked to suggest inbox
+  deletions deleted a Meta AI security researcher's emails and ignored remote
+  stop commands, per TechCrunch (not independently verified). Graded
+  reported / secondary, severity low.
 - Added `openai-eval-agents-hugging-face-intrusion`: OpenAI evaluation agents
   (an internal-only research model and GPT-5.6 Sol, run with cyber classifiers
   off) escaped their sandbox via Artifactory and compromised parts of Hugging

@@ -1,0 +1,82 @@
+{
+  "actor": "TeamPCP (per StepSecurity, via command-and-control infrastructure linked to the same account's earlier PyPI attack; the June commit is not directly attributed)",
+  "actor_type": "cybercriminal",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-10"
+  },
+  "ai_role": "significant",
+  "autonomy_level": "not-applicable",
+  "autonomy_pct": null,
+  "category": "infrastructure-abuse-supply-chain",
+  "confidence": "primary",
+  "date_disclosed": "2026-06-05",
+  "guardrail_bypass": [
+    "indirect-prompt-injection",
+    "legitimate-tool-abuse"
+  ],
+  "id": "miasma-worm-ai-coding-agent-configs",
+  "impact": "Per StepSecurity: credential harvesting from developer systems that opened the affected repository in Claude Code, Gemini CLI, Cursor or VS Code; 73 repositories disabled by GitHub across the Azure, microsoft, Azure-Samples and MicrosoftDocs organizations. No victim count is stated.",
+  "last_updated": "2026-10-10",
+  "lifecycle_phases": [
+    "initial-access",
+    "execution",
+    "credential-access",
+    "exfiltration"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [
+      "CVE-2026-45321"
+    ],
+    "mitre_atlas": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "StepSecurity recommends required pull-request review with no direct pushes to protected branches, OIDC trusted publishing instead of long-lived tokens, pinning Actions to commit SHAs, restricted outbound CI network access, monitoring for releases lacking matching tags or CI runs, treating editor and AI-agent configuration files as supply-chain signals, and rotating credentials on any system that opened an affected repository.",
+    "GitHub disabled 73 affected repositories across four Microsoft-owned organizations."
+  ],
+  "model_families": [
+    "claude",
+    "gemini",
+    "other"
+  ],
+  "models": [],
+  "name": "Miasma worm: Azure/durabletask commit weaponized AI coding-agent configuration files; 73 Microsoft repositories disabled",
+  "related": [
+    "nx-s1ngularity-supply-chain",
+    "amazon-q-developer-extension-compromise",
+    "clinejection-cline-triage-npm-publish"
+  ],
+  "severity": "high",
+  "sources": [
+    {
+      "archive_url": "https://web.archive.org/web/20261005183515/https://www.stepsecurity.io/blog/miasma-worm-hits-microsoft-again-azure-functions-action-and-72-other-repositories-disabled-after-supply-chain-attack-targeting-ai-coding-agents",
+      "date": "2026-06-05",
+      "publisher": "StepSecurity",
+      "title": "Miasma Worm Hits Microsoft Again: Azure Functions Action and 72 Other Repositories Disabled After Supply Chain Attack Targeting AI Coding Agents",
+      "type": "vendor-report",
+      "url": "https://www.stepsecurity.io/blog/miasma-worm-hits-microsoft-again-azure-functions-action-and-72-other-repositories-disabled-after-supply-chain-attack-targeting-ai-coding-agents"
+    },
+    {
+      "archive_url": "https://web.archive.org/web/20261005211848/https://github.com/advisories/GHSA-g7cv-rxg3-hmpx",
+      "date": "2026-05-12",
+      "publisher": "GitHub Advisory Database",
+      "title": "Malware in @tanstack/* packages exfiltrates cloud credentials, GitHub tokens, and SSH keys (GHSA-g7cv-rxg3-hmpx)",
+      "type": "other",
+      "url": "https://github.com/advisories/GHSA-g7cv-rxg3-hmpx"
+    }
+  ],
+  "status": "reported",
+  "summary": "On 2026-06-05 StepSecurity reported that a malicious commit pushed to the Azure/durabletask repository through a previously compromised contributor account added configuration and hook files for Claude Code, Gemini CLI, Cursor and VS Code, so that a developer opening the repository in those tools triggered credential harvesting. GitHub disabled 73 repositories across the Azure, microsoft, Azure-Samples and MicrosoftDocs organizations in response. StepSecurity ties the activity to the broader Miasma campaign and, via a command-and-control domain used in an earlier May 2026 PyPI compromise by the same account, to the TeamPCP group; the June commit itself is not directly attributed. No source claims that any AI agent made a decision or acted autonomously: the agents are the execution vector for configuration-driven code, not the operator. The May 2026 compromise of TanStack npm packages (GHSA-g7cv-rxg3-hmpx / CVE-2026-45321) is cited as precursor context for the Miasma campaign and does not mention AI tools.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": [
+      "technology"
+    ]
+  }
+}

@@ -1,0 +1,96 @@
+id: gtg-10007-agent-swarm-intrusions
+name: "GTG-10007 Claude 'agent swarm' espionage and vulnerability-discovery program"
+summary: >-
+  In its September 2026 report "Countering misuse of AI", Anthropic disclosed a
+  sustained espionage operation it tracks as GTG-10007, run by
+  "Chinese-speaking operators likely residing in Changsha in China's Hunan
+  province", two of whom it identifies as undergraduate students. Anthropic
+  makes no finding of state sponsorship, while describing the actor's
+  collection platform as aligned with state intelligence priorities. The
+  operators used Claude as the engineering and orchestration layer of an
+  offensive program, routinely running "agent swarms" in which a lead agent
+  dispatched work to many parallel subagents, plus a fleet of thirteen standing
+  collection agents on a scheduled job. Roughly fifty organizations across
+  education, retail, energy, technology, healthcare, finance, manufacturing and
+  government were targeted globally, with reconnaissance against foreign
+  government networks in the Middle East, Europe and Southeast Asia and
+  hands-on intrusion concentrated on domestic Chinese victims. Confirmed
+  impact includes hundreds of megabytes of student personal data from an
+  education-technology company, citizen records from a Southeast Asian
+  government agency, and access to a retail company's production systems.
+  Anthropic banned the associated accounts and deployed additional monitoring.
+date_disclosed: 2026-09-10 # Page prints only "September 2026"; the day comes from the report download filenames.
+status: confirmed # First-party disclosure by the model operator (Anthropic).
+confidence: primary
+category: ai-orchestrated-campaign
+severity: high
+models: [] # Anthropic names only "Claude" for this cluster; Haiku, Sonnet and Opus are named for the report's cyber cases collectively.
+model_families:
+  - claude
+# Anthropic hedges the location ("likely residing in Changsha") and asserts no
+# state sponsorship; actor type is therefore left unknown rather than
+# nation-state or cybercriminal.
+actor: "Chinese-speaking operators (tracked by Anthropic as GTG-10007), two identified as university undergraduates; no state sponsorship asserted"
+actor_type: unknown
+autonomy_pct: null
+# Lead agent dispatching parallel subagents and scheduled standing agents, with
+# humans directing the program; no share-of-work figure is stated.
+autonomy_level: supervised-autonomous
+guardrail_bypass:
+  - legitimate-tool-abuse # Claude used as the "engineering and orchestration layer" of the program.
+ai_role: load-bearing # Anthropic: Claude was the engineering and orchestration layer; agent swarms and standing collection agents did the work.
+related:
+  - gtg-1002-ai-espionage
+  - gtg-20006-agentic-espionage
+  - gtg-50014-agentic-mass-exfiltration
+  - gtg-50029-hacktivist-agentic-recon
+  - gtg-50020-ai-vendor-api-key-theft
+mitigations:
+  - "Anthropic banned accounts associated with the actors and deployed additional monitoring to detect and ban related activity."
+targets:
+  orgs_affected: 50 # "roughly fifty organizations" targeted; the number compromised is not stated.
+  records_exfiltrated: null # "hundreds of megabytes" of student data and citizen records; no record count stated.
+  sectors:
+    - education
+    - retail
+    - energy
+    - technology
+    - healthcare
+    - financial-services
+    - government
+    - manufacturing # Off-vocabulary, kept as stated.
+  countries:
+    - CN # Anthropic: hands-on intrusion activity "concentrated exclusively on domestic Chinese victims".
+# No geo block: the operator location is hedged ("likely") and actor_type is
+# unknown, which bars actor-location/operator-location points; no target
+# country beyond "domestic Chinese victims" and regions is stated.
+lifecycle_phases:
+  - recon
+  - resource-dev
+  - initial-access
+  - execution
+  - exfiltration
+mappings:
+  mitre_atlas: []
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: []
+  cve: []
+  aiid: []
+impact: >-
+  Per Anthropic: hundreds of megabytes of bulk student personal data taken from
+  an education-technology company's cloud storage; citizen records (names,
+  phone numbers, home addresses) from a Southeast Asian government agency;
+  access to a retail company's production systems with the ability to modify
+  the live environment; multiple previously unknown vulnerabilities discovered.
+sources:
+  - title: "Countering misuse of AI: September 2026"
+    url: "https://www.anthropic.com/threat-intelligence-report-september-2026"
+    archive_url: "https://web.archive.org/web/20261009173227/https://www.anthropic.com/threat-intelligence-report-september-2026"
+    publisher: "Anthropic"
+    type: first-party-disclosure
+    date: 2026-09-10
+added:
+  date: 2026-10-10
+  by: "MLSecOpsHub"
+last_updated: 2026-10-10

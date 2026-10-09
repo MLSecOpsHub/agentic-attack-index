@@ -1,0 +1,77 @@
+id: clinejection-cline-triage-npm-publish
+name: "Clinejection: prompt injection of Cline's Claude issue-triage workflow led to an unauthorized npm release"
+summary: >-
+  Security researcher Adnan Khan found in late December 2025 that the Cline
+  project's GitHub issue-triage workflow, which ran the Anthropic
+  claude-code-action with shell access on issues filed by any user, could be
+  steered by a crafted issue into exposing publication credentials. Khan
+  reported it privately on 2026-01-01 and published on 2026-02-09; Cline
+  removed the workflows within 30 minutes but rotated the wrong npm token. Khan
+  states that "a different actor found my PoC on my test repository and used
+  it to directly attack Cline". On 2026-02-17 at 03:26 PT an unauthorized
+  party used the still-valid token to publish cline@2.3.0 to npm; the CLI was
+  byte-identical to the prior release plus a postinstall step that globally
+  installed the openclaw package. A corrected version shipped about eight
+  hours later. Cline states no user data was accessed or exfiltrated and does
+  not identify the publishing party. Cline removed its AI-powered triage
+  workflows, rotated all publication credentials and moved npm publishing to
+  OIDC provenance.
+date_disclosed: 2026-02-09 # Researcher's public disclosure; the unauthorized release followed on 2026-02-17 and Cline's post-mortem on 2026-02-24.
+status: confirmed # First-party post-mortem from Cline plus the researcher's independent write-up.
+confidence: primary
+category: agent-hijack-prompt-injection
+severity: high # Unauthorized release of a widely installed CLI package; impact limited to an extra package install, per Cline.
+models:
+  - "claude-opus-4-5-20251101" # Model id stated in the researcher's post for the triage workflow.
+model_families:
+  - claude
+actor: "Unknown (an \"unauthorized party\" per Cline; the researcher states a different actor reused his proof-of-concept)"
+actor_type: unknown
+autonomy_pct: null
+autonomy_level: not-applicable # The AI agent was the hijacked component, not the operator.
+guardrail_bypass:
+  - indirect-prompt-injection
+ai_role: significant # The triage agent's permissions were the path to the credentials; the npm publish itself was done by a human-controlled token.
+related:
+  - nx-s1ngularity-supply-chain # Another supply-chain compromise of a developer tool involving AI coding agents.
+  - camoleak-github-copilot-chat
+mitigations:
+  - "Cline removed its AI-powered triage workflows; future automation is limited to read-only operations with no shell access."
+  - "Cline rotated all publication credentials, removed GitHub Actions cache use from workflows handling publication credentials, moved npm publishing to OIDC provenance with no long-lived tokens, and now verifies rotation against the credential itself."
+  - "Cline is establishing a formal vulnerability disclosure process with SLAs and third-party CI/CD audits."
+targets:
+  orgs_affected: 1 # Cline; downstream installers of cline@2.3.0 are not counted by any source.
+  records_exfiltrated: null # Cline: "No user data was accessed or exfiltrated."
+  sectors:
+    - technology
+  countries: []
+lifecycle_phases:
+  - initial-access
+  - credential-access
+  - impact
+mappings:
+  mitre_atlas: []
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: []
+  cve: [] # Cline's advisory for the unauthorized release is GHSA-9ppg-jx86-fqw7; no CVE is stated.
+  aiid: []
+impact: >-
+  Unauthorized cline@2.3.0 published to npm and available for about eight
+  hours; the package added a postinstall step that globally installed another
+  package. Cline states no user data was accessed or exfiltrated.
+sources:
+  - title: "Post-mortem: Unauthorized Cline CLI npm publish on February 17, 2026"
+    url: "https://cline.bot/blog/post-mortem-unauthorized-cline-cli-npm"
+    publisher: "Cline"
+    type: first-party-disclosure
+    date: 2026-02-24
+  - title: "Clinejection — Compromising Cline's Production Releases just by Prompting an Issue Triager"
+    url: "https://adnanthekhan.com/posts/clinejection/"
+    publisher: "Adnan Khan"
+    type: blog
+    date: 2026-02-09
+added:
+  date: 2026-10-10
+  by: "MLSecOpsHub"
+last_updated: 2026-10-10

@@ -1,0 +1,80 @@
+{
+  "actor": "Chinese-speaking operators (tracked by Anthropic as GTG-10007), two identified as university undergraduates; no state sponsorship asserted",
+  "actor_type": "unknown",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-10"
+  },
+  "ai_role": "load-bearing",
+  "autonomy_level": "supervised-autonomous",
+  "autonomy_pct": null,
+  "category": "ai-orchestrated-campaign",
+  "confidence": "primary",
+  "date_disclosed": "2026-09-10",
+  "guardrail_bypass": [
+    "legitimate-tool-abuse"
+  ],
+  "id": "gtg-10007-agent-swarm-intrusions",
+  "impact": "Per Anthropic: hundreds of megabytes of bulk student personal data taken from an education-technology company's cloud storage; citizen records (names, phone numbers, home addresses) from a Southeast Asian government agency; access to a retail company's production systems with the ability to modify the live environment; multiple previously unknown vulnerabilities discovered.",
+  "last_updated": "2026-10-10",
+  "lifecycle_phases": [
+    "recon",
+    "resource-dev",
+    "initial-access",
+    "execution",
+    "exfiltration"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "Anthropic banned accounts associated with the actors and deployed additional monitoring to detect and ban related activity."
+  ],
+  "model_families": [
+    "claude"
+  ],
+  "models": [],
+  "name": "GTG-10007 Claude 'agent swarm' espionage and vulnerability-discovery program",
+  "related": [
+    "gtg-1002-ai-espionage",
+    "gtg-20006-agentic-espionage",
+    "gtg-50014-agentic-mass-exfiltration",
+    "gtg-50029-hacktivist-agentic-recon",
+    "gtg-50020-ai-vendor-api-key-theft"
+  ],
+  "severity": "high",
+  "sources": [
+    {
+      "archive_url": "https://web.archive.org/web/20261009173227/https://www.anthropic.com/threat-intelligence-report-september-2026",
+      "date": "2026-09-10",
+      "publisher": "Anthropic",
+      "title": "Countering misuse of AI: September 2026",
+      "type": "first-party-disclosure",
+      "url": "https://www.anthropic.com/threat-intelligence-report-september-2026"
+    }
+  ],
+  "status": "confirmed",
+  "summary": "In its September 2026 report \"Countering misuse of AI\", Anthropic disclosed a sustained espionage operation it tracks as GTG-10007, run by \"Chinese-speaking operators likely residing in Changsha in China's Hunan province\", two of whom it identifies as undergraduate students. Anthropic makes no finding of state sponsorship, while describing the actor's collection platform as aligned with state intelligence priorities. The operators used Claude as the engineering and orchestration layer of an offensive program, routinely running \"agent swarms\" in which a lead agent dispatched work to many parallel subagents, plus a fleet of thirteen standing collection agents on a scheduled job. Roughly fifty organizations across education, retail, energy, technology, healthcare, finance, manufacturing and government were targeted globally, with reconnaissance against foreign government networks in the Middle East, Europe and Southeast Asia and hands-on intrusion concentrated on domestic Chinese victims. Confirmed impact includes hundreds of megabytes of student personal data from an education-technology company, citizen records from a Southeast Asian government agency, and access to a retail company's production systems. Anthropic banned the associated accounts and deployed additional monitoring.",
+  "targets": {
+    "countries": [
+      "CN"
+    ],
+    "orgs_affected": 50,
+    "records_exfiltrated": null,
+    "sectors": [
+      "education",
+      "retail",
+      "energy",
+      "technology",
+      "healthcare",
+      "financial-services",
+      "government",
+      "manufacturing"
+    ]
+  }
+}
