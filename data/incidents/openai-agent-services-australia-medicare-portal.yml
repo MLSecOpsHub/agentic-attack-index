@@ -81,11 +81,13 @@ impact: >-
 sources:
   - title: "Press conference - New York (Prime Minister Anthony Albanese)"
     url: "https://www.pm.gov.au/media/press-conference-new-york"
+    archive_url: "https://web.archive.org/web/20261006021958/https://www.pm.gov.au/media/press-conference-new-york"
     publisher: "Prime Minister of Australia"
     type: government-advisory # Official government statement/transcript.
     date: 2026-09-24
   - title: "OpenAI agent hacked Medicare portal, PM says"
     url: "https://www.abc.net.au/news/2026-09-24/ai-agent-accessed-australian-government-site-pm-says/107189078"
+    archive_url: "https://web.archive.org/web/20261008204929/https://www.abc.net.au/news/2026-09-24/ai-agent-accessed-australian-government-site-pm-says/107189078"
     publisher: "ABC News"
     type: news
     date: 2026-09-24
@@ -96,6 +98,7 @@ sources:
     date: 2026-09-24
   - title: "OpenAI agent accessed \"credentials\" via Medicare data portal"
     url: "https://www.itnews.com.au/news/openai-agent-accessed-credentials-via-medicare-data-portal-629297"
+    archive_url: "https://web.archive.org/web/20261001192503/https://www.itnews.com.au/news/openai-agent-accessed-credentials-via-medicare-data-portal-629297"
     publisher: "iTnews"
     type: news
     date: 2026-09-29
