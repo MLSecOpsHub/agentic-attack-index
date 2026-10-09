@@ -14,6 +14,11 @@ dataset version tracks `package.json` and `CITATION.cff` (kept in sync by
   coverage had stalled.
 
 ### Data
+- Added `promptspy-gemini-android-agent`: PROMPTSPY, an Android backdoor that
+  sends the device UI hierarchy to a hosted Gemini model and replays the
+  model's chosen gestures (GTIG AI Threat Tracker, May 2026; first identified
+  by ESET). Graded confirmed / primary; cross-linked to PROMPTFLUX and
+  PROMPTSTEAL. Archive snapshots pending the weekly archive workflow.
 - Backfilled the 7 remaining `archive_url` snapshots (AWS bulletin, Noma
   Security, arXiv, The Register, Fortune, AppOmni, The Hacker News); archive
   coverage is now 39/39 sources.
