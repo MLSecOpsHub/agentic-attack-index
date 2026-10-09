@@ -1,0 +1,76 @@
+id: jadepuffer-agentic-database-extortion
+name: "JADEPUFFER: agent-driven database extortion operation against an exposed AI-orchestration deployment"
+summary: >-
+  On 2026-07-01 Sysdig described an operator it designates JADEPUFFER as the
+  first documented case of agentic ransomware: "an operator whose attack
+  capability is delivered by an AI agent rather than a human-driven toolkit",
+  running what Sysdig calls a complete extortion operation driven end-to-end
+  by a large language model. Initial access came through CVE-2025-3248 in an
+  internet-exposed Langflow deployment, with a pivot via CVE-2021-29441 in a
+  Nacos service-discovery platform. The operation encrypted 1,342 Nacos
+  configuration items with an ephemeral key, escalated to dropping entire
+  database schemas and left a ransom note with a Bitcoin address; no ransom
+  amount is stated. A data-exfiltration claim appears only as the agent's own
+  assertion and is unverified. Sysdig's evidence that an agent drove the
+  intrusion is behavioural (self-narrating payloads, rapid diagnosis and
+  correction of failures, structured progression) and it acknowledges no
+  visibility into the operator's configuration. No model, attribution, victim
+  sector or country is stated.
+date_disclosed: 2026-07-01
+status: reported # Single vendor publisher; the agentic nature is Sysdig's inference from behaviour.
+confidence: primary # Vendor incident analysis with direct telemetry.
+category: autonomous-attack
+severity: high # Likely unrecoverable encryption of 1,342 configuration items plus dropped database schemas.
+models: [] # Sysdig does not identify the LLM.
+model_families:
+  - other
+actor: Unknown # JADEPUFFER is Sysdig's designation for the operator, not a named group.
+actor_type: unknown
+autonomy_pct: null
+autonomy_level: unknown # Sysdig infers end-to-end agent execution but has no visibility into the operator's setup.
+guardrail_bypass:
+  - unknown
+ai_role: significant # Agent involvement is inferred from behaviour rather than directly observed.
+related:
+  - promptlock-ai-ransomware-poc # Earlier AI-driven ransomware proof of concept.
+  - gtg-5004-ai-ransomware-raas
+  - replit-agent-database-deletion
+mitigations:
+  - "Sysdig recommends patching and not internet-exposing AI-orchestration tools' code-execution endpoints, keeping provider API keys and cloud credentials out of AI-orchestration environments, hardening configuration and service-discovery platforms including default signing keys, never exposing database administrative accounts to the internet, applying egress controls, and using runtime threat detection."
+targets:
+  orgs_affected: null # One victim environment is described; sector and country are not stated.
+  records_exfiltrated: null # Exfiltration is only the agent's own unverified claim.
+  sectors: []
+  countries: []
+lifecycle_phases:
+  - initial-access
+  - execution
+  - credential-access
+  - privilege-escalation
+  - impact
+mappings:
+  mitre_atlas: []
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: []
+  cve:
+    - CVE-2025-3248 # Langflow; initial access, per Sysdig.
+    - CVE-2021-29441 # Nacos; pivot to the intended target, per Sysdig.
+  aiid: []
+impact: >-
+  Per Sysdig: 1,342 Nacos service configuration items encrypted with an
+  ephemeral key that was never stored or sent, so likely unrecoverable even
+  with payment; entire database schemas dropped; ransom demanded via a
+  Bitcoin address with no amount stated; exfiltration claimed by the agent
+  but unverified.
+sources:
+  - title: "JADEPUFFER: Agentic ransomware for automated database extortion"
+    url: "https://www.sysdig.com/blog/jadepuffer-agentic-ransomware-for-automated-database-extortion"
+    archive_url: "https://web.archive.org/web/20261008070923/https://www.sysdig.com/blog/jadepuffer-agentic-ransomware-for-automated-database-extortion"
+    publisher: "Sysdig"
+    type: vendor-report
+    date: 2026-07-01
+added:
+  date: 2026-10-10
+  by: "MLSecOpsHub"
+last_updated: 2026-10-10

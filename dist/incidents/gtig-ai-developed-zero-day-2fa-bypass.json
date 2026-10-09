@@ -1,0 +1,65 @@
+{
+  "actor": "Unknown criminal threat actor (unnamed by GTIG), in partnership with a prominent cybercrime actor",
+  "actor_type": "cybercriminal",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-10"
+  },
+  "ai_role": "significant",
+  "autonomy_level": "tool-assisted",
+  "autonomy_pct": null,
+  "category": "ai-orchestrated-campaign",
+  "confidence": "primary",
+  "date_disclosed": "2026-05-12",
+  "guardrail_bypass": [
+    "unknown"
+  ],
+  "id": "gtig-ai-developed-zero-day-2fa-bypass",
+  "impact": "No confirmed victims. GTIG states its counter-discovery and vendor disclosure may have prevented a planned mass exploitation event.",
+  "last_updated": "2026-10-10",
+  "lifecycle_phases": [
+    "resource-dev"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "GTIG coordinated responsible disclosure with the affected vendor before the planned mass exploitation occurred.",
+    "GTIG recommends defensive use of AI for vulnerability discovery and remediation, secure-AI practices under its Secure AI Framework, and industry collaboration."
+  ],
+  "model_families": [
+    "other"
+  ],
+  "models": [],
+  "name": "GTIG: criminal actor's AI-developed zero-day exploit against a web-based system administration tool",
+  "related": [
+    "promptspy-gemini-android-agent",
+    "promptflux-gemini-selfmod"
+  ],
+  "severity": "medium",
+  "sources": [
+    {
+      "archive_url": "https://web.archive.org/web/20261009152603/https://cloud.google.com/blog/topics/threat-intelligence/ai-vulnerability-exploitation-initial-access",
+      "date": "2026-05-12",
+      "publisher": "Google Threat Intelligence Group",
+      "title": "GTIG AI Threat Tracker: Adversaries Leverage AI for Vulnerability Exploitation, Augmented Operations, and Initial Access",
+      "type": "vendor-report",
+      "url": "https://cloud.google.com/blog/topics/threat-intelligence/ai-vulnerability-exploitation-initial-access"
+    }
+  ],
+  "status": "reported",
+  "summary": "In its May 2026 AI Threat Tracker, Google Threat Intelligence Group (GTIG) reported what it calls its first identified case of a threat actor using a zero-day exploit that GTIG believes was developed with AI. The exploit targeted a popular open-source, web-based system administration tool and was held by a criminal threat actor that GTIG says was partnering with a prominent cybercrime actor to plan a mass exploitation operation. GTIG assesses with high confidence that an AI model was used in discovery and weaponization, basing that on indirect indicators in the exploit code rather than direct evidence of the tool, and states it does not believe Gemini was used. No model, actor name, victim, country or CVE is given. GTIG worked with the unnamed vendor on responsible disclosure and states its counter-discovery \"may have prevented\" the planned mass exploitation.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": [
+      "technology"
+    ]
+  }
+}

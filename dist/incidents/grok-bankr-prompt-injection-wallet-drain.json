@@ -1,0 +1,76 @@
+{
+  "actor": "Unknown",
+  "actor_type": "unknown",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-10"
+  },
+  "ai_role": "load-bearing",
+  "autonomy_level": "not-applicable",
+  "autonomy_pct": null,
+  "category": "agent-hijack-prompt-injection",
+  "confidence": "secondary",
+  "date_disclosed": "2026-05-04",
+  "guardrail_bypass": [
+    "indirect-prompt-injection"
+  ],
+  "id": "grok-bankr-prompt-injection-wallet-drain",
+  "impact": "About 3 billion DRB tokens transferred and liquidated, reported as worth US$150,000 to 200,000 at the time; about 80% later returned per Giskard.",
+  "last_updated": "2026-10-10",
+  "lifecycle_phases": [
+    "initial-access",
+    "execution",
+    "impact"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "Giskard recommends adversarial testing and continuous red teaming of AI agents, human-in-the-loop confirmation for high-value irreversible actions, least-privilege access with per-transaction limits and capability sandboxing, and treating instructions from untrusted inputs as suspect before they reach action-capable components."
+  ],
+  "model_families": [
+    "other"
+  ],
+  "models": [
+    "Grok"
+  ],
+  "name": "Prompt injection of Grok drained a Grok-linked crypto wallet via the Bankr trading agent",
+  "related": [
+    "echoleak-m365-copilot",
+    "forcedleak-salesforce-agentforce"
+  ],
+  "severity": "medium",
+  "sources": [
+    {
+      "archive_url": "https://web.archive.org/web/20261004112808/https://www.giskard.ai/knowledge/how-grok-got-prompt-injected-an-x-user-drained-150-000-from-an-ai-wallet",
+      "date": "2026-05-07",
+      "publisher": "Giskard",
+      "title": "How Grok got prompt-injected: an X user drained $150,000 from an AI wallet",
+      "type": "blog",
+      "url": "https://www.giskard.ai/knowledge/how-grok-got-prompt-injected-an-x-user-drained-150-000-from-an-ai-wallet"
+    },
+    {
+      "archive_url": "https://web.archive.org/web/20260802214323/https://oecd.ai/en/incidents/2026-05-04-4a73",
+      "date": "2026-05-04",
+      "publisher": "OECD.AI Incidents Monitor",
+      "title": "AI Prompt Injection Exploit Drains Grok-Linked Crypto Wallet",
+      "type": "other",
+      "url": "https://oecd.ai/en/incidents/2026-05-04-4a73"
+    }
+  ],
+  "status": "reported",
+  "summary": "In early May 2026 an unnamed X user reportedly used a prompt-injection message that xAI's Grok processed, causing the Bankr trading agent connected to a Grok-linked cryptocurrency wallet to transfer about 3 billion DRB tokens, reported as worth roughly US$150,000 to 200,000, which were then liquidated. Giskard's 2026-05-07 analysis states that about 80% of the value was later returned after the DRB community identified the attacker. The OECD.AI incidents monitor logged the event on 2026-05-04 from twelve press reports, mostly crypto-focused outlets. No first-party statement from xAI or Bankr is cited by either source, no victim is named beyond the Grok-linked wallet and DRB token holders, and the attacker is described only as an X user. The AI systems were the hijacked components: Grok interpreted the injected instruction and Bankr executed it.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": [
+      "financial-services"
+    ]
+  }
+}

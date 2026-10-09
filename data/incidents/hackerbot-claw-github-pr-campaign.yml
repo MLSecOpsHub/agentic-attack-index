@@ -1,0 +1,84 @@
+id: hackerbot-claw-github-pr-campaign
+name: "hackerbot-claw: self-described autonomous 'security research agent' exploiting GitHub Actions across open-source projects"
+summary: >-
+  On 2026-03-01 StepSecurity reported a GitHub account named hackerbot-claw
+  that describes itself as an "autonomous security research agent powered by
+  claude-opus-4-5" and that opened at least 12 pull requests against at least
+  seven open-source repositories, including Microsoft, Datadog and CNCF
+  projects, to exploit vulnerable GitHub Actions workflows. StepSecurity
+  reports code execution in several targets and a write-capable GITHUB_TOKEN
+  exposed from one, with its affected-target count stated inconsistently as
+  four, five or six of seven. Planted instructions in one repository's
+  CLAUDE.md were detected by the reviewing Claude and not followed. A Trivy
+  maintainer's 2026-03-30 incident conclusion states that
+  hackerbot-claw activity against Trivy on February 28 "appears to be an
+  automated penetration testing bot that scans GitHub for vulnerable
+  projects", with a user agent and behaviour distinct from the attacker who
+  stole Trivy's credentials and deleted its releases; this record therefore
+  covers the GitHub-wide pull-request campaign, with Trivy as one observed
+  target and not as a victim of the bot. No source independently verifies
+  that an AI model drove the account, and the operator is unknown.
+date_disclosed: 2026-03-01
+status: confirmed # First-party incident conclusion from a Trivy maintainer plus StepSecurity's independent report.
+confidence: primary
+category: autonomous-attack
+severity: medium
+models:
+  - "claude-opus-4-5" # Self-description by the account only; not independently verified.
+model_families:
+  - claude
+actor: Unknown # Operator of the hackerbot-claw account; its self-description is the only attribution.
+actor_type: unknown
+autonomy_pct: null
+autonomy_level: unknown # The account claims autonomy; StepSecurity's autonomy claim is an inference from the activity pattern.
+guardrail_bypass:
+  - unknown
+# The AI involvement rests on the account's own README and behavioural
+# inference; no publisher independently confirms a model was in the loop.
+ai_role: disputed
+related:
+  - clinejection-cline-triage-npm-publish # Contemporaneous GitHub Actions / AI-agent supply-chain exploitation.
+  - nx-s1ngularity-supply-chain
+mitigations:
+  - "StepSecurity recommends minimum workflow token permissions, maintainer authorization before workflows run on external contributions, review of elevated-privilege triggers that handle untrusted input, restricted and monitored outbound CI traffic, and owner review for AI configuration files such as CLAUDE.md."
+  - "Trivy's maintainers performed a full credential reset across repositories and distribution channels and are migrating to GitHub Apps and fine-grained tokens."
+targets:
+  orgs_affected: 7 # "at least 7 repositories" targeted; compromised count stated as 4, 5 or 6 by StepSecurity.
+  records_exfiltrated: null
+  sectors:
+    - technology # Open-source software projects.
+  countries: []
+lifecycle_phases:
+  - recon
+  - initial-access
+  - execution
+  - credential-access
+mappings:
+  mitre_atlas: []
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: []
+  cve: []
+  aiid: []
+impact: >-
+  Per StepSecurity: code execution in several of at least seven targeted
+  repositories and a write-capable GITHUB_TOKEN exposed from one. The Trivy
+  release deletion and repository takeover of March 2026 are attributed by
+  Trivy's maintainer to a separate attacker, not to this bot.
+sources:
+  - title: "hackerbot-claw: An AI-Powered Bot Actively Exploiting GitHub Actions - Microsoft, DataDog, and CNCF Projects Hit So Far"
+    url: "https://stepsecurity.io/blog/hackerbot-claw-github-actions-exploitation"
+    archive_url: "https://web.archive.org/web/20261002210148/https://www.stepsecurity.io/blog/hackerbot-claw-github-actions-exploitation"
+    publisher: "StepSecurity"
+    type: vendor-report
+    date: 2026-03-01
+  - title: "Trivy Security incident 2026-03-19 conclusion"
+    url: "https://github.com/aquasecurity/trivy/discussions/10462"
+    archive_url: "https://web.archive.org/web/20260408060335/https://github.com/aquasecurity/trivy/discussions/10462"
+    publisher: "Trivy (Aqua Security)"
+    type: first-party-disclosure
+    date: 2026-03-30
+added:
+  date: 2026-10-10
+  by: "MLSecOpsHub"
+last_updated: 2026-10-10

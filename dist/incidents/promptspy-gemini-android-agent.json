@@ -47,6 +47,7 @@
   "severity": "medium",
   "sources": [
     {
+      "archive_url": "https://web.archive.org/web/20261009152603/https://cloud.google.com/blog/topics/threat-intelligence/ai-vulnerability-exploitation-initial-access",
       "date": "2026-05-12",
       "publisher": "Google Threat Intelligence Group",
       "title": "Adversaries Leverage AI for Vulnerability Exploitation, Augmented Operations, and Initial Access",

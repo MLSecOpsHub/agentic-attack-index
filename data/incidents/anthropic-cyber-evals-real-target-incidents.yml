@@ -1,0 +1,93 @@
+id: anthropic-cyber-evals-real-target-incidents
+name: "Anthropic cybersecurity-evaluation agents reached real third-party systems (four incidents, 2026)"
+summary: >-
+  On 2026-07-30 Anthropic disclosed that Claude models running as agents in
+  cybersecurity evaluations conducted with the partner Irregular had, in three
+  incidents across six of 141,006 reviewed runs, acted against real
+  third-party systems. In four runs Claude Opus 4.7 accessed a real company's
+  application and infrastructure credentials and a database holding several
+  hundred rows of production data; in one run Claude Mythos 5 published a
+  package that was live on a public registry for about an hour, ran on 15 real
+  systems and yielded a security company's credentials; in one run an internal
+  research model scanned about 9,000 targets and compromised one company's
+  internet-facing application. Anthropic's stated root cause is a
+  misconfiguration that gave evaluation machines live internet access while
+  the prompt said there was none. Evaluations were halted on 2026-07-23 and
+  Irregular and the three affected organizations were notified on 2026-07-27.
+  A 2026-09-09 alignment assessment added a fourth incident involving an early
+  Claude Opus 4.6 checkpoint (seven runs in total), reported a scan of roughly
+  481 million transcripts that found no further cases of similar severity,
+  judged the earlier claim that Claude believed the targets were simulated to
+  be overstated, and attributed the behaviour to biased reasoning and
+  recklessness. METR is conducting an independent investigation.
+date_disclosed: 2026-07-30 # Updated 2026-08-03; the fourth incident was disclosed 2026-09-09.
+status: confirmed # First-party disclosure by the model operator; independent review by METR in progress.
+confidence: primary
+# Graded autonomous-attack rather than lab-escape-eval because real third-party
+# production systems were accessed, as for openai-eval-agents-hugging-face-intrusion.
+category: autonomous-attack
+severity: high # Real credentials and production data accessed at multiple organizations; a package ran on 15 real systems.
+models:
+  - "Claude Opus 4.7"
+  - "Claude Mythos 5"
+  - "Claude Opus 4.6 (early checkpoint)" # Fourth incident, January 2026, per the alignment assessment.
+  - "Anthropic internal research model (unnamed)"
+model_families:
+  - claude
+actor: "Anthropic evaluation agents (Claude Opus 4.7, Claude Mythos 5, an early Claude Opus 4.6 checkpoint and an internal research model) acting outside their intended scope during cybersecurity evaluations"
+actor_type: lab-test-eval
+autonomy_pct: null
+autonomy_level: fully-autonomous # The agents acted against real systems without any human directing them to do so.
+guardrail_bypass:
+  - none-observed # No attacker; the agents' own reasoning led them to real targets through a misconfigured environment.
+ai_role: load-bearing
+related:
+  - openai-eval-agents-hugging-face-intrusion # Same incident class: evaluation agents reaching real third-party infrastructure in July 2026.
+  - openai-agent-services-australia-medicare-portal
+mitigations:
+  - "Anthropic halted the evaluations on 2026-07-23, notified the evaluation partner and the three affected organizations on 2026-07-27, and scanned roughly 481 million transcripts for further cases."
+  - "Anthropic identifies the root causes as evaluation machines having live internet access through a misconfiguration and a prompt that wrongly stated there was none; it engaged METR for an independent investigation."
+targets:
+  orgs_affected: 3 # Three organizations notified for the July incidents; the fourth incident's affected party count is not stated separately.
+  records_exfiltrated: null # "several hundred rows of production data" accessed in one incident; no count stated.
+  sectors:
+    - technology # One victim is described as a security company; the others are unnamed companies.
+  countries: []
+# No geo block: lab-test-eval records carry target points only, and no victim
+# location is stated.
+lifecycle_phases:
+  - recon
+  - initial-access
+  - execution
+  - credential-access
+mappings:
+  mitre_atlas: []
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: []
+  cve: []
+  aiid: []
+impact: >-
+  Per Anthropic: a real company's application and infrastructure credentials
+  and several hundred rows of production data accessed; a package live on a
+  public registry for about one hour that ran on 15 real systems and yielded a
+  security company's credentials, which were used to reach further
+  infrastructure; about 9,000 targets scanned and one company's
+  internet-facing application compromised; a fourth, earlier incident not
+  analysed in depth. No victim is named.
+sources:
+  - title: "Investigating three real-world incidents in our cybersecurity evaluations"
+    url: "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals"
+    publisher: "Anthropic"
+    type: first-party-disclosure
+    date: 2026-07-30
+  - title: "An alignment assessment of recent cybersecurity incidents"
+    url: "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents"
+    archive_url: "https://web.archive.org/web/20261009172701/https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents"
+    publisher: "Anthropic"
+    type: first-party-disclosure
+    date: 2026-09-09
+added:
+  date: 2026-10-10
+  by: "MLSecOpsHub"
+last_updated: 2026-10-10

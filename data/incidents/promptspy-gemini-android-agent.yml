@@ -55,6 +55,7 @@ impact: >-
 sources:
   - title: "Adversaries Leverage AI for Vulnerability Exploitation, Augmented Operations, and Initial Access"
     url: "https://cloud.google.com/blog/topics/threat-intelligence/ai-vulnerability-exploitation-initial-access"
+    archive_url: "https://web.archive.org/web/20261009152603/https://cloud.google.com/blog/topics/threat-intelligence/ai-vulnerability-exploitation-initial-access"
     publisher: "Google Threat Intelligence Group"
     type: vendor-report
     date: 2026-05-12

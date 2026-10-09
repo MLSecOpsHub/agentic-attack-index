@@ -1,0 +1,100 @@
+id: gtg-20006-agentic-espionage
+name: "GTG-20006 agentic espionage against government, defense and diplomatic targets (Russia-nexus)"
+summary: >-
+  In its September 2026 report "Countering misuse of AI", Anthropic disclosed a
+  cluster it tracks as GTG-20006 that ran from December 2025 through August
+  2026. Anthropic describes the attribution as "consistent with public
+  reporting linking the actor to Midnight Blizzard" and one operator's
+  tradecraft and targeting as "consistent with Russian state-nexus espionage".
+  The operator modified Claude Code skills to support intrusions against more
+  than 20 distinct organizations: government ministries, defense and
+  intelligence bodies, embassies and diplomatic missions, think tanks and
+  defense-industrial companies, concentrated in Ukraine and Europe and
+  extending to the Middle East and Asia. At least three hospitality vendors
+  were compromised and mail records were exfiltrated from at least eight
+  organizations. Humans set targets and reviewed exfiltration, while scheduled
+  jobs renewed stolen access tokens and harvested victim cloud storage with no
+  human involvement. Anthropic states it used AI to extract and organize
+  hundreds of gigabytes of stolen data, including more than 300,000 national
+  identity records and registry data on more than half a million companies
+  taken from a North African government technology authority.
+date_disclosed: 2026-09-10 # Page prints only "September 2026"; the day comes from the report download filenames.
+status: confirmed # First-party disclosure by the model operator (Anthropic).
+confidence: primary
+category: ai-orchestrated-campaign
+severity: high
+models:
+  - Claude Code # Anthropic: the operator modified "Claude Code skills".
+  # Anthropic states Claude Haiku, Sonnet and Opus models were used across the
+  # report's cyber cases, without tying specific versions to this cluster.
+model_families:
+  - claude
+# Attribution is hedged by Anthropic ("consistent with public reporting linking
+# the actor to Midnight Blizzard"; "consistent with Russian state-nexus
+# espionage"). Recorded as stated, not upgraded to a firm attribution.
+actor: "Russia-nexus espionage actor (tracked by Anthropic as GTG-20006; attribution described as consistent with public reporting on Midnight Blizzard)"
+actor_type: nation-state
+autonomy_pct: null
+# Humans "remained in the loop by setting the targets of attacks and reviewing
+# exfiltration"; scheduled token renewal and cloud-storage harvesting ran "with
+# no human involvement".
+autonomy_level: supervised-autonomous
+guardrail_bypass:
+  - legitimate-tool-abuse # Claude Code skills repurposed for intrusion tasks.
+# AI handled scheduled access renewal, harvesting and the extraction and
+# organization of hundreds of gigabytes of data; humans kept targeting and
+# review. No share-of-work figure is stated, so not graded load-bearing.
+ai_role: significant
+related:
+  - gtg-1002-ai-espionage
+  - gtg-2002-vibe-hacking-extortion
+  - gtg-50014-agentic-mass-exfiltration
+  - gtg-10007-agent-swarm-intrusions
+  - gtg-50029-hacktivist-agentic-recon
+  - gtg-50020-ai-vendor-api-key-theft
+mitigations:
+  - "Anthropic states it disrupted the activity, strengthened its safeguards and shared intelligence with authorities and industry partners where appropriate."
+targets:
+  orgs_affected: 20 # "more than 20 distinct organizations" targeted; at least eight had mail records exfiltrated.
+  records_exfiltrated: 300000 # "more than 300,000 national identity records" from one victim; a floor, not a total.
+  sectors:
+    - government
+    - defense
+    - hospitality # "at least three hospitality vendors"; off-vocabulary, kept as stated.
+  countries:
+    - UA # Anthropic: targeting "concentrated in Ukraine and Europe". No other country is named.
+# No geo block: Anthropic states no operator location, and the state-sponsor
+# language is hedged ("consistent with"), so no origin point is plotted. A
+# victim-location point for Ukraine is supportable from the source if wanted.
+lifecycle_phases:
+  - initial-access
+  - credential-access
+  - persistence
+  - exfiltration
+mappings:
+  mitre_atlas: []
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: []
+  cve: []
+  aiid: []
+impact: >-
+  Per Anthropic: at least three hospitality vendors compromised; mail records
+  exfiltrated from at least eight organizations; hundreds of gigabytes of
+  stolen data extracted and organized with AI, including more than 300,000
+  national identity records and commercial registry data on more than half a
+  million companies from a North African government technology authority.
+sources:
+  - title: "Countering misuse of AI: September 2026"
+    url: "https://www.anthropic.com/threat-intelligence-report-september-2026"
+    archive_url: "https://web.archive.org/web/20261009173227/https://www.anthropic.com/threat-intelligence-report-september-2026"
+    publisher: "Anthropic"
+    type: first-party-disclosure
+    date: 2026-09-10
+  # The full PDF (Anthropic-Detecting-and-countering-091026.pdf on www-cdn.anthropic.com)
+  # exceeded the fetch size limit in this session and is not cited; the web
+  # page above was read directly.
+added:
+  date: 2026-10-10
+  by: "MLSecOpsHub"
+last_updated: 2026-10-10
