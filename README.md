@@ -19,7 +19,7 @@ Defenders, researchers, journalists, and policymakers who need a grounded, citab
 
 Each record carries a stable `id` (its permanent citation key), a lifecycle-level defensive summary, verification `status` (`confirmed` / `reported` / `test-eval`), sourcing `confidence` (`primary` / `secondary` / `unverified`), and at least one resolvable source.
 
-Records also carry an analytical layer for defenders: an agentic **`autonomy_level`**, a **`guardrail_bypass`** classification (how safety controls were circumvented), an **`ai_role`** skepticism axis (how central AI actually was, independent of status), **MITRE ATLAS / ATT&CK** mappings, OWASP references, `related[]` links between records from the same report or campaign, and `mitigations`. `dist/summary.json` rolls these up (by category, severity, status, actor type, autonomy level, AI role, model family, and year).
+Records also carry an analytical layer for defenders: an agentic **`autonomy_level`**, a **`guardrail_bypass`** classification (how safety controls were circumvented), an **`ai_role`** skepticism axis (how central AI actually was, independent of status), **MITRE ATLAS / ATT&CK** mappings, OWASP references, `related[]` links between records from the same report or campaign, and `mitigations`. `dist/summary.json` rolls these up (by category, severity, status, actor type, autonomy level, AI role, model family, and year) and publishes the dataset's headline honesty figure, **`evidence_split`**: how many records are both `status: confirmed` *and* `ai_role: load-bearing`. Consumers must read that figure rather than recompute it, so every surface quotes the same number.
 
 **Map points (`geo.points[]`, schema 0.3.0).** A record carries map points only where a cited source states a location. Every point has a `role` (origin / target), an explicit **`basis`** saying why it exists (`sponsor-attribution`, `operator-location`, `actor-location`, `infrastructure`, `victim-location`, `stated-location`; see `taxonomy/geo-basis.yml`), the publisher that stated it (`attributed_by`, always one of the record's sources), an ISO `country`, and `illustrative: true` for any centroid. A state sponsor is not an operator location, and `targets.countries` is never turned into points. Consumers must read `geo.points[]`; the pre-0.3.0 `geo.target` / `geo.origin` slots are gone.
 
@@ -38,7 +38,7 @@ npm run build     # writes the dist/ artifacts below
 | `dist/incidents.ndjson` | newline-delimited JSON (streaming) |
 | `dist/incidents.csv` | flattened columns for spreadsheets (map points as `geo_points` = `role:basis:country`) |
 | `dist/incidents/<id>.json` | one file per incident (stable per-record URL) |
-| `dist/summary.json` | counts + rollups (category, severity, status, actor type, autonomy level, AI role, model family, year) + `archive_coverage` + `geo_coverage` (points by role and basis) |
+| `dist/summary.json` | counts + rollups (category, severity, status, actor type, autonomy level, AI role, model family, year) + `archive_coverage` + `geo_coverage` (points by role and basis) + `evidence_split` (records that are both `confirmed` and `load-bearing`, overall and by year, plus a status × AI-role crosstab; retracted/superseded excluded) |
 | `dist/stix/bundle.json` | STIX 2.1 bundle (reports + ATLAS/ATT&CK attack-patterns + CVE vulnerabilities) for TIP/MISP ingestion |
 | `dist/index.html` | landing page (served via GitHub Pages) |
 
