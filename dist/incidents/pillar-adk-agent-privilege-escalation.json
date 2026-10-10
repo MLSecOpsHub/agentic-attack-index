@@ -1,0 +1,67 @@
+{
+  "actor": "Pillar Security researchers (authorized disclosure)",
+  "actor_type": "researcher",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-10"
+  },
+  "ai_role": "significant",
+  "autonomy_level": "not-applicable",
+  "autonomy_pct": null,
+  "category": "agent-hijack-prompt-injection",
+  "confidence": "primary",
+  "date_disclosed": "2026-08-03",
+  "guardrail_bypass": [
+    "indirect-prompt-injection"
+  ],
+  "id": "pillar-adk-agent-privilege-escalation",
+  "impact": "Per Pillar: a low-privilege triage agent could trigger a maintainer-only Gemini workflow, and a separate issue exposed a bot access token and a cloud service-account credential to the CI runner. Proof-of-concept; Google fixed it; no confirmed malicious exploitation.",
+  "last_updated": "2026-10-10",
+  "lifecycle_phases": [
+    "initial-access",
+    "credential-access",
+    "privilege-escalation"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "Pillar recommends giving agents narrowly scoped auditable identities, minimum tools and tokens, treating any agent that reads untrusted input as attacker-controlled, and preventing cross-privilege agent triggering without controls injected content cannot forge. Google removed the affected workflows, hardened the repository and added an internal review step."
+  ],
+  "model_families": [
+    "gemini"
+  ],
+  "models": [
+    "Gemini"
+  ],
+  "name": "Pillar: low-privilege triage agent could trigger privileged Gemini workflows on Google's ADK repository",
+  "related": [
+    "pillar-gemini-cli-gcp-triage-compromise",
+    "clinejection-cline-triage-npm-publish"
+  ],
+  "severity": "medium",
+  "sources": [
+    {
+      "date": "2026-08-03",
+      "publisher": "Pillar Security",
+      "title": "I'll Just Call You: Agent-to-Agent Privilege Boundary Failures in CI/CD on Google's ADK Repository",
+      "type": "vendor-report",
+      "url": "https://www.pillar.security/blog/ill-just-call-you-agent-to-agent-privilege-boundary-failures-in-ci-cd-on-googles-adk-repository"
+    }
+  ],
+  "status": "reported",
+  "summary": "Pillar Security disclosed on 2026-08-03, through Google's Open Source Software Vulnerability Reward Program, that a low-privilege public-facing triage agent in the CI/CD of Google's Agent Development Kit repository (google/adk-python) could be manipulated into triggering a higher-privilege maintainer-only Gemini workflow. A second issue let an externally authored issue drive a privileged agent workflow that exposed a bot access token and a cloud service-account credential to the CI runner. Pillar reported the issues on 2026-06-02 and 2026-06-05; the affected workflows were removed by 2026-07-02 and Google confirmed a fix on 2026-07-21. The work was proof-of-concept in a controlled project with no confirmed malicious exploitation, though Pillar observed other actors probing the same surface and shared logs with Google.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": [
+      "technology"
+    ]
+  }
+}

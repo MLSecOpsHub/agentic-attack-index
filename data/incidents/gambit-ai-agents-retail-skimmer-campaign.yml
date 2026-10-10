@@ -1,0 +1,90 @@
+id: gambit-ai-agents-retail-skimmer-campaign
+name: "Autonomous AI agents compromised online retailers and planted payment-card skimmers at low per-victim cost"
+summary: >-
+  Gambit Security reported on 2026-09-22 a financially motivated campaign in
+  which a human operator ran three autonomous offensive-AI harnesses (which
+  Gambit names Hermes, Strix and Cairn) almost entirely unattended against
+  online retailers and other consumer-facing businesses. Between 2026-09-10
+  and 2026-09-15 at least 27 companies were compromised to varying degrees and
+  payment-card skimmers were confirmed in place at 19, with activity dating
+  back to July 2026 and more than 100 additional infected sites found. Gambit
+  states the harnesses executed most of the attack chain autonomously at up to
+  tens of companies per day, with the operator contributing short directing
+  prompts, and estimates a marginal cost of a few to a few tens of dollars per
+  company. Victim sectors were mainly retail and e-commerce plus a hospitality
+  company, a US airline and a travel site, concentrated in the United States
+  with victims also in New Zealand and Japan; payment-card records from two
+  companies alone exceeded 600,000. Gambit names no operator group, notes the
+  operator's instructions were in Chinese, and calls its figures interim.
+date_disclosed: 2026-09-22
+status: reported # Single vendor report; Gambit stresses the findings are interim and partly AI-inferred.
+confidence: primary # Vendor threat-intelligence report with direct visibility into the operation.
+category: autonomous-attack
+severity: critical # Payment-card skimmers confirmed at 19 companies; over 600,000 card records from two victims.
+models:
+  - "opus-4.6" # Per Gambit, used through the Hermes harness; also GLM 5.2, DeepSeek v4 Pro and v4.1 Flash via OpenRouter.
+model_families:
+  - claude
+  - deepseek
+  - other # GLM.
+actor: "Unknown financially motivated operator (operator instructions in Chinese; no group named by Gambit)"
+actor_type: cybercriminal
+autonomy_pct: null
+autonomy_level: supervised-autonomous # Gambit: harnesses ran "almost entirely unattended"; the operator sent short directing prompts.
+guardrail_bypass:
+  - legitimate-tool-abuse # Autonomous offensive-AI harnesses driving commodity models; Gambit notes newer models refused some requests.
+ai_role: load-bearing # Per Gambit the harnesses executed most of the attack chain autonomously.
+related:
+  - aurora-cursor-agent-ransomware
+  - gtg-50014-agentic-mass-exfiltration
+mitigations:
+  - "Gambit recommends a resilience-first posture, identifying the minimum systems needed to keep revenue flowing, verifying recovery under campaign-like conditions, and aligning tooling and response with machine-speed attacks rather than human-paced change windows."
+targets:
+  orgs_affected: 27 # At least 27 compromised to varying degrees; skimmers confirmed at 19; 100+ further infected sites found.
+  records_exfiltrated: 600000 # Over 600,000 payment-card records from two companies; a floor, not a total.
+  sectors:
+    - retail
+    - hospitality
+    - aviation
+  countries:
+    - US
+    - NZ
+    - JP
+geo:
+  points:
+    - role: target
+      basis: victim-location
+      attributed_by: "Gambit Security"
+      country: US
+      lat: 37.09
+      lng: -95.71
+      label: "United States (primary victim country, per Gambit Security)"
+      illustrative: true
+lifecycle_phases:
+  - recon
+  - initial-access
+  - execution
+  - exfiltration
+  - impact
+mappings:
+  mitre_atlas: []
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: []
+  cve: []
+  aiid: []
+impact: >-
+  At least 27 companies compromised and payment-card skimmers confirmed at 19
+  between 2026-09-10 and 2026-09-15, with more than 100 further infected sites
+  found and over 600,000 payment-card records taken from two companies, per
+  Gambit Security. Estimated campaign cost US$12,000-18,000.
+sources:
+  - title: "AI Agents Are Hacking Online Retailers for $25 a Company"
+    url: "https://gambit.security/blog-posts/autonomous-ai-agents-online-retailers-25-a-company"
+    publisher: "Gambit Security"
+    type: vendor-report
+    date: 2026-09-22
+added:
+  date: 2026-10-10
+  by: "MLSecOpsHub"
+last_updated: 2026-10-10

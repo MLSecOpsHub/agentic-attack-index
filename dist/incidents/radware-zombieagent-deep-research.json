@@ -1,0 +1,63 @@
+{
+  "actor": "Radware researchers (vulnerability disclosure)",
+  "actor_type": "researcher",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-10"
+  },
+  "ai_role": "significant",
+  "autonomy_level": "not-applicable",
+  "autonomy_pct": null,
+  "category": "agent-hijack-prompt-injection",
+  "confidence": "primary",
+  "date_disclosed": "2026-01-08",
+  "guardrail_bypass": [
+    "indirect-prompt-injection"
+  ],
+  "id": "radware-zombieagent-deep-research",
+  "impact": "Per Radware: a zero-click email could drive ChatGPT's Deep Research agent to exfiltrate data service-side and, in an advanced stage, implant persistent rules in the agent's memory and propagate to further recipients. Demonstrated vulnerability; no in-the-wild victims reported.",
+  "last_updated": "2026-10-10",
+  "lifecycle_phases": [
+    "execution",
+    "persistence",
+    "exfiltration"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "Radware frames defenses around treating external content reaching an agent as untrusted, constraining agent memory and actions, and monitoring agent behaviour."
+  ],
+  "model_families": [
+    "openai-gpt"
+  ],
+  "models": [],
+  "name": "ZombieAgent: zero-click indirect prompt injection against OpenAI's Deep Research agent",
+  "related": [
+    "echoleak-m365-copilot",
+    "claude-cowork-file-exfiltration"
+  ],
+  "severity": "medium",
+  "sources": [
+    {
+      "date": "2026-01-08",
+      "publisher": "Radware (via Nasdaq/GlobeNewswire)",
+      "title": "Radware Unveils \"ZombieAgent\": A Newly Discovered Zero-Click, AI Agent Vulnerability Enabling Silent Takeover and Cloud-Based Data Exfiltration",
+      "type": "vendor-report",
+      "url": "https://www.nasdaq.com/press-release/radware-unveils-zombieagent-newly-discovered-zero-click-ai-agent-vulnerability"
+    }
+  ],
+  "status": "reported",
+  "summary": "On 2026-01-08 Radware announced ZombieAgent, a zero-click indirect prompt-injection vulnerability targeting OpenAI's ChatGPT Deep Research agent. Per Radware, a single crafted email could cause the agent to exfiltrate sensitive data autonomously from the service side, and an advanced stage could implant malicious rules into the agent's long-term memory or working notes to establish persistence without re-engaging the target, executing hidden actions whenever the agent is used and potentially propagating to further recipients. Radware presents it as building on its earlier ShadowLeak research. The announcement is a vendor disclosure describing a demonstrated vulnerability rather than an observed in-the-wild attack, and is catalogued as an agent-hijack prompt-injection product vulnerability.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": []
+  }
+}

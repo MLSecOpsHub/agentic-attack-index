@@ -1,0 +1,62 @@
+{
+  "actor": "Operant AI researchers (research demonstration)",
+  "actor_type": "researcher",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-10"
+  },
+  "ai_role": "significant",
+  "autonomy_level": "not-applicable",
+  "autonomy_pct": null,
+  "category": "agent-hijack-prompt-injection",
+  "confidence": "secondary",
+  "date_disclosed": "2025-10-28",
+  "guardrail_bypass": [
+    "indirect-prompt-injection"
+  ],
+  "id": "shadow-escape-mcp-zero-click",
+  "impact": "Per Cyber Security News and Operant AI: a zero-click technique that could silently exfiltrate sensitive data from MCP-connected AI agents without user interaction. A demonstration; no confirmed in-the-wild victims.",
+  "last_updated": "2026-10-10",
+  "lifecycle_phases": [
+    "execution",
+    "exfiltration"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "The report recommends contextual identity and access management for agents, least-privilege access, treating external documents as untrusted and sanitizing them, real-time monitoring of AI tool use, inline data redaction, and auditing AI permissions and integrations."
+  ],
+  "model_families": [
+    "other"
+  ],
+  "models": [],
+  "name": "Shadow Escape: zero-click data-exfiltration technique against MCP-connected AI agents",
+  "related": [
+    "supabase-mcp-database-leak",
+    "github-mcp-server-private-repo-leak"
+  ],
+  "severity": "medium",
+  "sources": [
+    {
+      "date": "2025-10-28",
+      "publisher": "Cyber Security News",
+      "title": "First Zero Click Attack Exploits MCP and Connected Popular AI Agents To Exfiltrate Data Silently",
+      "type": "news",
+      "url": "https://cybersecuritynews.com/first-zero-click-attack-exploits-mcp/"
+    }
+  ],
+  "status": "reported",
+  "summary": "Cyber Security News reported on 2025-10-28 a zero-click attack technique, demonstrated by Operant AI and called Shadow Escape, affecting AI agent platforms that use the Model Context Protocol, including widely used assistants. Per the report, the technique could silently exfiltrate sensitive data such as personal identifiers and medical records from MCP-connected systems without user interaction. It is presented as a research demonstration; the report cites Operant's view that undetected cases may already be occurring but does not confirm in-the-wild exploitation, and does not state whether affected vendors were notified or have released fixes. It is catalogued as an agent-hijack prompt-injection product vulnerability.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": []
+  }
+}

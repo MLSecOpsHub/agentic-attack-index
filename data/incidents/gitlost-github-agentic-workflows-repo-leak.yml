@@ -1,0 +1,64 @@
+id: gitlost-github-agentic-workflows-repo-leak
+name: "GitLost: GitHub Agentic Workflows agent tricked into leaking private repository contents"
+summary: >-
+  Noma Security (Noma Labs) disclosed on 2026-07-06 a vulnerability it calls
+  GitLost in GitHub Agentic Workflows, which use an AI agent backed by Claude or
+  GitHub Copilot. In a proof-of-concept against the researchers' own
+  repositories, content from private repository README files was published in a
+  public comment on a public issue. Noma states the issue was responsibly
+  disclosed to GitHub; it does not state report or fix dates or confirm a fix,
+  and reports no in-the-wild exploitation or affected users. The finding is
+  catalogued as an agent-hijack prompt-injection product vulnerability, in the
+  same class as earlier disclosures against AI coding and chat assistants.
+date_disclosed: 2026-07-06
+status: reported # Single vendor publisher; Noma does not state GitHub confirmation or a fix.
+confidence: primary # First-hand researcher analysis.
+category: agent-hijack-prompt-injection
+severity: medium # Private repository contents leaked in a demonstration; no in-the-wild exploitation.
+models: []
+model_families:
+  - claude
+  - other # GitHub Copilot's backing model, unspecified.
+actor: "Noma Security researchers (authorized disclosure)"
+actor_type: researcher
+autonomy_pct: null
+autonomy_level: not-applicable # The agent was the hijacked component.
+guardrail_bypass:
+  - indirect-prompt-injection
+ai_role: significant
+related:
+  - camoleak-github-copilot-chat
+  - clinejection-cline-triage-npm-publish
+mitigations:
+  - "Noma recommends treating user-controlled content as untrusted rather than instructions, limiting agent permissions (especially cross-repository access), restricting what agents can post publicly, and isolating user input from instruction context."
+targets:
+  orgs_affected: null
+  records_exfiltrated: null
+  sectors:
+    - technology
+  countries: []
+lifecycle_phases:
+  - execution
+  - exfiltration
+mappings:
+  mitre_atlas: []
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: []
+  cve: []
+  aiid: []
+impact: >-
+  Per Noma Security: private repository README contents published in a public
+  comment through a GitHub Agentic Workflows agent, in a proof-of-concept
+  against the researchers' own repositories. No in-the-wild exploitation.
+sources:
+  - title: "GitLost: How We Tricked GitHub's AI Agent into Leaking Private Repos"
+    url: "https://noma.security/blog/gitlost-how-we-tricked-githubs-ai-agent-into-leaking-private-repos/"
+    archive_url: "https://web.archive.org/web/20260813095553/https://noma.security/blog/gitlost-how-we-tricked-githubs-ai-agent-into-leaking-private-repos/"
+    publisher: "Noma Security"
+    type: vendor-report
+    date: 2026-07-06
+added:
+  date: 2026-10-10
+  by: "MLSecOpsHub"
+last_updated: 2026-10-10

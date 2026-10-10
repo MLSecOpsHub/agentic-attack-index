@@ -1,0 +1,66 @@
+{
+  "actor": "Unknown",
+  "actor_type": "unknown",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-10"
+  },
+  "ai_role": "significant",
+  "autonomy_level": "supervised-autonomous",
+  "autonomy_pct": null,
+  "category": "autonomous-attack",
+  "confidence": "primary",
+  "date_disclosed": "2026-05-26",
+  "guardrail_bypass": [
+    "unknown"
+  ],
+  "id": "sysdig-marimo-ai-agent-database-exfiltration",
+  "impact": "Per Sysdig: an internal PostgreSQL database dumped after entry through a Marimo notebook, with the full chain under an hour. No victim identified.",
+  "last_updated": "2026-10-10",
+  "lifecycle_phases": [
+    "initial-access",
+    "execution",
+    "credential-access",
+    "exfiltration"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [
+      "CVE-2026-39987"
+    ],
+    "mitre_atlas": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "Sysdig recommends prompt patching or disabling of vulnerable features, auditing and rotating credentials on exposed systems, visibility across all assets, retaining telemetry sufficient to investigate lateral movement, and runtime threat detection."
+  ],
+  "model_families": [
+    "other"
+  ],
+  "models": [],
+  "name": "Attacker used an LLM agent to move from a Marimo notebook CVE to an internal database in under an hour",
+  "related": [
+    "jadepuffer-agentic-database-extortion",
+    "divd-zammad-ai-agent-breach"
+  ],
+  "severity": "medium",
+  "sources": [
+    {
+      "date": "2026-05-26",
+      "publisher": "Sysdig",
+      "title": "AI agent at the wheel: How an attacker used LLMs to move from a CVE to an internal database in 4 pivots",
+      "type": "vendor-report",
+      "url": "https://www.sysdig.com/blog/ai-agent-at-the-wheel-how-an-attacker-used-llms-to-move-from-a-cve-to-an-internal-database-in-4-pivots"
+    }
+  ],
+  "status": "reported",
+  "summary": "Sysdig reported on 2026-05-26 an intrusion it observed on 2026-05-10 in which an attacker compromised an internet-reachable Marimo notebook through CVE-2026-39987 and then moved through cloud and SSH access to an internal PostgreSQL database and dumped its contents, with the chain running end-to-end in under an hour. Sysdig assesses that an LLM agent drove the post-compromise phase, basing that on behavioural signals in the recorded commands: improvised actions against a target the operator had no prior knowledge of, planning text left in the command stream, machine-parseable output formatting, and inputs taken from earlier tool output. Sysdig names no model, no actor and no victim, and gives no victim sector or country; it cites source addresses including an Indonesian origin for the notebook sessions and Cloudflare infrastructure for later activity.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": 1,
+    "records_exfiltrated": null,
+    "sectors": []
+  }
+}

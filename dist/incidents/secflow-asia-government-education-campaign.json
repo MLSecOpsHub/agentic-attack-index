@@ -1,0 +1,75 @@
+{
+  "actor": "Unknown Chinese-speaking operator (no state or criminal attribution stated by Hunt.io)",
+  "actor_type": "unknown",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-10"
+  },
+  "ai_role": "significant",
+  "autonomy_level": "supervised-autonomous",
+  "autonomy_pct": null,
+  "category": "ai-orchestrated-campaign",
+  "confidence": "primary",
+  "date_disclosed": "2026-09-03",
+  "guardrail_bypass": [
+    "legitimate-tool-abuse"
+  ],
+  "id": "secflow-asia-government-education-campaign",
+  "impact": "Per Hunt.io: command execution and credential collection on a district government environment including administrative and health-related records, access to a Chinese education AI platform's data including student information, and root database and admin-level access to a university campus-card environment. One recruitment system should not be described as compromised.",
+  "last_updated": "2026-10-10",
+  "lifecycle_phases": [
+    "recon",
+    "initial-access",
+    "credential-access",
+    "exfiltration"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "Hunt.io points to familiar priorities: reducing exposed services, patching applications and protecting credentials."
+  ],
+  "model_families": [
+    "claude",
+    "qwen",
+    "deepseek"
+  ],
+  "models": [],
+  "name": "SecFlow framework drove commercial AI models against government and education systems across Asia",
+  "related": [
+    "dream-multi-agent-asia-government-campaign",
+    "gtg-10007-agent-swarm-intrusions"
+  ],
+  "severity": "high",
+  "sources": [
+    {
+      "date": "2026-09-03",
+      "publisher": "Hunt.io",
+      "title": "Chinese-Speaking Operator Uses AI Agents to Target Government and Education Systems Across Asia",
+      "type": "vendor-report",
+      "url": "https://hunt.io/blog/chinese-operator-secflow-claude-qwen-deepseek-asia"
+    }
+  ],
+  "status": "reported",
+  "summary": "Hunt.io reported on 2026-09-03 that a Chinese-speaking operator used an orchestration framework it calls SecFlow, which assigns short objectives to specialist AI workers and can switch between Claude, Qwen and DeepSeek profiles without changing the task interface, to run a campaign against government, education, consular, healthcare and industrial targets across six countries between mid-May and early August 2026. Hunt.io characterises the AI as a coordination and workflow layer while conventional scripts, public proof-of-concept code and leaked credentials carried out exploitation. Named or identifiable targets include a Taiwanese party-history archive, a Southeast Asian ministry of foreign affairs, a mainland-Chinese district government environment and a university campus-card system; outcome-level impact includes command execution and credential collection on a district government environment, access to a Chinese education AI platform's data, and root database and admin access to a campus-card environment. Hunt.io does not state whether the operator is state-sponsored or criminal, and notes a shared AI context once carried an unsupported premise into later failed tasks.",
+  "targets": {
+    "countries": [
+      "TW",
+      "ID",
+      "CN",
+      "VN"
+    ],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": [
+      "government",
+      "education",
+      "healthcare"
+    ]
+  }
+}

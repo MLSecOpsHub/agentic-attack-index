@@ -1,0 +1,65 @@
+{
+  "actor": "The Gentlemen ransomware affiliate (per ransom notes found on the server)",
+  "actor_type": "cybercriminal",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-10"
+  },
+  "ai_role": "significant",
+  "autonomy_level": "supervised-autonomous",
+  "autonomy_pct": null,
+  "category": "autonomous-attack",
+  "confidence": "secondary",
+  "date_disclosed": "2026-09-02",
+  "guardrail_bypass": [
+    "legitimate-tool-abuse"
+  ],
+  "id": "gentlemen-hermes-agent-gitlab-extortion",
+  "impact": "3.1 TB of data stolen from more than 30 companies via vulnerable GitLab instances, with ransom demands drafted and issued; estimated AI token cost of US$0.40 to US$4 per company. No victims named.",
+  "last_updated": "2026-10-10",
+  "lifecycle_phases": [
+    "initial-access",
+    "execution",
+    "exfiltration",
+    "impact"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "Cybernews urges companies to rotate exposed credentials, monitor GitLab access, and keep vulnerable software updated."
+  ],
+  "model_families": [
+    "hermes"
+  ],
+  "models": [],
+  "name": "Exposed server reveals AI-agent ransomware operation that stole 3.1 TB from 30+ GitLab victims",
+  "related": [
+    "jadepuffer-agentic-database-extortion",
+    "gambit-ai-agents-retail-skimmer-campaign"
+  ],
+  "severity": "high",
+  "sources": [
+    {
+      "archive_url": "https://web.archive.org/web/20260903110157/https://cybernews.com/security/exposed-ransomware-server-reveals-automated-4-dollar-cyberattacks/",
+      "date": "2026-09-02",
+      "publisher": "Cybernews",
+      "title": "Exposed ransomware server reveals automated $4 cyberattacks",
+      "type": "news",
+      "url": "https://cybernews.com/security/exposed-ransomware-server-reveals-automated-4-dollar-cyberattacks/"
+    }
+  ],
+  "status": "reported",
+  "summary": "Cybernews reported on 2026-09-02 that its researchers found an exposed server holding 3.1 TB of data stolen from more than 30 companies, running what it describes as a ransomware operation driven by an AI agent (which the toolset calls a Hermes harness) and attributed by ransom notes to the group \"The Gentlemen.\" The operation targeted vulnerable and misconfigured GitLab instances using compromised credentials for initial access, used AI-generated Python scripts configured with real victim endpoints for post-exploitation, and drafted ransom demands, backing stolen data up to a cloud storage service. Cybernews estimates AI token cost of roughly US$0.40 to US$4 per company attacked and says the agent hacked and extorted dozens of victims simultaneously with little human oversight. Victims are not named. The AI- agent characterisation and automation claims are the researchers' assessment of the exposed infrastructure.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": 30,
+    "records_exfiltrated": null,
+    "sectors": []
+  }
+}

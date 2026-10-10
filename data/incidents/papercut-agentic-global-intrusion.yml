@@ -1,0 +1,79 @@
+id: papercut-agentic-global-intrusion
+name: "AI-orchestrated campaign compromised hundreds of PaperCut servers across dozens of countries"
+summary: >-
+  GreyNoise reported on 2026-09-09 an AI-orchestrated campaign against
+  internet-exposed PaperCut NG/MF print-management servers, exploiting
+  CVE-2026-81578 and CVE-2026-82078 (PaperCut published an urgent advisory on
+  2026-08-27). GreyNoise observed at least 440 instances across 395 identified
+  victim organizations in 48 countries compromised between about 31 August and
+  2 September 2026, achieving remote code execution, harvesting credentials at
+  280 victims, recovering OS- or domain-level secrets at 147, and obtaining
+  domain-administrator access at 12 organizations, with data staged for
+  exfiltration. GreyNoise attributes the activity to a likely Russian-speaking
+  actor using OpenAI's Codex as the agent harness driving a DeepSeek model,
+  based on its own sensor observations, and notes the agents deviated from a
+  country-exclusion list the operator had set, for reasons GreyNoise cannot
+  explain. The operation was prompted for permission to continue at one point,
+  indicating some human oversight. No victim is named.
+date_disclosed: 2026-09-09
+status: reported # Single vendor report; the model/harness attribution rests on GreyNoise's own observation.
+confidence: primary # Vendor observation through its sensor grid.
+category: autonomous-attack
+severity: high # 440 instances across 48 countries; domain-admin access at 12 organizations.
+models: [] # GreyNoise names OpenAI Codex as the harness and a DeepSeek model, without specific versions.
+model_families:
+  - openai-codex
+  - deepseek
+actor: "Likely Russian-speaking actor (per GreyNoise; not classified as criminal or state)"
+actor_type: unknown
+autonomy_pct: null
+autonomy_level: supervised-autonomous # Agentic operation that at one point prompted the operator for permission to continue.
+guardrail_bypass:
+  - legitimate-tool-abuse
+ai_role: significant # GreyNoise frames it as agentic and notes unexplained deviation from the operator's exclusion list.
+related:
+  - gtg-50020-ai-vendor-api-key-theft
+  - gentlemen-hermes-agent-gitlab-extortion
+mitigations:
+  - "GreyNoise states traditional hardening and patching still help, and that a web application firewall blocked the actor in at least one case; PaperCut issued an urgent advisory on 2026-08-27."
+targets:
+  orgs_affected: 395 # 395 identified victim organizations across at least 440 instances in 48 countries.
+  records_exfiltrated: null
+  sectors:
+    - education # Named examples include a US high school; victims span many sectors globally.
+  countries: []
+lifecycle_phases:
+  - recon
+  - initial-access
+  - execution
+  - credential-access
+  - privilege-escalation
+mappings:
+  mitre_atlas: []
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: []
+  cve:
+    - CVE-2026-81578 # PaperCut authentication bypass, per GreyNoise.
+    - CVE-2026-82078 # PaperCut unsafe reflection RCE, per GreyNoise.
+  aiid: []
+impact: >-
+  Per GreyNoise: at least 440 PaperCut instances across 395 organizations in 48
+  countries compromised; remote code execution achieved; credentials harvested
+  at 280 victims; OS- or domain-level secrets recovered at 147; domain-admin
+  access at 12; data staged for exfiltration. No victim named.
+sources:
+  - title: "Agents Gone Wild: An AI-Orchestrated Global Campaign Against PaperCut NG/MF"
+    url: "https://www.greynoise.io/blog/ai-orchestrated-campaign-against-papercut-ng-mf"
+    publisher: "GreyNoise"
+    type: vendor-report
+    date: 2026-09-09
+  - title: "URGENT Security Advisory: PaperCut NG/MF Security Bulletin (27 Aug 2026)"
+    url: "https://www.papercut.com/kb/Main/security-bulletin-27-aug-2026-urgent-security-advisory/"
+    publisher: "PaperCut"
+    type: vendor-report
+    date: 2026-08-27
+added:
+  date: 2026-10-10
+  by: "MLSecOpsHub"
+last_updated: 2026-10-10

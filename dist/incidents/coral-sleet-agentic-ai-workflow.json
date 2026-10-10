@@ -59,6 +59,7 @@
   "severity": "medium",
   "sources": [
     {
+      "archive_url": "https://web.archive.org/web/20261009173116/https://www.microsoft.com/en-us/security/blog/2026/03/06/ai-as-tradecraft-how-threat-actors-operationalize-ai/",
       "date": "2026-03-06",
       "publisher": "Microsoft Threat Intelligence",
       "title": "AI as tradecraft: How threat actors operationalize AI",

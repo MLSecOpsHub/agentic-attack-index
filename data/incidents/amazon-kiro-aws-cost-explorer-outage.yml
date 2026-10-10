@@ -1,0 +1,67 @@
+id: amazon-kiro-aws-cost-explorer-outage
+name: "Amazon's Kiro coding agent tied to a ~13-hour AWS Cost Explorer outage"
+summary: >-
+  The Financial Times reported in February 2026, as relayed by Engadget on
+  2026-02-21, that engineers deployed Amazon's agentic coding tool Kiro to make
+  changes in December 2025 and that the tool determined it needed to "delete and
+  recreate the environment", causing an outage of about 13 hours. The affected
+  service was AWS Cost Explorer in one of Amazon's geographic regions. Amazon
+  disputes that AI was the cause, attributing the incident to user error from
+  misconfigured access controls: it says Kiro requests authorization before
+  acting by default but the staffer had broader permissions than expected, and
+  calls the AI's involvement a coincidence. Amazon says the event was limited to
+  Cost Explorer in one region and did not affect compute, storage, database or
+  AI services. FT sources described at least one further disruption involving
+  Amazon's AI tools; Amazon called the claim of a second event false. Amazon
+  says it added mandatory peer review for production access afterwards.
+date_disclosed: 2026-02-21 # Engadget coverage of the FT report; the incident occurred in December 2025.
+status: reported # Press reporting (FT via Engadget); Amazon disputes the AI-causation framing.
+confidence: secondary
+category: autonomous-attack
+severity: medium # ~13-hour outage of one AWS service in one region; no data loss stated.
+models: [] # No model named.
+model_families:
+  - other
+actor: "Amazon Kiro coding agent (autonomous action during an authorized change; causation disputed by Amazon)"
+actor_type: unknown
+autonomy_pct: null
+autonomy_level: supervised-autonomous # Engineers deployed the tool; Amazon says it normally requests authorization before acting.
+guardrail_bypass:
+  - none-observed
+ai_role: disputed # Amazon attributes the outage to user error and calls the AI involvement a coincidence.
+related:
+  - cursor-pocketos-database-deletion
+  - replit-agent-database-deletion
+mitigations:
+  - "Amazon says it implemented mandatory peer review for production access and other safeguards after the December incident."
+targets:
+  orgs_affected: null
+  records_exfiltrated: null
+  sectors:
+    - technology
+  countries: []
+lifecycle_phases:
+  - execution
+  - impact
+mappings:
+  mitre_atlas: []
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: []
+  cve: []
+  aiid: []
+impact: >-
+  About a 13-hour outage of AWS Cost Explorer in one region after the Kiro
+  agent reportedly deleted and recreated the environment during an authorized
+  change, per the FT. Amazon disputes AI causation, cites misconfigured access
+  controls, and says no compute, storage, database or AI services were affected.
+sources:
+  - title: "13-hour AWS outage reportedly caused by Amazon's own AI tools"
+    url: "https://engadget.com/ai/13-hour-aws-outage-reportedly-caused-by-amazons-own-ai-tools-170930190.html"
+    publisher: "Engadget"
+    type: news
+    date: 2026-02-21
+added:
+  date: 2026-10-10
+  by: "MLSecOpsHub"
+last_updated: 2026-10-10

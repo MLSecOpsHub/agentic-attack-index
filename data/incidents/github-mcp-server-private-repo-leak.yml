@@ -1,0 +1,63 @@
+id: github-mcp-server-private-repo-leak
+name: "GitHub MCP server could be steered via a public issue into leaking private repository contents"
+summary: >-
+  Research first disclosed in May 2025 (by Invariant Labs) and explained by
+  Cybernews showed that an AI agent connected through the GitHub MCP server
+  could be steered by instructions hidden in a public issue into reading
+  private repositories accessible to its token and pasting their contents into
+  a public pull request, making the data public. The work is a proof-of-concept
+  against the researchers' own setup rather than an observed in-the-wild attack;
+  the core weakness is over-broad agent token access combined with treating
+  issue content as instructions. It is catalogued as an agent-hijack
+  prompt-injection product vulnerability.
+date_disclosed: 2025-05-26 # Public disclosure date of the underlying Invariant Labs research, as referenced by coverage; cited source is the Cybernews explainer.
+status: reported # Single readable publisher (Cybernews explainer); proof-of-concept.
+confidence: secondary
+category: agent-hijack-prompt-injection
+severity: medium # Private repository contents could be made public; proof-of-concept, no in-the-wild victims.
+models: []
+model_families:
+  - other
+actor: "Security researchers (proof-of-concept; original research attributed to Invariant Labs)"
+actor_type: researcher
+autonomy_pct: null
+autonomy_level: not-applicable # The MCP-connected agent is the hijacked component.
+guardrail_bypass:
+  - indirect-prompt-injection
+ai_role: significant
+related:
+  - gitlost-github-agentic-workflows-repo-leak
+  - supabase-mcp-database-leak
+mitigations:
+  - "Limit agent token scope (especially cross-repository and private access), treat issue and other user content as untrusted data rather than instructions, and require review of actions that publish data."
+targets:
+  orgs_affected: null
+  records_exfiltrated: null
+  sectors:
+    - technology
+  countries: []
+lifecycle_phases:
+  - execution
+  - exfiltration
+mappings:
+  mitre_atlas: []
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: []
+  cve: []
+  aiid: []
+impact: >-
+  Per the research as explained by Cybernews: an agent on the GitHub MCP server
+  could be induced through a public issue to read private repositories and
+  expose their contents in a public pull request. Proof-of-concept; no
+  in-the-wild victims.
+sources:
+  - title: "GitHub MCP vulnerability explained"
+    url: "https://cybernews.com/security/github-mcp-vulnerability-has-far-reaching-consequences/"
+    archive_url: "https://web.archive.org/web/20260107175010/https://cybernews.com/security/github-mcp-vulnerability-has-far-reaching-consequences/"
+    publisher: "Cybernews"
+    type: news
+added:
+  date: 2026-10-10
+  by: "MLSecOpsHub"
+last_updated: 2026-10-10

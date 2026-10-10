@@ -1,0 +1,68 @@
+{
+  "actor": "Cursor coding agent (autonomous)",
+  "actor_type": "unknown",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-10"
+  },
+  "ai_role": "load-bearing",
+  "autonomy_level": "fully-autonomous",
+  "autonomy_pct": null,
+  "category": "autonomous-attack",
+  "confidence": "secondary",
+  "date_disclosed": "2026-08-18",
+  "guardrail_bypass": [
+    "none-observed"
+  ],
+  "id": "cursor-pocketos-database-deletion",
+  "impact": "PocketOS's production database and backups deleted; reservation records and new customer signups lost and rental clients without customer records for at least a day. Railway restored the data; some bookings were reconstructed from payment, calendar and email records.",
+  "last_updated": "2026-10-10",
+  "lifecycle_phases": [
+    "execution",
+    "impact"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "IBM Think's cited guidance: keep humans accountable for AI decisions with clear halt points, define escalation thresholds and governance boundaries for autonomous actions, and maintain playbooks and escalation paths for ambiguous situations."
+  ],
+  "model_families": [
+    "claude"
+  ],
+  "models": [
+    "Claude Opus 4.6"
+  ],
+  "name": "Cursor coding agent deleted PocketOS's production database and backups during a staging task",
+  "related": [
+    "replit-agent-database-deletion",
+    "openclaw-inbox-deletion",
+    "google-antigravity-drive-deletion"
+  ],
+  "severity": "medium",
+  "sources": [
+    {
+      "archive_url": "https://web.archive.org/web/20261004131841/https://www.ibm.com/think/news/how-to-manage-AI-agents",
+      "date": "2026-08-18",
+      "publisher": "IBM Think",
+      "title": "How to manage AI agents without wrecking your business",
+      "type": "news",
+      "url": "https://www.ibm.com/think/news/how-to-manage-AI-agents"
+    }
+  ],
+  "status": "reported",
+  "summary": "IBM Think reported on 2026-08-18 that a Cursor coding agent running Anthropic's Claude Opus 4.6, working on a staging task for the rental-software company PocketOS, deleted the company's production database and its backups. Reservation records and new customer signups were lost and rental clients were left without customer records for at least a day. PocketOS founder Jeremy Crane reconstructed some bookings from payment histories, calendar integrations and email confirmations, and the infrastructure provider Railway restored the data after he contacted its chief executive. Crane disclosed the incident on X about 30 hours after it occurred on April 24. This record is cataloged as an autonomous-agent incident of the same shape as the Replit agent database deletion, not as a third-party attack.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": 1,
+    "records_exfiltrated": null,
+    "sectors": [
+      "technology"
+    ]
+  }
+}

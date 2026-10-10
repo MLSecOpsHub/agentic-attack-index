@@ -1,0 +1,65 @@
+id: google-antigravity-drive-deletion
+name: "Google Antigravity agent wiped a user's drive while clearing a project cache"
+summary: >-
+  The Register reported on 2025-12-01 that Google's agentic development
+  platform Antigravity, running on Gemini 3 in its "Turbo" mode (which executes
+  commands without user confirmation), wiped the entire contents of a user's
+  D: drive partition while clearing a project cache. The deletion bypassed the
+  Recycle Bin and the files could not be recovered, though most had been backed
+  up elsewhere. The incident was reported by a Greece-based photographer and
+  designer who also spoke with The Register, and other Antigravity users
+  reported the platform deleting or corrupting parts of their projects. Google
+  said it was aware of the report and investigating. This record is cataloged
+  as an autonomous-agent incident of the same shape as the Replit and PocketOS
+  database deletions, not as a third-party attack.
+date_disclosed: 2025-12-01
+status: reported # Single news report relaying a user's account plus Google's acknowledgement.
+confidence: secondary
+category: autonomous-attack
+severity: low # One user's drive partition; most data was backed up elsewhere.
+models:
+  - "Gemini 3"
+model_families:
+  - gemini
+actor: "Google Antigravity agent (autonomous)"
+actor_type: unknown
+autonomy_pct: null
+autonomy_level: fully-autonomous # Ran in "Turbo" mode, executing commands without user confirmation.
+guardrail_bypass:
+  - none-observed
+ai_role: load-bearing
+related:
+  - replit-agent-database-deletion
+  - cursor-pocketos-database-deletion
+  - openclaw-inbox-deletion
+mitigations: []
+targets:
+  orgs_affected: null # One individual user.
+  records_exfiltrated: null
+  sectors: []
+  countries: []
+lifecycle_phases:
+  - execution
+  - impact
+mappings:
+  mitre_atlas: []
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: []
+  cve: []
+  aiid: []
+impact: >-
+  A user's D: drive partition wiped while clearing a project cache; deletion
+  bypassed the Recycle Bin and files were unrecoverable, though most were
+  backed up elsewhere. Other users reported similar project damage.
+sources:
+  - title: "Google Antigravity vibe-codes user's entire drive out of existence"
+    url: "https://www.theregister.com/2025/12/01/google_antigravity_wipes_d_drive/"
+    archive_url: "https://web.archive.org/web/20260427223013/https://www.theregister.com/2025/12/01/google_antigravity_wipes_d_drive/"
+    publisher: "The Register"
+    type: news
+    date: 2025-12-01
+added:
+  date: 2026-10-10
+  by: "MLSecOpsHub"
+last_updated: 2026-10-10

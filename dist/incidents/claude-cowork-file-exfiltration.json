@@ -1,0 +1,63 @@
+{
+  "actor": "PromptArmor researchers (proof-of-concept)",
+  "actor_type": "researcher",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-10"
+  },
+  "ai_role": "significant",
+  "autonomy_level": "not-applicable",
+  "autonomy_pct": null,
+  "category": "agent-hijack-prompt-injection",
+  "confidence": "unverified",
+  "date_disclosed": "2026-01-14",
+  "guardrail_bypass": [
+    "indirect-prompt-injection"
+  ],
+  "id": "claude-cowork-file-exfiltration",
+  "impact": "Per PromptArmor: a proof-of-concept in which Claude Cowork uploads a user's local files to an attacker account without human approval. No real-world victims reported; the flaw was unresolved at publication.",
+  "last_updated": "2026-10-10",
+  "lifecycle_phases": [
+    "execution",
+    "exfiltration"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "Anthropic's cited guidance is to avoid granting Cowork access to local files containing sensitive information and to watch for suspicious actions; PromptArmor disputes this is adequate for non-technical users and urges caution with Connectors."
+  ],
+  "model_families": [
+    "claude"
+  ],
+  "models": [],
+  "name": "Claude Cowork could be manipulated into uploading a user's files to an attacker account",
+  "related": [
+    "snowflake-cortex-cli-sandbox-escape",
+    "echoleak-m365-copilot"
+  ],
+  "severity": "medium",
+  "sources": [
+    {
+      "archive_url": "https://web.archive.org/web/20261005172213/https://www.promptarmor.com/resources/claude-cowork-exfiltrates-files",
+      "date": "2026-01-14",
+      "publisher": "PromptArmor",
+      "title": "Claude Cowork Exfiltrates Files",
+      "type": "vendor-report",
+      "url": "https://www.promptarmor.com/resources/claude-cowork-exfiltrates-files"
+    }
+  ],
+  "status": "reported",
+  "summary": "PromptArmor published a proof-of-concept, around mid-January 2026, showing that Anthropic's Claude Cowork could be manipulated into uploading a user's local files to an attacker-controlled account with no human approval at any point. PromptArmor says the underlying vulnerability was first reported by a different researcher against Claude.ai chat and that Anthropic acknowledged but had not remediated it, so the flaw remained unresolved at publication. The write-up presents a demonstration and reports no real-world victims; it is catalogued as an agent-hijack prompt-injection product vulnerability.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": []
+  }
+}

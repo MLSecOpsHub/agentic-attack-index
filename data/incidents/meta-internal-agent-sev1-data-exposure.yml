@@ -1,0 +1,72 @@
+id: meta-internal-agent-sev1-data-exposure
+name: "Meta internal AI agent gave faulty guidance that briefly exposed sensitive data to unauthorized staff"
+summary: >-
+  In mid-March 2026 an internal AI agent at Meta, consulted by an engineer on a
+  corporate forum, provided incorrect guidance that the engineer followed,
+  temporarily exposing sensitive internal company information to employees who
+  would not normally have access. INCIBE-CERT (Spain's national cybersecurity
+  institute) summarised the incident on 2026-04-16, and SecurityBrief Asia
+  reported on 2026-03-25 that it triggered a Sev-1 internal alert and lasted
+  about two hours before Meta's security teams detected and contained it. Meta
+  confirmed the incident, attributing it to inaccurate AI-generated information
+  acted on without further verification, and said the data did not leak outside
+  the company and no external user data was compromised. Meta classified it as
+  high severity and restricted access, reviewed the systems involved and said
+  it would strengthen controls on AI agents in sensitive processes.
+date_disclosed: 2026-03-25 # Early press coverage (SecurityBrief Asia); INCIBE-CERT summarised it on 2026-04-16.
+status: reported # Press reporting with Meta confirmation; no first-party written post-mortem cited.
+confidence: secondary
+category: autonomous-attack
+severity: medium # Internal sensitive data briefly exposed to unauthorized staff; contained in about two hours, no external leak.
+models: [] # No model named.
+model_families:
+  - other
+actor: "Meta internal AI agent (faulty guidance; no external attacker)"
+actor_type: unknown
+autonomy_pct: null
+autonomy_level: not-applicable # The agent gave advice a human acted on; it did not itself take the exposing action.
+guardrail_bypass:
+  - none-observed
+ai_role: significant # The agent's incorrect guidance was the trigger; a human carried out the change.
+related:
+  - openclaw-inbox-deletion
+  - aepd-first-ai-agent-data-breach-notification
+mitigations:
+  - "Meta restricted access and reviewed the systems involved and said it would strengthen controls on AI agents in sensitive processes, including better validation of AI-generated responses, limits on automated permissions and more human oversight of critical tasks (per INCIBE-CERT)."
+targets:
+  orgs_affected: 1
+  records_exfiltrated: null
+  sectors:
+    - technology
+  countries: []
+lifecycle_phases:
+  - execution
+  - impact
+mappings:
+  mitre_atlas: []
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: []
+  cve: []
+  aiid: []
+impact: >-
+  Sensitive internal company information temporarily exposed to employees
+  without normal access after an internal AI agent gave incorrect guidance;
+  Sev-1 alert, contained in about two hours. Meta states no data left the
+  company and no external user data was compromised.
+sources:
+  - title: "AI incident at Meta drives improvements in the security and control of autonomous systems"
+    url: "https://www.incibe.es/en/incibe-cert/publications/cybersecurity-highlights/ai-incident-meta-drives-improvements-security-and-control-autonomous-systems"
+    publisher: "INCIBE-CERT"
+    type: government-advisory
+    date: 2026-04-16
+  - title: "Meta AI agent exposes sensitive data in internal leak"
+    url: "https://securitybrief.asia/story/meta-ai-agent-exposes-sensitive-data-in-internal-leak"
+    archive_url: "https://web.archive.org/web/20260609122231/https://securitybrief.asia/story/meta-ai-agent-exposes-sensitive-data-in-internal-leak"
+    publisher: "SecurityBrief Asia"
+    type: news
+    date: 2026-03-25
+added:
+  date: 2026-10-10
+  by: "MLSecOpsHub"
+last_updated: 2026-10-10

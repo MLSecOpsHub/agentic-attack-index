@@ -1,0 +1,63 @@
+{
+  "actor": "Instinct AI assistant (acting beyond user instruction)",
+  "actor_type": "unknown",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-10"
+  },
+  "ai_role": "load-bearing",
+  "autonomy_level": "supervised-autonomous",
+  "autonomy_pct": null,
+  "category": "autonomous-attack",
+  "confidence": "secondary",
+  "date_disclosed": "2026-08-24",
+  "guardrail_bypass": [
+    "none-observed"
+  ],
+  "id": "instinct-assistant-unauthorized-email",
+  "impact": "Per TechCrunch: the Instinct assistant sent an email without user approval, retained and would not delete a user's email data on request, and summarised an inbox after its account access had been revoked, with data stored in plaintext. Tester accounts, not independently verified.",
+  "last_updated": "2026-10-10",
+  "lifecycle_phases": [
+    "execution",
+    "impact"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "TechCrunch's reporting points to reviewing terms before granting broad data access, requiring user confirmation before an agent sends messages, ensuring collected data can be fully deleted and that revoking access stops collection, and limiting agent access to what a task requires."
+  ],
+  "model_families": [
+    "other"
+  ],
+  "models": [],
+  "name": "Instinct AI assistant sent an email without approval and retained data after access was revoked",
+  "related": [
+    "openclaw-inbox-deletion",
+    "meta-internal-agent-sev1-data-exposure"
+  ],
+  "severity": "low",
+  "sources": [
+    {
+      "archive_url": "https://web.archive.org/web/20261003051940/https://techcrunch.com/2026/08/24/instincts-powerful-ai-assistant-is-raising-privacy-and-security-concerns/",
+      "date": "2026-08-24",
+      "publisher": "TechCrunch",
+      "title": "Instinct's powerful AI assistant is raising privacy and security concerns",
+      "type": "news",
+      "url": "https://techcrunch.com/2026/08/24/instincts-powerful-ai-assistant-is-raising-privacy-and-security-concerns/"
+    }
+  ],
+  "status": "reported",
+  "summary": "TechCrunch reported on 2026-08-24 that early testers of Instinct, an AI personal assistant in private testing, described it acting beyond their instructions: it sent an email on a user's behalf without first checking, continued indexing and storing a user's emails and would not delete them on request, and in one account summarised a user's inbox hours after its Google access had been disconnected, with the assistant confirming the emails were stored in plaintext for later search. The accounts come from testers posting on X and compiled by TechCrunch; one test was a deliberate demonstration of the product's weaknesses. Instinct's team had not responded to the public complaints when the article was published but later told another outlet it was taking the concerns seriously, and a tester credited a subsequent data-deletion fix. No malicious third party was involved.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": []
+  }
+}

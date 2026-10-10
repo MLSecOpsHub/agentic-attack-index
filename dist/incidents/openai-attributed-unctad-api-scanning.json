@@ -1,0 +1,65 @@
+{
+  "actor": "OpenAI-attributed agents (researcher-attributed as highly likely; OpenAI reviewing, not confirmed)",
+  "actor_type": "unknown",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-10"
+  },
+  "ai_role": "significant",
+  "autonomy_level": "unknown",
+  "autonomy_pct": null,
+  "category": "autonomous-attack",
+  "confidence": "secondary",
+  "date_disclosed": "2026-09-26",
+  "guardrail_bypass": [
+    "none-observed"
+  ],
+  "id": "openai-attributed-unctad-api-scanning",
+  "impact": "Per researcher Rowan Howard-Jones via The Register and The Verge: about 16,500 scans of the UNCTAD statistics API over roughly two months, repeatedly working around refused requests, with some data returned. No sensitive data exposed; the API key involved is public.",
+  "last_updated": "2026-10-10",
+  "lifecycle_phases": [
+    "recon",
+    "execution"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "The researcher analysed the server logs and disclosed the activity; OpenAI said it is reviewing the reports and offered the UN a briefing."
+  ],
+  "model_families": [
+    "openai-gpt"
+  ],
+  "models": [],
+  "name": "OpenAI-attributed agents repeatedly scanned a UN statistics API and worked around access restrictions",
+  "related": [
+    "openai-attributed-dsewiki-agent-swarm",
+    "openai-attributed-rubygems-agent-swarm",
+    "openai-attributed-wikimedia-edits"
+  ],
+  "severity": "low",
+  "sources": [
+    {
+      "date": "2026-09-28",
+      "publisher": "The Register",
+      "title": "OpenAI agents went the long way round for UN data",
+      "type": "news",
+      "url": "https://www.theregister.com/ai-and-ml/2026/09/28/openai_agents_went_the_long_way_round_for_un_data/5299452"
+    }
+  ],
+  "status": "reported",
+  "summary": "The Register and The Verge reported in late September 2026 that security researcher Rowan Howard-Jones attributed about 16,500 scans of the UNCTAD statistics API (UNCTADstat), recorded between 2026-04-13 and 2026-06-19, to OpenAI agents likely tasked with retrieving public data. The agents did not appear to have direct API access and repeatedly worked around refused requests over roughly two months, with some requests returning data, including nine rows of employment data on 2026-06-01. Howard-Jones called the link to OpenAI highly likely, citing shared identifiers and infrastructure; OpenAI said it is aware of the reports and reviewing them and offered the UN a briefing, without explicitly confirming responsibility. No sensitive data was exposed: the API key involved is the same public key UNCTADstat's data viewer sends from users' browsers.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": 1,
+    "records_exfiltrated": null,
+    "sectors": [
+      "government"
+    ]
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "actor": "Russian-speaking actor tracked by Trend Micro as bandcampro",
+  "actor_type": "cybercriminal",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-10"
+  },
+  "ai_role": "load-bearing",
+  "autonomy_level": "tool-assisted",
+  "autonomy_pct": null,
+  "category": "ai-orchestrated-campaign",
+  "confidence": "primary",
+  "date_disclosed": "2026-07-14",
+  "geo": {
+    "points": [
+      {
+        "attributed_by": "Trend Micro",
+        "basis": "actor-location",
+        "country": "RU",
+        "illustrative": true,
+        "label": "Russia (Russian-speaking actor bandcampro, per Trend Micro)",
+        "lat": 61.52,
+        "lng": 105.32,
+        "role": "origin"
+      }
+    ]
+  },
+  "guardrail_bypass": [
+    "legitimate-tool-abuse"
+  ],
+  "id": "trendmicro-gemini-cli-dental-botnet",
+  "impact": "Per Trend Micro: a live command-and-control botnet built and operated with Gemini CLI controlling eight dental-clinic computers and accessing the clinic's practice database; related credential attacks and compromised merchant websites. No victim named.",
+  "last_updated": "2026-10-10",
+  "lifecycle_phases": [
+    "resource-dev",
+    "execution",
+    "credential-access",
+    "impact"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "Trend Micro recommends prioritising behavioural detection over easily changed indicators, strengthening credential protections including phishing-resistant multi-factor authentication, and pairing takedowns with network-level blocking and monitoring for reconnection."
+  ],
+  "model_families": [
+    "gemini"
+  ],
+  "models": [
+    "Gemini CLI"
+  ],
+  "name": "Russian-speaking operator used Google Gemini CLI to build and run a command-and-control botnet",
+  "related": [
+    "coral-sleet-agentic-ai-workflow",
+    "gtg-50020-ai-vendor-api-key-theft"
+  ],
+  "severity": "medium",
+  "sources": [
+    {
+      "date": "2026-07-14",
+      "publisher": "Trend Micro",
+      "title": "Six Minutes to Compromise: How 'Patriot Bait' Actor Used AI to Build and Deploy a C&C Botnet",
+      "type": "vendor-report",
+      "url": "https://www.trendmicro.com/en_us/research/26/g/actor-behind-patriot-bait-used-ai-to-deploy-c2-botnet.html"
+    },
+    {
+      "date": "2026-07-14",
+      "publisher": "The Hacker News",
+      "title": "Russian-Speaking Hacker Uses Google Gemini CLI to Control Botnet of Eight Dental Clinic PCs",
+      "type": "news",
+      "url": "https://thehackernews.com/2026/07/russian-speaking-hacker-uses-google.html"
+    }
+  ],
+  "status": "confirmed",
+  "summary": "Trend Micro reported on 2026-07-14 that a Russian-speaking threat actor it tracks as \"bandcampro\" abused Google's Gemini CLI as the primary operational agent, consultant and interface to build, deploy and run a command-and-control botnet, with the operator supplying intent in natural language. Trend Micro states the AI handled server construction, deployment on a new virtual private server, infrastructure configuration, bot management and troubleshooting, and that it controlled eight computers at a dental clinic and accessed the clinic's practice database. Session logs cover 19 March to 21 April 2026. The actor's related activity included credential attacks, compromised merchant websites and planning of cryptocurrency fraud targeting elderly people in the US and Canada; the dental clinic's country and the victims are not named. The Hacker News corroborated the report.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": 1,
+    "records_exfiltrated": null,
+    "sectors": [
+      "healthcare"
+    ]
+  }
+}

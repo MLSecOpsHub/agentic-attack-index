@@ -1,0 +1,91 @@
+{
+  "actor": "Unknown financially motivated operator (operator instructions in Chinese; no group named by Gambit)",
+  "actor_type": "cybercriminal",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-10"
+  },
+  "ai_role": "load-bearing",
+  "autonomy_level": "supervised-autonomous",
+  "autonomy_pct": null,
+  "category": "autonomous-attack",
+  "confidence": "primary",
+  "date_disclosed": "2026-09-22",
+  "geo": {
+    "points": [
+      {
+        "attributed_by": "Gambit Security",
+        "basis": "victim-location",
+        "country": "US",
+        "illustrative": true,
+        "label": "United States (primary victim country, per Gambit Security)",
+        "lat": 37.09,
+        "lng": -95.71,
+        "role": "target"
+      }
+    ]
+  },
+  "guardrail_bypass": [
+    "legitimate-tool-abuse"
+  ],
+  "id": "gambit-ai-agents-retail-skimmer-campaign",
+  "impact": "At least 27 companies compromised and payment-card skimmers confirmed at 19 between 2026-09-10 and 2026-09-15, with more than 100 further infected sites found and over 600,000 payment-card records taken from two companies, per Gambit Security. Estimated campaign cost US$12,000-18,000.",
+  "last_updated": "2026-10-10",
+  "lifecycle_phases": [
+    "recon",
+    "initial-access",
+    "execution",
+    "exfiltration",
+    "impact"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "Gambit recommends a resilience-first posture, identifying the minimum systems needed to keep revenue flowing, verifying recovery under campaign-like conditions, and aligning tooling and response with machine-speed attacks rather than human-paced change windows."
+  ],
+  "model_families": [
+    "claude",
+    "deepseek",
+    "other"
+  ],
+  "models": [
+    "opus-4.6"
+  ],
+  "name": "Autonomous AI agents compromised online retailers and planted payment-card skimmers at low per-victim cost",
+  "related": [
+    "aurora-cursor-agent-ransomware",
+    "gtg-50014-agentic-mass-exfiltration"
+  ],
+  "severity": "critical",
+  "sources": [
+    {
+      "date": "2026-09-22",
+      "publisher": "Gambit Security",
+      "title": "AI Agents Are Hacking Online Retailers for $25 a Company",
+      "type": "vendor-report",
+      "url": "https://gambit.security/blog-posts/autonomous-ai-agents-online-retailers-25-a-company"
+    }
+  ],
+  "status": "reported",
+  "summary": "Gambit Security reported on 2026-09-22 a financially motivated campaign in which a human operator ran three autonomous offensive-AI harnesses (which Gambit names Hermes, Strix and Cairn) almost entirely unattended against online retailers and other consumer-facing businesses. Between 2026-09-10 and 2026-09-15 at least 27 companies were compromised to varying degrees and payment-card skimmers were confirmed in place at 19, with activity dating back to July 2026 and more than 100 additional infected sites found. Gambit states the harnesses executed most of the attack chain autonomously at up to tens of companies per day, with the operator contributing short directing prompts, and estimates a marginal cost of a few to a few tens of dollars per company. Victim sectors were mainly retail and e-commerce plus a hospitality company, a US airline and a travel site, concentrated in the United States with victims also in New Zealand and Japan; payment-card records from two companies alone exceeded 600,000. Gambit names no operator group, notes the operator's instructions were in Chinese, and calls its figures interim.",
+  "targets": {
+    "countries": [
+      "US",
+      "NZ",
+      "JP"
+    ],
+    "orgs_affected": 27,
+    "records_exfiltrated": 600000,
+    "sectors": [
+      "retail",
+      "hospitality",
+      "aviation"
+    ]
+  }
+}

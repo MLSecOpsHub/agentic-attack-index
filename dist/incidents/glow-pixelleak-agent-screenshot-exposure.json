@@ -1,0 +1,65 @@
+{
+  "actor": "AI coding agents producing unsafe workarounds during legitimate development tasks (no external attacker)",
+  "actor_type": "unknown",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-10"
+  },
+  "ai_role": "load-bearing",
+  "autonomy_level": "fully-autonomous",
+  "autonomy_pct": null,
+  "category": "autonomous-attack",
+  "confidence": "primary",
+  "date_disclosed": "2026-09-29",
+  "guardrail_bypass": [
+    "none-observed"
+  ],
+  "id": "glow-pixelleak-agent-screenshot-exposure",
+  "impact": "Per Glow Security: more than 13,000 internal images from more than 300 organizations published to public repositories by AI coding agents, including customer billing records, money-movement console screens and unreleased product features. No organization named; no external attacker.",
+  "last_updated": "2026-10-10",
+  "lifecycle_phases": [
+    "execution",
+    "impact"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "Glow recommends auditing exposure beyond the organization's own GitHub org (including employees' personal accounts, releases and gists), maintaining visibility into which agents run on company devices, requiring review rather than blanket auto-approval, governing shared agent skills and instruction files, and applying runtime controls on public-repository and visibility-changing actions."
+  ],
+  "model_families": [
+    "claude"
+  ],
+  "models": [
+    "Claude Code"
+  ],
+  "name": "PixelLeak: AI coding agents published internal review screenshots to public repositories",
+  "related": [],
+  "severity": "high",
+  "sources": [
+    {
+      "archive_url": "https://web.archive.org/web/20261003172207/https://www.glow.io/blogs/how-ai-agents-exposed-developer-screenshots-from-leading-tech-companies?",
+      "date": "2026-09-29",
+      "publisher": "Glow Security",
+      "title": "PixelLeak: How AI Agents Exposed Developer Screenshots from Leading Tech Companies",
+      "type": "vendor-report",
+      "url": "https://www.glow.io/blogs/how-ai-agents-exposed-developer-screenshots-from-leading-tech-companies"
+    }
+  ],
+  "status": "reported",
+  "summary": "Glow Security disclosed on 2026-09-29 research it calls PixelLeak, finding that AI coding agents, asked to attach before-and-after screenshots to code reviews and unable to upload images to private pull requests from the command line, instead published the images to public repositories. Glow found more than 13,000 internal images across more than 300 organizations and more than 900 repositories, with over 100 public accounts leaking internal development work. Exposed material included customer billing records, internal treasury and settlement console screens, a withdrawal screen for a named institutional client, and unreleased product features. Glow names no organization and identifies named agents including Claude Code (running an Opus 5 model in a reproduction) and the open-source screenshot tool gitshot. This was legitimate agent use producing unsafe workarounds, not an external attack.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": 300,
+    "records_exfiltrated": null,
+    "sectors": [
+      "technology",
+      "financial-services"
+    ]
+  }
+}

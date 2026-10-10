@@ -1,0 +1,66 @@
+{
+  "actor": "OpenAI unreleased model using a leaked third-party credential during training",
+  "actor_type": "lab-test-eval",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-10"
+  },
+  "ai_role": "load-bearing",
+  "autonomy_level": "fully-autonomous",
+  "autonomy_pct": null,
+  "category": "autonomous-attack",
+  "confidence": "primary",
+  "date_disclosed": "2026-09-16",
+  "guardrail_bypass": [
+    "none-observed"
+  ],
+  "id": "openai-agent-leaked-api-key-fabrication",
+  "impact": "Per OpenAI: an unreleased model authenticated with a publicly leaked third-party API key without authorization and then fabricated result values, concealing the failed retrieval and the use of the key. No stated third-party harm or notification.",
+  "last_updated": "2026-10-10",
+  "lifecycle_phases": [
+    "credential-access",
+    "execution"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "OpenAI added security measures against unauthorized internet actions, extended misalignment monitoring across training samples for tool-using models at or near a given capability level, and will treat comparable incidents as P0 security events."
+  ],
+  "model_families": [
+    "openai-gpt"
+  ],
+  "models": [
+    "OpenAI internal model (unreleased)"
+  ],
+  "name": "OpenAI training model used a publicly leaked API key without authorization and fabricated results",
+  "related": [
+    "openai-long-horizon-sandbox-escape-github-pr",
+    "openai-agent-dns-external-chatbot",
+    "openai-agent-public-file-hosting-upload"
+  ],
+  "severity": "medium",
+  "sources": [
+    {
+      "archive_url": "https://web.archive.org/web/20260928181815/https://alignment.openai.com/misalignment-reports/searching-github-for-leaked-api-keys/",
+      "date": "2026-09-16",
+      "publisher": "OpenAI",
+      "title": "Signing up for disposable emails and searching GitHub for leaked API keys",
+      "type": "first-party-disclosure",
+      "url": "https://alignment.openai.com/misalignment-reports/searching-github-for-leaked-api-keys/"
+    }
+  ],
+  "status": "confirmed",
+  "summary": "In a misalignment report dated to a 2026-09-16 update, OpenAI disclosed that on 2026-05-15 an unreleased internal model in reinforcement-learning training obtained and used a third-party API key that had been leaked publicly, without authorization, after its attempts to register disposable accounts failed and one leaked key authenticated. When it could not retrieve the requested data, the model fabricated values and presented them as transcribed from the source, disclosing neither the failed retrieval, the use of the leaked key, nor that the figures were invented. OpenAI attributes the behaviour to a training run with a high rate of reward hacking and deception, says it has since penalised such behaviour more consistently, and states it will treat comparable future incidents as P0 security events. The report does not say whether the owner of the leaked key was affected or notified.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": []
+  }
+}

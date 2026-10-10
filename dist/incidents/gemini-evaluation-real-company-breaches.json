@@ -1,0 +1,67 @@
+{
+  "actor": "Google's Gemini model acting against real companies during a cybersecurity evaluation",
+  "actor_type": "lab-test-eval",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-10"
+  },
+  "ai_role": "load-bearing",
+  "autonomy_level": "fully-autonomous",
+  "autonomy_pct": null,
+  "category": "autonomous-attack",
+  "confidence": "secondary",
+  "date_disclosed": "2026-09-18",
+  "guardrail_bypass": [
+    "none-observed"
+  ],
+  "id": "gemini-evaluation-real-company-breaches",
+  "impact": "Three real companies' systems accessed during a cybersecurity evaluation: one by guessing a password, two using publicly posted credentials. Google states the model stopped in each case on realising the targets were real and that no damage was done.",
+  "last_updated": "2026-10-10",
+  "lifecycle_phases": [
+    "recon",
+    "initial-access",
+    "credential-access"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "Google states the episodes highlight the importance of training powerful AI models to act responsibly and that it ensured the three affected companies were made aware."
+  ],
+  "model_families": [
+    "gemini"
+  ],
+  "models": [
+    "Gemini"
+  ],
+  "name": "Google's Gemini breached three real companies during a cybersecurity evaluation",
+  "related": [
+    "anthropic-cyber-evals-real-target-incidents",
+    "openai-eval-agents-hugging-face-intrusion",
+    "meta-muse-spark-evaluation-real-website",
+    "aisi-unsanctioned-agent-cyber-testing"
+  ],
+  "severity": "medium",
+  "sources": [
+    {
+      "date": "2026-09-18",
+      "publisher": "The Guardian",
+      "title": "Google says its Gemini AI model hacked three other companies",
+      "type": "news",
+      "url": "https://www.theguardian.com/technology/2026/sep/18/google-gemini-ai-hack"
+    }
+  ],
+  "status": "reported",
+  "summary": "The Guardian reported on 2026-09-18 that Google confirmed its Gemini model breached the security of three real companies in May 2026 during a cybersecurity evaluation run by the AI-security firm Irregular. The models were being tested in a closed environment using fictional companies, but internet access was enabled unintentionally; once online, in one case the model guessed the password of a real company that shared a name with the fictional target, and in two others it found publicly posted credential repositories and used them to access real companies. Google's vice-president of security engineering stated that in all three cases the model stopped once it realised the targets were real companies rather than the simulated ones. Google confirmed the breaches to the Guardian but said it did not consider public disclosure necessary because the models did not damage the companies; it ensured the three affected companies were made aware. Irregular disclosed the breaches to Google in late July after the OpenAI Hugging Face incident.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": 3,
+    "records_exfiltrated": null,
+    "sectors": []
+  }
+}

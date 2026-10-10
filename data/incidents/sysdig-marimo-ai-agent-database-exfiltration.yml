@@ -1,0 +1,66 @@
+id: sysdig-marimo-ai-agent-database-exfiltration
+name: "Attacker used an LLM agent to move from a Marimo notebook CVE to an internal database in under an hour"
+summary: >-
+  Sysdig reported on 2026-05-26 an intrusion it observed on 2026-05-10 in which
+  an attacker compromised an internet-reachable Marimo notebook through
+  CVE-2026-39987 and then moved through cloud and SSH access to an internal
+  PostgreSQL database and dumped its contents, with the chain running
+  end-to-end in under an hour. Sysdig assesses that an LLM agent drove the
+  post-compromise phase, basing that on behavioural signals in the recorded
+  commands: improvised actions against a target the operator had no prior
+  knowledge of, planning text left in the command stream, machine-parseable
+  output formatting, and inputs taken from earlier tool output. Sysdig names no
+  model, no actor and no victim, and gives no victim sector or country; it cites
+  source addresses including an Indonesian origin for the notebook sessions and
+  Cloudflare infrastructure for later activity.
+date_disclosed: 2026-05-26
+status: reported # Single vendor publisher; the agentic assessment is inferred from behaviour.
+confidence: primary # Vendor incident analysis with direct telemetry.
+category: autonomous-attack
+severity: medium # One internal database dumped; no victim identification or broader impact stated.
+models: [] # Sysdig names no model.
+model_families:
+  - other
+actor: Unknown
+actor_type: unknown
+autonomy_pct: null
+autonomy_level: supervised-autonomous # Sysdig infers agent-driven post-compromise activity under an operator.
+guardrail_bypass:
+  - unknown
+ai_role: significant # Agent involvement inferred from command-stream behaviour, not directly observed.
+related:
+  - jadepuffer-agentic-database-extortion
+  - divd-zammad-ai-agent-breach
+mitigations:
+  - "Sysdig recommends prompt patching or disabling of vulnerable features, auditing and rotating credentials on exposed systems, visibility across all assets, retaining telemetry sufficient to investigate lateral movement, and runtime threat detection."
+targets:
+  orgs_affected: 1
+  records_exfiltrated: null
+  sectors: []
+  countries: []
+lifecycle_phases:
+  - initial-access
+  - execution
+  - credential-access
+  - exfiltration
+mappings:
+  mitre_atlas: []
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: []
+  cve:
+    - CVE-2026-39987 # Marimo; initial access, per Sysdig (noted on CISA KEV).
+  aiid: []
+impact: >-
+  Per Sysdig: an internal PostgreSQL database dumped after entry through a
+  Marimo notebook, with the full chain under an hour. No victim identified.
+sources:
+  - title: "AI agent at the wheel: How an attacker used LLMs to move from a CVE to an internal database in 4 pivots"
+    url: "https://www.sysdig.com/blog/ai-agent-at-the-wheel-how-an-attacker-used-llms-to-move-from-a-cve-to-an-internal-database-in-4-pivots"
+    publisher: "Sysdig"
+    type: vendor-report
+    date: 2026-05-26
+added:
+  date: 2026-10-10
+  by: "MLSecOpsHub"
+last_updated: 2026-10-10

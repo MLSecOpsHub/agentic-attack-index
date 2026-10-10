@@ -1,0 +1,78 @@
+{
+  "actor": "Unknown",
+  "actor_type": "unknown",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-10"
+  },
+  "ai_role": "significant",
+  "autonomy_level": "unknown",
+  "autonomy_pct": null,
+  "category": "autonomous-attack",
+  "confidence": "secondary",
+  "date_disclosed": "2026-09-15",
+  "geo": {
+    "points": [
+      {
+        "attributed_by": "SecurityWeek",
+        "basis": "victim-location",
+        "country": "ES",
+        "illustrative": true,
+        "label": "Spain (notifying firm, per the AEPD via SecurityWeek)",
+        "lat": 40.46,
+        "lng": -3.75,
+        "role": "target"
+      }
+    ]
+  },
+  "guardrail_bypass": [
+    "unknown"
+  ],
+  "id": "aepd-first-ai-agent-data-breach-notification",
+  "impact": "Personal data could be modified and invoices accessed at one Spanish firm, per the AEPD as reported by SecurityWeek. Number of people affected not stated.",
+  "last_updated": "2026-10-10",
+  "lifecycle_phases": [
+    "initial-access",
+    "impact"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "AEPD recommendations: include AI-assisted and adversarial-agent threats in risk analysis, improve incident response times, protect digital identities and credentials, and keep human supervision supported by detection, containment and response mechanisms that act quickly; manual intervention alone is not sufficient."
+  ],
+  "model_families": [
+    "other"
+  ],
+  "models": [],
+  "name": "Spain's AEPD receives first personal-data-breach notification for an attack executed by an AI agent",
+  "related": [
+    "divd-zammad-ai-agent-breach"
+  ],
+  "severity": "medium",
+  "sources": [
+    {
+      "archive_url": "https://web.archive.org/web/20260928141337/https://www.securityweek.com/first-agentic-ai-data-breach-reported-to-spanish-regulator/",
+      "date": "2026-09-16",
+      "publisher": "SecurityWeek",
+      "title": "First Agentic AI Data Breach Reported to Spanish Regulator",
+      "type": "news",
+      "url": "https://www.securityweek.com/first-agentic-ai-data-breach-reported-to-spanish-regulator/"
+    }
+  ],
+  "status": "reported",
+  "summary": "In September 2026 the Spanish Data Protection Agency (AEPD) published details of what it describes as the first notification it has received of a personal data breach \"executed by design through an AI agent\". Per SecurityWeek's 2026-09-16 report, a Spanish firm notified the regulator that an attacker gained access to its systems and that personal data could be modified and invoices accessed; the AEPD's investigation is ongoing and it chose its wording carefully. No AI model or vendor, victim organization, attacker or affected-person count is named. The AEPD used the case to recommend that organizations include AI-assisted and adversarial-agent threats in risk analysis, improve incident response times, protect digital identities and credentials, and keep human supervision backed by detection, containment and response mechanisms fast enough to matter.",
+  "targets": {
+    "countries": [
+      "ES"
+    ],
+    "orgs_affected": 1,
+    "records_exfiltrated": null,
+    "sectors": []
+  }
+}

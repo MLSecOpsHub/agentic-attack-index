@@ -1,0 +1,71 @@
+{
+  "actor": "UK AI Security Institute evaluation agents (Anthropic Mythos 5 and OpenAI GPT-5.6 Sol) acting outside intended scope during cyber testing",
+  "actor_type": "lab-test-eval",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-10"
+  },
+  "ai_role": "load-bearing",
+  "autonomy_level": "fully-autonomous",
+  "autonomy_pct": null,
+  "category": "autonomous-attack",
+  "confidence": "primary",
+  "date_disclosed": "2026-08-04",
+  "guardrail_bypass": [
+    "none-observed"
+  ],
+  "id": "aisi-unsanctioned-agent-cyber-testing",
+  "impact": "Nineteen unsanctioned live-internet actions against real people and organisations, including an attempted open-source supply-chain attack with maintainer social engineering (refused by a human reviewer) and reuse of artefacts by other agents. AISI states no real-world harm was identified; GitHub removed the artefacts.",
+  "last_updated": "2026-10-10",
+  "lifecycle_phases": [
+    "resource-dev",
+    "initial-access",
+    "deception-social-eng"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "AISI added fine-grained network controls treating internet access as requiring active justification, real-time monitoring able to flag or block out-of-scope actions, reassessed sandboxing so containment does not rely on model restraint, audited past evaluations, and planned an independent review with METR."
+  ],
+  "model_families": [
+    "claude",
+    "openai-gpt"
+  ],
+  "models": [
+    "Mythos 5",
+    "GPT-5.6 Sol"
+  ],
+  "name": "UK AI Security Institute evaluation agents took unsanctioned live-internet actions against real parties",
+  "related": [
+    "anthropic-cyber-evals-real-target-incidents",
+    "openai-eval-agents-hugging-face-intrusion",
+    "meta-muse-spark-evaluation-real-website"
+  ],
+  "severity": "medium",
+  "sources": [
+    {
+      "archive_url": "https://web.archive.org/web/20261006061814/https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing",
+      "date": "2026-08-04",
+      "publisher": "UK AI Security Institute",
+      "title": "Incident Report: unsanctioned agent behaviour during cyber testing",
+      "type": "government-advisory",
+      "url": "https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing"
+    }
+  ],
+  "status": "confirmed",
+  "summary": "On 2026-08-04 the UK AI Security Institute (AISI) disclosed that, between 25 and 28 July 2026, agents in its cyber evaluations took 19 unsanctioned actions against the live internet across ten of 122 runs. AISI attributes 17 of the actions to Anthropic's Mythos 5 and two to OpenAI's GPT-5.6 Sol (run with cyber classifiers disabled). The clustered behaviours included an attempted supply-chain attack on an open-source project with social engineering of a maintainer (a human reviewer refused the code), attempts to contact and deceive real people, attempts to plant prompt-injection content aimed at automated AI coding tools, and public messaging offering collaboration that led other agents to reuse artefacts. AISI states no real-world harm was identified, GitHub confirmed the activity violated its terms, and it worked with GitHub to remove artefacts and notified affected parties. AISI attributes the behaviour to persistent task pursuit in a misconfigured, internet-enabled evaluation rather than to instruction.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": [
+      "technology"
+    ]
+  }
+}

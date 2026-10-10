@@ -21,6 +21,62 @@ dataset version tracks `package.json` and `CITATION.cff` (kept in sync by
   coverage had stalled.
 
 ### Data
+- Coverage expansion from the Rogue AI Tracker and Oso "AI Agents Gone Rogue"
+  lists (47 incidents, all checked against existing records for duplicates and
+  written from their cited primary sources):
+  - **Real-world attacks and campaigns:**
+    `gambit-ai-agents-retail-skimmer-campaign`,
+    `aurora-cursor-agent-ransomware`,
+    `gentlemen-hermes-agent-gitlab-extortion`,
+    `papercut-agentic-global-intrusion`,
+    `dream-multi-agent-asia-government-campaign`,
+    `secflow-asia-government-education-campaign`,
+    `trendmicro-gemini-cli-dental-botnet`,
+    `unit42-ai-assisted-enterprise-intrusion`,
+    `gtig-agentic-credential-harvesting-q2-2026`,
+    `sysdig-marimo-ai-agent-database-exfiltration`,
+    `jesta-darkreasoning-deepseek-proxyjacking`,
+    `anonymouskit-ai-voice-phishing-apple`,
+    `litellm-pypi-teampcp-backdoor`.
+  - **Evaluation and research agents that reached real third parties:**
+    `aisi-unsanctioned-agent-cyber-testing` (UK AISI),
+    `gemini-evaluation-real-company-breaches`,
+    `meta-muse-spark-evaluation-real-website`,
+    `openai-huggingface-may-account-hijacking`,
+    `openai-long-horizon-sandbox-escape-github-pr`,
+    `openai-agent-leaked-api-key-fabrication`,
+    `openai-agent-dns-external-chatbot`,
+    `openai-agent-public-file-hosting-upload`,
+    `codewall-mckinsey-lilli-agent-intrusion`.
+  - **OpenAI-attributed internet agent swarms:**
+    `openai-attributed-dsewiki-agent-swarm`,
+    `openai-attributed-rubygems-agent-swarm`,
+    `openai-attributed-wikimedia-edits`,
+    `openai-attributed-unctad-api-scanning`.
+  - **Rogue / destructive coding agents and assistants:**
+    `cursor-pocketos-database-deletion`,
+    `google-antigravity-drive-deletion`,
+    `amazon-kiro-aws-cost-explorer-outage`,
+    `instinct-assistant-unauthorized-email`,
+    `glow-pixelleak-agent-screenshot-exposure`,
+    `meta-internal-agent-sev1-data-exposure`.
+  - **Regulator and CSIRT disclosures:**
+    `aepd-first-ai-agent-data-breach-notification` (Spain),
+    `divd-zammad-ai-agent-breach` (Netherlands).
+  - **Agent-hijack / product prompt-injection disclosures:**
+    `gitlost-github-agentic-workflows-repo-leak`,
+    `snowflake-cortex-cli-sandbox-escape`,
+    `claude-cowork-file-exfiltration`,
+    `google-antigravity-data-exfiltration-poc`,
+    `notion-ai-web-search-exfiltration`,
+    `pillar-adk-agent-privilege-escalation`,
+    `pillar-gemini-cli-gcp-triage-compromise`,
+    `gemini-cli-ci-untrusted-workspace-rce`,
+    `radware-zombieagent-deep-research`,
+    `ghostjacking-agentic-kill-chain-poc`,
+    `github-mcp-server-private-repo-leak`,
+    `supabase-mcp-database-leak`,
+    `shadow-escape-mcp-zero-click`.
 - Added `gtg-20006-agentic-espionage`: Russia-nexus espionage cluster
   (attribution described by Anthropic as consistent with public reporting on
   Midnight Blizzard) that used modified Claude Code skills against more than

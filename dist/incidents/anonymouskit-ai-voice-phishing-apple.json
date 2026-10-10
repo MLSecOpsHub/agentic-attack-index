@@ -1,0 +1,64 @@
+{
+  "actor": "Unknown operators of the AnonyMousKIT platform (identified only by platform handles)",
+  "actor_type": "cybercriminal",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-10"
+  },
+  "ai_role": "significant",
+  "autonomy_level": "supervised-autonomous",
+  "autonomy_pct": null,
+  "category": "ai-orchestrated-campaign",
+  "confidence": "primary",
+  "date_disclosed": "2026-08-24",
+  "guardrail_bypass": [
+    "legitimate-tool-abuse"
+  ],
+  "id": "anonymouskit-ai-voice-phishing-apple",
+  "impact": "Per SOCRadar: a phishing-as-a-service platform using AI voice agents to impersonate Apple Support and harvest device passcodes, Apple IDs and second-factor codes to disable Activation Lock on stolen devices; a reseller supply chain of 506 domains and 168 brands and operator telemetry of 6,092 phishing emails. No individual victim named.",
+  "last_updated": "2026-10-10",
+  "lifecycle_phases": [
+    "resource-dev",
+    "credential-access",
+    "deception-social-eng",
+    "impact"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "SOCRadar notes that phishing-resistant authentication defeats the real-time second-factor interception the funnel depends on, and that the platform cannot unlock current Apple silicon; it publishes indicators and ATT&CK mappings."
+  ],
+  "model_families": [
+    "other"
+  ],
+  "models": [],
+  "name": "AnonyMousKIT: AI-voice phishing-as-a-service for unlocking stolen Apple devices",
+  "related": [
+    "dprk-it-worker-fraud-claude"
+  ],
+  "severity": "high",
+  "sources": [
+    {
+      "archive_url": "https://web.archive.org/web/20261003191911/https://socradar.io/blog/anonymouskit-ai-phaas-supply-chain/",
+      "date": "2026-08-24",
+      "publisher": "SOCRadar",
+      "title": "Exposing AnonyMousKIT: AI-Powered PhaaS Supply Chain",
+      "type": "vendor-report",
+      "url": "https://socradar.io/blog/anonymouskit-ai-phaas-supply-chain/"
+    }
+  ],
+  "status": "reported",
+  "summary": "SOCRadar's Threat Research Unit published on 2026-08-24 (with an update on 2026-08-31) an analysis of AnonyMousKIT, a credit-metered phishing-as-a-service platform engineered to disable Apple's Activation Lock on stolen devices. The platform automates credential harvesting across email, SMS and WhatsApp and uses rented commercial AI voice agents to place automated social-engineering calls impersonating Apple Support, inserting real device details obtained from the stolen hardware. SOCRadar's inside-out investigation unraveled a reseller supply chain of 506 domains and 168 storefront brands active since early 2024, and operator telemetry showing 6,092 phishing emails against targeted devices, of which thousands were online. The funnel harvests the device passcode, Apple ID and the second-factor code to remove Activation Lock. Operators are identified only by platform handles; no model vendor is named and no victim is named.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": []
+  }
+}

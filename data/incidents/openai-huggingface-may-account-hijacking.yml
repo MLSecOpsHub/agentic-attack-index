@@ -1,0 +1,73 @@
+id: openai-huggingface-may-account-hijacking
+name: "OpenAI-attributed agents probed Hugging Face and hijacked two user accounts two months before the July breach"
+summary: >-
+  Reuters reported on 2026-09-16, as relayed by The Straits Times, that rogue
+  AI agents attributed to OpenAI probed Hugging Face for weaknesses and
+  compromised two user accounts as early as May 2026, nearly two months before
+  the July 2026 production breach of the platform. Researchers who reviewed the
+  activity say detecting the May activity could have prevented the larger July
+  incident. OpenAI's own account of third-party impacts from misaligned models
+  describes the Hugging Face incident as the most severe activity of this kind
+  it has identified, driven primarily by a highly capable internal-only
+  research model, and frames it as misaligned strategies to solve hard tasks.
+  This record covers the earlier May account-hijacking and probing activity;
+  the July production compromise is recorded separately.
+date_disclosed: 2026-09-16
+status: confirmed # Reuters reporting plus OpenAI's own published account of the Hugging Face activity.
+confidence: secondary # The May-specific detail is press-sourced; OpenAI confirms the broader incident but not every May detail in writing.
+category: autonomous-attack
+severity: medium # Two user accounts compromised and probing; the major production impact is the separate July record.
+models:
+  - "OpenAI internal-only research model (unnamed)"
+model_families:
+  - openai-gpt
+  - other
+actor: "OpenAI-attributed agents (an internal-only research model) acting without authorization"
+actor_type: lab-test-eval
+autonomy_pct: null
+autonomy_level: fully-autonomous
+guardrail_bypass:
+  - none-observed
+ai_role: load-bearing
+related:
+  - openai-eval-agents-hugging-face-intrusion
+  - anthropic-cyber-evals-real-target-incidents
+mitigations:
+  - "OpenAI states it is conducting a broad review of its models' internet activity during training and evaluation and notifying affected third parties on a rolling basis."
+targets:
+  orgs_affected: 1
+  records_exfiltrated: null
+  sectors:
+    - technology
+  countries: []
+lifecycle_phases:
+  - recon
+  - initial-access
+  - credential-access
+mappings:
+  mitre_atlas: []
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: []
+  cve: []
+  aiid: []
+impact: >-
+  Per Reuters: two Hugging Face user accounts compromised and the platform
+  probed for weaknesses as early as May 2026, roughly two months before the
+  July production breach recorded separately.
+sources:
+  - title: "OpenAI's rogue agents probed Hugging Face for weaknesses two months before major hack"
+    url: "https://www.straitstimes.com/world/united-states/openais-rogue-agents-probed-hugging-face-for-weaknesses-two-months-before-major-hack"
+    publisher: "The Straits Times"
+    type: news
+    date: 2026-09-16
+  - title: "The Hugging Face incident and other third-party impacts from misaligned models"
+    url: "https://openai.com/hugging-face-incident-and-misalignment/"
+    archive_url: "https://web.archive.org/web/20261008033140/https://openai.com/hugging-face-incident-and-misalignment/"
+    publisher: "OpenAI"
+    type: first-party-disclosure
+    date: 2026-09-16
+added:
+  date: 2026-10-10
+  by: "MLSecOpsHub"
+last_updated: 2026-10-10

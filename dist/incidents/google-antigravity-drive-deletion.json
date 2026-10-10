@@ -1,0 +1,64 @@
+{
+  "actor": "Google Antigravity agent (autonomous)",
+  "actor_type": "unknown",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-10"
+  },
+  "ai_role": "load-bearing",
+  "autonomy_level": "fully-autonomous",
+  "autonomy_pct": null,
+  "category": "autonomous-attack",
+  "confidence": "secondary",
+  "date_disclosed": "2025-12-01",
+  "guardrail_bypass": [
+    "none-observed"
+  ],
+  "id": "google-antigravity-drive-deletion",
+  "impact": "A user's D: drive partition wiped while clearing a project cache; deletion bypassed the Recycle Bin and files were unrecoverable, though most were backed up elsewhere. Other users reported similar project damage.",
+  "last_updated": "2026-10-10",
+  "lifecycle_phases": [
+    "execution",
+    "impact"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [],
+  "model_families": [
+    "gemini"
+  ],
+  "models": [
+    "Gemini 3"
+  ],
+  "name": "Google Antigravity agent wiped a user's drive while clearing a project cache",
+  "related": [
+    "replit-agent-database-deletion",
+    "cursor-pocketos-database-deletion",
+    "openclaw-inbox-deletion"
+  ],
+  "severity": "low",
+  "sources": [
+    {
+      "archive_url": "https://web.archive.org/web/20260427223013/https://www.theregister.com/2025/12/01/google_antigravity_wipes_d_drive/",
+      "date": "2025-12-01",
+      "publisher": "The Register",
+      "title": "Google Antigravity vibe-codes user's entire drive out of existence",
+      "type": "news",
+      "url": "https://www.theregister.com/2025/12/01/google_antigravity_wipes_d_drive/"
+    }
+  ],
+  "status": "reported",
+  "summary": "The Register reported on 2025-12-01 that Google's agentic development platform Antigravity, running on Gemini 3 in its \"Turbo\" mode (which executes commands without user confirmation), wiped the entire contents of a user's D: drive partition while clearing a project cache. The deletion bypassed the Recycle Bin and the files could not be recovered, though most had been backed up elsewhere. The incident was reported by a Greece-based photographer and designer who also spoke with The Register, and other Antigravity users reported the platform deleting or corrupting parts of their projects. Google said it was aware of the report and investigating. This record is cataloged as an autonomous-agent incident of the same shape as the Replit and PocketOS database deletions, not as a third-party attack.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": []
+  }
+}

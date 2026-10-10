@@ -1,0 +1,79 @@
+id: litellm-pypi-teampcp-backdoor
+name: "LiteLLM PyPI package backdoored via a poisoned CI security scanner (TeamPCP)"
+summary: >-
+  On 2026-03-24 two malicious versions of the widely used LiteLLM Python
+  package (1.82.7 and 1.82.8) were published to PyPI and were available for
+  about three hours before PyPI quarantined them. Snyk reports the attackers
+  first compromised the Trivy open-source scanner through its GitHub Action,
+  which LiteLLM's CI pipeline ran without a pinned version, exposing LiteLLM's
+  PyPI publishing credentials; the attackers then used those legitimate
+  credentials to publish releases that passed standard integrity checks. On
+  install the payload harvested cloud, SSH, Git, API and Kubernetes credentials
+  and sent them to an attacker server, installed persistence and attempted to
+  spread to Kubernetes nodes. Snyk attributes the campaign to TeamPCP (also
+  tracked as PCPcat), part of a broader effort that also hit Trivy and
+  Checkmarx KICS. FutureSearch, which discovered the package pulled in as a
+  transitive dependency, confirms the versions and payload. No specific victim
+  organizations are confirmed; LiteLLM is downloaded on the order of millions
+  of times per day.
+date_disclosed: 2026-03-24
+status: confirmed # Two distinct vendor/research publishers (Snyk and FutureSearch) with direct analysis.
+confidence: primary
+category: infrastructure-abuse-supply-chain
+severity: high # Credential-stealing malware in a very widely installed package, briefly live on PyPI.
+models: [] # LiteLLM is an LLM gateway library; no model operated the attack.
+model_families:
+  - other
+actor: "TeamPCP (also tracked as PCPcat), per Snyk"
+actor_type: cybercriminal
+autonomy_pct: null
+autonomy_level: not-applicable # A human-run supply-chain compromise; no AI agent made decisions in this operation.
+guardrail_bypass:
+  - legitimate-tool-abuse # Stolen legitimate publishing credentials used to upload trusted-looking releases.
+ai_role: incidental # The AI angle is that LiteLLM is AI-infrastructure and the package reached AI developer toolchains; the attack itself is conventional.
+related:
+  - miasma-worm-ai-coding-agent-configs # Same actor cluster (TeamPCP / UNC6780).
+  - hackerbot-claw-github-pr-campaign
+  - nx-s1ngularity-supply-chain
+mitigations:
+  - "Pin LiteLLM to 1.82.6 or earlier and treat any host that installed 1.82.7 or 1.82.8 as compromised and rotate its credentials; audit CI/CD pipelines for unpinned tool versions including GitHub Actions; and check Kubernetes clusters for signs of compromise (Snyk)."
+targets:
+  orgs_affected: null # No confirmed victim organizations; many projects filed pinning changes defensively.
+  records_exfiltrated: null
+  sectors:
+    - technology
+  countries: []
+lifecycle_phases:
+  - resource-dev
+  - initial-access
+  - credential-access
+  - persistence
+mappings:
+  mitre_atlas: []
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: []
+  cve: []
+  aiid: []
+impact: >-
+  Malicious LiteLLM 1.82.7 and 1.82.8 live on PyPI for about three hours; on
+  install the payload harvested cloud, SSH, Git, API and Kubernetes credentials,
+  installed persistence and attempted Kubernetes lateral movement. No confirmed
+  victim organizations; the package sees on the order of millions of downloads
+  per day.
+sources:
+  - title: "How a Poisoned Security Scanner Became the Key to Backdooring LiteLLM"
+    url: "https://snyk.io/blog/poisoned-security-scanner-backdooring-litellm/"
+    archive_url: "https://web.archive.org/web/20260922043319/https://snyk.io/blog/poisoned-security-scanner-backdooring-litellm/"
+    publisher: "Snyk"
+    type: vendor-report
+    date: 2026-03-24
+  - title: "litellm 1.82.8 Supply Chain Attack on PyPI (March 2026)"
+    url: "https://futuresearch.ai/blog/litellm-pypi-supply-chain-attack/"
+    publisher: "FutureSearch"
+    type: blog
+    date: 2026-03-24
+added:
+  date: 2026-10-10
+  by: "MLSecOpsHub"
+last_updated: 2026-10-10

@@ -1,0 +1,64 @@
+{
+  "actor": "Unknown (Jesta attributes the operator to a Chinese actor on circumstantial grounds; no group named)",
+  "actor_type": "unknown",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-10"
+  },
+  "ai_role": "significant",
+  "autonomy_level": "supervised-autonomous",
+  "autonomy_pct": null,
+  "category": "autonomous-attack",
+  "confidence": "primary",
+  "date_disclosed": "2026-08-03",
+  "guardrail_bypass": [
+    "open-weight-model"
+  ],
+  "id": "jesta-darkreasoning-deepseek-proxyjacking",
+  "impact": "Repeated attempts over five days to convert Jesta's exposed research host into a proxy node; the agent disclosed a list of 1,283 third-party hosts it claimed were already compromised, which Jesta reported to cloud vendors. Impact on the honeypot itself was limited.",
+  "last_updated": "2026-10-10",
+  "lifecycle_phases": [
+    "recon",
+    "initial-access",
+    "execution"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "Jesta recommends treating autonomous AI-driven attacks as a distinct threat class, coordinating disclosure with cloud providers, enforcing strong credentials on internet-facing servers, monitoring for unauthorized proxy services, and using tooling designed for AI-enabled threats."
+  ],
+  "model_families": [
+    "deepseek"
+  ],
+  "models": [],
+  "name": "DeepSeek-driven agent repeatedly attempted to turn a research honeypot into a proxy node",
+  "related": [
+    "secflow-asia-government-education-campaign",
+    "jadepuffer-agentic-database-extortion"
+  ],
+  "severity": "medium",
+  "sources": [
+    {
+      "archive_url": "https://web.archive.org/web/20260827200119/https://jesta.ai/blog/darkreasoning",
+      "date": "2026-08-03",
+      "publisher": "Jesta Security",
+      "title": "DarkReasoning: A Chinese LLM attacked our lab, so we made it work for us",
+      "type": "vendor-report",
+      "url": "https://jesta.ai/blog/darkreasoning"
+    }
+  ],
+  "status": "reported",
+  "summary": "Jesta Security reported on 2026-08-03 that, over five days, an AI agent repeatedly connected to an internet-exposed research environment Jesta had deliberately stood up and seeded with lures, and attempted to turn the host into a proxy node for relaying other attacks. Jesta attributes the agent to the free tier of DeepSeek V4 Flash, based on the model string appearing in the agent's own commands and self-written scripts across sessions, and attributes the operator to a Chinese actor on circumstantial grounds (US-based cloud routing, East Asia activity timing and a locale environment variable). The agent disclosed a list of 1,283 third-party hosts it described as already compromised, which Jesta reported to cloud vendors. The target was a honeypot rather than a production system; the model and operator attributions are the vendor's self-reported assessment and not independently verified.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": []
+  }
+}

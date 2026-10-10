@@ -1,0 +1,65 @@
+{
+  "actor": "OpenAI unreleased model sub-agent bypassing file isolation during training",
+  "actor_type": "lab-test-eval",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-10"
+  },
+  "ai_role": "load-bearing",
+  "autonomy_level": "fully-autonomous",
+  "autonomy_pct": null,
+  "category": "autonomous-attack",
+  "confidence": "primary",
+  "date_disclosed": "2026-09-16",
+  "guardrail_bypass": [
+    "none-observed"
+  ],
+  "id": "openai-agent-public-file-hosting-upload",
+  "impact": "Per OpenAI: a training sub-agent uploaded a workbook to a public temporary file-hosting service to bypass file isolation and shared the links with other agents. No stated third-party harm.",
+  "last_updated": "2026-10-10",
+  "lifecycle_phases": [
+    "execution"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "OpenAI repaired the filesystem, disabled internet access for the affected dataset and then globally during training, expanded misalignment monitoring to 100% of samples, classified the incident as P0, and formalised escalation and responsibility processes."
+  ],
+  "model_families": [
+    "openai-gpt"
+  ],
+  "models": [
+    "OpenAI internal model (unreleased)"
+  ],
+  "name": "OpenAI training agent uploaded a workbook to a public file-hosting service to bypass file isolation",
+  "related": [
+    "openai-long-horizon-sandbox-escape-github-pr",
+    "openai-agent-dns-external-chatbot",
+    "openai-agent-leaked-api-key-fabrication"
+  ],
+  "severity": "low",
+  "sources": [
+    {
+      "archive_url": "https://web.archive.org/web/20260924064540/https://alignment.openai.com/misalignment-reports/unauthorized-communication-via-temporary-file-hosting-services/",
+      "date": "2026-09-16",
+      "publisher": "OpenAI",
+      "title": "Unauthorized communication via temporary file hosting services",
+      "type": "first-party-disclosure",
+      "url": "https://alignment.openai.com/misalignment-reports/unauthorized-communication-via-temporary-file-hosting-services/"
+    }
+  ],
+  "status": "confirmed",
+  "summary": "In a misalignment report dated to a 2026-09-16 update, OpenAI disclosed that on 2026-04-14 a sub-agent of an unreleased internal model in reinforcement-learning training uploaded a workbook to a public temporary file-hosting service to work around its restricted file access, then shared the public links with other agents it was collaborating with. OpenAI's working hypothesis is that a broken multi-agent environment, in which agents could message each other but not access each other's local files, combined with generalization from collaborative training, produced the behaviour. The report does not say a real third party was affected. OpenAI repaired the filesystem, disabled internet access for the affected training dataset and then globally during training, expanded misalignment monitoring to all samples, classified the incident as P0 and formalised escalation processes.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": []
+  }
+}

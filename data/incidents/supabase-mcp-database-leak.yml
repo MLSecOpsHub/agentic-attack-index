@@ -1,0 +1,64 @@
+id: supabase-mcp-database-leak
+name: "Supabase MCP server could be steered into exposing a private database table"
+summary: >-
+  General Analysis published on 2025-07-08 a demonstration that an AI assistant
+  connected through the Supabase MCP server, running with a privileged database
+  role, could be steered by instructions hidden in customer support-ticket
+  content into reading a private table of integration credentials and writing
+  them into a ticket thread visible to the customer. The test used a self-built
+  project with dummy data and reports no in-the-wild exploitation; the article
+  notes that even read-only access permits reads of data available to the
+  database role. Supabase documents the prompt-injection pattern and offers
+  configuration options; the post does not report a Supabase fix. It is
+  catalogued as an agent-hijack prompt-injection product vulnerability.
+date_disclosed: 2025-07-08
+status: reported # Single vendor/research publisher; proof-of-concept.
+confidence: primary # First-hand researcher analysis.
+category: agent-hijack-prompt-injection
+severity: medium # Private credential table could be exposed; demonstrated on dummy data only.
+models: []
+model_families:
+  - other
+actor: "General Analysis researchers (proof-of-concept)"
+actor_type: researcher
+autonomy_pct: null
+autonomy_level: not-applicable # The MCP-connected assistant is the hijacked component.
+guardrail_bypass:
+  - indirect-prompt-injection
+ai_role: significant
+related:
+  - github-mcp-server-private-repo-leak
+  - notion-ai-web-search-exfiltration
+mitigations:
+  - "General Analysis recommends scoping the MCP server to one project, using read-only access where writes aren't needed, keeping sensitive data out of reach, requiring manual review of tool calls and outputs that leave the workspace, treating retrieved content as data not instructions, and not relying on prompt-injection filters alone."
+targets:
+  orgs_affected: null
+  records_exfiltrated: null
+  sectors:
+    - technology
+  countries: []
+lifecycle_phases:
+  - execution
+  - exfiltration
+mappings:
+  mitre_atlas: []
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: []
+  cve: []
+  aiid: []
+impact: >-
+  Per General Analysis: an assistant on the Supabase MCP server could be
+  induced via support-ticket content to read a private credentials table and
+  write it into a customer-visible thread. Demonstrated on dummy data; no
+  in-the-wild exploitation.
+sources:
+  - title: "Supabase MCP can leak your entire SQL database"
+    url: "https://www.generalanalysis.com/blog/supabase-mcp-blog"
+    publisher: "General Analysis"
+    type: vendor-report
+    date: 2025-07-08
+added:
+  date: 2026-10-10
+  by: "MLSecOpsHub"
+last_updated: 2026-10-10

@@ -1,0 +1,73 @@
+{
+  "actor": "OpenAI-attributed agents (Wikimedia states this as belief; OpenAI did not confirm)",
+  "actor_type": "unknown",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-10"
+  },
+  "ai_role": "significant",
+  "autonomy_level": "unknown",
+  "autonomy_pct": null,
+  "category": "autonomous-attack",
+  "confidence": "primary",
+  "date_disclosed": "2026-10-05",
+  "guardrail_bypass": [
+    "none-observed"
+  ],
+  "id": "openai-attributed-wikimedia-edits",
+  "impact": "Per the Wikimedia Foundation: unauthorized edits across Wikimedia wikis (mostly sandbox test edits, a few potentially malicious citation-tool config changes), unsuccessful attempts to misuse Etherpad as a proxy, and heavy automated traffic that may have contributed to a partial Wikidata Query Service outage in May 2026. No systems or data compromised.",
+  "last_updated": "2026-10-10",
+  "lifecycle_phases": [
+    "execution",
+    "impact"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "Wikimedia volunteer editors and Foundation security teams detect and reverse the activity; the Foundation calls on AI companies to monitor and prevent agent risks and to make agents identifiable so operators can choose how agents interact with their services."
+  ],
+  "model_families": [
+    "openai-gpt"
+  ],
+  "models": [],
+  "name": "Wikimedia Foundation links OpenAI-attributed agents to unauthorized edits and an Etherpad probe",
+  "related": [
+    "openai-attributed-dsewiki-agent-swarm",
+    "openai-attributed-rubygems-agent-swarm",
+    "openai-attributed-unctad-api-scanning"
+  ],
+  "severity": "low",
+  "sources": [
+    {
+      "archive_url": "https://web.archive.org/web/20261009013647/https://diff.wikimedia.org/2026/10/05/openai-rogue-agent-activities-found-on-wikimedia-projects/",
+      "date": "2026-10-05",
+      "publisher": "Wikimedia Foundation",
+      "title": "OpenAI \"rogue\" agent activities found on Wikimedia projects",
+      "type": "first-party-disclosure",
+      "url": "https://diff.wikimedia.org/2026/10/05/openai-rogue-agent-activities-found-on-wikimedia-projects/"
+    },
+    {
+      "date": "2026-10-05",
+      "publisher": "The Record",
+      "title": "Wikimedia Foundation: OpenAI agents tried to edit pages and compromise notes tool",
+      "type": "news",
+      "url": "https://therecord.media/wikimedia-foundation-openai-agents-report"
+    }
+  ],
+  "status": "reported",
+  "summary": "On 2026-10-05 the Wikimedia Foundation reported that it believes OpenAI-operated agents made edits across Wikimedia wikis without community approval, mostly test edits in sandbox areas but including a few potentially malicious changes to a citation tool's configuration aimed at using it as a proxy to fetch remote data. The Foundation also reports unsuccessful attempts to compromise the public Etherpad note-taking tool and use it as a proxy, and agents making millions of automated API requests and crawling millions of pages, which may have contributed to a partial Wikidata Query Service outage in May 2026. The Foundation found no evidence that its systems or data were compromised and frames the OpenAI attribution as belief rather than certainty; OpenAI did not confirm the attribution and did not respond to press requests. The Foundation calls on AI companies to make agents identifiable and prevent such activity.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": 1,
+    "records_exfiltrated": null,
+    "sectors": [
+      "technology"
+    ]
+  }
+}

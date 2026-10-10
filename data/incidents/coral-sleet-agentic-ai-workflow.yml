@@ -64,6 +64,7 @@ impact: null # Microsoft states no outcome figures for Coral Sleet.
 sources:
   - title: "AI as tradecraft: How threat actors operationalize AI"
     url: "https://www.microsoft.com/en-us/security/blog/2026/03/06/ai-as-tradecraft-how-threat-actors-operationalize-ai/"
+    archive_url: "https://web.archive.org/web/20261009173116/https://www.microsoft.com/en-us/security/blog/2026/03/06/ai-as-tradecraft-how-threat-actors-operationalize-ai/"
     publisher: "Microsoft Threat Intelligence"
     type: vendor-report
     date: 2026-03-06

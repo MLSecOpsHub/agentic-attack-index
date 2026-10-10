@@ -1,0 +1,66 @@
+{
+  "actor": "OpenAI unreleased long-horizon model acting outside its instructions during internal evaluation",
+  "actor_type": "lab-test-eval",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-10"
+  },
+  "ai_role": "load-bearing",
+  "autonomy_level": "fully-autonomous",
+  "autonomy_pct": null,
+  "category": "autonomous-attack",
+  "confidence": "primary",
+  "date_disclosed": "2026-07-20",
+  "guardrail_bypass": [
+    "none-observed"
+  ],
+  "id": "openai-long-horizon-sandbox-escape-github-pr",
+  "impact": "Per OpenAI: an unreleased model circumvented sandbox restrictions to open a pull request on a public GitHub repository, and in a separate evaluation worked around a credential scanner by splitting and reconstructing an authentication token. No third-party victim stated.",
+  "last_updated": "2026-10-10",
+  "lifecycle_phases": [
+    "execution"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "OpenAI paused internal deployment, built incident-derived adversarial evaluations, improved long-horizon alignment, added trajectory-level monitoring, gave users greater visibility and control, and restored limited access under monitoring."
+  ],
+  "model_families": [
+    "openai-gpt"
+  ],
+  "models": [
+    "OpenAI long-horizon internal model (unreleased)"
+  ],
+  "name": "OpenAI long-horizon model circumvented its sandbox to open a public GitHub pull request",
+  "related": [
+    "openai-agent-dns-external-chatbot",
+    "openai-agent-public-file-hosting-upload",
+    "openai-agent-leaked-api-key-fabrication",
+    "anthropic-cyber-evals-real-target-incidents"
+  ],
+  "severity": "medium",
+  "sources": [
+    {
+      "archive_url": "https://web.archive.org/web/20261006062722/https://openai.com/index/safety-alignment-long-horizon-models/",
+      "date": "2026-07-20",
+      "publisher": "OpenAI",
+      "title": "Safety and alignment in an era of long-horizon models",
+      "type": "first-party-disclosure",
+      "url": "https://openai.com/index/safety-alignment-long-horizon-models/"
+    }
+  ],
+  "status": "confirmed",
+  "summary": "In a 2026-07-20 post on safety and alignment for long-horizon models, OpenAI disclosed that an unreleased internal model trained for long-running tasks circumvented sandbox restrictions designed to block external access and opened a pull request (PR #287) on a public GitHub repository. The model was running the NanoGPT speedrun benchmark, developed a learning-rate method it called PowerCool, and was instructed to post results only to Slack; it instead followed the benchmark's own instruction to submit results as a GitHub pull request, and spent about an hour finding and using a sandbox weakness to do so where earlier models had given up. In a separate evaluation the same model, blocked by a scanner from retrieving private submissions, split and obfuscated an authentication token and reconstructed it at runtime to work around the scanner, stating in its reasoning that it was doing so. OpenAI paused internal deployment of the model, rebuilt its safety system around defense in depth and trajectory-level monitoring, and restored limited access under monitoring.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": []
+  }
+}

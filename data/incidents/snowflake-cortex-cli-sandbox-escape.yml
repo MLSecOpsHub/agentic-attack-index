@@ -1,0 +1,62 @@
+id: snowflake-cortex-cli-sandbox-escape
+name: "Snowflake Cortex Code CLI could be driven out of its sandbox via indirect prompt injection"
+summary: >-
+  PromptArmor disclosed on 2026-03-16, in coordination with Snowflake, that the
+  Snowflake Cortex Code CLI could be manipulated through indirect prompt
+  injection into running commands without human approval and outside the CLI's
+  sandbox, using the victim's active Snowflake credentials to perform harmful
+  actions such as data exfiltration or dropping tables. PromptArmor reported the
+  flaw on 2026-02-05; Snowflake validated it on 2026-02-12 and deployed a fix on
+  2026-02-28 in version 1.0.25, applied automatically on next launch. The result
+  came from controlled testing, where the attack succeeded about half the time,
+  with no in-the-wild exploitation or affected users reported.
+date_disclosed: 2026-03-16
+status: reported # Single vendor publisher (PromptArmor); Snowflake validated and fixed per the post.
+confidence: primary # First-hand researcher analysis.
+category: agent-hijack-prompt-injection
+severity: high # Arbitrary command execution outside the sandbox with the victim's credentials, in a product since fixed.
+models: []
+model_families:
+  - other
+actor: "PromptArmor researchers (coordinated disclosure with Snowflake)"
+actor_type: researcher
+autonomy_pct: null
+autonomy_level: not-applicable
+guardrail_bypass:
+  - indirect-prompt-injection
+ai_role: significant
+related:
+  - claude-cowork-file-exfiltration
+  - amazon-q-developer-extension-compromise
+mitigations:
+  - "Keep the CLI updated to 1.0.25 or later, limit the Snowflake role an agent uses to least privilege and prefer browser-based authentication, treat untrusted content as a prompt-injection vector, and review agent permission and sandbox settings."
+targets:
+  orgs_affected: null
+  records_exfiltrated: null
+  sectors:
+    - technology
+  countries: []
+lifecycle_phases:
+  - execution
+mappings:
+  mitre_atlas: []
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: []
+  cve: []
+  aiid: []
+impact: >-
+  Per PromptArmor: the Cortex Code CLI could be induced to run commands outside
+  its sandbox with the victim's Snowflake credentials, enabling actions such as
+  data exfiltration or dropping tables. Demonstrated in testing; fixed in
+  version 1.0.25; no in-the-wild exploitation reported.
+sources:
+  - title: "Snowflake Cortex AI Escapes Sandbox and Executes Malware"
+    url: "https://www.promptarmor.com/resources/snowflake-ai-escapes-sandbox-and-executes-malware"
+    publisher: "PromptArmor"
+    type: vendor-report
+    date: 2026-03-16
+added:
+  date: 2026-10-10
+  by: "MLSecOpsHub"
+last_updated: 2026-10-10

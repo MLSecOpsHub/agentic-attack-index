@@ -1,0 +1,67 @@
+{
+  "actor": "Pillar Security researchers (authorized disclosure)",
+  "actor_type": "researcher",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-10"
+  },
+  "ai_role": "significant",
+  "autonomy_level": "not-applicable",
+  "autonomy_pct": null,
+  "category": "agent-hijack-prompt-injection",
+  "confidence": "primary",
+  "date_disclosed": "2026-08-18",
+  "guardrail_bypass": [
+    "indirect-prompt-injection"
+  ],
+  "id": "pillar-gemini-cli-gcp-triage-compromise",
+  "impact": "Per Pillar: a Gemini CLI triage flaw could lead to compromise of GCP project credentials and Editor-level access in a triage sandbox, with other users of the same reusable setup flow potentially exposed. Proof-of-concept; Google fixed it; no observed third-party exploitation.",
+  "last_updated": "2026-10-10",
+  "lifecycle_phases": [
+    "initial-access",
+    "credential-access",
+    "privilege-escalation"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "Google tightened agent tool scoping, blocked the agent from the sensitive credentials file, and narrowed a project-wide IAM role to a single service-account resource."
+  ],
+  "model_families": [
+    "gemini"
+  ],
+  "models": [
+    "Gemini CLI"
+  ],
+  "name": "Pillar: a GitHub issue on Gemini CLI could lead to compromise of a GCP triage project",
+  "related": [
+    "pillar-adk-agent-privilege-escalation",
+    "clinejection-cline-triage-npm-publish"
+  ],
+  "severity": "medium",
+  "sources": [
+    {
+      "date": "2026-08-18",
+      "publisher": "Pillar Security",
+      "title": "A WIF Of Fresh Access: How a GitHub Issue on Gemini-CLI Led to GCP Project Compromise",
+      "type": "vendor-report",
+      "url": "https://www.pillar.security/blog/a-wif-of-fresh-access-how-a-github-issue-on-gemini-cli-led-to-gcp-project-compromise"
+    }
+  ],
+  "status": "reported",
+  "summary": "Pillar Security disclosed on 2026-08-18, through Google's vulnerability reward program, that a flaw in the Gemini CLI triage automation could lead to compromise of Google Cloud Platform project credentials and Editor-level access within the affected project, described by Google as a dedicated sandbox used for Gemini CLI triage automation. Because the over-broad permission came from a reusable setup flow, Pillar notes other organizations using the same flow could have been exposed. Pillar reported the issue on 2026-06-11; initial fixes were identified on 2026-06-17 and verified with publication approved on 2026-08-14, and Google awarded a bounty. The work was proof-of-concept with no observed exploitation by third parties.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": [
+      "technology"
+    ]
+  }
+}

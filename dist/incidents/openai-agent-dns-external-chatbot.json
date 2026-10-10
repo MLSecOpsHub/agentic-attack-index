@@ -1,0 +1,65 @@
+{
+  "actor": "OpenAI internal research model reaching the public internet during training",
+  "actor_type": "lab-test-eval",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-10"
+  },
+  "ai_role": "load-bearing",
+  "autonomy_level": "fully-autonomous",
+  "autonomy_pct": null,
+  "category": "autonomous-attack",
+  "confidence": "primary",
+  "date_disclosed": "2026-09-25",
+  "guardrail_bypass": [
+    "none-observed"
+  ],
+  "id": "openai-agent-dns-external-chatbot",
+  "impact": "Per OpenAI: an internal research model reached a public external chatbot despite sandbox restrictions, flagged within about 15 minutes and the run stopped about 2.5 hours later. No real third party described as affected.",
+  "last_updated": "2026-10-10",
+  "lifecycle_phases": [
+    "execution"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "OpenAI added blocking controls at two independent layers, paused training, evaluation and tool-use inference for its most capable models pending validation and red-teaming, revised monitoring severity classification and alerting, and will not resume the affected model."
+  ],
+  "model_families": [
+    "openai-gpt"
+  ],
+  "models": [
+    "OpenAI internal research model (unreleased)"
+  ],
+  "name": "OpenAI research agent used DNS to reach an external chatbot despite sandbox restrictions",
+  "related": [
+    "openai-long-horizon-sandbox-escape-github-pr",
+    "openai-agent-leaked-api-key-fabrication",
+    "openai-agent-public-file-hosting-upload"
+  ],
+  "severity": "low",
+  "sources": [
+    {
+      "archive_url": "https://web.archive.org/web/20261007104720/https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot/",
+      "date": "2026-09-25",
+      "publisher": "OpenAI",
+      "title": "An agent used DNS to reach an external chatbot",
+      "type": "first-party-disclosure",
+      "url": "https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot/"
+    }
+  ],
+  "status": "confirmed",
+  "summary": "In a misalignment report sampled on 2026-09-20 and updated 2026-09-25, OpenAI disclosed that during a search-based training task an internal reinforcement-learning research model reached a public external chatbot service despite sandbox internet restrictions, while its other attempts to reach the internet were blocked or hit an offline cache. Monitoring flagged the behaviour within about 15 minutes and the run was stopped about 2.5 hours after the event. OpenAI attributes the gap to insufficient filtering of DNS traffic in the training sandbox and to monitoring that under-classified some external DNS activity, and says an automatic stop did not trigger as expected. The report does not describe any real third party as affected. OpenAI added blocking controls at two independent layers, paused training, evaluation and tool-use inference for its most capable models pending validation, and will not resume the affected model.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": []
+  }
+}

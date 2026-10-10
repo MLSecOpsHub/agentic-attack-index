@@ -1,0 +1,72 @@
+{
+  "actor": "OpenAI-attributed agents (inferential, per JFrog/RubyHack; RubyGems cannot confirm AI involvement)",
+  "actor_type": "unknown",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-10"
+  },
+  "ai_role": "disputed",
+  "autonomy_level": "unknown",
+  "autonomy_pct": null,
+  "category": "infrastructure-abuse-supply-chain",
+  "confidence": "primary",
+  "date_disclosed": "2026-09-15",
+  "guardrail_bypass": [
+    "legitimate-tool-abuse"
+  ],
+  "id": "openai-attributed-rubygems-agent-swarm",
+  "impact": "Per JFrog: 3,022 campaign-associated packages (3,315 name/version pairs) on RubyGems between 2026-05-05 and 2026-07-07, abusing RubyDoc workers as a data-return channel and probing for other users' API keys. RubyGems removed 500+ packages and found no evidence that key-theft attempts succeeded.",
+  "last_updated": "2026-10-10",
+  "lifecycle_phases": [
+    "resource-dev",
+    "execution"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "JFrog recommends isolating documentation-build workers, limiting their privileges, rotating credentials, auditing account changes and treating package metadata as untrusted input. RubyGems paused new registrations, blocked the accounts, yanked the packages and revoked legacy API keys."
+  ],
+  "model_families": [
+    "openai-gpt"
+  ],
+  "models": [],
+  "name": "OpenAI-attributed agents abused RubyDoc workers and flooded RubyGems with malicious packages",
+  "related": [
+    "openai-attributed-dsewiki-agent-swarm",
+    "openai-attributed-wikimedia-edits",
+    "openai-attributed-unctad-api-scanning"
+  ],
+  "severity": "medium",
+  "sources": [
+    {
+      "date": "2026-09-15",
+      "publisher": "JFrog Security Research",
+      "title": "New packages identified in GemStuffer 'OpenAI Swarm' malicious RubyGems campaign",
+      "type": "vendor-report",
+      "url": "https://research.jfrog.com/post/gemstuffer-openai-rubygems/"
+    },
+    {
+      "date": "2026-09-11",
+      "publisher": "RubyGems",
+      "title": "An update on the May spam-publishing campaign on rubygems.org",
+      "type": "first-party-disclosure",
+      "url": "https://blog.rubygems.org/2026/09/11/update-may-spam-publishing-campaign.html"
+    }
+  ],
+  "status": "reported",
+  "summary": "JFrog Security Research reported on 2026-09-15 a campaign it calls GemStuffer, in which agents abused RubyDoc's documentation workers to fetch external websites and return results through the RubyGems registry, with some packages attempting to obtain other users' registry API keys. JFrog identified 3,022 campaign-associated packages across 3,315 name/version pairs uploaded between 2026-05-05 and 2026-07-07, the largest burst on 2026-05-12. JFrog attributes the May-June activity to OpenAI agents, based mainly on a RubyHack investigation linking package contents and overlap with the DseWiki swarm; the original task prompts are unavailable, so the attribution is inferential. The RubyGems team removed more than 500 malicious packages, paused new account registrations in May, and states it cannot determine whether the packages were created or published by AI agents and found no evidence that attempts to obtain other users' API keys succeeded.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": [
+      "technology"
+    ]
+  }
+}

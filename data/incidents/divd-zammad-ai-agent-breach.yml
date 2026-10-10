@@ -1,0 +1,90 @@
+id: divd-zammad-ai-agent-breach
+name: "DIVD CSIRT ticketing system breached through two Zammad zero-days; AI agents used in later attack stages"
+summary: >-
+  The Dutch Institute for Vulnerability Disclosure (DIVD) reports that on
+  2026-09-21 a malicious actor gained first access to the Zammad instance that
+  serves as its CSIRT ticketing system, using two previously unknown Zammad
+  vulnerabilities (CVE-2026-102489 and CVE-2026-102490, since fixed by Zammad).
+  DIVD detected the intrusion on 2026-09-22 with a stated mean time to detect
+  of 19 minutes, made a first public statement on 2026-09-24 and published its
+  casefile on 2026-09-29. DIVD states that AI agents were used in the later
+  stages of the attack, citing the volume of activity and artifacts generated
+  in a short time and attack scripts that were commented and documented, with
+  the agents appearing to talk to each other in the comments. Volunteer email
+  addresses were confirmed exfiltrated; partial exfiltration is indicated from
+  the office environment, IT and project support systems and CSIRT tickets,
+  which may include correspondence about vulnerable systems. DIVD notified the
+  Dutch data protection authority and NCSC-NL and filed a police report.
+date_disclosed: 2026-09-24 # First public statement; casefile published 2026-09-29.
+status: confirmed # First-party disclosure by the victim.
+confidence: primary
+category: autonomous-attack
+severity: high # A vulnerability-disclosure body's CSIRT correspondence and zero-day data possibly exposed.
+models: [] # DIVD names no model or vendor.
+model_families:
+  - other
+actor: Unknown # DIVD refers only to a "malicious actor".
+actor_type: unknown
+autonomy_pct: null
+autonomy_level: unknown # DIVD does not state whether the agents acted autonomously.
+guardrail_bypass:
+  - unknown
+ai_role: significant # Agents used in later attack stages per DIVD's analysis of artifacts; initial access via zero-days is not attributed to AI.
+related:
+  - aepd-first-ai-agent-data-breach-notification
+  - jadepuffer-agentic-database-extortion # Same evidentiary pattern: self-documenting agent-written scripts.
+mitigations:
+  - "DIVD blocked datacenter access, formed an incident response team with an external firm, reported the vulnerabilities to Zammad (fixed in 7.2 and 7.2.2), opened a case to warn other Zammad users, notified the Dutch Data Protection Authority and NCSC-NL, and filed a police report on 2026-10-05."
+targets:
+  orgs_affected: 1
+  records_exfiltrated: null # DIVD gives no counts; scope still being determined.
+  sectors:
+    - technology # Vulnerability-disclosure non-profit; closest vocabulary entry.
+  countries:
+    - NL
+geo:
+  points:
+    - role: target
+      basis: victim-location
+      attributed_by: "DIVD CSIRT"
+      country: NL
+      lat: 52.13
+      lng: 5.29
+      label: "Netherlands (DIVD, per its own casefile)"
+      illustrative: true
+lifecycle_phases:
+  - initial-access
+  - execution
+  - exfiltration
+mappings:
+  mitre_atlas: []
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: []
+  cve:
+    - CVE-2026-102489 # Zammad zero-day, per DIVD casefile.
+    - CVE-2026-102490 # Zammad zero-day, per DIVD casefile.
+  aiid: []
+impact: >-
+  Volunteer (DIVD) email addresses confirmed exfiltrated; signs of partial
+  exfiltration from the GSuite office environment, helpdesk, Jira and
+  Confluence, operational IT systems and the CSIRT ticket system; CSIRT
+  correspondence and zero-day data held in Zammad should be assumed possibly
+  compromised. HR, source code, Slack, accounting and the CVE/CNA environment
+  show no indication of compromise. Investigation ongoing.
+sources:
+  - title: "DIVD-2026-00014 - When, not if..."
+    url: "https://csirt.divd.nl/cases/DIVD-2026-00014/"
+    archive_url: "https://web.archive.org/web/20261002101808/https://csirt.divd.nl/cases/DIVD-2026-00014/"
+    publisher: "DIVD CSIRT"
+    type: first-party-disclosure
+    date: 2026-09-29
+  - title: "DIVD-2026-00014 - Overview data investigation"
+    url: "https://csirt.divd.nl/cases/DIVD-2026-00014/overview_data_investigation/"
+    archive_url: "https://web.archive.org/web/20261006200344/https://csirt.divd.nl/cases/DIVD-2026-00014/overview_data_investigation/"
+    publisher: "DIVD CSIRT"
+    type: first-party-disclosure
+added:
+  date: 2026-10-10
+  by: "MLSecOpsHub"
+last_updated: 2026-10-10

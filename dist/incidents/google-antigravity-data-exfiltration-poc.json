@@ -1,0 +1,67 @@
+{
+  "actor": "PromptArmor researchers (proof-of-concept)",
+  "actor_type": "researcher",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-10"
+  },
+  "ai_role": "significant",
+  "autonomy_level": "not-applicable",
+  "autonomy_pct": null,
+  "category": "agent-hijack-prompt-injection",
+  "confidence": "primary",
+  "date_disclosed": "2026-11-20",
+  "guardrail_bypass": [
+    "indirect-prompt-injection"
+  ],
+  "id": "google-antigravity-data-exfiltration-poc",
+  "impact": "Per PromptArmor: a proof-of-concept in which a malicious web page leads the Antigravity agent to collect local credentials and code and send them to a public site. No observed real-world exploitation; no confirmed fix.",
+  "last_updated": "2026-10-10",
+  "lifecycle_phases": [
+    "execution",
+    "credential-access",
+    "exfiltration"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "PromptArmor argues against relying on user warnings and permissive default human-review settings, and for mitigating the underlying data-exfiltration paths."
+  ],
+  "model_families": [
+    "gemini"
+  ],
+  "models": [
+    "Gemini"
+  ],
+  "name": "Google Antigravity agent could be led by a malicious web page to exfiltrate local data",
+  "related": [
+    "google-antigravity-drive-deletion",
+    "claude-cowork-file-exfiltration"
+  ],
+  "severity": "medium",
+  "sources": [
+    {
+      "archive_url": "https://web.archive.org/web/20260930173123/https://www.promptarmor.com/resources/google-antigravity-exfiltrates-data",
+      "publisher": "PromptArmor",
+      "title": "Google Antigravity Exfiltrates Data",
+      "type": "vendor-report",
+      "url": "https://www.promptarmor.com/resources/google-antigravity-exfiltrates-data"
+    }
+  ],
+  "status": "reported",
+  "summary": "PromptArmor's threat-intelligence team published a proof-of-concept showing that Google Antigravity, Google's agentic code editor, could be led by a malicious web page into collecting local credentials and code and sending them to a public site. PromptArmor says it did not run a responsible-disclosure process because Google had indicated it was already aware of data-exfiltration risks, and it criticises relying on user warnings and default human-review settings that let the agent decide when to request approval. The write-up describes a demonstrated attack chain with no observed real-world exploitation and does not confirm a fix. This is distinct from the separate Antigravity incident in which the agent wiped a user's drive.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": [
+      "technology"
+    ]
+  }
+}

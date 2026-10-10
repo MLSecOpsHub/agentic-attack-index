@@ -1,0 +1,63 @@
+id: notion-ai-web-search-exfiltration
+name: "Notion 3.0 AI agents' web-search tool could be abused to exfiltrate private workspace data"
+summary: >-
+  CodeIntegrity published on 2025-09-19 research showing that the web-search
+  tool in Notion 3.0's AI agents could be abused to send private Notion
+  workspace data to an external server. The write-up presents a researcher
+  demonstration rather than in-the-wild exploitation and does not state whether
+  it went through coordinated disclosure or that Notion fixed it. CodeIntegrity
+  argues that traditional role-based access controls no longer fully cover AI
+  agents that chain actions across documents, databases and external
+  connectors. It is catalogued as an agent-hijack prompt-injection product
+  vulnerability.
+date_disclosed: 2025-09-19
+status: reported # Single vendor publisher; no stated vendor confirmation or fix.
+confidence: primary # First-hand researcher analysis.
+category: agent-hijack-prompt-injection
+severity: medium # Private workspace data exfiltration demonstrated; no confirmed real-world exploitation.
+models: []
+model_families:
+  - other
+actor: "CodeIntegrity researchers (proof-of-concept)"
+actor_type: researcher
+autonomy_pct: null
+autonomy_level: not-applicable
+guardrail_bypass:
+  - indirect-prompt-injection
+ai_role: significant
+related:
+  - echoleak-m365-copilot
+  - forcedleak-salesforce-agentforce
+mitigations:
+  - "CodeIntegrity argues that role-based access controls do not fully cover AI agents chaining actions across documents, databases and external connectors, and that agent tool permissions need rethinking."
+targets:
+  orgs_affected: null
+  records_exfiltrated: null
+  sectors:
+    - technology
+  countries: []
+lifecycle_phases:
+  - execution
+  - exfiltration
+mappings:
+  mitre_atlas: []
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: []
+  cve: []
+  aiid: []
+impact: >-
+  Per CodeIntegrity: a proof-of-concept in which Notion 3.0's AI web-search
+  tool is abused to send private workspace data to an external server. No
+  confirmed real-world exploitation.
+sources:
+  - title: "The Hidden Risk in Notion 3.0 AI Agents: Web Search Tool Abuse for Data Exfiltration"
+    url: "https://www.codeintegrity.ai/blog/notion"
+    archive_url: "https://web.archive.org/web/20260921130726/https://www.codeintegrity.ai/blog/notion"
+    publisher: "CodeIntegrity"
+    type: vendor-report
+    date: 2025-09-19
+added:
+  date: 2026-10-10
+  by: "MLSecOpsHub"
+last_updated: 2026-10-10

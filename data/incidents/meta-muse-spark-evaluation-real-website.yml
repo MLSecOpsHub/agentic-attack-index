@@ -1,0 +1,74 @@
+id: meta-muse-spark-evaluation-real-website
+name: "Meta's Muse Spark model accessed and altered a real website during a misconfigured cyber evaluation"
+summary: >-
+  On 2026-08-14 Meta AI Research disclosed that during a cybersecurity
+  evaluation of its pre-release Muse Spark 1.1 model, run by the testing
+  partner Irregular, a misconfigured test environment let the model reach the
+  open internet and the evaluation referenced a real website as its target
+  rather than a fictional one. The model accessed information from the real
+  website and made changes to its database. Work began in early July 2026 and
+  Irregular disabled the affected evaluation after identifying the issue. Meta
+  states the affected party was notified. No website or operator is named. The
+  stated root cause is the environment misconfiguration combined with a test
+  scenario that referenced a real target. Irregular's own account frames this
+  within a cluster of evaluation incidents across multiple labs in which models
+  acted against real third-party domains after internet access was
+  unintentionally enabled.
+date_disclosed: 2026-08-14
+status: confirmed # First-party disclosure by the model developer (Meta) plus the testing partner (Irregular).
+confidence: primary
+category: autonomous-attack
+severity: medium # A real website's database altered during an evaluation; no broader impact stated.
+models:
+  - "Muse Spark 1.1"
+model_families:
+  - other
+actor: "Meta's Muse Spark 1.1 model acting against a real website during a misconfigured cyber evaluation"
+actor_type: lab-test-eval
+autonomy_pct: null
+autonomy_level: fully-autonomous # The model acted against the real site without being directed to.
+guardrail_bypass:
+  - none-observed # No attacker; a misconfiguration enabled internet access and a real target was referenced.
+ai_role: load-bearing
+related:
+  - anthropic-cyber-evals-real-target-incidents
+  - openai-eval-agents-hugging-face-intrusion
+  - aisi-unsanctioned-agent-cyber-testing
+mitigations:
+  - "Irregular corrected the misconfiguration; evaluations will no longer reference real website or company names; independent verification of environment isolation and scenario review will precede evaluations; and monitoring was improved. Meta shared findings with Irregular and industry evaluation-safety efforts."
+targets:
+  orgs_affected: 1
+  records_exfiltrated: null
+  sectors: []
+  countries: []
+lifecycle_phases:
+  - initial-access
+  - execution
+  - impact
+mappings:
+  mitre_atlas: []
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: []
+  cve: []
+  aiid: []
+impact: >-
+  A real website's information accessed and its database altered during a
+  cyber evaluation of Muse Spark 1.1; the affected party was notified. No
+  website or operator named.
+sources:
+  - title: "Addressing an issue involving a third-party cyber evaluation of Muse Spark 1.1"
+    url: "https://research.meta.ai/blog/addressing-third-party-testing-misconfiguration-muse-spark-1-1"
+    publisher: "Meta AI Research"
+    type: first-party-disclosure
+    date: 2026-08-14
+  - title: "Addressing Recent Incidents: Ongoing Findings and Path Forward"
+    url: "https://www.irregular.com/research/addressing-recent-incidents-ongoing-findings-and-path-forward"
+    archive_url: "https://web.archive.org/web/20260928220802/https://www.irregular.com/research/addressing-recent-incidents-ongoing-findings-and-path-forward"
+    publisher: "Irregular"
+    type: vendor-report
+    date: 2026-08-14
+added:
+  date: 2026-10-10
+  by: "MLSecOpsHub"
+last_updated: 2026-10-10

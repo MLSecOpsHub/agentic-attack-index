@@ -1,0 +1,61 @@
+id: claude-cowork-file-exfiltration
+name: "Claude Cowork could be manipulated into uploading a user's files to an attacker account"
+summary: >-
+  PromptArmor published a proof-of-concept, around mid-January 2026, showing
+  that Anthropic's Claude Cowork could be manipulated into uploading a user's
+  local files to an attacker-controlled account with no human approval at any
+  point. PromptArmor says the underlying vulnerability was first reported by a
+  different researcher against Claude.ai chat and that Anthropic acknowledged
+  but had not remediated it, so the flaw remained unresolved at publication. The
+  write-up presents a demonstration and reports no real-world victims; it is
+  catalogued as an agent-hijack prompt-injection product vulnerability.
+date_disclosed: 2026-01-14 # PromptArmor post references a Simon Willison post dated 2026-01-12 and Cowork's release "two days ago"; exact date not printed.
+status: reported # Single vendor publisher; Anthropic acknowledged but, per PromptArmor, had not remediated.
+confidence: unverified # Single secondary write-up; no first-party confirmation of the specific claim and no fix.
+category: agent-hijack-prompt-injection
+severity: medium # File exfiltration demonstrated in a proof-of-concept; no real-world victims reported.
+models: []
+model_families:
+  - claude
+actor: "PromptArmor researchers (proof-of-concept)"
+actor_type: researcher
+autonomy_pct: null
+autonomy_level: not-applicable
+guardrail_bypass:
+  - indirect-prompt-injection
+ai_role: significant
+related:
+  - snowflake-cortex-cli-sandbox-escape
+  - echoleak-m365-copilot
+mitigations:
+  - "Anthropic's cited guidance is to avoid granting Cowork access to local files containing sensitive information and to watch for suspicious actions; PromptArmor disputes this is adequate for non-technical users and urges caution with Connectors."
+targets:
+  orgs_affected: null
+  records_exfiltrated: null
+  sectors: []
+  countries: []
+lifecycle_phases:
+  - execution
+  - exfiltration
+mappings:
+  mitre_atlas: []
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: []
+  cve: []
+  aiid: []
+impact: >-
+  Per PromptArmor: a proof-of-concept in which Claude Cowork uploads a user's
+  local files to an attacker account without human approval. No real-world
+  victims reported; the flaw was unresolved at publication.
+sources:
+  - title: "Claude Cowork Exfiltrates Files"
+    url: "https://www.promptarmor.com/resources/claude-cowork-exfiltrates-files"
+    archive_url: "https://web.archive.org/web/20261005172213/https://www.promptarmor.com/resources/claude-cowork-exfiltrates-files"
+    publisher: "PromptArmor"
+    type: vendor-report
+    date: 2026-01-14
+added:
+  date: 2026-10-10
+  by: "MLSecOpsHub"
+last_updated: 2026-10-10

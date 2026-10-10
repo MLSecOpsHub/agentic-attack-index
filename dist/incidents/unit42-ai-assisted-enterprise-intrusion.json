@@ -1,0 +1,65 @@
+{
+  "actor": "Unknown human attacker directing multiple AI agents (no nationality or group stated by Unit 42)",
+  "actor_type": "unknown",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-10"
+  },
+  "ai_role": "significant",
+  "autonomy_level": "supervised-autonomous",
+  "autonomy_pct": null,
+  "category": "autonomous-attack",
+  "confidence": "primary",
+  "date_disclosed": "2026-09-02",
+  "guardrail_bypass": [
+    "legitimate-tool-abuse"
+  ],
+  "id": "unit42-ai-assisted-enterprise-intrusion",
+  "impact": "Per Unit 42: internal networks, source-code repositories, a secrets-management system and CI/CD pipelines breached; root and administrative credentials and cloud access keys obtained; the victim's cloud AI endpoints used as attacker infrastructure. An infrastructure-as-code tampering attempt was blocked by branch protection. Operational timeline under ten hours.",
+  "last_updated": "2026-10-10",
+  "lifecycle_phases": [
+    "initial-access",
+    "execution",
+    "credential-access",
+    "privilege-escalation",
+    "impact"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "Unit 42 recommends treating AI models, API keys and AI integrations as core infrastructure with inventory, rate limits, least privilege and logging; preparing coordinated automated containment across identity, cloud and pipeline systems; monitoring for machine-speed behavioural patterns; and requiring multi-party review and immutable protections for infrastructure-as-code."
+  ],
+  "model_families": [
+    "other"
+  ],
+  "models": [],
+  "name": "Unit 42 investigation: AI agents sped an enterprise intrusion and hijacked the victim's cloud AI infrastructure",
+  "related": [
+    "gtig-agentic-credential-harvesting-q2-2026",
+    "gtg-50020-ai-vendor-api-key-theft"
+  ],
+  "severity": "high",
+  "sources": [
+    {
+      "date": "2026-09-02",
+      "publisher": "Unit 42 (Palo Alto Networks)",
+      "title": "An AI-Assisted Cyber Attack: Inside a Unit 42 Investigation",
+      "type": "vendor-report",
+      "url": "https://unit42.paloaltonetworks.com/ai-assisted-cyber-attack-inside-a-unit-42-investigation/"
+    }
+  ],
+  "status": "reported",
+  "summary": "Palo Alto Networks Unit 42 reported on 2026-09-02 an investigation into an intrusion in which a human attacker directed multiple frontier AI agents in parallel to compress the time between attack steps. The attacker breached internal networks, source-code repositories, a secrets-management system and CI/CD pipelines, obtained root and administrative credentials and cloud access keys, and used the victim's own cloud AI endpoints as post-compromise infrastructure, offloading compute cost to the victim. An attempt to tamper with infrastructure-as-code was blocked by branch-protection controls, and the attacker had an agent produce an audit-style report of the victim's security posture. Unit 42 states the operational timeline ran under ten hours, the attack did not depend on novel zero-days, and the human set objectives while specialized agents executed tasks, shared results and re-planned. Unit 42 updated the post to clarify the event was an intrusion, not ransomware; it names no victim, model or actor nationality, and bases the AI-agent assessment on observed parallel model calls and AI-generated scripts.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": 1,
+    "records_exfiltrated": null,
+    "sectors": []
+  }
+}

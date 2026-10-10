@@ -1,0 +1,67 @@
+id: ghostjacking-agentic-kill-chain-poc
+name: "GhostJacking: poisoned telemetry could steer AI coding agents into DNS changes and command execution"
+summary: >-
+  Tenet Security (Tenet Threat Labs) presented research it calls GhostJacking on
+  2026-08-09, demonstrating at DEF CON that attacker-controlled text in logs,
+  alerts or telemetry from trusted platforms could steer AI coding agents into
+  taking actions they are already authorized to perform, including changing DNS
+  records and executing commands on a developer's machine, with examples
+  chaining steps across agents and platforms and leaving persistent
+  configuration changes. Named systems include Claude Code (tested with Sonnet
+  4.6), Claude Desktop (a sandbox issue Tenet says Anthropic confirmed and fixed
+  before the talk), Cursor and Sentry's Seer agent. Tenet states its estimate of
+  15,000-plus exposed organizations reflects adoption of the vulnerable setup,
+  not a confirmed breach; it reports disclosures to Anthropic, Datadog and
+  Sentry. This is a research demonstration, not an observed in-the-wild attack.
+date_disclosed: 2026-08-09
+status: reported # Single vendor publisher; a research demonstration.
+confidence: primary # First-hand researcher analysis.
+category: agent-hijack-prompt-injection
+severity: high # Demonstrated DNS changes and command execution via authorized agent actions across widely used tools.
+models: []
+model_families:
+  - claude
+actor: "Tenet Security researchers (research demonstration)"
+actor_type: researcher
+autonomy_pct: null
+autonomy_level: not-applicable # The coding agents are the hijacked components.
+guardrail_bypass:
+  - indirect-prompt-injection
+ai_role: significant
+related:
+  - miasma-worm-ai-coding-agent-configs
+  - pillar-adk-agent-privilege-escalation
+mitigations:
+  - "Tenet recommends treating external log, alert and telemetry content as untrusted input to agents, separating read access from write/execute permissions, requiring human approval for high-impact changes such as DNS and credentials, restricting public or write-only tokens, enforcing egress controls and session-bound sandbox tokens, and monitoring agent action audit trails."
+targets:
+  orgs_affected: null
+  records_exfiltrated: null
+  sectors:
+    - technology
+  countries: []
+lifecycle_phases:
+  - execution
+  - persistence
+mappings:
+  mitre_atlas: []
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: []
+  cve: []
+  aiid: []
+impact: >-
+  Per Tenet Security: a demonstration in which poisoned telemetry steers AI
+  coding agents (including Claude Code, Cursor and Sentry's Seer) into DNS
+  changes and command execution, chained across agents and leaving persistent
+  changes. A research demonstration; no confirmed breach.
+sources:
+  - title: "GhostJacking Attacks: Getting Blocked by the Firewall Was the Way to Take Over Their AI Agents"
+    url: "https://tenetsecurity.ai/blog/ghostjacking-attacks-agentic-kill-chain/"
+    archive_url: "https://web.archive.org/web/20260911201138/https://tenetsecurity.ai/blog/ghostjacking-attacks-agentic-kill-chain/"
+    publisher: "Tenet Security"
+    type: vendor-report
+    date: 2026-08-09
+added:
+  date: 2026-10-10
+  by: "MLSecOpsHub"
+last_updated: 2026-10-10

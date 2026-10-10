@@ -1,0 +1,93 @@
+{
+  "actor": "Unknown Chinese-language operator (attributed on linguistic grounds by Dream Research Labs; no group named)",
+  "actor_type": "unknown",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-10"
+  },
+  "ai_role": "significant",
+  "autonomy_level": "supervised-autonomous",
+  "autonomy_pct": null,
+  "category": "ai-orchestrated-campaign",
+  "confidence": "primary",
+  "date_disclosed": "2026-08-12",
+  "geo": {
+    "points": [
+      {
+        "attributed_by": "Focus Taiwan",
+        "basis": "victim-location",
+        "country": "TW",
+        "illustrative": true,
+        "label": "Taiwan (government agencies, per MODA via Focus Taiwan)",
+        "lat": 23.7,
+        "lng": 120.96,
+        "role": "target"
+      }
+    ]
+  },
+  "guardrail_bypass": [
+    "jailbreak",
+    "legitimate-tool-abuse"
+  ],
+  "id": "dream-multi-agent-asia-government-campaign",
+  "impact": "Per Dream Research Labs (claims from a recovered operator archive, not independently verified): about 1,395 files produced, 85 cracked employee accounts, more than 2,500 personnel records exfiltrated, a persistent foothold in state infrastructure and backdoors on government web applications. Taiwan's MODA confirms AI-agent attacks on government agencies, handled by affected units.",
+  "last_updated": "2026-10-10",
+  "lifecycle_phases": [
+    "recon",
+    "initial-access",
+    "credential-access",
+    "persistence",
+    "exfiltration"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "Taiwan's Ministry of Digital Affairs issued successive alerts from 2026-07-20, investigated source and scope, set protective guidelines for AI-related threats, and is strengthening cross-agency monitoring and intelligence sharing. Dream argues defenders need comparable AI-enabled capability."
+  ],
+  "model_families": [
+    "other"
+  ],
+  "models": [],
+  "name": "Multi-agent AI framework used to compromise government entities in Asia",
+  "related": [
+    "secflow-asia-government-education-campaign",
+    "gtg-10007-agent-swarm-intrusions"
+  ],
+  "severity": "high",
+  "sources": [
+    {
+      "archive_url": "https://web.archive.org/web/20261006165345/https://dreamgroup.com/blog/inside-a-multi-agent-ai-framework-used-to-compromise-government-entities-in-asia",
+      "date": "2026-08-12",
+      "publisher": "Dream Research Labs",
+      "title": "Inside a Multi-Agent AI Framework Used to Compromise Government Entities in Asia",
+      "type": "vendor-report",
+      "url": "https://www.dreamgroup.com/blog/inside-a-multi-agent-ai-framework-used-to-compromise-government-entities-in-asia"
+    },
+    {
+      "date": "2026-08-13",
+      "publisher": "Focus Taiwan",
+      "title": "AI agents used in cyberattacks on Taiwan government websites: MODA",
+      "type": "news",
+      "url": "https://focustaiwan.tw/society/202608130011"
+    }
+  ],
+  "status": "reported",
+  "summary": "On 2026-08-12 Dream Research Labs reported an exposed operator archive revealing a multi-agent framework, built on the Hermes and OpenClaw agents, that ran parallel sub-agents across 12 documented attack waves against government entities in Asia between 1 and 4 July 2026. Dream describes the system as near-autonomous, adapting mid-operation without human intervention and bypassing model safety refusals by framing its activity as authorized penetration testing; it attributes the operator to a Chinese-language actor on linguistic grounds and names no group. Claimed results include about 1,395 files produced, 85 cracked employee accounts, more than 2,500 personnel records exfiltrated, a persistent foothold in state infrastructure and backdoors on government web applications. Taiwan's Ministry of Digital Affairs separately confirmed AI-agent attacks on government agencies in July, said affected units were handled, and stated the attacks showed clear signs of originating overseas. Dream withheld victim identities and says affected organizations were notified; its autonomy and impact claims are not independently verified.",
+  "targets": {
+    "countries": [
+      "TW"
+    ],
+    "orgs_affected": null,
+    "records_exfiltrated": 2500,
+    "sectors": [
+      "government",
+      "energy"
+    ]
+  }
+}

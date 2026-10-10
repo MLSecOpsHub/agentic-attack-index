@@ -1,0 +1,65 @@
+{
+  "actor": "CodeWall autonomous offensive-security agent (authorized research, no human in the loop)",
+  "actor_type": "researcher",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-10"
+  },
+  "ai_role": "load-bearing",
+  "autonomy_level": "fully-autonomous",
+  "autonomy_pct": null,
+  "category": "autonomous-attack",
+  "confidence": "primary",
+  "date_disclosed": "2026-03-09",
+  "guardrail_bypass": [
+    "none-observed"
+  ],
+  "id": "codewall-mckinsey-lilli-agent-intrusion",
+  "impact": "Per CodeWall: read and write access to the production database behind McKinsey's Lilli platform reached without credentials in about two hours, exposing tens of millions of chat messages, hundreds of thousands of files, tens of thousands of user accounts and workspaces, system-prompt configurations and millions of retrieval document chunks. McKinsey remediated.",
+  "last_updated": "2026-10-10",
+  "lifecycle_phases": [
+    "initial-access",
+    "credential-access"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "McKinsey patched the affected unauthenticated endpoints, took the development environment offline and blocked public API documentation; CodeWall reports all issues confirmed remediated before publication."
+  ],
+  "model_families": [
+    "other"
+  ],
+  "models": [],
+  "name": "Autonomous security agent reached production data on McKinsey's Lilli AI platform (responsible disclosure)",
+  "related": [
+    "openai-eval-agents-hugging-face-intrusion",
+    "gtg-50020-ai-vendor-api-key-theft"
+  ],
+  "severity": "high",
+  "sources": [
+    {
+      "archive_url": "https://web.archive.org/web/20260928141351/https://codewall.ai/blog/how-we-hacked-mckinseys-ai-platform",
+      "date": "2026-03-09",
+      "publisher": "CodeWall",
+      "title": "How We Hacked McKinsey's AI Platform",
+      "type": "vendor-report",
+      "url": "https://codewall.ai/blog/how-we-hacked-mckinseys-ai-platform"
+    }
+  ],
+  "status": "reported",
+  "summary": "CodeWall disclosed on 2026-03-09 that its autonomous offensive-security agent, operating with no human in the loop, reached read and write access to the production database behind McKinsey's internal Lilli AI platform within about two hours and without credentials. CodeWall describes the work as verification only under responsible-disclosure principles; it says it limited access to what was needed to confirm each issue but does not clearly state whether data was copied or retained. It lists exposed data including tens of millions of chat messages, hundreds of thousands of files, tens of thousands of user accounts and workspaces, system-prompt configurations and millions of retrieval document chunks. CodeWall began testing on 2026-02-28, disclosed to McKinsey on 2026-03-01, and McKinsey acknowledged the next day, patched the unauthenticated endpoints and took the development environment offline, with all issues confirmed remediated before publication.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": 1,
+    "records_exfiltrated": null,
+    "sectors": [
+      "technology"
+    ]
+  }
+}

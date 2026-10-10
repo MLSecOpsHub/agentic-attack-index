@@ -1,0 +1,66 @@
+{
+  "actor": "Noma Security researchers (authorized disclosure)",
+  "actor_type": "researcher",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-10"
+  },
+  "ai_role": "significant",
+  "autonomy_level": "not-applicable",
+  "autonomy_pct": null,
+  "category": "agent-hijack-prompt-injection",
+  "confidence": "primary",
+  "date_disclosed": "2026-07-06",
+  "guardrail_bypass": [
+    "indirect-prompt-injection"
+  ],
+  "id": "gitlost-github-agentic-workflows-repo-leak",
+  "impact": "Per Noma Security: private repository README contents published in a public comment through a GitHub Agentic Workflows agent, in a proof-of-concept against the researchers' own repositories. No in-the-wild exploitation.",
+  "last_updated": "2026-10-10",
+  "lifecycle_phases": [
+    "execution",
+    "exfiltration"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "Noma recommends treating user-controlled content as untrusted rather than instructions, limiting agent permissions (especially cross-repository access), restricting what agents can post publicly, and isolating user input from instruction context."
+  ],
+  "model_families": [
+    "claude",
+    "other"
+  ],
+  "models": [],
+  "name": "GitLost: GitHub Agentic Workflows agent tricked into leaking private repository contents",
+  "related": [
+    "camoleak-github-copilot-chat",
+    "clinejection-cline-triage-npm-publish"
+  ],
+  "severity": "medium",
+  "sources": [
+    {
+      "archive_url": "https://web.archive.org/web/20260813095553/https://noma.security/blog/gitlost-how-we-tricked-githubs-ai-agent-into-leaking-private-repos/",
+      "date": "2026-07-06",
+      "publisher": "Noma Security",
+      "title": "GitLost: How We Tricked GitHub's AI Agent into Leaking Private Repos",
+      "type": "vendor-report",
+      "url": "https://noma.security/blog/gitlost-how-we-tricked-githubs-ai-agent-into-leaking-private-repos/"
+    }
+  ],
+  "status": "reported",
+  "summary": "Noma Security (Noma Labs) disclosed on 2026-07-06 a vulnerability it calls GitLost in GitHub Agentic Workflows, which use an AI agent backed by Claude or GitHub Copilot. In a proof-of-concept against the researchers' own repositories, content from private repository README files was published in a public comment on a public issue. Noma states the issue was responsibly disclosed to GitHub; it does not state report or fix dates or confirm a fix, and reports no in-the-wild exploitation or affected users. The finding is catalogued as an agent-hijack prompt-injection product vulnerability, in the same class as earlier disclosures against AI coding and chat assistants.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": [
+      "technology"
+    ]
+  }
+}

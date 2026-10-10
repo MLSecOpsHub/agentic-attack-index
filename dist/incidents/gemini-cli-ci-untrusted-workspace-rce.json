@@ -1,0 +1,66 @@
+{
+  "actor": "Novee Security and Pillar Security researchers (coordinated disclosure)",
+  "actor_type": "researcher",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-10"
+  },
+  "ai_role": "significant",
+  "autonomy_level": "not-applicable",
+  "autonomy_pct": null,
+  "category": "agent-hijack-prompt-injection",
+  "confidence": "primary",
+  "date_disclosed": "2026-04-24",
+  "guardrail_bypass": [
+    "indirect-prompt-injection"
+  ],
+  "id": "gemini-cli-ci-untrusted-workspace-rce",
+  "impact": "Per the GitHub advisory: untrusted CI workspace content could lead to remote code execution through automatic folder trust, and a permissive mode ignoring the tool allowlist could let prompt injection reach arbitrary command execution. Rated CVSS 10.0; fixed in the listed versions.",
+  "last_updated": "2026-10-10",
+  "lifecycle_phases": [
+    "execution"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "Upgrade to Gemini CLI 0.39.1 or 0.40.0-preview.3 and run-gemini-cli 0.1.22; headless mode now requires explicit folder trust. Treat untrusted workspace content as attacker-controlled in CI."
+  ],
+  "model_families": [
+    "gemini"
+  ],
+  "models": [
+    "Gemini CLI"
+  ],
+  "name": "Gemini CLI auto-trusted untrusted CI workspaces, creating a remote-code-execution risk",
+  "related": [
+    "pillar-gemini-cli-gcp-triage-compromise",
+    "miasma-worm-ai-coding-agent-configs"
+  ],
+  "severity": "critical",
+  "sources": [
+    {
+      "archive_url": "https://web.archive.org/web/20260920175407/https://github.com/google-github-actions/run-gemini-cli/security/advisories/GHSA-wpqr-6v78-jr5g",
+      "date": "2026-04-24",
+      "publisher": "GitHub Security Advisory (run-gemini-cli maintainers)",
+      "title": "Update to Gemini CLI and run-gemini-cli Trust Model (GHSA-wpqr-6v78-jr5g)",
+      "type": "first-party-disclosure",
+      "url": "https://github.com/google-github-actions/run-gemini-cli/security/advisories/GHSA-wpqr-6v78-jr5g"
+    }
+  ],
+  "status": "confirmed",
+  "summary": "A GitHub security advisory (GHSA-wpqr-6v78-jr5g), published 2026-04-24, documents that Gemini CLI and the run-gemini-cli GitHub Action, in headless or CI mode, previously trusted workspace folders automatically, so untrusted content such as pull requests from outside contributors could lead to remote code execution; a permissive mode also ignored the tool allowlist, letting prompt injection on untrusted input lead to arbitrary command execution. The advisory is rated critical (CVSS 10.0). Fixed versions require explicit folder trust in headless mode. Affected versions are the Gemini CLI below 0.39.1 and below 0.40.0-preview.3 and run-gemini-cli below 0.1.22; the fixes are 0.39.1 and 0.40.0-preview.3 for the CLI and 0.1.22 for the Action. Credited to researchers at Novee Security and Pillar Security.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": [
+      "technology"
+    ]
+  }
+}
