@@ -9,7 +9,7 @@
   "autonomy_level": "not-applicable",
   "autonomy_pct": null,
   "category": "agent-hijack-prompt-injection",
-  "confidence": "secondary",
+  "confidence": "primary",
   "date_disclosed": "2025-05-26",
   "guardrail_bypass": [
     "indirect-prompt-injection"
@@ -43,6 +43,13 @@
   ],
   "severity": "medium",
   "sources": [
+    {
+      "date": "2025-05-26",
+      "publisher": "Invariant Labs",
+      "title": "GitHub MCP Exploited: Accessing private repositories via MCP",
+      "type": "research-paper",
+      "url": "https://invariantlabs.ai/blog/mcp-github-vulnerability"
+    },
     {
       "archive_url": "https://web.archive.org/web/20260107175010/https://cybernews.com/security/github-mcp-vulnerability-has-far-reaching-consequences/",
       "publisher": "Cybernews",

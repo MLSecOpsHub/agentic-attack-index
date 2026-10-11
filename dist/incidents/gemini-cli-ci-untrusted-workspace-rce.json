@@ -22,7 +22,9 @@
   ],
   "mappings": {
     "aiid": [],
-    "cve": [],
+    "cve": [
+      "CVE-2026-12537"
+    ],
     "mitre_atlas": [],
     "mitre_attack": [],
     "owasp_asi": [],

@@ -11,7 +11,7 @@ summary: >-
   but does not confirm in-the-wild exploitation, and does not state whether
   affected vendors were notified or have released fixes. It is catalogued as an
   agent-hijack prompt-injection product vulnerability.
-date_disclosed: 2025-10-28
+date_disclosed: 2025-10-22 # Operant AI's original disclosure (GlobeNewswire); the Cyber Security News article is 2025-10-28.
 status: reported # Single news publisher relaying Operant AI's research; a demonstration.
 confidence: secondary
 category: agent-hijack-prompt-injection
@@ -51,6 +51,11 @@ impact: >-
   silently exfiltrate sensitive data from MCP-connected AI agents without user
   interaction. A demonstration; no confirmed in-the-wild victims.
 sources:
+  - title: "Operant AI Discovers Shadow Escape, the First Zero-Click Agentic Attack via MCP"
+    url: "https://www.globenewswire.com/news-release/2025/10/22/3171164/0/en/operant-ai-discovers-shadow-escape-the-first-zero-click-agentic-attack-via-mcp.html"
+    publisher: "Operant AI (via GlobeNewswire)"
+    type: vendor-report
+    date: 2025-10-22
   - title: "First Zero Click Attack Exploits MCP and Connected Popular AI Agents To Exfiltrate Data Silently"
     url: "https://cybersecuritynews.com/first-zero-click-attack-exploits-mcp/"
     publisher: "Cyber Security News"

@@ -3,9 +3,9 @@
   "schema": "https://raw.githubusercontent.com/MLSecOpsHub/agentic-attack-index/main/schema/incident.schema.json",
   "total": 81,
   "archive_coverage": {
-    "sources": 128,
-    "archived": 97,
-    "pct": 76
+    "sources": 131,
+    "archived": 98,
+    "pct": 75
   },
   "geo_coverage": {
     "records": 13,
@@ -73,8 +73,8 @@
   },
   "by_year": {
     "2024": 2,
-    "2025": 19,
-    "2026": 60
+    "2025": 20,
+    "2026": 59
   },
   "evidence_split": {
     "basis": "status == confirmed AND ai_role == load-bearing; retracted/superseded records excluded",
@@ -88,12 +88,12 @@
         "pct": 0
       },
       "2025": {
-        "total": 19,
+        "total": 20,
         "confirmed_load_bearing": 5,
-        "pct": 26
+        "pct": 25
       },
       "2026": {
-        "total": 60,
+        "total": 59,
         "confirmed_load_bearing": 15,
         "pct": 25
       }

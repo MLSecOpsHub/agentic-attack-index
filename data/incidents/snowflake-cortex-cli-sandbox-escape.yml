@@ -43,7 +43,8 @@ mappings:
   mitre_attack: []
   owasp_llm: []
   owasp_asi: []
-  cve: []
+  cve:
+    - CVE-2026-6442 # Snowflake Cortex Code CLI sandbox escape (CVSS 8.3), per NVD.
   aiid: []
 impact: >-
   Per PromptArmor: the Cortex Code CLI could be induced to run commands outside

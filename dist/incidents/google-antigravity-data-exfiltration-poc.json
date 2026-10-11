@@ -10,7 +10,7 @@
   "autonomy_pct": null,
   "category": "agent-hijack-prompt-injection",
   "confidence": "primary",
-  "date_disclosed": "2026-11-20",
+  "date_disclosed": "2025-11-25",
   "guardrail_bypass": [
     "indirect-prompt-injection"
   ],

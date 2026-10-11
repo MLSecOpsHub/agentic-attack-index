@@ -429,7 +429,7 @@
       "report_types": [
         "threat-report"
       ],
-      "published": "2025-10-28T00:00:00.000Z",
+      "published": "2025-10-22T00:00:00.000Z",
       "description": "Cyber Security News reported on 2025-10-28 a zero-click attack technique, demonstrated by Operant AI and called Shadow Escape, affecting AI agent platforms that use the Model Context Protocol, including widely used assistants. Per the report, the technique could silently exfiltrate sensitive data such as personal identifiers and medical records from MCP-connected systems without user interaction. It is presented as a research demonstration; the report cites Operant's view that undetected cases may already be occurring but does not confirm in-the-wild exploitation, and does not state whether affected vendors were notified or have released fixes. It is catalogued as an agent-hijack prompt-injection product vulnerability.",
       "labels": [
         "agent-hijack-prompt-injection",
@@ -440,6 +440,11 @@
         "x-agentic-incident--99150a59-1a06-5fe8-9965-1dde6d4298de"
       ],
       "external_references": [
+        {
+          "source_name": "Operant AI (via GlobeNewswire)",
+          "description": "Operant AI Discovers Shadow Escape, the First Zero-Click Agentic Attack via MCP",
+          "url": "https://www.globenewswire.com/news-release/2025/10/22/3171164/0/en/operant-ai-discovers-shadow-escape-the-first-zero-click-agentic-attack-via-mcp.html"
+        },
         {
           "source_name": "Cyber Security News",
           "description": "First Zero Click Attack Exploits MCP and Connected Popular AI Agents To Exfiltrate Data Silently",
@@ -638,7 +643,8 @@
         "ai-role:significant"
       ],
       "object_refs": [
-        "x-agentic-incident--b9d2f85c-33e5-591e-b78d-33f192c10bdf"
+        "x-agentic-incident--b9d2f85c-33e5-591e-b78d-33f192c10bdf",
+        "vulnerability--49b6b8de-f587-55b6-8a1d-aba4ad7f646a"
       ],
       "external_references": [
         {
@@ -701,6 +707,11 @@
         "x-agentic-incident--0db213fb-e3fd-5220-944e-0fbc47137152"
       ],
       "external_references": [
+        {
+          "source_name": "Invariant Labs",
+          "description": "GitHub MCP Exploited: Accessing private repositories via MCP",
+          "url": "https://invariantlabs.ai/blog/mcp-github-vulnerability"
+        },
         {
           "source_name": "Cybernews",
           "description": "GitHub MCP vulnerability explained",
@@ -811,7 +822,7 @@
       "report_types": [
         "threat-report"
       ],
-      "published": "2026-11-20T00:00:00.000Z",
+      "published": "2025-11-25T00:00:00.000Z",
       "description": "PromptArmor's threat-intelligence team published a proof-of-concept showing that Google Antigravity, Google's agentic code editor, could be led by a malicious web page into collecting local credentials and code and sending them to a public site. PromptArmor says it did not run a responsible-disclosure process because Google had indicated it was already aware of data-exfiltration risks, and it criticises relying on user warnings and default human-review settings that let the agent decide when to request approval. The write-up describes a demonstrated attack chain with no observed real-world exploitation and does not confirm a fix. This is distinct from the separate Antigravity incident in which the agent wiped a user's drive.",
       "labels": [
         "agent-hijack-prompt-injection",
@@ -896,6 +907,11 @@
           "source_name": "PromptArmor",
           "description": "Claude Cowork Exfiltrates Files",
           "url": "https://www.promptarmor.com/resources/claude-cowork-exfiltrates-files"
+        },
+        {
+          "source_name": "The Decoder",
+          "description": "Claude Cowork hit with file-stealing prompt injection days after Anthropic's launch",
+          "url": "https://the-decoder.com/claude-cowork-hit-with-file-stealing-prompt-injection-days-after-anthropics-launch/"
         }
       ]
     },
@@ -1036,7 +1052,7 @@
       "report_types": [
         "threat-report"
       ],
-      "published": "2026-09-15T00:00:00.000Z",
+      "published": "2026-09-14T00:00:00.000Z",
       "description": "In September 2026 the Spanish Data Protection Agency (AEPD) published details of what it describes as the first notification it has received of a personal data breach \"executed by design through an AI agent\". Per SecurityWeek's 2026-09-16 report, a Spanish firm notified the regulator that an attacker gained access to its systems and that personal data could be modified and invoices accessed; the AEPD's investigation is ongoing and it chose its wording carefully. No AI model or vendor, victim organization, attacker or affected-person count is named. The AEPD used the case to recommend that organizations include AI-assisted and adversarial-agent threats in risk analysis, improve incident response times, protect digital identities and credentials, and keep human supervision backed by detection, containment and response mechanisms fast enough to matter.",
       "labels": [
         "autonomous-attack",
@@ -2316,7 +2332,7 @@
       "report_types": [
         "threat-report"
       ],
-      "published": "2026-03-25T00:00:00.000Z",
+      "published": "2026-03-19T00:00:00.000Z",
       "description": "In mid-March 2026 an internal AI agent at Meta, consulted by an engineer on a corporate forum, provided incorrect guidance that the engineer followed, temporarily exposing sensitive internal company information to employees who would not normally have access. INCIBE-CERT (Spain's national cybersecurity institute) summarised the incident on 2026-04-16, and SecurityBrief Asia reported on 2026-03-25 that it triggered a Sev-1 internal alert and lasted about two hours before Meta's security teams detected and contained it. Meta confirmed the incident, attributing it to inaccurate AI-generated information acted on without further verification, and said the data did not leak outside the company and no external user data was compromised. Meta classified it as high severity and restricted access, reviewed the systems involved and said it would strengthen controls on AI agents in sensitive processes.",
       "labels": [
         "autonomous-attack",
@@ -2450,7 +2466,8 @@
         "ai-role:significant"
       ],
       "object_refs": [
-        "x-agentic-incident--d90f8eea-d578-5324-bf2d-4f89cd3f1ba8"
+        "x-agentic-incident--d90f8eea-d578-5324-bf2d-4f89cd3f1ba8",
+        "vulnerability--51291683-712d-53ee-ba5a-b33fb3427f9e"
       ],
       "external_references": [
         {
@@ -2815,6 +2832,22 @@
     {
       "type": "vulnerability",
       "spec_version": "2.1",
+      "id": "vulnerability--49b6b8de-f587-55b6-8a1d-aba4ad7f646a",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "CVE-2026-6442",
+      "external_references": [
+        {
+          "source_name": "cve",
+          "external_id": "CVE-2026-6442",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-6442"
+        }
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "spec_version": "2.1",
       "id": "vulnerability--4cdd97fa-5bd0-57f8-9a99-651b1a3e2bb4",
       "created": "2020-01-01T00:00:00.000Z",
       "modified": "2020-01-01T00:00:00.000Z",
@@ -2841,6 +2874,22 @@
           "source_name": "cve",
           "external_id": "CVE-2026-45321",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-45321"
+        }
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "spec_version": "2.1",
+      "id": "vulnerability--51291683-712d-53ee-ba5a-b33fb3427f9e",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "CVE-2026-12537",
+      "external_references": [
+        {
+          "source_name": "cve",
+          "external_id": "CVE-2026-12537",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12537"
         }
       ]
     },
@@ -2995,7 +3044,7 @@
       "model_families": [
         "other"
       ],
-      "date_disclosed": "2026-03-25"
+      "date_disclosed": "2026-03-19"
     },
     {
       "type": "x-agentic-incident",
@@ -3060,7 +3109,7 @@
       "category": "agent-hijack-prompt-injection",
       "severity": "medium",
       "grade_status": "reported",
-      "confidence": "secondary",
+      "confidence": "primary",
       "actor": "Security researchers (proof-of-concept; original research attributed to Invariant Labs)",
       "actor_type": "researcher",
       "autonomy_level": "not-applicable",
@@ -3957,7 +4006,7 @@
       "model_families": [
         "other"
       ],
-      "date_disclosed": "2025-10-28"
+      "date_disclosed": "2025-10-22"
     },
     {
       "type": "x-agentic-incident",
@@ -4072,7 +4121,7 @@
       "category": "agent-hijack-prompt-injection",
       "severity": "medium",
       "grade_status": "reported",
-      "confidence": "unverified",
+      "confidence": "secondary",
       "actor": "PromptArmor researchers (proof-of-concept)",
       "actor_type": "researcher",
       "autonomy_level": "not-applicable",
@@ -4233,7 +4282,7 @@
       "model_families": [
         "gemini"
       ],
-      "date_disclosed": "2026-11-20"
+      "date_disclosed": "2025-11-25"
     },
     {
       "type": "x-agentic-incident",
@@ -4988,7 +5037,7 @@
       "model_families": [
         "other"
       ],
-      "date_disclosed": "2026-09-15"
+      "date_disclosed": "2026-09-14"
     },
     {
       "type": "x-agentic-incident",

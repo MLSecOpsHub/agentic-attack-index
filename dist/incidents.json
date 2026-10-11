@@ -11,7 +11,7 @@
     "autonomy_pct": null,
     "category": "autonomous-attack",
     "confidence": "secondary",
-    "date_disclosed": "2026-09-15",
+    "date_disclosed": "2026-09-14",
     "geo": {
       "points": [
         {
@@ -611,7 +611,7 @@
     "autonomy_level": "not-applicable",
     "autonomy_pct": null,
     "category": "agent-hijack-prompt-injection",
-    "confidence": "unverified",
+    "confidence": "secondary",
     "date_disclosed": "2026-01-14",
     "guardrail_bypass": [
       "indirect-prompt-injection"
@@ -652,6 +652,13 @@
         "title": "Claude Cowork Exfiltrates Files",
         "type": "vendor-report",
         "url": "https://www.promptarmor.com/resources/claude-cowork-exfiltrates-files"
+      },
+      {
+        "date": "2026-01-14",
+        "publisher": "The Decoder",
+        "title": "Claude Cowork hit with file-stealing prompt injection days after Anthropic's launch",
+        "type": "news",
+        "url": "https://the-decoder.com/claude-cowork-hit-with-file-stealing-prompt-injection-days-after-anthropics-launch/"
       }
     ],
     "status": "reported",
@@ -1604,7 +1611,9 @@
     ],
     "mappings": {
       "aiid": [],
-      "cve": [],
+      "cve": [
+        "CVE-2026-12537"
+      ],
       "mitre_atlas": [],
       "mitre_attack": [],
       "owasp_asi": [],
@@ -1854,7 +1863,7 @@
     "autonomy_level": "not-applicable",
     "autonomy_pct": null,
     "category": "agent-hijack-prompt-injection",
-    "confidence": "secondary",
+    "confidence": "primary",
     "date_disclosed": "2025-05-26",
     "guardrail_bypass": [
       "indirect-prompt-injection"
@@ -1888,6 +1897,13 @@
     ],
     "severity": "medium",
     "sources": [
+      {
+        "date": "2025-05-26",
+        "publisher": "Invariant Labs",
+        "title": "GitHub MCP Exploited: Accessing private repositories via MCP",
+        "type": "research-paper",
+        "url": "https://invariantlabs.ai/blog/mcp-github-vulnerability"
+      },
       {
         "archive_url": "https://web.archive.org/web/20260107175010/https://cybernews.com/security/github-mcp-vulnerability-has-far-reaching-consequences/",
         "publisher": "Cybernews",
@@ -2050,7 +2066,7 @@
     "autonomy_pct": null,
     "category": "agent-hijack-prompt-injection",
     "confidence": "primary",
-    "date_disclosed": "2026-11-20",
+    "date_disclosed": "2025-11-25",
     "guardrail_bypass": [
       "indirect-prompt-injection"
     ],
@@ -3383,7 +3399,7 @@
     "autonomy_pct": null,
     "category": "autonomous-attack",
     "confidence": "secondary",
-    "date_disclosed": "2026-03-25",
+    "date_disclosed": "2026-03-19",
     "guardrail_bypass": [
       "none-observed"
     ],
@@ -5427,6 +5443,7 @@
     "severity": "medium",
     "sources": [
       {
+        "archive_url": "https://web.archive.org/web/20261010000511/https://www.nasdaq.com/press-release/radware-unveils-zombieagent-newly-discovered-zero-click-ai-agent-vulnerability",
         "date": "2026-01-08",
         "publisher": "Radware (via Nasdaq/GlobeNewswire)",
         "title": "Radware Unveils \"ZombieAgent\": A Newly Discovered Zero-Click, AI Agent Vulnerability Enabling Silent Takeover and Cloud-Based Data Exfiltration",
@@ -5687,7 +5704,7 @@
     "autonomy_pct": null,
     "category": "agent-hijack-prompt-injection",
     "confidence": "secondary",
-    "date_disclosed": "2025-10-28",
+    "date_disclosed": "2025-10-22",
     "guardrail_bypass": [
       "indirect-prompt-injection"
     ],
@@ -5720,6 +5737,13 @@
     ],
     "severity": "medium",
     "sources": [
+      {
+        "date": "2025-10-22",
+        "publisher": "Operant AI (via GlobeNewswire)",
+        "title": "Operant AI Discovers Shadow Escape, the First Zero-Click Agentic Attack via MCP",
+        "type": "vendor-report",
+        "url": "https://www.globenewswire.com/news-release/2025/10/22/3171164/0/en/operant-ai-discovers-shadow-escape-the-first-zero-click-agentic-attack-via-mcp.html"
+      },
       {
         "date": "2025-10-28",
         "publisher": "Cyber Security News",
@@ -5761,7 +5785,9 @@
     ],
     "mappings": {
       "aiid": [],
-      "cve": [],
+      "cve": [
+        "CVE-2026-6442"
+      ],
       "mitre_atlas": [],
       "mitre_attack": [],
       "owasp_asi": [],

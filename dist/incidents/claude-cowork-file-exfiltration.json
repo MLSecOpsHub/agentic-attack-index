@@ -9,7 +9,7 @@
   "autonomy_level": "not-applicable",
   "autonomy_pct": null,
   "category": "agent-hijack-prompt-injection",
-  "confidence": "unverified",
+  "confidence": "secondary",
   "date_disclosed": "2026-01-14",
   "guardrail_bypass": [
     "indirect-prompt-injection"
@@ -50,6 +50,13 @@
       "title": "Claude Cowork Exfiltrates Files",
       "type": "vendor-report",
       "url": "https://www.promptarmor.com/resources/claude-cowork-exfiltrates-files"
+    },
+    {
+      "date": "2026-01-14",
+      "publisher": "The Decoder",
+      "title": "Claude Cowork hit with file-stealing prompt injection days after Anthropic's launch",
+      "type": "news",
+      "url": "https://the-decoder.com/claude-cowork-hit-with-file-stealing-prompt-injection-days-after-anthropics-launch/"
     }
   ],
   "status": "reported",

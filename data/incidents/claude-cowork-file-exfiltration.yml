@@ -11,7 +11,7 @@ summary: >-
   catalogued as an agent-hijack prompt-injection product vulnerability.
 date_disclosed: 2026-01-14 # PromptArmor post references a Simon Willison post dated 2026-01-12 and Cowork's release "two days ago"; exact date not printed.
 status: reported # Single vendor publisher; Anthropic acknowledged but, per PromptArmor, had not remediated.
-confidence: unverified # Single secondary write-up; no first-party confirmation of the specific claim and no fix.
+confidence: secondary # Multiple independent outlets (The Decoder, Simon Willison) echo PromptArmor; no vendor fix.
 category: agent-hijack-prompt-injection
 severity: medium # File exfiltration demonstrated in a proof-of-concept; no real-world victims reported.
 models: []
@@ -54,6 +54,11 @@ sources:
     archive_url: "https://web.archive.org/web/20261005172213/https://www.promptarmor.com/resources/claude-cowork-exfiltrates-files"
     publisher: "PromptArmor"
     type: vendor-report
+    date: 2026-01-14
+  - title: "Claude Cowork hit with file-stealing prompt injection days after Anthropic's launch"
+    url: "https://the-decoder.com/claude-cowork-hit-with-file-stealing-prompt-injection-days-after-anthropics-launch/"
+    publisher: "The Decoder"
+    type: news
     date: 2026-01-14
 added:
   date: 2026-10-10

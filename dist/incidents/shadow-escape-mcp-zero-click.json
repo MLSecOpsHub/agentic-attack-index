@@ -10,7 +10,7 @@
   "autonomy_pct": null,
   "category": "agent-hijack-prompt-injection",
   "confidence": "secondary",
-  "date_disclosed": "2025-10-28",
+  "date_disclosed": "2025-10-22",
   "guardrail_bypass": [
     "indirect-prompt-injection"
   ],
@@ -43,6 +43,13 @@
   ],
   "severity": "medium",
   "sources": [
+    {
+      "date": "2025-10-22",
+      "publisher": "Operant AI (via GlobeNewswire)",
+      "title": "Operant AI Discovers Shadow Escape, the First Zero-Click Agentic Attack via MCP",
+      "type": "vendor-report",
+      "url": "https://www.globenewswire.com/news-release/2025/10/22/3171164/0/en/operant-ai-discovers-shadow-escape-the-first-zero-click-agentic-attack-via-mcp.html"
+    },
     {
       "date": "2025-10-28",
       "publisher": "Cyber Security News",

@@ -13,7 +13,7 @@ summary: >-
   the company and no external user data was compromised. Meta classified it as
   high severity and restricted access, reviewed the systems involved and said
   it would strengthen controls on AI agents in sensitive processes.
-date_disclosed: 2026-03-25 # Early press coverage (SecurityBrief Asia); INCIBE-CERT summarised it on 2026-04-16.
+date_disclosed: 2026-03-19 # First reported c. 2026-03-19 (The Information; INCIBE notes reporting "from 19/03/2026 onward"); SecurityBrief Asia 2026-03-25, INCIBE 2026-04-16.
 status: reported # Press reporting with Meta confirmation; no first-party written post-mortem cited.
 confidence: secondary
 category: autonomous-attack

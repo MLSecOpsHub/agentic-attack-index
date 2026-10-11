@@ -13,7 +13,7 @@ summary: >-
   threats in risk analysis, improve incident response times, protect digital
   identities and credentials, and keep human supervision backed by detection,
   containment and response mechanisms fast enough to matter.
-date_disclosed: 2026-09-15 # Reuters and Spanish press reported the AEPD publication on 2026-09-15; SecurityWeek followed on 2026-09-16.
+date_disclosed: 2026-09-14 # AEPD blog post dated 2026-09-14; press (Reuters, BleepingComputer, SecurityWeek) followed 2026-09-15/16.
 status: reported # Regulator statement relayed by press; the AEPD's own page returned HTTP 503 in this session and is not cited.
 confidence: secondary
 category: autonomous-attack

@@ -12,7 +12,7 @@ summary: >-
   prompt-injection product vulnerability.
 date_disclosed: 2025-05-26 # Public disclosure date of the underlying Invariant Labs research, as referenced by coverage; cited source is the Cybernews explainer.
 status: reported # Single readable publisher (Cybernews explainer); proof-of-concept.
-confidence: secondary
+confidence: primary # Invariant Labs' first-hand research is the primary source.
 category: agent-hijack-prompt-injection
 severity: medium # Private repository contents could be made public; proof-of-concept, no in-the-wild victims.
 models: []
@@ -52,6 +52,11 @@ impact: >-
   expose their contents in a public pull request. Proof-of-concept; no
   in-the-wild victims.
 sources:
+  - title: "GitHub MCP Exploited: Accessing private repositories via MCP"
+    url: "https://invariantlabs.ai/blog/mcp-github-vulnerability"
+    publisher: "Invariant Labs"
+    type: research-paper
+    date: 2025-05-26
   - title: "GitHub MCP vulnerability explained"
     url: "https://cybernews.com/security/github-mcp-vulnerability-has-far-reaching-consequences/"
     archive_url: "https://web.archive.org/web/20260107175010/https://cybernews.com/security/github-mcp-vulnerability-has-far-reaching-consequences/"

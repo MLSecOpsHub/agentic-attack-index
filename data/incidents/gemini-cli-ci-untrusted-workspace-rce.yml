@@ -46,7 +46,8 @@ mappings:
   mitre_attack: []
   owasp_llm: []
   owasp_asi: []
-  cve: []
+  cve:
+    - CVE-2026-12537 # Assigned to GHSA-wpqr-6v78-jr5g per the GitHub advisory.
   aiid: []
 impact: >-
   Per the GitHub advisory: untrusted CI workspace content could lead to remote

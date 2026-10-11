@@ -10,7 +10,7 @@
   "autonomy_pct": null,
   "category": "autonomous-attack",
   "confidence": "secondary",
-  "date_disclosed": "2026-03-25",
+  "date_disclosed": "2026-03-19",
   "guardrail_bypass": [
     "none-observed"
   ],

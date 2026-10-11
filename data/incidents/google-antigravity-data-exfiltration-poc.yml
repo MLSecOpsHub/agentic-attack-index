@@ -11,7 +11,7 @@ summary: >-
   describes a demonstrated attack chain with no observed real-world exploitation
   and does not confirm a fix. This is distinct from the separate Antigravity
   incident in which the agent wiped a user's drive.
-date_disclosed: 2026-11-20 # Oso's tracker dates this PromptArmor research to November 2025; the post itself prints no date, so the day is from the external tracker.
+date_disclosed: 2025-11-25 # PromptArmor research on Antigravity (which launched 2025-11-18); coverage 2025-11-25 to 27 (Simon Willison, BDTechTalks, TechRadar). Prior value 2026-11-20 was a year off.
 status: reported # Single vendor publisher; no responsible disclosure or confirmed fix.
 confidence: primary # First-hand researcher analysis.
 category: agent-hijack-prompt-injection

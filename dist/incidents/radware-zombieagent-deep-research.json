@@ -45,6 +45,7 @@
   "severity": "medium",
   "sources": [
     {
+      "archive_url": "https://web.archive.org/web/20261010000511/https://www.nasdaq.com/press-release/radware-unveils-zombieagent-newly-discovered-zero-click-ai-agent-vulnerability",
       "date": "2026-01-08",
       "publisher": "Radware (via Nasdaq/GlobeNewswire)",
       "title": "Radware Unveils \"ZombieAgent\": A Newly Discovered Zero-Click, AI Agent Vulnerability Enabling Silent Takeover and Cloud-Based Data Exfiltration",
