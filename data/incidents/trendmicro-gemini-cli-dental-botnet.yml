@@ -70,11 +70,13 @@ impact: >-
 sources:
   - title: "Six Minutes to Compromise: How 'Patriot Bait' Actor Used AI to Build and Deploy a C&C Botnet"
     url: "https://www.trendmicro.com/en_us/research/26/g/actor-behind-patriot-bait-used-ai-to-deploy-c2-botnet.html"
+    archive_url: "https://web.archive.org/web/20261010234411/https://www.trendmicro.com/en_us/research/26/g/actor-behind-patriot-bait-used-ai-to-deploy-c2-botnet.html"
     publisher: "Trend Micro"
     type: vendor-report
     date: 2026-07-14
   - title: "Russian-Speaking Hacker Uses Google Gemini CLI to Control Botnet of Eight Dental Clinic PCs"
     url: "https://thehackernews.com/2026/07/russian-speaking-hacker-uses-google.html"
+    archive_url: "https://web.archive.org/web/20260909001748/https://thehackernews.com/2026/07/russian-speaking-hacker-uses-google.html"
     publisher: "The Hacker News"
     type: news
     date: 2026-07-14

@@ -44,6 +44,7 @@
   "severity": "medium",
   "sources": [
     {
+      "archive_url": "https://web.archive.org/web/20261009235821/https://www.incibe.es/en/incibe-cert/publications/cybersecurity-highlights/ai-incident-meta-drives-improvements-security-and-control-autonomous-systems",
       "date": "2026-04-16",
       "publisher": "INCIBE-CERT",
       "title": "AI incident at Meta drives improvements in the security and control of autonomous systems",

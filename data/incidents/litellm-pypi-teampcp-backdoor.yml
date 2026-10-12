@@ -70,6 +70,7 @@ sources:
     date: 2026-03-24
   - title: "litellm 1.82.8 Supply Chain Attack on PyPI (March 2026)"
     url: "https://futuresearch.ai/blog/litellm-pypi-supply-chain-attack/"
+    archive_url: "https://web.archive.org/web/20261009235709/https://futuresearch.ai/blog/litellm-pypi-supply-chain-attack/"
     publisher: "FutureSearch"
     type: blog
     date: 2026-03-24

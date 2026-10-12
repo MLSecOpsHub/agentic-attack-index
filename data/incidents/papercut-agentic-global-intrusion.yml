@@ -70,6 +70,7 @@ sources:
     date: 2026-09-09
   - title: "URGENT Security Advisory: PaperCut NG/MF Security Bulletin (27 Aug 2026)"
     url: "https://www.papercut.com/kb/Main/security-bulletin-27-aug-2026-urgent-security-advisory/"
+    archive_url: "https://web.archive.org/web/20260917130902/https://www.papercut.com/kb/Main/security-bulletin-27-aug-2026-urgent-security-advisory/"
     publisher: "PaperCut"
     type: vendor-report
     date: 2026-08-27

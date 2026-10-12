@@ -63,6 +63,7 @@ impact: >-
 sources:
   - title: "Post-mortem: Unauthorized Cline CLI npm publish on February 17, 2026"
     url: "https://cline.bot/blog/post-mortem-unauthorized-cline-cli-npm"
+    archive_url: "https://web.archive.org/web/20261009235032/https://cline.bot/blog/post-mortem-unauthorized-cline-cli-npm"
     publisher: "Cline"
     type: first-party-disclosure
     date: 2026-02-24

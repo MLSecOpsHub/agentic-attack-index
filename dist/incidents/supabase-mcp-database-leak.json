@@ -44,6 +44,7 @@
   "severity": "medium",
   "sources": [
     {
+      "archive_url": "https://web.archive.org/web/20260804153050/https://generalanalysis.com/blog/supabase-mcp-blog",
       "date": "2025-07-08",
       "publisher": "General Analysis",
       "title": "Supabase MCP can leak your entire SQL database",

@@ -49,6 +49,7 @@
   "severity": "high",
   "sources": [
     {
+      "archive_url": "https://web.archive.org/web/20261009235032/https://cline.bot/blog/post-mortem-unauthorized-cline-cli-npm",
       "date": "2026-02-24",
       "publisher": "Cline",
       "title": "Post-mortem: Unauthorized Cline CLI npm publish on February 17, 2026",

@@ -52,6 +52,7 @@
   "severity": "high",
   "sources": [
     {
+      "archive_url": "https://web.archive.org/web/20261009234725/https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
       "date": "2026-07-30",
       "publisher": "Anthropic",
       "title": "Investigating three real-world incidents in our cybersecurity evaluations",
