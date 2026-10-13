@@ -32,7 +32,16 @@ if (sources.size === 0) {
   process.exit(0);
 }
 
-// Returns null if the URL resolves, else a short problem string.
+// Transient failures that warrant a retry rather than a verdict. Web archives
+// (archive.org) rate-limit and 5xx under load, so a single hiccup must not
+// declare an otherwise-archived source dead.
+const RETRIES = 2;
+const RETRY_BACKOFF_MS = 1_500;
+const isTransientStatus = (status) => status === 429 || (status >= 500 && status <= 599);
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+// Returns null if the URL resolves, else a short problem string. Transient
+// network/timeout errors and 429/5xx responses are retried before giving up.
 async function resolve(url) {
   const attempt = async (method) =>
     fetch(url, {
@@ -41,14 +50,21 @@ async function resolve(url) {
       signal: AbortSignal.timeout(TIMEOUT_MS),
       headers: { 'user-agent': 'agentic-attack-index-linkcheck' },
     });
-  try {
-    let res = await attempt('HEAD');
-    // Some servers reject HEAD; retry those with GET before failing.
-    if (!res.ok && [403, 405, 501].includes(res.status)) res = await attempt('GET');
-    return res.ok ? null : `HTTP ${res.status}`;
-  } catch (e) {
-    return e.name === 'TimeoutError' ? `timeout after ${TIMEOUT_MS}ms` : e.message;
+  let lastProblem = 'unknown error';
+  for (let i = 0; i <= RETRIES; i++) {
+    try {
+      let res = await attempt('HEAD');
+      // Some servers reject HEAD; retry those with GET before failing.
+      if (!res.ok && [403, 405, 501].includes(res.status)) res = await attempt('GET');
+      if (res.ok) return null;
+      lastProblem = `HTTP ${res.status}`;
+      if (!isTransientStatus(res.status)) return lastProblem;
+    } catch (e) {
+      lastProblem = e.name === 'TimeoutError' ? `timeout after ${TIMEOUT_MS}ms` : e.message;
+    }
+    if (i < RETRIES) await sleep(RETRY_BACKOFF_MS * (i + 1));
   }
+  return lastProblem;
 }
 
 const warnings = []; // ARCHIVED
