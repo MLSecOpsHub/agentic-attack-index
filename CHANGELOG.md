@@ -7,6 +7,8 @@ dataset version tracks `package.json` and `CITATION.cff` (kept in sync by
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-10-11
+
 ### Added
 - `dist/summary.json` gained **`evidence_split`**, the dataset's headline
   honesty figure: the count and share of records that are both
@@ -169,6 +171,18 @@ dataset version tracks `package.json` and `CITATION.cff` (kept in sync by
 - Backfilled the 7 remaining `archive_url` snapshots (AWS bulletin, Noma
   Security, arXiv, The Register, Fortune, AppOmni, The Hacker News); archive
   coverage is now 39/39 sources.
+
+### Changed
+- Applied web-verification corrections across the newly added records after an
+  independent pass over their sources: fixed four `date_disclosed` values
+  (`google-antigravity-data-exfiltration-poc`, `shadow-escape-mcp-zero-click`,
+  `aepd-first-ai-agent-data-breach-notification`,
+  `meta-internal-agent-sev1-data-exposure`); added two source-verified CVE ids
+  (`CVE-2026-12537` on `gemini-cli-ci-untrusted-workspace-rce`, `CVE-2026-6442`
+  on `snowflake-cortex-cli-sandbox-escape`); added the Invariant Labs primary
+  source to `github-mcp-server-private-repo-leak` (confidence raised to
+  primary); and raised `claude-cowork-file-exfiltration` confidence to
+  secondary with a second independent source.
 
 ## [0.3.0] - 2026-09-11
 
