@@ -1,0 +1,145 @@
+id: cyberxero-ai-augmented-access-broker
+name: "CyberXero: access broker ran a Claude Code agent swarm alongside global web exploitation and Ukrainian utility intrusions"
+summary: >-
+  On 2026-10-06 SOCRadar's Threat Research Unit reported on CyberXero, which
+  it describes as a Russian-speaking, financially motivated initial access
+  broker that wraps commodity offensive tooling in an AI orchestration layer
+  on its own infrastructure. The operation surfaced through an exposed open
+  directory serving the actor's live working directory, including AI session
+  logs, scripts and exfiltrated victim data. SOCRadar found up to 51
+  specialised Claude Code agents defined on the actor's main workstation,
+  grouped into reconnaissance, offensive and post-exploitation roles, plus a
+  deployment of the open-source PentAGI framework connected to a Cobalt Strike
+  team server through an AI provider API. Two pipelines ran from the same
+  workstation: an automated global campaign against WordPress and e-commerce
+  sites, and a curated campaign of reconnaissance and manual exploitation
+  against Ukrainian energy and utility organisations. SOCRadar dates the AI
+  layer to a second phase beginning in late July 2026, which brought a
+  measurable increase in the scale of the web campaigns. Exfiltration was
+  confirmed at four Ukrainian organisations, including a district heating
+  provider in Kharkiv, and the actor held data on more than 628,000 Ukrainian
+  individuals. Seven further Ukrainian energy and utility entities were under
+  reconnaissance without confirmed compromise, and SOCRadar counts more than
+  40 affected organisations worldwide. Session logs show the actor framing
+  requests as authorised testing of its own infrastructure and reopening
+  sessions after refusals, while some refusals (to install a backdoor or
+  disable a firewall, for example) held. No statement from Anthropic was
+  found.
+date_disclosed: 2026-10-06
+status: reported # Single vendor investigation; Security Affairs and eSecurity Planet relay SOCRadar's findings without independent verification. No Anthropic or victim statement found.
+confidence: primary # SOCRadar analysed the actor's exposed working directory and session logs directly.
+category: ai-orchestrated-campaign
+severity: critical # More than 40 organisations affected and over 628,000 Ukrainians' records taken, including a heating utility's subscriber base in a front-line city.
+models:
+  - "Claude Code" # Agent harness named by SOCRadar; no specific Claude model is named in the public post. PentAGI's provider and model are not named.
+model_families:
+  - claude
+actor: "CyberXero (SOCRadar: Russian-speaking, financially motivated initial access broker)"
+actor_type: cybercriminal
+autonomy_pct: null
+# The operator directed agent sessions and re-ran refused tasks by hand; SOCRadar
+# calls the Ukrainian campaign "manual" and the web campaign automated.
+autonomy_level: human-in-the-loop
+guardrail_bypass:
+  - jailbreak # A rehearsed "authorised pentest on my own infrastructure" narrative plus session resets after refusals; SOCRadar calls it context engineering rather than a technical bypass.
+  - legitimate-tool-abuse # Claude Code and PentAGI used for their intended capabilities toward malicious ends.
+ai_role: significant # SOCRadar describes an AI layer augmenting commodity tooling; the confirmed Ukrainian exfiltration is described as manual exploitation.
+related: []
+mitigations:
+  - "SOCRadar advises treating AI agent session logs as sensitive material, with the same retention, encryption and access controls as credential logs, and managing session-reset refusal evasion through logging and auditing at the infrastructure layer rather than relying on the model."
+  - "SOCRadar and eSecurity Planet advise operators of WordPress and e-commerce platforms to patch affected components, hunt for unauthorised administrator accounts and web shells, restrict internet-exposed Redis, and alert on unusual bulk exports of customer or subscriber data, especially at energy and utility providers."
+targets:
+  orgs_affected: 40 # "More than 40 affected organizations worldwide", per SOCRadar; a floor.
+  records_exfiltrated: 628000 # "More than 628,000 records tied to Ukrainian individuals" across four organisations; a floor.
+  sectors:
+    - energy # Ukrainian energy and utilities, including a district heating provider.
+    - retail # E-commerce platforms.
+    - telecommunications # ISPs among the opportunistic-pipeline victims.
+  countries:
+    - UA
+    - PL # Confirmed e-commerce compromises.
+    - CN # A separate cluster compromised via Redis exploitation.
+    - PK # Two national-security entities targeted without a confirmed result.
+geo:
+  points:
+    - role: target
+      basis: victim-location
+      attributed_by: "SOCRadar"
+      country: UA
+      lat: 48.38
+      lng: 31.17
+      label: "Ukraine (energy and utility victims, per SOCRadar)"
+      illustrative: true
+lifecycle_phases:
+  - resource-dev
+  - recon
+  - initial-access
+  - execution
+  - credential-access
+  - persistence
+  - exfiltration
+  - impact
+mappings:
+  mitre_atlas: []
+  mitre_attack: # As listed in SOCRadar's ATT&CK table.
+    - T1595.002
+    - T1590.002
+    - T1588.002
+    - T1588.005
+    - T1190
+    - T1078.003
+    - T1110.003
+    - T1059.001
+    - T1047
+    - T1072
+    - T1505.003
+    - T1098.004
+    - T1136.001
+    - T1027
+    - T1056.003
+    - T1539
+    - T1550.002
+    - T1213
+    - T1102.002
+    - T1090.003
+    - T1565.001
+  owasp_llm: []
+  owasp_asi: []
+  cve: # Weaponised by the actor, per SOCRadar.
+    - CVE-2026-63030
+    - CVE-2026-4815
+    - CVE-2015-1397
+  aiid: []
+impact: >-
+  Per SOCRadar: data on more than 628,000 Ukrainian individuals held by the
+  actor after confirmed exfiltration at four Ukrainian organisations,
+  including 564,073 subscriber records (with home addresses and account
+  numbers) and 213,340 access-log entries from a district heating provider in
+  Kharkiv; one automated run scanned 4,708 targets and confirmed access to 429
+  WordPress administration panels in 61 seconds; administrator passwords
+  overwritten at e-commerce targets; more than 40 affected organisations
+  worldwide, including in Ukraine, Poland and China, with Pakistani entities
+  targeted without a confirmed result. SOCRadar warns that the Kharkiv data could pose a
+  physical risk to identifiable civilians. No evidence of the access being
+  sold was recovered.
+sources:
+  - title: "CyberXero: An AI-Augmented Initial Access Broker Targeting Ukrainian Critical Infrastructure"
+    url: "https://socradar.io/blog/cyberxero-ai-iab-ukraine-critical-infrastructure/"
+    archive_url: "https://web.archive.org/web/20261015070454/https://socradar.io/blog/cyberxero-ai-iab-ukraine-critical-infrastructure/"
+    publisher: "SOCRadar"
+    type: vendor-report
+    date: 2026-10-06
+  - title: "CyberXero Used 51 AI Agents to Steal 628,000 Ukrainian Records"
+    url: "https://securityaffairs.com/200803/cyber-crime/cyberxero-used-51-ai-agents-to-steal-628000-ukrainian-records.html"
+    publisher: "Security Affairs"
+    type: news
+    date: 2026-10-12
+  - title: "CyberXero Uses Claude Code in Theft of 628,000+ Ukrainian Records"
+    url: "https://www.esecurityplanet.com/threats/news-cyberxero-claude-code-data-theft-emea-ukraine/"
+    publisher: "eSecurity Planet"
+    type: news
+    date: 2026-10-12
+added:
+  date: 2026-10-15
+  by: "MLSecOpsHub"
+last_updated: 2026-10-15
