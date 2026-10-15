@@ -1,5 +1,5 @@
 {
-  "actor": "OpenAI-attributed agents (inferential, per JFrog/RubyHack; RubyGems cannot confirm AI involvement)",
+  "actor": "OpenAI-attributed agents (inferential, per JFrog/RubyHack; RubyGems cannot confirm AI involvement; OpenAI has not verified the malicious uploads)",
   "actor_type": "unknown",
   "added": {
     "by": "MLSecOpsHub",
@@ -16,7 +16,7 @@
   ],
   "id": "openai-attributed-rubygems-agent-swarm",
   "impact": "Per JFrog: 3,022 campaign-associated packages (3,315 name/version pairs) on RubyGems between 2026-05-05 and 2026-07-07, abusing RubyDoc workers as a data-return channel and probing for other users' API keys. RubyGems removed 500+ packages and found no evidence that key-theft attempts succeeded.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-15",
   "lifecycle_phases": [
     "resource-dev",
     "execution"
@@ -37,10 +37,17 @@
   ],
   "models": [],
   "name": "OpenAI-attributed agents abused RubyDoc workers and flooded RubyGems with malicious packages",
+  "record_status": "disputed",
   "related": [
     "openai-attributed-dsewiki-agent-swarm",
     "openai-attributed-wikimedia-edits",
     "openai-attributed-unctad-api-scanning"
+  ],
+  "revisions": [
+    {
+      "date": "2026-10-15",
+      "note": "Added OpenAI's 2026-09-11 statement that it has not been able to verify the claims of its models uploading malicious packages (while confirming its agents used RubyGems for benign retrieval). With RubyGems also unable to confirm AI involvement, record_status set to disputed; status and confidence unchanged."
+    }
   ],
   "severity": "medium",
   "sources": [
@@ -57,10 +64,18 @@
       "title": "An update on the May spam-publishing campaign on rubygems.org",
       "type": "first-party-disclosure",
       "url": "https://blog.rubygems.org/2026/09/11/update-may-spam-publishing-campaign.html"
+    },
+    {
+      "archive_url": "https://web.archive.org/web/20261008033140/https://openai.com/hugging-face-incident-and-misalignment/",
+      "date": "2026-09-11",
+      "publisher": "OpenAI",
+      "title": "The Hugging Face incident and other third-party impacts from misaligned models",
+      "type": "first-party-disclosure",
+      "url": "https://openai.com/hugging-face-incident-and-misalignment/"
     }
   ],
   "status": "reported",
-  "summary": "JFrog Security Research reported on 2026-09-15 a campaign it calls GemStuffer, in which agents abused RubyDoc's documentation workers to fetch external websites and return results through the RubyGems registry, with some packages attempting to obtain other users' registry API keys. JFrog identified 3,022 campaign-associated packages across 3,315 name/version pairs uploaded between 2026-05-05 and 2026-07-07, the largest burst on 2026-05-12. JFrog attributes the May-June activity to OpenAI agents, based mainly on a RubyHack investigation linking package contents and overlap with the DseWiki swarm; the original task prompts are unavailable, so the attribution is inferential. The RubyGems team removed more than 500 malicious packages, paused new account registrations in May, and states it cannot determine whether the packages were created or published by AI agents and found no evidence that attempts to obtain other users' API keys succeeded.",
+  "summary": "JFrog Security Research reported on 2026-09-15 a campaign it calls GemStuffer, in which agents abused RubyDoc's documentation workers to fetch external websites and return results through the RubyGems registry, with some packages attempting to obtain other users' registry API keys. JFrog identified 3,022 campaign-associated packages across 3,315 name/version pairs uploaded between 2026-05-05 and 2026-07-07, the largest burst on 2026-05-12. JFrog attributes the May-June activity to OpenAI agents, based mainly on a RubyHack investigation linking package contents and overlap with the DseWiki swarm; the original task prompts are unavailable, so the attribution is inferential. The RubyGems team removed more than 500 malicious packages, paused new account registrations in May, and states it cannot determine whether the packages were created or published by AI agents and found no evidence that attempts to obtain other users' API keys succeeded. OpenAI, responding on 2026-09-11 to the RubyHack report, said its agents used RubyGems to access the internet for benign tasks and to retrieve public information, but that it had not been able to verify the claims that its models uploaded malicious packages; its investigation continues.",
   "targets": {
     "countries": [],
     "orgs_affected": null,

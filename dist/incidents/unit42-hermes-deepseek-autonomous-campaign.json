@@ -1,0 +1,116 @@
+{
+  "actor": "Unnamed Chinese-speaking opportunistic exploit operator (no group named; Unit 42 states the actor is based in China)",
+  "actor_type": "single-operator",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-15"
+  },
+  "ai_role": "significant",
+  "autonomy_level": "supervised-autonomous",
+  "autonomy_pct": null,
+  "category": "autonomous-attack",
+  "confidence": "primary",
+  "date_disclosed": "2026-07-30",
+  "geo": {
+    "points": [
+      {
+        "attributed_by": "Unit 42 (Palo Alto Networks)",
+        "basis": "actor-location",
+        "country": "CN",
+        "illustrative": true,
+        "label": "China (actor location as stated by Unit 42)",
+        "lat": 35.86,
+        "lng": 104.19,
+        "role": "origin"
+      },
+      {
+        "attributed_by": "Unit 42 (Palo Alto Networks)",
+        "basis": "victim-location",
+        "country": "MY",
+        "illustrative": true,
+        "label": "Malaysia (government entity targeted, per Unit 42)",
+        "lat": 4.21,
+        "lng": 101.98,
+        "role": "target"
+      }
+    ]
+  },
+  "guardrail_bypass": [
+    "open-weight-model"
+  ],
+  "id": "unit42-hermes-deepseek-autonomous-campaign",
+  "impact": "Per Unit 42: no autonomous exploitation succeeded. Manual operations exfiltrated memory data from three Citrix NetScaler targets, achieved command execution on 11 Marimo notebook endpoints, and made reverse-shell attempts against nine Apache Tomcat servers and three IKE VPN endpoints, including sustained exploitation of a government entity in Malaysia. More than 460 targets were attempted in total.",
+  "last_updated": "2026-10-15",
+  "lifecycle_phases": [
+    "recon",
+    "resource-dev",
+    "initial-access",
+    "execution",
+    "credential-access",
+    "exfiltration"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [
+      "CVE-2026-33017",
+      "CVE-2026-21858",
+      "CVE-2025-68613",
+      "CVE-2026-3055",
+      "CVE-2026-39987",
+      "CVE-2026-34486",
+      "CVE-2026-33824"
+    ],
+    "mitre_atlas": [
+      "AML.CS0070"
+    ],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "Unit 42 notes that target-side configuration (authentication on n8n form endpoints, and Langflow deployments without auto-login or public flows) stopped the autonomous exploitation attempts, and that targets with weaker defaults would have been susceptible.",
+    "Per Unit 42, OpenAI's provider-side safeguards refused policy-violating requests and its safety systems disabled an account believed to be linked to the campaign."
+  ],
+  "model_families": [
+    "deepseek"
+  ],
+  "models": [
+    "DeepSeek"
+  ],
+  "name": "Operator ran a DeepSeek-powered Hermes Agent in autonomous exploitation attempts; confirmed impact came from manual exploitation",
+  "related": [
+    "jesta-darkreasoning-deepseek-proxyjacking",
+    "sysdig-marimo-ai-agent-database-exfiltration"
+  ],
+  "severity": "medium",
+  "sources": [
+    {
+      "archive_url": "https://web.archive.org/web/20260730133534/https://unit42.paloaltonetworks.com/autonomous-ai-cyber-attack-campaign/",
+      "date": "2026-07-30",
+      "publisher": "Unit 42 (Palo Alto Networks)",
+      "title": "Chinese-Speaking Threat Actor Harnesses AI Models for Autonomous Cyberattacks",
+      "type": "vendor-report",
+      "url": "https://unit42.paloaltonetworks.com/autonomous-ai-cyber-attack-campaign/"
+    },
+    {
+      "date": "2026-08-03",
+      "publisher": "University of Texas Regional Security Operations Center",
+      "title": "An AI ran a cyberattack campaign on its own, and it picked its own targets",
+      "type": "blog",
+      "url": "https://rsoc.utexas.edu/news/ai-ran-cyberattack-campaign-its-own-and-it-picked-its-own-targets"
+    }
+  ],
+  "status": "reported",
+  "summary": "Palo Alto Networks Unit 42 reported on 2026-07-30 a campaign by a Chinese-speaking opportunistic exploit operator who ran the open-source Hermes Agent framework, with DeepSeek as its reasoning engine and tasking over Telegram, as an autonomous offensive operator. A recovered Hermes session from 2026-05-07 shows the agent, after a single operator tasking, enumerating internet-exposed Langflow instances, attempting a public exploit, abandoning the product when targets lacked its prerequisites, researching trending vulnerabilities across ten product families, selecting n8n, and probing candidate systems mainly in China. None of the autonomous exploitation attempts succeeded; target-side authentication and configuration stopped them. The campaign's confirmed impact came instead from the actor's manual operations with conventional tooling: data exfiltrated from three organizations through a Citrix NetScaler vulnerability, command execution on 11 Marimo notebook endpoints, and reverse-shell attempts against Apache Tomcat and IKE VPN systems, including multi-day exploitation of a government entity in Malaysia. Unit 42 counts more than 460 targets attempted across autonomous and manual activity. The operation was exposed when the agent itself started a file server in the actor's home directory. The actor also tested Claude Code, Codex and Chinese-market models in a limited way; OpenAI told Unit 42 its safeguards refused policy-violating requests and disabled an account it believes is linked. Unit 42 states the actor is based in China. MITRE ATLAS catalogs the autonomous session as case study AML.CS0070. Unit 42 states no link to other reported DeepSeek-agent or Marimo intrusions.",
+  "targets": {
+    "countries": [
+      "CN",
+      "MY"
+    ],
+    "orgs_affected": 3,
+    "records_exfiltrated": null,
+    "sectors": [
+      "government"
+    ]
+  }
+}

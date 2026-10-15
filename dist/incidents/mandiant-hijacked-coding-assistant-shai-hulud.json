@@ -1,0 +1,76 @@
+{
+  "actor": "Unknown",
+  "actor_type": "unknown",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-15"
+  },
+  "ai_role": "significant",
+  "autonomy_level": "not-applicable",
+  "autonomy_pct": null,
+  "category": "infrastructure-abuse-supply-chain",
+  "confidence": "primary",
+  "date_disclosed": "2026-09-16",
+  "guardrail_bypass": [
+    "unknown"
+  ],
+  "id": "mandiant-hijacked-coding-assistant-shai-hulud",
+  "impact": "Per Mandiant: proprietary product source code and repository secrets were exfiltrated from an unnamed SaaS provider; the Shai-Hulud worm was deployed across about 100 internal code repositories; and a package in the organisation's official namespace was poisoned, infecting a second employee. No data volume or financial figure is given.",
+  "last_updated": "2026-10-15",
+  "lifecycle_phases": [
+    "resource-dev",
+    "initial-access",
+    "execution",
+    "credential-access",
+    "exfiltration"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "Mandiant recommends securing AI-assisted development with IDE and CLI verification hooks that check every AI-recommended third-party dependency against cryptographic checksums and approved allowlists.",
+    "Mandiant recommends keeping local credentials away from extensions (no access to raw API keys, long-lived OAuth tokens or secrets) and restricting workstation network egress so all dependency traffic goes through secure internal repositories.",
+    "Mandiant advises treating AI coding assistants and MCP servers as privileged sessions, with just-in-time secrets management and cryptographic integrity checks on all CLI hooks and plugins."
+  ],
+  "model_families": [
+    "other"
+  ],
+  "models": [],
+  "name": "Hijacked AI coding-assistant session at a SaaS provider led to the Shai-Hulud worm spreading across about 100 internal repositories",
+  "related": [
+    "miasma-worm-ai-coding-agent-configs"
+  ],
+  "severity": "high",
+  "sources": [
+    {
+      "archive_url": "https://web.archive.org/web/20260917032910/https://cloud.google.com/security/resources/ai-risk-and-resilience-2026",
+      "publisher": "Mandiant (Google Cloud)",
+      "title": "AI risk and resilience in 2026: A Mandiant special report",
+      "type": "vendor-report",
+      "url": "https://cloud.google.com/security/resources/ai-risk-and-resilience-2026"
+    },
+    {
+      "archive_url": "https://web.archive.org/web/20260916141955/https://thehackernews.com/2026/09/attacker-hijacks-ai-coding-assistant.html",
+      "date": "2026-09-16",
+      "publisher": "The Hacker News",
+      "title": "Attacker Hijacks AI Coding Assistant Session, Spreads Shai-Hulud Across About 100 Repositories",
+      "type": "news",
+      "url": "https://thehackernews.com/2026/09/attacker-hijacks-ai-coding-assistant.html"
+    }
+  ],
+  "status": "reported",
+  "summary": "Mandiant's special report \"AI risk and resilience in 2026\", dated September 2026, describes in its first case study an intrusion Mandiant investigated at an unnamed software-as-a-service provider. A threat actor compromised the provider and hijacked an active AI coding-assistant session on a developer's workstation. Acting as a trusted interpreter, the assistant recommended installing an external package the attacker had poisoned. Once the recommendation was accepted, the attacker used the developer's session to install an infostealer through a poisoned PyPI package, harvest GitHub OAuth tokens and deploy the self-propagating Shai-Hulud worm across about 100 internal code repositories. The worm stole repository secrets and exfiltrated proprietary product source code. The actor then poisoned a package in the organisation's official namespace, and a second employee was infected after pulling the compromised version. Mandiant does not name the victim, the assistant or model, or the actor. It does not say when the intrusion happened or how the session was hijacked. The same report separately describes UNC6780 (TeamPCP) using prompt injection against AI coding assistants. Neither Mandiant nor The Hacker News links that actor to this case. The assistant was the delivery channel, not the operator.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": 1,
+    "records_exfiltrated": null,
+    "sectors": [
+      "technology"
+    ]
+  }
+}

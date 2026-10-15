@@ -16,7 +16,7 @@
   ],
   "id": "papercut-agentic-global-intrusion",
   "impact": "Per GreyNoise: at least 440 PaperCut instances across 395 organizations in 48 countries compromised; remote code execution achieved; credentials harvested at 280 victims; OS- or domain-level secrets recovered at 147; domain-admin access at 12; data staged for exfiltration. No victim named.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-15",
   "lifecycle_phases": [
     "recon",
     "initial-access",
