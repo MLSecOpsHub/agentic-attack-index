@@ -48,6 +48,7 @@
   "severity": "high",
   "sources": [
     {
+      "archive_url": "https://web.archive.org/web/20260924222255/https://hunt.io/blog/chinese-operator-secflow-claude-qwen-deepseek-asia",
       "date": "2026-09-03",
       "publisher": "Hunt.io",
       "title": "Chinese-Speaking Operator Uses AI Agents to Target Government and Education Systems Across Asia",

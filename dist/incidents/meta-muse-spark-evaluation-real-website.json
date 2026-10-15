@@ -48,6 +48,7 @@
   "severity": "medium",
   "sources": [
     {
+      "archive_url": "https://web.archive.org/web/20261010000003/https://research.meta.ai/blog/addressing-third-party-testing-misconfiguration-muse-spark-1-1",
       "date": "2026-08-14",
       "publisher": "Meta AI Research",
       "title": "Addressing an issue involving a third-party cyber evaluation of Muse Spark 1.1",

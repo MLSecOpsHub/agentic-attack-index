@@ -94,11 +94,13 @@ impact: >-
 sources:
   - title: "CARBONATO: a botnet built around an AI agent"
     url: "https://www.threatdown.com/blog/carbonato/"
+    archive_url: "https://web.archive.org/web/20261008044207/https://www.threatdown.com/blog/carbonato/"
     publisher: "ThreatDown"
     type: vendor-report
     date: 2026-09-22
   - title: "New Carbonato malware uses AI agents to hijack exposed Docker hosts"
     url: "https://www.bleepingcomputer.com/news/security/new-carbonato-malware-uses-ai-agents-to-hijack-exposed-docker-hosts/"
+    archive_url: "https://web.archive.org/web/20261008051359/https://www.bleepingcomputer.com/news/security/new-carbonato-malware-uses-ai-agents-to-hijack-exposed-docker-hosts/"
     publisher: "BleepingComputer"
     type: news
     date: 2026-09-24

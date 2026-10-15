@@ -68,6 +68,7 @@ impact: >-
 sources:
   - title: "New packages identified in GemStuffer 'OpenAI Swarm' malicious RubyGems campaign"
     url: "https://research.jfrog.com/post/gemstuffer-openai-rubygems/"
+    archive_url: "https://web.archive.org/web/20260917215257/https://research.jfrog.com/post/gemstuffer-openai-rubygems/"
     publisher: "JFrog Security Research"
     type: vendor-report
     date: 2026-09-15

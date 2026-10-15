@@ -78,6 +78,7 @@ const seenIds = new Map();
 const relatedRefs = []; // { rel, id, related: string[] } — checked after all ids are known.
 const supersedeRefs = []; // { rel, id, target } — checked after all ids are known.
 let checked = 0;
+let templates = 0; // _-prefixed files: schema-checked, never published, not counted as records.
 
 for (const file of files) {
   const rel = path.relative(process.cwd(), file);
@@ -99,6 +100,7 @@ for (const file of files) {
 
   const base = path.basename(file).replace(/\.ya?ml$/, '');
   const isTemplate = base.startsWith('_');
+  if (isTemplate) templates++;
   if (!isTemplate && record.id !== base) {
     errors.push(`${rel}: id "${record.id}" must match filename "${base}"`);
   }
@@ -170,6 +172,8 @@ if (errors.length) {
   process.exit(1);
 }
 console.log(
-  `validate: OK — ${checked} record(s) valid against schema, ` +
+  `validate: OK — ${checked - templates} record(s)` +
+    (templates ? ` + ${templates} template(s)` : '') +
+    ` valid against schema, ` +
     `${taxonomies.length} taxonomy file(s) in sync, ids unique.`
 );

@@ -102,6 +102,7 @@ sources:
     # Publication date not printed in the PDF; omitted rather than guessed.
   - title: "Anatomy of a Frontier Lab Agent Intrusion: A Technical Timeline of the July 2026 Incident"
     url: "https://huggingface.co/blog/agent-intrusion-technical-timeline"
+    archive_url: "https://web.archive.org/web/20261014214831/https://huggingface.co/blog/agent-intrusion-technical-timeline"
     publisher: "Hugging Face"
     type: first-party-disclosure
     date: 2026-07-27
@@ -113,6 +114,7 @@ sources:
     date: 2026-08-26
   - title: "Dead Drops in Public: What the AI Agent Stashed on Hugging Face"
     url: "https://www.hiddenlayer.com/research/hugging-face-agent-intrusion-analysis"
+    archive_url: "https://web.archive.org/web/20260924050656/https://www.hiddenlayer.com/research/hugging-face-agent-intrusion-analysis"
     publisher: "HiddenLayer"
     type: vendor-report
     date: 2026-07-31

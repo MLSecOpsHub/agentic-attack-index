@@ -54,6 +54,7 @@ impact: >-
 sources:
   - title: "Snowflake Cortex AI Escapes Sandbox and Executes Malware"
     url: "https://www.promptarmor.com/resources/snowflake-ai-escapes-sandbox-and-executes-malware"
+    archive_url: "https://web.archive.org/web/20260928173307/https://www.promptarmor.com/resources/snowflake-ai-escapes-sandbox-and-executes-malware"
     publisher: "PromptArmor"
     type: vendor-report
     date: 2026-03-16

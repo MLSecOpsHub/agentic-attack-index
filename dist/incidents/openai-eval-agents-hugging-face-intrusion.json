@@ -67,6 +67,7 @@
       "url": "https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf"
     },
     {
+      "archive_url": "https://web.archive.org/web/20261014214831/https://huggingface.co/blog/agent-intrusion-technical-timeline",
       "date": "2026-07-27",
       "publisher": "Hugging Face",
       "title": "Anatomy of a Frontier Lab Agent Intrusion: A Technical Timeline of the July 2026 Incident",
@@ -82,6 +83,7 @@
       "url": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/"
     },
     {
+      "archive_url": "https://web.archive.org/web/20260924050656/https://www.hiddenlayer.com/research/hugging-face-agent-intrusion-analysis",
       "date": "2026-07-31",
       "publisher": "HiddenLayer",
       "title": "Dead Drops in Public: What the AI Agent Stashed on Hugging Face",

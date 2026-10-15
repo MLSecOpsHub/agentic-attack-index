@@ -94,16 +94,19 @@ impact: >-
 sources:
   - title: "AI-augmented threat actor accesses FortiGate devices at scale"
     url: "https://aws.amazon.com/blogs/security/ai-augmented-threat-actor-accesses-fortigate-devices-at-scale/"
+    archive_url: "https://web.archive.org/web/20261011222120/https://aws.amazon.com/blogs/security/ai-augmented-threat-actor-accesses-fortigate-devices-at-scale/"
     publisher: "Amazon Web Services"
     type: vendor-report
     date: 2026-02-20
   - title: "Tracking CyberStrikeAI Usage"
     url: "https://www.team-cymru.com/post/tracking-cyberstrikeai-usage"
+    archive_url: "https://web.archive.org/web/20260904124608/https://www.team-cymru.com/post/tracking-cyberstrikeai-usage"
     publisher: "Team Cymru"
     type: vendor-report
     date: 2026-03-02
   - title: "Russian-speaking hackers used gen AI tools to compromise 600 firewalls, Amazon says"
     url: "https://therecord.media/gen-ai-fortigate-hackers-russia"
+    archive_url: "https://web.archive.org/web/20260316205938/https://therecord.media/gen-ai-fortigate-hackers-russia"
     publisher: "The Record by Recorded Future News"
     type: news
     date: 2026-02-23

@@ -52,6 +52,7 @@
   "severity": "medium",
   "sources": [
     {
+      "archive_url": "https://web.archive.org/web/20260917215257/https://research.jfrog.com/post/gemstuffer-openai-rubygems/",
       "date": "2026-09-15",
       "publisher": "JFrog Security Research",
       "title": "New packages identified in GemStuffer 'OpenAI Swarm' malicious RubyGems campaign",

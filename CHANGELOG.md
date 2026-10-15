@@ -18,6 +18,22 @@ dataset version tracks `package.json` and `CITATION.cff` (kept in sync by
   the diff, opens the PR and merges. The issue closes itself once every
   source has a snapshot.
 
+### Fixed
+- Corrected off-by-one record counts in the 0.5.0 and 0.6.0 entries (also
+  repeated in their release notes). `npm run validate` counted
+  `_TEMPLATE.yml` as a record, and those figures were taken from it. The
+  catalog was 81 records before 0.5.0, 95 in 0.5.0 and 99 in 0.6.0; the
+  published data was always correct. `validate` now reports records and
+  templates separately. The 0.5.0 entry also wrongly said disputed records
+  are excluded from headline counts; only retracted and superseded records
+  are.
+
+### Data
+- Backfilled 48 Wayback `archive_url` snapshots across 38 records, mostly the
+  records added on 2026-10-15. All 48 changes only add an `archive_url`; no
+  existing line was edited. Archive.org could not snapshot 19 sources in this
+  run (rate limits or blocked pages); the next archive run will retry them.
+
 ## [0.7.0] - 2026-10-15
 
 ### Changed
@@ -47,7 +63,7 @@ dataset version tracks `package.json` and `CITATION.cff` (kept in sync by
   carries changes that no tagged release contains yet. The landing page shows
   "plus unreleased changes" in that case. Before this, data merged between
   releases appeared under the previous version number: after #18 the site
-  showed "0.5.0" for 100 records, while the v0.5.0 release holds 96.
+  showed "0.5.0" for 99 records, while the v0.5.0 release holds 95.
 - The release workflow refuses to tag while `[Unreleased]` still has notes.
   CONTRIBUTING now asks every data PR to add an `[Unreleased]` entry.
 
@@ -80,8 +96,8 @@ dataset version tracks `package.json` and `CITATION.cff` (kept in sync by
 ### Data
 - Intake sweep of 2026-10-15 (#16): 14 incidents, each re-validated against
   its full primary source for publisher authenticity, corroboration,
-  counter-evidence, scope and duplicates. The catalog grows from 82 to 96
-  records; 95 are active.
+  counter-evidence, scope and duplicates. The catalog grows from 81 to 95
+  records.
   - **Agent-driven intrusion campaigns:**
     `artex-south-korea-finance-intrusions` (CrowdStrike; ARTEX agentic
     pentest tool and Claude Code sessions against South Korean financial
@@ -109,7 +125,8 @@ dataset version tracks `package.json` and `CITATION.cff` (kept in sync by
 - `openai-attributed-rubygems-agent-swarm` is now `record_status: disputed`.
   OpenAI says it has not been able to verify that its models uploaded the
   malicious packages, and RubyGems cannot confirm AI involvement. Disputed
-  records are excluded from headline counts.
+  records stay in the dataset and in headline counts, flagged by
+  `record_status`; only retracted and superseded records are excluded.
 - Confidence raised from secondary to primary on
   `openai-attributed-dsewiki-agent-swarm` and
   `openai-huggingface-may-account-hijacking`, after OpenAI's first-party
