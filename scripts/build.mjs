@@ -13,10 +13,13 @@ import {
   sortKeysDeep,
 } from './lib.mjs';
 import { buildStixBundle } from './stix.mjs';
-import { evidenceSplit } from './summary.mjs';
+import { evidenceSplit, hasUnreleasedChanges } from './summary.mjs';
 
 const pkg = JSON.parse(readFileSync(path.join(ROOT, 'package.json'), 'utf8'));
 const schema = loadSchema();
+const unreleasedChanges = hasUnreleasedChanges(
+  readFileSync(path.join(ROOT, 'CHANGELOG.md'), 'utf8')
+);
 
 const incidents = listIncidentFiles()
   .map((file) => loadIncident(file))
@@ -58,6 +61,8 @@ const geoCoverage = {
 
 const summary = {
   dataset_version: pkg.version,
+  // main is ahead of the tagged dataset_version (CHANGELOG [Unreleased] non-empty).
+  unreleased_changes: unreleasedChanges,
   schema: schema.$id,
   total: incidents.length,
   archive_coverage: {
@@ -143,7 +148,7 @@ code{font-size:.85em}
 </head>
 <body>
 <h1>Agentic Attack Index</h1>
-<p>Open, source-linked dataset of real-world AI-agent cyberattacks. Dataset version <strong>${esc(pkg.version)}</strong>, ${incidents.length} incidents.</p>
+<p>Open, source-linked dataset of real-world AI-agent cyberattacks. Dataset version <strong>${esc(pkg.version)}</strong>${unreleasedChanges ? ' plus unreleased changes (see the CHANGELOG)' : ''}, ${incidents.length} incidents.</p>
 <p class="artifacts">Artifacts:
 <a href="./incidents.json">incidents.json</a>
 <a href="./summary.json">summary.json</a>

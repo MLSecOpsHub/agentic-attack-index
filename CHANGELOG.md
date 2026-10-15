@@ -7,6 +7,18 @@ dataset version tracks `package.json` and `CITATION.cff` (kept in sync by
 
 ## [Unreleased]
 
+## [0.6.0] - 2026-10-15
+
+### Added
+- `dist/summary.json` gained **`unreleased_changes`** (boolean). It is true
+  when `CHANGELOG.md`'s `[Unreleased]` section has content, meaning `main`
+  carries changes that no tagged release contains yet. The landing page shows
+  "plus unreleased changes" in that case. Before this, data merged between
+  releases appeared under the previous version number: after #18 the site
+  showed "0.5.0" for 100 records, while the v0.5.0 release holds 96.
+- The release workflow refuses to tag while `[Unreleased]` still has notes.
+  CONTRIBUTING now asks every data PR to add an `[Unreleased]` entry.
+
 ### Data
 - Triage of an external candidate brief (Rogue Agents Watch, 2026-10-15). Of
   the candidates not already in the catalog, four passed re-validation against

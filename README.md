@@ -38,7 +38,7 @@ npm run build     # writes the dist/ artifacts below
 | `dist/incidents.ndjson` | newline-delimited JSON (streaming) |
 | `dist/incidents.csv` | flattened columns for spreadsheets (map points as `geo_points` = `role:basis:country`) |
 | `dist/incidents/<id>.json` | one file per incident (stable per-record URL) |
-| `dist/summary.json` | counts + rollups (category, severity, status, actor type, autonomy level, AI role, model family, year) + `archive_coverage` + `geo_coverage` (points by role and basis) + `evidence_split` (records that are both `confirmed` and `load-bearing`, overall and by year, plus a status × AI-role crosstab; retracted/superseded excluded) |
+| `dist/summary.json` | `dataset_version` + `unreleased_changes` (true when `main` is ahead of that tagged release) + counts + rollups (category, severity, status, actor type, autonomy level, AI role, model family, year) + `archive_coverage` + `geo_coverage` (points by role and basis) + `evidence_split` (records that are both `confirmed` and `load-bearing`, overall and by year, plus a status × AI-role crosstab; retracted/superseded excluded) |
 | `dist/stix/bundle.json` | STIX 2.1 bundle (reports + ATLAS/ATT&CK attack-patterns + CVE vulnerabilities) for TIP/MISP ingestion |
 | `dist/index.html` | landing page (served via GitHub Pages) |
 

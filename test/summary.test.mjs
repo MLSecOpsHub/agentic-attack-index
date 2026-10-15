@@ -1,7 +1,7 @@
 // Hermetic tests for the derived summary rollups in scripts/summary.mjs.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { evidenceSplit, activeRecords } from '../scripts/summary.mjs';
+import { evidenceSplit, activeRecords, hasUnreleasedChanges } from '../scripts/summary.mjs';
 import { listIncidentFiles, loadIncident } from '../scripts/lib.mjs';
 
 const rec = (over = {}) => ({
@@ -68,4 +68,12 @@ test('evidence_split over the real dataset is internally consistent', () => {
   const yearSum = Object.values(out.by_year).reduce((n, y) => n + y.confirmed_load_bearing, 0);
   assert.equal(yearSum, out.confirmed_load_bearing);
   assert.ok(out.confirmed_load_bearing <= out.total);
+});
+
+test('hasUnreleasedChanges detects content under [Unreleased] only', () => {
+  const head = '# Changelog\n\nIntro.\n\n';
+  assert.equal(hasUnreleasedChanges(`${head}## [Unreleased]\n\n## [1.0.0] - 2026-01-01\n\n- x\n`), false);
+  assert.equal(hasUnreleasedChanges(`${head}## [Unreleased]\n\n### Data\n- added\n\n## [1.0.0] - 2026-01-01\n`), true);
+  assert.equal(hasUnreleasedChanges(`${head}## [Unreleased]\n- only section\n`), true);
+  assert.equal(hasUnreleasedChanges(`${head}## [1.0.0] - 2026-01-01\n- x\n`), false);
 });
