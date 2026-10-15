@@ -1,0 +1,95 @@
+id: postmark-mcp-bcc-backdoor
+name: "postmark-mcp: an npm MCP server impersonating Postmark silently BCC'd every email sent through it to an attacker"
+summary: >-
+  On 2025-09-25 Koi Security disclosed that postmark-mcp had been backdoored.
+  The npm package presented itself as a Model Context Protocol (MCP) server
+  that lets AI assistants send email through Postmark. In version 1.0.16 a
+  single added line blind-copied every email sent through it to an
+  attacker-controlled address. Koi called it the first malicious MCP server
+  seen in the wild. The package copied code from the legitimate Postmark MCP
+  server that Postmark (ActiveCampaign) maintains on GitHub. The same day,
+  Postmark stated that it had nothing to do with the package, had not
+  published its MCP server on npm, and that its API and services were
+  unaffected. Snyk also analysed the package on 2025-09-25 and found the BCC
+  insertion was the only notable change between benign version 1.0.15 and
+  malicious version 1.0.18. Snyk's timeline has version 1.0.0 first published
+  on 2025-09-15, version 1.0.18 on 2025-09-17, and the package gone from npm by
+  2025-09-25. Koi reported about 1,500 weekly downloads and said the publisher
+  deleted the package without responding after Koi made contact. Installed
+  copies keep exfiltrating until they are removed. Koi's figures of about 300
+  organisations and 3,000-15,000 emails a day are its own rough estimate, not
+  a measured count. AI agent tooling was the distribution channel: assistants
+  used the backdoored tool as normal and did not operate the attack.
+date_disclosed: 2025-09-25
+status: confirmed # Postmark, the impersonated brand, issued a first-party statement, and Koi Security and Snyk analysed the package independently.
+confidence: primary
+category: infrastructure-abuse-supply-chain
+severity: medium # All email sent through the tool was exfiltrated, potentially including credentials, but exposure was limited to users of one package for a short period.
+models: [] # No model is named.
+model_families:
+  - other # Any MCP-capable AI assistant could use the package; none is named.
+actor: "Unknown (the publisher of the npm package)" # Koi and Snyk point to one publisher account. Personal details are deliberately left out.
+actor_type: unknown # No source establishes who operated the account or why.
+autonomy_pct: null
+autonomy_level: not-applicable # The AI assistants were unwitting users of the backdoored tool.
+guardrail_bypass:
+  - legitimate-tool-abuse # Assistants used the tool as intended (sending email) while it exfiltrated. Follows the clawhavoc precedent for malicious agent-ecosystem packages.
+ai_role: incidental # The agent ecosystem was the attack surface. The backdoor itself is a conventional supply-chain change.
+related:
+  - clawhavoc-clawhub-malicious-skills # Same technique: malicious packages distributed through AI-agent tooling ecosystems.
+  - skills-sh-paperclip-malicious-skills # Same technique: malicious packages distributed through AI-agent tooling ecosystems.
+mitigations:
+  - "Postmark advises anyone who used the package to remove it immediately, check email logs for suspicious activity, rotate any credentials that may have been sent by email during the compromise period, and use only official Postmark resources."
+  - "Koi Security recommends uninstalling the package, rotating credentials sent by email, auditing email logs for unexpected BCC recipients, and auditing every MCP server in use."
+  - "Snyk recommends removing the package from all environments, blocking the exfiltration domain at egress, rotating Postmark API and SMTP credentials and any credentials that may appear in emails, and checking for other packages from the same npm publisher."
+targets:
+  orgs_affected: null # Koi's "about 300 organizations" is an estimate (20% of weekly downloads), not a count.
+  records_exfiltrated: null # Koi's 3,000-15,000 emails a day is an estimate. No measured figure is published.
+  sectors:
+    - technology # Developers who used AI assistants with email integrations. No victim sector is stated.
+  countries: []
+lifecycle_phases:
+  - resource-dev
+  - initial-access
+  - exfiltration
+mappings:
+  mitre_atlas: []
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: []
+  cve: []
+  aiid: []
+impact: >-
+  Per Koi Security and Snyk, every email sent through version 1.0.16 or later
+  was blind-copied to an attacker-controlled address. That mail could include
+  password resets, invoices and internal correspondence. Koi estimates about
+  300 organisations and 3,000-15,000 emails a day were affected; no measured
+  victim count is published.
+sources:
+  - title: "First Malicious MCP in the Wild: The Postmark Backdoor That's Stealing Your Emails"
+    url: "https://www.koi.security/blog/postmark-mcp-npm-malicious-backdoor-email-theft"
+    archive_url: "https://web.archive.org/web/20250925155409/https://www.koi.security/blog/postmark-mcp-npm-malicious-backdoor-email-theft"
+    publisher: "Koi Security"
+    type: vendor-report
+    date: 2025-09-25
+    # Since Palo Alto Networks acquired Koi, the live URL redirects to a product page. Use archive_url; the text was checked to match a 2026-08 capture of the koi.ai copy.
+  - title: "Information Regarding Malicious \"postmark-mcp\" Package"
+    url: "https://postmarkapp.com/blog/information-regarding-malicious-postmark-mcp-package"
+    publisher: "Postmark"
+    type: first-party-disclosure
+    date: 2025-09-25
+  - title: "Malicious MCP Server on npm postmark-mcp Harvests Emails"
+    url: "https://snyk.io/blog/malicious-mcp-server-on-npm-postmark-mcp-harvests-emails/"
+    publisher: "Snyk"
+    type: vendor-report
+    date: 2025-09-25
+  - title: "Trust in MCP takes first in-the-wild hit via squatted Postmark connector"
+    url: "https://www.csoonline.com/article/4064009/trust-in-mcp-takes-first-in-the-wild-hit-via-squatted-postmark-connector.html"
+    publisher: "CSO Online"
+    type: news
+    date: 2025-09-26
+    # CSO misstates Koi's estimate as 3,000-15,000 emails per organisation per day across 500 organisations. The record uses Koi's own figures.
+added:
+  date: 2026-10-15
+  by: "MLSecOpsHub"
+last_updated: 2026-10-15
