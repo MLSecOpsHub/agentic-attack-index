@@ -1,19 +1,25 @@
 name: archive
 
-# Sources rot. Snapshot every sources[].url that lacks an archive_url to the
-# Wayback Machine on a schedule and propose the additions as a PR for human
-# review. Network-dependent, so kept out of the deterministic `npm test` gate.
+# Sources rot. Find every sources[].url that lacks an archive_url and ask the
+# Wayback Machine to snapshot it. Network-dependent, so kept out of the
+# deterministic `npm test` gate.
 #
-# Repo setting required once: Settings → Actions → General → Workflow
-# permissions → "Allow GitHub Actions to create and approve pull requests".
+# Human-in-the-loop by design: this job never writes to the repository, never
+# pushes a branch, and never opens or approves a pull request. It runs the
+# archiver in report mode (which still triggers Save Page Now, so the slow
+# snapshotting happens here) and opens or updates one tracking issue. A
+# maintainer then runs `npm run archive -- --write` locally, which mostly picks
+# up the snapshots this job created, reviews the diff, and opens the PR. The
+# repo setting "Allow GitHub Actions to create and approve pull requests"
+# stays OFF.
 on:
   schedule:
     - cron: '41 6 * * 1' # Mondays 06:41 UTC, after linkcheck
   workflow_dispatch:
 
 permissions:
-  contents: write
-  pull-requests: write
+  contents: read
+  issues: write
 
 jobs:
   archive:
@@ -27,32 +33,80 @@ jobs:
           cache: npm
       - run: npm ci
 
-      # The archiver is idempotent and non-fatal; archive.org rate-limits, so a
-      # second pass often fills what the first one could not.
-      - name: Archive missing snapshots (two passes)
-        run: |
-          npm run archive -- --write || true
-          npm run archive -- --write || true
+      # Report mode: nothing is written to the checkout. The archiver is
+      # non-fatal per source; archive.org rate limits show up as failures.
+      - name: Find and snapshot sources missing an archive_url (report only)
+        run: npm run archive > archive.log 2>&1 || true
 
-      - name: Rebuild dist and verify
-        run: |
-          npm run build
-          npm test
+      - name: Open or update the tracking issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const log = fs.readFileSync('archive.log', 'utf8');
+            const { owner, repo } = context.repo;
+            const label = 'archive';
+            const marker = '<!-- archive-bot -->';
+            const title = 'archive: sources missing a Wayback snapshot';
 
-      - name: Open PR if anything changed
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          if git diff --quiet -- data dist; then
-            echo "archive: nothing to add"; exit 0
-          fi
-          branch="bot/archive-$(date -u +%Y%m%d)"
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git checkout -b "$branch"
-          git add data dist
-          git commit -m "data: add Wayback archive_url snapshots ($(git diff --cached --numstat -- data | wc -l) record(s))"
-          git push -u origin "$branch"
-          gh pr create --base main --head "$branch" \
-            --title "data: backfill Wayback archive_url snapshots" \
-            --body "Scheduled archiver run. Every added \`archive_url\` was returned by archive.org (availability/CDX/Save Page Now); nothing is fabricated. Review that each snapshot renders the cited page, then merge. Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            const { data: open } = await github.rest.issues.listForRepo({ owner, repo, state: 'open', labels: label, per_page: 100 });
+            const existing = open.find((i) => (i.body ?? '').includes(marker));
+
+            if (log.includes('nothing to do')) {
+              core.notice('archive: every source already has an archive_url');
+              if (existing) {
+                await github.rest.issues.createComment({ owner, repo, issue_number: existing.number, body: 'Every source now has an `archive_url`. Closing.' });
+                await github.rest.issues.update({ owner, repo, issue_number: existing.number, state: 'closed' });
+              }
+              return;
+            }
+
+            const summary = (log.match(/^archive: .*$/m) ?? ['archive: (no summary line; see the run log)'])[0];
+            const found = (log.match(/^\s+✓ /gm) ?? []).length;
+            const failed = (log.match(/^\s+✗ /gm) ?? []).length;
+            const runUrl = `${context.serverUrl}/${owner}/${repo}/actions/runs/${context.runId}`;
+            const day = new Date().toISOString().slice(0, 10).replace(/-/g, '');
+            // GitHub caps issue bodies at 65,536 characters.
+            const detail = log.length > 55000 ? log.slice(0, 55000) + '\n… (truncated; full output in the run log)' : log;
+
+            const body = [
+              marker,
+              `**${found}** source(s) have a Wayback snapshot ready and **${failed}** could not be archived this run.`,
+              `\`${summary}\` · [run ${context.runId}](${runUrl})`,
+              '',
+              'This job did not change the repository. To add the snapshots, run locally:',
+              '',
+              '```sh',
+              `git fetch origin && git switch -c data/archive-${day} origin/main`,
+              'npm run archive -- --write    # picks up the snapshots this run created',
+              'git diff -- data              # expect only added archive_url lines',
+              'npm test                      # validates and rebuilds dist/',
+              '# add an [Unreleased] line to CHANGELOG.md, then:',
+              'git add data dist CHANGELOG.md && git commit -m "data: add Wayback archive_url snapshots"',
+              'git push -u origin HEAD && gh pr create --fill',
+              '```',
+              '',
+              'A later run updates this issue, and closes it once every source has a snapshot.',
+              '',
+              '<details><summary>Archiver output</summary>',
+              '',
+              '```',
+              detail,
+              '```',
+              '</details>',
+            ].join('\n');
+
+            try {
+              await github.rest.issues.getLabel({ owner, repo, name: label });
+            } catch (e) {
+              if (e.status !== 404) throw e;
+              await github.rest.issues.createLabel({ owner, repo, name: label, color: 'c5def5', description: 'Sources awaiting Wayback snapshots' });
+            }
+
+            if (existing) {
+              await github.rest.issues.update({ owner, repo, issue_number: existing.number, body });
+              core.notice(`Updated issue #${existing.number}`);
+            } else {
+              const { data: created } = await github.rest.issues.create({ owner, repo, title, body, labels: [label] });
+              core.notice(`Opened issue #${created.number}`);
+            }
