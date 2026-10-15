@@ -57,6 +57,7 @@ impact: >-
 sources:
   - title: "AI agent at the wheel: How an attacker used LLMs to move from a CVE to an internal database in 4 pivots"
     url: "https://www.sysdig.com/blog/ai-agent-at-the-wheel-how-an-attacker-used-llms-to-move-from-a-cve-to-an-internal-database-in-4-pivots"
+    archive_url: "https://web.archive.org/web/20260925024318/https://www.sysdig.com/blog/ai-agent-at-the-wheel-how-an-attacker-used-llms-to-move-from-a-cve-to-an-internal-database-in-4-pivots"
     publisher: "Sysdig"
     type: vendor-report
     date: 2026-05-26

@@ -54,6 +54,7 @@ impact: >-
 sources:
   - title: "GitHub MCP Exploited: Accessing private repositories via MCP"
     url: "https://invariantlabs.ai/blog/mcp-github-vulnerability"
+    archive_url: "https://web.archive.org/web/20261012180010/https://invariantlabs.ai/blog/mcp-github-vulnerability"
     publisher: "Invariant Labs"
     type: research-paper
     date: 2025-05-26

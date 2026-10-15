@@ -90,6 +90,7 @@
   "severity": "high",
   "sources": [
     {
+      "archive_url": "https://web.archive.org/web/20260928141343/https://hunt.io/blog/thailand-ministry-finance-targeted-with-hermes-ai-agent",
       "date": "2026-07-23",
       "publisher": "Hunt.io",
       "title": "Thailand's Ministry of Finance Targeted With Hermes AI Agent Running Unattended, Hades Implant Staged",
@@ -97,6 +98,7 @@
       "url": "https://hunt.io/blog/thailand-ministry-finance-targeted-with-hermes-ai-agent"
     },
     {
+      "archive_url": "https://web.archive.org/web/20260928141343/https://www.bleepingcomputer.com/news/security/hermes-ai-agent-used-to-automate-attack-on-thai-finance-ministry/",
       "date": "2026-07-24",
       "publisher": "BleepingComputer",
       "title": "Hermes AI agent used to automate attack on Thai Finance Ministry",

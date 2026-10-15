@@ -75,16 +75,19 @@ sources:
     # Since Palo Alto Networks acquired Koi, the live URL redirects to a product page. Use archive_url; the text was checked to match a 2026-08 capture of the koi.ai copy.
   - title: "Information Regarding Malicious \"postmark-mcp\" Package"
     url: "https://postmarkapp.com/blog/information-regarding-malicious-postmark-mcp-package"
+    archive_url: "https://web.archive.org/web/20261012021632/https://postmarkapp.com/blog/information-regarding-malicious-postmark-mcp-package"
     publisher: "Postmark"
     type: first-party-disclosure
     date: 2025-09-25
   - title: "Malicious MCP Server on npm postmark-mcp Harvests Emails"
     url: "https://snyk.io/blog/malicious-mcp-server-on-npm-postmark-mcp-harvests-emails/"
+    archive_url: "https://web.archive.org/web/20260928141402/https://snyk.io/blog/malicious-mcp-server-on-npm-postmark-mcp-harvests-emails/"
     publisher: "Snyk"
     type: vendor-report
     date: 2025-09-25
   - title: "Trust in MCP takes first in-the-wild hit via squatted Postmark connector"
     url: "https://www.csoonline.com/article/4064009/trust-in-mcp-takes-first-in-the-wild-hit-via-squatted-postmark-connector.html"
+    archive_url: "https://web.archive.org/web/20260224175645/https://www.csoonline.com/article/4064009/trust-in-mcp-takes-first-in-the-wild-hit-via-squatted-postmark-connector.html"
     publisher: "CSO Online"
     type: news
     date: 2025-09-26

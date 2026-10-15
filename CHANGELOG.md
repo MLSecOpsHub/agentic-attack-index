@@ -18,6 +18,12 @@ dataset version tracks `package.json` and `CITATION.cff` (kept in sync by
   the diff, opens the PR and merges. The issue closes itself once every
   source has a snapshot.
 
+### Data
+- Backfilled 48 Wayback `archive_url` snapshots across 38 records, mostly the
+  records added on 2026-10-15. All 48 changes only add an `archive_url`; no
+  existing line was edited. Archive.org could not snapshot 19 sources in this
+  run (rate limits or blocked pages); the next archive run will retry them.
+
 ## [0.7.0] - 2026-10-15
 
 ### Changed

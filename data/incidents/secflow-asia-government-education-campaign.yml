@@ -73,6 +73,7 @@ impact: >-
 sources:
   - title: "Chinese-Speaking Operator Uses AI Agents to Target Government and Education Systems Across Asia"
     url: "https://hunt.io/blog/chinese-operator-secflow-claude-qwen-deepseek-asia"
+    archive_url: "https://web.archive.org/web/20260924222255/https://hunt.io/blog/chinese-operator-secflow-claude-qwen-deepseek-asia"
     publisher: "Hunt.io"
     type: vendor-report
     date: 2026-09-03

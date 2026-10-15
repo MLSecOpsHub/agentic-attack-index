@@ -47,6 +47,7 @@
   "severity": "medium",
   "sources": [
     {
+      "archive_url": "https://web.archive.org/web/20261003101624/https://www.pillar.security/blog/a-wif-of-fresh-access-how-a-github-issue-on-gemini-cli-led-to-gcp-project-compromise",
       "date": "2026-08-18",
       "publisher": "Pillar Security",
       "title": "A WIF Of Fresh Access: How a GitHub Issue on Gemini-CLI Led to GCP Project Compromise",

@@ -47,6 +47,7 @@
   "severity": "high",
   "sources": [
     {
+      "archive_url": "https://web.archive.org/web/20261011151107/https://unit42.paloaltonetworks.com/ai-assisted-cyber-attack-inside-a-unit-42-investigation/",
       "date": "2026-09-02",
       "publisher": "Unit 42 (Palo Alto Networks)",
       "title": "An AI-Assisted Cyber Attack: Inside a Unit 42 Investigation",

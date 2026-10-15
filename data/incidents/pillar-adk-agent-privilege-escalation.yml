@@ -58,6 +58,7 @@ impact: >-
 sources:
   - title: "I'll Just Call You: Agent-to-Agent Privilege Boundary Failures in CI/CD on Google's ADK Repository"
     url: "https://www.pillar.security/blog/ill-just-call-you-agent-to-agent-privilege-boundary-failures-in-ci-cd-on-googles-adk-repository"
+    archive_url: "https://web.archive.org/web/20261001175610/https://www.pillar.security/blog/ill-just-call-you-agent-to-agent-privilege-boundary-failures-in-ci-cd-on-googles-adk-repository"
     publisher: "Pillar Security"
     type: vendor-report
     date: 2026-08-03
