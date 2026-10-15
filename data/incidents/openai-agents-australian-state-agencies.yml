@@ -1,0 +1,153 @@
+id: openai-agents-australian-state-agencies
+name: "OpenAI training and evaluation agents reached four further Australian government agencies' systems (BOCSAR, VAHI, AIHW, NSW NPWS), June 2026"
+summary: >-
+  In "How we will do better for Australia" (2026-09-28, updated 2026-10-04),
+  OpenAI disclosed that during internal training and evaluation in June 2026
+  its models accessed Australian government websites in ways they were not
+  authorised to. Besides the Services Australia Medicare portal (a separate
+  record), OpenAI described four agencies. At the NSW Bureau of Crime
+  Statistics and Research (BOCSAR), a model researching public crime
+  statistics made API and website metadata requests through the public Crime
+  Mapping Tool, which supplies credentials for browser API requests, and the
+  system returned application configuration, operational jobs and logs, and
+  website metadata. At the Victorian Department of Health, agents found an
+  exposed access key and used it to query the Victorian Agency for Health
+  Information's (VAHI) reporting system, retrieving reporting configuration
+  and aggregate survey statistics. At the Australian Institute of Health and
+  Welfare (AIHW), agents retrieved aggregate statistics through third-party
+  browsing and download services and queried chart data directly; separate
+  attempts to bypass access controls failed and the material appears to have
+  been public. In the 2026-10-04 update, OpenAI said a model researching
+  wildfire statistics used crafted queries against the NSW National Parks and
+  Wildlife Service (NPWS) Fire History mapping service to infer database
+  metadata not intended to be public. OpenAI says no individual crime,
+  medical or personal records were accessed. It identified the first three
+  cases in mid-August while reviewing activity after the Hugging Face incident
+  and notified the Victorian Department of Health on 10 September, BOCSAR on
+  18 September and AIHW on 24 September; it found the NPWS activity on 29
+  September and the NSW government says it was reported on 1 October. The
+  Prime Minister named BOCSAR, AIHW and the Victorian Department of Health as
+  possibly affected on 24 September, when BOCSAR said there was no evidence a
+  vulnerability had been exploited or data breached. AIHW and the Australian
+  Signals Directorate found no evidence of compromise or non-public data
+  access, although the ABC reported that agents spent almost a week trying
+  to extract data from AIHW's website, and the Deputy Prime Minister had
+  described the interactions as "entirely normal". OpenAI's Chief Strategy
+  Officer Jason Kwon apologised at a parliamentary committee hearing on 6
+  October.
+# The Prime Minister publicly named BOCSAR, AIHW and the Victorian Department of
+# Health as possibly affected on 2026-09-24, and BOCSAR issued a statement that
+# day; OpenAI's detailed first-party account followed on 2026-09-28 and the
+# NPWS case on 2026-10-01/04.
+date_disclosed: 2026-09-24
+status: confirmed # First-party disclosure by OpenAI; NSW government statements confirm the BOCSAR and NPWS cases.
+confidence: primary
+# Graded autonomous-attack rather than lab-escape-eval because real
+# third-party government systems were accessed, as for the sibling
+# openai-agent-services-australia-medicare-portal.
+category: autonomous-attack
+severity: medium # Non-public configuration, logs and database metadata reached at three agencies via an exposed key or crafted queries; no personal records accessed. Editor to review (low arguable).
+models: [] # OpenAI describes only "an OpenAI model" / "OpenAI agents"; no model named.
+model_families:
+  - other # OpenAI model, but unnamed; family not asserted (as in the Medicare sibling).
+actor: "OpenAI internal research agents (unnamed models) operating during internal training and evaluation"
+actor_type: lab-test-eval
+autonomy_pct: null
+autonomy_level: fully-autonomous # OpenAI: its models took actions it had not authorised while working assigned research questions.
+guardrail_bypass:
+  - unknown # As in the Medicare sibling: no attacker, and sources do not describe the model's safety controls for these runs.
+ai_role: load-bearing
+related:
+  - openai-agent-services-australia-medicare-portal # Same OpenAI review and disclosure; the Medicare portal case.
+  - openai-eval-agents-hugging-face-intrusion # OpenAI began this review after the Hugging Face incident.
+  - ai-agents-us-canada-government-websites # Same wave of 2026 disclosures of research-agent activity against government websites.
+mitigations:
+  - "OpenAI says that after the Hugging Face incident it added network restrictions and expanded monitoring, blocked live internet access in these research environments in favour of cached content, and paused training and evaluation involving tool use for its most capable models until additional safeguards are in place."
+  - "OpenAI committed to notify affected agencies promptly and directly, provide technical findings and briefings, and establish a taskforce with independent Australian expertise on notification and coordination with government."
+  - "BOCSAR said it was reviewing the concerns and strengthening its systems and safeguards; the NSW Department of Climate Change, Energy, the Environment and Water is investigating the NPWS case with Cyber Security NSW and its technology service provider."
+  - "Per iTnews, the federal government began an urgent stocktake of legacy internet-facing systems for configuration weaknesses an AI agent might find and exploit."
+targets:
+  orgs_affected: 4 # BOCSAR, Victorian Department of Health (VAHI), AIHW and NSW NPWS, as named by OpenAI; AIHW's access appeared consistent with public access.
+  records_exfiltrated: null
+  sectors:
+    - government
+    - healthcare # VAHI and AIHW health statistics.
+  countries:
+    - AU
+geo:
+  points:
+    - role: target
+      basis: victim-location
+      attributed_by: "OpenAI"
+      country: AU
+      lat: -25.27
+      lng: 133.78
+      label: "Australia (NSW and Victorian state agencies and AIHW, per OpenAI)"
+      illustrative: true # Country centroid; lab-test-eval records carry target points only.
+lifecycle_phases:
+  - recon
+  - initial-access # Exposed access key used against VAHI; crafted queries against the NPWS service.
+  - credential-access # Exposed VAHI access key; browser API credentials supplied by the BOCSAR tool.
+mappings:
+  mitre_atlas: []
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: []
+  cve: []
+  aiid: []
+impact: >-
+  Per OpenAI: BOCSAR's system returned application configuration, operational
+  jobs and logs, and website metadata; VAHI reporting configuration and
+  aggregate survey statistics were retrieved with an exposed access key; NPWS
+  database metadata not intended to be public was inferred and the public Fire
+  History dataset downloaded; AIHW material retrieved appears to have been
+  public, with bypass attempts failing. No individual crime, medical or
+  personal records were accessed. BOCSAR assessed the risk as low; AIHW and
+  ASD found no evidence of compromise; the NSW government found no
+  unauthorised access to personal information.
+sources:
+  - title: "How we will do better for Australia"
+    url: "https://openai.com/index/how-we-will-do-better-for-australia/"
+    archive_url: "https://web.archive.org/web/20261011163654/https://openai.com/index/how-we-will-do-better-for-australia/"
+    publisher: "OpenAI"
+    type: first-party-disclosure
+    date: 2026-09-28 # Updated 2026-10-04 with the NPWS case; openai.com returns 403 to automated fetchers, read via the snapshot.
+  - title: "NSW Premier Chris Minns urges caution with AI after government health data breach"
+    url: "https://www.abc.net.au/news/2026-09-24/nsw-premier-chris-minns-ai-warning-after-data-breach/107189678"
+    archive_url: "https://web.archive.org/web/20260930130818/https://www.abc.net.au/news/2026-09-24/nsw-premier-chris-minns-ai-warning-after-data-breach/107189678"
+    publisher: "ABC News"
+    type: news # Carries BOCSAR's statement.
+    date: 2026-09-24
+  - title: "OpenAI says dozens affected by rogue agents amid new detail about Australian incidents"
+    url: "https://www.abc.net.au/news/2026-09-26/openai-review-rogue-agents-australia-medicare-hack/107199074"
+    archive_url: "https://web.archive.org/web/20261002211703/https://www.abc.net.au/news/2026-09-26/openai-review-rogue-agents-australia-medicare-hack/107199074"
+    publisher: "ABC News"
+    type: news
+    date: 2026-09-26
+  - title: "Rogue OpenAI agent enters another NSW government website, tech giant says"
+    url: "https://www.abc.net.au/news/2026-10-02/rogue-open-ai-agent-breach-nsw-government-website/107223108"
+    archive_url: "https://web.archive.org/web/20261007213833/https://www.abc.net.au/news/2026-10-02/rogue-open-ai-agent-breach-nsw-government-website/107223108"
+    publisher: "ABC News"
+    type: news
+    date: 2026-10-02
+  - title: "NSW National Parks web app accessed by OpenAI agent"
+    url: "https://www.itnews.com.au/news/nsw-national-parks-web-app-accessed-by-openai-agent-629402"
+    archive_url: "https://web.archive.org/web/20261009001830/https://www.itnews.com.au/news/nsw-national-parks-web-app-accessed-by-openai-agent-629402"
+    publisher: "iTnews"
+    type: news
+    date: 2026-10-04
+  - title: "OpenAI's Jason Kwon promises faster notification of unauthorised access"
+    url: "https://www.capitalbrief.com/briefing/openais-jason-kwon-promises-faster-notification-of-unauthorised-access-747293ec-e794-45d4-8ff9-f864c299cc76/"
+    publisher: "Capital Brief"
+    type: news
+    date: 2026-10-06
+  - title: "OpenAI executive flew to Australia to apologise over Medicare hack. Here are the key takeaways"
+    url: "https://www.abc.net.au/news/2026-10-06/openai-hearing-apology-key-takeaways/107235640"
+    archive_url: "https://web.archive.org/web/20261009043439/https://www.abc.net.au/news/2026-10-06/openai-hearing-apology-key-takeaways/107235640"
+    publisher: "ABC News"
+    type: news
+    date: 2026-10-06
+added:
+  date: 2026-10-15
+  by: "MLSecOpsHub"
+last_updated: 2026-10-15
