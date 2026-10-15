@@ -60,7 +60,8 @@
       "CVE-2026-34486",
       "CVE-2026-33824"
     ],
-    "mitre_atlas": [
+    "mitre_atlas": [],
+    "mitre_atlas_case_studies": [
       "AML.CS0070"
     ],
     "mitre_attack": [],

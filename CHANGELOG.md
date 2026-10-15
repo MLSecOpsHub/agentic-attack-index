@@ -7,6 +7,27 @@ dataset version tracks `package.json` and `CITATION.cff` (kept in sync by
 
 ## [Unreleased]
 
+## [0.7.0] - 2026-10-15
+
+### Changed
+- **ATLAS case studies now have their own field.**
+  `mappings.mitre_atlas_case_studies` holds case-study ids (`AML.CSnnnn`).
+  `mappings.mitre_atlas` now accepts only technique, tactic and mitigation ids
+  (`AML.T`, `AML.TA`, `AML.M`). Version 0.5.0 placed six case-study ids in
+  `mitre_atlas`, which mixed two kinds of id: consumers that treat that array
+  as techniques (ATT&CK Navigator layers, technique views) broke. The STIX
+  bundle also exported them as `attack-pattern` objects with technique URLs.
+  This is shipped as a minor-version correction, because the misplaced values
+  existed only in 0.5.0 and 0.6.0 (both released 2026-10-15).
+  **Migration:** read case studies from `mappings.mitre_atlas_case_studies`.
+  In STIX they are now `mitre-atlas` external references on the incident's
+  `report` (URL `https://atlas.mitre.org/studies/<id>`), not attack-patterns.
+  The CSV gains a trailing `mitre_atlas_case_studies` column. Affected
+  records: `echoleak-m365-copilot`, `radware-zombieagent-deep-research`,
+  `openai-eval-agents-hugging-face-intrusion`, `gtg-1002-ai-espionage`,
+  `unit42-hermes-deepseek-autonomous-campaign`,
+  `dream-multi-agent-asia-government-campaign`.
+
 ## [0.6.0] - 2026-10-15
 
 ### Added
