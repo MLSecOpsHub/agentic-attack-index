@@ -1,0 +1,146 @@
+id: ai-agents-us-canada-government-websites
+name: "AI agents probed U.S. and Canadian government websites, including failed SQL-injection attempts (2026)"
+summary: >-
+  Transluce, with co-authors from Corridor, MIT, AIUC and the Hertz
+  Foundation, reported on 2026-09-30 that automated workflows it attributes to
+  AI agents with varying levels of confidence used aggressive techniques to
+  retrieve public data from U.S. and Canadian government websites, mainly
+  between April and July 2026, based on request records left public by the
+  Arquivo.pt web archive and urlquery.net. On 2026-06-17 agents apparently
+  working a public web-research benchmark task (DeepSearchQA) sent more than
+  200,000 requests to the U.S. Department of Education's Civil Rights Data
+  Collection site, including a rudimentary, failed SQL-injection probe; more
+  than 10,000 of the requests carried a tag that SecurityWeek noted could
+  indicate OpenAI agents. On 2026-05-28 and 2026-06-09, 899 requests reached
+  Library and Archives Canada's collection-search service, 13 of them carrying
+  SQL-injection, cross-site scripting and input-handling probes that Transluce
+  believes failed. Other
+  workflows used tactics short of hacking, such as disposable-email account
+  creation, attempted reuse of exposed API keys, anti-bot bypass and request
+  floods, against websites of the White House, the Departments of War, Justice
+  and Commerce, the CDC and the SEC, and state agencies in California,
+  Maryland, Illinois, Texas and New York. Transluce found no access to
+  non-public information and does not attribute the traffic as a whole to
+  OpenAI, though some of it overlaps activity confirmed as OpenAI's and some
+  agents labelled themselves as OpenAI's; it does not confidently attribute the
+  Canadian probes to OpenAI. Separately, OpenAI disclosed on 2026-09-25 that
+  its agents had accessed public information on two SEC websites and U.S.
+  Census Bureau data, with no use of SEC credentials, no non-public access and
+  no compromise found. SecurityWeek, citing The New York Times and Reuters,
+  reported that OpenAI's investigation of the Education Department activity
+  was still under way and that OpenAI was reviewing the Canadian findings and
+  had given Canadian officials an initial briefing. The Education Department
+  said it saw no impact, and Canada's Communications Security Establishment
+  said on 2026-09-29 that there was no indication government systems had been
+  compromised.
+# AP reported OpenAI's SEC/Census disclosure and Transluce's Education
+# Department finding on 2026-09-25; Transluce's full report followed 2026-09-30.
+date_disclosed: 2026-09-25
+# Reported, not confirmed: the attribution of the probing traffic to AI agents
+# is Transluce's analysis of public request records. OpenAI confirmed only the
+# SEC/Census portion, the Education Department reported no impact, and CSE
+# confirmed no compromise rather than the activity itself.
+status: reported
+confidence: primary # The discoverer's own report (Transluce) and a government statement (CSE) are cited.
+category: autonomous-attack
+severity: low # Failed probes and aggressive scraping of public data; no non-public data accessed and no compromise found.
+models: [] # No model named.
+model_families:
+  - other # Unattributed traffic; OpenAI confirmed only the SEC/Census portion and named no model.
+# Editorial decision (one record): the operator is unknown. Transluce does not
+# attribute the traffic as a whole to OpenAI; OpenAI confirmed its agents
+# accessed public SEC and Census data.
+actor: Unknown
+actor_type: unknown
+autonomy_pct: null
+autonomy_level: unknown # Sources do not describe how the agents were run or supervised.
+guardrail_bypass:
+  - unknown # Operator and model unknown for most of the traffic.
+# The traffic is described as AI-agent activity tied to public benchmark-style
+# retrieval tasks; ai_role would be load-bearing if Transluce's attribution to
+# AI agents holds. The sibling openai-attributed-unctad-api-scanning uses
+# significant; editor to review.
+ai_role: load-bearing
+related:
+  - openai-attributed-dsewiki-agent-swarm # Transluce follow-up to its earlier catalogue of agent activity.
+  - openai-attributed-unctad-api-scanning # Same pattern: agents working around refusals to fetch public government statistics.
+  - openai-agents-australian-state-agencies # Same wave of 2026 disclosures of research-agent activity against government websites; OpenAI confirmed part of both.
+mitigations:
+  - "Transluce disclosed the Education Department activity to the department on 2026-09-25 and the Library and Archives Canada activity to the Canadian government on 2026-09-28."
+  - "The Canadian Centre for Cyber Security said it is working closely with government partners to assess the reports, and relies on layered cyber security measures designed to detect and block malicious activity regardless of its source."
+  - "OpenAI said it is reviewing misaligned model activity and notifying organizations when it identifies potential impacts to their systems."
+targets:
+  orgs_affected: null # Transluce lists many agencies without a count. TODO: source
+  records_exfiltrated: null
+  sectors:
+    - government
+  countries:
+    - US
+    - CA
+geo:
+  points:
+    - role: target
+      basis: victim-location
+      attributed_by: "Transluce"
+      country: US
+      lat: 37.09
+      lng: -95.71
+      label: "United States (federal and state government websites, per Transluce)"
+      illustrative: true # Country centroid.
+    - role: target
+      basis: victim-location
+      attributed_by: "Transluce"
+      country: CA
+      lat: 56.13
+      lng: -106.35
+      label: "Canada (Library and Archives Canada collection search, per Transluce)"
+      illustrative: true # Country centroid.
+lifecycle_phases:
+  - recon # High-volume enumeration and probing of public data services.
+  - initial-access # Attempted only; the SQL-injection probes failed.
+  - credential-access # Attempted reuse of exposed API keys; no success found.
+mappings:
+  mitre_atlas: []
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: []
+  cve: []
+  aiid: []
+impact: >-
+  Per Transluce, no non-public information was accessed: the Education
+  Department and Library and Archives Canada probes appear to have failed, and
+  other workflows retrieved public data, sometimes against usage policies.
+  Transluce could not confirm whether a high-volume burst against a Kansas
+  historical site caused a service disruption. The Education Department
+  reported no impact to its services; CSE reported no indication of
+  compromise; OpenAI found no use of SEC credentials, no non-public access and
+  no compromise in the activity it confirmed.
+sources:
+  - title: "AI Agents Targeted U.S. and Canadian Government Websites"
+    url: "https://transluce.org/us-canada-gov"
+    archive_url: "https://web.archive.org/web/20261008033308/https://transluce.org/us-canada-gov"
+    publisher: "Transluce"
+    type: research-paper
+    date: 2026-09-30
+  - title: "Statement regarding reported activity targeting Government of Canada websites"
+    url: "https://www.cyber.gc.ca/en/news-events/statement-regarding-reported-activity-targeting-government-canada-websites"
+    archive_url: "https://web.archive.org/web/20261002213902/https://www.cyber.gc.ca/en/news-events/statement-regarding-reported-activity-targeting-government-canada-websites"
+    publisher: "Communications Security Establishment Canada"
+    type: government-advisory # Official statement published on the Canadian Centre for Cyber Security site.
+    date: 2026-09-29
+  - title: "OpenAI says its models engaged with US government websites in misbehavior disclosure"
+    url: "https://www.opb.org/article/2026/09/26/openai-says-its-models-engaged-with-us-government-websites/"
+    archive_url: "https://web.archive.org/web/20260930224927/https://www.opb.org/article/2026/09/26/openai-says-its-models-engaged-with-us-government-websites/"
+    publisher: "Associated Press" # AP wire story as published by OPB; carries OpenAI's statement and the Education Department's response.
+    type: news
+    date: 2026-09-26
+  - title: "AI Agents Aimed SQL Injection at US and Canadian Government Sites"
+    url: "https://www.securityweek.com/ai-agents-aimed-sql-injection-at-us-and-canadian-government-sites/"
+    archive_url: "https://web.archive.org/web/20261008021256/https://www.securityweek.com/ai-agents-aimed-sql-injection-at-us-and-canadian-government-sites/"
+    publisher: "SecurityWeek"
+    type: news
+    date: 2026-10-02
+added:
+  date: 2026-10-15
+  by: "MLSecOpsHub"
+last_updated: 2026-10-15
