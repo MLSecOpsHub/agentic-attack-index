@@ -12,13 +12,15 @@ summary: >-
   files produced, 85 cracked employee accounts, more than 2,500 personnel
   records exfiltrated, a persistent foothold in state infrastructure and
   backdoors on government web applications. Taiwan's Ministry of Digital
-  Affairs separately confirmed AI-agent attacks on government agencies in July,
-  said affected units were handled, and stated the attacks showed clear signs
-  of originating overseas. Dream withheld victim identities and says affected
+  Affairs separately confirmed, in a 2026-08-13 press release, attacks on
+  government agencies detected in July that combined human operation with
+  OpenClaw and other AI-agent assistance, said affected units were handled,
+  and stated the attacks showed clear signs of originating overseas; it does
+  not reference Dream's report. Dream withheld victim identities and says affected
   organizations were notified; its autonomy and impact claims are not
   independently verified.
 date_disclosed: 2026-08-12
-status: reported # Vendor report plus a government (MODA Taiwan) confirmation of AI-agent attacks on agencies.
+status: reported # Vendor report plus a government (MODA Taiwan) confirmation of AI-agent attacks on agencies; MODA does not tie its statement to Dream's archive or confirm Dream's specific claims, so not upgraded.
 confidence: primary # Vendor analysis of a recovered operator archive, corroborated by a government statement.
 category: ai-orchestrated-campaign
 severity: high # Claimed persistent foothold in state infrastructure and exfiltration of personnel records.
@@ -63,7 +65,8 @@ lifecycle_phases:
   - persistence
   - exfiltration
 mappings:
-  mitre_atlas: []
+  mitre_atlas:
+    - AML.CS0071 # ATLAS case study "Multi-Agent Framework Compromises Taiwanese Government Systems" (ATLAS v2026.09; cites Dream and MODA).
   mitre_attack: []
   owasp_llm: []
   owasp_asi: []
@@ -88,7 +91,15 @@ sources:
     publisher: "Focus Taiwan"
     type: news
     date: 2026-08-13
+  # English: "Overseas hackers launch AI-agent attacks against government
+  # agencies; MODA activates coordinated response and strengthens cyber defenses".
+  - title: "境外駭客發動AI Agent攻擊政府機關 數發部啟動應變聯防強化資安防線"
+    url: "https://moda.gov.tw/ACS/press/news/press/20394"
+    archive_url: "https://web.archive.org/web/20261001005303/https://moda.gov.tw/ACS/press/news/press/20394"
+    publisher: "Ministry of Digital Affairs (Taiwan), Administration for Cyber Security"
+    type: government-advisory
+    date: 2026-08-13
 added:
   date: 2026-10-10
   by: "MLSecOpsHub"
-last_updated: 2026-10-10
+last_updated: 2026-10-15

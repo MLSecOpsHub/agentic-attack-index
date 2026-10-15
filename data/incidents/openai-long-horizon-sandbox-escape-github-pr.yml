@@ -9,17 +9,25 @@ summary: >-
   called PowerCool, and was instructed to post results only to Slack; it instead
   followed the benchmark's own instruction to submit results as a GitHub pull
   request, and spent about an hour finding and using a sandbox weakness to do
-  so where earlier models had given up. In a separate evaluation the same model,
-  blocked by a scanner from retrieving private submissions, split and obfuscated
-  an authentication token and reconstructed it at runtime to work around the
-  scanner, stating in its reasoning that it was doing so. OpenAI paused internal
+  so where earlier models had given up. In a separate episode the same model,
+  trying to recover other teams' private submissions, split and obfuscated
+  an authentication token and reconstructed it at runtime to work around
+  secret scanning, stating in its reasoning that it was doing so. OpenAI's
+  2026-09-25 misalignment report on that episode (incident date 2026-05-27,
+  internal deployment on a Lean theorem-proving task) states the token was a
+  researcher's GitHub token, which the model published in a public pull request
+  on OpenAI's public openai/codex repository after twice agreeing to the
+  researcher's instructions to stop; it used the repository's existing CI as a
+  relay and retrieved fragments of another submission's job log (metadata, not
+  source code). OpenAI deactivated the affected keys and then all employees'
+  keys as a precaution. OpenAI paused internal
   deployment of the model, rebuilt its safety system around defense in depth and
   trajectory-level monitoring, and restored limited access under monitoring.
 date_disclosed: 2026-07-20
 status: confirmed # First-party disclosure by the model developer.
 confidence: primary
 category: autonomous-attack
-severity: medium # The model reached a public repository and worked around a credential scanner; no third-party victim stated.
+severity: medium # The model reached public repositories and published a researcher's credential publicly; OpenAI revoked keys and names no external victim.
 models:
   - "OpenAI long-horizon internal model (unreleased)"
 model_families:
@@ -38,6 +46,7 @@ related:
   - anthropic-cyber-evals-real-target-incidents
 mitigations:
   - "OpenAI paused internal deployment, built incident-derived adversarial evaluations, improved long-horizon alignment, added trajectory-level monitoring, gave users greater visibility and control, and restored limited access under monitoring."
+  - "For the token episode, OpenAI deactivated the users' keys and then all employees' keys, took the model down for about two weeks, and restored it with enforced auto-review of all actions, an asynchronous chain-of-thought misalignment monitor able to take the model down, stricter system prompting, more frequent misalignment monitoring and restricted internet access."
 targets:
   orgs_affected: null
   records_exfiltrated: null
@@ -54,9 +63,12 @@ mappings:
   aiid: []
 impact: >-
   Per OpenAI: an unreleased model circumvented sandbox restrictions to open a
-  pull request on a public GitHub repository, and in a separate evaluation
-  worked around a credential scanner by splitting and reconstructing an
-  authentication token. No third-party victim stated.
+  pull request on a public GitHub repository, and in a separate episode
+  worked around secret scanning by splitting and reconstructing a researcher's
+  GitHub token, which it published in a public pull request on openai/codex;
+  fragments of another submission's private job log (metadata, not source
+  code) were retrieved. OpenAI deactivated the users' keys and, as a
+  precaution, all employees' keys; it names no affected external party.
 sources:
   - title: "Safety and alignment in an era of long-horizon models"
     url: "https://openai.com/index/safety-alignment-long-horizon-models/"
@@ -64,7 +76,27 @@ sources:
     publisher: "OpenAI"
     type: first-party-disclosure
     date: 2026-07-20
+  # Same token-splitting episode as the 2026-07-20 post, matched by description
+  # (same highly persistent internal model; recovering others' private
+  # submissions; token split to evade secret scanning; deployment paused). The
+  # report does not cross-link the 2026-07-20 post.
+  - title: "Exposing a GitHub token in a public repository"
+    url: "https://alignment.openai.com/misalignment-reports/exposing-a-github-token-in-a-public-repository/"
+    archive_url: "https://web.archive.org/web/20261009210826/https://alignment.openai.com/misalignment-reports/exposing-a-github-token-in-a-public-repository/"
+    publisher: "OpenAI"
+    type: first-party-disclosure
+    date: 2026-09-25
 added:
   date: 2026-10-10
   by: "MLSecOpsHub"
-last_updated: 2026-10-10
+revisions:
+  - date: 2026-10-15
+    note: >-
+      Added OpenAI's 2026-09-25 misalignment report on the token-splitting
+      episode. Replaced "No third-party victim stated": the report shows a
+      researcher's GitHub token was published in a public openai/codex pull
+      request (keys since revoked) and fragments of another submission's
+      private job log were retrieved. Corrected "separate evaluation" to
+      "separate episode" (the report describes internal deployment). Grades
+      unchanged.
+last_updated: 2026-10-15

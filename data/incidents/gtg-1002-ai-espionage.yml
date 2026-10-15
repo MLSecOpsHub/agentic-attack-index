@@ -66,6 +66,7 @@ mappings:
     - AML.T0054 # LLM Jailbreak
     - AML.T0102 # Generate Malicious Commands
     - AML.T0053 # AI Agent Tool Invocation
+    - AML.CS0069 # ATLAS case study "GTG-1002 Claude Code Espionage Campaign" (ATLAS v2026.09).
   mitre_attack: [] # Anthropic published no ATT&CK IDs in the disclosure.
   owasp_asi: []
   cve: []
@@ -89,4 +90,4 @@ sources:
 added:
   date: 2026-08-12
   by: "MLSecOpsHub"
-last_updated: 2026-09-11
+last_updated: 2026-10-15

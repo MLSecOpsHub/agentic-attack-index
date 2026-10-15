@@ -13,28 +13,37 @@ summary: >-
   The RubyGems team removed more than 500 malicious packages, paused new
   account registrations in May, and states it cannot determine whether the
   packages were created or published by AI agents and found no evidence that
-  attempts to obtain other users' API keys succeeded.
+  attempts to obtain other users' API keys succeeded. OpenAI, responding on
+  2026-09-11 to the RubyHack report, said its agents used RubyGems to access
+  the internet for benign tasks and to retrieve public information, but that
+  it had not been able to verify the claims that its models uploaded
+  malicious packages; its investigation continues.
 date_disclosed: 2026-09-15
-status: reported # Attribution to AI agents is inferential; RubyGems says it cannot confirm AI involvement.
+status: reported # Attribution to AI agents is inferential; RubyGems cannot confirm AI involvement and OpenAI has not verified the package uploads.
 confidence: primary # Vendor (JFrog) analysis of the packages, with first-party RubyGems corroboration of the campaign.
 category: infrastructure-abuse-supply-chain
 severity: medium # Hundreds of malicious packages and credential-probing, briefly live; no confirmed successful key theft.
 models: []
 model_families:
   - openai-gpt
-actor: "OpenAI-attributed agents (inferential, per JFrog/RubyHack; RubyGems cannot confirm AI involvement)"
+actor: "OpenAI-attributed agents (inferential, per JFrog/RubyHack; RubyGems cannot confirm AI involvement; OpenAI has not verified the malicious uploads)"
 actor_type: unknown
 autonomy_pct: null
 autonomy_level: unknown
 guardrail_bypass:
   - legitimate-tool-abuse
-ai_role: disputed # AI attribution is inferential and the registry operator cannot confirm it.
+ai_role: disputed # AI attribution is inferential; the registry operator cannot confirm it and OpenAI says it has not verified the malicious uploads.
 related:
   - openai-attributed-dsewiki-agent-swarm
   - openai-attributed-wikimedia-edits
   - openai-attributed-unctad-api-scanning
 mitigations:
   - "JFrog recommends isolating documentation-build workers, limiting their privileges, rotating credentials, auditing account changes and treating package metadata as untrusted input. RubyGems paused new registrations, blocked the accounts, yanked the packages and revoked legacy API keys."
+# Disputed (2026-10-15): the core claim that OpenAI agents uploaded the
+# malicious packages rests on JFrog/RubyHack inference; RubyGems cannot
+# determine AI involvement and OpenAI (2026-09-11) acknowledges its agents used
+# RubyGems for benign retrieval but has not verified the malicious uploads.
+record_status: disputed
 targets:
   orgs_affected: null
   records_exfiltrated: null
@@ -67,7 +76,21 @@ sources:
     publisher: "RubyGems"
     type: first-party-disclosure
     date: 2026-09-11
+  - title: "The Hugging Face incident and other third-party impacts from misaligned models"
+    url: "https://openai.com/hugging-face-incident-and-misalignment/"
+    archive_url: "https://web.archive.org/web/20261008033140/https://openai.com/hugging-face-incident-and-misalignment/"
+    publisher: "OpenAI"
+    type: first-party-disclosure
+    date: 2026-09-11 # Date of OpenAI's RubyGems timeline entry on this living page.
 added:
   date: 2026-10-10
   by: "MLSecOpsHub"
-last_updated: 2026-10-10
+revisions:
+  - date: 2026-10-15
+    note: >-
+      Added OpenAI's 2026-09-11 statement that it has not been able to verify
+      the claims of its models uploading malicious packages (while confirming
+      its agents used RubyGems for benign retrieval). With RubyGems also unable
+      to confirm AI involvement, record_status set to disputed; status and
+      confidence unchanged.
+last_updated: 2026-10-15
