@@ -1,0 +1,66 @@
+name: release
+
+# Tag and publish a GitHub Release whenever a dataset version bump reaches
+# main. The version comes from package.json (kept in sync with CITATION.cff by
+# `npm run validate`); the notes are that version's CHANGELOG section. Runs only
+# when no v<version> tag exists yet, so ordinary data merges are a no-op.
+on:
+  push:
+    branches: [main]
+    paths: [package.json]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: tag and publish
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm test
+
+      - name: Read version
+        id: version
+        run: echo "tag=v$(node -p "require('./package.json').version")" >> "$GITHUB_OUTPUT"
+
+      - name: Skip if already tagged
+        id: exists
+        run: |
+          if git rev-parse -q --verify "refs/tags/${{ steps.version.outputs.tag }}" >/dev/null; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Extract release notes from CHANGELOG
+        if: steps.exists.outputs.skip != 'true'
+        run: |
+          v="${{ steps.version.outputs.tag }}"; v="${v#v}"
+          awk -v v="$v" '
+            $0 ~ "^## \\[" v "\\]" { on = 1; next }
+            on && /^## \[/ { exit }
+            on { print }
+          ' CHANGELOG.md > "$RUNNER_TEMP/notes.md"
+          if [ ! -s "$RUNNER_TEMP/notes.md" ]; then
+            echo "::error::CHANGELOG.md has no section for $v"
+            exit 1
+          fi
+
+      - name: Create tag and release
+        if: steps.exists.outputs.skip != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${{ steps.version.outputs.tag }}" \
+            --target "$GITHUB_SHA" \
+            --title "Agentic Attack Index ${{ steps.version.outputs.tag }}" \
+            --notes-file "$RUNNER_TEMP/notes.md" \
+            dist/incidents.json dist/incidents.ndjson dist/incidents.csv \
+            dist/summary.json dist/stix/bundle.json schema/incident.schema.json
