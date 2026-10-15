@@ -53,6 +53,15 @@ Update the fields, add the new source(s), bump `last_updated`, and keep the `id`
 - Trust-critical paths (`data/`, `schema/`, `taxonomy/`, `scripts/`, `.github/`) have code owners (`.github/CODEOWNERS`). For this to actually gate merges, enable branch protection on `main` with **Require a pull request before merging**, **Require review from Code Owners**, and **Require status checks to pass** (select the `validate + build` check) — these are GitHub repo settings, not files in the repo.
 - If you change `schema/`, update `README.md`, the taxonomy files, and `CITATION.cff` as needed, and explain the migration in the PR.
 
+## Releasing
+
+The dataset follows semantic versioning: added records or enum values are a minor bump; a removed or renamed field or enum value is a major bump with a migration note. To cut a release:
+
+1. On a `release/vX.Y.Z` branch, set the same version in `package.json` (`npm version X.Y.Z --no-git-tag-version`, which also updates `package-lock.json`) and in `CITATION.cff`, along with `date-released`.
+2. Move the `[Unreleased]` notes in `CHANGELOG.md` into a dated `[X.Y.Z]` section.
+3. Run `npm test` and `npm run linkcheck`, commit the rebuilt `dist/` as `chore(release): vX.Y.Z`, and open a PR.
+4. After the merge, `.github/workflows/release.yml` creates the `vX.Y.Z` tag and a GitHub Release. The release notes come from the changelog section, and the `dist/` artifacts and schema are attached. The workflow fails if that section is missing.
+
 ## Licensing of contributions
 
 By contributing you agree that data contributions are licensed CC BY-SA 4.0 and code contributions MIT (see `LICENSE-data` and `LICENSE`).

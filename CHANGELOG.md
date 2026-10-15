@@ -7,6 +7,68 @@ dataset version tracks `package.json` and `CITATION.cff` (kept in sync by
 
 ## [Unreleased]
 
+## [0.5.0] - 2026-10-15
+
+### Added
+- Release workflow (`.github/workflows/release.yml`): when a version bump
+  lands on `main`, it creates the `v<version>` git tag and a GitHub Release
+  whose notes are this changelog's section for that version, with the `dist/`
+  artifacts and the JSON Schema attached. Until now no release was tagged, so
+  consumers could not pin a version. `v0.4.0` was tagged retroactively at its
+  release commit. The release steps are documented in CONTRIBUTING.
+
+### Data
+- Intake sweep of 2026-10-15 (#16): 14 incidents, each re-validated against
+  its full primary source for publisher authenticity, corroboration,
+  counter-evidence, scope and duplicates. The catalog grows from 82 to 96
+  records; 95 are active.
+  - **Agent-driven intrusion campaigns:**
+    `artex-south-korea-finance-intrusions` (CrowdStrike; ARTEX agentic
+    pentest tool and Claude Code sessions against South Korean financial
+    institutions),
+    `cyberxero-ai-augmented-access-broker` (SOCRadar; Claude Code agent swarm
+    alongside intrusions at Ukrainian utilities),
+    `mexico-government-claude-code-intrusions` (Gambit Security; disputed by
+    the agencies concerned, none named),
+    `gambit-gentlemen-affiliate-claude-code-intrusions`,
+    `oalabs-compromised-server-claude-codex-intrusions`,
+    `unit42-hermes-deepseek-autonomous-campaign` (ATLAS `AML.CS0070`),
+    `gtig-recon-agentic-secret-harvesting`,
+    `storm-3168-azure-service-principal-destruction` (Microsoft; `ai_role:
+    disputed`).
+  - **Evaluation and research agents that reached real third parties:**
+    `anthropic-unintended-model-actions-real-websites`,
+    `openai-agents-australian-state-agencies`,
+    `ai-agents-us-canada-government-websites` (Transluce; actor Unknown).
+  - **AI-agent supply chain:**
+    `mandiant-hijacked-coding-assistant-shai-hulud`,
+    `skills-sh-paperclip-malicious-skills`,
+    `postmark-mcp-bcc-backdoor`.
+
+### Changed
+- `openai-attributed-rubygems-agent-swarm` is now `record_status: disputed`.
+  OpenAI says it has not been able to verify that its models uploaded the
+  malicious packages, and RubyGems cannot confirm AI involvement. Disputed
+  records are excluded from headline counts.
+- Confidence raised from secondary to primary on
+  `openai-attributed-dsewiki-agent-swarm` and
+  `openai-huggingface-may-account-hijacking`, after OpenAI's first-party
+  notices and technical report were cited. The DseWiki start date was
+  corrected.
+- `jadepuffer-agentic-database-extortion`: `autonomy_level` changed from
+  unknown to supervised-autonomous, per Sysdig's clarification that a human
+  set up and targeted the operation. Linked to the new Storm-3168 record.
+- `openai-long-horizon-sandbox-escape-github-pr`: added OpenAI's GitHub-token
+  report and corrected the "no third-party victim" wording.
+  `openai-agent-services-australia-medicare-portal`: a TODO is now closed
+  with OpenAI's first-party post.
+- MITRE ATLAS case-study ids (v2026.09) added to `echoleak-m365-copilot`,
+  `radware-zombieagent-deep-research`,
+  `openai-eval-agents-hugging-face-intrusion`, `gtg-1002-ai-espionage` and
+  `dream-multi-agent-asia-government-campaign`. Also added: CISA KEV notes on
+  `divd-zammad-ai-agent-breach` and `papercut-agentic-global-intrusion`, and
+  the MODA press release as a source on the Dream record.
+
 ## [0.4.0] - 2026-10-11
 
 ### Added
