@@ -1,0 +1,84 @@
+id: mandiant-hijacked-coding-assistant-shai-hulud
+name: "Hijacked AI coding-assistant session at a SaaS provider led to the Shai-Hulud worm spreading across about 100 internal repositories"
+summary: >-
+  Mandiant's special report "AI risk and resilience in 2026", dated September
+  2026, describes in its first case study an intrusion Mandiant investigated
+  at an unnamed software-as-a-service provider. A threat actor compromised the
+  provider and hijacked an active AI coding-assistant session on a
+  developer's workstation. Acting as a trusted interpreter, the assistant
+  recommended installing an external package the attacker had poisoned. Once
+  the recommendation was accepted, the attacker used the developer's session
+  to install an infostealer through a poisoned PyPI package, harvest GitHub
+  OAuth tokens and deploy the self-propagating Shai-Hulud worm across about
+  100 internal code repositories. The worm stole repository secrets and
+  exfiltrated proprietary product source code. The actor then poisoned a
+  package in the organisation's official namespace, and a second employee was
+  infected after pulling the compromised version. Mandiant does not name the
+  victim, the assistant or model, or the actor. It does not say when the
+  intrusion happened or how the session was hijacked. The same report
+  separately describes UNC6780 (TeamPCP) using prompt injection against AI
+  coding assistants. Neither Mandiant nor The Hacker News links that actor to
+  this case. The assistant was the delivery channel, not the operator.
+date_disclosed: 2026-09-16 # The report page is dated only "September 2026". The earliest dated coverage found (The Hacker News, Help Net Security) is from 2026-09-16; the earliest Wayback capture is from 2026-09-17.
+status: reported # Only one party investigated the intrusion (Mandiant). The Hacker News repeats Mandiant's case study and does not confirm it independently.
+confidence: primary # Mandiant ran the incident-response investigation.
+category: infrastructure-abuse-supply-chain # Mandiant says the session was "hijacked" but not how, and nothing indicates the assistant was manipulated through injected content. The harm reached the victim through a poisoned package, an infostealer and a worm, so agent-hijack-prompt-injection is not used.
+severity: high # Source code and repository secrets were stolen, the worm spread to about 100 internal repositories, and the organisation's own package namespace was poisoned.
+models: [] # Mandiant names neither the coding assistant nor the model.
+model_families:
+  - other # Assistant and model not named.
+actor: Unknown # Mandiant names no actor for this case.
+actor_type: unknown
+autonomy_pct: null
+autonomy_level: not-applicable # The assistant was hijacked and used to deliver the attack. It did not run it.
+guardrail_bypass:
+  - unknown # Mandiant does not say how the session was hijacked.
+ai_role: significant # The hijacked assistant's package recommendation was the delivery point. The infostealer and worm that followed were conventional malware.
+related:
+  - miasma-worm-ai-coding-agent-configs # Related only by technique (a worm-driven compromise that abused AI coding tools). No source links the actors.
+mitigations:
+  - "Mandiant recommends securing AI-assisted development with IDE and CLI verification hooks that check every AI-recommended third-party dependency against cryptographic checksums and approved allowlists."
+  - "Mandiant recommends keeping local credentials away from extensions (no access to raw API keys, long-lived OAuth tokens or secrets) and restricting workstation network egress so all dependency traffic goes through secure internal repositories."
+  - "Mandiant advises treating AI coding assistants and MCP servers as privileged sessions, with just-in-time secrets management and cryptographic integrity checks on all CLI hooks and plugins."
+targets:
+  orgs_affected: 1 # One SaaS provider. The secondary infection was a second employee of the same organisation.
+  records_exfiltrated: null # Mandiant gives no count.
+  sectors:
+    - technology # Software-as-a-service provider.
+  countries: [] # TODO: source. Mandiant does not state the victim's country.
+lifecycle_phases:
+  - resource-dev
+  - initial-access
+  - execution
+  - credential-access
+  - exfiltration
+mappings:
+  mitre_atlas: []
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: []
+  cve: []
+  aiid: []
+impact: >-
+  Per Mandiant: proprietary product source code and repository secrets were
+  exfiltrated from an unnamed SaaS provider; the Shai-Hulud worm was deployed
+  across about 100 internal code repositories; and a package in the
+  organisation's official namespace was poisoned, infecting a second employee.
+  No data volume or financial figure is given.
+sources:
+  - title: "AI risk and resilience in 2026: A Mandiant special report"
+    url: "https://cloud.google.com/security/resources/ai-risk-and-resilience-2026"
+    archive_url: "https://web.archive.org/web/20260917032910/https://cloud.google.com/security/resources/ai-risk-and-resilience-2026"
+    publisher: "Mandiant (Google Cloud)"
+    type: vendor-report
+    # No date: the page says only "September 2026" (see date_disclosed).
+  - title: "Attacker Hijacks AI Coding Assistant Session, Spreads Shai-Hulud Across About 100 Repositories"
+    url: "https://thehackernews.com/2026/09/attacker-hijacks-ai-coding-assistant.html"
+    archive_url: "https://web.archive.org/web/20260916141955/https://thehackernews.com/2026/09/attacker-hijacks-ai-coding-assistant.html"
+    publisher: "The Hacker News"
+    type: news
+    date: 2026-09-16
+added:
+  date: 2026-10-15
+  by: "MLSecOpsHub"
+last_updated: 2026-10-15
