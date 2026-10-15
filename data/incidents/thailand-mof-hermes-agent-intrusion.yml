@@ -1,0 +1,128 @@
+id: thailand-mof-hermes-agent-intrusion
+name: "Operator ran a Hermes agent unattended for post-compromise enumeration inside Thailand's Ministry of Finance network"
+summary: >-
+  Hunt.io, in research conducted jointly with researcher Bob Diachenko,
+  reported on 2026-07-23 an intrusion targeting Thailand's Ministry of Finance
+  that it says was largely driven by the open-source Hermes agent running in
+  its unattended "YOLO" mode, which removes human approval prompts. Three open
+  directories on a Hong Kong-hosted staging server, captured between 9 and 13
+  July 2026, held exploit code, web shells, tunnelling tools, scripts with
+  hardcoded stolen credentials aimed at ministry mail and Hadoop
+  infrastructure, a previously unreported Go implant the operator calls
+  "Hades", and Hermes output logs. The logs show the agent, on the operator's
+  instructions, running privilege-escalation and kernel-vulnerability
+  assessments against a ministry host, enumerating services and binaries, and
+  recursively searching a web directory of the Office of the Permanent
+  Secretary that held personnel records dating back to 2012. Hunt.io says
+  session material, a web shell deployed on a ministry web server and internal
+  network access indicate several ministry systems were compromised, but it
+  found no evidence the files were exfiltrated and could not determine how
+  initial access was obtained; no recovered artifact shows Hades on a ministry
+  machine. Most of the tooling was conventional and the exploited weaknesses
+  (such as default Hadoop service credentials) are not AI-specific. The
+  ministry has not publicly confirmed a breach. Hunt.io assesses with
+  low-to-medium confidence that the operator is Chinese-speaking.
+# Victim naming: Hunt.io's own report names Thailand's Ministry of Finance as the
+# target; ThaiCERT and the NCSA were notified on 2026-07-15 and acknowledged
+# receipt. The ministry itself has not confirmed a breach (BleepingComputer).
+# Not a duplicate of secflow-asia-government-education-campaign (different
+# Hunt.io report, infrastructure, models and targets; no Thailand) or of
+# dream-multi-agent-asia-government-campaign (Taiwan, Dream Research Labs).
+date_disclosed: 2026-07-23
+status: reported # Single discoverer (Hunt.io with Diachenko); news coverage relays it and the ministry has not confirmed.
+confidence: primary # Hunt.io analysed the operator's exposed staging directories and agent logs directly.
+category: ai-orchestrated-campaign
+severity: high # Government ministry; web shell deployed, session material captured and personnel records enumerated; no exfiltration evidenced.
+models: [] # Hunt.io names the Hermes agent framework but not the underlying model.
+model_families:
+  - other # Hermes Agent (Nous Research) is an agent framework; the model it called is not named.
+actor: "Unknown (Hunt.io: low-to-medium confidence the operator is Chinese-speaking; no group named)"
+actor_type: unknown
+autonomy_pct: null
+autonomy_level: supervised-autonomous # Agent ran in unattended mode without approval prompts; the operator instructed its tasks.
+guardrail_bypass:
+  - legitimate-tool-abuse # Stock open-source agent run with its human-approval step disabled.
+ai_role: significant # Hunt.io says the attack was "largely driven" by Hermes, but the logs cover post-compromise enumeration and most tooling was conventional.
+related:
+  - secflow-asia-government-education-campaign # Same discoverer (Hunt.io) and region; separate operation.
+  - unit42-hermes-deepseek-autonomous-campaign # Same agent framework run by an operator; separate operation.
+  - blackhatsect0r-hermes-dxscan-harvesting # Same technique: the open-source Hermes Agent run against real targets; no actor link stated.
+  - carbonato-docker-hermes-botnet # Same technique: the open-source Hermes Agent run against real targets; no actor link stated.
+mitigations:
+  - "Hunt.io recommends reviewing the HiveServer2 authentication mode (the default accepts any credentials) and enforcing its UDF blocklist."
+  - "Audit web roots for hidden PHP files named to imitate system caches, and alert on web server processes connecting to internal Hadoop service ports."
+  - "Patch sudo and polkit, disable WebDAV on remaining IIS 6.0 servers, and change default credentials on GlassFish admin consoles while restricting them to trusted networks."
+  - "Hunt.io notes exposed Hermes web panels and publicly browsable /hermes-results/ output directories can be found by banner and file-path searches."
+targets:
+  orgs_affected: 1
+  records_exfiltrated: null # Hunt.io found no evidence of exfiltration.
+  sectors:
+    - government
+  countries:
+    - TH
+geo:
+  points:
+    - role: target
+      basis: victim-location
+      attributed_by: "Hunt.io"
+      country: TH
+      lat: 15.87
+      lng: 100.99
+      label: "Thailand (Ministry of Finance, per Hunt.io)"
+      illustrative: true
+lifecycle_phases:
+  - recon # Agent-driven enumeration of ministry hosts, services and file shares.
+  - initial-access # Vector unknown; web shell deployed on a ministry web server.
+  - execution
+  - credential-access # Captured session cookies; mailbox credential testing.
+  - privilege-escalation # Agent-run privilege-escalation assessment; escalation exploits staged.
+  - persistence # Web shell; Hades implant staged but not shown on a ministry machine.
+mappings:
+  mitre_atlas: []
+  mitre_attack: # As mapped by Hunt.io.
+    - T1190
+    - T1505.003
+    - T1036.005
+    - T1071.001
+    - T1090.001
+    - T1059
+    - T1072
+    - T1068
+    - T1082
+    - T1083
+    - T1539
+    - T1110.003
+    - T1547.001
+    - T1053
+    - T1055.012
+    - T1113
+  owasp_llm: []
+  owasp_asi: []
+  cve:
+    - CVE-2021-4034 # Exploit staged on the server; use against the ministry not confirmed.
+    - CVE-2021-3156 # Exploit staged on the server; use against the ministry not confirmed.
+    - CVE-2017-7269 # Exploit staged with ministry-specific paths; use not confirmed.
+  aiid:
+    - 1669
+impact: >-
+  Per Hunt.io: several systems within the Ministry of Finance network
+  compromised, including a web shell on a ministry web server, captured
+  session material for an administrative panel and a document-management
+  platform, and agent-driven enumeration of a directory holding personnel
+  records. No evidence of exfiltration; the ministry has not confirmed a
+  breach.
+sources:
+  - title: "Thailand's Ministry of Finance Targeted With Hermes AI Agent Running Unattended, Hades Implant Staged"
+    url: "https://hunt.io/blog/thailand-ministry-finance-targeted-with-hermes-ai-agent"
+    publisher: "Hunt.io"
+    type: vendor-report
+    date: 2026-07-23
+  - title: "Hermes AI agent used to automate attack on Thai Finance Ministry"
+    url: "https://www.bleepingcomputer.com/news/security/hermes-ai-agent-used-to-automate-attack-on-thai-finance-ministry/"
+    publisher: "BleepingComputer"
+    type: news
+    date: 2026-07-24
+added:
+  date: 2026-10-15
+  by: "MLSecOpsHub"
+last_updated: 2026-10-15
