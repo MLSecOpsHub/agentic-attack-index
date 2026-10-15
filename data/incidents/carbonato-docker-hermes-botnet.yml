@@ -1,0 +1,108 @@
+id: carbonato-docker-hermes-botnet
+name: "Carbonato botnet installs a Hermes agent persona on hijacked Docker hosts as an operator interface prioritising AI API key theft"
+summary: >-
+  ThreatDown (Malwarebytes) reported on 2026-09-22 the Carbonato botnet, found
+  through an unauthenticated Docker registry that had been publicly exposed
+  since May 2026 and held 59 repositories and 4.3 GB of image data spanning
+  October 2024 to August 2026, alongside a separate trojanized
+  cryptocurrency-wallet operation. The botnet compromises hosts whose Docker
+  API is exposed without authentication, uses a privileged container to run
+  commands on the host, opens a reverse SSH tunnel, installs layered
+  persistence and a cryptocurrency miner, and spreads worm-like by scanning
+  neighbouring networks every five minutes. On each host it installs the
+  unmodified open-source Hermes Agent framework and overwrites the agent's
+  persona file with a 39-line prompt naming it "GH0ST", disclaiming ethical
+  limits and ranking AI provider API keys from 14 providers as the top loot,
+  ahead of SSH credentials, tokens and databases. Operators send tasks over
+  Telegram; the model, reached through the crew's own LLM gateway, interprets
+  each task, writes and runs terminal commands on the victim and reports back.
+  ThreatDown states that target selection, persistence and spreading are
+  handled by scripts and that the model is absent from the propagation phase.
+  It does not report how many hosts were infected or what the agent actually
+  collected. ThreatDown assesses the operators as Costa Rica-based on
+  linguistic, timezone, Telegram-handle and network signals, and could not
+  link them to a known cluster.
+date_disclosed: 2026-09-22
+status: reported # Single discoverer; BleepingComputer and others relay ThreatDown.
+confidence: primary # ThreatDown collected the operation's exposed registry directly.
+# Category: the AI agent is a post-compromise payload and operator interface,
+# not the attacker. The novelty is abuse of stock agent tooling as a botnet
+# implant whose priority is stealing AI API keys to feed the crew's LLM
+# gateway, so this is graded as AI infrastructure/agent-tooling abuse rather
+# than an AI-orchestrated or autonomous attack.
+category: infrastructure-abuse-supply-chain
+severity: medium # Worm-like compromise of exposed Docker hosts with mining and credential theft; scale not reported.
+models: [] # The gateway served 27 models; ThreatDown does not say which the agent used.
+model_families:
+  - other # Hermes Agent (Nous Research) framework; underlying model not named.
+actor: "Unknown Carbonato botnet operators (ThreatDown assesses them as Costa Rica-based; no known cluster)"
+actor_type: cybercriminal # Botnet with a cryptocurrency miner and a trojanized-wallet operation, per ThreatDown.
+autonomy_pct: null
+autonomy_level: human-in-the-loop # ThreatDown: operator-sent Telegram tasks drive an interactive command loop per task.
+guardrail_bypass:
+  - legitimate-tool-abuse # Unmodified open-source agent framework repurposed as an implant.
+  - jailbreak # Persona prompt instructs the model that it has no moral or ethical restrictions; its effect is not reported.
+# ai_role: initial access, persistence, spreading and mining are scripted; the
+# agent only acts when an operator tasks it, and ThreatDown reports no
+# recovered agent activity on victims. A payload component, not load-bearing.
+ai_role: incidental
+related:
+  - gtg-50020-ai-vendor-api-key-theft # Theft of AI vendor API keys; separate actor.
+  - unit42-hermes-deepseek-autonomous-campaign # Hermes Agent tasked over Telegram by an operator; separate actor.
+  - thailand-mof-hermes-agent-intrusion # Same technique: the open-source Hermes Agent run against real targets; no actor link stated.
+  - blackhatsect0r-hermes-dxscan-harvesting # Same technique: the open-source Hermes Agent run against real targets; no actor link stated.
+mitigations:
+  - "ThreatDown advises never exposing the Docker daemon API to the network and requiring authentication on every container registry."
+  - "Do not blocklist hermes-agent, which has legitimate users; hunt for its abuse instead, such as a persona file naming GH0ST, a CARBONATO_API_KEY setting or unexplained Telegram traffic from servers."
+  - "Check for the persistence kit (hidden watchdog binaries, disguised kernel-thread process names, a miner posing as a system service, unexpected immutable files) and for deterministic reverse SSH tunnels."
+  - "Treat AI API keys like bank credentials: inventory where they live, rotate them and monitor their usage."
+targets:
+  orgs_affected: null # ThreatDown does not report an infected-host count.
+  records_exfiltrated: null
+  sectors: [] # Any host with an exposed Docker API; no sector stated.
+  countries: []
+geo:
+  points:
+    - role: origin
+      basis: operator-location
+      attributed_by: "ThreatDown"
+      country: CR
+      lat: 9.75
+      lng: -83.75
+      label: "Costa Rica (assessed operator location, per ThreatDown)"
+      illustrative: true
+lifecycle_phases:
+  - initial-access
+  - execution
+  - persistence
+  - credential-access # Agent persona prioritises AI API keys and other credentials.
+  - impact # Cryptocurrency miner deployed on hijacked hosts.
+mappings:
+  mitre_atlas: []
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: []
+  cve: []
+  aiid: []
+impact: >-
+  Per ThreatDown: hosts with exposed Docker APIs taken over through privileged
+  containers, kept persistent and used for cryptocurrency mining, with a
+  Hermes agent installed as an operator-tasked post-compromise tool directed
+  at AI API keys and other credentials. Infection counts and stolen data are
+  not reported. On 2026-09-03 six of seven known registries, the phishing
+  sites, the CDN and the crew's LLM gateway were online.
+sources:
+  - title: "CARBONATO: a botnet built around an AI agent"
+    url: "https://www.threatdown.com/blog/carbonato/"
+    publisher: "ThreatDown"
+    type: vendor-report
+    date: 2026-09-22
+  - title: "New Carbonato malware uses AI agents to hijack exposed Docker hosts"
+    url: "https://www.bleepingcomputer.com/news/security/new-carbonato-malware-uses-ai-agents-to-hijack-exposed-docker-hosts/"
+    publisher: "BleepingComputer"
+    type: news
+    date: 2026-09-24
+added:
+  date: 2026-10-15
+  by: "MLSecOpsHub"
+last_updated: 2026-10-15
