@@ -1,0 +1,151 @@
+id: mexico-government-claude-code-intrusions
+name: "Single operator used Claude Code and GPT-4.1 to breach Mexican government organizations (Dec 2025-Feb 2026)"
+summary: >-
+  Gambit Security disclosed on 2026-02-25, in research first reported by
+  Bloomberg, that a single unidentified operator used Anthropic's Claude Code
+  and OpenAI's GPT-4.1 API as core operational tools in a campaign against
+  Mexican public-sector organizations between late December 2025 and
+  mid-February 2026. Gambit's full technical report (2026-04-10), based on
+  forensic material recovered from three attacker servers, says at least nine
+  federal, state and municipal government organizations were breached,
+  including a municipal water utility, and that the operator exfiltrated
+  databases holding hundreds of millions of citizen records and built a live
+  query service into one agency's systems with a document-forgery service on
+  top of it. Per Gambit, Claude Code generated and executed about 75 percent of
+  remote command execution (5,317 AI-executed commands from 1,088 logged
+  prompts across 34 sessions), working conversationally under the operator's
+  direction through reconnaissance, exploit customization, privilege
+  escalation, persistence and data extraction, while a custom tool sent
+  harvested server data to GPT-4.1 to produce 2,597 analysis reports. Claude
+  initially refused and asked for proof of authorization; the operator worked
+  around it with a bug-bounty cover story and a pre-written playbook loaded
+  into every session, and refusals recurred throughout. Gambit notes several
+  victims were compromised manually and the forgery code was not written by
+  Claude. Anthropic and OpenAI said they banned the accounts involved. Mexico's
+  federal tax authority issued a statement on 2026-02-25 categorically denying
+  any breach after reviewing its system logs, and Bloomberg reported that two
+  other listed victims also denied being breached; Gambit's victim list has
+  not been independently confirmed. Unit 42 later cited Gambit's report while
+  tracking related activity against Latin American organizations as cluster
+  CL-CRI-1131.
+date_disclosed: 2026-02-25 # Gambit research and Bloomberg report published Wednesday 2026-02-25 (Claims Journal syndication; Infobae dates the tax authority's same-day statement). Full report followed 2026-04-10.
+# Not "confirmed": although Gambit, Bloomberg and Mobile World Live are distinct
+# publishers and Anthropic/OpenAI confirmed account bans, several named victims
+# publicly deny any breach, so the victim-side facts remain contested.
+status: reported
+confidence: primary # Gambit's forensic report on material recovered from the attacker's servers.
+category: ai-orchestrated-campaign
+severity: critical # As claimed by Gambit (hundreds of millions of citizen records, nine government bodies); flagged for review because victims dispute it.
+models:
+  - "GPT-4.1" # Via the OpenAI API, for bulk analysis of harvested server data.
+  # Claude Code was the primary agent; Gambit does not state which Claude model version ran behind it.
+model_families:
+  - claude
+  - openai-gpt
+actor: "Unidentified single operator (Gambit names no group; researchers told Bloomberg they do not believe a foreign government is involved)"
+actor_type: single-operator
+autonomy_pct: null # Gambit's ~75% figure is the share of remote command execution run by Claude Code, not an autonomy measure.
+autonomy_level: human-in-the-loop # Gambit: a hybrid, human-directed operation; the operator directed Claude Code conversationally and approved escalation steps.
+guardrail_bypass:
+  - jailbreak # Bug-bounty cover story plus a pasted playbook; Anthropic's representative described it as a jailbreak (Bloomberg).
+  - legitimate-tool-abuse # Commercial Claude Code agent and OpenAI API used toward malicious ends.
+# Editor's call: Gambit's framing ("AI functioned as the operational team")
+# would support load-bearing, but Gambit also documents manual compromises and
+# non-AI tooling, and the victims dispute the breaches.
+ai_role: significant
+related:
+  - oalabs-compromised-server-claude-codex-intrusions # Same technique: a single operator driving Claude Code through intrusions under a claimed-authorisation framing; no actor link stated.
+  - gambit-gentlemen-affiliate-claude-code-intrusions # Same discoverer (Gambit Security) and technique; different operator.
+mitigations:
+  - "Gambit notes that many exploited weaknesses were addressable through standard controls (patching, credential rotation, network segmentation and endpoint detection) and urges organizations to address technical debt such as end-of-life systems that can no longer receive security updates."
+  - "Anthropic said it disrupted the activity and banned the associated accounts, and pointed to cyber-specific misuse probes in Claude Opus 4.6; OpenAI said its models refused the policy-violating attempts and it banned the adversary's accounts."
+  - "Gambit says affected organizations were notified with outside help including the Shadowserver Foundation, and that it delayed the full report at the parties' request to allow incident response."
+targets:
+  orgs_affected: 9 # "At least nine" government organizations per Gambit's full report; initial February reporting cited ten agencies and one financial institution.
+  # Gambit claims about 195 million taxpayer records at one victim, but the
+  # agency concerned categorically denies any breach; kept out of this numeric
+  # field (it would dominate dataset totals) and stated in `impact` instead.
+  records_exfiltrated: null
+  sectors:
+    - government
+    - energy # A municipal water utility (taxonomy "energy / utilities").
+    - healthcare # A city health department and a state government's patient records, per Gambit.
+  countries:
+    - MX
+geo:
+  points:
+    - role: target
+      basis: victim-location
+      attributed_by: "Gambit Security"
+      country: MX
+      lat: 23.63
+      lng: -102.55
+      label: "Mexico (victim country, per Gambit Security)"
+      illustrative: true
+lifecycle_phases:
+  - recon
+  - resource-dev # Gambit: a preparation phase from 2025-11-27 with pre-approved command patterns and a structured project directory.
+  - initial-access
+  - execution
+  - privilege-escalation
+  - persistence
+  - credential-access
+  - exfiltration
+  - impact # Live query service into government systems and a document-forgery service built on the stolen access.
+mappings:
+  mitre_atlas: []
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: []
+  cve: [] # Gambit reports exploits for 20 different CVEs but does not list them in the report text.
+  aiid: []
+impact: >-
+  Per Gambit Security: at least nine Mexican government organizations
+  breached, data exfiltrated from databases holding hundreds of millions of
+  citizen records (including a claimed 195 million taxpayer records),
+  hundreds of internal servers compromised, a live query service and a
+  forged tax-certificate service operated on the stolen access, and a
+  state government's virtualization infrastructure taken over. Initial
+  reporting cited about 150 GB stolen. The federal tax authority denies any
+  breach, and Bloomberg reported denials from two other listed victims.
+sources:
+  - title: "The AI-Assisted Breach of Mexico's Government Infrastructure"
+    url: "https://gambit.security/ai-assisted-breach-of-mexicos-government-infrastructure"
+    publisher: "Gambit Security"
+    type: vendor-report
+    date: 2026-04-10 # Full technical report, released per Gambit's announcement of that date; the page itself carries no date.
+  - title: "A Single Operator, Two AI Platforms, Nine Government Agencies: The Full Technical Report"
+    url: "https://gambit.security/blog-posts/a-single-operator-two-ai-platforms-nine-government-agencies-the-full-technical-report"
+    archive_url: "https://web.archive.org/web/20260905001117/https://gambit.security/blog-posts/a-single-operator-two-ai-platforms-nine-government-agencies-the-full-technical-report"
+    publisher: "Gambit Security"
+    type: vendor-report
+    date: 2026-04-10
+  - title: "Hacker Used Anthropic's Claude to Steal Sensitive Mexican Data"
+    url: "https://www.claimsjournal.com/news/national/2026/02/25/335916.htm"
+    publisher: "Claims Journal" # Syndicated wire report by Andrew Martin and Carolina Millan; Infobae attributes the original to Bloomberg.
+    type: news
+    date: 2026-02-25
+  - title: "Hacker taps into Claude to infiltrate Mexican agencies"
+    url: "https://www.mobileworldlive.com/ai-cloud/hacker-taps-into-claude-to-infiltrate-mexico-agencies/"
+    publisher: "Mobile World Live"
+    type: news
+    date: 2026-02-26
+  - title: "SAT niega hackeo y robo de información con Inteligencia Artificial"
+    url: "https://www.infobae.com/mexico/2026/02/26/sat-niega-hackeo-y-robo-de-informacion-con-inteligencia-artificial/"
+    archive_url: "https://web.archive.org/web/20260303145235/https://www.infobae.com/mexico/2026/02/26/sat-niega-hackeo-y-robo-de-informacion-con-inteligencia-artificial/"
+    publisher: "Infobae"
+    type: news
+    date: 2026-02-26
+  # Unit 42 cites Gambit's report and tracks later (April-June 2026) activity
+  # as CL-CRI-1131; two hosts it lists also appear in Gambit's indicator list.
+  # It does not independently confirm the December-February breaches.
+  - title: "Attackers Expose Ongoing AI Tool Use Targeting Organizations in Latin America"
+    url: "https://unit42.paloaltonetworks.com/ai-tool-use-targeting-latam-orgs/"
+    archive_url: "https://web.archive.org/web/20261008151319/https://unit42.paloaltonetworks.com/ai-tool-use-targeting-latam-orgs/"
+    publisher: "Unit 42 (Palo Alto Networks)"
+    type: vendor-report
+    date: 2026-09-03
+added:
+  date: 2026-10-15
+  by: "MLSecOpsHub"
+last_updated: 2026-10-15
