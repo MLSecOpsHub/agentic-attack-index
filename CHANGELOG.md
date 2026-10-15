@@ -7,6 +7,17 @@ dataset version tracks `package.json` and `CITATION.cff` (kept in sync by
 
 ## [Unreleased]
 
+### Changed
+- The weekly `archive` workflow no longer pushes a branch or opens a pull
+  request, so the repo setting "Allow GitHub Actions to create and approve
+  pull requests" can stay off. It now runs with read-only contents access.
+  It runs the archiver in report mode, which still asks the Wayback Machine to
+  create the snapshots. It then opens or updates one `archive`-labelled issue
+  listing the snapshots found and the sources that failed, with the commands
+  to add them. A maintainer runs `npm run archive -- --write` locally, reviews
+  the diff, opens the PR and merges. The issue closes itself once every
+  source has a snapshot.
+
 ## [0.7.0] - 2026-10-15
 
 ### Changed
