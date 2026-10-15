@@ -89,7 +89,8 @@ lifecycle_phases:
   - credential-access # Exfiltrated NetScaler memory searched for session-authentication cookies.
   - exfiltration
 mappings:
-  mitre_atlas:
+  mitre_atlas: []
+  mitre_atlas_case_studies:
     - AML.CS0070 # ATLAS case study (v2026.09) for the Hermes/DeepSeek Langflow and n8n session.
   mitre_attack: []
   owasp_llm: []

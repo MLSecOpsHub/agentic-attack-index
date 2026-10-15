@@ -29,7 +29,9 @@
     ],
     "mitre_atlas": [
       "AML.T0051.001",
-      "AML.T0057",
+      "AML.T0057"
+    ],
+    "mitre_atlas_case_studies": [
       "AML.CS0059"
     ],
     "mitre_attack": [],

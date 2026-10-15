@@ -42,7 +42,8 @@ lifecycle_phases:
   - persistence
   - exfiltration
 mappings:
-  mitre_atlas:
+  mitre_atlas: []
+  mitre_atlas_case_studies:
     - AML.CS0066 # ATLAS case study "ZombieAgent: Data Exfiltration Attack on ChatGPT" (ATLAS v2026.09).
   mitre_attack: []
   owasp_llm: []

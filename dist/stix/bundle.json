@@ -389,22 +389,6 @@
     {
       "type": "attack-pattern",
       "spec_version": "2.1",
-      "id": "attack-pattern--4a8a6d02-52c5-50b6-bdb5-8e0333b653dd",
-      "created": "2020-01-01T00:00:00.000Z",
-      "modified": "2020-01-01T00:00:00.000Z",
-      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
-      "name": "AML.CS0066",
-      "external_references": [
-        {
-          "source_name": "mitre-atlas",
-          "external_id": "AML.CS0066",
-          "url": "https://atlas.mitre.org/techniques/AML.CS0066"
-        }
-      ]
-    },
-    {
-      "type": "attack-pattern",
-      "spec_version": "2.1",
       "id": "attack-pattern--4d5cd7f7-d4c6-5121-8f36-2cd4a74a12d6",
       "created": "2020-01-01T00:00:00.000Z",
       "modified": "2020-01-01T00:00:00.000Z",
@@ -533,22 +517,6 @@
     {
       "type": "attack-pattern",
       "spec_version": "2.1",
-      "id": "attack-pattern--60da9a1f-317e-5e51-bf10-2936ccf797f0",
-      "created": "2020-01-01T00:00:00.000Z",
-      "modified": "2020-01-01T00:00:00.000Z",
-      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
-      "name": "AML.CS0059",
-      "external_references": [
-        {
-          "source_name": "mitre-atlas",
-          "external_id": "AML.CS0059",
-          "url": "https://atlas.mitre.org/techniques/AML.CS0059"
-        }
-      ]
-    },
-    {
-      "type": "attack-pattern",
-      "spec_version": "2.1",
       "id": "attack-pattern--6251f3cb-756e-56ba-8cf4-b81e297887d3",
       "created": "2020-01-01T00:00:00.000Z",
       "modified": "2020-01-01T00:00:00.000Z",
@@ -575,22 +543,6 @@
           "source_name": "mitre-attack",
           "external_id": "T1005",
           "url": "https://attack.mitre.org/techniques/T1005"
-        }
-      ]
-    },
-    {
-      "type": "attack-pattern",
-      "spec_version": "2.1",
-      "id": "attack-pattern--6b0d028b-e3e6-59a1-a432-75d581bcf906",
-      "created": "2020-01-01T00:00:00.000Z",
-      "modified": "2020-01-01T00:00:00.000Z",
-      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
-      "name": "AML.CS0069",
-      "external_references": [
-        {
-          "source_name": "mitre-atlas",
-          "external_id": "AML.CS0069",
-          "url": "https://atlas.mitre.org/techniques/AML.CS0069"
         }
       ]
     },
@@ -789,22 +741,6 @@
     {
       "type": "attack-pattern",
       "spec_version": "2.1",
-      "id": "attack-pattern--92544657-20af-5459-84a3-d06a3612e15a",
-      "created": "2020-01-01T00:00:00.000Z",
-      "modified": "2020-01-01T00:00:00.000Z",
-      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
-      "name": "AML.CS0068",
-      "external_references": [
-        {
-          "source_name": "mitre-atlas",
-          "external_id": "AML.CS0068",
-          "url": "https://atlas.mitre.org/techniques/AML.CS0068"
-        }
-      ]
-    },
-    {
-      "type": "attack-pattern",
-      "spec_version": "2.1",
       "id": "attack-pattern--9597bb5b-3766-58db-959d-b36369007f8d",
       "created": "2020-01-01T00:00:00.000Z",
       "modified": "2020-01-01T00:00:00.000Z",
@@ -895,22 +831,6 @@
           "source_name": "mitre-atlas",
           "external_id": "AML.T0051.001",
           "url": "https://atlas.mitre.org/techniques/AML.T0051.001"
-        }
-      ]
-    },
-    {
-      "type": "attack-pattern",
-      "spec_version": "2.1",
-      "id": "attack-pattern--abde5d19-b634-55d2-8804-c31dfa525756",
-      "created": "2020-01-01T00:00:00.000Z",
-      "modified": "2020-01-01T00:00:00.000Z",
-      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
-      "name": "AML.CS0070",
-      "external_references": [
-        {
-          "source_name": "mitre-atlas",
-          "external_id": "AML.CS0070",
-          "url": "https://atlas.mitre.org/techniques/AML.CS0070"
         }
       ]
     },
@@ -1055,22 +975,6 @@
           "source_name": "mitre-attack",
           "external_id": "T1571",
           "url": "https://attack.mitre.org/techniques/T1571"
-        }
-      ]
-    },
-    {
-      "type": "attack-pattern",
-      "spec_version": "2.1",
-      "id": "attack-pattern--c7e94775-9700-5f95-bf84-7af170c7f456",
-      "created": "2020-01-01T00:00:00.000Z",
-      "modified": "2020-01-01T00:00:00.000Z",
-      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
-      "name": "AML.CS0071",
-      "external_references": [
-        {
-          "source_name": "mitre-atlas",
-          "external_id": "AML.CS0071",
-          "url": "https://atlas.mitre.org/techniques/AML.CS0071"
         }
       ]
     },
@@ -1381,7 +1285,6 @@
         "x-agentic-incident--37ae38c3-bd84-504b-a2ab-cdeac5170719",
         "attack-pattern--a985a101-314a-5f5e-9b0b-3671b22130f6",
         "attack-pattern--5baa3ac8-c606-55f7-912b-f165fa9f0086",
-        "attack-pattern--60da9a1f-317e-5e51-bf10-2936ccf797f0",
         "vulnerability--fde37b4f-251e-5fd2-b6c5-fea4e7d66919"
       ],
       "external_references": [
@@ -1399,6 +1302,11 @@
           "source_name": "SecurityWeek",
           "description": "'EchoLeak' AI Attack Enabled Theft of Sensitive Data via Microsoft 365 Copilot",
           "url": "https://www.securityweek.com/echoleak-ai-attack-enabled-theft-of-sensitive-data-via-microsoft-365-copilot/"
+        },
+        {
+          "source_name": "mitre-atlas",
+          "external_id": "AML.CS0059",
+          "url": "https://atlas.mitre.org/studies/AML.CS0059"
         }
       ]
     },
@@ -1485,7 +1393,6 @@
       ],
       "object_refs": [
         "x-agentic-incident--3cc02451-11a6-59a4-9f7e-7fb5c9b9dc75",
-        "attack-pattern--abde5d19-b634-55d2-8804-c31dfa525756",
         "vulnerability--32c2dd25-39f0-5ee1-8796-2a1e02044c86",
         "vulnerability--2172a266-659d-53ae-8b63-c6564c25a0c3",
         "vulnerability--e720c75b-759c-5abf-879a-5cd9146d220a",
@@ -1504,6 +1411,11 @@
           "source_name": "University of Texas Regional Security Operations Center",
           "description": "An AI ran a cyberattack campaign on its own, and it picked its own targets",
           "url": "https://rsoc.utexas.edu/news/ai-ran-cyberattack-campaign-its-own-and-it-picked-its-own-targets"
+        },
+        {
+          "source_name": "mitre-atlas",
+          "external_id": "AML.CS0070",
+          "url": "https://atlas.mitre.org/studies/AML.CS0070"
         }
       ]
     },
@@ -1826,7 +1738,6 @@
       ],
       "object_refs": [
         "x-agentic-incident--ffa98652-5421-5af0-af00-bb96c56cc464",
-        "attack-pattern--92544657-20af-5459-84a3-d06a3612e15a",
         "vulnerability--99cb1af2-5b32-5ec5-a8e2-84e1b114e064",
         "vulnerability--157b7181-2bda-5ed3-8c46-cdfbb0f973e4"
       ],
@@ -1850,6 +1761,11 @@
           "source_name": "HiddenLayer",
           "description": "Dead Drops in Public: What the AI Agent Stashed on Hugging Face",
           "url": "https://www.hiddenlayer.com/research/hugging-face-agent-intrusion-analysis"
+        },
+        {
+          "source_name": "mitre-atlas",
+          "external_id": "AML.CS0068",
+          "url": "https://atlas.mitre.org/studies/AML.CS0068"
         }
       ]
     },
@@ -3675,8 +3591,7 @@
         "ai-role:significant"
       ],
       "object_refs": [
-        "x-agentic-incident--060303e3-864f-5e72-ba04-889a94a84730",
-        "attack-pattern--c7e94775-9700-5f95-bf84-7af170c7f456"
+        "x-agentic-incident--060303e3-864f-5e72-ba04-889a94a84730"
       ],
       "external_references": [
         {
@@ -3693,6 +3608,11 @@
           "source_name": "Ministry of Digital Affairs (Taiwan), Administration for Cyber Security",
           "description": "境外駭客發動AI Agent攻擊政府機關 數發部啟動應變聯防強化資安防線",
           "url": "https://moda.gov.tw/ACS/press/news/press/20394"
+        },
+        {
+          "source_name": "mitre-atlas",
+          "external_id": "AML.CS0071",
+          "url": "https://atlas.mitre.org/studies/AML.CS0071"
         }
       ]
     },
@@ -4160,8 +4080,7 @@
         "x-agentic-incident--c2b0fe57-e542-5e2e-a572-30b528c05293",
         "attack-pattern--ec644057-6dbb-5fcd-9032-780947586e3a",
         "attack-pattern--14b43fb8-4f26-53f9-8f5f-f1e4eec0a3f5",
-        "attack-pattern--fc5f5073-ad3b-5b0e-acfa-10926d61563d",
-        "attack-pattern--6b0d028b-e3e6-59a1-a432-75d581bcf906"
+        "attack-pattern--fc5f5073-ad3b-5b0e-acfa-10926d61563d"
       ],
       "external_references": [
         {
@@ -4173,6 +4092,11 @@
           "source_name": "The Register",
           "description": "Chinese spies told Claude to break into about 30 critical orgs. Some attacks succeeded",
           "url": "https://www.theregister.com/2025/11/13/chinese_spies_claude_attacks/"
+        },
+        {
+          "source_name": "mitre-atlas",
+          "external_id": "AML.CS0069",
+          "url": "https://atlas.mitre.org/studies/AML.CS0069"
         }
       ]
     },
@@ -4825,14 +4749,18 @@
         "ai-role:significant"
       ],
       "object_refs": [
-        "x-agentic-incident--eeec7933-2f5d-53e1-926f-ffb44fd0046c",
-        "attack-pattern--4a8a6d02-52c5-50b6-bdb5-8e0333b653dd"
+        "x-agentic-incident--eeec7933-2f5d-53e1-926f-ffb44fd0046c"
       ],
       "external_references": [
         {
           "source_name": "Radware (via Nasdaq/GlobeNewswire)",
           "description": "Radware Unveils \"ZombieAgent\": A Newly Discovered Zero-Click, AI Agent Vulnerability Enabling Silent Takeover and Cloud-Based Data Exfiltration",
           "url": "https://www.nasdaq.com/press-release/radware-unveils-zombieagent-newly-discovered-zero-click-ai-agent-vulnerability"
+        },
+        {
+          "source_name": "mitre-atlas",
+          "external_id": "AML.CS0066",
+          "url": "https://atlas.mitre.org/studies/AML.CS0066"
         }
       ]
     },

@@ -67,7 +67,8 @@ lifecycle_phases:
   - persistence
   - exfiltration
 mappings:
-  mitre_atlas:
+  mitre_atlas: []
+  mitre_atlas_case_studies:
     - AML.CS0068 # ATLAS case study "Autonomous OpenAI Evaluation Agents Compromise Hugging Face Infrastructure" (ATLAS v2026.09).
   mitre_attack: []
   owasp_llm: []
