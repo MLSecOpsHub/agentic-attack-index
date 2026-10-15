@@ -7,6 +7,17 @@ dataset version tracks `package.json` and `CITATION.cff` (kept in sync by
 
 ## [Unreleased]
 
+## [0.7.1] - 2026-10-15
+
+### Security
+- `sources[].archive_url` must now be a Wayback Machine snapshot
+  (`https://web.archive.org/web/<14-digit timestamp>/…`). Previously the schema
+  accepted any `http(s)` URL, so a hand-edited record could introduce another
+  host as an "archive". All 185 existing values already conform, so no data
+  changed. `sources[].url` stays `http(s)`-only, which keeps `javascript:` and
+  `data:` links out of every consumer. Tests cover the accepted form and
+  rejected hosts, schemes and look-alike domains.
+
 ### Changed
 - The weekly `archive` workflow no longer pushes a branch or opens a pull
   request, so the repo setting "Allow GitHub Actions to create and approve
