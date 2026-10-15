@@ -1,0 +1,111 @@
+id: gambit-gentlemen-affiliate-claude-code-intrusions
+name: "Suspected The Gentlemen ransomware affiliate used Claude Code to breach VPN appliances and exfiltrate data across eight organizations"
+summary: >-
+  Gambit Security reported on 2026-08-13 (full technical report dated
+  2026-08-31) that a suspected affiliate of The Gentlemen
+  ransomware-as-a-service operation used Anthropic's Claude Code, running
+  Claude Sonnet 4.6, during intrusions into six organizations in late June
+  2026, and linked the same actor to two earlier compromises. The victims were
+  an energy utility in Australia, a financial services firm in Mauritius, a
+  food service company in South Africa, a manufacturer in Thailand, an IT
+  services company in Malaysia, and a property manager, a manufacturer and a
+  distributor in the United States. From conversations recovered from the
+  attacker's server, Gambit describes the operator directing Claude Code task
+  by task to log into internet-exposed firewall and VPN appliance management
+  interfaces with previously obtained credentials, capture a directory
+  service-account credential from a firewall, create backdoor VPN accounts and
+  widen VPN access, map internal hosts and credentials, locate backup
+  infrastructure, rank a financial platform's databases by business value, and
+  stage and exfiltrate a database dump. Claude refused at least once without
+  written authorization and complied after the operator claimed authorization
+  in a new session. At the energy utility, a full configuration restore pushed
+  by Claude left the firewall unreachable. Gambit attributes the activity to
+  The Gentlemen with medium confidence, based on one victim appearing on the
+  group's leak site a month later, an IP range overlap attributed by Hunt.io,
+  and the actor's interest in backups. Victims are not named. The same Gambit
+  report covers two unrelated actors that are not part of this record.
+# Gambit's blog post announcing the report is dated 2026-08-13; the full report
+# page carries 31 August 2026 (likely a revision). Cyber Security News covered
+# the report's details on 2026-08-18, confirming it was public by then.
+date_disclosed: 2026-08-13
+status: reported # Single vendor report; Cyber Security News relays Gambit without independent confirmation.
+confidence: primary # Gambit analysed conversations and tooling recovered from the attacker's server.
+category: ai-orchestrated-campaign
+severity: high # Credential theft, backdoor VPN access and data exfiltration at multiple organizations; an energy utility's firewall knocked offline.
+models:
+  - "Claude Sonnet 4.6"
+model_families:
+  - claude
+actor: "Suspected affiliate of The Gentlemen ransomware-as-a-service operation (medium confidence, per Gambit)"
+actor_type: cybercriminal
+autonomy_pct: null
+autonomy_level: human-in-the-loop # Gambit: the operator pasted commands or described each task; Claude ran it, read the output and recommended next steps.
+guardrail_bypass:
+  - jailbreak # Gambit: a cover story that the model was running an authorized penetration test; re-tasked in a new session after a refusal.
+  - legitimate-tool-abuse # Commercial Claude Code agent used toward malicious ends.
+ai_role: significant # Claude generated and executed most technical steps, but access and direction were the operator's ("The access was the operator's").
+related:
+  - gentlemen-hermes-agent-gitlab-extortion # Same ransomware brand; a different operation, and no link stated by Gambit.
+  - mexico-government-claude-code-intrusions # Same discoverer (Gambit Security) and technique; different operator.
+mitigations: [] # Gambit states no case-specific defensive measures for this actor.
+targets:
+  orgs_affected: 8 # Six intrusions observed in late June 2026 plus two earlier compromises linked to the actor.
+  records_exfiltrated: null
+  sectors:
+    - energy # Australian energy utility.
+    - financial-services # Mauritian financial services firm.
+    - technology # Malaysian IT services company.
+    # Also food service (ZA), manufacturing (TH, US), property management and distribution (US): not in taxonomy/sector.yml.
+  countries:
+    - AU
+    - MU
+    - ZA
+    - TH
+    - MY
+    - US
+# No geo block: victims span six countries with no primary victim country
+# stated, and Gambit states no actor location.
+lifecycle_phases:
+  - recon
+  - initial-access
+  - credential-access
+  - persistence # Backdoor VPN accounts created on the appliances.
+  - execution
+  - exfiltration
+  - impact # Firewall left unreachable after a Claude-initiated configuration restore.
+mappings:
+  mitre_atlas: []
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: []
+  cve: []
+  aiid: []
+impact: >-
+  Per Gambit Security: eight organizations compromised across six countries;
+  firewall service-account and domain credentials stolen; backdoor VPN accounts
+  created; a financial platform's database dump staged and exfiltrated; and an
+  Australian energy utility's firewall left unreachable from 2026-06-23 after a
+  configuration restore pushed by Claude. One victim appeared on The
+  Gentlemen's leak site a month after the compromise.
+sources:
+  - title: "AI Across the Intrusion Lifecycle"
+    url: "https://gambit.security/blog-posts/ai-across-the-intrusion-lifecycle"
+    archive_url: "https://web.archive.org/web/20260831135223/https://gambit.security/blog-posts/ai-across-the-intrusion-lifecycle"
+    publisher: "Gambit Security"
+    type: vendor-report
+    date: 2026-08-13
+  - title: "AI Across the Intrusion Lifecycle (full technical report)"
+    url: "https://gambit.security/ai-across-the-intrusion-lifecycle"
+    publisher: "Gambit Security"
+    type: vendor-report
+    date: 2026-08-31 # Date shown on the full report page.
+  - title: "Claude Code Helps Ransomware Operator Steal LDAP Passwords, Backdoor VPNs and Exfiltrate SQL Databases"
+    url: "https://cybersecuritynews.com/claude-code-helps-ransomware-operator/"
+    archive_url: "https://web.archive.org/web/20261007110920/https://cybersecuritynews.com/claude-code-helps-ransomware-operator/"
+    publisher: "Cyber Security News"
+    type: news
+    date: 2026-08-18
+added:
+  date: 2026-10-15
+  by: "MLSecOpsHub"
+last_updated: 2026-10-15

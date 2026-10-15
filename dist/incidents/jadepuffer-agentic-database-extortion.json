@@ -6,7 +6,7 @@
     "date": "2026-10-10"
   },
   "ai_role": "significant",
-  "autonomy_level": "unknown",
+  "autonomy_level": "supervised-autonomous",
   "autonomy_pct": null,
   "category": "autonomous-attack",
   "confidence": "primary",
@@ -16,7 +16,7 @@
   ],
   "id": "jadepuffer-agentic-database-extortion",
   "impact": "Per Sysdig: 1,342 Nacos service configuration items encrypted with an ephemeral key that was never stored or sent, so likely unrecoverable even with payment; entire database schemas dropped; ransom demanded via a Bitcoin address with no amount stated; exfiltration claimed by the agent but unverified.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-15",
   "lifecycle_phases": [
     "initial-access",
     "execution",
@@ -46,7 +46,14 @@
   "related": [
     "promptlock-ai-ransomware-poc",
     "gtg-5004-ai-ransomware-raas",
-    "replit-agent-database-deletion"
+    "replit-agent-database-deletion",
+    "storm-3168-azure-service-principal-destruction"
+  ],
+  "revisions": [
+    {
+      "date": "2026-10-15",
+      "note": "Added Sysdig's clarifications reported by TechCrunch: a human set up and targeted the operation, provisioned its infrastructure and supplied database credentials from a prior compromise; harvested provider API keys do not identify the model. autonomy_level changed from unknown to supervised-autonomous. Status and confidence unchanged."
+    }
   ],
   "severity": "high",
   "sources": [
@@ -57,10 +64,18 @@
       "title": "JADEPUFFER: Agentic ransomware for automated database extortion",
       "type": "vendor-report",
       "url": "https://www.sysdig.com/blog/jadepuffer-agentic-ransomware-for-automated-database-extortion"
+    },
+    {
+      "archive_url": "https://web.archive.org/web/20260910132019/https://techcrunch.com/2026/07/06/the-first-ai-run-ransomware-attack-still-needed-a-human/",
+      "date": "2026-07-06",
+      "publisher": "TechCrunch",
+      "title": "The 'first' AI-run ransomware attack still needed a human",
+      "type": "news",
+      "url": "https://techcrunch.com/2026/07/06/the-first-ai-run-ransomware-attack-still-needed-a-human/"
     }
   ],
   "status": "reported",
-  "summary": "On 2026-07-01 Sysdig described an operator it designates JADEPUFFER as the first documented case of agentic ransomware: \"an operator whose attack capability is delivered by an AI agent rather than a human-driven toolkit\", running what Sysdig calls a complete extortion operation driven end-to-end by a large language model. Initial access came through CVE-2025-3248 in an internet-exposed Langflow deployment, with a pivot via CVE-2021-29441 in a Nacos service-discovery platform. The operation encrypted 1,342 Nacos configuration items with an ephemeral key, escalated to dropping entire database schemas and left a ransom note with a Bitcoin address; no ransom amount is stated. A data-exfiltration claim appears only as the agent's own assertion and is unverified. Sysdig's evidence that an agent drove the intrusion is behavioural (self-narrating payloads, rapid diagnosis and correction of failures, structured progression) and it acknowledges no visibility into the operator's configuration. No model, attribution, victim sector or country is stated.",
+  "summary": "On 2026-07-01 Sysdig described an operator it designates JADEPUFFER as the first documented case of agentic ransomware: \"an operator whose attack capability is delivered by an AI agent rather than a human-driven toolkit\", running what Sysdig calls a complete extortion operation driven end-to-end by a large language model. Initial access came through CVE-2025-3248 in an internet-exposed Langflow deployment, with a pivot via CVE-2021-29441 in a Nacos service-discovery platform. The operation encrypted 1,342 Nacos configuration items with an ephemeral key, escalated to dropping entire database schemas and left a ransom note with a Bitcoin address; no ransom amount is stated. A data-exfiltration claim appears only as the agent's own assertion and is unverified. Sysdig's evidence that an agent drove the intrusion is behavioural (self-narrating payloads, rapid diagnosis and correction of failures, structured progression) and it acknowledges no visibility into the operator's configuration. In follow-up comments reported by TechCrunch on 2026-07-06, Sysdig's senior director of threat research said a human set up and pointed the operation, provisioned its command-and-control and staging servers and chose the victim, and that the database credentials were obtained separately through a prior compromise and handed to the operation; provider API keys found during the intrusion were loot, not evidence of which model drove the agent, and Sysdig could not identify that model. No model, attribution, victim sector or country is stated.",
   "targets": {
     "countries": [],
     "orgs_affected": null,

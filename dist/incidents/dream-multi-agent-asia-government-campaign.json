@@ -31,7 +31,7 @@
   ],
   "id": "dream-multi-agent-asia-government-campaign",
   "impact": "Per Dream Research Labs (claims from a recovered operator archive, not independently verified): about 1,395 files produced, 85 cracked employee accounts, more than 2,500 personnel records exfiltrated, a persistent foothold in state infrastructure and backdoors on government web applications. Taiwan's MODA confirms AI-agent attacks on government agencies, handled by affected units.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-15",
   "lifecycle_phases": [
     "recon",
     "initial-access",
@@ -42,7 +42,9 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.CS0071"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []
@@ -75,10 +77,18 @@
       "title": "AI agents used in cyberattacks on Taiwan government websites: MODA",
       "type": "news",
       "url": "https://focustaiwan.tw/society/202608130011"
+    },
+    {
+      "archive_url": "https://web.archive.org/web/20261001005303/https://moda.gov.tw/ACS/press/news/press/20394",
+      "date": "2026-08-13",
+      "publisher": "Ministry of Digital Affairs (Taiwan), Administration for Cyber Security",
+      "title": "境外駭客發動AI Agent攻擊政府機關 數發部啟動應變聯防強化資安防線",
+      "type": "government-advisory",
+      "url": "https://moda.gov.tw/ACS/press/news/press/20394"
     }
   ],
   "status": "reported",
-  "summary": "On 2026-08-12 Dream Research Labs reported an exposed operator archive revealing a multi-agent framework, built on the Hermes and OpenClaw agents, that ran parallel sub-agents across 12 documented attack waves against government entities in Asia between 1 and 4 July 2026. Dream describes the system as near-autonomous, adapting mid-operation without human intervention and bypassing model safety refusals by framing its activity as authorized penetration testing; it attributes the operator to a Chinese-language actor on linguistic grounds and names no group. Claimed results include about 1,395 files produced, 85 cracked employee accounts, more than 2,500 personnel records exfiltrated, a persistent foothold in state infrastructure and backdoors on government web applications. Taiwan's Ministry of Digital Affairs separately confirmed AI-agent attacks on government agencies in July, said affected units were handled, and stated the attacks showed clear signs of originating overseas. Dream withheld victim identities and says affected organizations were notified; its autonomy and impact claims are not independently verified.",
+  "summary": "On 2026-08-12 Dream Research Labs reported an exposed operator archive revealing a multi-agent framework, built on the Hermes and OpenClaw agents, that ran parallel sub-agents across 12 documented attack waves against government entities in Asia between 1 and 4 July 2026. Dream describes the system as near-autonomous, adapting mid-operation without human intervention and bypassing model safety refusals by framing its activity as authorized penetration testing; it attributes the operator to a Chinese-language actor on linguistic grounds and names no group. Claimed results include about 1,395 files produced, 85 cracked employee accounts, more than 2,500 personnel records exfiltrated, a persistent foothold in state infrastructure and backdoors on government web applications. Taiwan's Ministry of Digital Affairs separately confirmed, in a 2026-08-13 press release, attacks on government agencies detected in July that combined human operation with OpenClaw and other AI-agent assistance, said affected units were handled, and stated the attacks showed clear signs of originating overseas; it does not reference Dream's report. Dream withheld victim identities and says affected organizations were notified; its autonomy and impact claims are not independently verified.",
   "targets": {
     "countries": [
       "TW"

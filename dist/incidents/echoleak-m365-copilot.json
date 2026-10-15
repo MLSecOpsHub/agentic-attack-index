@@ -16,7 +16,7 @@
   ],
   "id": "echoleak-m365-copilot",
   "impact": "Demonstrated zero-click exfiltration of data from the Microsoft 365 Copilot context (chat history, Microsoft Graph resources and preloaded context). Mitigated server-side by Microsoft with no reported in-the-wild exploitation.",
-  "last_updated": "2026-08-12",
+  "last_updated": "2026-10-15",
   "lifecycle_phases": [
     "initial-access",
     "execution",
@@ -29,7 +29,8 @@
     ],
     "mitre_atlas": [
       "AML.T0051.001",
-      "AML.T0057"
+      "AML.T0057",
+      "AML.CS0059"
     ],
     "mitre_attack": [],
     "owasp_asi": [],

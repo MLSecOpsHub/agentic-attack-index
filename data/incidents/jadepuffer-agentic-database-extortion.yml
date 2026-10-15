@@ -14,10 +14,16 @@ summary: >-
   assertion and is unverified. Sysdig's evidence that an agent drove the
   intrusion is behavioural (self-narrating payloads, rapid diagnosis and
   correction of failures, structured progression) and it acknowledges no
-  visibility into the operator's configuration. No model, attribution, victim
-  sector or country is stated.
+  visibility into the operator's configuration. In follow-up comments reported
+  by TechCrunch on 2026-07-06, Sysdig's senior director of threat research said
+  a human set up and pointed the operation, provisioned its command-and-control
+  and staging servers and chose the victim, and that the database credentials
+  were obtained separately through a prior compromise and handed to the
+  operation; provider API keys found during the intrusion were loot, not
+  evidence of which model drove the agent, and Sysdig could not identify that
+  model. No model, attribution, victim sector or country is stated.
 date_disclosed: 2026-07-01
-status: reported # Single vendor publisher; the agentic nature is Sysdig's inference from behaviour.
+status: reported # Single vendor source (TechCrunch relays Sysdig's own clarifications); the agentic nature is Sysdig's inference from behaviour.
 confidence: primary # Vendor incident analysis with direct telemetry.
 category: autonomous-attack
 severity: high # Likely unrecoverable encryption of 1,342 configuration items plus dropped database schemas.
@@ -27,14 +33,19 @@ model_families:
 actor: Unknown # JADEPUFFER is Sysdig's designation for the operator, not a named group.
 actor_type: unknown
 autonomy_pct: null
-autonomy_level: unknown # Sysdig infers end-to-end agent execution but has no visibility into the operator's setup.
+# Changed unknown -> supervised-autonomous on 2026-10-15: Sysdig (via
+# TechCrunch) says the agent handled technical execution while a human set up
+# the operation, provisioned infrastructure, chose the victim and supplied the
+# database credentials. Sysdig still has no visibility into the agent's setup.
+autonomy_level: supervised-autonomous
 guardrail_bypass:
   - unknown
-ai_role: significant # Agent involvement is inferred from behaviour rather than directly observed.
+ai_role: significant # Agent involvement is inferred from behaviour rather than directly observed; a human operator set up and targeted the operation.
 related:
   - promptlock-ai-ransomware-poc # Earlier AI-driven ransomware proof of concept.
   - gtg-5004-ai-ransomware-raas
   - replit-agent-database-deletion
+  - storm-3168-azure-service-principal-destruction # Microsoft tracks the actor Sysdig calls JADEPUFFER as Storm-3168.
 mitigations:
   - "Sysdig recommends patching and not internet-exposing AI-orchestration tools' code-execution endpoints, keeping provider API keys and cloud credentials out of AI-orchestration environments, hardening configuration and service-discovery platforms including default signing keys, never exposing database administrative accounts to the internet, applying egress controls, and using runtime threat detection."
 targets:
@@ -70,7 +81,21 @@ sources:
     publisher: "Sysdig"
     type: vendor-report
     date: 2026-07-01
+  - title: "The 'first' AI-run ransomware attack still needed a human"
+    url: "https://techcrunch.com/2026/07/06/the-first-ai-run-ransomware-attack-still-needed-a-human/"
+    archive_url: "https://web.archive.org/web/20260910132019/https://techcrunch.com/2026/07/06/the-first-ai-run-ransomware-attack-still-needed-a-human/"
+    publisher: "TechCrunch"
+    type: news
+    date: 2026-07-06
 added:
   date: 2026-10-10
   by: "MLSecOpsHub"
-last_updated: 2026-10-10
+revisions:
+  - date: 2026-10-15
+    note: >-
+      Added Sysdig's clarifications reported by TechCrunch: a human set up and
+      targeted the operation, provisioned its infrastructure and supplied
+      database credentials from a prior compromise; harvested provider API keys
+      do not identify the model. autonomy_level changed from unknown to
+      supervised-autonomous. Status and confidence unchanged.
+last_updated: 2026-10-15

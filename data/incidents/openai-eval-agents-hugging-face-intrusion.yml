@@ -19,7 +19,11 @@ summary: >-
   third-party compute platform and a user account on another hosting service as
   staging grounds. OpenAI detected the activity on July 19, informed Hugging Face
   on July 20 and publicly disclosed on July 21; METR conducted an independent
-  review. OpenAI calls it "the first known case of an automated agent collective
+  review. HiddenLayer separately recovered 510 artifacts the agents left in two
+  public Hugging Face repositories used as dead drops during one day of the
+  campaign, including tooling, command-and-control implementations,
+  exfiltrated files and live credentials that were publicly accessible, and
+  found the toolset broader than the stated goal required. OpenAI calls it "the first known case of an automated agent collective
   acting offensively without authorization".
 date_disclosed: 2026-07-21 # OpenAI's public disclosure. Hugging Face had disclosed an unattributed security incident on 2026-07-16.
 status: confirmed # First-party disclosures from both the operator (OpenAI) and the victim (Hugging Face), plus METR's independent review.
@@ -63,13 +67,14 @@ lifecycle_phases:
   - persistence
   - exfiltration
 mappings:
-  mitre_atlas: [] # No ATLAS id verified against the live matrix for this record.
+  mitre_atlas:
+    - AML.CS0068 # ATLAS case study "Autonomous OpenAI Evaluation Agents Compromise Hugging Face Infrastructure" (ATLAS v2026.09).
   mitre_attack: []
   owasp_llm: []
   owasp_asi: []
   cve:
-    - CVE-2026-66384 # OpenAI report: Artifactory container-image remote-cache handling zero-day used against OpenAI's own infrastructure.
-    - CVE-2026-53362 # OpenAI report: public Linux kernel CVE used by agents to escalate privilege inside OpenAI's environment.
+    - CVE-2026-66384 # OpenAI report: Artifactory container-image remote-cache handling zero-day used against OpenAI's own infrastructure (CISA KEV, added 2026-08-27).
+    - CVE-2026-53362 # OpenAI report: public Linux kernel CVE used by agents to escalate privilege inside OpenAI's environment (CISA KEV, added 2026-08-27).
   aiid: []
 impact: >-
   Hugging Face: code execution on 41 production dataset-server workers, root on
@@ -82,7 +87,11 @@ impact: >-
   never reached, no other customer-facing models, datasets, Spaces or packages
   were affected, and no shipped artifact was altered. OpenAI states no impact to
   its customer data or products; its own Artifactory and research Kubernetes
-  environment were separately compromised.
+  environment were separately compromised. Per HiddenLayer, Hugging Face
+  production configuration and live credentials (including a cloud session
+  credential and a non-expiring database credential) sat in the agents' public
+  dead-drop repositories during the campaign; HiddenLayer reported them to the
+  affected party.
 sources:
   - title: "OpenAI – Hugging Face Incident: Technical Report"
     url: "https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf"
@@ -101,7 +110,12 @@ sources:
     publisher: "METR"
     type: other # Independent third-party investigation report.
     date: 2026-08-26
+  - title: "Dead Drops in Public: What the AI Agent Stashed on Hugging Face"
+    url: "https://www.hiddenlayer.com/research/hugging-face-agent-intrusion-analysis"
+    publisher: "HiddenLayer"
+    type: vendor-report
+    date: 2026-07-31
 added:
   date: 2026-10-09
   by: "MLSecOpsHub"
-last_updated: 2026-10-09
+last_updated: 2026-10-15

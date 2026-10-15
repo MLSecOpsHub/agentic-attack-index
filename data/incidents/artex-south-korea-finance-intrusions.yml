@@ -1,0 +1,133 @@
+id: artex-south-korea-finance-intrusions
+name: "ARTEX agentic pentest tool and Claude Code sessions used in data-theft intrusions at South Korean financial institutions"
+summary: >-
+  From late September to early October 2026 several South Korean financial
+  institutions, including commercial banks, savings banks and other lenders,
+  suffered data breaches. Attackers went after peripheral systems rather than
+  core banking: a loan-progress inquiry service used by brokers at one bank
+  and an employee mobile work-support system at another. Korean media reported
+  on 2026-10-04 that investigators had found traces of ARTEX, an open-source,
+  China-developed agentic penetration-testing tool, on servers used in the
+  attacks. On 2026-10-07 CrowdStrike reported attacker-controlled open
+  directories holding an ARTEX instance and configuration files together with
+  Claude Code session histories and Claude memory files. CrowdStrike assesses
+  that this ARTEX instance was likely responsible for the attacks and that its
+  targets overlap with the breached organisations named in industry reporting.
+  ARTEX ran on DeepSeek v4.1-flash as its main model backend, and further
+  Claude Code sessions used GLM-5.3 and Grok 4.6. The operator also asked
+  Claude where Korean breach data is typically sold. CrowdStrike does not
+  attribute the activity to a named adversary and assesses with moderate
+  confidence that the actor is a financially motivated Chinese speaker.
+  Korean officials said signs of AI-agent use had emerged but had not
+  confirmed the tool's role or the attacker's identity at the time of
+  reporting. Reported victim counts vary between outlets.
+date_disclosed: 2026-10-04 # Kyunghyang first reported ARTEX traces on 2026-10-04 (citing a 2026-10-02 social-media post by a Genians analyst); breaches first surfaced 2026-09-30 per The Record; CrowdStrike's analysis followed on 2026-10-07.
+# Breaches are confirmed by the institutions and regulators. The AI-agent link
+# rests on CrowdStrike's assessment ("likely responsible"); authorities had not
+# confirmed it at the time of reporting (BleepingComputer 2026-10-05), so this is
+# graded reported.
+status: reported
+confidence: primary # CrowdStrike analysed the attacker's own infrastructure and session artefacts.
+category: ai-orchestrated-campaign
+severity: high # Personal and loan data of tens of thousands of customers exfiltrated across multiple institutions.
+models:
+  - "DeepSeek v4.1-flash" # ARTEX's primary LLM backend, per CrowdStrike.
+  - "GLM-5.3" # Zhipu AI; used for additional Claude Code sessions, per CrowdStrike.
+  - "Grok 4.6" # Used for additional Claude Code sessions, per CrowdStrike.
+  - "Claude Code" # Agent harness. CrowdStrike says the actor "asked Claude"; it does not say which sessions ran Anthropic models.
+model_families:
+  - deepseek
+  - claude
+  - other # GLM-5.3 and Grok 4.6.
+actor: "Unknown financially motivated actor (CrowdStrike: likely a Chinese speaker, moderate confidence; not attributed to a named adversary)"
+actor_type: cybercriminal # CrowdStrike assesses financial motivation; Korean officials have not named a suspect.
+autonomy_pct: null
+autonomy_level: unknown # An autonomous pentest agent was configured and run by a human operator; no source characterises how much ran unattended.
+guardrail_bypass:
+  - legitimate-tool-abuse # An open-source red-team agent and Claude Code turned against real victims; the ARTEX developer later took the project closed-source (BleepingComputer).
+ai_role: significant # CrowdStrike links the ARTEX instance to the attacks as "likely"; officials had not confirmed the tool's role.
+related: []
+mitigations:
+  - "South Korea's Financial Services Commission instructed financial companies to inspect all externally accessible IT systems, including non-customer-facing ones, reduce unnecessary information exposure, check for missing or inadequate authentication and access controls, share threat information quickly and submit internal security inspection results."
+  - "Korean experts quoted by the press noted that peripheral and supporting systems with weaker authentication were the entry points, and urged banks to strengthen automated, AI-assisted detection and response."
+targets:
+  # CrowdStrike: the number of affected organisations "remains unconfirmed".
+  # Press counts differ: at least seven institutions (The Record); nine listed
+  # by Kyunghyang (banks, a savings bank, a capital company and two P2P lenders).
+  orgs_affected: null
+  # Kyunghyang: 25,727 personal-data items taken at one bank; The Record: data of
+  # at least 68,000 people reportedly exposed across institutions. No reconciled total.
+  records_exfiltrated: null
+  sectors:
+    - financial-services
+  countries:
+    - KR
+geo:
+  points:
+    - role: target
+      basis: victim-location
+      attributed_by: "CrowdStrike"
+      country: KR
+      lat: 35.91
+      lng: 127.77
+      label: "South Korea (targeted financial organisations, per CrowdStrike)"
+      illustrative: true
+lifecycle_phases:
+  - resource-dev
+  - recon
+  - initial-access
+  - exfiltration
+mappings:
+  mitre_atlas: []
+  mitre_attack:
+    - T1583.003 # Acquire Infrastructure: Virtual Private Server, per CrowdStrike.
+    - T1588.007 # Obtain Capabilities: Artificial Intelligence, per CrowdStrike.
+    - T1090 # Proxy, per CrowdStrike.
+  owasp_llm: []
+  owasp_asi: []
+  cve: []
+  aiid: []
+impact: >-
+  Customer personal data, including names, contact details, annual income and
+  loan limits, was exfiltrated from several South Korean financial
+  institutions. One bank reported about 25,000 affected customers and two
+  others reported 119 and 89; press reports put the total at at least 68,000
+  people. Regulators convened an emergency inspection meeting across the
+  financial sector, police assigned an investigation team, and authorities
+  raised concern about follow-on phishing using the leaked data.
+sources:
+  - title: "Unknown Threat Actor Uses AI-Driven ARTEX to Target South Korean Finance"
+    url: "https://www.crowdstrike.com/en-us/blog/unknown-threat-actor-uses-artex-to-target-south-korean-finance/"
+    archive_url: "https://web.archive.org/web/20261014025851/https://www.crowdstrike.com/en-us/blog/unknown-threat-actor-uses-artex-to-target-south-korean-finance/"
+    publisher: "CrowdStrike"
+    type: vendor-report
+    date: 2026-10-07
+  - title: "The Korean financial sector was breached by a two-month-old Chinese AI"
+    url: "https://www.khan.co.kr/en/article/202610042320007"
+    publisher: "The Kyunghyang Shinmun"
+    type: news
+    date: 2026-10-04
+  - title: "South Korea probes bank breaches amid suspected AI-powered attacks"
+    url: "https://www.bleepingcomputer.com/news/security/south-korea-probes-bank-breaches-amid-suspected-ai-powered-attacks/"
+    publisher: "BleepingComputer"
+    type: news
+    date: 2026-10-05
+  - title: "South Korean officials believe AI agents were used to hack several banks"
+    url: "https://therecord.media/south-korean-bank-hacks-ai-agents"
+    publisher: "The Record"
+    type: news
+    date: 2026-10-06
+  - title: "[EXPLAINER] How AI emerged as new threat in Korea's bank hacking crisis"
+    url: "https://www.koreatimes.co.kr/business/banking-finance/20261007/explainer-how-ai-emerged-as-new-threat-in-koreas-bank-hacking-crisis"
+    publisher: "The Korea Times"
+    type: news
+    date: 2026-10-07
+  - title: "ARTEX AI, Claude agents used in cyberattacks on South Korean banks"
+    url: "https://www.bleepingcomputer.com/news/security/hacker-used-artex-ai-and-claude-agents-to-target-south-korean-banks/"
+    publisher: "BleepingComputer"
+    type: news
+    date: 2026-10-10
+added:
+  date: 2026-10-15
+  by: "MLSecOpsHub"
+last_updated: 2026-10-15

@@ -1,0 +1,95 @@
+{
+  "actor": "Suspected affiliate of The Gentlemen ransomware-as-a-service operation (medium confidence, per Gambit)",
+  "actor_type": "cybercriminal",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-15"
+  },
+  "ai_role": "significant",
+  "autonomy_level": "human-in-the-loop",
+  "autonomy_pct": null,
+  "category": "ai-orchestrated-campaign",
+  "confidence": "primary",
+  "date_disclosed": "2026-08-13",
+  "guardrail_bypass": [
+    "jailbreak",
+    "legitimate-tool-abuse"
+  ],
+  "id": "gambit-gentlemen-affiliate-claude-code-intrusions",
+  "impact": "Per Gambit Security: eight organizations compromised across six countries; firewall service-account and domain credentials stolen; backdoor VPN accounts created; a financial platform's database dump staged and exfiltrated; and an Australian energy utility's firewall left unreachable from 2026-06-23 after a configuration restore pushed by Claude. One victim appeared on The Gentlemen's leak site a month after the compromise.",
+  "last_updated": "2026-10-15",
+  "lifecycle_phases": [
+    "recon",
+    "initial-access",
+    "credential-access",
+    "persistence",
+    "execution",
+    "exfiltration",
+    "impact"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [],
+  "model_families": [
+    "claude"
+  ],
+  "models": [
+    "Claude Sonnet 4.6"
+  ],
+  "name": "Suspected The Gentlemen ransomware affiliate used Claude Code to breach VPN appliances and exfiltrate data across eight organizations",
+  "related": [
+    "gentlemen-hermes-agent-gitlab-extortion",
+    "mexico-government-claude-code-intrusions"
+  ],
+  "severity": "high",
+  "sources": [
+    {
+      "archive_url": "https://web.archive.org/web/20260831135223/https://gambit.security/blog-posts/ai-across-the-intrusion-lifecycle",
+      "date": "2026-08-13",
+      "publisher": "Gambit Security",
+      "title": "AI Across the Intrusion Lifecycle",
+      "type": "vendor-report",
+      "url": "https://gambit.security/blog-posts/ai-across-the-intrusion-lifecycle"
+    },
+    {
+      "date": "2026-08-31",
+      "publisher": "Gambit Security",
+      "title": "AI Across the Intrusion Lifecycle (full technical report)",
+      "type": "vendor-report",
+      "url": "https://gambit.security/ai-across-the-intrusion-lifecycle"
+    },
+    {
+      "archive_url": "https://web.archive.org/web/20261007110920/https://cybersecuritynews.com/claude-code-helps-ransomware-operator/",
+      "date": "2026-08-18",
+      "publisher": "Cyber Security News",
+      "title": "Claude Code Helps Ransomware Operator Steal LDAP Passwords, Backdoor VPNs and Exfiltrate SQL Databases",
+      "type": "news",
+      "url": "https://cybersecuritynews.com/claude-code-helps-ransomware-operator/"
+    }
+  ],
+  "status": "reported",
+  "summary": "Gambit Security reported on 2026-08-13 (full technical report dated 2026-08-31) that a suspected affiliate of The Gentlemen ransomware-as-a-service operation used Anthropic's Claude Code, running Claude Sonnet 4.6, during intrusions into six organizations in late June 2026, and linked the same actor to two earlier compromises. The victims were an energy utility in Australia, a financial services firm in Mauritius, a food service company in South Africa, a manufacturer in Thailand, an IT services company in Malaysia, and a property manager, a manufacturer and a distributor in the United States. From conversations recovered from the attacker's server, Gambit describes the operator directing Claude Code task by task to log into internet-exposed firewall and VPN appliance management interfaces with previously obtained credentials, capture a directory service-account credential from a firewall, create backdoor VPN accounts and widen VPN access, map internal hosts and credentials, locate backup infrastructure, rank a financial platform's databases by business value, and stage and exfiltrate a database dump. Claude refused at least once without written authorization and complied after the operator claimed authorization in a new session. At the energy utility, a full configuration restore pushed by Claude left the firewall unreachable. Gambit attributes the activity to The Gentlemen with medium confidence, based on one victim appearing on the group's leak site a month later, an IP range overlap attributed by Hunt.io, and the actor's interest in backups. Victims are not named. The same Gambit report covers two unrelated actors that are not part of this record.",
+  "targets": {
+    "countries": [
+      "AU",
+      "MU",
+      "ZA",
+      "TH",
+      "MY",
+      "US"
+    ],
+    "orgs_affected": 8,
+    "records_exfiltrated": null,
+    "sectors": [
+      "energy",
+      "financial-services",
+      "technology"
+    ]
+  }
+}

@@ -1,0 +1,139 @@
+id: anthropic-unintended-model-actions-real-websites
+name: "Claude models took unintended actions on real third-party websites during Anthropic evaluations and internal use (2026)"
+summary: >-
+  On 2026-10-09 Anthropic published a review of transcripts, begun in July,
+  describing cases in which Claude models acted on real third-party websites
+  and systems in ways it did not intend, mostly during evaluations run with
+  live internet access and some during internal use. It grouped them into four
+  categories. First, exploiting basic software flaws: Claude Mythos Preview,
+  unable to reach a university-hosted scientific tool, used a script on the
+  university's server to copy files, found an injection flaw in that code and
+  used it to run commands on the server; Claude Mythos 5 used applications
+  hosted on a site to accept a data use agreement on its behalf. Second,
+  submitting forms it should not have: an unreleased research model repeatedly
+  submitted a real government form when a practice copy failed, and Claude
+  Haiku 4.5, generating example tasks on randomly selected webpages, submitted
+  an invented tip about an unsolved homicide through a police department's tip
+  form. Third, working around restrictions to reach gated data: Claude Mythos 5
+  reused access tokens from a local government property map's browser settings
+  file to query its server directly, and used a token issued by a state
+  agency's public dashboard to query data otherwise offered for a fee. Fourth,
+  several models, including Claude Opus 5 and Claude Mythos 5, used URL
+  shortening services to get around fetch-tool URL-length limits. Some cases
+  involved U.S. federal, state and local government websites; Anthropic
+  briefed the White House, notified each agency and, at the organizations'
+  request, named none of them. Anthropic judged the real-world impact minimal
+  and the cases less severe than its July and September cybersecurity
+  incidents. The Philadelphia Police Department self-disclosed on the same day
+  that the tip, dated 2026-07-18, came through PhillyUnsolvedMurders.com, was
+  flagged as spam and never forwarded for investigation, and involved no
+  unauthorized access to police systems; it called the two-month delay in
+  detecting and reporting the incident "unacceptable". Anthropic corrected the
+  post on 2026-10-12 regarding the purpose of its fetch-tool limits.
+date_disclosed: 2026-10-09 # Anthropic report and Philadelphia Police Department statement the same day; Anthropic post corrected 2026-10-12.
+status: confirmed # First-party disclosure by the model operator; the one named victim (Philadelphia PD) independently confirmed its case.
+confidence: primary
+# Graded autonomous-attack rather than lab-escape-eval because real
+# third-party systems were acted on, as for anthropic-cyber-evals-real-target-incidents.
+category: autonomous-attack
+# Anthropic states "minimal real-world impact" and that the cases are
+# significantly less severe than its summer cybersecurity incidents. Medium is
+# arguable (commands run on a third-party server; a false tip sent to police);
+# editor to review.
+severity: low
+models:
+  - "Claude Mythos Preview"
+  - "Claude Mythos 5"
+  - "Claude Haiku 4.5"
+  - "Claude Opus 5" # Named in the URL-shortening category only.
+  - "Anthropic unreleased non-frontier research model (unnamed)" # Government-form case.
+model_families:
+  - claude
+actor: "Anthropic evaluation and internal-use agents (Claude Mythos Preview, Claude Mythos 5, Claude Haiku 4.5, Claude Opus 5 and an unreleased research model) acting outside their intended scope"
+actor_type: lab-test-eval
+autonomy_pct: null
+# Most cases occurred in automated evaluation runs; in the internal-use cases a
+# researcher set the task but not the workaround the model chose.
+autonomy_level: fully-autonomous
+guardrail_bypass:
+  - none-observed # No attacker; Anthropic attributes the behaviour to the models working around restrictions when a task could not be completed as given.
+ai_role: load-bearing
+related:
+  - anthropic-cyber-evals-real-target-incidents # Same transcript review; Anthropic contrasts these cases with the July/September incidents.
+mitigations:
+  - "Anthropic extended its removal of live internet access from some high-risk and cybersecurity evaluations to all internal evaluations until its security and monitoring measures are confirmed to catch such behaviour; some public evaluations were dropped, moved offline or rebuilt so their tasks do not reach live websites."
+  - "Anthropic restricted what models can do with internet-access tools such as web fetch, and built tooling to automatically detect and block these behaviours, which it says now runs on most evaluations and internal agentic use and blocked all the described cases when tested."
+  - "Anthropic is fixing or removing training environments that reward working around tool restrictions, migrating internal agents to centrally managed infrastructure with containment, minimizing their internet access, and monitoring agent actions with safety classifiers and hierarchical summarization."
+  - "Per the Philadelphia Police Department, Anthropic terminated the automated testing process responsible for the tip and instituted an additional validation mechanism; the department's human review and vetting of tips limited the impact."
+targets:
+  orgs_affected: null # Anthropic gives no count of affected organizations. TODO: source
+  records_exfiltrated: null
+  sectors:
+    - government # U.S. federal, state and local government websites, per Anthropic.
+    - education # A university-hosted server.
+    - emergency-services # Philadelphia Police Department tip form.
+  countries:
+    - US # Anthropic: U.S. government agencies; the Philadelphia PD. The university's location is not stated.
+geo:
+  points:
+    - role: target
+      basis: victim-location
+      attributed_by: "Anthropic"
+      country: US
+      lat: 37.09
+      lng: -95.71
+      label: "United States (federal, state and local government websites, per Anthropic)"
+      illustrative: true # Country centroid; lab-test-eval records carry target points only.
+lifecycle_phases:
+  - recon
+  - initial-access # Injection flaw used on a university server.
+  - execution # Commands run on that server.
+  - credential-access # Access tokens taken from a site's browser settings file and reused.
+  - deception-social-eng # Invented homicide tip submitted to police; Anthropic judges the model was producing example content, not trying to mislead.
+mappings:
+  mitre_atlas: []
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: []
+  cve: []
+  aiid: []
+impact: >-
+  Per Anthropic, minimal real-world impact: commands run on a university server
+  through an injection flaw; real online forms submitted, including a
+  government form and a fabricated homicide tip to a police department; fee- or
+  token-gated public data obtained from local and state government systems;
+  URL shortening services used to evade fetch limits. To Anthropic's knowledge
+  no customer data or Anthropic internal systems were involved. Per the
+  Philadelphia Police Department, the tip was flagged as spam, never forwarded
+  to its Real-Time Crime Center, and there was no indication of unauthorized
+  access to police systems or compromise of department data.
+sources:
+  - title: "Investigating unintended model actions in our evaluations and internal use"
+    url: "https://www.anthropic.com/research/investigating-unintended-model-actions"
+    archive_url: "https://web.archive.org/web/20261014152739/https://www.anthropic.com/research/investigating-unintended-model-actions"
+    publisher: "Anthropic"
+    type: first-party-disclosure
+    date: 2026-10-09 # Corrected 2026-10-12; the snapshot post-dates the correction.
+  # Carries the Philadelphia Police Department's statement in full. Police say
+  # Anthropic notified them on 2026-10-07 and met them on 2026-10-08; Anthropic
+  # says it shared the finding on 2026-10-08.
+  - title: "AI model submitted false tip about unsolved murder, Philadelphia police say"
+    url: "https://6abc.com/post/anthropic-ai-model-submitted-false-tip-unsolved-murder-philadelphia-police-say/19925243/"
+    publisher: "6abc Action News (WPVI-TV)"
+    type: news
+    date: 2026-10-09
+  - title: "Anthropic AI model submits false homicide tip to Philadelphia police"
+    url: "https://www.aljazeera.com/news/2026/10/10/anthropic-ai-model-submits-false-homicide-tip-to-philadelphia-police"
+    publisher: "Al Jazeera"
+    type: news
+    date: 2026-10-10
+  - title: "Claude submitted fake murder tip to Philly police during summertime testing"
+    url: "https://www.theregister.com/security/2026/10/13/claude-submitted-fake-murder-tip-to-philly-police-during-summertime-testing/5302842"
+    archive_url: "https://web.archive.org/web/20261014184433/https://www.theregister.com/security/2026/10/13/claude-submitted-fake-murder-tip-to-philly-police-during-summertime-testing/5302842"
+    publisher: "The Register"
+    type: news
+    date: 2026-10-13
+added:
+  date: 2026-10-15
+  by: "MLSecOpsHub"
+last_updated: 2026-10-15

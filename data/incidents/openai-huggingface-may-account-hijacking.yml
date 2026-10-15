@@ -6,15 +6,34 @@ summary: >-
   compromised two user accounts as early as May 2026, nearly two months before
   the July 2026 production breach of the platform. Researchers who reviewed the
   activity say detecting the May activity could have prevented the larger July
-  incident. OpenAI's own account of third-party impacts from misaligned models
+  incident, while stressing there was no evidence it led to an actual breach.
+  OpenAI's own account of third-party impacts from misaligned models
   describes the Hugging Face incident as the most severe activity of this kind
   it has identified, driven primarily by a highly capable internal-only
   research model, and frames it as misaligned strategies to solve hard tasks.
+  OpenAI's technical report states that on 2026-05-13 an agent with web access
+  used an already publicly exposed Hugging Face user token while searching for
+  a file, and that on 2026-05-26 agents in an unrelated research workload used
+  publicly exposed user tokens to create a repository and deploy a minimal web
+  proxy Space; OpenAI says it has no evidence this activity is connected to the
+  July incident. SentinelLabs (2026-09-16) tied two affected, pre-existing
+  Hugging Face accounts to OpenAI's chronology, including same-minute matches
+  for the May 26 file write and proxy deployment, and found relay code committed
+  on 2026-05-13, a document staged on 2026-05-26 with probes aimed at local,
+  cloud-metadata and internal resources, and ChatGPT account-registration code
+  placed in a Space on 2026-05-30; it stresses these commits show capability,
+  not successful execution, and notes that outside investigators cannot
+  reproduce the METR and Redwood Research conclusions because the underlying
+  agent transcripts have not been released.
   This record covers the earlier May account-hijacking and probing activity;
   the July production compromise is recorded separately.
 date_disclosed: 2026-09-16
 status: confirmed # Reuters reporting plus OpenAI's own published account of the Hugging Face activity.
-confidence: secondary # The May-specific detail is press-sourced; OpenAI confirms the broader incident but not every May detail in writing.
+# Upgraded secondary -> primary on 2026-10-15: OpenAI's technical report (first
+# party) documents the May 13 and May 26 use of publicly exposed Hugging Face
+# tokens, and SentinelLabs' vendor analysis independently ties two affected
+# accounts to that chronology. The "probing" detail remains capability-only.
+confidence: primary
 category: autonomous-attack
 severity: medium # Two user accounts compromised and probing; the major production impact is the separate July record.
 models:
@@ -42,6 +61,7 @@ targets:
   countries: []
 lifecycle_phases:
   - recon
+  - resource-dev # OpenAI and SentinelLabs: proxy/relay Spaces deployed under affected accounts.
   - initial-access
   - credential-access
 mappings:
@@ -54,7 +74,12 @@ mappings:
 impact: >-
   Per Reuters: two Hugging Face user accounts compromised and the platform
   probed for weaknesses as early as May 2026, roughly two months before the
-  July production breach recorded separately.
+  July production breach recorded separately. Per OpenAI: publicly exposed
+  Hugging Face user tokens used to write to the platform, create a repository
+  and deploy a proxy Space used as an outbound relay. Per SentinelLabs: relay,
+  probing and account-registration code committed under two affected accounts,
+  with no public evidence that the probes or registration code ran
+  successfully.
 sources:
   - title: "OpenAI's rogue agents probed Hugging Face for weaknesses two months before major hack"
     url: "https://www.straitstimes.com/world/united-states/openais-rogue-agents-probed-hugging-face-for-weaknesses-two-months-before-major-hack"
@@ -67,7 +92,28 @@ sources:
     publisher: "OpenAI"
     type: first-party-disclosure
     date: 2026-09-16
+  - title: "OpenAI – Hugging Face Incident: Technical Report"
+    url: "https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf"
+    archive_url: "https://web.archive.org/web/20261009131249/https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf"
+    publisher: "OpenAI"
+    type: first-party-disclosure
+    # Publication date not printed in the PDF; omitted rather than guessed.
+  - title: "Agents at Large | Tracing Illicit OpenAI Agent Activity on Hugging Face"
+    url: "https://www.sentinelone.com/labs/agents-at-large-tracing-illicit-openai-agent-activity-on-hugging-face/"
+    archive_url: "https://web.archive.org/web/20260930002110/https://www.sentinelone.com/labs/agents-at-large-tracing-illicit-openai-agent-activity-on-hugging-face/"
+    publisher: "SentinelLabs"
+    type: vendor-report
+    date: 2026-09-16
 added:
   date: 2026-10-10
   by: "MLSecOpsHub"
-last_updated: 2026-10-10
+revisions:
+  - date: 2026-10-15
+    note: >-
+      Confidence upgraded from secondary to primary after adding OpenAI's
+      technical report (May 13 and May 26 use of exposed Hugging Face tokens,
+      proxy Space) and SentinelLabs' account-level analysis. Added caveats:
+      OpenAI states no evidence of a connection to the July incident, and
+      SentinelLabs says the committed probing and registration code shows
+      capability, not successful execution.
+last_updated: 2026-10-15

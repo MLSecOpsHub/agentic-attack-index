@@ -30,7 +30,7 @@
   ],
   "id": "divd-zammad-ai-agent-breach",
   "impact": "Volunteer (DIVD) email addresses confirmed exfiltrated; signs of partial exfiltration from the GSuite office environment, helpdesk, Jira and Confluence, operational IT systems and the CSIRT ticket system; CSIRT correspondence and zero-day data held in Zammad should be assumed possibly compromised. HR, source code, Slack, accounting and the CVE/CNA environment show no indication of compromise. Investigation ongoing.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-15",
   "lifecycle_phases": [
     "initial-access",
     "execution",

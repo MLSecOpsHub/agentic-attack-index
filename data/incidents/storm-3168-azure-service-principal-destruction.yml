@@ -1,0 +1,90 @@
+id: storm-3168-azure-service-principal-destruction
+name: "Storm-3168 (JADEPUFFER) used compromised Azure service principals for rapid, automated cloud resource destruction"
+summary: >-
+  On 2026-09-25 Microsoft Security Research reported destructive Azure
+  activity by the actor Sysdig calls JADEPUFFER, which Microsoft tracks as
+  Storm-3168, under the headline "Agentic-driven cloud attacks using
+  compromised service principals". In early June 2026, in one victim tenant,
+  two compromised service principals carried out the activity. One enumerated
+  the Azure environment for about 15.5 hours. The other, after further
+  discovery, ran a destructive sequence lasting about seven minutes. It made
+  more than 100 storage-account deletion attempts, most of which succeeded,
+  deleted a Key Vault, Function App and App Service plan, failed to delete
+  several SQL databases and recovery-protection locks, and then retrieved
+  storage-account access keys. Microsoft could not confirm how the identities
+  were compromised, though one service principal's secret had earlier been
+  exposed in a public GitHub issue by an employee of the affected
+  organisation. It assesses the objective as ransomware-aligned but observed
+  no ransom note and no confirmed exfiltration. Microsoft frames the activity
+  as part of a shift toward AI-orchestrated attacks. Its stated evidence,
+  however, is that the timing and division of work across identities and
+  tokens "strongly indicates automated or scripted execution". No model, agent
+  framework or AI artefact is cited.
+date_disclosed: 2026-09-25
+status: reported # Single vendor analysis; The Hacker News relays Microsoft's findings.
+confidence: primary # Microsoft analysed its own cloud telemetry for the affected tenant.
+category: autonomous-attack # Matches the sibling JADEPUFFER record.
+severity: high # Bulk destruction of storage accounts and application resources in one tenant, with recovery controls targeted.
+models: [] # Microsoft names no model.
+model_families:
+  - other
+actor: "Storm-3168 (Microsoft's designation for the actor Sysdig calls JADEPUFFER; no attribution stated)"
+actor_type: unknown # Matches the sibling JADEPUFFER record; Microsoft states no motivation beyond a ransomware-aligned objective.
+autonomy_pct: null
+autonomy_level: unknown # Microsoft: "automated or scripted execution"; agent-driven decision-making is not shown.
+guardrail_bypass:
+  - unknown
+# Disputed: the headline calls the activity "agentic-driven", but the evidence
+# Microsoft presents supports automation or scripting, not an AI agent.
+ai_role: disputed
+related:
+  - jadepuffer-agentic-database-extortion # Same actor (JADEPUFFER = Storm-3168), per Microsoft.
+mitigations:
+  - "Microsoft recommends enabling Defender for Cloud plans for critical Azure workloads (Resource Manager, Storage, Key Vault, App Service, Databases)."
+  - "Keep service-principal credentials, storage keys and other secrets out of source code, configuration files, public repositories and issues; treat any publicly exposed credential as compromised even after the original post is edited or deleted, and revoke or rotate it immediately."
+  - "Apply least privilege to service principals and other workload identities, and protect backup and recovery resources with independent safeguards such as resource locks and storage-account deletion protection, which blocked some deletions in this incident."
+targets:
+  orgs_affected: 1 # One impacted tenant/organisation; Microsoft separately saw probing of other customers' App Services from Storm-3168 infrastructure.
+  records_exfiltrated: null # Exfiltration not confirmed.
+  sectors: [] # Not stated.
+  countries: [] # Not stated.
+lifecycle_phases:
+  - recon
+  - initial-access
+  - credential-access
+  - impact
+mappings:
+  mitre_atlas: []
+  mitre_attack: # As listed by Microsoft.
+    - T1190
+    - T1078.004
+    - T1526
+    - T1485
+    - T1490
+  owasp_llm: []
+  owasp_asi: []
+  cve: []
+  aiid: []
+impact: >-
+  Per Microsoft: most of the more than 100 targeted Azure Storage accounts
+  were deleted, along with a Key Vault, Function App and App Service plan;
+  deletions of Azure SQL databases and of Site Recovery and Backup protection
+  locks were attempted and failed; more than 30 successful storage-account
+  key-retrieval requests followed. No ransom note was observed and no
+  exfiltration confirmed.
+sources:
+  - title: "Storm-3168: Agentic-driven cloud attacks using compromised service principals"
+    url: "https://www.microsoft.com/en-us/security/blog/2026/09/25/storm-3168-agentic-driven-cloud-attacks-using-compromised-service-principals/"
+    archive_url: "https://web.archive.org/web/20261011125606/https://www.microsoft.com/en-us/security/blog/2026/09/25/storm-3168-agentic-driven-cloud-attacks-using-compromised-service-principals/"
+    publisher: "Microsoft Threat Intelligence"
+    type: vendor-report
+    date: 2026-09-25
+  - title: "JADEPUFFER-Linked Attackers Used Compromised Service Principals to Delete Azure Resources"
+    url: "https://thehackernews.com/2026/09/jadepuffer-linked-attackers-used.html"
+    publisher: "The Hacker News"
+    type: news
+    date: 2026-09-28
+added:
+  date: 2026-10-15
+  by: "MLSecOpsHub"
+last_updated: 2026-10-15

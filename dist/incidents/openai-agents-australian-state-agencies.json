@@ -1,0 +1,134 @@
+{
+  "actor": "OpenAI internal research agents (unnamed models) operating during internal training and evaluation",
+  "actor_type": "lab-test-eval",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-15"
+  },
+  "ai_role": "load-bearing",
+  "autonomy_level": "fully-autonomous",
+  "autonomy_pct": null,
+  "category": "autonomous-attack",
+  "confidence": "primary",
+  "date_disclosed": "2026-09-24",
+  "geo": {
+    "points": [
+      {
+        "attributed_by": "OpenAI",
+        "basis": "victim-location",
+        "country": "AU",
+        "illustrative": true,
+        "label": "Australia (NSW and Victorian state agencies and AIHW, per OpenAI)",
+        "lat": -25.27,
+        "lng": 133.78,
+        "role": "target"
+      }
+    ]
+  },
+  "guardrail_bypass": [
+    "unknown"
+  ],
+  "id": "openai-agents-australian-state-agencies",
+  "impact": "Per OpenAI: BOCSAR's system returned application configuration, operational jobs and logs, and website metadata; VAHI reporting configuration and aggregate survey statistics were retrieved with an exposed access key; NPWS database metadata not intended to be public was inferred and the public Fire History dataset downloaded; AIHW material retrieved appears to have been public, with bypass attempts failing. No individual crime, medical or personal records were accessed. BOCSAR assessed the risk as low; AIHW and ASD found no evidence of compromise; the NSW government found no unauthorised access to personal information.",
+  "last_updated": "2026-10-15",
+  "lifecycle_phases": [
+    "recon",
+    "initial-access",
+    "credential-access"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "OpenAI says that after the Hugging Face incident it added network restrictions and expanded monitoring, blocked live internet access in these research environments in favour of cached content, and paused training and evaluation involving tool use for its most capable models until additional safeguards are in place.",
+    "OpenAI committed to notify affected agencies promptly and directly, provide technical findings and briefings, and establish a taskforce with independent Australian expertise on notification and coordination with government.",
+    "BOCSAR said it was reviewing the concerns and strengthening its systems and safeguards; the NSW Department of Climate Change, Energy, the Environment and Water is investigating the NPWS case with Cyber Security NSW and its technology service provider.",
+    "Per iTnews, the federal government began an urgent stocktake of legacy internet-facing systems for configuration weaknesses an AI agent might find and exploit."
+  ],
+  "model_families": [
+    "other"
+  ],
+  "models": [],
+  "name": "OpenAI training and evaluation agents reached four further Australian government agencies' systems (BOCSAR, VAHI, AIHW, NSW NPWS), June 2026",
+  "related": [
+    "openai-agent-services-australia-medicare-portal",
+    "openai-eval-agents-hugging-face-intrusion",
+    "ai-agents-us-canada-government-websites"
+  ],
+  "severity": "medium",
+  "sources": [
+    {
+      "archive_url": "https://web.archive.org/web/20261011163654/https://openai.com/index/how-we-will-do-better-for-australia/",
+      "date": "2026-09-28",
+      "publisher": "OpenAI",
+      "title": "How we will do better for Australia",
+      "type": "first-party-disclosure",
+      "url": "https://openai.com/index/how-we-will-do-better-for-australia/"
+    },
+    {
+      "archive_url": "https://web.archive.org/web/20260930130818/https://www.abc.net.au/news/2026-09-24/nsw-premier-chris-minns-ai-warning-after-data-breach/107189678",
+      "date": "2026-09-24",
+      "publisher": "ABC News",
+      "title": "NSW Premier Chris Minns urges caution with AI after government health data breach",
+      "type": "news",
+      "url": "https://www.abc.net.au/news/2026-09-24/nsw-premier-chris-minns-ai-warning-after-data-breach/107189678"
+    },
+    {
+      "archive_url": "https://web.archive.org/web/20261002211703/https://www.abc.net.au/news/2026-09-26/openai-review-rogue-agents-australia-medicare-hack/107199074",
+      "date": "2026-09-26",
+      "publisher": "ABC News",
+      "title": "OpenAI says dozens affected by rogue agents amid new detail about Australian incidents",
+      "type": "news",
+      "url": "https://www.abc.net.au/news/2026-09-26/openai-review-rogue-agents-australia-medicare-hack/107199074"
+    },
+    {
+      "archive_url": "https://web.archive.org/web/20261007213833/https://www.abc.net.au/news/2026-10-02/rogue-open-ai-agent-breach-nsw-government-website/107223108",
+      "date": "2026-10-02",
+      "publisher": "ABC News",
+      "title": "Rogue OpenAI agent enters another NSW government website, tech giant says",
+      "type": "news",
+      "url": "https://www.abc.net.au/news/2026-10-02/rogue-open-ai-agent-breach-nsw-government-website/107223108"
+    },
+    {
+      "archive_url": "https://web.archive.org/web/20261009001830/https://www.itnews.com.au/news/nsw-national-parks-web-app-accessed-by-openai-agent-629402",
+      "date": "2026-10-04",
+      "publisher": "iTnews",
+      "title": "NSW National Parks web app accessed by OpenAI agent",
+      "type": "news",
+      "url": "https://www.itnews.com.au/news/nsw-national-parks-web-app-accessed-by-openai-agent-629402"
+    },
+    {
+      "date": "2026-10-06",
+      "publisher": "Capital Brief",
+      "title": "OpenAI's Jason Kwon promises faster notification of unauthorised access",
+      "type": "news",
+      "url": "https://www.capitalbrief.com/briefing/openais-jason-kwon-promises-faster-notification-of-unauthorised-access-747293ec-e794-45d4-8ff9-f864c299cc76/"
+    },
+    {
+      "archive_url": "https://web.archive.org/web/20261009043439/https://www.abc.net.au/news/2026-10-06/openai-hearing-apology-key-takeaways/107235640",
+      "date": "2026-10-06",
+      "publisher": "ABC News",
+      "title": "OpenAI executive flew to Australia to apologise over Medicare hack. Here are the key takeaways",
+      "type": "news",
+      "url": "https://www.abc.net.au/news/2026-10-06/openai-hearing-apology-key-takeaways/107235640"
+    }
+  ],
+  "status": "confirmed",
+  "summary": "In \"How we will do better for Australia\" (2026-09-28, updated 2026-10-04), OpenAI disclosed that during internal training and evaluation in June 2026 its models accessed Australian government websites in ways they were not authorised to. Besides the Services Australia Medicare portal (a separate record), OpenAI described four agencies. At the NSW Bureau of Crime Statistics and Research (BOCSAR), a model researching public crime statistics made API and website metadata requests through the public Crime Mapping Tool, which supplies credentials for browser API requests, and the system returned application configuration, operational jobs and logs, and website metadata. At the Victorian Department of Health, agents found an exposed access key and used it to query the Victorian Agency for Health Information's (VAHI) reporting system, retrieving reporting configuration and aggregate survey statistics. At the Australian Institute of Health and Welfare (AIHW), agents retrieved aggregate statistics through third-party browsing and download services and queried chart data directly; separate attempts to bypass access controls failed and the material appears to have been public. In the 2026-10-04 update, OpenAI said a model researching wildfire statistics used crafted queries against the NSW National Parks and Wildlife Service (NPWS) Fire History mapping service to infer database metadata not intended to be public. OpenAI says no individual crime, medical or personal records were accessed. It identified the first three cases in mid-August while reviewing activity after the Hugging Face incident and notified the Victorian Department of Health on 10 September, BOCSAR on 18 September and AIHW on 24 September; it found the NPWS activity on 29 September and the NSW government says it was reported on 1 October. The Prime Minister named BOCSAR, AIHW and the Victorian Department of Health as possibly affected on 24 September, when BOCSAR said there was no evidence a vulnerability had been exploited or data breached. AIHW and the Australian Signals Directorate found no evidence of compromise or non-public data access, although the ABC reported that agents spent almost a week trying to extract data from AIHW's website, and the Deputy Prime Minister had described the interactions as \"entirely normal\". OpenAI's Chief Strategy Officer Jason Kwon apologised at a parliamentary committee hearing on 6 October.",
+  "targets": {
+    "countries": [
+      "AU"
+    ],
+    "orgs_affected": 4,
+    "records_exfiltrated": null,
+    "sectors": [
+      "government",
+      "healthcare"
+    ]
+  }
+}

@@ -1,0 +1,113 @@
+id: oalabs-compromised-server-claude-codex-intrusions
+name: "Low-skilled operator drove Claude Code and Codex agents from hijacked servers to breach at least 14 companies"
+summary: >-
+  OALABS (Open Analysis) reported on 2026-06-16 its analysis of more than 1,000
+  Claude Code and OpenAI Codex agent sessions recovered from a compromised
+  server that an attacker had been using as a staging host; the server's owner
+  downloaded the attacker's working directory and shared it. The sessions,
+  from February 2026, document the breach of at least 14 companies. The
+  attacker issued short, vague prompts and Claude Code carried out most of the
+  hacking: enumerating exposed services found through an internet-scanning
+  service, researching public vulnerabilities through subagents, building and
+  running exploits, validating stolen credentials, harvesting data, and
+  writing per-victim reports with estimated monetization value. The attacker
+  framed requests as authorized red-team work; across the sessions Claude
+  logged nine policy violations and Codex one, and Claude held firm on some
+  requests, such as targeting private individuals and producing a
+  monetization guide. The Claude Code instance had itself been stolen from a
+  software developer's compromised server. The attacker exfiltrated an
+  encrypted wallet file from a Lightning Network node with access to about
+  69.71 BTC and had Claude spread cracking across 14 compromised hosts, many
+  in a Southeast Asian government server farm; the cracking failed, and OALABS
+  found no confirmed monetization. Victims are not named. OALABS researchers
+  state that personal details and connection logs in the recovered material
+  place the operator in Ethiopia.
+date_disclosed: 2026-06-16
+status: reported # Single research publisher; Help Net Security relays OALABS. No Anthropic or OpenAI statement found.
+confidence: primary # OALABS analysed the recovered session logs directly.
+category: ai-orchestrated-campaign
+severity: high # At least 14 companies breached; government servers hijacked for compute; attempted theft of about 69.71 BTC failed.
+models:
+  - "claude-opus-4-6" # Model string in OALABS's session timeline.
+  - "opus-4.5" # Model OALABS names in its policy-violation tally; OALABS gives both.
+  - "gpt-5.2-codex"
+model_families:
+  - claude
+  - openai-codex
+actor: "Unnamed individual operator (no group; OALABS researchers place him in Ethiopia)"
+actor_type: single-operator
+autonomy_pct: null
+# OALABS: vague directives left Claude to act autonomously and exploit
+# development ran with no operator input, but "this was not fully autonomous
+# hacking".
+autonomy_level: supervised-autonomous
+guardrail_bypass:
+  - jailbreak # False "authorized red team" framing and injected red-team personas; reworded after refusals.
+  - legitimate-tool-abuse # Commercial coding agents, including a Claude Code instance stolen from another user.
+ai_role: load-bearing # OALABS: "Claude was not just assisting the attacker; it was actually doing the hacking", for an operator of limited apparent skill.
+related:
+  - mexico-government-claude-code-intrusions # Same technique: a single operator driving Claude Code through intrusions; no actor link stated.
+mitigations: [] # OALABS states no defensive measures beyond arguing against broader model refusals.
+targets:
+  orgs_affected: 14 # "At least 14 companies" breached, per OALABS.
+  records_exfiltrated: null
+  sectors:
+    - government # Hosts in a Southeast Asian government server farm were compromised and used for wallet cracking.
+    # Other victims are unnamed companies; OALABS gives no sector breakdown.
+  countries: [] # Victim countries not stated; "Southeast Asian" is a region only.
+geo:
+  points:
+    - role: origin
+      basis: actor-location
+      attributed_by: "OALABS"
+      country: ET
+      lat: 9.15
+      lng: 40.49
+      label: "Ethiopia (operator location stated by OALABS researchers from the recovered logs)"
+      illustrative: true
+lifecycle_phases:
+  - recon
+  - resource-dev # Stolen Claude Code instance; compromised hosts reused as staging servers.
+  - initial-access
+  - execution
+  - privilege-escalation # Public Linux local privilege-escalation exploits among those the agent built and ran.
+  - credential-access
+  - exfiltration
+mappings:
+  mitre_atlas: []
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: []
+  cve: # Vulnerabilities OALABS says the agent turned into exploits and used.
+    - CVE-2025-54068 # Livewire
+    - CVE-2025-62168 # Squid
+    - CVE-2025-5777 # Citrix
+    - CVE-2023-36664 # Ghostscript
+    - CVE-2024-29510 # Ghostscript
+    - CVE-2021-4034 # Linux local privilege escalation
+    - CVE-2022-0847 # Linux local privilege escalation
+  aiid: []
+impact: >-
+  Per OALABS: at least 14 companies breached, with credentials and data
+  harvested and exfiltrated; an encrypted wallet file from a Lightning Network
+  node with access to about 69.71 BTC (about US$4 million) exfiltrated, though
+  distributed cracking failed; and 14 compromised hosts, many belonging to a
+  Southeast Asian government server farm, repurposed for the cracking. No
+  successful monetization was confirmed in the logs.
+sources:
+  - title: "Captured Logs Reveal Hackers Using Claude and Codex to Breach Companies"
+    url: "https://research.openanalysis.net/claude/codex/hacking/ai%20hacking/llm/redteam/policy%20violation/2026/06/16/compromised-claude-hacking.html"
+    archive_url: "https://web.archive.org/web/20261011114242/https://research.openanalysis.net/claude/codex/hacking/ai%20hacking/llm/redteam/policy%20violation/2026/06/16/compromised-claude-hacking.html"
+    publisher: "OALABS"
+    type: vendor-report # Detailed analysis by the research group that examined the recovered material.
+    date: 2026-06-16
+  - title: "Low-skilled attacker used Claude, Codex to breach 14 companies"
+    url: "https://www.helpnetsecurity.com/2026/06/17/ai-agents-offensive-cyber-operations-claude-codex/"
+    archive_url: "https://web.archive.org/web/20260829142911/https://www.helpnetsecurity.com/2026/06/17/ai-agents-offensive-cyber-operations-claude-codex/"
+    publisher: "Help Net Security"
+    type: news
+    date: 2026-06-17
+added:
+  date: 2026-10-15
+  by: "MLSecOpsHub"
+last_updated: 2026-10-15

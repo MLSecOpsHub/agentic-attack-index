@@ -1,0 +1,83 @@
+{
+  "actor": "Unknown (a single GitHub account and look-alike organisations, per Zenity Labs)",
+  "actor_type": "unknown",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-15"
+  },
+  "ai_role": "significant",
+  "autonomy_level": "not-applicable",
+  "autonomy_pct": null,
+  "category": "infrastructure-abuse-supply-chain",
+  "confidence": "primary",
+  "date_disclosed": "2026-08-06",
+  "guardrail_bypass": [
+    "indirect-prompt-injection"
+  ],
+  "id": "skills-sh-paperclip-malicious-skills",
+  "impact": "In Zenity Labs' detonations the skills triggered live credential collection and payload delivery. The skill family's displayed install counter on skills.sh exceeded 1.7 million by 2026-08-02; this is a non-unique aggregate counter. No source gives a confirmed victim count.",
+  "last_updated": "2026-10-15",
+  "lifecycle_phases": [
+    "resource-dev",
+    "initial-access",
+    "execution",
+    "credential-access",
+    "exfiltration"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "Zenity Labs advises checking whether any agents or developer systems used the impersonating Paperclip or Browser Use skills or installed the companion packages, searching egress logs for the campaign's endpoints, and hunting for its published indicators.",
+    "Zenity Labs advises treating an agent and its host as compromised if a malicious loader or stealer ran. Installation or use alone should be treated as exposure needing triage, and credentials should be rotated when execution cannot be ruled out.",
+    "Vercel and Microsoft/GitHub removed the reported skills, listings and repositories within 12 hours of Zenity's outreach, per Zenity, which warns that copied instructions may remain in downstream repositories, aggregators and user machines."
+  ],
+  "model_families": [
+    "other"
+  ],
+  "models": [],
+  "name": "Typosquatted Paperclip and Browser Use skills on skills.sh told AI agents to fetch and run a credential stealer",
+  "related": [
+    "clawhavoc-clawhub-malicious-skills",
+    "postmark-mcp-bcc-backdoor"
+  ],
+  "severity": "high",
+  "sources": [
+    {
+      "date": "2026-08-06",
+      "publisher": "Zenity Labs",
+      "title": "Attackers Target Agents via The Skill Supply Chain",
+      "type": "vendor-report",
+      "url": "https://labs.zenity.io/post/attackers-target-agents-via-the-skill-supply-chain"
+    },
+    {
+      "date": "2026-08-07",
+      "publisher": "CSO Online",
+      "title": "Trojanized AI skills gain 1.7M installs in agent-targeted attack",
+      "type": "news",
+      "url": "https://www.csoonline.com/article/4206851/trojanized-ai-skills-gain-1.7m-installs-in-agent-targeted-attack.html"
+    },
+    {
+      "date": "2026-07-13",
+      "publisher": "OSV (Open Source Vulnerabilities)",
+      "title": "MAL-2026-10484: Malicious code in browser-use-headless (PyPI)",
+      "type": "other",
+      "url": "https://osv.dev/vulnerability/MAL-2026-10484"
+    }
+  ],
+  "status": "reported",
+  "summary": "On 2026-08-06 Zenity Labs disclosed an active malware campaign, which it helped disrupt, on skills.sh, an open registry of AI-agent skills that CSO Online says is maintained by Vercel. Using look-alike GitHub organisations, a single actor impersonated two projects: Paperclip, an AI-agent orchestration platform, and Browser Use, a browser-automation tool. The actor cloned the legitimate projects and listed their skills on skills.sh. The skills first appeared on 2026-07-05 as clean copies. The surrounding repository was trojanised on 2026-07-06. On 2026-07-11 the skill documents were weaponised with setup instructions telling AI agents to download and execute a remote payload, or to install from attacker-controlled sources instead of the real package. The malicious instructions sat in a secondary document that agents opened only when installation was needed, and the skills pointed agents to one another. The payload was a credential harvester targeting SSH keys, cloud, Git and package-manager credentials, Kubernetes and Docker configuration, project .env files and AI-tool configuration on developer workstations, CI runners and agent workspaces. Two companion trojanised PyPI packages were flagged within hours of publication. The skills trended on skills.sh throughout July. By 2026-08-02 the family's displayed install counter exceeded 1.7 million; Zenity stresses this counter is aggregated and not unique per user, and that the number of victims is unknown. Zenity reports that Vercel and Microsoft/GitHub removed the listings and repositories within 12 hours of its outreach. AI agents were the execution vector, not the operator.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": [
+      "technology"
+    ]
+  }
+}
