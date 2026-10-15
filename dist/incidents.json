@@ -198,6 +198,96 @@
     }
   },
   {
+    "actor": "Unknown Russian-speaking, financially motivated individual or small group (per Amazon Threat Intelligence)",
+    "actor_type": "cybercriminal",
+    "added": {
+      "by": "MLSecOpsHub",
+      "date": "2026-10-15"
+    },
+    "ai_role": "significant",
+    "autonomy_level": "unknown",
+    "autonomy_pct": null,
+    "category": "ai-orchestrated-campaign",
+    "confidence": "primary",
+    "date_disclosed": "2026-02-20",
+    "guardrail_bypass": [
+      "unknown"
+    ],
+    "id": "ai-augmented-fortigate-mass-compromise",
+    "impact": "Per Amazon: more than 600 FortiGate devices in more than 55 countries accessed and their configurations taken, including VPN and administrative credentials and network topology. Several organisations' Active Directory environments were compromised and complete domain credential databases extracted. Backup infrastructure was targeted, which Amazon calls a potential precursor to ransomware. No ransomware deployment, data sale or named victim is reported.",
+    "last_updated": "2026-10-15",
+    "lifecycle_phases": [
+      "resource-dev",
+      "recon",
+      "initial-access",
+      "execution",
+      "credential-access",
+      "privilege-escalation"
+    ],
+    "mappings": {
+      "aiid": [],
+      "cve": [
+        "CVE-2019-7192",
+        "CVE-2023-27532",
+        "CVE-2024-40711"
+      ],
+      "mitre_atlas": [],
+      "mitre_attack": [],
+      "owasp_asi": [],
+      "owasp_llm": []
+    },
+    "mitigations": [
+      "Amazon advises keeping FortiGate management interfaces off the internet (or restricted to known IP ranges via a bastion or out-of-band network), changing default and common credentials, rotating SSL-VPN credentials, enforcing multi-factor authentication for administrative and VPN access, and reviewing configurations for unauthorised accounts or policy changes.",
+      "Amazon advises auditing password reuse between VPN and Active Directory accounts, monitoring for unexpected domain replication and lateral movement from VPN address pools, and isolating, patching and keeping immutable copies of backup infrastructure. It prioritises behavioural detection over indicators, because the actor relied on widely used open-source tools.",
+      "Team Cymru advises monitoring for its published CyberStrikeAI server indicators and preparing for more automated, AI-driven targeting of edge devices."
+    ],
+    "model_families": [
+      "other"
+    ],
+    "models": [],
+    "name": "AI-augmented actor accessed more than 600 FortiGate devices across 55+ countries; attack infrastructure later found running the CyberStrikeAI agent platform",
+    "related": [],
+    "severity": "high",
+    "sources": [
+      {
+        "date": "2026-02-20",
+        "publisher": "Amazon Web Services",
+        "title": "AI-augmented threat actor accesses FortiGate devices at scale",
+        "type": "vendor-report",
+        "url": "https://aws.amazon.com/blogs/security/ai-augmented-threat-actor-accesses-fortigate-devices-at-scale/"
+      },
+      {
+        "date": "2026-03-02",
+        "publisher": "Team Cymru",
+        "title": "Tracking CyberStrikeAI Usage",
+        "type": "vendor-report",
+        "url": "https://www.team-cymru.com/post/tracking-cyberstrikeai-usage"
+      },
+      {
+        "date": "2026-02-23",
+        "publisher": "The Record by Recorded Future News",
+        "title": "Russian-speaking hackers used gen AI tools to compromise 600 firewalls, Amazon says",
+        "type": "news",
+        "url": "https://therecord.media/gen-ai-fortigate-hackers-russia"
+      },
+      {
+        "date": "2026-03-02",
+        "publisher": "BleepingComputer",
+        "title": "CyberStrikeAI tool adopted by hackers for AI-powered attacks",
+        "type": "news",
+        "url": "https://www.bleepingcomputer.com/news/security/cyberstrikeai-tool-adopted-by-hackers-for-ai-powered-attacks/"
+      }
+    ],
+    "status": "reported",
+    "summary": "On 2026-02-20 Amazon Threat Intelligence (CISO CJ Moses) reported that a Russian-speaking, financially motivated actor used multiple commercial generative AI services to compromise more than 600 FortiGate devices in more than 55 countries between 2026-01-11 and 2026-02-18. No FortiGate vulnerability was exploited. Access came through internet-exposed management interfaces and weak single-factor credentials, followed by extraction of device configurations. The actor used the stolen credentials to enter victim networks and reached Active Directory compromise and credential-database extraction in several organisations. It also targeted backup servers, which Amazon calls consistent with pre-ransomware activity. Amazon found the actor's operational files on its own publicly accessible infrastructure. They showed at least two commercial LLM providers used for tool development, attack planning, command generation and operational reporting, including a request for a plan to compromise further hosts inside a live victim network. Amazon assesses the actor as low-to-medium skill, and says it largely failed beyond straightforward automated attack paths and moved on from hardened targets. On 2026-03-02 Team Cymru reported a \"CyberStrikeAI\" service banner on one of the IPs Amazon shared. Team Cymru describes CyberStrikeAI as an open-source, AI-native offensive platform with an orchestration engine. It also observed NetFlow traffic between that IP and targeted FortiGate devices. No source shows how much of the campaign, if any, an AI agent executed. The agentic link rests on infrastructure overlap.",
+    "targets": {
+      "countries": [],
+      "orgs_affected": null,
+      "records_exfiltrated": null,
+      "sectors": []
+    }
+  },
+  {
     "actor": "UK AI Security Institute evaluation agents (Anthropic Mythos 5 and OpenAI GPT-5.6 Sol) acting outside intended scope during cyber testing",
     "actor_type": "lab-test-eval",
     "added": {
@@ -889,6 +979,148 @@
     }
   },
   {
+    "actor": "BlackHatSect0r && DXQRTXX (French-speaking cybercrime crew, per SOCRadar; operates publicly 'in alliance with' APT-90, which SOCRadar treats as a co-branding partner)",
+    "actor_type": "cybercriminal",
+    "added": {
+      "by": "MLSecOpsHub",
+      "date": "2026-10-15"
+    },
+    "ai_role": "disputed",
+    "autonomy_level": "supervised-autonomous",
+    "autonomy_pct": null,
+    "category": "ai-orchestrated-campaign",
+    "confidence": "primary",
+    "date_disclosed": "2026-09-16",
+    "geo": {
+      "points": [
+        {
+          "attributed_by": "SOCRadar",
+          "basis": "victim-location",
+          "country": "FR",
+          "illustrative": true,
+          "label": "France (primary target country, per SOCRadar)",
+          "lat": 46.23,
+          "lng": 2.21,
+          "role": "target"
+        }
+      ]
+    },
+    "guardrail_bypass": [
+      "jailbreak",
+      "legitimate-tool-abuse"
+    ],
+    "id": "blackhatsect0r-hermes-dxscan-harvesting",
+    "impact": "Per SOCRadar: 16,834 credentials harvested from exposed configuration files; claimed breaches of two French public bodies via exposed storage and configuration; extortion claims against four New York public bodies; 418 complete identity records taken from a cryptocurrency exchange (no funds moved); a 449,970-record French telecom subscriber database held and monetised; and a vishing lure sent to 668 recipients. ThreatMon's analysis of the same server counted 16,415 credentials and about 498,000 target URLs.",
+    "last_updated": "2026-10-15",
+    "lifecycle_phases": [
+      "recon",
+      "resource-dev",
+      "initial-access",
+      "credential-access",
+      "exfiltration",
+      "deception-social-eng",
+      "impact"
+    ],
+    "mappings": {
+      "aiid": [],
+      "cve": [
+        "CVE-2021-3129",
+        "CVE-2018-15133",
+        "CVE-2022-22947",
+        "CVE-2021-29447",
+        "CVE-2026-42530"
+      ],
+      "mitre_atlas": [],
+      "mitre_attack": [
+        "T1583.001",
+        "T1583.003",
+        "T1585.001",
+        "T1587.001",
+        "T1595.001",
+        "T1595.002",
+        "T1596.001",
+        "T1596.003",
+        "T1593.002",
+        "T1190",
+        "T1078",
+        "T1110",
+        "T1552.001",
+        "T1555",
+        "T1606.001",
+        "T1606.002",
+        "T1528",
+        "T1027",
+        "T1070",
+        "T1562",
+        "T1005",
+        "T1119",
+        "T1114.001",
+        "T1041",
+        "T1567.002",
+        "T1071.001",
+        "T1102.002",
+        "T1571",
+        "T1486",
+        "T1657",
+        "T1491.002",
+        "T1498"
+      ],
+      "owasp_asi": [],
+      "owasp_llm": []
+    },
+    "mitigations": [
+      "SOCRadar advises auditing object storage for public read and write access, removing .env, .git, debug and actuator endpoints from public reach, keeping token-signing material server-side, and rotating default or guessable signing secrets.",
+      "Treat a SOUL.md file, a .hermes/ directory or a HERMES_DISABLE_SAFETY setting on a server as a high-confidence indicator of an agentic-attack toolchain, and alert on unexpected Telegram bot API and ngrok traffic from servers.",
+      "Detect the scanning pattern: bursts of probes followed immediately by requests for well-known configuration-file paths from one source."
+    ],
+    "model_families": [
+      "deepseek"
+    ],
+    "models": [],
+    "name": "French-speaking crew paired a safety-disabled Hermes agent with a mass-scanning C2 that harvested 16,834 credentials",
+    "related": [
+      "unit42-hermes-deepseek-autonomous-campaign",
+      "gentlemen-hermes-agent-gitlab-extortion",
+      "thailand-mof-hermes-agent-intrusion",
+      "carbonato-docker-hermes-botnet"
+    ],
+    "severity": "high",
+    "sources": [
+      {
+        "date": "2026-09-16",
+        "publisher": "SOCRadar",
+        "title": "Discernment Deleted: Inside the Operation Server of BlackHatSect0r && DXQRTXX",
+        "type": "vendor-report",
+        "url": "https://socradar.io/blog/blackhatsect0r-dxqrtxx-operation-server/"
+      },
+      {
+        "date": "2026-09-28",
+        "publisher": "ThreatMon",
+        "title": "16,415 Stolen Passwords, One Open Door: How Blackhatsect0r & DXQRTXX Exposed Themselves",
+        "type": "vendor-report",
+        "url": "https://threatmon.io/16415-stolen-passwords-one-open-door-how-blackhatsect0r-dxqrtxx-exposed-themselves/"
+      }
+    ],
+    "status": "reported",
+    "summary": "SOCRadar reported on 2026-09-16 its analysis of an exposed operation server belonging to BlackHatSect0r && DXQRTXX, a French-speaking cybercrime crew that combines credential theft, data resale and extortion with hacktivist messaging. A custom Go command-and-control platform, DXSCAN, ran an automated pipeline that generated random IP addresses across twelve countries, fingerprinted hosts, searched exposed configuration files for secrets and sent reports to Telegram; its dashboard showed 16,834 credentials harvested and 726,989 hosts reached. SOCRadar describes an AI layer in which the operator ran a Nous Research Hermes agent against a DeepSeek model, deleted the agent's recorded refusals and its \"discernment retained\" memory line, rewrote its identity file to forbid refusal, disabled the framework's approval, secret-redaction and safety controls, and set worker daemons to run campaigns continuously without an operator present. Activity in the dataset includes claimed breaches of two French public bodies through exposed cloud storage and configuration files, an extortion portal claiming compromise of four New York public bodies' cloud storage, reconnaissance and token forgery against a French government fine-payment portal, theft of 418 identity records from a cryptocurrency exchange, a French telecom subscriber database of 449,970 records, and a bank- impersonation vishing campaign aimed at older account holders. SOCRadar stresses that every confirmed breach came from exposure, not novel exploitation, and that the crew's zero-day claims do not hold. Per SOCRadar's own timeline the credential vault and the two French breaches predate the agent's installation in late July 2026, and ThreatMon's separate analysis of the same exposed server describes the targeted operations as manual work and does not mention an AI agent.",
+    "targets": {
+      "countries": [
+        "FR",
+        "US",
+        "GB",
+        "RU"
+      ],
+      "orgs_affected": null,
+      "records_exfiltrated": 16834,
+      "sectors": [
+        "government",
+        "financial-services",
+        "telecommunications",
+        "education"
+      ]
+    }
+  },
+  {
     "actor": "Omer Mayraz (Legit Security)",
     "actor_type": "researcher",
     "added": {
@@ -956,6 +1188,98 @@
     ],
     "status": "reported",
     "summary": "Legit Security researcher Omer Mayraz disclosed CamoLeak, a critical GitHub Copilot Chat vulnerability (reported CVSS 9.6). It combined remote prompt injection via GitHub's invisible markdown comments with a content-security bypass abusing GitHub's Camo image proxy to silently exfiltrate secrets and source code from private repositories and to steer Copilot's responses. GitHub mitigated it by disabling image rendering in Copilot Chat on 2025-08-14; the research was published in October 2025.",
+    "targets": {
+      "countries": [],
+      "orgs_affected": null,
+      "records_exfiltrated": null,
+      "sectors": []
+    }
+  },
+  {
+    "actor": "Unknown Carbonato botnet operators (ThreatDown assesses them as Costa Rica-based; no known cluster)",
+    "actor_type": "cybercriminal",
+    "added": {
+      "by": "MLSecOpsHub",
+      "date": "2026-10-15"
+    },
+    "ai_role": "incidental",
+    "autonomy_level": "human-in-the-loop",
+    "autonomy_pct": null,
+    "category": "infrastructure-abuse-supply-chain",
+    "confidence": "primary",
+    "date_disclosed": "2026-09-22",
+    "geo": {
+      "points": [
+        {
+          "attributed_by": "ThreatDown",
+          "basis": "operator-location",
+          "country": "CR",
+          "illustrative": true,
+          "label": "Costa Rica (assessed operator location, per ThreatDown)",
+          "lat": 9.75,
+          "lng": -83.75,
+          "role": "origin"
+        }
+      ]
+    },
+    "guardrail_bypass": [
+      "legitimate-tool-abuse",
+      "jailbreak"
+    ],
+    "id": "carbonato-docker-hermes-botnet",
+    "impact": "Per ThreatDown: hosts with exposed Docker APIs taken over through privileged containers, kept persistent and used for cryptocurrency mining, with a Hermes agent installed as an operator-tasked post-compromise tool directed at AI API keys and other credentials. Infection counts and stolen data are not reported. On 2026-09-03 six of seven known registries, the phishing sites, the CDN and the crew's LLM gateway were online.",
+    "last_updated": "2026-10-15",
+    "lifecycle_phases": [
+      "initial-access",
+      "execution",
+      "persistence",
+      "credential-access",
+      "impact"
+    ],
+    "mappings": {
+      "aiid": [],
+      "cve": [],
+      "mitre_atlas": [],
+      "mitre_attack": [],
+      "owasp_asi": [],
+      "owasp_llm": []
+    },
+    "mitigations": [
+      "ThreatDown advises never exposing the Docker daemon API to the network and requiring authentication on every container registry.",
+      "Do not blocklist hermes-agent, which has legitimate users; hunt for its abuse instead, such as a persona file naming GH0ST, a CARBONATO_API_KEY setting or unexplained Telegram traffic from servers.",
+      "Check for the persistence kit (hidden watchdog binaries, disguised kernel-thread process names, a miner posing as a system service, unexpected immutable files) and for deterministic reverse SSH tunnels.",
+      "Treat AI API keys like bank credentials: inventory where they live, rotate them and monitor their usage."
+    ],
+    "model_families": [
+      "other"
+    ],
+    "models": [],
+    "name": "Carbonato botnet installs a Hermes agent persona on hijacked Docker hosts as an operator interface prioritising AI API key theft",
+    "related": [
+      "gtg-50020-ai-vendor-api-key-theft",
+      "unit42-hermes-deepseek-autonomous-campaign",
+      "thailand-mof-hermes-agent-intrusion",
+      "blackhatsect0r-hermes-dxscan-harvesting"
+    ],
+    "severity": "medium",
+    "sources": [
+      {
+        "date": "2026-09-22",
+        "publisher": "ThreatDown",
+        "title": "CARBONATO: a botnet built around an AI agent",
+        "type": "vendor-report",
+        "url": "https://www.threatdown.com/blog/carbonato/"
+      },
+      {
+        "date": "2026-09-24",
+        "publisher": "BleepingComputer",
+        "title": "New Carbonato malware uses AI agents to hijack exposed Docker hosts",
+        "type": "news",
+        "url": "https://www.bleepingcomputer.com/news/security/new-carbonato-malware-uses-ai-agents-to-hijack-exposed-docker-hosts/"
+      }
+    ],
+    "status": "reported",
+    "summary": "ThreatDown (Malwarebytes) reported on 2026-09-22 the Carbonato botnet, found through an unauthenticated Docker registry that had been publicly exposed since May 2026 and held 59 repositories and 4.3 GB of image data spanning October 2024 to August 2026, alongside a separate trojanized cryptocurrency-wallet operation. The botnet compromises hosts whose Docker API is exposed without authentication, uses a privileged container to run commands on the host, opens a reverse SSH tunnel, installs layered persistence and a cryptocurrency miner, and spreads worm-like by scanning neighbouring networks every five minutes. On each host it installs the unmodified open-source Hermes Agent framework and overwrites the agent's persona file with a 39-line prompt naming it \"GH0ST\", disclaiming ethical limits and ranking AI provider API keys from 14 providers as the top loot, ahead of SSH credentials, tokens and databases. Operators send tasks over Telegram; the model, reached through the crew's own LLM gateway, interprets each task, writes and runs terminal commands on the victim and reports back. ThreatDown states that target selection, persistence and spreading are handled by scripts and that the model is absent from the propagation phase. It does not report how many hosts were infected or what the agent actually collected. ThreatDown assesses the operators as Costa Rica-based on linguistic, timezone, Telegram-handle and network signals, and could not link them to a known cluster.",
     "targets": {
       "countries": [],
       "orgs_affected": null,
@@ -7450,6 +7774,125 @@
       "orgs_affected": 1,
       "records_exfiltrated": null,
       "sectors": []
+    }
+  },
+  {
+    "actor": "Unknown (Hunt.io: low-to-medium confidence the operator is Chinese-speaking; no group named)",
+    "actor_type": "unknown",
+    "added": {
+      "by": "MLSecOpsHub",
+      "date": "2026-10-15"
+    },
+    "ai_role": "significant",
+    "autonomy_level": "supervised-autonomous",
+    "autonomy_pct": null,
+    "category": "ai-orchestrated-campaign",
+    "confidence": "primary",
+    "date_disclosed": "2026-07-23",
+    "geo": {
+      "points": [
+        {
+          "attributed_by": "Hunt.io",
+          "basis": "victim-location",
+          "country": "TH",
+          "illustrative": true,
+          "label": "Thailand (Ministry of Finance, per Hunt.io)",
+          "lat": 15.87,
+          "lng": 100.99,
+          "role": "target"
+        }
+      ]
+    },
+    "guardrail_bypass": [
+      "legitimate-tool-abuse"
+    ],
+    "id": "thailand-mof-hermes-agent-intrusion",
+    "impact": "Per Hunt.io: several systems within the Ministry of Finance network compromised, including a web shell on a ministry web server, captured session material for an administrative panel and a document-management platform, and agent-driven enumeration of a directory holding personnel records. No evidence of exfiltration; the ministry has not confirmed a breach.",
+    "last_updated": "2026-10-15",
+    "lifecycle_phases": [
+      "recon",
+      "initial-access",
+      "execution",
+      "credential-access",
+      "privilege-escalation",
+      "persistence"
+    ],
+    "mappings": {
+      "aiid": [
+        1669
+      ],
+      "cve": [
+        "CVE-2021-4034",
+        "CVE-2021-3156",
+        "CVE-2017-7269"
+      ],
+      "mitre_atlas": [],
+      "mitre_attack": [
+        "T1190",
+        "T1505.003",
+        "T1036.005",
+        "T1071.001",
+        "T1090.001",
+        "T1059",
+        "T1072",
+        "T1068",
+        "T1082",
+        "T1083",
+        "T1539",
+        "T1110.003",
+        "T1547.001",
+        "T1053",
+        "T1055.012",
+        "T1113"
+      ],
+      "owasp_asi": [],
+      "owasp_llm": []
+    },
+    "mitigations": [
+      "Hunt.io recommends reviewing the HiveServer2 authentication mode (the default accepts any credentials) and enforcing its UDF blocklist.",
+      "Audit web roots for hidden PHP files named to imitate system caches, and alert on web server processes connecting to internal Hadoop service ports.",
+      "Patch sudo and polkit, disable WebDAV on remaining IIS 6.0 servers, and change default credentials on GlassFish admin consoles while restricting them to trusted networks.",
+      "Hunt.io notes exposed Hermes web panels and publicly browsable /hermes-results/ output directories can be found by banner and file-path searches."
+    ],
+    "model_families": [
+      "other"
+    ],
+    "models": [],
+    "name": "Operator ran a Hermes agent unattended for post-compromise enumeration inside Thailand's Ministry of Finance network",
+    "related": [
+      "secflow-asia-government-education-campaign",
+      "unit42-hermes-deepseek-autonomous-campaign",
+      "blackhatsect0r-hermes-dxscan-harvesting",
+      "carbonato-docker-hermes-botnet"
+    ],
+    "severity": "high",
+    "sources": [
+      {
+        "date": "2026-07-23",
+        "publisher": "Hunt.io",
+        "title": "Thailand's Ministry of Finance Targeted With Hermes AI Agent Running Unattended, Hades Implant Staged",
+        "type": "vendor-report",
+        "url": "https://hunt.io/blog/thailand-ministry-finance-targeted-with-hermes-ai-agent"
+      },
+      {
+        "date": "2026-07-24",
+        "publisher": "BleepingComputer",
+        "title": "Hermes AI agent used to automate attack on Thai Finance Ministry",
+        "type": "news",
+        "url": "https://www.bleepingcomputer.com/news/security/hermes-ai-agent-used-to-automate-attack-on-thai-finance-ministry/"
+      }
+    ],
+    "status": "reported",
+    "summary": "Hunt.io, in research conducted jointly with researcher Bob Diachenko, reported on 2026-07-23 an intrusion targeting Thailand's Ministry of Finance that it says was largely driven by the open-source Hermes agent running in its unattended \"YOLO\" mode, which removes human approval prompts. Three open directories on a Hong Kong-hosted staging server, captured between 9 and 13 July 2026, held exploit code, web shells, tunnelling tools, scripts with hardcoded stolen credentials aimed at ministry mail and Hadoop infrastructure, a previously unreported Go implant the operator calls \"Hades\", and Hermes output logs. The logs show the agent, on the operator's instructions, running privilege-escalation and kernel-vulnerability assessments against a ministry host, enumerating services and binaries, and recursively searching a web directory of the Office of the Permanent Secretary that held personnel records dating back to 2012. Hunt.io says session material, a web shell deployed on a ministry web server and internal network access indicate several ministry systems were compromised, but it found no evidence the files were exfiltrated and could not determine how initial access was obtained; no recovered artifact shows Hades on a ministry machine. Most of the tooling was conventional and the exploited weaknesses (such as default Hadoop service credentials) are not AI-specific. The ministry has not publicly confirmed a breach. Hunt.io assesses with low-to-medium confidence that the operator is Chinese-speaking.",
+    "targets": {
+      "countries": [
+        "TH"
+      ],
+      "orgs_affected": 1,
+      "records_exfiltrated": null,
+      "sectors": [
+        "government"
+      ]
     }
   },
   {

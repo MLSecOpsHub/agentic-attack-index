@@ -1,0 +1,142 @@
+{
+  "actor": "BlackHatSect0r && DXQRTXX (French-speaking cybercrime crew, per SOCRadar; operates publicly 'in alliance with' APT-90, which SOCRadar treats as a co-branding partner)",
+  "actor_type": "cybercriminal",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-15"
+  },
+  "ai_role": "disputed",
+  "autonomy_level": "supervised-autonomous",
+  "autonomy_pct": null,
+  "category": "ai-orchestrated-campaign",
+  "confidence": "primary",
+  "date_disclosed": "2026-09-16",
+  "geo": {
+    "points": [
+      {
+        "attributed_by": "SOCRadar",
+        "basis": "victim-location",
+        "country": "FR",
+        "illustrative": true,
+        "label": "France (primary target country, per SOCRadar)",
+        "lat": 46.23,
+        "lng": 2.21,
+        "role": "target"
+      }
+    ]
+  },
+  "guardrail_bypass": [
+    "jailbreak",
+    "legitimate-tool-abuse"
+  ],
+  "id": "blackhatsect0r-hermes-dxscan-harvesting",
+  "impact": "Per SOCRadar: 16,834 credentials harvested from exposed configuration files; claimed breaches of two French public bodies via exposed storage and configuration; extortion claims against four New York public bodies; 418 complete identity records taken from a cryptocurrency exchange (no funds moved); a 449,970-record French telecom subscriber database held and monetised; and a vishing lure sent to 668 recipients. ThreatMon's analysis of the same server counted 16,415 credentials and about 498,000 target URLs.",
+  "last_updated": "2026-10-15",
+  "lifecycle_phases": [
+    "recon",
+    "resource-dev",
+    "initial-access",
+    "credential-access",
+    "exfiltration",
+    "deception-social-eng",
+    "impact"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [
+      "CVE-2021-3129",
+      "CVE-2018-15133",
+      "CVE-2022-22947",
+      "CVE-2021-29447",
+      "CVE-2026-42530"
+    ],
+    "mitre_atlas": [],
+    "mitre_attack": [
+      "T1583.001",
+      "T1583.003",
+      "T1585.001",
+      "T1587.001",
+      "T1595.001",
+      "T1595.002",
+      "T1596.001",
+      "T1596.003",
+      "T1593.002",
+      "T1190",
+      "T1078",
+      "T1110",
+      "T1552.001",
+      "T1555",
+      "T1606.001",
+      "T1606.002",
+      "T1528",
+      "T1027",
+      "T1070",
+      "T1562",
+      "T1005",
+      "T1119",
+      "T1114.001",
+      "T1041",
+      "T1567.002",
+      "T1071.001",
+      "T1102.002",
+      "T1571",
+      "T1486",
+      "T1657",
+      "T1491.002",
+      "T1498"
+    ],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "SOCRadar advises auditing object storage for public read and write access, removing .env, .git, debug and actuator endpoints from public reach, keeping token-signing material server-side, and rotating default or guessable signing secrets.",
+    "Treat a SOUL.md file, a .hermes/ directory or a HERMES_DISABLE_SAFETY setting on a server as a high-confidence indicator of an agentic-attack toolchain, and alert on unexpected Telegram bot API and ngrok traffic from servers.",
+    "Detect the scanning pattern: bursts of probes followed immediately by requests for well-known configuration-file paths from one source."
+  ],
+  "model_families": [
+    "deepseek"
+  ],
+  "models": [],
+  "name": "French-speaking crew paired a safety-disabled Hermes agent with a mass-scanning C2 that harvested 16,834 credentials",
+  "related": [
+    "unit42-hermes-deepseek-autonomous-campaign",
+    "gentlemen-hermes-agent-gitlab-extortion",
+    "thailand-mof-hermes-agent-intrusion",
+    "carbonato-docker-hermes-botnet"
+  ],
+  "severity": "high",
+  "sources": [
+    {
+      "date": "2026-09-16",
+      "publisher": "SOCRadar",
+      "title": "Discernment Deleted: Inside the Operation Server of BlackHatSect0r && DXQRTXX",
+      "type": "vendor-report",
+      "url": "https://socradar.io/blog/blackhatsect0r-dxqrtxx-operation-server/"
+    },
+    {
+      "date": "2026-09-28",
+      "publisher": "ThreatMon",
+      "title": "16,415 Stolen Passwords, One Open Door: How Blackhatsect0r & DXQRTXX Exposed Themselves",
+      "type": "vendor-report",
+      "url": "https://threatmon.io/16415-stolen-passwords-one-open-door-how-blackhatsect0r-dxqrtxx-exposed-themselves/"
+    }
+  ],
+  "status": "reported",
+  "summary": "SOCRadar reported on 2026-09-16 its analysis of an exposed operation server belonging to BlackHatSect0r && DXQRTXX, a French-speaking cybercrime crew that combines credential theft, data resale and extortion with hacktivist messaging. A custom Go command-and-control platform, DXSCAN, ran an automated pipeline that generated random IP addresses across twelve countries, fingerprinted hosts, searched exposed configuration files for secrets and sent reports to Telegram; its dashboard showed 16,834 credentials harvested and 726,989 hosts reached. SOCRadar describes an AI layer in which the operator ran a Nous Research Hermes agent against a DeepSeek model, deleted the agent's recorded refusals and its \"discernment retained\" memory line, rewrote its identity file to forbid refusal, disabled the framework's approval, secret-redaction and safety controls, and set worker daemons to run campaigns continuously without an operator present. Activity in the dataset includes claimed breaches of two French public bodies through exposed cloud storage and configuration files, an extortion portal claiming compromise of four New York public bodies' cloud storage, reconnaissance and token forgery against a French government fine-payment portal, theft of 418 identity records from a cryptocurrency exchange, a French telecom subscriber database of 449,970 records, and a bank- impersonation vishing campaign aimed at older account holders. SOCRadar stresses that every confirmed breach came from exposure, not novel exploitation, and that the crew's zero-day claims do not hold. Per SOCRadar's own timeline the credential vault and the two French breaches predate the agent's installation in late July 2026, and ThreatMon's separate analysis of the same exposed server describes the targeted operations as manual work and does not mention an AI agent.",
+  "targets": {
+    "countries": [
+      "FR",
+      "US",
+      "GB",
+      "RU"
+    ],
+    "orgs_affected": null,
+    "records_exfiltrated": 16834,
+    "sectors": [
+      "government",
+      "financial-services",
+      "telecommunications",
+      "education"
+    ]
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "actor": "Unknown (Hunt.io: low-to-medium confidence the operator is Chinese-speaking; no group named)",
+  "actor_type": "unknown",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-15"
+  },
+  "ai_role": "significant",
+  "autonomy_level": "supervised-autonomous",
+  "autonomy_pct": null,
+  "category": "ai-orchestrated-campaign",
+  "confidence": "primary",
+  "date_disclosed": "2026-07-23",
+  "geo": {
+    "points": [
+      {
+        "attributed_by": "Hunt.io",
+        "basis": "victim-location",
+        "country": "TH",
+        "illustrative": true,
+        "label": "Thailand (Ministry of Finance, per Hunt.io)",
+        "lat": 15.87,
+        "lng": 100.99,
+        "role": "target"
+      }
+    ]
+  },
+  "guardrail_bypass": [
+    "legitimate-tool-abuse"
+  ],
+  "id": "thailand-mof-hermes-agent-intrusion",
+  "impact": "Per Hunt.io: several systems within the Ministry of Finance network compromised, including a web shell on a ministry web server, captured session material for an administrative panel and a document-management platform, and agent-driven enumeration of a directory holding personnel records. No evidence of exfiltration; the ministry has not confirmed a breach.",
+  "last_updated": "2026-10-15",
+  "lifecycle_phases": [
+    "recon",
+    "initial-access",
+    "execution",
+    "credential-access",
+    "privilege-escalation",
+    "persistence"
+  ],
+  "mappings": {
+    "aiid": [
+      1669
+    ],
+    "cve": [
+      "CVE-2021-4034",
+      "CVE-2021-3156",
+      "CVE-2017-7269"
+    ],
+    "mitre_atlas": [],
+    "mitre_attack": [
+      "T1190",
+      "T1505.003",
+      "T1036.005",
+      "T1071.001",
+      "T1090.001",
+      "T1059",
+      "T1072",
+      "T1068",
+      "T1082",
+      "T1083",
+      "T1539",
+      "T1110.003",
+      "T1547.001",
+      "T1053",
+      "T1055.012",
+      "T1113"
+    ],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "Hunt.io recommends reviewing the HiveServer2 authentication mode (the default accepts any credentials) and enforcing its UDF blocklist.",
+    "Audit web roots for hidden PHP files named to imitate system caches, and alert on web server processes connecting to internal Hadoop service ports.",
+    "Patch sudo and polkit, disable WebDAV on remaining IIS 6.0 servers, and change default credentials on GlassFish admin consoles while restricting them to trusted networks.",
+    "Hunt.io notes exposed Hermes web panels and publicly browsable /hermes-results/ output directories can be found by banner and file-path searches."
+  ],
+  "model_families": [
+    "other"
+  ],
+  "models": [],
+  "name": "Operator ran a Hermes agent unattended for post-compromise enumeration inside Thailand's Ministry of Finance network",
+  "related": [
+    "secflow-asia-government-education-campaign",
+    "unit42-hermes-deepseek-autonomous-campaign",
+    "blackhatsect0r-hermes-dxscan-harvesting",
+    "carbonato-docker-hermes-botnet"
+  ],
+  "severity": "high",
+  "sources": [
+    {
+      "date": "2026-07-23",
+      "publisher": "Hunt.io",
+      "title": "Thailand's Ministry of Finance Targeted With Hermes AI Agent Running Unattended, Hades Implant Staged",
+      "type": "vendor-report",
+      "url": "https://hunt.io/blog/thailand-ministry-finance-targeted-with-hermes-ai-agent"
+    },
+    {
+      "date": "2026-07-24",
+      "publisher": "BleepingComputer",
+      "title": "Hermes AI agent used to automate attack on Thai Finance Ministry",
+      "type": "news",
+      "url": "https://www.bleepingcomputer.com/news/security/hermes-ai-agent-used-to-automate-attack-on-thai-finance-ministry/"
+    }
+  ],
+  "status": "reported",
+  "summary": "Hunt.io, in research conducted jointly with researcher Bob Diachenko, reported on 2026-07-23 an intrusion targeting Thailand's Ministry of Finance that it says was largely driven by the open-source Hermes agent running in its unattended \"YOLO\" mode, which removes human approval prompts. Three open directories on a Hong Kong-hosted staging server, captured between 9 and 13 July 2026, held exploit code, web shells, tunnelling tools, scripts with hardcoded stolen credentials aimed at ministry mail and Hadoop infrastructure, a previously unreported Go implant the operator calls \"Hades\", and Hermes output logs. The logs show the agent, on the operator's instructions, running privilege-escalation and kernel-vulnerability assessments against a ministry host, enumerating services and binaries, and recursively searching a web directory of the Office of the Permanent Secretary that held personnel records dating back to 2012. Hunt.io says session material, a web shell deployed on a ministry web server and internal network access indicate several ministry systems were compromised, but it found no evidence the files were exfiltrated and could not determine how initial access was obtained; no recovered artifact shows Hades on a ministry machine. Most of the tooling was conventional and the exploited weaknesses (such as default Hadoop service credentials) are not AI-specific. The ministry has not publicly confirmed a breach. Hunt.io assesses with low-to-medium confidence that the operator is Chinese-speaking.",
+  "targets": {
+    "countries": [
+      "TH"
+    ],
+    "orgs_affected": 1,
+    "records_exfiltrated": null,
+    "sectors": [
+      "government"
+    ]
+  }
+}
