@@ -39,6 +39,14 @@ jobs:
             echo "skip=true" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Require an empty [Unreleased] section
+        if: steps.exists.outputs.skip != 'true'
+        run: |
+          if [ "$(node -p "require('./dist/summary.json').unreleased_changes")" = "true" ]; then
+            echo "::error::CHANGELOG [Unreleased] still has notes; move them into the version section before releasing."
+            exit 1
+          fi
+
       - name: Extract release notes from CHANGELOG
         if: steps.exists.outputs.skip != 'true'
         run: |

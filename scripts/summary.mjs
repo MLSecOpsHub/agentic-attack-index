@@ -56,3 +56,12 @@ export function evidenceSplit(incidents) {
     ids: clb.map((i) => i.id).sort(),
   };
 }
+
+// True when CHANGELOG.md's [Unreleased] section has any content, i.e. main
+// carries data or tooling changes that no tagged release contains yet. Lets
+// consumers tell "dataset_version X" (a tagged release) apart from "main ahead
+// of X" without a version bump on every data merge.
+export function hasUnreleasedChanges(changelog) {
+  const m = changelog.match(/^## \[Unreleased\][^\n]*\n([\s\S]*?)(?=^## \[|(?![\s\S]))/m);
+  return Boolean(m && m[1].trim());
+}
