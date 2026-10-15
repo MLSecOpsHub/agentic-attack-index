@@ -7,6 +7,22 @@ dataset version tracks `package.json` and `CITATION.cff` (kept in sync by
 
 ## [Unreleased]
 
+### Data
+- Triage of an external candidate brief (Rogue Agents Watch, 2026-10-15). Of
+  the candidates not already in the catalog, four passed re-validation against
+  their primary sources and were added:
+  - `thailand-mof-hermes-agent-intrusion` (Hunt.io): a Hermes agent ran
+    unattended post-compromise enumeration inside the ministry's network.
+    Ministry not confirmed.
+  - `blackhatsect0r-hermes-dxscan-harvesting` (SOCRadar, ThreatMon): graded
+    `ai_role: disputed`, because the credential harvesting predates the
+    agent's installation.
+  - `carbonato-docker-hermes-botnet` (ThreatDown): the Hermes agent is an
+    implant interface, not the attacker, so `ai_role: incidental`.
+  - `ai-augmented-fortigate-mass-compromise` (Amazon, Team Cymru): AI used
+    across the attack phases. The CyberStrikeAI agent platform appears only
+    in the attack infrastructure.
+
 ## [0.5.0] - 2026-10-15
 
 ### Added

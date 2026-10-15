@@ -1,0 +1,90 @@
+{
+  "actor": "Unknown Russian-speaking, financially motivated individual or small group (per Amazon Threat Intelligence)",
+  "actor_type": "cybercriminal",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-15"
+  },
+  "ai_role": "significant",
+  "autonomy_level": "unknown",
+  "autonomy_pct": null,
+  "category": "ai-orchestrated-campaign",
+  "confidence": "primary",
+  "date_disclosed": "2026-02-20",
+  "guardrail_bypass": [
+    "unknown"
+  ],
+  "id": "ai-augmented-fortigate-mass-compromise",
+  "impact": "Per Amazon: more than 600 FortiGate devices in more than 55 countries accessed and their configurations taken, including VPN and administrative credentials and network topology. Several organisations' Active Directory environments were compromised and complete domain credential databases extracted. Backup infrastructure was targeted, which Amazon calls a potential precursor to ransomware. No ransomware deployment, data sale or named victim is reported.",
+  "last_updated": "2026-10-15",
+  "lifecycle_phases": [
+    "resource-dev",
+    "recon",
+    "initial-access",
+    "execution",
+    "credential-access",
+    "privilege-escalation"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [
+      "CVE-2019-7192",
+      "CVE-2023-27532",
+      "CVE-2024-40711"
+    ],
+    "mitre_atlas": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "Amazon advises keeping FortiGate management interfaces off the internet (or restricted to known IP ranges via a bastion or out-of-band network), changing default and common credentials, rotating SSL-VPN credentials, enforcing multi-factor authentication for administrative and VPN access, and reviewing configurations for unauthorised accounts or policy changes.",
+    "Amazon advises auditing password reuse between VPN and Active Directory accounts, monitoring for unexpected domain replication and lateral movement from VPN address pools, and isolating, patching and keeping immutable copies of backup infrastructure. It prioritises behavioural detection over indicators, because the actor relied on widely used open-source tools.",
+    "Team Cymru advises monitoring for its published CyberStrikeAI server indicators and preparing for more automated, AI-driven targeting of edge devices."
+  ],
+  "model_families": [
+    "other"
+  ],
+  "models": [],
+  "name": "AI-augmented actor accessed more than 600 FortiGate devices across 55+ countries; attack infrastructure later found running the CyberStrikeAI agent platform",
+  "related": [],
+  "severity": "high",
+  "sources": [
+    {
+      "date": "2026-02-20",
+      "publisher": "Amazon Web Services",
+      "title": "AI-augmented threat actor accesses FortiGate devices at scale",
+      "type": "vendor-report",
+      "url": "https://aws.amazon.com/blogs/security/ai-augmented-threat-actor-accesses-fortigate-devices-at-scale/"
+    },
+    {
+      "date": "2026-03-02",
+      "publisher": "Team Cymru",
+      "title": "Tracking CyberStrikeAI Usage",
+      "type": "vendor-report",
+      "url": "https://www.team-cymru.com/post/tracking-cyberstrikeai-usage"
+    },
+    {
+      "date": "2026-02-23",
+      "publisher": "The Record by Recorded Future News",
+      "title": "Russian-speaking hackers used gen AI tools to compromise 600 firewalls, Amazon says",
+      "type": "news",
+      "url": "https://therecord.media/gen-ai-fortigate-hackers-russia"
+    },
+    {
+      "date": "2026-03-02",
+      "publisher": "BleepingComputer",
+      "title": "CyberStrikeAI tool adopted by hackers for AI-powered attacks",
+      "type": "news",
+      "url": "https://www.bleepingcomputer.com/news/security/cyberstrikeai-tool-adopted-by-hackers-for-ai-powered-attacks/"
+    }
+  ],
+  "status": "reported",
+  "summary": "On 2026-02-20 Amazon Threat Intelligence (CISO CJ Moses) reported that a Russian-speaking, financially motivated actor used multiple commercial generative AI services to compromise more than 600 FortiGate devices in more than 55 countries between 2026-01-11 and 2026-02-18. No FortiGate vulnerability was exploited. Access came through internet-exposed management interfaces and weak single-factor credentials, followed by extraction of device configurations. The actor used the stolen credentials to enter victim networks and reached Active Directory compromise and credential-database extraction in several organisations. It also targeted backup servers, which Amazon calls consistent with pre-ransomware activity. Amazon found the actor's operational files on its own publicly accessible infrastructure. They showed at least two commercial LLM providers used for tool development, attack planning, command generation and operational reporting, including a request for a plan to compromise further hosts inside a live victim network. Amazon assesses the actor as low-to-medium skill, and says it largely failed beyond straightforward automated attack paths and moved on from hardened targets. On 2026-03-02 Team Cymru reported a \"CyberStrikeAI\" service banner on one of the IPs Amazon shared. Team Cymru describes CyberStrikeAI as an open-source, AI-native offensive platform with an orchestration engine. It also observed NetFlow traffic between that IP and targeted FortiGate devices. No source shows how much of the campaign, if any, an AI agent executed. The agentic link rests on infrastructure overlap.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": []
+  }
+}

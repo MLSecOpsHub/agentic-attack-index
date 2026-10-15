@@ -1,86 +1,87 @@
 {
   "dataset_version": "0.5.0",
   "schema": "https://raw.githubusercontent.com/MLSecOpsHub/agentic-attack-index/main/schema/incident.schema.json",
-  "total": 95,
+  "total": 99,
   "archive_coverage": {
-    "sources": 193,
+    "sources": 203,
     "archived": 136,
-    "pct": 70
+    "pct": 67
   },
   "geo_coverage": {
-    "records": 21,
-    "points": 28,
-    "illustrative": 28,
+    "records": 24,
+    "points": 31,
+    "illustrative": 31,
     "by_role": {
-      "origin": 13,
-      "target": 15
+      "origin": 14,
+      "target": 17
     },
     "by_basis": {
       "actor-location": 5,
+      "operator-location": 1,
       "sponsor-attribution": 8,
-      "victim-location": 15
+      "victim-location": 17
     }
   },
   "by_category": {
     "agent-hijack-prompt-injection": 19,
-    "ai-orchestrated-campaign": 18,
+    "ai-orchestrated-campaign": 21,
     "autonomous-attack": 42,
-    "infrastructure-abuse-supply-chain": 14,
+    "infrastructure-abuse-supply-chain": 15,
     "lab-escape-eval": 2
   },
   "by_severity": {
     "critical": 9,
-    "high": 39,
+    "high": 42,
     "low": 11,
-    "medium": 36
+    "medium": 37
   },
   "by_status": {
     "confirmed": 38,
-    "reported": 55,
+    "reported": 59,
     "test-eval": 2
   },
   "by_actor_type": {
-    "cybercriminal": 15,
+    "cybercriminal": 18,
     "lab-test-eval": 14,
     "nation-state": 6,
     "researcher": 20,
     "single-operator": 6,
-    "unknown": 34
+    "unknown": 35
   },
   "by_autonomy_level": {
     "fully-autonomous": 22,
-    "human-in-the-loop": 4,
+    "human-in-the-loop": 5,
     "not-applicable": 28,
-    "supervised-autonomous": 24,
+    "supervised-autonomous": 26,
     "tool-assisted": 7,
-    "unknown": 10
+    "unknown": 11
   },
   "by_ai_role": {
-    "disputed": 4,
-    "incidental": 4,
+    "disputed": 5,
+    "incidental": 5,
     "load-bearing": 38,
-    "significant": 49
+    "significant": 51
   },
   "by_model_family": {
     "claude": 29,
-    "deepseek": 6,
+    "deepseek": 7,
     "gemini": 12,
     "hermes": 1,
     "openai-codex": 2,
     "openai-gpt": 17,
-    "other": 45,
+    "other": 48,
     "qwen": 2
   },
   "by_year": {
     "2024": 2,
     "2025": 21,
-    "2026": 72
+    "2026": 76
   },
   "evidence_split": {
     "basis": "status == confirmed AND ai_role == load-bearing; retracted/superseded records excluded",
-    "total": 95,
+    "total": 99,
     "confirmed_load_bearing": 22,
-    "pct": 23,
+    "pct": 22,
     "by_year": {
       "2024": {
         "total": 2,
@@ -93,9 +94,9 @@
         "pct": 24
       },
       "2026": {
-        "total": 72,
+        "total": 76,
         "confirmed_load_bearing": 17,
-        "pct": 24
+        "pct": 22
       }
     },
     "by_status_ai_role": {
@@ -106,9 +107,10 @@
         "significant": 11
       },
       "reported": {
-        "disputed": 3,
+        "disputed": 4,
+        "incidental": 1,
         "load-bearing": 14,
-        "significant": 38
+        "significant": 40
       },
       "test-eval": {
         "load-bearing": 2
@@ -142,6 +144,7 @@
   "ids": [
     "aepd-first-ai-agent-data-breach-notification",
     "ai-agents-us-canada-government-websites",
+    "ai-augmented-fortigate-mass-compromise",
     "aisi-unsanctioned-agent-cyber-testing",
     "amazon-kiro-aws-cost-explorer-outage",
     "amazon-q-developer-extension-compromise",
@@ -150,7 +153,9 @@
     "anthropic-unintended-model-actions-real-websites",
     "artex-south-korea-finance-intrusions",
     "aurora-cursor-agent-ransomware",
+    "blackhatsect0r-hermes-dxscan-harvesting",
     "camoleak-github-copilot-chat",
+    "carbonato-docker-hermes-botnet",
     "claude-cowork-file-exfiltration",
     "clawhavoc-clawhub-malicious-skills",
     "clinejection-cline-triage-npm-publish",
@@ -232,6 +237,7 @@
     "storm-3168-azure-service-principal-destruction",
     "supabase-mcp-database-leak",
     "sysdig-marimo-ai-agent-database-exfiltration",
+    "thailand-mof-hermes-agent-intrusion",
     "trendmicro-gemini-cli-dental-botnet",
     "unit42-ai-assisted-enterprise-intrusion",
     "unit42-hermes-deepseek-autonomous-campaign"

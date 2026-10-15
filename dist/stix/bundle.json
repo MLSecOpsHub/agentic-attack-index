@@ -69,6 +69,38 @@
     {
       "type": "attack-pattern",
       "spec_version": "2.1",
+      "id": "attack-pattern--09a3f2a6-2845-595b-81f0-17c4f55b8caa",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "T1071.001",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1071.001",
+          "url": "https://attack.mitre.org/techniques/T1071/001"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--13eddf09-f1cf-5cdd-a8ff-9154f1682142",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "T1070",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1070",
+          "url": "https://attack.mitre.org/techniques/T1070"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
       "id": "attack-pattern--14b43fb8-4f26-53f9-8f5f-f1e4eec0a3f5",
       "created": "2020-01-01T00:00:00.000Z",
       "modified": "2020-01-01T00:00:00.000Z",
@@ -85,6 +117,22 @@
     {
       "type": "attack-pattern",
       "spec_version": "2.1",
+      "id": "attack-pattern--17b2c547-e474-5675-ba71-5eea8131e971",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "T1113",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1113",
+          "url": "https://attack.mitre.org/techniques/T1113"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
       "id": "attack-pattern--192e28dc-945a-50bc-aac0-f46bfd9bcb07",
       "created": "2020-01-01T00:00:00.000Z",
       "modified": "2020-01-01T00:00:00.000Z",
@@ -95,6 +143,38 @@
           "source_name": "mitre-attack",
           "external_id": "T1056.003",
           "url": "https://attack.mitre.org/techniques/T1056/003"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--1f90be18-6742-512d-b4a0-85da2e6038fd",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "T1606.001",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1606.001",
+          "url": "https://attack.mitre.org/techniques/T1606/001"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--1fe5869f-309d-59cc-9bc1-bf23684e0b2b",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "T1657",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1657",
+          "url": "https://attack.mitre.org/techniques/T1657"
         }
       ]
     },
@@ -149,6 +229,86 @@
     {
       "type": "attack-pattern",
       "spec_version": "2.1",
+      "id": "attack-pattern--38c56b01-4c61-5ed2-a4aa-bbc3328c26db",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "T1036.005",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1036.005",
+          "url": "https://attack.mitre.org/techniques/T1036/005"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--3b1a0b4b-37f0-5d9b-999a-b724a00f9ce6",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "T1596.001",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1596.001",
+          "url": "https://attack.mitre.org/techniques/T1596/001"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--3ebb5603-2a17-5c8d-9be1-ec0501fa4f5d",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "T1555",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1555",
+          "url": "https://attack.mitre.org/techniques/T1555"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--40ef31c0-8d8b-56d0-a6ef-fa75ec4d4374",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "T1567.002",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1567.002",
+          "url": "https://attack.mitre.org/techniques/T1567/002"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--425e7360-587c-59b0-bf69-8d6631f4d216",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "T1090.001",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1090.001",
+          "url": "https://attack.mitre.org/techniques/T1090/001"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
       "id": "attack-pattern--42b35a39-c6fd-5f5f-a782-348a76b55af5",
       "created": "2020-01-01T00:00:00.000Z",
       "modified": "2020-01-01T00:00:00.000Z",
@@ -197,6 +357,38 @@
     {
       "type": "attack-pattern",
       "spec_version": "2.1",
+      "id": "attack-pattern--45f5e97d-a372-5ebc-a93a-c1093f11ff50",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "T1491.002",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1491.002",
+          "url": "https://attack.mitre.org/techniques/T1491/002"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--464d545d-1532-5ac9-8033-7ca45c5cb2ad",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "T1562",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1562",
+          "url": "https://attack.mitre.org/techniques/T1562"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
       "id": "attack-pattern--4a8a6d02-52c5-50b6-bdb5-8e0333b653dd",
       "created": "2020-01-01T00:00:00.000Z",
       "modified": "2020-01-01T00:00:00.000Z",
@@ -213,6 +405,38 @@
     {
       "type": "attack-pattern",
       "spec_version": "2.1",
+      "id": "attack-pattern--4d5cd7f7-d4c6-5121-8f36-2cd4a74a12d6",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "T1114.001",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1114.001",
+          "url": "https://attack.mitre.org/techniques/T1114/001"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--4db939ff-840a-5746-8496-6042ee2479d5",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "T1053",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1053",
+          "url": "https://attack.mitre.org/techniques/T1053"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
       "id": "attack-pattern--50b788e7-4cdf-5b40-935a-038a3fa146e6",
       "created": "2020-01-01T00:00:00.000Z",
       "modified": "2020-01-01T00:00:00.000Z",
@@ -223,6 +447,22 @@
           "source_name": "mitre-attack",
           "external_id": "T1072",
           "url": "https://attack.mitre.org/techniques/T1072"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--52036965-b63b-5ae5-b819-6720a1c98825",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "T1055.012",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1055.012",
+          "url": "https://attack.mitre.org/techniques/T1055/012"
         }
       ]
     },
@@ -261,6 +501,38 @@
     {
       "type": "attack-pattern",
       "spec_version": "2.1",
+      "id": "attack-pattern--5e699610-016d-53f7-b874-6e178db8a145",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "T1596.003",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1596.003",
+          "url": "https://attack.mitre.org/techniques/T1596/003"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--5f303304-a21b-5795-bd78-1015865a756d",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "T1110",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1110",
+          "url": "https://attack.mitre.org/techniques/T1110"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
       "id": "attack-pattern--60da9a1f-317e-5e51-bf10-2936ccf797f0",
       "created": "2020-01-01T00:00:00.000Z",
       "modified": "2020-01-01T00:00:00.000Z",
@@ -271,6 +543,38 @@
           "source_name": "mitre-atlas",
           "external_id": "AML.CS0059",
           "url": "https://atlas.mitre.org/techniques/AML.CS0059"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--6251f3cb-756e-56ba-8cf4-b81e297887d3",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "T1583.001",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1583.001",
+          "url": "https://attack.mitre.org/techniques/T1583/001"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--62b9c5ff-ec00-543e-9246-fb650bc3046e",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "T1005",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1005",
+          "url": "https://attack.mitre.org/techniques/T1005"
         }
       ]
     },
@@ -293,6 +597,22 @@
     {
       "type": "attack-pattern",
       "spec_version": "2.1",
+      "id": "attack-pattern--6b2a7457-c429-5164-a557-f1c9e86da99b",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "T1083",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1083",
+          "url": "https://attack.mitre.org/techniques/T1083"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
       "id": "attack-pattern--7144ce5e-f430-5d09-8b8d-7a77c3c835af",
       "created": "2020-01-01T00:00:00.000Z",
       "modified": "2020-01-01T00:00:00.000Z",
@@ -309,6 +629,22 @@
     {
       "type": "attack-pattern",
       "spec_version": "2.1",
+      "id": "attack-pattern--747a88c6-df57-5d8a-a73b-94ee258ce601",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "T1041",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1041",
+          "url": "https://attack.mitre.org/techniques/T1041"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
       "id": "attack-pattern--7735ebfd-f7af-59f2-b145-a6d35b90a68a",
       "created": "2020-01-01T00:00:00.000Z",
       "modified": "2020-01-01T00:00:00.000Z",
@@ -319,6 +655,22 @@
           "source_name": "mitre-attack",
           "external_id": "T1110.003",
           "url": "https://attack.mitre.org/techniques/T1110/003"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--79821af2-a009-522f-85d9-419e6fc310df",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "T1587.001",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1587.001",
+          "url": "https://attack.mitre.org/techniques/T1587/001"
         }
       ]
     },
@@ -351,6 +703,22 @@
           "source_name": "mitre-attack",
           "external_id": "T1588.007",
           "url": "https://attack.mitre.org/techniques/T1588/007"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--7f5faf4c-64c8-5ce5-94f8-af8f5cfd82de",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "T1547.001",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1547.001",
+          "url": "https://attack.mitre.org/techniques/T1547/001"
         }
       ]
     },
@@ -405,6 +773,22 @@
     {
       "type": "attack-pattern",
       "spec_version": "2.1",
+      "id": "attack-pattern--864bcab6-468b-5d08-bde8-9a9e39747455",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "T1059",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1059",
+          "url": "https://attack.mitre.org/techniques/T1059"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
       "id": "attack-pattern--92544657-20af-5459-84a3-d06a3612e15a",
       "created": "2020-01-01T00:00:00.000Z",
       "modified": "2020-01-01T00:00:00.000Z",
@@ -415,6 +799,38 @@
           "source_name": "mitre-atlas",
           "external_id": "AML.CS0068",
           "url": "https://atlas.mitre.org/techniques/AML.CS0068"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--9597bb5b-3766-58db-959d-b36369007f8d",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "T1585.001",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1585.001",
+          "url": "https://attack.mitre.org/techniques/T1585/001"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--983bb627-bccf-57d5-bc63-b26acd24119b",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "T1552.001",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1552.001",
+          "url": "https://attack.mitre.org/techniques/T1552/001"
         }
       ]
     },
@@ -517,6 +933,22 @@
     {
       "type": "attack-pattern",
       "spec_version": "2.1",
+      "id": "attack-pattern--b604c143-3376-59a1-80d4-4a4e8c105ba7",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "T1593.002",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1593.002",
+          "url": "https://attack.mitre.org/techniques/T1593/002"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
       "id": "attack-pattern--b650b592-0635-5bf2-ba9e-249d56362ddd",
       "created": "2020-01-01T00:00:00.000Z",
       "modified": "2020-01-01T00:00:00.000Z",
@@ -565,6 +997,22 @@
     {
       "type": "attack-pattern",
       "spec_version": "2.1",
+      "id": "attack-pattern--bdc3f212-e93e-5838-9839-332d99ba25bb",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "T1528",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1528",
+          "url": "https://attack.mitre.org/techniques/T1528"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
       "id": "attack-pattern--be508296-b698-51a6-a210-a4f2e272eda6",
       "created": "2020-01-01T00:00:00.000Z",
       "modified": "2020-01-01T00:00:00.000Z",
@@ -597,6 +1045,22 @@
     {
       "type": "attack-pattern",
       "spec_version": "2.1",
+      "id": "attack-pattern--c7288879-074a-59f8-b3d2-6ea182eeeb45",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "T1571",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1571",
+          "url": "https://attack.mitre.org/techniques/T1571"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
       "id": "attack-pattern--c7e94775-9700-5f95-bf84-7af170c7f456",
       "created": "2020-01-01T00:00:00.000Z",
       "modified": "2020-01-01T00:00:00.000Z",
@@ -607,6 +1071,38 @@
           "source_name": "mitre-atlas",
           "external_id": "AML.CS0071",
           "url": "https://atlas.mitre.org/techniques/AML.CS0071"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--c8b78ebe-d7a4-50da-a7d8-3c062ebffa83",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "T1486",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1486",
+          "url": "https://attack.mitre.org/techniques/T1486"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--c93e714e-1076-5197-a87a-d05168c77165",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "T1498",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1498",
+          "url": "https://attack.mitre.org/techniques/T1498"
         }
       ]
     },
@@ -645,6 +1141,54 @@
     {
       "type": "attack-pattern",
       "spec_version": "2.1",
+      "id": "attack-pattern--d63b884f-c324-51f9-ac6c-587c8063f3a9",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "T1078",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1078",
+          "url": "https://attack.mitre.org/techniques/T1078"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--d6ae27d1-3519-5b9c-969e-a35f719bb1de",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "T1082",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1082",
+          "url": "https://attack.mitre.org/techniques/T1082"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--d8f98da9-d26f-50f1-baee-493bd5ea076c",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "T1068",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1068",
+          "url": "https://attack.mitre.org/techniques/T1068"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
       "id": "attack-pattern--e4d61281-53b2-54b0-b3dd-1bad38b949d9",
       "created": "2020-01-01T00:00:00.000Z",
       "modified": "2020-01-01T00:00:00.000Z",
@@ -677,6 +1221,38 @@
     {
       "type": "attack-pattern",
       "spec_version": "2.1",
+      "id": "attack-pattern--f5b8ed37-18bf-59b6-b4c4-b5f8634f9362",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "T1606.002",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1606.002",
+          "url": "https://attack.mitre.org/techniques/T1606/002"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--f73ebeca-dedf-5e20-93fa-ca1669ad9970",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "T1595.001",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1595.001",
+          "url": "https://attack.mitre.org/techniques/T1595/001"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
       "id": "attack-pattern--fc5f5073-ad3b-5b0e-acfa-10926d61563d",
       "created": "2020-01-01T00:00:00.000Z",
       "modified": "2020-01-01T00:00:00.000Z",
@@ -687,6 +1263,22 @@
           "source_name": "mitre-atlas",
           "external_id": "AML.T0053",
           "url": "https://atlas.mitre.org/techniques/AML.T0053"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--fe7a9759-28bd-5283-bc6f-83a6a1364cab",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "T1119",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1119",
+          "url": "https://attack.mitre.org/techniques/T1119"
         }
       ]
     },
@@ -1660,6 +2252,59 @@
     {
       "type": "report",
       "spec_version": "2.1",
+      "id": "report--42e12e5f-deb6-5dcb-9e21-45853036e584",
+      "created": "2026-10-15T00:00:00.000Z",
+      "modified": "2026-10-15T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "Operator ran a Hermes agent unattended for post-compromise enumeration inside Thailand's Ministry of Finance network",
+      "report_types": [
+        "threat-report"
+      ],
+      "published": "2026-07-23T00:00:00.000Z",
+      "description": "Hunt.io, in research conducted jointly with researcher Bob Diachenko, reported on 2026-07-23 an intrusion targeting Thailand's Ministry of Finance that it says was largely driven by the open-source Hermes agent running in its unattended \"YOLO\" mode, which removes human approval prompts. Three open directories on a Hong Kong-hosted staging server, captured between 9 and 13 July 2026, held exploit code, web shells, tunnelling tools, scripts with hardcoded stolen credentials aimed at ministry mail and Hadoop infrastructure, a previously unreported Go implant the operator calls \"Hades\", and Hermes output logs. The logs show the agent, on the operator's instructions, running privilege-escalation and kernel-vulnerability assessments against a ministry host, enumerating services and binaries, and recursively searching a web directory of the Office of the Permanent Secretary that held personnel records dating back to 2012. Hunt.io says session material, a web shell deployed on a ministry web server and internal network access indicate several ministry systems were compromised, but it found no evidence the files were exfiltrated and could not determine how initial access was obtained; no recovered artifact shows Hades on a ministry machine. Most of the tooling was conventional and the exploited weaknesses (such as default Hadoop service credentials) are not AI-specific. The ministry has not publicly confirmed a breach. Hunt.io assesses with low-to-medium confidence that the operator is Chinese-speaking.",
+      "labels": [
+        "ai-orchestrated-campaign",
+        "status:reported",
+        "ai-role:significant"
+      ],
+      "object_refs": [
+        "x-agentic-incident--e19efec1-bbcd-5e4c-8cbc-824f82a705b4",
+        "attack-pattern--e4d61281-53b2-54b0-b3dd-1bad38b949d9",
+        "attack-pattern--84f1da9c-aa38-5068-bb1a-86e7df66690d",
+        "attack-pattern--38c56b01-4c61-5ed2-a4aa-bbc3328c26db",
+        "attack-pattern--09a3f2a6-2845-595b-81f0-17c4f55b8caa",
+        "attack-pattern--425e7360-587c-59b0-bf69-8d6631f4d216",
+        "attack-pattern--864bcab6-468b-5d08-bde8-9a9e39747455",
+        "attack-pattern--50b788e7-4cdf-5b40-935a-038a3fa146e6",
+        "attack-pattern--d8f98da9-d26f-50f1-baee-493bd5ea076c",
+        "attack-pattern--d6ae27d1-3519-5b9c-969e-a35f719bb1de",
+        "attack-pattern--6b2a7457-c429-5164-a557-f1c9e86da99b",
+        "attack-pattern--7144ce5e-f430-5d09-8b8d-7a77c3c835af",
+        "attack-pattern--7735ebfd-f7af-59f2-b145-a6d35b90a68a",
+        "attack-pattern--7f5faf4c-64c8-5ce5-94f8-af8f5cfd82de",
+        "attack-pattern--4db939ff-840a-5746-8496-6042ee2479d5",
+        "attack-pattern--52036965-b63b-5ae5-b819-6720a1c98825",
+        "attack-pattern--17b2c547-e474-5675-ba71-5eea8131e971",
+        "vulnerability--b51b761c-329b-561a-9c0b-f62c7154b039",
+        "vulnerability--5348b267-c8e6-5bce-b80c-844a5429feee",
+        "vulnerability--d3a694f3-7f64-5e67-8cc8-7220ff43a2c0"
+      ],
+      "external_references": [
+        {
+          "source_name": "Hunt.io",
+          "description": "Thailand's Ministry of Finance Targeted With Hermes AI Agent Running Unattended, Hades Implant Staged",
+          "url": "https://hunt.io/blog/thailand-ministry-finance-targeted-with-hermes-ai-agent"
+        },
+        {
+          "source_name": "BleepingComputer",
+          "description": "Hermes AI agent used to automate attack on Thai Finance Ministry",
+          "url": "https://www.bleepingcomputer.com/news/security/hermes-ai-agent-used-to-automate-attack-on-thai-finance-ministry/"
+        }
+      ]
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
       "id": "report--43462e96-3b52-5ced-b2ab-50742d9b8323",
       "created": "2026-10-15T00:00:00.000Z",
       "modified": "2026-10-15T00:00:00.000Z",
@@ -2025,6 +2670,77 @@
           "source_name": "Hunt.io",
           "description": "Chinese-Speaking Operator Uses AI Agents to Target Government and Education Systems Across Asia",
           "url": "https://hunt.io/blog/chinese-operator-secflow-claude-qwen-deepseek-asia"
+        }
+      ]
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--651d9965-e0dd-5936-8732-43be109c2442",
+      "created": "2026-10-15T00:00:00.000Z",
+      "modified": "2026-10-15T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "French-speaking crew paired a safety-disabled Hermes agent with a mass-scanning C2 that harvested 16,834 credentials",
+      "report_types": [
+        "threat-report"
+      ],
+      "published": "2026-09-16T00:00:00.000Z",
+      "description": "SOCRadar reported on 2026-09-16 its analysis of an exposed operation server belonging to BlackHatSect0r && DXQRTXX, a French-speaking cybercrime crew that combines credential theft, data resale and extortion with hacktivist messaging. A custom Go command-and-control platform, DXSCAN, ran an automated pipeline that generated random IP addresses across twelve countries, fingerprinted hosts, searched exposed configuration files for secrets and sent reports to Telegram; its dashboard showed 16,834 credentials harvested and 726,989 hosts reached. SOCRadar describes an AI layer in which the operator ran a Nous Research Hermes agent against a DeepSeek model, deleted the agent's recorded refusals and its \"discernment retained\" memory line, rewrote its identity file to forbid refusal, disabled the framework's approval, secret-redaction and safety controls, and set worker daemons to run campaigns continuously without an operator present. Activity in the dataset includes claimed breaches of two French public bodies through exposed cloud storage and configuration files, an extortion portal claiming compromise of four New York public bodies' cloud storage, reconnaissance and token forgery against a French government fine-payment portal, theft of 418 identity records from a cryptocurrency exchange, a French telecom subscriber database of 449,970 records, and a bank- impersonation vishing campaign aimed at older account holders. SOCRadar stresses that every confirmed breach came from exposure, not novel exploitation, and that the crew's zero-day claims do not hold. Per SOCRadar's own timeline the credential vault and the two French breaches predate the agent's installation in late July 2026, and ThreatMon's separate analysis of the same exposed server describes the targeted operations as manual work and does not mention an AI agent.",
+      "labels": [
+        "ai-orchestrated-campaign",
+        "status:reported",
+        "ai-role:disputed"
+      ],
+      "object_refs": [
+        "x-agentic-incident--d8126f10-ee66-55db-a9ec-876c4c794d37",
+        "attack-pattern--6251f3cb-756e-56ba-8cf4-b81e297887d3",
+        "attack-pattern--4482b1aa-7ad8-547f-83e9-4066eeafae98",
+        "attack-pattern--9597bb5b-3766-58db-959d-b36369007f8d",
+        "attack-pattern--79821af2-a009-522f-85d9-419e6fc310df",
+        "attack-pattern--f73ebeca-dedf-5e20-93fa-ca1669ad9970",
+        "attack-pattern--0889d7d6-e021-5f15-9761-bfd3bb359fc2",
+        "attack-pattern--3b1a0b4b-37f0-5d9b-999a-b724a00f9ce6",
+        "attack-pattern--5e699610-016d-53f7-b874-6e178db8a145",
+        "attack-pattern--b604c143-3376-59a1-80d4-4a4e8c105ba7",
+        "attack-pattern--e4d61281-53b2-54b0-b3dd-1bad38b949d9",
+        "attack-pattern--d63b884f-c324-51f9-ac6c-587c8063f3a9",
+        "attack-pattern--5f303304-a21b-5795-bd78-1015865a756d",
+        "attack-pattern--983bb627-bccf-57d5-bc63-b26acd24119b",
+        "attack-pattern--3ebb5603-2a17-5c8d-9be1-ec0501fa4f5d",
+        "attack-pattern--1f90be18-6742-512d-b4a0-85da2e6038fd",
+        "attack-pattern--f5b8ed37-18bf-59b6-b4c4-b5f8634f9362",
+        "attack-pattern--bdc3f212-e93e-5838-9839-332d99ba25bb",
+        "attack-pattern--42b35a39-c6fd-5f5f-a782-348a76b55af5",
+        "attack-pattern--13eddf09-f1cf-5cdd-a8ff-9154f1682142",
+        "attack-pattern--464d545d-1532-5ac9-8033-7ca45c5cb2ad",
+        "attack-pattern--62b9c5ff-ec00-543e-9246-fb650bc3046e",
+        "attack-pattern--fe7a9759-28bd-5283-bc6f-83a6a1364cab",
+        "attack-pattern--4d5cd7f7-d4c6-5121-8f36-2cd4a74a12d6",
+        "attack-pattern--747a88c6-df57-5d8a-a73b-94ee258ce601",
+        "attack-pattern--40ef31c0-8d8b-56d0-a6ef-fa75ec4d4374",
+        "attack-pattern--09a3f2a6-2845-595b-81f0-17c4f55b8caa",
+        "attack-pattern--08cdeba8-d849-5e73-81eb-b47b226c1f7e",
+        "attack-pattern--c7288879-074a-59f8-b3d2-6ea182eeeb45",
+        "attack-pattern--c8b78ebe-d7a4-50da-a7d8-3c062ebffa83",
+        "attack-pattern--1fe5869f-309d-59cc-9bc1-bf23684e0b2b",
+        "attack-pattern--45f5e97d-a372-5ebc-a93a-c1093f11ff50",
+        "attack-pattern--c93e714e-1076-5197-a87a-d05168c77165",
+        "vulnerability--f05a2630-af09-5f69-bf57-001443f8cdcb",
+        "vulnerability--59ce3654-5d69-5bb0-ad29-9746139a86f7",
+        "vulnerability--f710d0bc-b334-51ac-a806-ec82686e5ee9",
+        "vulnerability--aab9eb78-63e4-5ba0-9ed3-594226ce1299",
+        "vulnerability--30e940dd-98b4-59ee-bfdf-dd74a5d808a4"
+      ],
+      "external_references": [
+        {
+          "source_name": "SOCRadar",
+          "description": "Discernment Deleted: Inside the Operation Server of BlackHatSect0r && DXQRTXX",
+          "url": "https://socradar.io/blog/blackhatsect0r-dxqrtxx-operation-server/"
+        },
+        {
+          "source_name": "ThreatMon",
+          "description": "16,415 Stolen Passwords, One Open Door: How Blackhatsect0r & DXQRTXX Exposed Themselves",
+          "url": "https://threatmon.io/16415-stolen-passwords-one-open-door-how-blackhatsect0r-dxqrtxx-exposed-themselves/"
         }
       ]
     },
@@ -2411,6 +3127,40 @@
           "source_name": "SOCRadar",
           "description": "Exposing AnonyMousKIT: AI-Powered PhaaS Supply Chain",
           "url": "https://socradar.io/blog/anonymouskit-ai-phaas-supply-chain/"
+        }
+      ]
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--99fee033-5ce8-5f62-80f2-83317d3932db",
+      "created": "2026-10-15T00:00:00.000Z",
+      "modified": "2026-10-15T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "Carbonato botnet installs a Hermes agent persona on hijacked Docker hosts as an operator interface prioritising AI API key theft",
+      "report_types": [
+        "threat-report"
+      ],
+      "published": "2026-09-22T00:00:00.000Z",
+      "description": "ThreatDown (Malwarebytes) reported on 2026-09-22 the Carbonato botnet, found through an unauthenticated Docker registry that had been publicly exposed since May 2026 and held 59 repositories and 4.3 GB of image data spanning October 2024 to August 2026, alongside a separate trojanized cryptocurrency-wallet operation. The botnet compromises hosts whose Docker API is exposed without authentication, uses a privileged container to run commands on the host, opens a reverse SSH tunnel, installs layered persistence and a cryptocurrency miner, and spreads worm-like by scanning neighbouring networks every five minutes. On each host it installs the unmodified open-source Hermes Agent framework and overwrites the agent's persona file with a 39-line prompt naming it \"GH0ST\", disclaiming ethical limits and ranking AI provider API keys from 14 providers as the top loot, ahead of SSH credentials, tokens and databases. Operators send tasks over Telegram; the model, reached through the crew's own LLM gateway, interprets each task, writes and runs terminal commands on the victim and reports back. ThreatDown states that target selection, persistence and spreading are handled by scripts and that the model is absent from the propagation phase. It does not report how many hosts were infected or what the agent actually collected. ThreatDown assesses the operators as Costa Rica-based on linguistic, timezone, Telegram-handle and network signals, and could not link them to a known cluster.",
+      "labels": [
+        "infrastructure-abuse-supply-chain",
+        "status:reported",
+        "ai-role:incidental"
+      ],
+      "object_refs": [
+        "x-agentic-incident--499237bb-bb32-5ec8-ae75-897e77090751"
+      ],
+      "external_references": [
+        {
+          "source_name": "ThreatDown",
+          "description": "CARBONATO: a botnet built around an AI agent",
+          "url": "https://www.threatdown.com/blog/carbonato/"
+        },
+        {
+          "source_name": "BleepingComputer",
+          "description": "New Carbonato malware uses AI agents to hijack exposed Docker hosts",
+          "url": "https://www.bleepingcomputer.com/news/security/new-carbonato-malware-uses-ai-agents-to-hijack-exposed-docker-hosts/"
         }
       ]
     },
@@ -3458,6 +4208,53 @@
     {
       "type": "report",
       "spec_version": "2.1",
+      "id": "report--dc3808ef-9b53-54af-af6c-cef1a01ab843",
+      "created": "2026-10-15T00:00:00.000Z",
+      "modified": "2026-10-15T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "AI-augmented actor accessed more than 600 FortiGate devices across 55+ countries; attack infrastructure later found running the CyberStrikeAI agent platform",
+      "report_types": [
+        "threat-report"
+      ],
+      "published": "2026-02-20T00:00:00.000Z",
+      "description": "On 2026-02-20 Amazon Threat Intelligence (CISO CJ Moses) reported that a Russian-speaking, financially motivated actor used multiple commercial generative AI services to compromise more than 600 FortiGate devices in more than 55 countries between 2026-01-11 and 2026-02-18. No FortiGate vulnerability was exploited. Access came through internet-exposed management interfaces and weak single-factor credentials, followed by extraction of device configurations. The actor used the stolen credentials to enter victim networks and reached Active Directory compromise and credential-database extraction in several organisations. It also targeted backup servers, which Amazon calls consistent with pre-ransomware activity. Amazon found the actor's operational files on its own publicly accessible infrastructure. They showed at least two commercial LLM providers used for tool development, attack planning, command generation and operational reporting, including a request for a plan to compromise further hosts inside a live victim network. Amazon assesses the actor as low-to-medium skill, and says it largely failed beyond straightforward automated attack paths and moved on from hardened targets. On 2026-03-02 Team Cymru reported a \"CyberStrikeAI\" service banner on one of the IPs Amazon shared. Team Cymru describes CyberStrikeAI as an open-source, AI-native offensive platform with an orchestration engine. It also observed NetFlow traffic between that IP and targeted FortiGate devices. No source shows how much of the campaign, if any, an AI agent executed. The agentic link rests on infrastructure overlap.",
+      "labels": [
+        "ai-orchestrated-campaign",
+        "status:reported",
+        "ai-role:significant"
+      ],
+      "object_refs": [
+        "x-agentic-incident--cc8267b2-4d55-5b85-8014-2b13691c57e2",
+        "vulnerability--6cf8bed1-93d2-5be5-85b6-176219c0e898",
+        "vulnerability--bff260c1-a9b8-54f7-b33d-301b1b2ee4e5",
+        "vulnerability--4bcdfc75-3c9a-5cf9-b1ec-f729405eaf03"
+      ],
+      "external_references": [
+        {
+          "source_name": "Amazon Web Services",
+          "description": "AI-augmented threat actor accesses FortiGate devices at scale",
+          "url": "https://aws.amazon.com/blogs/security/ai-augmented-threat-actor-accesses-fortigate-devices-at-scale/"
+        },
+        {
+          "source_name": "Team Cymru",
+          "description": "Tracking CyberStrikeAI Usage",
+          "url": "https://www.team-cymru.com/post/tracking-cyberstrikeai-usage"
+        },
+        {
+          "source_name": "The Record by Recorded Future News",
+          "description": "Russian-speaking hackers used gen AI tools to compromise 600 firewalls, Amazon says",
+          "url": "https://therecord.media/gen-ai-fortigate-hackers-russia"
+        },
+        {
+          "source_name": "BleepingComputer",
+          "description": "CyberStrikeAI tool adopted by hackers for AI-powered attacks",
+          "url": "https://www.bleepingcomputer.com/news/security/cyberstrikeai-tool-adopted-by-hackers-for-ai-powered-attacks/"
+        }
+      ]
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
       "id": "report--df218cf2-6366-55c9-9d5e-65ebbe72609c",
       "created": "2026-10-10T00:00:00.000Z",
       "modified": "2026-10-10T00:00:00.000Z",
@@ -4106,6 +4903,22 @@
     {
       "type": "vulnerability",
       "spec_version": "2.1",
+      "id": "vulnerability--30e940dd-98b4-59ee-bfdf-dd74a5d808a4",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "CVE-2026-42530",
+      "external_references": [
+        {
+          "source_name": "cve",
+          "external_id": "CVE-2026-42530",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42530"
+        }
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "spec_version": "2.1",
       "id": "vulnerability--32c2dd25-39f0-5ee1-8796-2a1e02044c86",
       "created": "2020-01-01T00:00:00.000Z",
       "modified": "2020-01-01T00:00:00.000Z",
@@ -4148,6 +4961,22 @@
           "source_name": "cve",
           "external_id": "CVE-2026-6442",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-6442"
+        }
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "spec_version": "2.1",
+      "id": "vulnerability--4bcdfc75-3c9a-5cf9-b1ec-f729405eaf03",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "CVE-2024-40711",
+      "external_references": [
+        {
+          "source_name": "cve",
+          "external_id": "CVE-2024-40711",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-40711"
         }
       ]
     },
@@ -4218,6 +5047,38 @@
     {
       "type": "vulnerability",
       "spec_version": "2.1",
+      "id": "vulnerability--5348b267-c8e6-5bce-b80c-844a5429feee",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "CVE-2021-3156",
+      "external_references": [
+        {
+          "source_name": "cve",
+          "external_id": "CVE-2021-3156",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-3156"
+        }
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "spec_version": "2.1",
+      "id": "vulnerability--59ce3654-5d69-5bb0-ad29-9746139a86f7",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "CVE-2018-15133",
+      "external_references": [
+        {
+          "source_name": "cve",
+          "external_id": "CVE-2018-15133",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-15133"
+        }
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "spec_version": "2.1",
       "id": "vulnerability--5c17b0f7-2471-51ea-b9b9-14641ecbab4f",
       "created": "2020-01-01T00:00:00.000Z",
       "modified": "2020-01-01T00:00:00.000Z",
@@ -4282,6 +5143,22 @@
     {
       "type": "vulnerability",
       "spec_version": "2.1",
+      "id": "vulnerability--6cf8bed1-93d2-5be5-85b6-176219c0e898",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "CVE-2019-7192",
+      "external_references": [
+        {
+          "source_name": "cve",
+          "external_id": "CVE-2019-7192",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-7192"
+        }
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "spec_version": "2.1",
       "id": "vulnerability--99cb1af2-5b32-5ec5-a8e2-84e1b114e064",
       "created": "2020-01-01T00:00:00.000Z",
       "modified": "2020-01-01T00:00:00.000Z",
@@ -4308,6 +5185,22 @@
           "source_name": "cve",
           "external_id": "CVE-2025-54068",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-54068"
+        }
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "spec_version": "2.1",
+      "id": "vulnerability--aab9eb78-63e4-5ba0-9ed3-594226ce1299",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "CVE-2021-29447",
+      "external_references": [
+        {
+          "source_name": "cve",
+          "external_id": "CVE-2021-29447",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-29447"
         }
       ]
     },
@@ -4356,6 +5249,22 @@
           "source_name": "cve",
           "external_id": "CVE-2025-8217",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-8217"
+        }
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "spec_version": "2.1",
+      "id": "vulnerability--bff260c1-a9b8-54f7-b33d-301b1b2ee4e5",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "CVE-2023-27532",
+      "external_references": [
+        {
+          "source_name": "cve",
+          "external_id": "CVE-2023-27532",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-27532"
         }
       ]
     },
@@ -4426,6 +5335,22 @@
     {
       "type": "vulnerability",
       "spec_version": "2.1",
+      "id": "vulnerability--d3a694f3-7f64-5e67-8cc8-7220ff43a2c0",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "CVE-2017-7269",
+      "external_references": [
+        {
+          "source_name": "cve",
+          "external_id": "CVE-2017-7269",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-7269"
+        }
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "spec_version": "2.1",
       "id": "vulnerability--e6330e88-741e-585a-a9b7-a2ad376fcb09",
       "created": "2020-01-01T00:00:00.000Z",
       "modified": "2020-01-01T00:00:00.000Z",
@@ -4458,6 +5383,22 @@
     {
       "type": "vulnerability",
       "spec_version": "2.1",
+      "id": "vulnerability--f05a2630-af09-5f69-bf57-001443f8cdcb",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "CVE-2021-3129",
+      "external_references": [
+        {
+          "source_name": "cve",
+          "external_id": "CVE-2021-3129",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-3129"
+        }
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "spec_version": "2.1",
       "id": "vulnerability--f0896b5a-ce2d-5921-8b3a-74c5928b7d7d",
       "created": "2020-01-01T00:00:00.000Z",
       "modified": "2020-01-01T00:00:00.000Z",
@@ -4484,6 +5425,22 @@
           "source_name": "cve",
           "external_id": "CVE-2022-0847",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-0847"
+        }
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "spec_version": "2.1",
+      "id": "vulnerability--f710d0bc-b334-51ac-a806-ec82686e5ee9",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "CVE-2022-22947",
+      "external_references": [
+        {
+          "source_name": "cve",
+          "external_id": "CVE-2022-22947",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-22947"
         }
       ]
     },
@@ -5100,6 +6057,32 @@
         "openai-gpt"
       ],
       "date_disclosed": "2026-08-04"
+    },
+    {
+      "type": "x-agentic-incident",
+      "spec_version": "2.1",
+      "id": "x-agentic-incident--499237bb-bb32-5ec8-ae75-897e77090751",
+      "created": "2026-10-15T00:00:00.000Z",
+      "modified": "2026-10-15T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "Carbonato botnet installs a Hermes agent persona on hijacked Docker hosts as an operator interface prioritising AI API key theft",
+      "incident_ref_id": "carbonato-docker-hermes-botnet",
+      "category": "infrastructure-abuse-supply-chain",
+      "severity": "medium",
+      "grade_status": "reported",
+      "confidence": "primary",
+      "actor": "Unknown Carbonato botnet operators (ThreatDown assesses them as Costa Rica-based; no known cluster)",
+      "actor_type": "cybercriminal",
+      "autonomy_level": "human-in-the-loop",
+      "ai_role": "incidental",
+      "guardrail_bypass": [
+        "legitimate-tool-abuse",
+        "jailbreak"
+      ],
+      "model_families": [
+        "other"
+      ],
+      "date_disclosed": "2026-09-22"
     },
     {
       "type": "x-agentic-incident",
@@ -6294,6 +7277,31 @@
     {
       "type": "x-agentic-incident",
       "spec_version": "2.1",
+      "id": "x-agentic-incident--cc8267b2-4d55-5b85-8014-2b13691c57e2",
+      "created": "2026-10-15T00:00:00.000Z",
+      "modified": "2026-10-15T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "AI-augmented actor accessed more than 600 FortiGate devices across 55+ countries; attack infrastructure later found running the CyberStrikeAI agent platform",
+      "incident_ref_id": "ai-augmented-fortigate-mass-compromise",
+      "category": "ai-orchestrated-campaign",
+      "severity": "high",
+      "grade_status": "reported",
+      "confidence": "primary",
+      "actor": "Unknown Russian-speaking, financially motivated individual or small group (per Amazon Threat Intelligence)",
+      "actor_type": "cybercriminal",
+      "autonomy_level": "unknown",
+      "ai_role": "significant",
+      "guardrail_bypass": [
+        "unknown"
+      ],
+      "model_families": [
+        "other"
+      ],
+      "date_disclosed": "2026-02-20"
+    },
+    {
+      "type": "x-agentic-incident",
+      "spec_version": "2.1",
       "id": "x-agentic-incident--cf484f88-ba9f-520a-bf00-6ab7da036571",
       "created": "2026-08-12T00:00:00.000Z",
       "modified": "2026-08-12T00:00:00.000Z",
@@ -6419,6 +7427,32 @@
     {
       "type": "x-agentic-incident",
       "spec_version": "2.1",
+      "id": "x-agentic-incident--d8126f10-ee66-55db-a9ec-876c4c794d37",
+      "created": "2026-10-15T00:00:00.000Z",
+      "modified": "2026-10-15T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "French-speaking crew paired a safety-disabled Hermes agent with a mass-scanning C2 that harvested 16,834 credentials",
+      "incident_ref_id": "blackhatsect0r-hermes-dxscan-harvesting",
+      "category": "ai-orchestrated-campaign",
+      "severity": "high",
+      "grade_status": "reported",
+      "confidence": "primary",
+      "actor": "BlackHatSect0r && DXQRTXX (French-speaking cybercrime crew, per SOCRadar; operates publicly 'in alliance with' APT-90, which SOCRadar treats as a co-branding partner)",
+      "actor_type": "cybercriminal",
+      "autonomy_level": "supervised-autonomous",
+      "ai_role": "disputed",
+      "guardrail_bypass": [
+        "jailbreak",
+        "legitimate-tool-abuse"
+      ],
+      "model_families": [
+        "deepseek"
+      ],
+      "date_disclosed": "2026-09-16"
+    },
+    {
+      "type": "x-agentic-incident",
+      "spec_version": "2.1",
       "id": "x-agentic-incident--d85c83f4-8d52-5c97-a205-3536e40f948d",
       "created": "2026-10-10T00:00:00.000Z",
       "modified": "2026-10-10T00:00:00.000Z",
@@ -6515,6 +7549,31 @@
         "other"
       ],
       "date_disclosed": "2026-09-09"
+    },
+    {
+      "type": "x-agentic-incident",
+      "spec_version": "2.1",
+      "id": "x-agentic-incident--e19efec1-bbcd-5e4c-8cbc-824f82a705b4",
+      "created": "2026-10-15T00:00:00.000Z",
+      "modified": "2026-10-15T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "Operator ran a Hermes agent unattended for post-compromise enumeration inside Thailand's Ministry of Finance network",
+      "incident_ref_id": "thailand-mof-hermes-agent-intrusion",
+      "category": "ai-orchestrated-campaign",
+      "severity": "high",
+      "grade_status": "reported",
+      "confidence": "primary",
+      "actor": "Unknown (Hunt.io: low-to-medium confidence the operator is Chinese-speaking; no group named)",
+      "actor_type": "unknown",
+      "autonomy_level": "supervised-autonomous",
+      "ai_role": "significant",
+      "guardrail_bypass": [
+        "legitimate-tool-abuse"
+      ],
+      "model_families": [
+        "other"
+      ],
+      "date_disclosed": "2026-07-23"
     },
     {
       "type": "x-agentic-incident",
