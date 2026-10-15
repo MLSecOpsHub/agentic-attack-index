@@ -65,7 +65,8 @@ lifecycle_phases:
   - persistence
   - exfiltration
 mappings:
-  mitre_atlas:
+  mitre_atlas: []
+  mitre_atlas_case_studies:
     - AML.CS0071 # ATLAS case study "Multi-Agent Framework Compromises Taiwanese Government Systems" (ATLAS v2026.09; cites Dream and MODA).
   mitre_attack: []
   owasp_llm: []

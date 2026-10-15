@@ -128,6 +128,14 @@ export function buildStixBundle(incidents) {
       description: s.title,
       url: s.url,
     }));
+    // ATLAS case studies document the incident itself, so they are references on
+    // the report, not attack-pattern objects.
+    const caseStudyRefs = (m.mitre_atlas_case_studies ?? []).map((cs) => ({
+      source_name: 'mitre-atlas',
+      external_id: cs,
+      url: `https://atlas.mitre.org/studies/${cs}`,
+    }));
+    const reportRefs = [...sourceRefs, ...caseStudyRefs];
 
     const reportId = stixId('report', inc.id);
     byId.set(reportId, {
@@ -143,7 +151,7 @@ export function buildStixBundle(incidents) {
       description: inc.summary,
       labels: [inc.category, `status:${inc.status}`, `ai-role:${inc.ai_role ?? 'unknown'}`],
       object_refs: [incidentSdoId, ...techniqueRefs, ...vulnRefs],
-      ...(sourceRefs.length ? { external_references: sourceRefs } : {}),
+      ...(reportRefs.length ? { external_references: reportRefs } : {}),
     });
   }
 

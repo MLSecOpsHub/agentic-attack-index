@@ -110,6 +110,8 @@ const CSV_COLUMNS = [
   // One entry per map point: role:basis:country (country "-" for a region
   // centroid). Arrays join with "; " like every other list column.
   ['geo_points', (i) => (i.geo?.points ?? []).map((p) => `${p.role}:${p.basis}:${p.country ?? '-'}`)],
+  // Appended last so existing column positions are unchanged.
+  ['mitre_atlas_case_studies', (i) => i.mappings?.mitre_atlas_case_studies],
 ];
 const csvCell = (v) => {
   const s = Array.isArray(v) ? v.join('; ') : `${v ?? ''}`;
