@@ -7,6 +7,8 @@ dataset version tracks `package.json` and `CITATION.cff` (kept in sync by
 
 ## [Unreleased]
 
+## [0.8.0] - 2026-10-16
+
 ### Added
 - MITRE ATLAS technique mappings for the whole catalog. 91 of 99 records now
   carry `mappings.mitre_atlas`, up from 14, using 58 distinct techniques from
