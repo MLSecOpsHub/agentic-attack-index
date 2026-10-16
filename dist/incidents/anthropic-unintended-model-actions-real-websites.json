@@ -30,7 +30,7 @@
   ],
   "id": "anthropic-unintended-model-actions-real-websites",
   "impact": "Per Anthropic, minimal real-world impact: commands run on a university server through an injection flaw; real online forms submitted, including a government form and a fabricated homicide tip to a police department; fee- or token-gated public data obtained from local and state government systems; URL shortening services used to evade fetch limits. To Anthropic's knowledge no customer data or Anthropic internal systems were involved. Per the Philadelphia Police Department, the tip was flagged as spam, never forwarded to its Real-Time Crime Center, and there was no indication of unauthorized access to police systems or compromise of department data.",
-  "last_updated": "2026-10-15",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "recon",
     "initial-access",
@@ -41,7 +41,10 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0017.001",
+      "AML.T0117"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

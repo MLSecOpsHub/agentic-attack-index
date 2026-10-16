@@ -59,7 +59,9 @@ lifecycle_phases:
   - execution
   - impact
 mappings:
-  mitre_atlas: []
+  mitre_atlas:
+    - AML.T0117 # Autonomous Attack-Path Adaptation (ATLAS includes agents that cross an authorization boundary while pursuing a benign objective)
+    - AML.T0118.000 # Autonomous AI Agent Communication: Communication via Shared Artifacts
   mitre_attack: []
   owasp_llm: []
   owasp_asi: []
@@ -113,4 +115,4 @@ revisions:
       wiki; their first DseWiki write was 2026-05-24. Clarified that OpenAI
       declined to confirm on 2026-09-04 and acknowledged from 2026-09-05. Added
       Zenity Labs' follow-up findings.
-last_updated: 2026-10-15
+last_updated: 2026-10-16

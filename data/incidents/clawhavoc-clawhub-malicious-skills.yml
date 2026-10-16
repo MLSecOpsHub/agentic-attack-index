@@ -49,7 +49,10 @@ lifecycle_phases:
   - credential-access
   - exfiltration
 mappings:
-  mitre_atlas: []
+  mitre_atlas:
+    - AML.T0010.005 # AI Supply Chain Compromise: AI Agent Tool
+    - AML.T0011.002 # User Execution: Poisoned AI Agent Tool
+    - AML.T0115.002 # Publish Poisoned AI Artifacts: AI Agent Tools
   mitre_attack: []
   owasp_llm: []
   owasp_asi: []
@@ -79,4 +82,4 @@ sources:
 added:
   date: 2026-10-10
   by: "MLSecOpsHub"
-last_updated: 2026-10-10
+last_updated: 2026-10-16

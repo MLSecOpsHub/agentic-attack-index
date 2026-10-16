@@ -30,7 +30,7 @@
   ],
   "id": "trendmicro-gemini-cli-dental-botnet",
   "impact": "Per Trend Micro: a live command-and-control botnet built and operated with Gemini CLI controlling eight dental-clinic computers and accessing the clinic's practice database; related credential attacks and compromised merchant websites. No victim named.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "resource-dev",
     "execution",
@@ -40,7 +40,10 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0016.002",
+      "AML.T0102"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

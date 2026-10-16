@@ -16,7 +16,7 @@
   ],
   "id": "unit42-ai-assisted-enterprise-intrusion",
   "impact": "Per Unit 42: internal networks, source-code repositories, a secrets-management system and CI/CD pipelines breached; root and administrative credentials and cloud access keys obtained; the victim's cloud AI endpoints used as attacker infrastructure. An infrastructure-as-code tampering attempt was blocked by branch protection. Operational timeline under ten hours.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "initial-access",
     "execution",
@@ -27,7 +27,12 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0016.002",
+      "AML.T0102",
+      "AML.T0117",
+      "AML.T0118"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

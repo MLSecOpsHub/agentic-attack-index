@@ -89,7 +89,14 @@ lifecycle_phases:
   - credential-access # Exfiltrated NetScaler memory searched for session-authentication cookies.
   - exfiltration
 mappings:
-  mitre_atlas: []
+  mitre_atlas:
+    - AML.T0016.002 # Obtain Capabilities: Generative AI
+    - AML.T0016.004 # Obtain Capabilities: AI Agent Tools
+    - AML.T0017.002 # Develop Capabilities: AI Agent Tools
+    - AML.T0040 # AI Model Inference API Access
+    - AML.T0102 # Generate Malicious Commands
+    - AML.T0116 # Autonomous Reconnaissance
+    - AML.T0117 # Autonomous Attack-Path Adaptation
   mitre_atlas_case_studies:
     - AML.CS0070 # ATLAS case study (v2026.09) for the Hermes/DeepSeek Langflow and n8n session.
   mitre_attack: []
@@ -127,4 +134,4 @@ sources:
 added:
   date: 2026-10-15
   by: "MLSecOpsHub"
-last_updated: 2026-10-15
+last_updated: 2026-10-16

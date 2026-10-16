@@ -16,7 +16,7 @@
   ],
   "id": "gemini-evaluation-real-company-breaches",
   "impact": "Three real companies' systems accessed during a cybersecurity evaluation: one by guessing a password, two using publicly posted credentials. Google states the model stopped in each case on realising the targets were real and that no damage was done.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "recon",
     "initial-access",
@@ -25,7 +25,10 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0116",
+      "AML.T0117"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

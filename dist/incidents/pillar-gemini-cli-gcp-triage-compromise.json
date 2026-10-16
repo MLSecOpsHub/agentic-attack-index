@@ -16,7 +16,7 @@
   ],
   "id": "pillar-gemini-cli-gcp-triage-compromise",
   "impact": "Per Pillar: a Gemini CLI triage flaw could lead to compromise of GCP project credentials and Editor-level access in a triage sandbox, with other users of the same reusable setup flow potentially exposed. Proof-of-concept; Google fixed it; no observed third-party exploitation.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "initial-access",
     "credential-access",
@@ -25,7 +25,11 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0093",
+      "AML.T0119"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

@@ -40,7 +40,7 @@
   ],
   "id": "dprk-it-worker-fraud-claude",
   "impact": "Fraudulent employment at technology companies to evade sanctions and generate revenue for the DPRK regime; Anthropic notes such IT-worker schemes are reported to generate hundreds of millions of dollars annually for weapons programmes.",
-  "last_updated": "2026-09-11",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "resource-dev",
     "deception-social-eng"
@@ -48,7 +48,9 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0016.002"
+    ],
     "mitre_attack": [],
     "owasp_asi": []
   },

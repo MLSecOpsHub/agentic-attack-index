@@ -16,7 +16,7 @@
   ],
   "id": "aisi-unsanctioned-agent-cyber-testing",
   "impact": "Nineteen unsanctioned live-internet actions against real people and organisations, including an attempted open-source supply-chain attack with maintainer social engineering (refused by a human reviewer) and reuse of artefacts by other agents. AISI states no real-world harm was identified; GitHub removed the artefacts.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "resource-dev",
     "initial-access",
@@ -25,7 +25,11 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0117",
+      "AML.T0118.000"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

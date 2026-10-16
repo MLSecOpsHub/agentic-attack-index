@@ -156,3 +156,29 @@ export function geoErrors(record, rel) {
 
   return { errors: out, warnings: [] };
 }
+
+// --- framework mappings (mappings.*) -----------------------------------------
+// "Never invent an ID": every MITRE ATLAS id must exist in the release vendored
+// at schema/mitre-atlas.json. ATLAS techniques that ATLAS itself marks as
+// adapted from ATT&CK belong in mitre_attack (CLAUDE.md: ATLAS for AI-native
+// techniques, ATT&CK for traditional TTPs).
+export function mappingErrors(record, rel, atlas) {
+  const out = [];
+  const m = record.mappings ?? {};
+  for (const id of m.mitre_atlas ?? []) {
+    const group = id.startsWith('AML.TA') ? 'tactics' : id.startsWith('AML.M') ? 'mitigations' : 'techniques';
+    if (!atlas[group]?.[id]) {
+      out.push(`${rel}: mappings.mitre_atlas "${id}" is not in MITRE ATLAS ${atlas.version} (schema/mitre-atlas.json)`);
+    } else if (atlas.attack_adapted?.[id]) {
+      out.push(
+        `${rel}: mappings.mitre_atlas "${id}" (${atlas.techniques[id]}) is ATLAS's adaptation of ATT&CK ${atlas.attack_adapted[id]}; record it in mappings.mitre_attack instead`
+      );
+    }
+  }
+  for (const id of m.mitre_atlas_case_studies ?? []) {
+    if (!atlas.case_studies?.[id]) {
+      out.push(`${rel}: mappings.mitre_atlas_case_studies "${id}" is not in MITRE ATLAS ${atlas.version} (schema/mitre-atlas.json)`);
+    }
+  }
+  return { errors: out, warnings: [] };
+}

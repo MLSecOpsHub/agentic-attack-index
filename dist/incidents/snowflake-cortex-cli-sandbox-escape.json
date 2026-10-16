@@ -16,7 +16,7 @@
   ],
   "id": "snowflake-cortex-cli-sandbox-escape",
   "impact": "Per PromptArmor: the Cortex Code CLI could be induced to run commands outside its sandbox with the victim's Snowflake credentials, enabling actions such as data exfiltration or dropping tables. Demonstrated in testing; fixed in version 1.0.25; no in-the-wild exploitation reported.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "execution"
   ],
@@ -25,7 +25,11 @@
     "cve": [
       "CVE-2026-6442"
     ],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0112.000"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

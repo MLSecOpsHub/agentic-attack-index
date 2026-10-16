@@ -40,7 +40,13 @@ lifecycle_phases:
   - execution
   - exfiltration
 mappings:
-  mitre_atlas: []
+  mitre_atlas:
+    - AML.T0051.001 # LLM Prompt Injection: Indirect
+    - AML.T0053 # AI Agent Tool Invocation
+    - AML.T0065 # LLM Prompt Crafting
+    - AML.T0085.001 # Data from AI Services: AI Agent Tools
+    - AML.T0086 # Exfiltration via AI Agent Tool Invocation
+    - AML.T0093 # Prompt Infiltration via Public-Facing Application
   mitre_attack: []
   owasp_llm: []
   owasp_asi: []
@@ -66,4 +72,4 @@ sources:
 added:
   date: 2026-10-10
   by: "MLSecOpsHub"
-last_updated: 2026-10-10
+last_updated: 2026-10-16

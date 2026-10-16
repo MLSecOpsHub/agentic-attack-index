@@ -16,7 +16,7 @@
   ],
   "id": "morris-ii-genai-worm",
   "impact": "Research demonstration only: no real-world victims. Showed that a self- replicating prompt can exfiltrate confidential data and propagate between GenAI-powered email assistants without user interaction.",
-  "last_updated": "2026-08-13",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "initial-access",
     "execution",
@@ -27,8 +27,16 @@
     "aiid": [],
     "cve": [],
     "mitre_atlas": [
+      "AML.T0040",
+      "AML.T0051.000",
       "AML.T0051.001",
-      "AML.T0057"
+      "AML.T0051.002",
+      "AML.T0053",
+      "AML.T0057",
+      "AML.T0061"
+    ],
+    "mitre_atlas_case_studies": [
+      "AML.CS0024"
     ],
     "mitre_attack": [],
     "owasp_asi": [],

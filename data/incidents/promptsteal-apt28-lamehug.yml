@@ -60,8 +60,12 @@ lifecycle_phases:
   - exfiltration
 mappings:
   mitre_atlas:
+    - AML.T0011 # User Execution
+    - AML.T0016.002 # Obtain Capabilities: Generative AI
+    - AML.T0025 # Exfiltration via Cyber Means
     - AML.T0102 # Generate Malicious Commands
-    - AML.T0016.002 # Generative AI
+  mitre_atlas_case_studies:
+    - AML.CS0044 # ATLAS case study "LAMEHUG: Malware Leveraging Dynamic AI-Generated Commands" (ATLAS v2026.09).
   mitre_attack: []
   owasp_asi: []
   cve: []
@@ -86,4 +90,4 @@ sources:
 added:
   date: 2026-08-12
   by: "MLSecOpsHub"
-last_updated: 2026-09-11
+last_updated: 2026-10-16

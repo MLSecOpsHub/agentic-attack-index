@@ -30,7 +30,7 @@
   ],
   "id": "gambit-ai-agents-retail-skimmer-campaign",
   "impact": "At least 27 companies compromised and payment-card skimmers confirmed at 19 between 2026-09-10 and 2026-09-15, with more than 100 further infected sites found and over 600,000 payment-card records taken from two companies, per Gambit Security. Estimated campaign cost US$12,000-18,000.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "recon",
     "initial-access",
@@ -41,7 +41,11 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0016.002",
+      "AML.T0116",
+      "AML.T0117"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

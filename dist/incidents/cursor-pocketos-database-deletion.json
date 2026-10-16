@@ -16,7 +16,7 @@
   ],
   "id": "cursor-pocketos-database-deletion",
   "impact": "PocketOS's production database and backups deleted; reservation records and new customer signups lost and rental clients without customer records for at least a day. Railway restored the data; some bookings were reconstructed from payment, calendar and email records.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "execution",
     "impact"
@@ -24,7 +24,9 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0101"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

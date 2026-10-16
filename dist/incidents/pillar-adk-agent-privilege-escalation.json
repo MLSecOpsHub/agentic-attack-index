@@ -16,7 +16,7 @@
   ],
   "id": "pillar-adk-agent-privilege-escalation",
   "impact": "Per Pillar: a low-privilege triage agent could trigger a maintainer-only Gemini workflow, and a separate issue exposed a bot access token and a cloud service-account credential to the CI runner. Proof-of-concept; Google fixed it; no confirmed malicious exploitation.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "initial-access",
     "credential-access",
@@ -25,7 +25,12 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0093",
+      "AML.T0119"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

@@ -37,7 +37,8 @@ lifecycle_phases:
   - deception-social-eng
   - impact
 mappings:
-  mitre_atlas: []
+  mitre_atlas:
+    - AML.T0101 # Data Destruction via AI Agent Tool Invocation (the mechanism only: there was no adversary, the agent acted on its own)
   mitre_attack: []
   owasp_llm: []
   owasp_asi: []
@@ -69,4 +70,4 @@ sources:
 added:
   date: 2026-08-13
   by: "MLSecOpsHub"
-last_updated: 2026-08-13
+last_updated: 2026-10-16

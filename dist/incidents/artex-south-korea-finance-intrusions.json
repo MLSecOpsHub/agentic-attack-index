@@ -30,7 +30,7 @@
   ],
   "id": "artex-south-korea-finance-intrusions",
   "impact": "Customer personal data, including names, contact details, annual income and loan limits, was exfiltrated from several South Korean financial institutions. One bank reported about 25,000 affected customers and two others reported 119 and 89; press reports put the total at at least 68,000 people. Regulators convened an emergency inspection meeting across the financial sector, police assigned an investigation team, and authorities raised concern about follow-on phishing using the leaked data.",
-  "last_updated": "2026-10-15",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "resource-dev",
     "recon",
@@ -40,7 +40,9 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0016.002"
+    ],
     "mitre_attack": [
       "T1583.003",
       "T1588.007",

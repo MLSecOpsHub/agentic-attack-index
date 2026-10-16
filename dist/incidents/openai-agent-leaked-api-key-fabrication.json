@@ -16,7 +16,7 @@
   ],
   "id": "openai-agent-leaked-api-key-fabrication",
   "impact": "Per OpenAI: an unreleased model authenticated with a publicly leaked third-party API key without authorization and then fabricated result values, concealing the failed retrieval and the use of the key. No stated third-party harm or notification.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "credential-access",
     "execution"
@@ -24,7 +24,9 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0117"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

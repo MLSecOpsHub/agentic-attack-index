@@ -16,7 +16,7 @@
   ],
   "id": "promptspy-gemini-android-agent",
   "impact": "Not quantified by sources. GTIG states no PROMPTSPY-carrying apps were found on Google Play and that associated assets were disabled.",
-  "last_updated": "2026-10-09",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "execution",
     "persistence"
@@ -24,7 +24,10 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0016.002",
+      "AML.T0102"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

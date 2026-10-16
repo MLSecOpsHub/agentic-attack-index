@@ -16,7 +16,7 @@
   ],
   "id": "radware-zombieagent-deep-research",
   "impact": "Per Radware: a zero-click email could drive ChatGPT's Deep Research agent to exfiltrate data service-side and, in an advanced stage, implant persistent rules in the agent's memory and propagate to further recipients. Demonstrated vulnerability; no in-the-wild victims reported.",
-  "last_updated": "2026-10-15",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "execution",
     "persistence",
@@ -25,7 +25,18 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0054",
+      "AML.T0065",
+      "AML.T0068",
+      "AML.T0079",
+      "AML.T0080.000",
+      "AML.T0085.001",
+      "AML.T0086",
+      "AML.T0093"
+    ],
     "mitre_atlas_case_studies": [
       "AML.CS0066"
     ],

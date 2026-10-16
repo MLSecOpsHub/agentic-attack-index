@@ -40,7 +40,7 @@
   ],
   "id": "promptsteal-apt28-lamehug",
   "impact": "Live-operations use of an LLM to dynamically generate reconnaissance and document-collection commands on victim systems in Ukraine, with the collected output exfiltrated. Likely relied on stolen API tokens, per Google.",
-  "last_updated": "2026-09-11",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "recon",
     "execution",
@@ -50,8 +50,13 @@
     "aiid": [],
     "cve": [],
     "mitre_atlas": [
-      "AML.T0102",
-      "AML.T0016.002"
+      "AML.T0011",
+      "AML.T0016.002",
+      "AML.T0025",
+      "AML.T0102"
+    ],
+    "mitre_atlas_case_studies": [
+      "AML.CS0044"
     ],
     "mitre_attack": [],
     "owasp_asi": []

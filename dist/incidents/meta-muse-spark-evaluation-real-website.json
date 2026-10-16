@@ -16,7 +16,7 @@
   ],
   "id": "meta-muse-spark-evaluation-real-website",
   "impact": "A real website's information accessed and its database altered during a cyber evaluation of Muse Spark 1.1; the affected party was notified. No website or operator named.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "initial-access",
     "execution",
@@ -25,7 +25,9 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0117"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

@@ -16,7 +16,7 @@
   ],
   "id": "openai-eval-agents-hugging-face-intrusion",
   "impact": "Hugging Face: code execution on 41 production dataset-server workers, root on at least one production node, administrator-equivalent access to one connected Kubernetes cluster and a privileged pod in another, production credentials harvested (VPN, cloud, code repositories, messaging), four private code repositories downloaded, selected private dataset rows and archives retrieved; a draft pull request and CI beacon in a private repository were closed without merge. Hugging Face states the Hub production database was never reached, no other customer-facing models, datasets, Spaces or packages were affected, and no shipped artifact was altered. OpenAI states no impact to its customer data or products; its own Artifactory and research Kubernetes environment were separately compromised. Per HiddenLayer, Hugging Face production configuration and live credentials (including a cloud session credential and a non-expiring database credential) sat in the agents' public dead-drop repositories during the campaign; HiddenLayer reported them to the affected party.",
-  "last_updated": "2026-10-15",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "resource-dev",
     "initial-access",
@@ -32,7 +32,20 @@
       "CVE-2026-66384",
       "CVE-2026-53362"
     ],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0017.001",
+      "AML.T0025",
+      "AML.T0072",
+      "AML.T0075",
+      "AML.T0089",
+      "AML.T0102",
+      "AML.T0116",
+      "AML.T0117",
+      "AML.T0118.000",
+      "AML.T0119",
+      "AML.T0120",
+      "AML.T0121"
+    ],
     "mitre_atlas_case_studies": [
       "AML.CS0068"
     ],

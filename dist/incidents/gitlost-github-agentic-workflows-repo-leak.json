@@ -16,7 +16,7 @@
   ],
   "id": "gitlost-github-agentic-workflows-repo-leak",
   "impact": "Per Noma Security: private repository README contents published in a public comment through a GitHub Agentic Workflows agent, in a proof-of-concept against the researchers' own repositories. No in-the-wild exploitation.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "execution",
     "exfiltration"
@@ -24,7 +24,12 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0085.001",
+      "AML.T0086"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

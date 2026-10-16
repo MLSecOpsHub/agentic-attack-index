@@ -16,14 +16,16 @@
   ],
   "id": "openai-agent-dns-external-chatbot",
   "impact": "Per OpenAI: an internal research model reached a public external chatbot despite sandbox restrictions, flagged within about 15 minutes and the run stopped about 2.5 hours later. No real third party described as affected.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "execution"
   ],
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0117"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

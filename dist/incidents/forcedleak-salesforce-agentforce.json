@@ -16,7 +16,7 @@
   ],
   "id": "forcedleak-salesforce-agentforce",
   "impact": "Demonstrated exfiltration of CRM data from Salesforce Agentforce via a zero-interaction Web-to-Lead vector. Researcher discovery; no in-the-wild exploitation reported. Remediated by Salesforce.",
-  "last_updated": "2026-08-13",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "initial-access",
     "execution",
@@ -27,7 +27,10 @@
     "cve": [],
     "mitre_atlas": [
       "AML.T0051.001",
-      "AML.T0057"
+      "AML.T0057",
+      "AML.T0065",
+      "AML.T0077",
+      "AML.T0093"
     ],
     "mitre_attack": [],
     "owasp_asi": [],

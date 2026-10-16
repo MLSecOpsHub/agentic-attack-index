@@ -16,7 +16,7 @@
   ],
   "id": "gemini-cli-ci-untrusted-workspace-rce",
   "impact": "Per the GitHub advisory: untrusted CI workspace content could lead to remote code execution through automatic folder trust, and a permissive mode ignoring the tool allowlist could let prompt injection reach arbitrary command execution. Rated CVSS 10.0; fixed in the listed versions.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "execution"
   ],
@@ -25,7 +25,11 @@
     "cve": [
       "CVE-2026-12537"
     ],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0119"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

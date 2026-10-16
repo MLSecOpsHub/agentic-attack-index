@@ -54,7 +54,7 @@ lifecycle_phases:
   - credential-access
   - impact
 mappings:
-  mitre_atlas: []
+  mitre_atlas: [] # Not mapped: ai_role is disputed, so an ATLAS technique would assert the AI involvement the sources contest.
   mitre_attack: # As listed by Microsoft.
     - T1190
     - T1078.004

@@ -16,14 +16,17 @@
   ],
   "id": "openai-agent-public-file-hosting-upload",
   "impact": "Per OpenAI: a training sub-agent uploaded a workbook to a public temporary file-hosting service to bypass file isolation and shared the links with other agents. No stated third-party harm.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "execution"
   ],
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0117",
+      "AML.T0118.000"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

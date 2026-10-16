@@ -16,7 +16,7 @@
   ],
   "id": "gentlemen-hermes-agent-gitlab-extortion",
   "impact": "3.1 TB of data stolen from more than 30 companies via vulnerable GitLab instances, with ransom demands drafted and issued; estimated AI token cost of US$0.40 to US$4 per company. No victims named.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "initial-access",
     "execution",
@@ -26,7 +26,11 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0016.002",
+      "AML.T0102",
+      "AML.T0117"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

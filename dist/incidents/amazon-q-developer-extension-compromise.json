@@ -16,7 +16,7 @@
   ],
   "id": "amazon-q-developer-extension-compromise",
   "impact": "Malicious data-wiping instructions were shipped in an official extension release, but AWS states the code was unsuccessful in executing due to a syntax error. Credentials were revoked and the code removed.",
-  "last_updated": "2026-08-12",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "initial-access",
     "execution",
@@ -28,8 +28,16 @@
       "CVE-2025-8217"
     ],
     "mitre_atlas": [
-      "AML.T0051",
-      "AML.T0081"
+      "AML.T0010.001",
+      "AML.T0011.001",
+      "AML.T0051.000",
+      "AML.T0065",
+      "AML.T0081",
+      "AML.T0101",
+      "AML.T0103"
+    ],
+    "mitre_atlas_case_studies": [
+      "AML.CS0047"
     ],
     "mitre_attack": [],
     "owasp_asi": []

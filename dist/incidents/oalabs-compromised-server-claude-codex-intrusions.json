@@ -31,7 +31,7 @@
   ],
   "id": "oalabs-compromised-server-claude-codex-intrusions",
   "impact": "Per OALABS: at least 14 companies breached, with credentials and data harvested and exfiltrated; an encrypted wallet file from a Lightning Network node with access to about 69.71 BTC (about US$4 million) exfiltrated, though distributed cracking failed; and 14 compromised hosts, many belonging to a Southeast Asian government server farm, repurposed for the cracking. No successful monetization was confirmed in the logs.",
-  "last_updated": "2026-10-15",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "recon",
     "resource-dev",
@@ -52,7 +52,15 @@
       "CVE-2021-4034",
       "CVE-2022-0847"
     ],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0016.002",
+      "AML.T0017.001",
+      "AML.T0054",
+      "AML.T0102",
+      "AML.T0116",
+      "AML.T0117",
+      "AML.T0124"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

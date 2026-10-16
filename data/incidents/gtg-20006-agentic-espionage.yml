@@ -72,7 +72,9 @@ lifecycle_phases:
   - persistence
   - exfiltration
 mappings:
-  mitre_atlas: []
+  mitre_atlas:
+    - AML.T0016.002 # Obtain Capabilities: Generative AI
+    - AML.T0017.002 # Develop Capabilities: AI Agent Tools
   mitre_attack: []
   owasp_llm: []
   owasp_asi: []
@@ -97,4 +99,4 @@ sources:
 added:
   date: 2026-10-10
   by: "MLSecOpsHub"
-last_updated: 2026-10-10
+last_updated: 2026-10-16

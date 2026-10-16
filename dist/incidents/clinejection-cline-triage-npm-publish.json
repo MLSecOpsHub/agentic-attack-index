@@ -16,7 +16,7 @@
   ],
   "id": "clinejection-cline-triage-npm-publish",
   "impact": "Unauthorized cline@2.3.0 published to npm and available for about eight hours; the package added a postinstall step that globally installed another package. Cline states no user data was accessed or exfiltrated.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "initial-access",
     "credential-access",
@@ -25,7 +25,16 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0010.001",
+      "AML.T0051.001",
+      "AML.T0051.002",
+      "AML.T0053",
+      "AML.T0065",
+      "AML.T0093",
+      "AML.T0098",
+      "AML.T0119"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

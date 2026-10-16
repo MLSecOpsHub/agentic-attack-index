@@ -16,7 +16,7 @@
   ],
   "id": "ai-augmented-fortigate-mass-compromise",
   "impact": "Per Amazon: more than 600 FortiGate devices in more than 55 countries accessed and their configurations taken, including VPN and administrative credentials and network topology. Several organisations' Active Directory environments were compromised and complete domain credential databases extracted. Backup infrastructure was targeted, which Amazon calls a potential precursor to ransomware. No ransomware deployment, data sale or named victim is reported.",
-  "last_updated": "2026-10-15",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "resource-dev",
     "recon",
@@ -32,7 +32,10 @@
       "CVE-2023-27532",
       "CVE-2024-40711"
     ],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0016.002",
+      "AML.T0102"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

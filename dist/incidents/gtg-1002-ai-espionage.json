@@ -31,7 +31,7 @@
   ],
   "id": "gtg-1002-ai-espionage",
   "impact": "Attempted infiltration of ~30 organizations with a small number of successful intrusions, including credential harvesting and data extraction, per Anthropic.",
-  "last_updated": "2026-10-15",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "recon",
     "resource-dev",
@@ -44,9 +44,18 @@
     "aiid": [],
     "cve": [],
     "mitre_atlas": [
+      "AML.T0016.002",
+      "AML.T0017.001",
+      "AML.T0025",
+      "AML.T0040",
+      "AML.T0051.000",
       "AML.T0054",
+      "AML.T0075",
+      "AML.T0089",
       "AML.T0102",
-      "AML.T0053"
+      "AML.T0103",
+      "AML.T0116",
+      "AML.T0117"
     ],
     "mitre_atlas_case_studies": [
       "AML.CS0069"

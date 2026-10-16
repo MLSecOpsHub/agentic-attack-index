@@ -39,8 +39,20 @@ lifecycle_phases:
   - exfiltration
 mappings:
   mitre_atlas:
+    # AML.CS0059 also lists AML.T0048 External Harms; not mapped because Microsoft states no customers were affected.
+    - AML.T0025 # Exfiltration via Cyber Means
     - AML.T0051.001 # LLM Prompt Injection: Indirect
+    - AML.T0051.002 # LLM Prompt Injection: Triggered
     - AML.T0057 # LLM Data Leakage
+    - AML.T0065 # LLM Prompt Crafting
+    - AML.T0066 # Retrieval Content Crafting
+    - AML.T0067 # LLM Trusted Output Components Manipulation
+    - AML.T0068 # LLM Prompt Obfuscation
+    - AML.T0070 # RAG Poisoning
+    - AML.T0077 # LLM Response Rendering
+    - AML.T0079 # Stage Capabilities
+    - AML.T0085.000 # Data from AI Services: RAG Databases
+    - AML.T0093 # Prompt Infiltration via Public-Facing Application
   mitre_atlas_case_studies:
     - AML.CS0059 # ATLAS case study "EchoLeak: Zero-Click Prompt Injection Targeting M365 Copilot for Data Exfiltration" (ATLAS v2026.09).
   mitre_attack: []
@@ -76,4 +88,4 @@ sources:
 added:
   date: 2026-08-12
   by: "MLSecOpsHub"
-last_updated: 2026-10-15
+last_updated: 2026-10-16

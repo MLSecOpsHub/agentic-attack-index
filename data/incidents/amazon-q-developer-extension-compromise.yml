@@ -38,8 +38,15 @@ lifecycle_phases:
   - impact
 mappings:
   mitre_atlas:
-    - AML.T0051 # LLM Prompt Injection
+    - AML.T0010.001 # AI Supply Chain Compromise: AI Software
+    - AML.T0011.001 # User Execution: Malicious Package
+    - AML.T0051.000 # LLM Prompt Injection: Direct
+    - AML.T0065 # LLM Prompt Crafting
     - AML.T0081 # Modify AI Agent Configuration
+    - AML.T0101 # Data Destruction via AI Agent Tool Invocation (attempted: per AWS the injected code failed to execute)
+    - AML.T0103 # Deploy AI Agent
+  mitre_atlas_case_studies:
+    - AML.CS0047 # ATLAS case study "Code to Deploy Destructive AI Agent Discovered in Amazon Q VS Code Extension" (ATLAS v2026.09).
   mitre_attack: []
   owasp_asi: []
   cve:
@@ -65,4 +72,4 @@ sources:
 added:
   date: 2026-08-12
   by: "MLSecOpsHub"
-last_updated: 2026-08-12
+last_updated: 2026-10-16

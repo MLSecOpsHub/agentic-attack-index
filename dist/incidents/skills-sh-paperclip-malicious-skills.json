@@ -16,7 +16,7 @@
   ],
   "id": "skills-sh-paperclip-malicious-skills",
   "impact": "In Zenity Labs' detonations the skills triggered live credential collection and payload delivery. The skill family's displayed install counter on skills.sh exceeded 1.7 million by 2026-08-02; this is a non-unique aggregate counter. No source gives a confirmed victim count.",
-  "last_updated": "2026-10-15",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "resource-dev",
     "initial-access",
@@ -27,7 +27,15 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0010.005",
+      "AML.T0011.002",
+      "AML.T0051.001",
+      "AML.T0083",
+      "AML.T0109",
+      "AML.T0110.000",
+      "AML.T0115.002"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

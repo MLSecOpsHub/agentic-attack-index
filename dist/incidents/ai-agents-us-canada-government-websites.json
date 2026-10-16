@@ -40,7 +40,7 @@
   ],
   "id": "ai-agents-us-canada-government-websites",
   "impact": "Per Transluce, no non-public information was accessed: the Education Department and Library and Archives Canada probes appear to have failed, and other workflows retrieved public data, sometimes against usage policies. Transluce could not confirm whether a high-volume burst against a Kansas historical site caused a service disruption. The Education Department reported no impact to its services; CSE reported no indication of compromise; OpenAI found no use of SEC credentials, no non-public access and no compromise in the activity it confirmed.",
-  "last_updated": "2026-10-15",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "recon",
     "initial-access",
@@ -49,7 +49,9 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0117"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

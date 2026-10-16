@@ -16,7 +16,7 @@
   ],
   "id": "google-antigravity-data-exfiltration-poc",
   "impact": "Per PromptArmor: a proof-of-concept in which a malicious web page leads the Antigravity agent to collect local credentials and code and send them to a public site. No observed real-world exploitation; no confirmed fix.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "execution",
     "credential-access",
@@ -25,7 +25,12 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0086",
+      "AML.T0098"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

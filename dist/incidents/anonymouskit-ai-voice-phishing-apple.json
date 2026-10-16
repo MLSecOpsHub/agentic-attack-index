@@ -16,7 +16,7 @@
   ],
   "id": "anonymouskit-ai-voice-phishing-apple",
   "impact": "Per SOCRadar: a phishing-as-a-service platform using AI voice agents to impersonate Apple Support and harvest device passcodes, Apple IDs and second-factor codes to disable Activation Lock on stolen devices; a reseller supply chain of 506 domains and 168 brands and operator telemetry of 6,092 phishing emails. No individual victim named.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "resource-dev",
     "credential-access",
@@ -26,7 +26,11 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0016.002",
+      "AML.T0052.000",
+      "AML.T0052.001"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

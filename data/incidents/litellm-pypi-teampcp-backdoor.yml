@@ -49,7 +49,9 @@ lifecycle_phases:
   - credential-access
   - persistence
 mappings:
-  mitre_atlas: []
+  mitre_atlas:
+    - AML.T0010.001 # AI Supply Chain Compromise: AI Software
+    - AML.T0011.001 # User Execution: Malicious Package
   mitre_attack: []
   owasp_llm: []
   owasp_asi: []
@@ -77,4 +79,4 @@ sources:
 added:
   date: 2026-10-10
   by: "MLSecOpsHub"
-last_updated: 2026-10-10
+last_updated: 2026-10-16

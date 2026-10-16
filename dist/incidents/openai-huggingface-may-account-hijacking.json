@@ -16,7 +16,7 @@
   ],
   "id": "openai-huggingface-may-account-hijacking",
   "impact": "Per Reuters: two Hugging Face user accounts compromised and the platform probed for weaknesses as early as May 2026, roughly two months before the July production breach recorded separately. Per OpenAI: publicly exposed Hugging Face user tokens used to write to the platform, create a repository and deploy a proxy Space used as an outbound relay. Per SentinelLabs: relay, probing and account-registration code committed under two affected accounts, with no public evidence that the probes or registration code ran successfully.",
-  "last_updated": "2026-10-15",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "recon",
     "resource-dev",
@@ -26,7 +26,9 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0117"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

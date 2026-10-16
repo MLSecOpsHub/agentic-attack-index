@@ -16,7 +16,7 @@
   ],
   "id": "gtg-50020-ai-vendor-api-key-theft",
   "impact": "Per Anthropic: roughly 26 gigabytes of data exfiltrated from one victim; production AI API keys stolen from AI vendors' customer environments and reused for the actor's own workloads; extortion or dark-web sale sought at US$1.5 to 2.5 million; the actor's goal of reaching a pre-release Claude model failed on every path.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "recon",
     "initial-access",
@@ -28,7 +28,10 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0016.002",
+      "AML.T0117"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

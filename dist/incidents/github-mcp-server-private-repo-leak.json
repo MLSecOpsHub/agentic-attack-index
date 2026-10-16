@@ -16,7 +16,7 @@
   ],
   "id": "github-mcp-server-private-repo-leak",
   "impact": "Per the research as explained by Cybernews: an agent on the GitHub MCP server could be induced through a public issue to read private repositories and expose their contents in a public pull request. Proof-of-concept; no in-the-wild victims.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "execution",
     "exfiltration"
@@ -24,7 +24,14 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0065",
+      "AML.T0085.001",
+      "AML.T0086",
+      "AML.T0093"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

@@ -16,7 +16,7 @@
   ],
   "id": "camoleak-github-copilot-chat",
   "impact": "Proof-of-concept exfiltration of secrets and source code from private repositories and full control of Copilot's responses. Responsibly disclosed via HackerOne and fixed by GitHub before public disclosure; no in-the-wild exploitation reported.",
-  "last_updated": "2026-08-12",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "initial-access",
     "execution",
@@ -27,7 +27,11 @@
     "cve": [],
     "mitre_atlas": [
       "AML.T0051.001",
-      "AML.T0057"
+      "AML.T0057",
+      "AML.T0065",
+      "AML.T0068",
+      "AML.T0077",
+      "AML.T0093"
     ],
     "mitre_attack": [],
     "owasp_asi": []

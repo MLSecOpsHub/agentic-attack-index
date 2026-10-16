@@ -43,7 +43,7 @@ lifecycle_phases:
   - execution
   - impact
 mappings:
-  mitre_atlas: []
+  mitre_atlas: [] # Not mapped: no ATLAS technique describes an agent acting unsafely on its own with no adversary and no destruction.
   mitre_attack: []
   owasp_llm: []
   owasp_asi: []
