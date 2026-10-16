@@ -9,12 +9,13 @@ import addFormats from 'ajv-formats';
 import { parse } from 'yaml';
 import {
   listIncidentFiles,
+  loadAtlas,
   loadIncident,
   loadSchema,
   loadTaxonomies,
   ROOT,
 } from './lib.mjs';
-import { editorialErrors, geoErrors } from './rules.mjs';
+import { editorialErrors, geoErrors, mappingErrors } from './rules.mjs';
 
 const errors = [];
 const warnings = [];
@@ -22,6 +23,7 @@ const schema = loadSchema();
 const ajv = new Ajv2020({ allErrors: true, strict: true });
 addFormats(ajv);
 const validate = ajv.compile(schema);
+const atlas = loadAtlas();
 
 // --- taxonomy <-> schema enum cross-check -----------------------------------
 const enumFromSchema = {
@@ -119,6 +121,8 @@ for (const file of files) {
     warnings.push(...editorial.warnings);
     // Map points: basis/role/attribution rules (see scripts/rules.mjs).
     errors.push(...geoErrors(record, rel).errors);
+    // Framework ids must exist as published (see scripts/rules.mjs).
+    errors.push(...mappingErrors(record, rel, atlas).errors);
     if (Array.isArray(record.related) && record.related.length) {
       relatedRefs.push({ rel, id: record.id, related: record.related });
     }
@@ -175,5 +179,6 @@ console.log(
   `validate: OK — ${checked - templates} record(s)` +
     (templates ? ` + ${templates} template(s)` : '') +
     ` valid against schema, ` +
-    `${taxonomies.length} taxonomy file(s) in sync, ids unique.`
+    `${taxonomies.length} taxonomy file(s) in sync, ids unique, ` +
+    `ATLAS ids checked against ATLAS ${atlas.version}.`
 );

@@ -5,7 +5,8 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import Ajv2020 from 'ajv/dist/2020.js';
 import addFormats from 'ajv-formats';
-import { listIncidentFiles, loadIncident, loadSchema } from '../scripts/lib.mjs';
+import { listIncidentFiles, loadAtlas, loadIncident, loadSchema } from '../scripts/lib.mjs';
+import { mappingErrors } from '../scripts/rules.mjs';
 import { buildStixBundle } from '../scripts/stix.mjs';
 
 const ajv = new Ajv2020({ allErrors: true, strict: true });
@@ -59,5 +60,42 @@ test('no real record carries a case-study id in mitre_atlas', () => {
     for (const id of inc.mappings?.mitre_atlas ?? []) {
       assert.doesNotMatch(id, /^AML\.CS/, `${inc.id}: ${id} belongs in mitre_atlas_case_studies`);
     }
+  }
+});
+
+// --- ATLAS ids must exist as published (schema/mitre-atlas.json) -------------
+const atlas = loadAtlas();
+const atlasErrors = (mappings) => mappingErrors(base(mappings), 'fixture.yml', atlas).errors;
+
+test('mitre-atlas.json names its ATLAS release and its adapted techniques exist', () => {
+  assert.match(atlas.version, /^\d{4}\.\d{2}$/);
+  assert.ok(Object.keys(atlas.techniques).length > 100);
+  for (const id of Object.keys(atlas.attack_adapted)) assert.ok(atlas.techniques[id], `${id} not a technique`);
+});
+
+test('mappingErrors accepts published technique, tactic, mitigation and case-study ids', () => {
+  assert.deepEqual(
+    atlasErrors({ mitre_atlas: ['AML.T0051.001', 'AML.TA0002', 'AML.M0015'], mitre_atlas_case_studies: ['AML.CS0059'] }),
+    []
+  );
+});
+
+test('mappingErrors rejects ids that are not in the ATLAS release', () => {
+  assert.equal(atlasErrors({ mitre_atlas: ['AML.T9999'] }).length, 1);
+  assert.equal(atlasErrors({ mitre_atlas: ['AML.TA0099'] }).length, 1);
+  assert.equal(atlasErrors({ mitre_atlas_case_studies: ['AML.CS9999'] }).length, 1);
+});
+
+test('mappingErrors sends ATT&CK-adapted ATLAS techniques to mitre_attack', () => {
+  const [err] = atlasErrors({ mitre_atlas: ['AML.T0049'] });
+  assert.match(err, /ATT&CK T1190/);
+  // An adapted sub-technique that is specific to AI stays in mitre_atlas.
+  assert.deepEqual(atlasErrors({ mitre_atlas: ['AML.T0006.002'] }), []);
+});
+
+test('every real record maps only published, AI-native ATLAS ids', () => {
+  for (const file of listIncidentFiles()) {
+    const inc = loadIncident(file);
+    assert.deepEqual(mappingErrors(inc, inc.id, atlas).errors, []);
   }
 });

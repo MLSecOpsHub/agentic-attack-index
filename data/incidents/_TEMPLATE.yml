@@ -146,7 +146,7 @@ lifecycle_phases: []
 # mitre_attack for traditional TTPs (e.g. T1566); aiid = AI Incident
 # Database incident numbers (integers).
 mappings:
-  mitre_atlas: [] # techniques/tactics/mitigations only (AML.T/TA/M)
+  mitre_atlas: [] # techniques/tactics/mitigations only (AML.T/TA/M), checked against schema/mitre-atlas.json; method: docs/atlas-mapping.md
   mitre_atlas_case_studies: [] # ATLAS case studies of this incident, e.g. AML.CS0059
   mitre_attack: []
   owasp_llm: [] # OWASP Top 10 for LLM Apps, e.g. LLM01
