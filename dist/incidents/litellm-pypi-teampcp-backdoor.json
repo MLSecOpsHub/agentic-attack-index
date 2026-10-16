@@ -16,7 +16,7 @@
   ],
   "id": "litellm-pypi-teampcp-backdoor",
   "impact": "Malicious LiteLLM 1.82.7 and 1.82.8 live on PyPI for about three hours; on install the payload harvested cloud, SSH, Git, API and Kubernetes credentials, installed persistence and attempted Kubernetes lateral movement. No confirmed victim organizations; the package sees on the order of millions of downloads per day.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "resource-dev",
     "initial-access",
@@ -26,7 +26,10 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0010.001",
+      "AML.T0011.001"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

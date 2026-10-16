@@ -16,7 +16,7 @@
   ],
   "id": "openclaw-inbox-deletion",
   "impact": "Emails deleted from one researcher's inbox; no count stated and not independently verified by TechCrunch.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "execution",
     "impact"
@@ -24,7 +24,9 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0101"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

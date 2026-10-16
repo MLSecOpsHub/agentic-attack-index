@@ -65,7 +65,8 @@ lifecycle_phases:
   - initial-access
   - credential-access
 mappings:
-  mitre_atlas: []
+  mitre_atlas:
+    - AML.T0117 # Autonomous Attack-Path Adaptation (ATLAS includes agents that cross an authorization boundary while pursuing a benign objective)
   mitre_attack: []
   owasp_llm: []
   owasp_asi: []
@@ -117,4 +118,4 @@ revisions:
       OpenAI states no evidence of a connection to the July incident, and
       SentinelLabs says the committed probing and registration code shows
       capability, not successful execution.
-last_updated: 2026-10-15
+last_updated: 2026-10-16

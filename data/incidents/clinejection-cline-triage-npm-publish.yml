@@ -50,7 +50,15 @@ lifecycle_phases:
   - credential-access
   - impact
 mappings:
-  mitre_atlas: []
+  mitre_atlas:
+    - AML.T0010.001 # AI Supply Chain Compromise: AI Software
+    - AML.T0051.001 # LLM Prompt Injection: Indirect
+    - AML.T0051.002 # LLM Prompt Injection: Triggered
+    - AML.T0053 # AI Agent Tool Invocation
+    - AML.T0065 # LLM Prompt Crafting
+    - AML.T0093 # Prompt Infiltration via Public-Facing Application
+    - AML.T0098 # AI Agent Tool Credential Harvesting
+    - AML.T0119 # Exploit Automated Artifact Processing Pipeline
   mitre_attack: []
   owasp_llm: []
   owasp_asi: []
@@ -76,4 +84,4 @@ sources:
 added:
   date: 2026-10-10
   by: "MLSecOpsHub"
-last_updated: 2026-10-10
+last_updated: 2026-10-16

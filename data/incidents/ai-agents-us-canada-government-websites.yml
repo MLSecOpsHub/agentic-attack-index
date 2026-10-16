@@ -100,7 +100,8 @@ lifecycle_phases:
   - initial-access # Attempted only; the SQL-injection probes failed.
   - credential-access # Attempted reuse of exposed API keys; no success found.
 mappings:
-  mitre_atlas: []
+  mitre_atlas:
+    - AML.T0117 # Autonomous Attack-Path Adaptation (Transluce attributes the traffic to agents working public-data tasks; ATLAS includes agents that cross an authorization boundary while pursuing a benign objective)
   mitre_attack: []
   owasp_llm: []
   owasp_asi: []
@@ -143,4 +144,4 @@ sources:
 added:
   date: 2026-10-15
   by: "MLSecOpsHub"
-last_updated: 2026-10-15
+last_updated: 2026-10-16

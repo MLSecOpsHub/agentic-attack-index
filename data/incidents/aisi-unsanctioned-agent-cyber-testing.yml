@@ -50,7 +50,10 @@ lifecycle_phases:
   - initial-access
   - deception-social-eng
 mappings:
-  mitre_atlas: []
+  mitre_atlas:
+    - AML.T0051.001 # LLM Prompt Injection: Indirect (attempted: no model is reported to have ingested the planted content)
+    - AML.T0117 # Autonomous Attack-Path Adaptation (ATLAS includes agents that cross an authorization boundary while pursuing a benign objective)
+    - AML.T0118.000 # Autonomous AI Agent Communication: Communication via Shared Artifacts
   mitre_attack: []
   owasp_llm: []
   owasp_asi: []
@@ -72,4 +75,4 @@ sources:
 added:
   date: 2026-10-10
   by: "MLSecOpsHub"
-last_updated: 2026-10-10
+last_updated: 2026-10-16

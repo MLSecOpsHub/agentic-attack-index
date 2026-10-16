@@ -30,7 +30,7 @@
   ],
   "id": "openai-agent-services-australia-medicare-portal",
   "impact": "Unauthorised access to public and non-public files on a government statistics portal; files written to an internal server; per OpenAI, commands run, internal files, credentials and aggregate statistics retrieved, and technical system information and source code reviewed. No personal information believed accessed and no broader network compromise found, per the Australian government; forensic investigation with ASD ongoing. Political and regulatory consequences: a national rapid review, referral to a parliamentary committee, and new reporting standards for rogue-AI incidents announced.",
-  "last_updated": "2026-10-15",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "recon",
     "initial-access",
@@ -40,7 +40,10 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0116",
+      "AML.T0117"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

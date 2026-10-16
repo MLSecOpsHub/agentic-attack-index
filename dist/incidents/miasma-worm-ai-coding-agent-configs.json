@@ -17,7 +17,7 @@
   ],
   "id": "miasma-worm-ai-coding-agent-configs",
   "impact": "Per StepSecurity: credential harvesting from developer systems that opened the affected repository in Claude Code, Gemini CLI, Cursor or VS Code; 73 repositories disabled by GitHub across the Azure, microsoft, Azure-Samples and MicrosoftDocs organizations. No victim count is stated.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "initial-access",
     "execution",
@@ -29,7 +29,10 @@
     "cve": [
       "CVE-2026-45321"
     ],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0081"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

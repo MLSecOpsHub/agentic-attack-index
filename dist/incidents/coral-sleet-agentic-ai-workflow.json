@@ -31,7 +31,7 @@
   ],
   "id": "coral-sleet-agentic-ai-workflow",
   "impact": null,
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "resource-dev",
     "deception-social-eng"
@@ -39,7 +39,10 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0016.002",
+      "AML.T0054"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

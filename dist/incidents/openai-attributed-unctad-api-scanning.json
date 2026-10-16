@@ -16,7 +16,7 @@
   ],
   "id": "openai-attributed-unctad-api-scanning",
   "impact": "Per researcher Rowan Howard-Jones via The Register and The Verge: about 16,500 scans of the UNCTAD statistics API over roughly two months, repeatedly working around refused requests, with some data returned. No sensitive data exposed; the API key involved is public.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "recon",
     "execution"
@@ -24,7 +24,9 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0117"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

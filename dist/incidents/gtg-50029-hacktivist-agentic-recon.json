@@ -16,7 +16,7 @@
   ],
   "id": "gtg-50029-hacktivist-agentic-recon",
   "impact": "Per Anthropic: internal access to at least 14 of 42 tracked entities; about 140,000 records including users' political opinions taken from a political campaign management platform; party donor and member records, student application records including minors, and payment-provider data exposed; an estimated 12 to 26 GB of database dumps and a 15,000-message mailbox taken; a doxxing platform holding tens of millions of rows built by one person.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "recon",
     "resource-dev",
@@ -27,7 +27,9 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0016.002"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

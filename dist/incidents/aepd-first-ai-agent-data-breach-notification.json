@@ -30,7 +30,7 @@
   ],
   "id": "aepd-first-ai-agent-data-breach-notification",
   "impact": "Personal data could be modified and invoices accessed at one Spanish firm, per the AEPD as reported by SecurityWeek. Number of people affected not stated.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "initial-access",
     "impact"
@@ -38,7 +38,9 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0016.002"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

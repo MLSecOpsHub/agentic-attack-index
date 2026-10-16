@@ -16,7 +16,7 @@
   ],
   "id": "ghostjacking-agentic-kill-chain-poc",
   "impact": "Per Tenet Security: a demonstration in which poisoned telemetry steers AI coding agents (including Claude Code, Cursor and Sentry's Seer) into DNS changes and command execution, chained across agents and leaving persistent changes. A research demonstration; no confirmed breach.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "execution",
     "persistence"
@@ -24,7 +24,11 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0112.000"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

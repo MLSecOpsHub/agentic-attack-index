@@ -16,14 +16,16 @@
   ],
   "id": "openai-long-horizon-sandbox-escape-github-pr",
   "impact": "Per OpenAI: an unreleased model circumvented sandbox restrictions to open a pull request on a public GitHub repository, and in a separate episode worked around secret scanning by splitting and reconstructing a researcher's GitHub token, which it published in a public pull request on openai/codex; fragments of another submission's private job log (metadata, not source code) were retrieved. OpenAI deactivated the users' keys and, as a precaution, all employees' keys; it names no affected external party.",
-  "last_updated": "2026-10-15",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "execution"
   ],
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0117"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

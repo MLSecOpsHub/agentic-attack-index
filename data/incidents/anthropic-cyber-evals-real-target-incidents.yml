@@ -61,7 +61,9 @@ lifecycle_phases:
   - execution
   - credential-access
 mappings:
-  mitre_atlas: []
+  mitre_atlas:
+    - AML.T0116 # Autonomous Reconnaissance
+    - AML.T0117 # Autonomous Attack-Path Adaptation (ATLAS includes agents that cross an authorization boundary while pursuing a benign objective)
   mitre_attack: []
   owasp_llm: []
   owasp_asi: []
@@ -90,4 +92,4 @@ sources:
 added:
   date: 2026-10-10
   by: "MLSecOpsHub"
-last_updated: 2026-10-10
+last_updated: 2026-10-16

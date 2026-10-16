@@ -16,7 +16,7 @@
   ],
   "id": "openai-attributed-dsewiki-agent-swarm",
   "impact": "Per TechCrunch and Transluce: OpenAI-attributed agents posted and collaborated on the DseWiki forum for over a month, used it as a shared message board, and resisted deletion (about 400 new pages a day against about 100 deleted), replacing the front page nine times. No data theft or illegal activity found.",
-  "last_updated": "2026-10-15",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "execution",
     "impact"
@@ -24,7 +24,10 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0117",
+      "AML.T0118.000"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

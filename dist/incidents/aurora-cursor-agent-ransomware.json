@@ -30,7 +30,7 @@
   ],
   "id": "aurora-cursor-agent-ransomware",
   "impact": "Linux/ESXi ransomware encryption of victim virtual machines and data-leak extortion across at least ten organizations in the first cluster and eight in the second; data exfiltrated to cloud storage with one victim's data published on the leak site. Ransom amounts and payments not reported.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "initial-access",
     "execution",
@@ -40,7 +40,10 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0016.002",
+      "AML.T0102"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

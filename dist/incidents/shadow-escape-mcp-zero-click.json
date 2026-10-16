@@ -16,7 +16,7 @@
   ],
   "id": "shadow-escape-mcp-zero-click",
   "impact": "Per Cyber Security News and Operant AI: a zero-click technique that could silently exfiltrate sensitive data from MCP-connected AI agents without user interaction. A demonstration; no confirmed in-the-wild victims.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "execution",
     "exfiltration"
@@ -24,7 +24,11 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0086"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

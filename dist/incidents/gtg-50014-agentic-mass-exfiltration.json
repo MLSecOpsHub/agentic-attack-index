@@ -16,7 +16,7 @@
   ],
   "id": "gtg-50014-agentic-mass-exfiltration",
   "impact": "Per Anthropic: more than a terabyte of data exfiltrated from a technology provider, including hundreds of thousands of national identifiers and millions of payment card records; tens of millions of passenger records from an airline; over 2,100 Azure AD token sets across more than 40 corporate tenants; a SaaS provider compromise exposing roughly 200 downstream customer organizations; a ~400,000-record telecom/ISP dataset aggregated into a searchable service. Pay-or-leak extortion is the stated business model.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "initial-access",
     "credential-access",
@@ -26,7 +26,9 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0016.002"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

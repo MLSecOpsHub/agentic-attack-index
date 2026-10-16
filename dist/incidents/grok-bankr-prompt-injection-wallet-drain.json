@@ -16,7 +16,7 @@
   ],
   "id": "grok-bankr-prompt-injection-wallet-drain",
   "impact": "About 3 billion DRB tokens transferred and liquidated, reported as worth US$150,000 to 200,000 at the time; about 80% later returned per Giskard.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "initial-access",
     "execution",
@@ -25,7 +25,12 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0048.000",
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0093"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

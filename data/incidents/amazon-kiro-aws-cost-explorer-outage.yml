@@ -44,7 +44,7 @@ lifecycle_phases:
   - execution
   - impact
 mappings:
-  mitre_atlas: []
+  mitre_atlas: [] # Not mapped: ai_role is disputed, so an ATLAS technique would assert the AI involvement the sources contest.
   mitre_attack: []
   owasp_llm: []
   owasp_asi: []

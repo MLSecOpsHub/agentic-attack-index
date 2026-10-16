@@ -16,7 +16,7 @@
   ],
   "id": "postmark-mcp-bcc-backdoor",
   "impact": "Per Koi Security and Snyk, every email sent through version 1.0.16 or later was blind-copied to an attacker-controlled address. That mail could include password resets, invoices and internal correspondence. Koi estimates about 300 organisations and 3,000-15,000 emails a day were affected; no measured victim count is published.",
-  "last_updated": "2026-10-15",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "resource-dev",
     "initial-access",
@@ -25,7 +25,18 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0010.005",
+      "AML.T0011.002",
+      "AML.T0048",
+      "AML.T0086",
+      "AML.T0109",
+      "AML.T0110.001",
+      "AML.T0115.002"
+    ],
+    "mitre_atlas_case_studies": [
+      "AML.CS0053"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

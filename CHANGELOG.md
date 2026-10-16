@@ -7,6 +7,33 @@ dataset version tracks `package.json` and `CITATION.cff` (kept in sync by
 
 ## [Unreleased]
 
+### Added
+- MITRE ATLAS technique mappings for the whole catalog. 91 of 99 records now
+  carry `mappings.mitre_atlas`, up from 14, using 58 distinct techniques from
+  ATLAS 2026.09. The other 8 are left empty on purpose, with a comment: 5 have
+  `ai_role: disputed`, and 3 describe an agent acting unsafely on its own in a
+  way no ATLAS technique covers. Where MITRE has published a case study of the
+  incident, the record includes the AI-native techniques that case study
+  lists. Four more records now link their ATLAS case study: Morris II
+  (AML.CS0024), Amazon Q (AML.CS0047), postmark-mcp (AML.CS0053) and
+  PROMPTSTEAL/LAMEHUG (AML.CS0044), so 10 records link one. Two independent
+  reviews checked every mapping against the record text before release. The
+  method is written down in `docs/atlas-mapping.md`.
+- `schema/mitre-atlas.json`: the IDs of one ATLAS release (2026.09), generated
+  from MITRE's release file by `npm run atlas:update -- <file>`.
+  `npm run validate` now fails on any `mitre_atlas` or
+  `mitre_atlas_case_studies` ID that is not in that release, and on ATLAS
+  techniques that ATLAS marks as adapted from ATT&CK (those belong in
+  `mitre_attack`). Tests cover both rules.
+
+### Changed
+- Corrections to the 14 records mapped earlier: AML.T0053 AI Agent Tool
+  Invocation is removed from GTG-1002 and GTG-2002, because it describes using
+  a victim's or hijacked agent and both actors ran their own (MITRE's
+  AML.CS0069 maps GTG-1002 as AML.T0103 Deploy AI Agent). Amazon Q's AML.T0051
+  is now the more specific AML.T0051.000, as in AML.CS0047. Every other
+  earlier mapping is kept, with techniques added.
+
 ## [0.7.1] - 2026-10-15
 
 ### Security

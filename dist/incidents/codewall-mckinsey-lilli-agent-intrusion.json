@@ -16,7 +16,7 @@
   ],
   "id": "codewall-mckinsey-lilli-agent-intrusion",
   "impact": "Per CodeWall: read and write access to the production database behind McKinsey's Lilli platform reached without credentials in about two hours, exposing tens of millions of chat messages, hundreds of thousands of files, tens of thousands of user accounts and workspaces, system-prompt configurations and millions of retrieval document chunks. McKinsey remediated.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "initial-access",
     "credential-access"
@@ -24,7 +24,10 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0117",
+      "AML.T0132"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

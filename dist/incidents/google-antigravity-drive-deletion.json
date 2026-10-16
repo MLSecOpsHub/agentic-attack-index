@@ -16,7 +16,7 @@
   ],
   "id": "google-antigravity-drive-deletion",
   "impact": "A user's D: drive partition wiped while clearing a project cache; deletion bypassed the Recycle Bin and files were unrecoverable, though most were backed up elsewhere. Other users reported similar project damage.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "execution",
     "impact"
@@ -24,7 +24,9 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0101"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

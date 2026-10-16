@@ -16,7 +16,7 @@
   ],
   "id": "sysdig-marimo-ai-agent-database-exfiltration",
   "impact": "Per Sysdig: an internal PostgreSQL database dumped after entry through a Marimo notebook, with the full chain under an hour. No victim identified.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "initial-access",
     "execution",
@@ -28,7 +28,11 @@
     "cve": [
       "CVE-2026-39987"
     ],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0016.002",
+      "AML.T0102",
+      "AML.T0117"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

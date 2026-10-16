@@ -16,7 +16,7 @@
   ],
   "id": "gtg-10007-agent-swarm-intrusions",
   "impact": "Per Anthropic: hundreds of megabytes of bulk student personal data taken from an education-technology company's cloud storage; citizen records (names, phone numbers, home addresses) from a Southeast Asian government agency; access to a retail company's production systems with the ability to modify the live environment; multiple previously unknown vulnerabilities discovered.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "recon",
     "resource-dev",
@@ -27,7 +27,11 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0016.002",
+      "AML.T0118.001",
+      "AML.T0124"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

@@ -40,6 +40,9 @@ mappings:
   mitre_atlas:
     - AML.T0051.001 # LLM Prompt Injection: Indirect
     - AML.T0057 # LLM Data Leakage
+    - AML.T0065 # LLM Prompt Crafting
+    - AML.T0077 # LLM Response Rendering
+    - AML.T0093 # Prompt Infiltration via Public-Facing Application
   mitre_attack: []
   owasp_llm:
     - "LLM01" # Prompt injection (OWASP Top 10 for LLM Apps)
@@ -72,4 +75,4 @@ sources:
 added:
   date: 2026-08-13
   by: "MLSecOpsHub"
-last_updated: 2026-08-13
+last_updated: 2026-10-16

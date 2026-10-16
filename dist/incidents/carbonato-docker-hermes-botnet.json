@@ -31,7 +31,7 @@
   ],
   "id": "carbonato-docker-hermes-botnet",
   "impact": "Per ThreatDown: hosts with exposed Docker APIs taken over through privileged containers, kept persistent and used for cryptocurrency mining, with a Hermes agent installed as an operator-tasked post-compromise tool directed at AI API keys and other credentials. Infection counts and stolen data are not reported. On 2026-09-03 six of seven known registries, the phishing sites, the CDN and the crew's LLM gateway were online.",
-  "last_updated": "2026-10-15",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "initial-access",
     "execution",
@@ -42,7 +42,12 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0016.002",
+      "AML.T0054",
+      "AML.T0081",
+      "AML.T0103"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

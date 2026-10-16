@@ -67,7 +67,19 @@ lifecycle_phases:
   - persistence
   - exfiltration
 mappings:
-  mitre_atlas: []
+  mitre_atlas:
+    - AML.T0017.001 # Develop Capabilities: Autonomous Exploit Development
+    - AML.T0025 # Exfiltration via Cyber Means
+    - AML.T0072 # Cyber Communication Channel
+    - AML.T0075 # Enterprise Resource Discovery
+    - AML.T0089 # Enterprise Environment Discovery
+    - AML.T0102 # Generate Malicious Commands
+    - AML.T0116 # Autonomous Reconnaissance
+    - AML.T0117 # Autonomous Attack-Path Adaptation (ATLAS includes agents that cross an authorization boundary while pursuing a benign objective)
+    - AML.T0118.000 # Autonomous AI Agent Communication: Communication via Shared Artifacts
+    - AML.T0119 # Exploit Automated Artifact Processing Pipeline
+    - AML.T0120 # AI Artifact Repository
+    - AML.T0121 # AI Agent Environment Reconstruction
   mitre_atlas_case_studies:
     - AML.CS0068 # ATLAS case study "Autonomous OpenAI Evaluation Agents Compromise Hugging Face Infrastructure" (ATLAS v2026.09).
   mitre_attack: []
@@ -121,4 +133,4 @@ sources:
 added:
   date: 2026-10-09
   by: "MLSecOpsHub"
-last_updated: 2026-10-15
+last_updated: 2026-10-16

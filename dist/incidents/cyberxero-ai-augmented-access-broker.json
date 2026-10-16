@@ -31,7 +31,7 @@
   ],
   "id": "cyberxero-ai-augmented-access-broker",
   "impact": "Per SOCRadar: data on more than 628,000 Ukrainian individuals held by the actor after confirmed exfiltration at four Ukrainian organisations, including 564,073 subscriber records (with home addresses and account numbers) and 213,340 access-log entries from a district heating provider in Kharkiv; one automated run scanned 4,708 targets and confirmed access to 429 WordPress administration panels in 61 seconds; administrator passwords overwritten at e-commerce targets; more than 40 affected organisations worldwide, including in Ukraine, Poland and China, with Pakistani entities targeted without a confirmed result. SOCRadar warns that the Kharkiv data could pose a physical risk to identifiable civilians. No evidence of the access being sold was recovered.",
-  "last_updated": "2026-10-15",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "resource-dev",
     "recon",
@@ -49,7 +49,10 @@
       "CVE-2026-4815",
       "CVE-2015-1397"
     ],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0016.002",
+      "AML.T0054"
+    ],
     "mitre_attack": [
       "T1595.002",
       "T1590.002",

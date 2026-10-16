@@ -16,7 +16,7 @@
   ],
   "id": "mandiant-hijacked-coding-assistant-shai-hulud",
   "impact": "Per Mandiant: proprietary product source code and repository secrets were exfiltrated from an unnamed SaaS provider; the Shai-Hulud worm was deployed across about 100 internal code repositories; and a package in the organisation's official namespace was poisoned, infecting a second employee. No data volume or financial figure is given.",
-  "last_updated": "2026-10-15",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "resource-dev",
     "initial-access",
@@ -27,7 +27,10 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0011.001",
+      "AML.T0112.000"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

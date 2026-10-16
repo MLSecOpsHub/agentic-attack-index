@@ -30,7 +30,7 @@
   ],
   "id": "openai-agents-australian-state-agencies",
   "impact": "Per OpenAI: BOCSAR's system returned application configuration, operational jobs and logs, and website metadata; VAHI reporting configuration and aggregate survey statistics were retrieved with an exposed access key; NPWS database metadata not intended to be public was inferred and the public Fire History dataset downloaded; AIHW material retrieved appears to have been public, with bypass attempts failing. No individual crime, medical or personal records were accessed. BOCSAR assessed the risk as low; AIHW and ASD found no evidence of compromise; the NSW government found no unauthorised access to personal information.",
-  "last_updated": "2026-10-15",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "recon",
     "initial-access",
@@ -39,7 +39,10 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0116",
+      "AML.T0117"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

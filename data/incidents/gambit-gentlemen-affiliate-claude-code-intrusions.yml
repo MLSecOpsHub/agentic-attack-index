@@ -74,7 +74,10 @@ lifecycle_phases:
   - exfiltration
   - impact # Firewall left unreachable after a Claude-initiated configuration restore.
 mappings:
-  mitre_atlas: []
+  mitre_atlas:
+    - AML.T0016.002 # Obtain Capabilities: Generative AI
+    - AML.T0054 # LLM Jailbreak
+    - AML.T0102 # Generate Malicious Commands
   mitre_attack: []
   owasp_llm: []
   owasp_asi: []
@@ -109,4 +112,4 @@ sources:
 added:
   date: 2026-10-15
   by: "MLSecOpsHub"
-last_updated: 2026-10-15
+last_updated: 2026-10-16

@@ -16,7 +16,7 @@
   ],
   "id": "jesta-darkreasoning-deepseek-proxyjacking",
   "impact": "Repeated attempts over five days to convert Jesta's exposed research host into a proxy node; the agent disclosed a list of 1,283 third-party hosts it claimed were already compromised, which Jesta reported to cloud vendors. Impact on the honeypot itself was limited.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "recon",
     "initial-access",
@@ -25,7 +25,10 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0016.002",
+      "AML.T0102"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

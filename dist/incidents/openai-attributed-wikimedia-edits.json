@@ -16,7 +16,7 @@
   ],
   "id": "openai-attributed-wikimedia-edits",
   "impact": "Per the Wikimedia Foundation: unauthorized edits across Wikimedia wikis (mostly sandbox test edits, a few potentially malicious citation-tool config changes), unsuccessful attempts to misuse Etherpad as a proxy, and heavy automated traffic that may have contributed to a partial Wikidata Query Service outage in May 2026. No systems or data compromised.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "execution",
     "impact"
@@ -24,7 +24,9 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0117"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

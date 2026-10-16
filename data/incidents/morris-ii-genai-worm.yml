@@ -44,8 +44,16 @@ lifecycle_phases:
   - impact
 mappings:
   mitre_atlas:
+    # AML.CS0024 also lists AML.T0048.003 User Harm; not mapped because this was a lab demonstration with no real-world victims.
+    - AML.T0040 # AI Model Inference API Access
+    - AML.T0051.000 # LLM Prompt Injection: Direct
     - AML.T0051.001 # LLM Prompt Injection: Indirect
+    - AML.T0051.002 # LLM Prompt Injection: Triggered
+    - AML.T0053 # AI Agent Tool Invocation
     - AML.T0057 # LLM Data Leakage
+    - AML.T0061 # LLM Prompt Self-Replication
+  mitre_atlas_case_studies:
+    - AML.CS0024 # ATLAS case study "Morris II Worm: RAG-Based Attack" (ATLAS v2026.09).
   mitre_attack: []
   owasp_llm: []
   owasp_asi: []
@@ -75,4 +83,4 @@ sources:
 added:
   date: 2026-08-13
   by: "MLSecOpsHub"
-last_updated: 2026-08-13
+last_updated: 2026-10-16

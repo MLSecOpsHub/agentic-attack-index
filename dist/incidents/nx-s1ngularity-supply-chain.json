@@ -16,7 +16,7 @@
   ],
   "id": "nx-s1ngularity-supply-chain",
   "impact": "Per Wiz: over a thousand valid GitHub tokens, dozens of valid cloud credentials and NPM tokens, and roughly twenty thousand additional files leaked; a subsequent wave made over 5,500 private repositories public across 400+ users and organisations. Malware also attempted host lockout via a shutdown command appended to shell startup files.",
-  "last_updated": "2026-08-12",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "resource-dev",
     "initial-access",
@@ -29,7 +29,10 @@
     "aiid": [],
     "cve": [],
     "mitre_atlas": [
-      "AML.T0053"
+      "AML.T0011.001",
+      "AML.T0053",
+      "AML.T0098",
+      "AML.T0103"
     ],
     "mitre_attack": [
       "T1567.001"

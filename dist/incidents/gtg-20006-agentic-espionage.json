@@ -16,7 +16,7 @@
   ],
   "id": "gtg-20006-agentic-espionage",
   "impact": "Per Anthropic: at least three hospitality vendors compromised; mail records exfiltrated from at least eight organizations; hundreds of gigabytes of stolen data extracted and organized with AI, including more than 300,000 national identity records and commercial registry data on more than half a million companies from a North African government technology authority.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "initial-access",
     "credential-access",
@@ -26,7 +26,10 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0016.002",
+      "AML.T0017.002"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

@@ -16,7 +16,7 @@
   ],
   "id": "notion-ai-web-search-exfiltration",
   "impact": "Per CodeIntegrity: a proof-of-concept in which Notion 3.0's AI web-search tool is abused to send private workspace data to an external server. No confirmed real-world exploitation.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "execution",
     "exfiltration"
@@ -24,7 +24,11 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0086"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

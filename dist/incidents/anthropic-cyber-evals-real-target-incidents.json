@@ -16,7 +16,7 @@
   ],
   "id": "anthropic-cyber-evals-real-target-incidents",
   "impact": "Per Anthropic: a real company's application and infrastructure credentials and several hundred rows of production data accessed; a package live on a public registry for about one hour that ran on 15 real systems and yielded a security company's credentials, which were used to reach further infrastructure; about 9,000 targets scanned and one company's internet-facing application compromised; a fourth, earlier incident not analysed in depth. No victim is named.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "recon",
     "initial-access",
@@ -26,7 +26,10 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0116",
+      "AML.T0117"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

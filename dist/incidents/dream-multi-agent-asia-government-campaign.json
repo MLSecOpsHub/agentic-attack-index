@@ -31,7 +31,7 @@
   ],
   "id": "dream-multi-agent-asia-government-campaign",
   "impact": "Per Dream Research Labs (claims from a recovered operator archive, not independently verified): about 1,395 files produced, 85 cracked employee accounts, more than 2,500 personnel records exfiltrated, a persistent foothold in state infrastructure and backdoors on government web applications. Taiwan's MODA confirms AI-agent attacks on government agencies, handled by affected units.",
-  "last_updated": "2026-10-15",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "recon",
     "initial-access",
@@ -42,7 +42,15 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0016.002",
+      "AML.T0025",
+      "AML.T0054",
+      "AML.T0116",
+      "AML.T0117",
+      "AML.T0118.001",
+      "AML.T0124"
+    ],
     "mitre_atlas_case_studies": [
       "AML.CS0071"
     ],

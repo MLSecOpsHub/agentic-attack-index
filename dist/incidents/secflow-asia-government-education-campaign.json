@@ -16,7 +16,7 @@
   ],
   "id": "secflow-asia-government-education-campaign",
   "impact": "Per Hunt.io: command execution and credential collection on a district government environment including administrative and health-related records, access to a Chinese education AI platform's data including student information, and root database and admin-level access to a university campus-card environment. One recruitment system should not be described as compromised.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "recon",
     "initial-access",
@@ -26,7 +26,10 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0016.002",
+      "AML.T0124"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

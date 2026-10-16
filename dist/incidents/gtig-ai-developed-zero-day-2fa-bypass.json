@@ -16,14 +16,16 @@
   ],
   "id": "gtig-ai-developed-zero-day-2fa-bypass",
   "impact": "No confirmed victims. GTIG states its counter-discovery and vendor disclosure may have prevented a planned mass exploitation event.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "resource-dev"
   ],
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0016.002"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []

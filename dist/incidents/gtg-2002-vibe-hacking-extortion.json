@@ -16,7 +16,7 @@
   ],
   "id": "gtg-2002-vibe-hacking-extortion",
   "impact": "Compromise of personal records including healthcare data, financial information and government credentials; extortion with direct ransom demands occasionally exceeding US$500,000 (reported range US$75,000-500,000 in Bitcoin).",
-  "last_updated": "2026-08-12",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "recon",
     "initial-access",
@@ -29,9 +29,8 @@
     "aiid": [],
     "cve": [],
     "mitre_atlas": [
-      "AML.T0053",
-      "AML.T0102",
-      "AML.T0016.002"
+      "AML.T0016.002",
+      "AML.T0102"
     ],
     "mitre_attack": [],
     "owasp_asi": []

@@ -62,7 +62,8 @@ lifecycle_phases:
   - resource-dev
   - deception-social-eng
 mappings:
-  mitre_atlas: []
+  mitre_atlas:
+    - AML.T0016.002 # Obtain Capabilities: Generative AI
   mitre_attack: []
   owasp_asi: []
   cve: []
@@ -95,4 +96,4 @@ revisions:
       origin" but the cited sources state regime affiliation and funding, not
       where the operators were located. Re-typed as sponsor-attribution. Added
       a US victim-location point and targets.countries from the same source.
-last_updated: 2026-09-11
+last_updated: 2026-10-16

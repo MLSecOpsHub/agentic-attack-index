@@ -16,7 +16,7 @@
   ],
   "id": "supabase-mcp-database-leak",
   "impact": "Per General Analysis: an assistant on the Supabase MCP server could be induced via support-ticket content to read a private credentials table and write it into a customer-visible thread. Demonstrated on dummy data; no in-the-wild exploitation.",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-16",
   "lifecycle_phases": [
     "execution",
     "exfiltration"
@@ -24,7 +24,13 @@
   "mappings": {
     "aiid": [],
     "cve": [],
-    "mitre_atlas": [],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0086",
+      "AML.T0093",
+      "AML.T0098"
+    ],
     "mitre_attack": [],
     "owasp_asi": [],
     "owasp_llm": []
