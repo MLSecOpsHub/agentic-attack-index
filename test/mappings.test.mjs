@@ -5,7 +5,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import Ajv2020 from 'ajv/dist/2020.js';
 import addFormats from 'ajv-formats';
-import { listIncidentFiles, loadAtlas, loadIncident, loadSchema } from '../scripts/lib.mjs';
+import { listIncidentFiles, loadAtlas, loadIncident, loadOwaspAsi, loadSchema } from '../scripts/lib.mjs';
 import { mappingErrors } from '../scripts/rules.mjs';
 import { buildStixBundle } from '../scripts/stix.mjs';
 
@@ -97,5 +97,46 @@ test('every real record maps only published, AI-native ATLAS ids', () => {
   for (const file of listIncidentFiles()) {
     const inc = loadIncident(file);
     assert.deepEqual(mappingErrors(inc, inc.id, atlas).errors, []);
+  }
+});
+
+// --- OWASP Top 10 for Agentic Applications (mappings.owasp_asi) --------------
+
+test('owasp_asi accepts ASI01–ASI10 and rejects the old T-notation and out-of-range ids', () => {
+  assert.equal(validate(base({ owasp_asi: ['ASI01', 'ASI10'] })), true, JSON.stringify(validate.errors));
+  for (const bad of ['T1', 'T01', 'ASI00', 'ASI11', 'asi01', 'ASI1', 'ASI010']) {
+    assert.equal(validate(base({ owasp_asi: [bad] })), false, `${bad} should be rejected`);
+  }
+});
+
+test('owasp-asi.json pins an edition and its ids are exactly what the schema pattern accepts', () => {
+  const pin = loadOwaspAsi();
+  assert.match(pin.version, /^\d{4}$/);
+  assert.match(pin.published, /^\d{4}-\d{2}$/);
+  assert.match(pin.source, /^https:\/\/genai\.owasp\.org\//);
+  const pattern = new RegExp(loadSchema().properties.mappings.properties.owasp_asi.items.pattern);
+  const ids = Object.keys(pin.ids);
+  assert.equal(ids.length, 10);
+  for (const id of ids) {
+    assert.match(id, pattern);
+    assert.equal(typeof pin.ids[id], 'string');
+    assert.ok(pin.ids[id].length > 0);
+  }
+  // Every id the pattern could accept is in the pin, so pattern and pin cannot drift apart.
+  const accepted = [];
+  for (let n = 0; n <= 99; n++) {
+    const id = `ASI${String(n).padStart(2, '0')}`;
+    if (pattern.test(id)) accepted.push(id);
+  }
+  assert.deepEqual(accepted, ids);
+});
+
+test('every real record carries only pinned OWASP ASI ids', () => {
+  const ids = new Set(Object.keys(loadOwaspAsi().ids));
+  for (const file of listIncidentFiles()) {
+    const inc = loadIncident(file);
+    for (const id of inc.mappings?.owasp_asi ?? []) {
+      assert.ok(ids.has(id), `${inc.id}: owasp_asi "${id}" is not in schema/owasp-asi.json`);
+    }
   }
 });

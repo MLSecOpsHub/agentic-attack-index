@@ -7,7 +7,21 @@ dataset version tracks `package.json` and `CITATION.cff` (kept in sync by
 
 ## [Unreleased]
 
+### Added
+- `schema/owasp-asi.json`: a hand-maintained pin of the OWASP Top 10 for
+  Agentic Applications (2026 edition, published December 2025) with the ten
+  ids and titles. `npm run validate` reports the edition, and a test checks
+  that the schema pattern accepts exactly the pinned ids.
+- `docs/owasp-asi-mapping.md`: the evidence threshold and conventions for
+  `mappings.owasp_asi`, parallel to `docs/atlas-mapping.md`.
+
 ### Changed
+- `mappings.owasp_asi` now maps to the OWASP Top 10 for Agentic Applications
+  and accepts only `ASI01`–`ASI10` (issue #29). The schema used to describe
+  the T-numbered threats of the 2025 Agentic AI Threats and Mitigations
+  guide and had no pattern, so either notation validated. The field is empty
+  on all 99 records and stays empty: mapping records is a separate editorial
+  pass, and empty is better than inferred.
 - `clinejection-cline-triage-npm-publish`: `date_disclosed` corrected from
   2026-02-09 to 2026-02-17 (issue #27). The old value was the researcher's
   public disclosure of the CI/CD vulnerability; the incident the record

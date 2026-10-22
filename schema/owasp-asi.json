@@ -1,0 +1,19 @@
+{
+  "$comment": "Hand-maintained pin of the OWASP Top 10 for Agentic Applications (OWASP GenAI Security Project, Agentic Security Initiative). OWASP publishes no machine-readable release file, so the ids and titles below are copied from the PDF's table of contents. Update version, published and source together when moving to a newer edition.",
+  "version": "2026",
+  "published": "2025-12",
+  "source": "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/",
+  "license": "CC BY-SA 4.0 (OWASP GenAI Security Project)",
+  "ids": {
+    "ASI01": "Agent Goal Hijack",
+    "ASI02": "Tool Misuse and Exploitation",
+    "ASI03": "Identity and Privilege Abuse",
+    "ASI04": "Agentic Supply Chain Vulnerabilities",
+    "ASI05": "Unexpected Code Execution (RCE)",
+    "ASI06": "Memory & Context Poisoning",
+    "ASI07": "Insecure Inter-Agent Communication",
+    "ASI08": "Cascading Failures",
+    "ASI09": "Human-Agent Trust Exploitation",
+    "ASI10": "Rogue Agents"
+  }
+}

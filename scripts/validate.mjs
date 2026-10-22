@@ -10,6 +10,7 @@ import { parse } from 'yaml';
 import {
   listIncidentFiles,
   loadAtlas,
+  loadOwaspAsi,
   loadIncident,
   loadSchema,
   loadTaxonomies,
@@ -24,6 +25,7 @@ const ajv = new Ajv2020({ allErrors: true, strict: true });
 addFormats(ajv);
 const validate = ajv.compile(schema);
 const atlas = loadAtlas();
+const owaspAsi = loadOwaspAsi();
 
 // --- taxonomy <-> schema enum cross-check -----------------------------------
 const enumFromSchema = {
@@ -180,5 +182,6 @@ console.log(
     (templates ? ` + ${templates} template(s)` : '') +
     ` valid against schema, ` +
     `${taxonomies.length} taxonomy file(s) in sync, ids unique, ` +
-    `ATLAS ids checked against ATLAS ${atlas.version}.`
+    `ATLAS ids checked against ATLAS ${atlas.version}, ` +
+    `OWASP ASI ids against the Agentic Top 10 ${owaspAsi.version} edition.`
 );

@@ -150,7 +150,7 @@ mappings:
   mitre_atlas_case_studies: [] # ATLAS case studies of this incident, e.g. AML.CS0059
   mitre_attack: []
   owasp_llm: [] # OWASP Top 10 for LLM Apps, e.g. LLM01
-  owasp_asi: [] # OWASP Agentic Security Initiative ids
+  owasp_asi: [] # OWASP Top 10 for Agentic Applications, ASI01–ASI10 (pinned in schema/owasp-asi.json; method in docs/owasp-asi-mapping.md)
   cve: []
   aiid: []
 
