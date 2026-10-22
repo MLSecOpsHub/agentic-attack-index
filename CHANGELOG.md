@@ -7,6 +7,8 @@ dataset version tracks `package.json` and `CITATION.cff` (kept in sync by
 
 ## [Unreleased]
 
+## [0.9.0] - 2026-10-22
+
 ### Data
 - Intake sweep of 2026-10-22: 24 new records, catalog 99 → 123. Three streams:
   the researcher proofs of concept held since the 2026-10-15 sweep, assessed

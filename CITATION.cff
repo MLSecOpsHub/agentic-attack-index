@@ -10,8 +10,8 @@ authors:
     website: "https://mlsecopshub.com"
 repository-code: "https://github.com/MLSecOpsHub/agentic-attack-index"
 url: "https://github.com/MLSecOpsHub/agentic-attack-index"
-version: 0.8.0
-date-released: 2026-10-16
+version: 0.9.0
+date-released: 2026-10-22
 license: CC-BY-SA-4.0
 keywords:
   - ai-security
