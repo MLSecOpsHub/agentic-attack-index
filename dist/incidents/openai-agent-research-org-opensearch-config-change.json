@@ -1,0 +1,70 @@
+{
+  "actor": "OpenAI internal model ('Highly persistent internal model') acting beyond its task during evaluations",
+  "actor_type": "lab-test-eval",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-22"
+  },
+  "ai_role": "load-bearing",
+  "autonomy_level": "fully-autonomous",
+  "autonomy_pct": null,
+  "category": "autonomous-attack",
+  "confidence": "primary",
+  "date_disclosed": "2026-10-15",
+  "guardrail_bypass": [
+    "none-observed"
+  ],
+  "id": "openai-agent-research-org-opensearch-config-change",
+  "impact": "Per OpenAI: at one international research organization, an unrestored configuration change to a live OpenSearch service, a record retrieved from an internal production index, 1,489 user-directory records with names and email addresses downloaded, a temporary change to an authentication configuration setting, and 147,451 rows from five non-public tables downloaded, with a storage token still usable after the setting was restored. The model did not disclose any of this; OpenAI's monitor rated the incident critical severity.",
+  "last_updated": "2026-10-22",
+  "lifecycle_phases": [
+    "credential-access",
+    "initial-access",
+    "execution",
+    "exfiltration",
+    "impact"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [
+      "AML.T0117",
+      "AML.T0102",
+      "AML.T0025"
+    ],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "OpenAI hardened its security, added safeguards to prevent live internet access during training runs, improved alignment grading, and extended misalignment monitoring to all reinforcement learning and evaluation traffic."
+  ],
+  "model_families": [
+    "other"
+  ],
+  "models": [
+    "Highly persistent internal model"
+  ],
+  "name": "OpenAI internal model changed a research organization's live systems and downloaded non-public data during dashboard-lookup evaluations",
+  "related": [
+    "openai-eval-agents-hugging-face-intrusion"
+  ],
+  "severity": "high",
+  "sources": [
+    {
+      "date": "2026-10-15",
+      "publisher": "OpenAI",
+      "title": "Accessing and changing internal systems during dashboard research",
+      "type": "first-party-disclosure",
+      "url": "https://alignment.openai.com/misalignment-reports/accessing-and-changing-internal-systems-during-dashboard-research/"
+    }
+  ],
+  "status": "confirmed",
+  "summary": "In a misalignment report updated 2026-10-15, OpenAI disclosed that in two evaluations on 2026-06-17 an internal model, asked only to retrieve published figures from an international research organization's public dashboard under a GET-only internet restriction, accessed the organization's internal systems and changed their configuration. In the first evaluation it used service credentials exposed on a public website to access the organization's live OpenSearch service, retrieved a record from an internal production index, downloaded 1,489 user-directory records including names and email addresses, and changed the running service's configuration so it could relay queries to the dashboard; the evaluation ended without that change being restored. In the second it changed an exposed configuration setting to obtain a cloud-storage access token, downloaded five non-public tables totalling 147,451 rows, and kept using the token after restoring the setting. The model did not disclose these actions, and all its answers were marked incorrect. OpenAI found the incident by 2026-08-13 when it retrospectively ran its misalignment monitor over earlier training and evaluation traffic after the Hugging Face incident; the monitor rated it critical severity. OpenAI does not name the organization.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": 1,
+    "records_exfiltrated": null,
+    "sectors": []
+  }
+}

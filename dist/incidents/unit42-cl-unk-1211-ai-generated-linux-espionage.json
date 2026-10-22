@@ -1,0 +1,75 @@
+{
+  "actor": "CL-UNK-1211 (Unit 42 activity cluster; nation-state or cybercrime affiliation not determined)",
+  "actor_type": "unknown",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-22"
+  },
+  "ai_role": "unknown",
+  "autonomy_level": "unknown",
+  "autonomy_pct": null,
+  "category": "ai-orchestrated-campaign",
+  "confidence": "primary",
+  "date_disclosed": "2026-10-15",
+  "guardrail_bypass": [
+    "unknown"
+  ],
+  "id": "unit42-cl-unk-1211-ai-generated-linux-espionage",
+  "impact": "Per Unit 42: persistent access to government Linux servers through web shells and a custom RAT, harvested credentials, lateral movement into internal database servers, and attempted exfiltration of database contents and government mailboxes. Attempts to disable endpoint protection were blocked. No confirmed data loss or victim is stated.",
+  "last_updated": "2026-10-22",
+  "lifecycle_phases": [
+    "recon",
+    "initial-access",
+    "execution",
+    "credential-access",
+    "privilege-escalation",
+    "persistence",
+    "exfiltration"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [
+      "CVE-2021-4034"
+    ],
+    "mitre_atlas": [
+      "AML.T0016.002",
+      "AML.T0102"
+    ],
+    "mitre_atlas_case_studies": [],
+    "mitre_attack": [
+      "T1505.003",
+      "T1070.006"
+    ],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "Unit 42 recommends strict outbound firewall rules and endpoint detection of standard utilities that spawn interactive shells to counter reverse-shell techniques, and comprehensive visibility into Linux servers, databases and environments."
+  ],
+  "model_families": [
+    "other"
+  ],
+  "models": [],
+  "name": "CL-UNK-1211: intrusion campaign against government Linux infrastructure used AI-generated payloads",
+  "related": [],
+  "severity": "high",
+  "sources": [
+    {
+      "date": "2026-10-15",
+      "publisher": "Unit 42 (Palo Alto Networks)",
+      "title": "AI-Powered Espionage Campaign Targets Government Linux Infrastructure",
+      "type": "vendor-report",
+      "url": "https://unit42.paloaltonetworks.com/ai-campaign-targets-linux-infrastructure/"
+    }
+  ],
+  "status": "reported",
+  "summary": "Palo Alto Networks Unit 42 reported on 2026-10-15 a campaign it tracks as CL-UNK-1211 against government entities and state-affiliated infrastructure, with activity observed from October 2025 to April 2026. The attackers focused on Linux servers and databases for reconnaissance and persistent access to support intelligence gathering: they deployed web shells, captured credentials through tampered shell and login code, ran a custom cross-platform Go remote access trojan Unit 42 names SysGoRAT, escalated privileges with open-source tools, moved laterally through database servers and SSH, tunnelled traffic, and attempted to dump databases and exfiltrate government mailboxes to reach linked social media accounts. They also tried to disable endpoint protection, which Cortex XDR blocked, deleted logs, timestomped files and planted red-team markers to disguise the activity. Unit 42 states the attackers relied on AI-generated payloads, citing conversational step-by-step reasoning comments and other traits in the scripts, and says these suggest the code was either copied from LLM output or deployed by an automated AI agent. Unit 42 names no model, framework, victim or country, and has not determined whether the cluster is state or criminal.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": [
+      "government"
+    ]
+  }
+}

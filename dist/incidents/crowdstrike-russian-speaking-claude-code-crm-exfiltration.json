@@ -1,0 +1,83 @@
+{
+  "actor": "Unnamed group of Russian-speaking individuals (CrowdStrike 'Threat Actor 4'; no group name)",
+  "actor_type": "unknown",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-22"
+  },
+  "ai_role": "load-bearing",
+  "autonomy_level": "supervised-autonomous",
+  "autonomy_pct": null,
+  "category": "ai-orchestrated-campaign",
+  "confidence": "primary",
+  "date_disclosed": "2026-10-21",
+  "guardrail_bypass": [
+    "unknown"
+  ],
+  "id": "crowdstrike-russian-speaking-claude-code-crm-exfiltration",
+  "impact": "Per CrowdStrike: corporate client data exfiltrated from a US-based customer relationship management vendor; several private-sector SaaS and data-centre entities in Russia, Kyrgyzstan and the United States and one foreign government domain compromised. No victim is named.",
+  "last_updated": "2026-10-22",
+  "lifecycle_phases": [
+    "recon",
+    "initial-access",
+    "execution",
+    "exfiltration"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [
+      "AML.T0016.002",
+      "AML.T0017.002",
+      "AML.T0102",
+      "AML.T0117"
+    ],
+    "mitre_atlas_case_studies": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [],
+  "model_families": [
+    "claude"
+  ],
+  "models": [],
+  "name": "Russian-speaking group's single-command Claude Code workflow exfiltrated client data from a US CRM vendor",
+  "related": [
+    "crowdstrike-argentina-healthcare-claude-code-harness",
+    "crowdstrike-chinese-speaking-claude-proxy-harness-intrusions",
+    "crowdstrike-indonesian-claude-code-skills-government-targeting"
+  ],
+  "severity": "high",
+  "sources": [
+    {
+      "date": "2026-10-21",
+      "publisher": "CrowdStrike Counter Adversary Operations",
+      "title": "CrowdStrike Uncovers New Agentic AI Campaigns",
+      "type": "vendor-report",
+      "url": "https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-agentic-ai-campaigns/"
+    },
+    {
+      "date": "2026-10-21",
+      "publisher": "CrowdStrike Counter Adversary Operations",
+      "title": "CrowdStrike Counter Adversary Operations Uncovers New 2026 Agentic AI Campaigns (report landing page)",
+      "type": "vendor-report",
+      "url": "https://www.crowdstrike.com/en-us/resources/reports/agentic-ai-attack-campaigns/"
+    }
+  ],
+  "status": "reported",
+  "summary": "CrowdStrike Counter Adversary Operations reported on 2026-10-21 that a group of Russian-speaking individuals, one of four previously unreported actors whose offensive agent frameworks were exposed through open directories, tasked Claude Code through a single slash command with a seven-step workflow. CrowdStrike says the workflow guides enumeration of the target environment, gives Claude Code near-total autonomy in choosing exploitation methods, sets out a high-level post-compromise routine, and includes explicit exfiltration instructions. CrowdStrike states the group exfiltrated corporate client data from a US-based customer relationship management vendor and compromised several private-sector SaaS and data-centre entities in Russia, Kyrgyzstan and the United States, as well as one government domain of another country. The activity falls in the May to August 2026 window CrowdStrike documented. No victim is named.",
+  "targets": {
+    "countries": [
+      "US",
+      "RU",
+      "KG"
+    ],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": [
+      "technology",
+      "government"
+    ]
+  }
+}

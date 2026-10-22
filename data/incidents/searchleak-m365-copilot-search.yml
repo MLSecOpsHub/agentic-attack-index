@@ -1,0 +1,76 @@
+id: searchleak-m365-copilot-search
+name: "SearchLeak — one-click data exfiltration via Microsoft 365 Copilot Enterprise Search (CVE-2026-42824)"
+summary: >-
+  Varonis Threat Labs (researcher Dolev Taler) disclosed SearchLeak, a one-click
+  vulnerability in Microsoft 365 Copilot Enterprise Search. A crafted link
+  caused Copilot to treat attacker-supplied text as a prompt, search the
+  victim's mailbox, calendar and indexed organisational content, and send the
+  results to an attacker-controlled server by chaining output-rendering and
+  content-security weaknesses. Microsoft assigned CVE-2026-42824 (Information
+  Disclosure, CVSS 6.5) on 2026-06-04 and states the issue was fully mitigated
+  server-side with no customer action required.
+date_disclosed: 2026-06-04 # MSRC/NVD publication date; the Varonis page shows only "Last updated June 15, 2026".
+status: confirmed # Demonstration; not observed in the wild (MSRC: Exploited: No). Confirmed on the first-party Microsoft CVE, as echoleak.
+confidence: primary # Varonis is the discloser; MSRC is the vendor.
+category: agent-hijack-prompt-injection
+severity: medium # CVSS 6.5 per MSRC; Varonis calls it "critical".
+models: [] # Underlying model not named by Varonis.
+model_families:
+  - other
+actor: "Varonis Threat Labs (Dolev Taler)" # MSRC acknowledgment: Dolev Taler with Varonis.
+actor_type: researcher
+autonomy_pct: null
+autonomy_level: not-applicable # The agent was the hijacked component.
+guardrail_bypass:
+  - indirect-prompt-injection # Attacker text delivered in a link was executed as a prompt (Varonis).
+ai_role: load-bearing
+related:
+  - echoleak-m365-copilot # Same product family (Microsoft 365 Copilot), earlier exfiltration disclosure.
+mitigations:
+  - "Microsoft fully mitigated the vulnerability; no customer action is required (MSRC)."
+  - "Varonis: monitor for suspicious Copilot Search URLs, review content-security allowlists for domains that fetch user-supplied URLs, and sanitise AI output at render time; users should inspect Microsoft 365 links with long encoded parameters."
+targets:
+  orgs_affected: null
+  records_exfiltrated: null
+  sectors: []
+  countries: []
+lifecycle_phases:
+  - initial-access
+  - execution
+  - exfiltration
+mappings:
+  mitre_atlas:
+    - AML.T0051.000 # LLM Prompt Injection: Direct (prompt supplied via a link the victim opens)
+    - AML.T0077 # LLM Response Rendering
+    - AML.T0057 # LLM Data Leakage
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: [] # OWASP Top 10 for Agentic Applications, ASI01–ASI10 (pinned in schema/owasp-asi.json; method in docs/owasp-asi-mapping.md)
+  cve:
+    - CVE-2026-42824
+  aiid: []
+impact: >-
+  Demonstrated one-click exfiltration of email content, security codes, meeting
+  details and private organisational files reachable by Microsoft 365 Copilot
+  Enterprise Search. Mitigated server-side by Microsoft; not publicly disclosed
+  or exploited at release per MSRC.
+sources:
+  - title: "SearchLeak: How We Turned M365 Copilot Into a One-Click Data Exfiltration Weapon"
+    url: "https://www.varonis.com/blog/searchleak"
+    publisher: "Varonis Threat Labs"
+    type: first-party-disclosure
+    date: 2026-06-15 # "Last updated" date on the page; no original publication date shown.
+  - title: "CVE-2026-42824 Detail"
+    url: "https://nvd.nist.gov/vuln/detail/CVE-2026-42824"
+    publisher: "NVD / NIST"
+    type: government-advisory
+    date: 2026-06-04
+  - title: "M365 Copilot Information Disclosure Vulnerability (CVE-2026-42824), CSAF advisory"
+    url: "https://msrc.microsoft.com/csaf/advisories/2026/msrc_cve-2026-42824.json"
+    publisher: "Microsoft Security Response Center"
+    type: vendor-report
+    date: 2026-06-04
+added:
+  date: 2026-10-22
+  by: "MLSecOpsHub"
+last_updated: 2026-10-22

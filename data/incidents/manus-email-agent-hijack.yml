@@ -1,0 +1,78 @@
+id: manus-email-agent-hijack
+name: "Manus AI agent hijacked by a single email to run code and reach connected-account credentials (Salt Labs PoC)"
+summary: >-
+  Salt Labs (Salt Security) disclosed on 2026-10-01 that the Manus agentic AI
+  platform could be hijacked by instructions hidden in an ordinary email.
+  Working on its own test account, Salt found that when the user asked Manus
+  to check their inbox, the agent treated the email's content as instructions;
+  direct malicious instructions were caught by Manus's guardrail, but an
+  obfuscated variant led the agent to execute attacker-supplied code in its
+  cloud sandbox, and the guardrail's warning appeared only after the code had
+  already run. From that execution context Salt reached the OAuth token for the
+  connected Gmail account and credentials for other connected services such as
+  Google Drive and GitHub. Salt reported the issue to Manus without response,
+  then through Meta's bug bounty programme; Salt states Meta triaged, confirmed
+  and addressed it and that the flaw is no longer exploitable.
+date_disclosed: 2026-10-01 # Salt Labs blog and press release.
+# Researcher PoC. The fix is stated by Salt only (triaged through Meta's bug
+# bounty); no Manus or Meta statement, fix date or CVE was found.
+status: reported
+confidence: primary # Salt Labs is the discloser.
+category: agent-hijack-prompt-injection
+severity: high # Code execution in the agent sandbox and exposure of tokens for connected email, storage and code accounts; researcher test account only.
+models: [] # Underlying model not named by Salt.
+model_families:
+  - other # Manus platform; model not stated.
+actor: "Salt Labs (Salt Security)"
+actor_type: researcher
+autonomy_pct: null
+autonomy_level: not-applicable # The Manus agent was the hijacked component.
+guardrail_bypass:
+  - indirect-prompt-injection # Salt: instructions in an incoming email; an obfuscation technique evaded Manus's guardrail before execution.
+ai_role: load-bearing
+related: []
+mitigations:
+  - "Meta triaged, confirmed and addressed the issue via its bug bounty programme; later reproduction attempts by Salt failed (per Salt; no vendor statement found)."
+  - "Salt recommends layered controls that govern and monitor what an agent does across its tools, APIs and connected systems, rather than relying on prompt-inspecting guardrails, noting a detection that fires after execution gives no protection on an autonomous system."
+targets:
+  orgs_affected: 0 # Salt's own test account; no real victims described.
+  records_exfiltrated: null
+  sectors: []
+  countries: []
+lifecycle_phases:
+  - initial-access
+  - execution
+  - credential-access
+mappings:
+  mitre_atlas:
+    - AML.T0051.001 # LLM Prompt Injection: Indirect (instructions in email content the agent read)
+    - AML.T0093 # Prompt Infiltration via Public-Facing Application (delivered by email)
+    - AML.T0068 # LLM Prompt Obfuscation (obfuscated instructions evaded the guardrail, per Salt)
+    - AML.T0053 # AI Agent Tool Invocation (agent ran code in its sandbox)
+    - AML.T0098 # AI Agent Tool Credential Harvesting (OAuth token and connected-service credentials in the agent's execution environment)
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: [] # OWASP Top 10 for Agentic Applications, ASI01–ASI10 (pinned in schema/owasp-asi.json; method in docs/owasp-asi-mapping.md)
+  cve: [] # None stated.
+  aiid: []
+impact: >-
+  Proof of concept on a researcher test account: remote code execution in the
+  Manus agent's cloud sandbox triggered by an incoming email, with access to the
+  user's Gmail OAuth token and to credentials for other connected services
+  (Salt names Google Drive and GitHub). Salt states the issue is resolved and no
+  longer exploitable; no in-the-wild exploitation reported.
+sources:
+  - title: "How We Hijacked an AI Agent With a Single Email"
+    url: "https://salt.security/blog/how-we-hijacked-an-ai-agent-with-a-single-email"
+    publisher: "Salt Security (Salt Labs)"
+    type: first-party-disclosure
+    date: 2026-10-01
+  - title: "Salt Labs Research: A Single Email Could Hijack an AI Agent and Reach a User's Connected Accounts"
+    url: "https://www.prnewswire.com/news-releases/salt-labs-research-a-single-email-could-hijack-an-ai-agent-and-reach-a-users-connected-accounts-302895317.html"
+    publisher: "Salt Security (via PR Newswire)"
+    type: first-party-disclosure # Salt's press release; carries the Meta bug-bounty disclosure timeline.
+    date: 2026-10-01
+added:
+  date: 2026-10-22
+  by: "MLSecOpsHub"
+last_updated: 2026-10-22

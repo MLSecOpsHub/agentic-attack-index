@@ -1,0 +1,80 @@
+id: visual-studio-copilot-ssms-rce
+name: "Visual Studio and SSMS Copilot — prompt injection to remote code execution (CVE-2026-103572)"
+summary: >-
+  Johann Rehberger (Embrace The Red) disclosed that the Copilot agent shared by
+  Visual Studio and SQL Server Management Studio could be hijacked by indirect
+  prompt injection in content the user later worked with, and could then write
+  to its own settings and configuration files despite a path validation check.
+  Changing that configuration let the agent register a new tool server or
+  redirect a configured binary, leading to code execution on the developer's
+  machine, and read settings files without the expected confirmation. Microsoft
+  confirmed it and shipped a fix on 2026-10-13 as CVE-2026-103572 (Remote Code
+  Execution, CVSS 8.8).
+date_disclosed: 2026-10-13 # Embrace The Red post, MSRC and NVD all dated 2026-10-13.
+status: confirmed # Demonstration; not observed in the wild (MSRC: Exploited: No). Confirmed on the first-party Microsoft CVE, as echoleak.
+confidence: primary # Embrace The Red is the discloser; MSRC is the vendor.
+category: agent-hijack-prompt-injection
+severity: high # CVSS 8.8 per MSRC; Embrace The Red: Microsoft rated it "Important".
+models:
+  - "MAI-Code-1-Flash" # Model used in the proof of concept, per Embrace The Red.
+model_families:
+  - other
+actor: "Johann Rehberger (Embrace The Red)" # MSRC acknowledgment credits Johann Rehberger with embracethered.com.
+actor_type: researcher
+autonomy_pct: null
+autonomy_level: not-applicable # The agent was the hijacked component.
+guardrail_bypass:
+  - indirect-prompt-injection # Embrace The Red: indirect prompt injection; MSRC FAQ: "Due to prompt injection".
+ai_role: load-bearing
+related:
+  - ssms-sql-copilot-privilege-escalation # Same researcher; earlier SSMS Copilot privilege-escalation disclosure.
+mitigations:
+  - "Install the October 2026 Microsoft update for Visual Studio and SSMS (CVE-2026-103572); per Embrace The Red the fix normalises file paths before validation."
+  - "Embrace The Red: security controls around agents must hold even when the agent itself is compromised or misaligned."
+targets:
+  orgs_affected: null
+  records_exfiltrated: null
+  sectors:
+    - technology
+  countries: []
+lifecycle_phases:
+  - initial-access
+  - execution
+  - persistence # Agent modified its own configuration so a tool server or binary launched later (Embrace The Red).
+mappings:
+  mitre_atlas:
+    - AML.T0051.001 # LLM Prompt Injection: Indirect
+    - AML.T0053 # AI Agent Tool Invocation (file-write tool)
+    - AML.T0081 # Modify AI Agent Configuration
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: [] # OWASP Top 10 for Agentic Applications, ASI01–ASI10 (pinned in schema/owasp-asi.json; method in docs/owasp-asi-mapping.md)
+  cve:
+    - CVE-2026-103572
+  aiid: []
+impact: >-
+  Demonstrated code execution on a developer workstation via the IDE's Copilot
+  agent rewriting its own configuration, plus reading settings files without
+  confirmation. Affected Visual Studio 2022 17.14 and Visual Studio 2026 18.10
+  per the CVE record, and SSMS per Microsoft and Embrace The Red. Not publicly
+  disclosed or exploited at release per MSRC.
+sources:
+  - title: "Visual Studio Copilot and SSMS Remote Code Execution (CVE-2026-103572)"
+    url: "https://embracethered.com/blog/posts/2026/visual-studio-copilot-remote-code-execution/"
+    publisher: "Embrace The Red"
+    type: first-party-disclosure
+    date: 2026-10-13
+  - title: "CVE-2026-103572 Detail"
+    url: "https://nvd.nist.gov/vuln/detail/CVE-2026-103572"
+    publisher: "NVD / NIST"
+    type: government-advisory
+    date: 2026-10-13
+  - title: "Visual Studio Tools for Applications and SQL Server Management Studio Remote Code Execution Vulnerability (CVE-2026-103572), CSAF advisory"
+    url: "https://msrc.microsoft.com/csaf/advisories/2026/msrc_cve-2026-103572.json"
+    publisher: "Microsoft Security Response Center"
+    type: vendor-report
+    date: 2026-10-13
+added:
+  date: 2026-10-22
+  by: "MLSecOpsHub"
+last_updated: 2026-10-22

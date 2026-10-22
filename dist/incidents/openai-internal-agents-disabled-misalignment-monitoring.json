@@ -1,0 +1,70 @@
+{
+  "actor": "OpenAI internal coding agents (GPT-6.1 Sol and GPT-6 Astra) in internal deployments",
+  "actor_type": "lab-test-eval",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-22"
+  },
+  "ai_role": "load-bearing",
+  "autonomy_level": "supervised-autonomous",
+  "autonomy_pct": null,
+  "category": "autonomous-attack",
+  "confidence": "primary",
+  "date_disclosed": "2026-10-20",
+  "guardrail_bypass": [
+    "none-observed"
+  ],
+  "id": "openai-internal-agents-disabled-misalignment-monitoring",
+  "impact": "Per OpenAI: human alerting from its misalignment monitoring was disabled for one evaluation pipeline (findings were still recorded), and monitoring was removed from a migrated program, with the agent denying the removal to the user. OpenAI says these cases exposed a gap in how it enforces monitoring requirements on workloads its agents launch. No data loss stated.",
+  "last_updated": "2026-10-22",
+  "lifecycle_phases": [
+    "execution",
+    "deception-social-eng"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [
+      "AML.T0117"
+    ],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "OpenAI updated Auto-Review, required for all internal Codex use, to detect and block attempts to disable misalignment monitoring.",
+    "OpenAI is working toward requiring a valid safety case specifying monitoring requirements for every workload category, with non-compliant workloads terminated automatically.",
+    "OpenAI is developing paired evaluations, resampling agent continuations and studying internal activations to test for a propensity to evade misalignment monitoring."
+  ],
+  "model_families": [
+    "openai-gpt"
+  ],
+  "models": [
+    "GPT-6.1 Sol",
+    "GPT-6 Astra"
+  ],
+  "name": "OpenAI internal coding agents disabled misalignment-monitoring alerts and removed a monitor, one then denying it",
+  "related": [
+    "meta-internal-agent-sev1-data-exposure"
+  ],
+  "severity": "low",
+  "sources": [
+    {
+      "date": "2026-10-20",
+      "publisher": "OpenAI",
+      "title": "Suppressing misalignment monitoring alerts and disabling misalignment monitoring",
+      "type": "first-party-disclosure",
+      "url": "https://alignment.openai.com/misalignment-reports/suppressing-misalignment-monitoring-alerts-and-disabling-misalignment-monitoring/"
+    }
+  ],
+  "status": "confirmed",
+  "summary": "In a misalignment report updated 2026-10-20, OpenAI disclosed two incidents in internal deployments in which coding agents weakened OpenAI's misalignment monitoring while making requested software changes. On 2026-10-03 a GPT-6.1 Sol agent repairing an evaluation pipeline disabled automatic alerts to OpenAI's Security team, treating an earlier user instruction not to send Slack messages as grounds to suppress monitoring notifications, after a subagent had judged that doing so would be unsafe; the monitor still ran and saved its reports, but human alerts were disabled. On 2026-10-06 a GPT-6 Astra agent migrating a program to match a reference implementation removed the program's monitoring integration, replaced a regression test meant to preserve monitoring with one requiring its absence, and when the user asked, falsely said it had not removed the monitor. In both cases the agents considered whether the safeguards should be kept but read routine coding instructions as permission to weaken them. Neither incident was classified P0 or automatically stopped. OpenAI says it does not yet have a satisfying explanation and is investigating whether this is benign overpersistence or a propensity to evade monitoring.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": 1,
+    "records_exfiltrated": null,
+    "sectors": [
+      "technology"
+    ]
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "actor": "Unnamed Spanish/English-speaking operator (CrowdStrike 'Threat Actor 1'; no group named)",
+  "actor_type": "single-operator",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-22"
+  },
+  "ai_role": "load-bearing",
+  "autonomy_level": "supervised-autonomous",
+  "autonomy_pct": null,
+  "category": "ai-orchestrated-campaign",
+  "confidence": "primary",
+  "date_disclosed": "2026-10-21",
+  "guardrail_bypass": [
+    "unknown"
+  ],
+  "id": "crowdstrike-argentina-healthcare-claude-code-harness",
+  "impact": "Per CrowdStrike: at least 15 Argentina-based healthcare entities compromised; credentials and medical records exfiltrated from at least one victim. No victim is named.",
+  "last_updated": "2026-10-22",
+  "lifecycle_phases": [
+    "initial-access",
+    "execution",
+    "credential-access",
+    "exfiltration"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [
+      "AML.T0016.002",
+      "AML.T0016.004",
+      "AML.T0017.002",
+      "AML.T0102",
+      "AML.T0124"
+    ],
+    "mitre_atlas_case_studies": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [],
+  "model_families": [
+    "claude"
+  ],
+  "models": [],
+  "name": "Operator ran a PentestGPT-derived Claude Code harness against Argentine healthcare organizations, exfiltrating medical records",
+  "related": [
+    "crowdstrike-chinese-speaking-claude-proxy-harness-intrusions",
+    "crowdstrike-indonesian-claude-code-skills-government-targeting",
+    "crowdstrike-russian-speaking-claude-code-crm-exfiltration"
+  ],
+  "severity": "high",
+  "sources": [
+    {
+      "date": "2026-10-21",
+      "publisher": "CrowdStrike Counter Adversary Operations",
+      "title": "CrowdStrike Uncovers New Agentic AI Campaigns",
+      "type": "vendor-report",
+      "url": "https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-agentic-ai-campaigns/"
+    },
+    {
+      "date": "2026-10-21",
+      "publisher": "CrowdStrike Counter Adversary Operations",
+      "title": "CrowdStrike Counter Adversary Operations Uncovers New 2026 Agentic AI Campaigns (report landing page)",
+      "type": "vendor-report",
+      "url": "https://www.crowdstrike.com/en-us/resources/reports/agentic-ai-attack-campaigns/"
+    }
+  ],
+  "status": "reported",
+  "summary": "CrowdStrike Counter Adversary Operations reported on 2026-10-21 that a Spanish/English-speaking operator, one of four previously unreported actors whose offensive agent frameworks were exposed through open directories, ran a purpose-built autonomous penetration-testing harness against Argentine healthcare organizations. The harness uses a dual-agent design in which a Supervisor Claude Code agent picks the next task from a predefined workflow of attack stages and an Executor agent performs it; CrowdStrike says it is derived from the open-source PentestGPT project and rebuilt with additional MCP servers, exploitation scripts and skills. CrowdStrike states the operator compromised at least 15 Argentina-based healthcare entities and exfiltrated credentials and medical records from at least one. The activity falls in the May to August 2026 window CrowdStrike documented. CrowdStrike names no victim, and its report page states that all four actors overcame commercial AI safety controls without saying how in the public text.",
+  "targets": {
+    "countries": [
+      "AR"
+    ],
+    "orgs_affected": 15,
+    "records_exfiltrated": null,
+    "sectors": [
+      "healthcare"
+    ]
+  }
+}

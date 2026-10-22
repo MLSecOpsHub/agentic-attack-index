@@ -1,0 +1,108 @@
+{
+  "actor": "Unknown operators in three clusters (NorForge: AIA0001 Chinese-speaking, financially motivated; AIA0002 English-language, financially motivated; AIA0003 low confidence). Reuters: 'Chinese-speaking' refers to the language of the instructions.",
+  "actor_type": "cybercriminal",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-22"
+  },
+  "ai_role": "load-bearing",
+  "autonomy_level": "supervised-autonomous",
+  "autonomy_pct": null,
+  "category": "autonomous-attack",
+  "confidence": "primary",
+  "date_disclosed": "2026-10-19",
+  "guardrail_bypass": [
+    "legitimate-tool-abuse",
+    "open-weight-model"
+  ],
+  "id": "norforge-cairn-exposed-panels-ecommerce-intrusions",
+  "impact": "Per Reuters, websites of more than 100 companies were breached by the Chinese-speaking operator's agents, with more than 1,200 sites attempted; Deere reported remediation and no indication sensitive information was accessed, SharkNinja said a standalone product-support site was hit and contained, and two smaller businesses acknowledged compromise. Reuters could not determine how much data was taken. NorForge reports that one English-language cluster's operators stated they stole credit cards and cryptocurrency, and that the exposed panels leaked hundreds of credentials and API keys.",
+  "last_updated": "2026-10-22",
+  "lifecycle_phases": [
+    "recon",
+    "initial-access",
+    "execution",
+    "exfiltration"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [
+      "AML.T0016.002",
+      "AML.T0116",
+      "AML.T0117",
+      "AML.T0124",
+      "AML.T0118.000"
+    ],
+    "mitre_atlas_case_studies": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "NorForge withheld panel locations and indicators until takedown, submitted takedown requests for the panels and worked with Reuters to notify victims.",
+    "NorForge notes that exposed panels held hundreds of secrets (11 percent verified valid by its scan), and that some apparently legitimate red-team Cairn deployments were also exposed, putting their clients at risk.",
+    "Deere told Reuters it took remediation actions; SharkNinja said it contained the threat."
+  ],
+  "model_families": [
+    "deepseek",
+    "claude",
+    "other"
+  ],
+  "models": [
+    "DeepSeek V4.1 Flash",
+    "Claude Code",
+    "Pi"
+  ],
+  "name": "Exposed Cairn multi-agent panels revealed AI-agent intrusion campaigns against e-commerce and payment sites, including Deere and SharkNinja web properties",
+  "related": [
+    "gambit-ai-agents-retail-skimmer-campaign"
+  ],
+  "severity": "high",
+  "sources": [
+    {
+      "date": "2026-10-19",
+      "publisher": "NorForge",
+      "title": "Inside Cairn: Open Windows into massive AI-Driven Cyber Operations",
+      "type": "vendor-report",
+      "url": "https://norforge.com/blog/inside_cairn"
+    },
+    {
+      "date": "2026-10-19",
+      "publisher": "Reuters (via Honolulu Star-Advertiser)",
+      "title": "How one hacker used AI agents to break into over 100 company websites",
+      "type": "news",
+      "url": "https://www.staradvertiser.com/2026/10/19/breaking-news/how-one-hacker-used-ai-agents-to-break-into-over-100-company-websites/"
+    },
+    {
+      "date": "2026-10-19",
+      "publisher": "Reuters (via Capital.com)",
+      "title": "How one hacker used AI agents and a few thousand dollars to break into scores of sites",
+      "type": "news",
+      "url": "https://capital.com/en-ke/news/how-one-hacker-used-ai-agents-and-a-few-thousand"
+    },
+    {
+      "date": "2026-10-19",
+      "publisher": "The Next Web",
+      "title": "AI agents broke into 100+ sites for one hacker at $50 each, researcher says",
+      "type": "news",
+      "url": "https://thenextweb.com/news/ai-agents-hacker-cairn-100-sites-deere-norforge"
+    }
+  ],
+  "status": "reported",
+  "summary": "NorForge researcher Snorre Fagerland reported on 2026-10-19 that internet scans surfaced more than 20 exposed web panels of Cairn, an open-source multi-agent AI problem-solving platform, that he assessed as likely used for malicious operations. In Cairn, an operator sets a target and an objective and AI agents investigate it, sharing findings on a common blackboard to which operators can add hints. NorForge groups the panels into three clusters: a Chinese-language cluster of 14 panels with more than 1,100 attack projects against mainly e-commerce and payment infrastructure in the US, Japan and Australia; a financially motivated English-language cluster of 10 panels whose operators stated they stole credit cards and cryptocurrency; and a single low-confidence panel. Worker labels indicate Claude Code and Pi agent harnesses running DeepSeek models. NorForge estimates a success rate of about 10 percent, with successful projects taking just under 23 hours on average, and validated one compromise directly. Reuters, which reviewed the Chinese-speaking operator's Cairn activity, reported that the agents had attempted more than 1,200 sites since 2026-09-25 and, per Fagerland, breached websites of more than 100 companies; Deere and SharkNinja confirmed incidents to Reuters and two smaller businesses acknowledged compromise. Reuters could not determine how much data was taken. Cairn's developer said the platform was not designed for hacking.",
+  "targets": {
+    "countries": [
+      "US",
+      "JP",
+      "AU",
+      "CA"
+    ],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": [
+      "retail",
+      "financial-services"
+    ]
+  }
+}

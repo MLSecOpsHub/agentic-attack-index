@@ -1,0 +1,84 @@
+{
+  "actor": "Check Point Research (researcher Alexey Bukhteyev)",
+  "actor_type": "researcher",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-22"
+  },
+  "ai_role": "load-bearing",
+  "autonomy_level": "not-applicable",
+  "autonomy_pct": null,
+  "category": "agent-hijack-prompt-injection",
+  "confidence": "primary",
+  "date_disclosed": "2026-09-08",
+  "guardrail_bypass": [
+    "indirect-prompt-injection"
+  ],
+  "id": "chatgpt-shared-sandbox-cross-account-leak",
+  "impact": "Proof of concept on researcher accounts: a victim's ChatGPT session read email data from the victim's connected Gmail account and relayed it to a different account, with the only visible trace a \"Talked to Gmail\" label. Check Point states conversation history and files in the affected chat and its code-execution environment were also reachable, with scope bounded by the victim session's connected apps and permissions. No in-the-wild exploitation reported.",
+  "last_updated": "2026-10-22",
+  "lifecycle_phases": [
+    "initial-access",
+    "execution",
+    "exfiltration"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0080.001",
+      "AML.T0053",
+      "AML.T0085.001",
+      "AML.T0086"
+    ],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "OpenAI decommissioned the internal service instance identified in the research (per Check Point; no OpenAI statement found).",
+    "Check Point recommends keeping management interfaces inaccessible from the code-execution runtime, least-privilege credentials, and restricting any state a container can modify in shared internal services to the owning account or session.",
+    "Check Point notes ChatGPT's default 'Important actions' connected-app setting allows reads without prior approval; the stricter 'Always ask' setting requires confirmation."
+  ],
+  "model_families": [
+    "openai-gpt"
+  ],
+  "models": [],
+  "name": "ChatGPT shared internal service let one account's session be steered to leak another account's Gmail data (Check Point PoC)",
+  "related": [
+    "openai-eval-agents-hugging-face-intrusion"
+  ],
+  "severity": "high",
+  "sources": [
+    {
+      "date": "2026-09-08",
+      "publisher": "Check Point Research",
+      "title": "The Shared Clipboard Inside the Sandbox: Cross-Account Data Leakage in ChatGPT",
+      "type": "first-party-disclosure",
+      "url": "https://research.checkpoint.com/2026/the-shared-clipboard-inside-the-sandbox-cross-account-data-leakage-in-chatgpt/"
+    },
+    {
+      "date": "2026-09-09",
+      "publisher": "TechNode Global",
+      "title": "Check Point finds now-closed ChatGPT flaw that enabled cross-account data access",
+      "type": "news",
+      "url": "https://technode.global/2026/09/09/check-point-chatgpt-cross-account-data-access-flaw/"
+    },
+    {
+      "date": "2026-09-08",
+      "publisher": "Cyber Security News",
+      "title": "ChatGPT Sandbox Flaw Lets Attackers Steal Gmail Data Across Accounts via Hidden Channel",
+      "type": "news",
+      "url": "https://cybersecuritynews.com/chatgpt-sandbox-gmail-data/"
+    }
+  ],
+  "status": "reported",
+  "summary": "Check Point Research disclosed on 2026-09-08 that, in June 2026, it found a covert two-way channel between ChatGPT code-execution containers belonging to different accounts: the containers could not reach the public internet or each other directly, but all could reach a shared internal artifact store whose writable state was not isolated per account. Check Point showed that an instruction planted in a victim's conversation context (via a pasted prompt, a shared conversation or a custom GPT) could make ChatGPT process a hidden second stream of attacker tasks alongside the victim's visible requests, using the victim session's tools, files and connected apps. In its proof of concept, on its own test accounts, ChatGPT read email data from a victim's connected Gmail account and relayed it to the attacker's account while giving the victim an ordinary answer. Check Point says the channel was no longer available by the time it completed its report and that OpenAI confirmed the internal service instance had been decommissioned.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": []
+  }
+}

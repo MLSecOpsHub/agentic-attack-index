@@ -1,0 +1,76 @@
+{
+  "actor": "BUGSTER (handle; financially motivated English-speaking criminal operator with no prior reporting, per Unit 42)",
+  "actor_type": "single-operator",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-22"
+  },
+  "ai_role": "significant",
+  "autonomy_level": "human-in-the-loop",
+  "autonomy_pct": null,
+  "category": "ai-orchestrated-campaign",
+  "confidence": "primary",
+  "date_disclosed": "2026-10-21",
+  "guardrail_bypass": [
+    "jailbreak",
+    "open-weight-model"
+  ],
+  "id": "unit42-bugster-hermes-deepseek-multi-domain-cybercrime",
+  "impact": "Per Unit 42: a database of more than 5,200 records, including student and faculty personal information and an administrator credential, exfiltrated from an Indian public university; a valid login identified at a second Indian university; storefront token, admin contacts and merchant IDs extracted from an Indian e-commerce site. VoIP fraud was in planning only.",
+  "last_updated": "2026-10-22",
+  "lifecycle_phases": [
+    "recon",
+    "resource-dev",
+    "initial-access",
+    "credential-access",
+    "exfiltration"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [
+      "AML.T0016.002",
+      "AML.T0016.004",
+      "AML.T0054",
+      "AML.T0102"
+    ],
+    "mitre_atlas_case_studies": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [],
+  "model_families": [
+    "deepseek"
+  ],
+  "models": [
+    "DeepSeek V4"
+  ],
+  "name": "BUGSTER: criminal ran DeepSeek-backed Hermes Agent profiles for credential theft and a university database exfiltration in India",
+  "related": [
+    "unit42-hermes-deepseek-autonomous-campaign"
+  ],
+  "severity": "medium",
+  "sources": [
+    {
+      "date": "2026-10-21",
+      "publisher": "Unit 42 (Palo Alto Networks)",
+      "title": "“Next Exploit Opportunities”: How a Threat Actor Used AI to Help Plan and Execute Multiple Types of Cybercrime Activities",
+      "type": "vendor-report",
+      "url": "https://unit42.paloaltonetworks.com/ai-assisted-cybercrime-analysis/"
+    }
+  ],
+  "status": "reported",
+  "summary": "Palo Alto Networks Unit 42 reported on 2026-10-21 an investigation into the operational environment of a financially motivated, English-speaking criminal operating under the handle BUGSTER, with no prior reporting. The actor configured the open-source Hermes Agent framework with DeepSeek V4 as its reasoning engine, controlled through Telegram, and used the Cursor IDE as a secondary tool, with safety controls disabled on both through prompt-level overrides and configuration changes. Unit 42 states the actor relied on AI-generated scripts and reconnaissance reports: an AI-generated credential brute-force campaign against an Indian university's website flagged one valid login, and a confirmed intrusion against a second Indian public university exfiltrated a database of more than 5,200 records including student and faculty personal information. The actor also enumerated an Indian e-commerce site, used dedicated Hermes profiles as advisors for a VoIP fraud operation that appeared to be still in planning, and ran pipelines for Wi-Fi password cracking and cryptocurrency-holder reconnaissance. Unit 42 says the actor experimented with other models before choosing DeepSeek V4, and that several unrelated actors are adopting the same Hermes and DeepSeek combination. No victim is named.",
+  "targets": {
+    "countries": [
+      "IN"
+    ],
+    "orgs_affected": null,
+    "records_exfiltrated": 5200,
+    "sectors": [
+      "education",
+      "retail"
+    ]
+  }
+}

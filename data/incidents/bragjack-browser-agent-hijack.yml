@@ -1,0 +1,93 @@
+id: bragjack-browser-agent-hijack
+name: "BragJack — one browser extension hijacks the built-in AI agents of five browsers"
+summary: >-
+  Forever Security (researcher Gal Weizman) disclosed BragJack on 2026-09-16,
+  research showing that a single browser extension with standard permissions
+  could take over the built-in AI assistants of Google Chrome (Gemini), Microsoft
+  Edge (Copilot / Edge Actions), Opera Neon, Perplexity Comet and the Claude in
+  Chrome extension. Rather than prompt injection, the extension forced prompts
+  into the assistants and weakened protections on their privileged pages, so the
+  agents could be made to read local files and page contents, leak profile data
+  or browsing history, take screenshots, or act on websites, depending on the
+  browser. The technique requires a malicious extension already installed, and
+  the research does not report theft of real users' data. Google and Microsoft
+  issued CVE-2026-0628 (Chrome) and CVE-2026-55945 (Edge), and the discloser
+  lists bounties from all five vendors.
+date_disclosed: 2026-09-16 # Forever Security posts. The Chrome (2026-01) and Edge (2026-07) CVEs predate the research write-up and do not describe the agent-hijack framing.
+status: confirmed # Demonstration; not observed in the wild (Forever Security does not report exploitation; MSRC: Exploited: No for CVE-2026-55945). Confirmed on first-party vendor CVEs.
+confidence: primary # Forever Security is the discloser.
+category: agent-hijack-prompt-injection
+severity: high # Forever Security lists CVE-2026-0628 as 8.8 High (Chromium security severity High in the CVE record); CVE-2026-55945 is 4.2 per MSRC. Tempered by the installed-extension prerequisite.
+models: [] # Assistants are named as products; underlying model versions are not stated.
+model_families:
+  - gemini # Gemini in Chrome, per Forever Security.
+  - claude # Claude in Chrome, per Forever Security.
+  - other # Edge Copilot, Opera Neon and Perplexity Comet assistants.
+actor: "Forever Security (Gal Weizman)" # MSRC acknowledgment for CVE-2026-55945 credits Gal Weizman.
+actor_type: researcher
+autonomy_pct: null
+autonomy_level: not-applicable # The browser agents were the hijacked components.
+guardrail_bypass:
+  - legitimate-tool-abuse # Forever Security: "we didn't even use prompt injection"; the extension abused standard extension capabilities to force prompts ("Prompt-Forcing").
+ai_role: load-bearing
+related: []
+mitigations:
+  - "Google fixed CVE-2026-0628 in Chrome 143.0.7499.192 (CVE record); Microsoft fixed CVE-2026-55945 in Microsoft Edge (MSRC)."
+targets:
+  orgs_affected: null
+  records_exfiltrated: null
+  sectors: []
+  countries: []
+lifecycle_phases:
+  - execution
+  - exfiltration # Email-leak demonstrations for Opera Neon and Claude in Chrome (Forever Security).
+mappings:
+  mitre_atlas:
+    # No AML.T0051.x: the discloser states prompt injection was not used.
+    - AML.T0053 # AI Agent Tool Invocation (agents driven to read files, take screenshots, act on sites)
+    - AML.T0085.001 # Data from AI Services: AI Agent Tools (local files, page contents, history via the agents)
+    - AML.T0086 # Exfiltration via AI Agent Tool Invocation (email-leak demonstrations)
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: [] # OWASP Top 10 for Agentic Applications, ASI01–ASI10 (pinned in schema/owasp-asi.json; method in docs/owasp-asi-mapping.md)
+  cve:
+    - CVE-2026-0628 # Chrome; the CVE record cites Chromium issue 463155954, the issue Forever Security lists for Gemini in Chrome.
+    - CVE-2026-55945 # Microsoft Edge; MSRC credits Gal Weizman.
+  aiid: []
+impact: >-
+  Research demonstration only: with a malicious extension installed, built-in
+  browser agents could be made to read local files and page contents, leak
+  profile data and browsing history, take screenshots, and act on websites; the
+  discloser shows email-leak demonstrations for two targets but does not report
+  theft of real users' data. Bounties were paid by the five vendors per Forever
+  Security (its two posts give slightly different totals).
+sources:
+  - title: "BragJack: How We Hijacked 5 Of The World's Most Popular Browsers Using Their Built-In AI Assistants"
+    url: "https://forever.security/blog/bragjack-hijacking-5-browsers-via-built-in-ai-assistants/"
+    publisher: "Forever Security"
+    type: first-party-disclosure
+    date: 2026-09-16
+  - title: "BragJack [Technical Overview]: How We Hijacked Top 5 Browsers' Internal Agents With Just One Single Extension"
+    url: "https://forever.security/blog/bragjack-attack-hijacks-every-browser-agent/"
+    publisher: "Forever Security"
+    type: first-party-disclosure
+    date: 2026-09-16
+  - title: "CVE-2026-0628 Detail"
+    url: "https://nvd.nist.gov/vuln/detail/CVE-2026-0628"
+    publisher: "NVD / NIST"
+    type: government-advisory
+    date: 2026-01-07
+  - title: "CVE-2026-55945 Detail"
+    url: "https://nvd.nist.gov/vuln/detail/CVE-2026-55945"
+    publisher: "NVD / NIST"
+    type: government-advisory
+    date: 2026-07-03
+  - title: "Microsoft Edge (Chromium-based) Information Disclosure Vulnerability (CVE-2026-55945), CSAF advisory"
+    url: "https://msrc.microsoft.com/csaf/advisories/2026/msrc_cve-2026-55945.json"
+    publisher: "Microsoft Security Response Center"
+    type: vendor-report
+    date: 2026-07-03
+added:
+  date: 2026-10-22
+  by: "MLSecOpsHub"
+last_updated: 2026-10-22

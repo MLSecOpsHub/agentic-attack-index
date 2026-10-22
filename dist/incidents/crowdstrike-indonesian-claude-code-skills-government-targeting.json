@@ -1,0 +1,79 @@
+{
+  "actor": "Unnamed Indonesian-speaking actor (CrowdStrike 'Threat Actor 3'; no group named)",
+  "actor_type": "unknown",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-22"
+  },
+  "ai_role": "significant",
+  "autonomy_level": "human-in-the-loop",
+  "autonomy_pct": null,
+  "category": "ai-orchestrated-campaign",
+  "confidence": "primary",
+  "date_disclosed": "2026-10-21",
+  "guardrail_bypass": [
+    "jailbreak"
+  ],
+  "id": "crowdstrike-indonesian-claude-code-skills-government-targeting",
+  "impact": "Per CrowdStrike: several Indonesian government domains, a government domain of another country, and several private-sector entities compromised. No victim is named and no data theft is stated in the public text.",
+  "last_updated": "2026-10-22",
+  "lifecycle_phases": [
+    "resource-dev",
+    "initial-access",
+    "execution"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [
+      "AML.T0016.002",
+      "AML.T0016.004",
+      "AML.T0054",
+      "AML.T0102"
+    ],
+    "mitre_atlas_case_studies": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [],
+  "model_families": [
+    "claude"
+  ],
+  "models": [],
+  "name": "Indonesian-speaking actor directed Claude Code with 819 public skills to compromise government domains",
+  "related": [
+    "crowdstrike-argentina-healthcare-claude-code-harness",
+    "crowdstrike-chinese-speaking-claude-proxy-harness-intrusions",
+    "crowdstrike-russian-speaking-claude-code-crm-exfiltration"
+  ],
+  "severity": "medium",
+  "sources": [
+    {
+      "date": "2026-10-21",
+      "publisher": "CrowdStrike Counter Adversary Operations",
+      "title": "CrowdStrike Uncovers New Agentic AI Campaigns",
+      "type": "vendor-report",
+      "url": "https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-agentic-ai-campaigns/"
+    },
+    {
+      "date": "2026-10-21",
+      "publisher": "CrowdStrike Counter Adversary Operations",
+      "title": "CrowdStrike Counter Adversary Operations Uncovers New 2026 Agentic AI Campaigns (report landing page)",
+      "type": "vendor-report",
+      "url": "https://www.crowdstrike.com/en-us/resources/reports/agentic-ai-attack-campaigns/"
+    }
+  ],
+  "status": "reported",
+  "summary": "CrowdStrike Counter Adversary Operations reported on 2026-10-21 that an Indonesian-speaking actor, the least sophisticated of four previously unreported actors whose offensive agent frameworks were exposed through open directories, used Claude Code with 819 skills taken mostly from public GitHub repositories and no further orchestration. The actor tasked Claude Code to compromise a target and relied on the skills to guide the intrusion; in the observed activity the actor periodically had to intervene to get past the model's safety guardrails or to push it to keep working against a barrier. CrowdStrike states that despite a limited grasp of security fundamentals the actor used Claude Code to compromise several Indonesian government domains, a government domain of another country, and several private-sector entities. The activity falls in the May to August 2026 window CrowdStrike documented. No victim is named.",
+  "targets": {
+    "countries": [
+      "ID"
+    ],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": [
+      "government"
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "actor": "Johann Rehberger (Embrace The Red)",
+  "actor_type": "researcher",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-22"
+  },
+  "ai_role": "load-bearing",
+  "autonomy_level": "not-applicable",
+  "autonomy_pct": null,
+  "category": "agent-hijack-prompt-injection",
+  "confidence": "primary",
+  "date_disclosed": "2026-10-13",
+  "guardrail_bypass": [
+    "indirect-prompt-injection"
+  ],
+  "id": "visual-studio-copilot-ssms-rce",
+  "impact": "Demonstrated code execution on a developer workstation via the IDE's Copilot agent rewriting its own configuration, plus reading settings files without confirmation. Affected Visual Studio 2022 17.14 and Visual Studio 2026 18.10 per the CVE record, and SSMS per Microsoft and Embrace The Red. Not publicly disclosed or exploited at release per MSRC.",
+  "last_updated": "2026-10-22",
+  "lifecycle_phases": [
+    "initial-access",
+    "execution",
+    "persistence"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [
+      "CVE-2026-103572"
+    ],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0081"
+    ],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "Install the October 2026 Microsoft update for Visual Studio and SSMS (CVE-2026-103572); per Embrace The Red the fix normalises file paths before validation.",
+    "Embrace The Red: security controls around agents must hold even when the agent itself is compromised or misaligned."
+  ],
+  "model_families": [
+    "other"
+  ],
+  "models": [
+    "MAI-Code-1-Flash"
+  ],
+  "name": "Visual Studio and SSMS Copilot — prompt injection to remote code execution (CVE-2026-103572)",
+  "related": [
+    "ssms-sql-copilot-privilege-escalation"
+  ],
+  "severity": "high",
+  "sources": [
+    {
+      "date": "2026-10-13",
+      "publisher": "Embrace The Red",
+      "title": "Visual Studio Copilot and SSMS Remote Code Execution (CVE-2026-103572)",
+      "type": "first-party-disclosure",
+      "url": "https://embracethered.com/blog/posts/2026/visual-studio-copilot-remote-code-execution/"
+    },
+    {
+      "date": "2026-10-13",
+      "publisher": "NVD / NIST",
+      "title": "CVE-2026-103572 Detail",
+      "type": "government-advisory",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103572"
+    },
+    {
+      "date": "2026-10-13",
+      "publisher": "Microsoft Security Response Center",
+      "title": "Visual Studio Tools for Applications and SQL Server Management Studio Remote Code Execution Vulnerability (CVE-2026-103572), CSAF advisory",
+      "type": "vendor-report",
+      "url": "https://msrc.microsoft.com/csaf/advisories/2026/msrc_cve-2026-103572.json"
+    }
+  ],
+  "status": "confirmed",
+  "summary": "Johann Rehberger (Embrace The Red) disclosed that the Copilot agent shared by Visual Studio and SQL Server Management Studio could be hijacked by indirect prompt injection in content the user later worked with, and could then write to its own settings and configuration files despite a path validation check. Changing that configuration let the agent register a new tool server or redirect a configured binary, leading to code execution on the developer's machine, and read settings files without the expected confirmation. Microsoft confirmed it and shipped a fix on 2026-10-13 as CVE-2026-103572 (Remote Code Execution, CVSS 8.8).",
+  "targets": {
+    "countries": [],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": [
+      "technology"
+    ]
+  }
+}

@@ -1,0 +1,82 @@
+id: crowdstrike-indonesian-claude-code-skills-government-targeting
+name: "Indonesian-speaking actor directed Claude Code with 819 public skills to compromise government domains"
+summary: >-
+  CrowdStrike Counter Adversary Operations reported on 2026-10-21 that an
+  Indonesian-speaking actor, the least sophisticated of four previously
+  unreported actors whose offensive agent frameworks were exposed through open
+  directories, used Claude Code with 819 skills taken mostly from public
+  GitHub repositories and no further orchestration. The actor tasked Claude
+  Code to compromise a target and relied on the skills to guide the intrusion;
+  in the observed activity the actor periodically had to intervene to get past
+  the model's safety guardrails or to push it to keep working against a
+  barrier. CrowdStrike states that despite a limited grasp of security
+  fundamentals the actor used Claude Code to compromise several Indonesian
+  government domains, a government domain of another country, and several
+  private-sector entities. The activity falls in the May to August 2026
+  window CrowdStrike documented. No victim is named.
+date_disclosed: 2026-10-21 # CrowdStrike blog date.
+status: reported # Single vendor; the only other coverage found (CXOtoday) reprints the blog verbatim.
+confidence: primary # CrowdStrike analysed the actor's exposed framework directly.
+category: ai-orchestrated-campaign
+severity: medium # Several government domains and private-sector entities compromised; CrowdStrike's public text states no data theft for this actor.
+models: [] # CrowdStrike blog names Claude Code but no model version.
+model_families:
+  - claude
+actor: "Unnamed Indonesian-speaking actor (CrowdStrike 'Threat Actor 3'; no group named)"
+actor_type: unknown # CrowdStrike blog says "actor" without stating whether one person or a group, or motive.
+autonomy_pct: null
+# Claude Code was tasked with whole intrusions, but the actor intervened
+# periodically to push it past guardrails and barriers (CrowdStrike blog).
+autonomy_level: human-in-the-loop
+guardrail_bypass:
+  - jailbreak # Actor intervened "to overcome the model's safety guardrails" (CrowdStrike blog); method not described.
+ai_role: significant # Claude Code carried out the intrusions, with operator intervention to keep it going.
+related:
+  - crowdstrike-argentina-healthcare-claude-code-harness # One of four actors in the same CrowdStrike 2026-10-21 report.
+  - crowdstrike-chinese-speaking-claude-proxy-harness-intrusions # One of four actors in the same CrowdStrike 2026-10-21 report.
+  - crowdstrike-russian-speaking-claude-code-crm-exfiltration # One of four actors in the same CrowdStrike 2026-10-21 report.
+mitigations: [] # TODO: source. Defender guidance is in the gated full report, not read.
+targets:
+  orgs_affected: null # "several" government domains and private-sector entities; no count.
+  records_exfiltrated: null
+  sectors:
+    - government
+  countries:
+    - ID # Indonesian government domains (CrowdStrike blog).
+    # One further government domain belongs to an unnamed other country.
+lifecycle_phases:
+  - resource-dev # 819 skills gathered mostly from public GitHub repositories.
+  - initial-access
+  - execution
+mappings:
+  mitre_atlas:
+    - AML.T0016.002 # Obtain Capabilities: Generative AI (Claude via Claude Code)
+    - AML.T0016.004 # Obtain Capabilities: AI Agent Tools (public agent skills)
+    - AML.T0054 # LLM Jailbreak (intervening to overcome safety guardrails)
+    - AML.T0102 # Generate Malicious Commands (Claude Code conducted the intrusions)
+  mitre_atlas_case_studies: []
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: [] # OWASP Top 10 for Agentic Applications, ASI01–ASI10 (pinned in schema/owasp-asi.json; method in docs/owasp-asi-mapping.md)
+  cve: []
+  aiid: []
+impact: >-
+  Per CrowdStrike: several Indonesian government domains, a government domain
+  of another country, and several private-sector entities compromised. No
+  victim is named and no data theft is stated in the public text.
+sources:
+  - title: "CrowdStrike Uncovers New Agentic AI Campaigns"
+    url: "https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-agentic-ai-campaigns/"
+    publisher: "CrowdStrike Counter Adversary Operations"
+    type: vendor-report
+    date: 2026-10-21
+  - title: "CrowdStrike Counter Adversary Operations Uncovers New 2026 Agentic AI Campaigns (report landing page)"
+    url: "https://www.crowdstrike.com/en-us/resources/reports/agentic-ai-attack-campaigns/"
+    publisher: "CrowdStrike Counter Adversary Operations" # Landing page shows no date; full report is behind a download form and was not read.
+    type: vendor-report
+    date: 2026-10-21 # Date of the announcing blog post; the landing page itself is undated.
+  # CXOtoday (2026-10-22) republishes the blog text verbatim; not cited, as it adds no independent reporting.
+added:
+  date: 2026-10-22
+  by: "MLSecOpsHub"
+last_updated: 2026-10-22

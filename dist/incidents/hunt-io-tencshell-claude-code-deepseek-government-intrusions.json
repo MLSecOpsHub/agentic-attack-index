@@ -1,0 +1,94 @@
+{
+  "actor": "Unknown (Hunt.io: indicators 'consistent with China-based threat actor activity', no group named; Deepwatch: 'suspected Chinese state-sponsored operators')",
+  "actor_type": "unknown",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-22"
+  },
+  "ai_role": "significant",
+  "autonomy_level": "human-in-the-loop",
+  "autonomy_pct": null,
+  "category": "ai-orchestrated-campaign",
+  "confidence": "primary",
+  "date_disclosed": "2026-07-14",
+  "guardrail_bypass": [
+    "legitimate-tool-abuse",
+    "open-weight-model"
+  ],
+  "id": "hunt-io-tencshell-claude-code-deepseek-government-intrusions",
+  "impact": "Per Hunt.io: names, national ID numbers and positions of Thai government employees; citizen complaint submissions, source code, encryption keys and database credentials from an Afghan government application; development source code and database information from a Taiwanese chemical manufacturer; cloud service account access at a Taiwanese telecom firm via hardcoded keys; and administrator account data from a payment processing platform.",
+  "last_updated": "2026-10-22",
+  "lifecycle_phases": [
+    "recon",
+    "resource-dev",
+    "initial-access",
+    "execution",
+    "credential-access",
+    "exfiltration",
+    "deception-social-eng"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [
+      "AML.T0016.002",
+      "AML.T0102"
+    ],
+    "mitre_atlas_case_studies": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "Deepwatch recommends short-lived tokens, role-based access and phishing-resistant MFA on external admin portals, and blocking or alerting on traffic to the Hong Kong networks identified where business needs allow.",
+    "Deepwatch suggests detecting agentic activity by watching for web or database processes that spawn shells performing rapid enumeration and credential hunting.",
+    "Hunt.io notified affected organisations and national CERTs on 2026-07-06 and held publication for seven days."
+  ],
+  "model_families": [
+    "deepseek",
+    "claude"
+  ],
+  "models": [
+    "DeepSeek-v4-pro",
+    "Claude Code 2.1.165"
+  ],
+  "name": "Suspected China-based operators paired DeepSeek reasoning with Claude Code execution against Afghan and Thai government systems and Taiwanese firms",
+  "related": [
+    "thailand-mof-hermes-agent-intrusion",
+    "secflow-asia-government-education-campaign"
+  ],
+  "severity": "high",
+  "sources": [
+    {
+      "date": "2026-07-14",
+      "publisher": "Hunt.io",
+      "title": "Suspected Chinese Operators Use Claude Code and DeepSeek to Target Government and Financial Systems Across Four Countries",
+      "type": "vendor-report",
+      "url": "https://hunt.io/blog/chinese-operators-claude-deepseek-government-intrusion"
+    },
+    {
+      "date": "2026-07-16",
+      "publisher": "Deepwatch",
+      "title": "CA-26-026: Suspected Chinese State-Sponsored Intrusion Campaign Leveraging Split-Model Agentic AI Architectures",
+      "type": "vendor-report",
+      "url": "https://www.deepwatch.com/labs/ca-26-026-suspected-chinese-state-sponsored-intrusion-campaign-leveraging-split-model-agentic-ai-architectures/"
+    }
+  ],
+  "status": "reported",
+  "summary": "Hunt.io reported on 2026-07-14 a campaign it found by pivoting from known TencShell command-and-control infrastructure to an exposed open directory on a Hong Kong-hosted server holding victim source code, exploit scripts, operator logs and cloned login pages, with notes in Simplified Chinese. The recovered material shows a split-model workflow: DeepSeek-v4-pro handled reasoning, attack logic, script generation and decisions, while Claude Code handled execution, agentic tool use, session persistence and task parallelisation, reworking exploits after failed attempts and iterating phishing pages across targets. Per Hunt.io, the operators achieved remote code execution on an Afghan government web application, gained administrative access to a Thai government administrative system, exploited two of eight reconnoitred Taiwanese supply-chain and manufacturing organisations (a chemical manufacturer and a telecom and edge-device maker), targeted financial-services platforms in Europe, Australia and Asia, and staged reconnaissance and phishing pages against US government bodies without confirmed intrusion. Hunt.io notified affected organisations and national CERTs on 2026-07-06. It stops short of naming a group, describing the indicators as consistent with China-based activity; Deepwatch, relaying Hunt.io, calls the operators suspected Chinese state-sponsored.",
+  "targets": {
+    "countries": [
+      "AF",
+      "TH",
+      "TW"
+    ],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": [
+      "government",
+      "chemical-manufacturing",
+      "telecommunications",
+      "financial-services"
+    ]
+  }
+}

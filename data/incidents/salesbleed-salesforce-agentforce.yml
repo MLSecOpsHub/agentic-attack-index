@@ -1,0 +1,75 @@
+id: salesbleed-salesforce-agentforce
+name: "SalesBleed — indirect prompt injection and zero-click data exfiltration in Salesforce Agentforce"
+summary: >-
+  Zenity Labs disclosed "SalesBleed" on 2026-09-24, an indirect prompt-injection
+  chain in Salesforce Agentforce. Instructions planted in a public Web-to-Lead
+  submission were processed when an internal user made a routine request about
+  leads, causing the default General CRM subagent to query the Accounts table
+  outside the user's intent and leak account data (company names and deal
+  sizes in the proof of concept) to an attacker-controlled server. Salesforce
+  confirmed the reports, hardened its Trusted URLs mechanism and confirmed the
+  fixes in August 2026; it told SecurityWeek it had no evidence of exploitation
+  against any customer.
+date_disclosed: 2026-09-24 # Zenity Labs post date.
+status: reported # Demonstration; not observed in the wild. Researcher PoC with no CVE or vendor advisory (brief rule 7; ForcedLeak precedent), although Salesforce acknowledged it on record to SecurityWeek.
+confidence: primary # Zenity Labs is the discloser.
+category: agent-hijack-prompt-injection
+severity: high # Editorial: no CVSS or vendor severity is stated in the sources.
+models: [] # Underlying model not named by Zenity Labs.
+model_families:
+  - other
+actor: "Zenity Labs (Alex Apostolov, João Donato, Avishai Efrat, Ayush RoyChowdhury)" # Authors per the Zenity Labs post.
+actor_type: researcher
+autonomy_pct: null
+autonomy_level: not-applicable # The agent was the hijacked component.
+guardrail_bypass:
+  - indirect-prompt-injection # Zenity Labs: indirect prompt injection in a Web-to-Lead field.
+ai_role: load-bearing
+related:
+  - forcedleak-salesforce-agentforce # Same Web-to-Lead ingress into Agentforce, different exfiltration path.
+mitigations:
+  - "Salesforce remediated the issue and hardened the Trusted URLs mechanism (Zenity Labs); fixes confirmed by Salesforce on 2026-08-18 and by Zenity Labs on 2026-08-19."
+  - "Salesforce changed default settings for certain Agentforce actions in Slack to require user confirmation before sending messages and is contacting customers to review configurations (SecurityWeek)."
+  - "Zenity Labs: limit subagent tool scope to the data it needs, review public intake channels such as Web-to-Lead as attack surface, and do not rely on output redaction alone."
+targets:
+  orgs_affected: 0 # Salesforce to SecurityWeek: no evidence the issue was exploited against any customer.
+  records_exfiltrated: null
+  sectors: []
+  countries: []
+lifecycle_phases:
+  - initial-access
+  - execution
+  - exfiltration
+mappings:
+  mitre_atlas:
+    - AML.T0051.001 # LLM Prompt Injection: Indirect
+    - AML.T0093 # Prompt Infiltration via Public-Facing Application (Web-to-Lead form)
+    - AML.T0053 # AI Agent Tool Invocation (Query Records tool on Accounts)
+    - AML.T0085.001 # Data from AI Services: AI Agent Tools
+    - AML.T0057 # LLM Data Leakage
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: [] # OWASP Top 10 for Agentic Applications, ASI01–ASI10 (pinned in schema/owasp-asi.json; method in docs/owasp-asi-mapping.md)
+  cve: [] # No CVE in the sources.
+  aiid: []
+impact: >-
+  Proof-of-concept exfiltration of CRM Accounts data (company names and deal
+  sizes) from Salesforce Agentforce after an internal user's routine query, with
+  no click on attacker content required. Zenity Labs states the reach extends to
+  any data the subagent's tools can access. Remediated by Salesforce; no
+  customer exploitation known per Salesforce.
+sources:
+  - title: "SalesBleed: Indirect Prompt Injection and 0-Click Data Exfiltration on Agentforce"
+    url: "https://labs.zenity.io/post/salesbleed-0-click-data-exfiltration-on-agentforce"
+    publisher: "Zenity Labs"
+    type: first-party-disclosure
+    date: 2026-09-24
+  - title: "'SalesBleed' Flaws in Salesforce Agentforce Enabled Zero-Click Data Exfiltration"
+    url: "https://www.securityweek.com/salesbleed-flaws-in-salesforce-agentforce-enabled-zero-click-data-exfiltration/"
+    publisher: "SecurityWeek"
+    type: news
+    date: 2026-09-25
+added:
+  date: 2026-10-22
+  by: "MLSecOpsHub"
+last_updated: 2026-10-22

@@ -1,0 +1,71 @@
+{
+  "actor": "Unknown",
+  "actor_type": "unknown",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-22"
+  },
+  "ai_role": "significant",
+  "autonomy_level": "unknown",
+  "autonomy_pct": null,
+  "category": "autonomous-attack",
+  "confidence": "primary",
+  "date_disclosed": "2026-10-19",
+  "guardrail_bypass": [
+    "unknown"
+  ],
+  "id": "wiz-autonomous-agent-multi-cloud-intrusion",
+  "impact": "Per Wiz: credentials harvested across Kubernetes, cloud, CI/CD and secret stores; a new user created through a compromised identity-provider key; credentials minted across dozens of GCP identities; administrative access across the victim's AWS Organization; persistence in Kubernetes workloads; and data exfiltrated through alternative channels after storage routes were denied. Data volume not reported.",
+  "last_updated": "2026-10-22",
+  "lifecycle_phases": [
+    "recon",
+    "initial-access",
+    "credential-access",
+    "privilege-escalation",
+    "persistence",
+    "exfiltration"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [
+      "AML.T0016.002",
+      "AML.T0102",
+      "AML.T0116",
+      "AML.T0117"
+    ],
+    "mitre_atlas_case_studies": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "Wiz recommends unifying cloud, Kubernetes, identity, CI/CD and SaaS logs and correlating alerts across them, because the activity spanned many platforms at once.",
+    "Rotate all credentials on compromised resources and check linked identities for misuse; maintain runtime visibility on endpoints, runners and workloads.",
+    "Enforce isolation between environments, limit cross-system trust, and continuously reduce the external attack surface."
+  ],
+  "model_families": [
+    "other"
+  ],
+  "models": [],
+  "name": "AI agent system ran an end-to-end intrusion across a multi-cloud organisation's AWS, GCP and Kubernetes estate",
+  "related": [],
+  "severity": "high",
+  "sources": [
+    {
+      "date": "2026-10-19",
+      "publisher": "Wiz",
+      "title": "Loud, Fast, and Everywhere: Anatomy of a Real AI-Driven Cloud Attack",
+      "type": "vendor-report",
+      "url": "https://www.wiz.io/blog/anatomy-of-ai-driven-cloud-attacks"
+    }
+  ],
+  "status": "reported",
+  "summary": "Wiz's Customer Incident Response Team reported on 2026-10-19 an investigation in which, it says, an AI agent system ran an intrusion against a large multi-cloud organisation from start to finish. Per Wiz, the agent probed internet-facing services, gained initial access through a known remote-code-execution flaw in an exposed management interface, harvested Kubernetes, cloud-metadata, CI/CD and secret-store credentials, pivoted between AWS and GCP, abused a compromised identity-provider administrative key, escalated to cluster-admin through the GitOps pipeline, gained administrative access across the AWS Organization, planted persistence in Kubernetes workloads, and moved data out through alternative channels when storage routes were denied. Wiz bases its assessment that an AI agent ran the operation on behavioural evidence: hundreds to thousands of actions per hour without human-like pauses, simultaneous activity across platforms, immediate rewriting and retrying of failed scripts, generated-style code, and resource names framing the activity as security testing. The same source address scanned more than 600 other Wiz customer environments in the same window. Wiz does not name the victim, the model, the agent framework or a threat actor.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": 1,
+    "records_exfiltrated": null,
+    "sectors": []
+  }
+}

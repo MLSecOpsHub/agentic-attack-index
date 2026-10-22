@@ -1,0 +1,77 @@
+{
+  "actor": "Zenity Labs (Alex Apostolov, João Donato, Avishai Efrat, Ayush RoyChowdhury)",
+  "actor_type": "researcher",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-22"
+  },
+  "ai_role": "load-bearing",
+  "autonomy_level": "not-applicable",
+  "autonomy_pct": null,
+  "category": "agent-hijack-prompt-injection",
+  "confidence": "primary",
+  "date_disclosed": "2026-09-24",
+  "guardrail_bypass": [
+    "indirect-prompt-injection"
+  ],
+  "id": "salesbleed-salesforce-agentforce",
+  "impact": "Proof-of-concept exfiltration of CRM Accounts data (company names and deal sizes) from Salesforce Agentforce after an internal user's routine query, with no click on attacker content required. Zenity Labs states the reach extends to any data the subagent's tools can access. Remediated by Salesforce; no customer exploitation known per Salesforce.",
+  "last_updated": "2026-10-22",
+  "lifecycle_phases": [
+    "initial-access",
+    "execution",
+    "exfiltration"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0093",
+      "AML.T0053",
+      "AML.T0085.001",
+      "AML.T0057"
+    ],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "Salesforce remediated the issue and hardened the Trusted URLs mechanism (Zenity Labs); fixes confirmed by Salesforce on 2026-08-18 and by Zenity Labs on 2026-08-19.",
+    "Salesforce changed default settings for certain Agentforce actions in Slack to require user confirmation before sending messages and is contacting customers to review configurations (SecurityWeek).",
+    "Zenity Labs: limit subagent tool scope to the data it needs, review public intake channels such as Web-to-Lead as attack surface, and do not rely on output redaction alone."
+  ],
+  "model_families": [
+    "other"
+  ],
+  "models": [],
+  "name": "SalesBleed — indirect prompt injection and zero-click data exfiltration in Salesforce Agentforce",
+  "related": [
+    "forcedleak-salesforce-agentforce"
+  ],
+  "severity": "high",
+  "sources": [
+    {
+      "date": "2026-09-24",
+      "publisher": "Zenity Labs",
+      "title": "SalesBleed: Indirect Prompt Injection and 0-Click Data Exfiltration on Agentforce",
+      "type": "first-party-disclosure",
+      "url": "https://labs.zenity.io/post/salesbleed-0-click-data-exfiltration-on-agentforce"
+    },
+    {
+      "date": "2026-09-25",
+      "publisher": "SecurityWeek",
+      "title": "'SalesBleed' Flaws in Salesforce Agentforce Enabled Zero-Click Data Exfiltration",
+      "type": "news",
+      "url": "https://www.securityweek.com/salesbleed-flaws-in-salesforce-agentforce-enabled-zero-click-data-exfiltration/"
+    }
+  ],
+  "status": "reported",
+  "summary": "Zenity Labs disclosed \"SalesBleed\" on 2026-09-24, an indirect prompt-injection chain in Salesforce Agentforce. Instructions planted in a public Web-to-Lead submission were processed when an internal user made a routine request about leads, causing the default General CRM subagent to query the Accounts table outside the user's intent and leak account data (company names and deal sizes in the proof of concept) to an attacker-controlled server. Salesforce confirmed the reports, hardened its Trusted URLs mechanism and confirmed the fixes in August 2026; it told SecurityWeek it had no evidence of exploitation against any customer.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": 0,
+    "records_exfiltrated": null,
+    "sectors": []
+  }
+}

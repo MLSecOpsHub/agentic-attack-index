@@ -1,0 +1,138 @@
+id: norforge-cairn-exposed-panels-ecommerce-intrusions
+name: "Exposed Cairn multi-agent panels revealed AI-agent intrusion campaigns against e-commerce and payment sites, including Deere and SharkNinja web properties"
+summary: >-
+  NorForge researcher Snorre Fagerland reported on 2026-10-19 that internet
+  scans surfaced more than 20 exposed web panels of Cairn, an open-source
+  multi-agent AI problem-solving platform, that he assessed as likely used
+  for malicious operations. In Cairn, an operator sets a target and an
+  objective and AI agents investigate it, sharing findings on a common
+  blackboard to which operators can add hints. NorForge groups the panels
+  into three clusters: a Chinese-language cluster of 14 panels with more
+  than 1,100 attack projects against mainly e-commerce and payment
+  infrastructure in the US, Japan and Australia; a financially motivated
+  English-language cluster of 10 panels whose operators stated they stole
+  credit cards and cryptocurrency; and a single low-confidence panel. Worker
+  labels indicate Claude Code and Pi agent harnesses running DeepSeek models.
+  NorForge estimates a success rate of about 10 percent, with successful
+  projects taking just under 23 hours on average, and validated one
+  compromise directly. Reuters, which reviewed the Chinese-speaking
+  operator's Cairn activity, reported that the agents had attempted more than
+  1,200 sites since 2026-09-25 and, per Fagerland, breached websites of more
+  than 100 companies; Deere and SharkNinja confirmed incidents to Reuters and
+  two smaller businesses acknowledged compromise. Reuters could not determine
+  how much data was taken. Cairn's developer said the platform was not
+  designed for hacking.
+# Victim naming: NorForge's report names no victims. Reuters identified victims
+# independently by reviewing the operator's Cairn activity and carried on-record
+# statements: Deere ("necessary remediation actions", "no indication that
+# sensitive information was accessed") and SharkNinja (standalone product-support
+# site hit, threat contained; paraphrased). Cummins told Reuters it was
+# "investigating the report of a potential cyber-attack on a website operated by
+# one of our third-party vendors"; not named in the summary because it has not
+# confirmed an incident.
+# Related to, not a duplicate of, gambit-ai-agents-retail-skimmer-campaign:
+# Gambit's September report mentioned Cairn and was NorForge's opening lead, but
+# this record covers NorForge's own panel findings, a later observation window,
+# three operator clusters and Reuters-identified victims.
+date_disclosed: 2026-10-19 # NorForge report and Reuters story both dated 2026-10-19.
+# Two victims confirmed intrusions to Reuters, but the AI-agent attribution and
+# campaign scale rest on NorForge's reading of the exposed panels, relayed by
+# Reuters; graded reported.
+status: reported
+confidence: primary # NorForge analysed the operators' exposed Cairn panels directly.
+category: autonomous-attack
+severity: high # Intrusions confirmed by named companies; one cluster's operators stated card and cryptocurrency theft; data volume undetermined.
+models:
+  - "DeepSeek V4.1 Flash" # Chinese-language cluster worker label "claudecode_deepseek-v4.1-flash", per NorForge; NorForge says this "could mean" Claude Code running DeepSeek 4.1 Flash.
+  - "Claude Code" # Agent harness indicated by the same worker label; Reuters: Fagerland believes the campaign used DeepSeek and Anthropic's Claude Code. No source says Anthropic models were called.
+  - "Pi" # English-language cluster worker label "pi_openrouter_deepseek" (Pi coding-agent framework with DeepSeek via OpenRouter), per NorForge.
+model_families:
+  - deepseek
+  - claude # Claude Code harness only; the model behind it is DeepSeek per the worker label.
+  - other # Pi agent framework.
+actor: "Unknown operators in three clusters (NorForge: AIA0001 Chinese-speaking, financially motivated; AIA0002 English-language, financially motivated; AIA0003 low confidence). Reuters: 'Chinese-speaking' refers to the language of the instructions."
+actor_type: cybercriminal # NorForge: activity appears financially motivated, no obvious state-sponsored activity.
+autonomy_pct: null
+# NorForge: task feeding is automated and agents run with substantial autonomy,
+# but operators can add hints and steer projects. Reuters quotes Fagerland that
+# agents can now carry out intrusions end to end "without human intervention";
+# the primary report's description of operator steering is used here.
+autonomy_level: supervised-autonomous
+guardrail_bypass:
+  - legitimate-tool-abuse # Open-source problem-solving platform and coding-agent harnesses used against real targets.
+  - open-weight-model # DeepSeek models behind the harnesses, per NorForge worker labels.
+ai_role: load-bearing # Per NorForge and Reuters the agents did nearly all the probing and intrusion work.
+related:
+  - gambit-ai-agents-retail-skimmer-campaign # Gambit's September report named Cairn and was NorForge's opening lead; no operator link stated.
+mitigations:
+  - "NorForge withheld panel locations and indicators until takedown, submitted takedown requests for the panels and worked with Reuters to notify victims."
+  - "NorForge notes that exposed panels held hundreds of secrets (11 percent verified valid by its scan), and that some apparently legitimate red-team Cairn deployments were also exposed, putting their clients at risk."
+  - "Deere told Reuters it took remediation actions; SharkNinja said it contained the threat."
+targets:
+  # Reuters (citing Fagerland): websites of more than 100 companies breached;
+  # NorForge's own report gives no confirmed count (about 10% success across
+  # 1,100+ projects in one cluster) and validated one compromise directly.
+  orgs_affected: null
+  records_exfiltrated: null # Reuters could not determine how much data was extracted.
+  sectors:
+    - retail # E-commerce and payment infrastructure, per NorForge and Reuters.
+    - financial-services # Merchant payment services and payment sites (AIA0002), per NorForge.
+  countries:
+    - US # NorForge and Reuters.
+    - JP # NorForge and Reuters.
+    - AU # NorForge and Reuters.
+    - CA # Reuters only.
+    # NorForge also mentions several African commerce sites (countries not named).
+lifecycle_phases:
+  - recon # Agents investigating targets; targets pre-validated before tasking, per NorForge.
+  - initial-access # Web compromises, including a web shell NorForge validated.
+  - execution
+  - exfiltration # AIA0002 operators stated card and cryptocurrency theft, per NorForge.
+mappings:
+  mitre_atlas:
+    - AML.T0016.002 # Obtain Capabilities: Generative AI
+    - AML.T0116 # Autonomous Reconnaissance (agents investigate targets)
+    - AML.T0117 # Autonomous Attack-Path Adaptation (agents pursue a goal over hours with limited direction)
+    - AML.T0124 # Autonomous Attack Orchestration (Cairn coordinates multiple agents)
+    - AML.T0118.000 # Communication via Shared Artifacts (agents share findings on a blackboard)
+  mitre_atlas_case_studies: []
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: [] # OWASP Top 10 for Agentic Applications, ASI01–ASI10 (pinned in schema/owasp-asi.json; method in docs/owasp-asi-mapping.md)
+  cve: []
+  aiid: []
+impact: >-
+  Per Reuters, websites of more than 100 companies were breached by the
+  Chinese-speaking operator's agents, with more than 1,200 sites attempted;
+  Deere reported remediation and no indication sensitive information was
+  accessed, SharkNinja said a standalone product-support site was hit and
+  contained, and two smaller businesses acknowledged compromise. Reuters
+  could not determine how much data was taken. NorForge reports that one
+  English-language cluster's operators stated they stole credit cards and
+  cryptocurrency, and that the exposed panels leaked hundreds of credentials
+  and API keys.
+sources:
+  - title: "Inside Cairn: Open Windows into massive AI-Driven Cyber Operations"
+    url: "https://norforge.com/blog/inside_cairn"
+    publisher: "NorForge"
+    type: vendor-report
+    date: 2026-10-19
+  - title: "How one hacker used AI agents to break into over 100 company websites"
+    url: "https://www.staradvertiser.com/2026/10/19/breaking-news/how-one-hacker-used-ai-agents-to-break-into-over-100-company-websites/"
+    publisher: "Reuters (via Honolulu Star-Advertiser)" # Reuters syndication; same article as the capital.com source, not a second publisher.
+    type: news
+    date: 2026-10-19
+  - title: "How one hacker used AI agents and a few thousand dollars to break into scores of sites"
+    url: "https://capital.com/en-ke/news/how-one-hacker-used-ai-agents-and-a-few-thousand"
+    publisher: "Reuters (via Capital.com)" # Reuters syndication; same article as the Star-Advertiser source.
+    type: news
+    date: 2026-10-19
+  - title: "AI agents broke into 100+ sites for one hacker at $50 each, researcher says"
+    url: "https://thenextweb.com/news/ai-agents-hacker-cairn-100-sites-deere-norforge"
+    publisher: "The Next Web" # Relays NorForge and Reuters; did not independently verify the intrusions.
+    type: news
+    date: 2026-10-19
+added:
+  date: 2026-10-22
+  by: "MLSecOpsHub"
+last_updated: 2026-10-22

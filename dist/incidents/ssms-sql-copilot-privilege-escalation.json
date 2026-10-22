@@ -1,0 +1,86 @@
+{
+  "actor": "Johann Rehberger (Embrace The Red)",
+  "actor_type": "researcher",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-22"
+  },
+  "ai_role": "load-bearing",
+  "autonomy_level": "not-applicable",
+  "autonomy_pct": null,
+  "category": "agent-hijack-prompt-injection",
+  "confidence": "primary",
+  "date_disclosed": "2026-09-08",
+  "guardrail_bypass": [
+    "indirect-prompt-injection"
+  ],
+  "id": "ssms-sql-copilot-privilege-escalation",
+  "impact": "Demonstrated bypass of SQL Copilot's read-only mode, data modification and exfiltration of database rows, and escalation from db_owner to sysadmin using the victim's connection. MSRC: database data could be accessed or modified with the connected user's permissions; not publicly disclosed or exploited at release.",
+  "last_updated": "2026-10-22",
+  "lifecycle_phases": [
+    "initial-access",
+    "execution",
+    "persistence",
+    "privilege-escalation",
+    "exfiltration"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [
+      "CVE-2026-65669"
+    ],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0086"
+    ],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "Install the Microsoft update for CVE-2026-65669; keep SSMS installations up to date (Embrace The Red).",
+    "Use Microsoft's SQL Copilot admin controls (disable Copilot, group policies, execution context); do not run Copilot on highly privileged database connections (Embrace The Red).",
+    "Treat read-only enforcement as a security invariant rather than a model instruction, and treat persistent agent instruction files as a trust relationship in the permission model (Embrace The Red)."
+  ],
+  "model_families": [
+    "other"
+  ],
+  "models": [],
+  "name": "SQL Copilot in SSMS — prompt injection to database privilege escalation (CVE-2026-65669)",
+  "related": [
+    "visual-studio-copilot-ssms-rce"
+  ],
+  "severity": "critical",
+  "sources": [
+    {
+      "date": "2026-09-30",
+      "publisher": "Embrace The Red",
+      "title": "From SELECT to SYSADMIN with SQL Copilot (CVE-2026-65669)",
+      "type": "first-party-disclosure",
+      "url": "https://embracethered.com/blog/posts/2026/from-select-to-sysadmin-sql-copilot-bluehat-asia/"
+    },
+    {
+      "date": "2026-09-08",
+      "publisher": "NVD / NIST",
+      "title": "CVE-2026-65669 Detail",
+      "type": "government-advisory",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-65669"
+    },
+    {
+      "date": "2026-09-08",
+      "publisher": "Microsoft Security Response Center",
+      "title": "Microsoft SQL Server Elevation of Privilege Vulnerability (CVE-2026-65669), CSAF advisory",
+      "type": "vendor-report",
+      "url": "https://msrc.microsoft.com/csaf/advisories/2026/msrc_cve-2026-65669.json"
+    }
+  ],
+  "status": "confirmed",
+  "summary": "Johann Rehberger (Embrace The Red) disclosed research, presented at BlueHat Asia 2026, showing that SQL Copilot in SQL Server Management Studio could be steered by instructions in content it reads, including database comments and persistent instruction files stored in database extended properties that a lower-privileged user can attach. The hijacked agent bypassed its read-only mode, ran write operations and arbitrary T-SQL with the connected user's permissions, exfiltrated database rows to an external server and, in the final demonstration, added an attacker's login to the sysadmin role. Microsoft assigned CVE-2026-65669 (Elevation of Privilege, CVSS 9.6) on 2026-09-08.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": []
+  }
+}

@@ -1,0 +1,136 @@
+id: storm-0940-artex-connectwise-oauth-supply-chain
+name: "China-state-aligned Storm-0940 used ARTEX agents to abuse compromised ConnectWise Cloud Backup app identities against downstream Microsoft 365 tenants"
+summary: >-
+  Microsoft Threat Intelligence reported on 2026-10-21 that Storm-0940, which
+  it describes as a China-state-aligned actor focused on data theft, was
+  responsible for the supply-chain compromise of ConnectWise Cloud Backup
+  (formerly SkyKick) and related ConnectWise multi-tenant cloud applications.
+  According to Microsoft, the actor used ARTEX, an open-source multi-agent
+  LLM penetration-testing framework, to accelerate scanning and
+  reconnaissance, a password-spray campaign against 327 accounts at eight
+  organisations, and OAuth application abuse. After the actor obtained the
+  identities of the ConnectWise applications, AI agents operating on its
+  behalf authenticated into downstream customer Microsoft 365 tenants
+  (Microsoft counts more than 2,250 tenants reached), carried out directory
+  reconnaissance, added application credentials for persistence and attempted
+  privilege changes, in several cases reaching privileged access within three
+  hours of initial targeting. ConnectWise discovered the incident on
+  2026-10-14, disabled the affected application identities, suspended Cloud
+  Backup and connected services, and reset credentials. Huntress, which
+  confirmed unauthorised sign-ins in at least 162 tenants, describes the
+  post-compromise activity as fast, scripted and indiscriminate and does not
+  mention AI. The AI-agent finding is Microsoft's; ConnectWise's advisory
+  repeats it citing Microsoft threat intelligence. Microsoft says no
+  vulnerability in its own products was involved and that a successful
+  authentication does not necessarily mean customer data was accessed.
+# The AI-agent claim (ARTEX agents) originates solely with Microsoft. Huntress
+# (2026-10-16) describes the activity as "fast, scripted, and notably
+# indiscriminate", a script working from a target list, and does not mention AI;
+# Cybersecurity Dive (2026-10-19) does not mention AI. ConnectWise's advisory
+# (2026-10-21 update) says "The group used an openly available agentic AI
+# framework" while citing Microsoft threat intelligence, so it is derivative
+# corroboration, not independent evidence.
+date_disclosed: 2026-10-21 # Microsoft's ARTEX/Storm-0940 disclosure. The compromise itself was public earlier: public reports 2026-10-15 (per Microsoft), ConnectWise advisory first posted 2026-10-16 17:47 UTC, Huntress blog 2026-10-16. Dated to the AI disclosure, as in artex-south-korea-finance-intrusions.
+# The compromise is confirmed by ConnectWise (first party) and Huntress, but the
+# AI-agent role rests on a single vendor's assessment (Microsoft), so the record
+# is graded reported, following artex-south-korea-finance-intrusions.
+status: reported
+confidence: primary # Microsoft Threat Intelligence investigated the activity directly; ConnectWise is the first-party disclosing victim vendor.
+category: infrastructure-abuse-supply-chain
+severity: critical # Supply-chain compromise of a multi-tenant vendor app: unauthorised sign-ins confirmed in 162+ tenants (Huntress) and privileged access in several environments (Microsoft); data access not confirmed.
+models: [] # TODO: source. Microsoft says ARTEX "can use any AI model" and does not name the backend Storm-0940 used.
+model_families:
+  - other # Backend model not named by any source.
+actor: "Storm-0940 (Microsoft: China-state aligned; Microsoft 'assesses that Storm-0940 was responsible'; ConnectWise: 'it appears that a China state-aligned group was responsible', citing Microsoft)"
+actor_type: nation-state # Microsoft describes Storm-0940 as a China-state aligned actor. Huntress and Cybersecurity Dive name no actor.
+autonomy_pct: null
+autonomy_level: unknown # Microsoft says ARTEX runs "with little needed human interaction" and agents acted "on behalf of the threat actor", but gives no human-versus-autonomous breakdown; Huntress judged one later targeted wave to appear manual.
+guardrail_bypass:
+  - legitimate-tool-abuse # Open-source penetration-testing framework used against real victims, per Microsoft.
+ai_role: significant # Per Microsoft the agents carried recon, spraying and OAuth abuse at machine speed; the enabling compromise of the vendor app identities is not attributed to AI, and Huntress/ConnectWise describe scripted activity.
+related:
+  - artex-south-korea-finance-intrusions # Same open-source ARTEX framework; different, financially motivated operator. No actor link stated by Microsoft.
+mitigations:
+  - "Microsoft and ConnectWise advise keeping affected ConnectWise application connections disabled until ConnectWise issues restoration instructions, preserving sign-in and audit evidence before removing anything, and reviewing Entra and Microsoft 365 audit records from at least 2026-10-15 for credential additions, role assignments, consent grants and suspicious mail or file access."
+  - "Huntress advises disabling rather than deleting the affected ConnectWise/SkyKick applications (deletion removes consent), reviewing client secrets and certificates on all enterprise applications for unrecognised additions since 2026-10-13, and removing directory roles held by vendor service principals that were not intentionally granted."
+  - "Longer term, Microsoft and Huntress recommend least privilege for multi-tenant app permissions and consent grants, monitoring of credential additions and privileged app activity, application management policies that restrict client secrets, and Conditional Access for workload identities."
+  - "ConnectWise disabled seven application identities, revoked certificates for affected connections, suspended Cloud Backup, SaaS Security and Cloud Management, and completed a full reset of accounts and credentials in the affected environment by 2026-10-19."
+targets:
+  # Tenant counts differ by vantage point: Huntress confirmed unauthorised
+  # sign-ins in 162 tenants (2026-10-16), then nearly 1,000 tenants with sign-in
+  # activity and over 300 successful (2026-10-17); Microsoft counts more than
+  # 2,250 tenants reached. ConnectWise gives no count. No reconciled total.
+  orgs_affected: null
+  records_exfiltrated: null # No source confirms data exfiltration.
+  sectors:
+    # Per Microsoft's targeting list; also automotive, manufacturing, military,
+    # semiconductor, software, think tanks and non-profits (off-vocabulary).
+    - defense
+    - chemical-manufacturing
+    - energy
+    - financial-services
+    - government
+    - legal
+    - media
+    - technology
+  countries: [] # Microsoft describes targeting as global without naming countries.
+lifecycle_phases:
+  - recon # Scanning and Graph/directory reconnaissance, per Microsoft.
+  - credential-access # Password spraying and abuse of application tokens, per Microsoft.
+  - initial-access # Compromised vendor application identities used to sign in to customer tenants.
+  - persistence # Application credentials added, per Microsoft and Huntress.
+  - privilege-escalation # Privileged role changes attempted and achieved in some tenants, per Microsoft and Huntress.
+mappings:
+  mitre_atlas:
+    - AML.T0016.002 # Obtain Capabilities: Generative AI (ARTEX LLM agents, per Microsoft)
+    - AML.T0116 # Autonomous Reconnaissance (agent-driven scanning and recon, per Microsoft)
+    - AML.T0124 # Autonomous Attack Orchestration (ARTEX is a multi-agent system, per Microsoft)
+  mitre_atlas_case_studies: []
+  mitre_attack: # As listed by Microsoft.
+    - T1595
+    - T1078.004
+    - T1195
+    - T1098.003
+    - T1098.001
+    - T1528
+    - T1087.004
+    - T1580
+  owasp_llm: []
+  owasp_asi: [] # OWASP Top 10 for Agentic Applications, ASI01–ASI10 (pinned in schema/owasp-asi.json; method in docs/owasp-asi-mapping.md)
+  cve: []
+  aiid: []
+impact: >-
+  Per Microsoft, Storm-0940 obtained privileged access to cloud environments
+  in several cases, performed directory reconnaissance, added application
+  credentials for persistence and attempted privilege changes; Microsoft
+  cautions that successful authentication does not necessarily mean customer
+  data was accessed. Huntress confirmed unauthorised token-issuing sign-ins in
+  at least 162 tenants and found no visible mail or file access in the tenant
+  it reviewed in detail. ConnectWise suspended Cloud Backup, SaaS Security and
+  Cloud Management for partners and customers and reported no indication that
+  backup archives were compromised.
+sources:
+  - title: "AI-driven, large-scale nation-state campaign using ARTEX enables supply chain compromise"
+    url: "https://www.microsoft.com/en-us/security/blog/2026/10/21/storm-0940-uses-artex-agentic-ai-connectwise-supply-chain-compromise/"
+    publisher: "Microsoft Threat Intelligence"
+    type: vendor-report
+    date: 2026-10-21
+  - title: "Cloud Backup (formerly known as SkyKick) Service Interruption"
+    url: "https://www.connectwise.com/company/trust/advisories"
+    publisher: "ConnectWise" # Trust Center advisory, first posted 2026-10-16 17:47 UTC, updated through 2026-10-22; AI and attribution lines cite Microsoft.
+    type: first-party-disclosure
+    date: 2026-10-16
+  - title: "ConnectWise (SkyKick) Vendor Credentials Abused in M365 Attacks"
+    url: "https://www.huntress.com/blog/vendor-credential-enables-unauthorized-access"
+    publisher: "Huntress" # Describes scripted activity; does not mention AI or name an actor.
+    type: vendor-report
+    date: 2026-10-16
+  - title: "ConnectWise suspends Cloud Backup service as hacker targets Microsoft 365 users"
+    url: "https://www.cybersecuritydive.com/news/connecwise-suspends-cloud-backup-hacker-microsoft-365/833345/"
+    publisher: "Cybersecurity Dive"
+    type: news
+    date: 2026-10-19
+added:
+  date: 2026-10-22
+  by: "MLSecOpsHub"
+last_updated: 2026-10-22

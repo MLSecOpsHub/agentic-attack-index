@@ -1,0 +1,86 @@
+id: crowdstrike-russian-speaking-claude-code-crm-exfiltration
+name: "Russian-speaking group's single-command Claude Code workflow exfiltrated client data from a US CRM vendor"
+summary: >-
+  CrowdStrike Counter Adversary Operations reported on 2026-10-21 that a group
+  of Russian-speaking individuals, one of four previously unreported actors
+  whose offensive agent frameworks were exposed through open directories,
+  tasked Claude Code through a single slash command with a seven-step
+  workflow. CrowdStrike says the workflow guides enumeration of the target
+  environment, gives Claude Code near-total autonomy in choosing exploitation
+  methods, sets out a high-level post-compromise routine, and includes
+  explicit exfiltration instructions. CrowdStrike states the group exfiltrated
+  corporate client data from a US-based customer relationship management
+  vendor and compromised several private-sector SaaS and data-centre entities
+  in Russia, Kyrgyzstan and the United States, as well as one government
+  domain of another country. The activity falls in the May to August 2026
+  window CrowdStrike documented. No victim is named.
+date_disclosed: 2026-10-21 # CrowdStrike blog date.
+status: reported # Single vendor; the only other coverage found (CXOtoday) reprints the blog verbatim.
+confidence: primary # CrowdStrike analysed the actors' exposed workflow directly.
+category: ai-orchestrated-campaign
+severity: high # Corporate client data exfiltrated from a US CRM vendor (CrowdStrike blog).
+models: [] # CrowdStrike blog names Claude Code but no model version.
+model_families:
+  - claude
+actor: "Unnamed group of Russian-speaking individuals (CrowdStrike 'Threat Actor 4'; no group name)"
+actor_type: unknown # CrowdStrike states neither motive nor affiliation.
+autonomy_pct: null
+# One operator command starts the workflow; Claude Code then has "near-total
+# autonomy" in selecting exploitation methods (CrowdStrike blog).
+autonomy_level: supervised-autonomous
+guardrail_bypass:
+  - unknown # CrowdStrike report page: all four actors overcame commercial AI safety controls; mechanism for this actor not stated publicly.
+ai_role: load-bearing # Claude Code chose exploitation methods and ran post-compromise and exfiltration steps (CrowdStrike blog).
+related:
+  - crowdstrike-argentina-healthcare-claude-code-harness # One of four actors in the same CrowdStrike 2026-10-21 report.
+  - crowdstrike-chinese-speaking-claude-proxy-harness-intrusions # One of four actors in the same CrowdStrike 2026-10-21 report.
+  - crowdstrike-indonesian-claude-code-skills-government-targeting # One of four actors in the same CrowdStrike 2026-10-21 report.
+mitigations: [] # TODO: source. Defender guidance is in the gated full report, not read.
+targets:
+  orgs_affected: null # One CRM vendor plus "several" other entities; no total.
+  records_exfiltrated: null
+  sectors:
+    - technology # CRM vendor, SaaS and data-centre entities (CrowdStrike blog).
+    - government # One government domain of an unnamed country.
+  countries:
+    - US
+    - RU
+    - KG
+lifecycle_phases:
+  - recon # Enumeration of the target environment.
+  - initial-access
+  - execution
+  - exfiltration
+mappings:
+  mitre_atlas:
+    - AML.T0016.002 # Obtain Capabilities: Generative AI (Claude via Claude Code)
+    - AML.T0017.002 # Develop Capabilities: AI Agent Tools (custom slash-command workflow)
+    - AML.T0102 # Generate Malicious Commands
+    - AML.T0117 # Autonomous Attack-Path Adaptation (agent selects exploitation methods)
+  mitre_atlas_case_studies: []
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: [] # OWASP Top 10 for Agentic Applications, ASI01–ASI10 (pinned in schema/owasp-asi.json; method in docs/owasp-asi-mapping.md)
+  cve: []
+  aiid: []
+impact: >-
+  Per CrowdStrike: corporate client data exfiltrated from a US-based customer
+  relationship management vendor; several private-sector SaaS and data-centre
+  entities in Russia, Kyrgyzstan and the United States and one foreign
+  government domain compromised. No victim is named.
+sources:
+  - title: "CrowdStrike Uncovers New Agentic AI Campaigns"
+    url: "https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-agentic-ai-campaigns/"
+    publisher: "CrowdStrike Counter Adversary Operations"
+    type: vendor-report
+    date: 2026-10-21
+  - title: "CrowdStrike Counter Adversary Operations Uncovers New 2026 Agentic AI Campaigns (report landing page)"
+    url: "https://www.crowdstrike.com/en-us/resources/reports/agentic-ai-attack-campaigns/"
+    publisher: "CrowdStrike Counter Adversary Operations" # Landing page shows no date; full report is behind a download form and was not read.
+    type: vendor-report
+    date: 2026-10-21 # Date of the announcing blog post; the landing page itself is undated.
+  # CXOtoday (2026-10-22) republishes the blog text verbatim; not cited, as it adds no independent reporting.
+added:
+  date: 2026-10-22
+  by: "MLSecOpsHub"
+last_updated: 2026-10-22

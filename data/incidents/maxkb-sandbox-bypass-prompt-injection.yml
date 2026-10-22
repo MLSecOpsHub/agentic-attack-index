@@ -1,0 +1,79 @@
+id: maxkb-sandbox-bypass-prompt-injection
+name: "MaxKBypass — prompt injection to command execution outside the MaxKB agent sandbox (CVE-2026-77521)"
+summary: >-
+  Lasso Security (researcher Noy Pearl) disclosed MaxKBypass, CVE-2026-77521,
+  in MaxKB, an open-source self-hosted knowledge-base and agent platform from
+  FIT2CLOUD / 1Panel-dev. Attacker-controlled text on a crawled webpage placed in
+  a public knowledge base led the victim's agent to invoke its shell tool during
+  an unrelated question, without the human approval the platform was meant to
+  require; in the official container, commands could run outside the intended
+  sandbox as root. The proof of concept made an outbound request to an
+  attacker-controlled server. The vendor fixed it in v2.10.5-lts and published
+  the advisory, rated critical (CVSS 10.0), on 2026-09-02.
+date_disclosed: 2026-09-02 # GitHub advisory GHSA-f36j-f34j-h3rx published 2026-09-02; the Lasso page header shows 2026-09-10 and its own timeline gives 2026-09-02; NVD published 2026-09-21.
+status: confirmed # Demonstration; not observed in the wild (neither source reports exploitation). First-party vendor advisory with CVE and fix.
+confidence: primary # Lasso is the discloser; the GitHub advisory is the maintainer's.
+category: agent-hijack-prompt-injection
+severity: critical # CVSS 10.0 per the GitHub advisory and Lasso.
+models: [] # No model named by Lasso.
+model_families:
+  - other
+actor: "Lasso Security (Noy Pearl)" # Author of the Lasso post; GHSA also credits two other Lasso accounts.
+actor_type: researcher
+autonomy_pct: null
+autonomy_level: not-applicable # The agent was the hijacked component.
+guardrail_bypass:
+  - indirect-prompt-injection # Lasso: indirect prompt injection via knowledge-base content.
+ai_role: load-bearing
+related: []
+mitigations:
+  - "Upgrade MaxKB to 2.10.5-lts or later, which applies the sandbox to every command the model supplies (Lasso; GitHub advisory)."
+  - "Use the Docker deployment and confirm the sandbox is actually enabled in the deployment mode; for agents with shell tools, verify isolation is engaged rather than assumed (Lasso)."
+targets:
+  orgs_affected: null
+  records_exfiltrated: null
+  sectors: []
+  countries: []
+lifecycle_phases:
+  - initial-access
+  - execution
+  - privilege-escalation # Commands ran outside the sandbox as root in the official container (Lasso).
+mappings:
+  mitre_atlas:
+    - AML.T0051.001 # LLM Prompt Injection: Indirect
+    - AML.T0070 # RAG Poisoning (instructions in knowledge-base content)
+    - AML.T0053 # AI Agent Tool Invocation (shell execute tool)
+    - AML.T0102 # Generate Malicious Commands (model-supplied shell command executed)
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: [] # OWASP Top 10 for Agentic Applications, ASI01–ASI10 (pinned in schema/owasp-asi.json; method in docs/owasp-asi-mapping.md)
+  cve:
+    - CVE-2026-77521
+  aiid: []
+impact: >-
+  Demonstrated command execution by a hijacked MaxKB agent, outside its sandbox
+  as root in the official container, with an outbound request to an
+  attacker-controlled server. Lasso states, without a specific demonstration,
+  that this design could let one tenant's chat reach another tenant's data and
+  application secrets. Fixed in v2.10.5-lts; no in-the-wild exploitation
+  reported.
+sources:
+  - title: "MaxKBypass - From Prompt Injection To Bypassing MaxKB Agent's Sandbox (CVE-2026-77521)"
+    url: "https://www.lasso.security/blog/cve-2026-77521-maxkbypass---from-prompt-injection-to-bypassing-maxkb-agents-sandbox"
+    publisher: "Lasso Security"
+    type: first-party-disclosure
+    date: 2026-09-10 # Page header date.
+  - title: "Prompt-injectable agent can lead to command execution (GHSA-f36j-f34j-h3rx)"
+    url: "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-f36j-f34j-h3rx"
+    publisher: "GitHub Security Advisory (MaxKB maintainers)"
+    type: first-party-disclosure
+    date: 2026-09-02
+  - title: "CVE-2026-77521 Detail"
+    url: "https://nvd.nist.gov/vuln/detail/CVE-2026-77521"
+    publisher: "NVD / NIST"
+    type: government-advisory
+    date: 2026-09-21
+added:
+  date: 2026-10-22
+  by: "MLSecOpsHub"
+last_updated: 2026-10-22

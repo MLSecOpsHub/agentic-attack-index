@@ -1,0 +1,85 @@
+id: crowdstrike-argentina-healthcare-claude-code-harness
+name: "Operator ran a PentestGPT-derived Claude Code harness against Argentine healthcare organizations, exfiltrating medical records"
+summary: >-
+  CrowdStrike Counter Adversary Operations reported on 2026-10-21 that a
+  Spanish/English-speaking operator, one of four previously unreported actors
+  whose offensive agent frameworks were exposed through open directories, ran
+  a purpose-built autonomous penetration-testing harness against Argentine
+  healthcare organizations. The harness uses a dual-agent design in which a
+  Supervisor Claude Code agent picks the next task from a predefined workflow
+  of attack stages and an Executor agent performs it; CrowdStrike says it is
+  derived from the open-source PentestGPT project and rebuilt with additional
+  MCP servers, exploitation scripts and skills. CrowdStrike states the
+  operator compromised at least 15 Argentina-based healthcare entities and
+  exfiltrated credentials and medical records from at least one. The activity
+  falls in the May to August 2026 window CrowdStrike documented. CrowdStrike
+  names no victim, and its report page states that all four actors overcame
+  commercial AI safety controls without saying how in the public text.
+date_disclosed: 2026-10-21 # CrowdStrike blog date.
+status: reported # Single vendor; the only other coverage found (CXOtoday) reprints the blog verbatim.
+confidence: primary # CrowdStrike analysed the actor's exposed framework directly.
+category: ai-orchestrated-campaign
+severity: high # At least 15 healthcare entities compromised; credentials and medical records exfiltrated from at least one (CrowdStrike blog).
+models: [] # CrowdStrike blog names Claude Code as the agent but no model version.
+model_families:
+  - claude # "Supervisor" Claude Code agent (CrowdStrike blog).
+actor: "Unnamed Spanish/English-speaking operator (CrowdStrike 'Threat Actor 1'; no group named)"
+actor_type: single-operator # CrowdStrike blog: "A Spanish/English-speaking operator".
+autonomy_pct: null
+# CrowdStrike describes an "autonomous" harness in which the Supervisor agent
+# selects tasks from a predefined state machine; the operator built the
+# workflow and chose the target sector.
+autonomy_level: supervised-autonomous
+guardrail_bypass:
+  - unknown # CrowdStrike report page: all four actors overcame commercial AI safety controls; mechanism for this actor not stated publicly.
+ai_role: load-bearing # CrowdStrike: agents select and execute attack stages; the compromises are attributed to the harness.
+related:
+  - crowdstrike-chinese-speaking-claude-proxy-harness-intrusions # One of four actors in the same CrowdStrike 2026-10-21 report.
+  - crowdstrike-indonesian-claude-code-skills-government-targeting # One of four actors in the same CrowdStrike 2026-10-21 report.
+  - crowdstrike-russian-speaking-claude-code-crm-exfiltration # One of four actors in the same CrowdStrike 2026-10-21 report.
+mitigations: [] # TODO: source. Defender guidance is in the gated full report, not read.
+targets:
+  orgs_affected: 15 # "at least 15" Argentina-based healthcare entities (CrowdStrike blog); a minimum.
+  records_exfiltrated: null # Medical records exfiltrated from at least one victim; count not stated.
+  sectors:
+    - healthcare
+  countries:
+    - AR
+lifecycle_phases:
+  - initial-access
+  - execution
+  - credential-access # Credentials exfiltrated (CrowdStrike blog).
+  - exfiltration
+mappings:
+  mitre_atlas:
+    - AML.T0016.002 # Obtain Capabilities: Generative AI (Claude via Claude Code)
+    - AML.T0016.004 # Obtain Capabilities: AI Agent Tools (open-source PentestGPT base)
+    - AML.T0017.002 # Develop Capabilities: AI Agent Tools (rebuilt with MCP servers, scripts and skills)
+    - AML.T0102 # Generate Malicious Commands (Executor agent performs attack tasks)
+    - AML.T0124 # Autonomous Attack Orchestration (Supervisor agent directs Executor agent)
+  mitre_atlas_case_studies: []
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: [] # OWASP Top 10 for Agentic Applications, ASI01–ASI10 (pinned in schema/owasp-asi.json; method in docs/owasp-asi-mapping.md)
+  cve: []
+  aiid: []
+impact: >-
+  Per CrowdStrike: at least 15 Argentina-based healthcare entities
+  compromised; credentials and medical records exfiltrated from at least one
+  victim. No victim is named.
+sources:
+  - title: "CrowdStrike Uncovers New Agentic AI Campaigns"
+    url: "https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-agentic-ai-campaigns/"
+    publisher: "CrowdStrike Counter Adversary Operations"
+    type: vendor-report
+    date: 2026-10-21
+  - title: "CrowdStrike Counter Adversary Operations Uncovers New 2026 Agentic AI Campaigns (report landing page)"
+    url: "https://www.crowdstrike.com/en-us/resources/reports/agentic-ai-attack-campaigns/"
+    publisher: "CrowdStrike Counter Adversary Operations" # Landing page shows no date; full report is behind a download form and was not read.
+    type: vendor-report
+    date: 2026-10-21 # Date of the announcing blog post; the landing page itself is undated.
+  # CXOtoday (2026-10-22) republishes the blog text verbatim; not cited, as it adds no independent reporting.
+added:
+  date: 2026-10-22
+  by: "MLSecOpsHub"
+last_updated: 2026-10-22

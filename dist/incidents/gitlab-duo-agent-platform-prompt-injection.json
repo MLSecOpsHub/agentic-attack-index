@@ -1,0 +1,70 @@
+{
+  "actor": "GitLab (internal finding by team member Mert Coskuner)",
+  "actor_type": "researcher",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-22"
+  },
+  "ai_role": "load-bearing",
+  "autonomy_level": "not-applicable",
+  "autonomy_pct": null,
+  "category": "agent-hijack-prompt-injection",
+  "confidence": "primary",
+  "date_disclosed": "2026-10-12",
+  "guardrail_bypass": [
+    "indirect-prompt-injection"
+  ],
+  "id": "gitlab-duo-agent-platform-prompt-injection",
+  "impact": "Per GitLab: potential unintended command execution by the Duo Agent Platform attributed to other users in GitLab EE 19.1 before 19.2.8, 19.3 before 19.3.5 and 19.4 before 19.4.2. CVSS 7.3. No exploitation reported.",
+  "last_updated": "2026-10-22",
+  "lifecycle_phases": [
+    "execution"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [
+      "CVE-2026-96893"
+    ],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0053"
+    ],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "Upgrade self-managed GitLab EE to 19.4.2, 19.3.5 or 19.2.8; GitLab.com and GitLab Dedicated were already patched (GitLab)."
+  ],
+  "model_families": [
+    "other"
+  ],
+  "models": [],
+  "name": "GitLab Duo Agent Platform — prompt injection into agent instructions (CVE-2026-96893)",
+  "related": [],
+  "severity": "high",
+  "sources": [
+    {
+      "date": "2026-10-12",
+      "publisher": "GitLab",
+      "title": "GitLab Critical Patch Release: 19.4.2, 19.3.5, 19.2.8",
+      "type": "first-party-disclosure",
+      "url": "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-4-2-released/"
+    },
+    {
+      "date": "2026-10-13",
+      "publisher": "NVD / NIST",
+      "title": "CVE-2026-96893 Detail",
+      "type": "government-advisory",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96893"
+    }
+  ],
+  "status": "confirmed",
+  "summary": "GitLab's critical patch release of 2026-10-12 (19.4.2, 19.3.5, 19.2.8) fixed CVE-2026-96893, an \"Improper Neutralization of Input Used for LLM Prompting\" issue in the GitLab Duo Agent Platform in GitLab EE. Under certain conditions an authenticated user could inject crafted content into AI agent instructions, potentially causing the agent to execute unintended commands attributed to other users, because of improper neutralisation of special elements in AI conversation context construction. GitLab rated it CVSS 7.3; it was found internally by a GitLab team member, and no public proof-of-concept write-up exists.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": []
+  }
+}

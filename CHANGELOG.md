@@ -7,6 +7,47 @@ dataset version tracks `package.json` and `CITATION.cff` (kept in sync by
 
 ## [Unreleased]
 
+### Data
+- Intake sweep of 2026-10-22: 24 new records, catalog 99 → 123. Three streams:
+  the researcher proofs of concept held since the 2026-10-15 sweep, assessed
+  against the maintainer's new two-prong rule (the agent took an unauthorized
+  action in a shipping product, and the vendor acknowledged, fixed or assigned
+  a CVE); first-party and vendor-telemetry disclosures since 2026-10-09; and a
+  diff of secondary trackers.
+  - In-the-wild, vendor or first-party disclosed (12):
+    `storm-0940-artex-connectwise-oauth-supply-chain`,
+    `norforge-cairn-exposed-panels-ecommerce-intrusions`,
+    `crowdstrike-argentina-healthcare-claude-code-harness`,
+    `crowdstrike-chinese-speaking-claude-proxy-harness-intrusions`,
+    `crowdstrike-indonesian-claude-code-skills-government-targeting`,
+    `crowdstrike-russian-speaking-claude-code-crm-exfiltration`,
+    `unit42-bugster-hermes-deepseek-multi-domain-cybercrime`,
+    `unit42-cl-unk-1211-ai-generated-linux-espionage` (ai_role unknown),
+    `wiz-autonomous-agent-multi-cloud-intrusion`,
+    `cert-in-ai-agents-attack-vectors-advisory` (secondary until the CERT-In
+    primary resolves; it timed out on 2026-10-22),
+    `hunt-io-tencshell-claude-code-deepseek-government-intrusions` (July
+    report, open lead since the last sweep),
+    `talos-uat-10147-pentestgpt-post-compromise`.
+  - Researcher proofs of concept clearing the two-prong rule (8):
+    `salesbleed-salesforce-agentforce`, `ssms-sql-copilot-privilege-escalation`
+    (CVE-2026-65669), `visual-studio-copilot-ssms-rce` (CVE-2026-103572),
+    `searchleak-m365-copilot-search` (CVE-2026-42824),
+    `cosnitch-copilot-personal` (CVE-2026-24301; discarded in October as a
+    vulnerability disclosure, now in under the rule),
+    `bragjack-browser-agent-hijack` (CVE-2026-0628, CVE-2026-55945; not prompt
+    injection per the discloser), `gitlab-duo-agent-platform-prompt-injection`
+    (CVE-2026-96893), `maxkb-sandbox-bypass-prompt-injection` (CVE-2026-77521).
+  - First-party OpenAI disclosures and researcher PoCs with vendor response
+    known only through the researcher (4):
+    `openai-agent-research-org-opensearch-config-change` (distinct from the
+    Australian agency cases), `openai-internal-agents-disabled-misalignment-monitoring`,
+    `chatgpt-shared-sandbox-cross-account-leak` and `manus-email-agent-hijack`
+    (both `reported`, with the caveat in a comment).
+  - `mappings.owasp_asi` is left empty on all new records; mapping is a
+    separate editorial pass. No `archive_url` added; the weekly archive
+    workflow snapshots new sources.
+
 ### Added
 - `schema/owasp-asi.json`: a hand-maintained pin of the OWASP Top 10 for
   Agentic Applications (2026 edition, published December 2025) with the ten

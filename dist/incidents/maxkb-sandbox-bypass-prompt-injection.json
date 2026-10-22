@@ -1,0 +1,82 @@
+{
+  "actor": "Lasso Security (Noy Pearl)",
+  "actor_type": "researcher",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-22"
+  },
+  "ai_role": "load-bearing",
+  "autonomy_level": "not-applicable",
+  "autonomy_pct": null,
+  "category": "agent-hijack-prompt-injection",
+  "confidence": "primary",
+  "date_disclosed": "2026-09-02",
+  "guardrail_bypass": [
+    "indirect-prompt-injection"
+  ],
+  "id": "maxkb-sandbox-bypass-prompt-injection",
+  "impact": "Demonstrated command execution by a hijacked MaxKB agent, outside its sandbox as root in the official container, with an outbound request to an attacker-controlled server. Lasso states, without a specific demonstration, that this design could let one tenant's chat reach another tenant's data and application secrets. Fixed in v2.10.5-lts; no in-the-wild exploitation reported.",
+  "last_updated": "2026-10-22",
+  "lifecycle_phases": [
+    "initial-access",
+    "execution",
+    "privilege-escalation"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [
+      "CVE-2026-77521"
+    ],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0070",
+      "AML.T0053",
+      "AML.T0102"
+    ],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "Upgrade MaxKB to 2.10.5-lts or later, which applies the sandbox to every command the model supplies (Lasso; GitHub advisory).",
+    "Use the Docker deployment and confirm the sandbox is actually enabled in the deployment mode; for agents with shell tools, verify isolation is engaged rather than assumed (Lasso)."
+  ],
+  "model_families": [
+    "other"
+  ],
+  "models": [],
+  "name": "MaxKBypass — prompt injection to command execution outside the MaxKB agent sandbox (CVE-2026-77521)",
+  "related": [],
+  "severity": "critical",
+  "sources": [
+    {
+      "date": "2026-09-10",
+      "publisher": "Lasso Security",
+      "title": "MaxKBypass - From Prompt Injection To Bypassing MaxKB Agent's Sandbox (CVE-2026-77521)",
+      "type": "first-party-disclosure",
+      "url": "https://www.lasso.security/blog/cve-2026-77521-maxkbypass---from-prompt-injection-to-bypassing-maxkb-agents-sandbox"
+    },
+    {
+      "date": "2026-09-02",
+      "publisher": "GitHub Security Advisory (MaxKB maintainers)",
+      "title": "Prompt-injectable agent can lead to command execution (GHSA-f36j-f34j-h3rx)",
+      "type": "first-party-disclosure",
+      "url": "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-f36j-f34j-h3rx"
+    },
+    {
+      "date": "2026-09-21",
+      "publisher": "NVD / NIST",
+      "title": "CVE-2026-77521 Detail",
+      "type": "government-advisory",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-77521"
+    }
+  ],
+  "status": "confirmed",
+  "summary": "Lasso Security (researcher Noy Pearl) disclosed MaxKBypass, CVE-2026-77521, in MaxKB, an open-source self-hosted knowledge-base and agent platform from FIT2CLOUD / 1Panel-dev. Attacker-controlled text on a crawled webpage placed in a public knowledge base led the victim's agent to invoke its shell tool during an unrelated question, without the human approval the platform was meant to require; in the official container, commands could run outside the intended sandbox as root. The proof of concept made an outbound request to an attacker-controlled server. The vendor fixed it in v2.10.5-lts and published the advisory, rated critical (CVSS 10.0), on 2026-09-02.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": []
+  }
+}

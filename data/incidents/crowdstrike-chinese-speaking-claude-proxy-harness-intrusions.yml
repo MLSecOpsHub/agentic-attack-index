@@ -1,0 +1,91 @@
+id: crowdstrike-chinese-speaking-claude-proxy-harness-intrusions
+name: "Chinese-speaking operator used two Claude Code pentest harnesses, via a China-based proxy, against government and private-sector targets"
+summary: >-
+  CrowdStrike Counter Adversary Operations reported on 2026-10-21 that a
+  Chinese-speaking operator, one of four previously unreported actors whose
+  offensive agent frameworks were exposed through open directories, built two
+  penetration-testing harnesses that give Claude Code different degrees of
+  autonomy. In one, a Python project performs reconnaissance deterministically
+  and asks an AI provider to choose among a fixed set of actions, which are
+  then routed to the appropriate agent; in the other, Claude Code works either
+  as a single agent following a detailed standard operating procedure or by
+  delegating to several specialist agents in parallel. The operator accessed
+  Claude models mainly through a China-based AI proxy service (a "transfer
+  station"). CrowdStrike states the operator had more than 20 named global
+  targets, compromised government entities of two countries, and targeted
+  private-sector entities in Brazil and the United States across biotech,
+  healthcare, food and beverage, retail, technology and travel. The activity
+  falls in the May to August 2026 window CrowdStrike documented. CrowdStrike
+  names neither the victims nor the two government countries and states no
+  link to other reported Claude-agent campaigns.
+date_disclosed: 2026-10-21 # CrowdStrike blog date.
+status: reported # Single vendor; the only other coverage found (CXOtoday) reprints the blog verbatim.
+confidence: primary # CrowdStrike analysed the actor's exposed frameworks directly.
+category: ai-orchestrated-campaign
+severity: high # Government entities of two countries compromised (CrowdStrike blog).
+models: [] # CrowdStrike blog names Claude models and Claude Code but no model version.
+model_families:
+  - claude # Claude models accessed via a China-based proxy service (CrowdStrike blog).
+actor: "Unnamed Chinese-speaking operator (CrowdStrike 'Threat Actor 2'; no group named)"
+actor_type: single-operator # CrowdStrike blog: "A Chinese-speaking operator".
+autonomy_pct: null
+# One harness keeps AI choices inside a fixed, deterministically routed action
+# set; the other lets Claude Code pursue a target under an operator-written SOP.
+autonomy_level: supervised-autonomous
+guardrail_bypass:
+  - unknown # CrowdStrike report page: all four actors overcame commercial AI safety controls; mechanism for this actor not stated publicly. Access ran mainly through a third-party proxy service.
+ai_role: significant # One of the two harnesses limits the AI to choosing among predefined actions; CrowdStrike does not say which harness produced the compromises.
+related:
+  - crowdstrike-argentina-healthcare-claude-code-harness # One of four actors in the same CrowdStrike 2026-10-21 report.
+  - crowdstrike-indonesian-claude-code-skills-government-targeting # One of four actors in the same CrowdStrike 2026-10-21 report.
+  - crowdstrike-russian-speaking-claude-code-crm-exfiltration # One of four actors in the same CrowdStrike 2026-10-21 report.
+mitigations: [] # TODO: source. Defender guidance is in the gated full report, not read.
+targets:
+  orgs_affected: null # 20+ named targets; number compromised not stated beyond government entities of two countries.
+  records_exfiltrated: null
+  sectors:
+    - government
+    - healthcare
+    - retail
+    - technology
+    # Also biotech, food and beverage, and travel (CrowdStrike blog); no matching taxonomy ids.
+  countries:
+    - BR # Private-sector targets (CrowdStrike blog).
+    - US # Private-sector targets (CrowdStrike blog).
+    # The two countries whose government entities were compromised are not named.
+lifecycle_phases:
+  - recon # Deterministic reconnaissance stage in the first harness (CrowdStrike blog).
+  - initial-access
+  - execution
+mappings:
+  mitre_atlas:
+    - AML.T0016.002 # Obtain Capabilities: Generative AI (Claude via a proxy service)
+    - AML.T0017.002 # Develop Capabilities: AI Agent Tools (two custom harnesses)
+    - AML.T0102 # Generate Malicious Commands (agents act on targets)
+    - AML.T0124 # Autonomous Attack Orchestration (delegation to multiple specialist agents in parallel)
+  mitre_atlas_case_studies: []
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: [] # OWASP Top 10 for Agentic Applications, ASI01–ASI10 (pinned in schema/owasp-asi.json; method in docs/owasp-asi-mapping.md)
+  cve: []
+  aiid: []
+impact: >-
+  Per CrowdStrike: government entities of two (unnamed) countries
+  compromised; private-sector entities in Brazil and the United States
+  targeted, out of more than 20 named targets. No victim is named.
+sources:
+  - title: "CrowdStrike Uncovers New Agentic AI Campaigns"
+    url: "https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-agentic-ai-campaigns/"
+    publisher: "CrowdStrike Counter Adversary Operations"
+    type: vendor-report
+    date: 2026-10-21
+  - title: "CrowdStrike Counter Adversary Operations Uncovers New 2026 Agentic AI Campaigns (report landing page)"
+    url: "https://www.crowdstrike.com/en-us/resources/reports/agentic-ai-attack-campaigns/"
+    publisher: "CrowdStrike Counter Adversary Operations" # Landing page shows no date; full report is behind a download form and was not read.
+    type: vendor-report
+    date: 2026-10-21 # Date of the announcing blog post; the landing page itself is undated.
+  # CXOtoday (2026-10-22) republishes the blog text verbatim; not cited, as it adds no independent reporting.
+added:
+  date: 2026-10-22
+  by: "MLSecOpsHub"
+last_updated: 2026-10-22

@@ -1,0 +1,83 @@
+{
+  "actor": "Unnamed Chinese-speaking operator (CrowdStrike 'Threat Actor 2'; no group named)",
+  "actor_type": "single-operator",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-22"
+  },
+  "ai_role": "significant",
+  "autonomy_level": "supervised-autonomous",
+  "autonomy_pct": null,
+  "category": "ai-orchestrated-campaign",
+  "confidence": "primary",
+  "date_disclosed": "2026-10-21",
+  "guardrail_bypass": [
+    "unknown"
+  ],
+  "id": "crowdstrike-chinese-speaking-claude-proxy-harness-intrusions",
+  "impact": "Per CrowdStrike: government entities of two (unnamed) countries compromised; private-sector entities in Brazil and the United States targeted, out of more than 20 named targets. No victim is named.",
+  "last_updated": "2026-10-22",
+  "lifecycle_phases": [
+    "recon",
+    "initial-access",
+    "execution"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [
+      "AML.T0016.002",
+      "AML.T0017.002",
+      "AML.T0102",
+      "AML.T0124"
+    ],
+    "mitre_atlas_case_studies": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [],
+  "model_families": [
+    "claude"
+  ],
+  "models": [],
+  "name": "Chinese-speaking operator used two Claude Code pentest harnesses, via a China-based proxy, against government and private-sector targets",
+  "related": [
+    "crowdstrike-argentina-healthcare-claude-code-harness",
+    "crowdstrike-indonesian-claude-code-skills-government-targeting",
+    "crowdstrike-russian-speaking-claude-code-crm-exfiltration"
+  ],
+  "severity": "high",
+  "sources": [
+    {
+      "date": "2026-10-21",
+      "publisher": "CrowdStrike Counter Adversary Operations",
+      "title": "CrowdStrike Uncovers New Agentic AI Campaigns",
+      "type": "vendor-report",
+      "url": "https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-agentic-ai-campaigns/"
+    },
+    {
+      "date": "2026-10-21",
+      "publisher": "CrowdStrike Counter Adversary Operations",
+      "title": "CrowdStrike Counter Adversary Operations Uncovers New 2026 Agentic AI Campaigns (report landing page)",
+      "type": "vendor-report",
+      "url": "https://www.crowdstrike.com/en-us/resources/reports/agentic-ai-attack-campaigns/"
+    }
+  ],
+  "status": "reported",
+  "summary": "CrowdStrike Counter Adversary Operations reported on 2026-10-21 that a Chinese-speaking operator, one of four previously unreported actors whose offensive agent frameworks were exposed through open directories, built two penetration-testing harnesses that give Claude Code different degrees of autonomy. In one, a Python project performs reconnaissance deterministically and asks an AI provider to choose among a fixed set of actions, which are then routed to the appropriate agent; in the other, Claude Code works either as a single agent following a detailed standard operating procedure or by delegating to several specialist agents in parallel. The operator accessed Claude models mainly through a China-based AI proxy service (a \"transfer station\"). CrowdStrike states the operator had more than 20 named global targets, compromised government entities of two countries, and targeted private-sector entities in Brazil and the United States across biotech, healthcare, food and beverage, retail, technology and travel. The activity falls in the May to August 2026 window CrowdStrike documented. CrowdStrike names neither the victims nor the two government countries and states no link to other reported Claude-agent campaigns.",
+  "targets": {
+    "countries": [
+      "BR",
+      "US"
+    ],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": [
+      "government",
+      "healthcare",
+      "retail",
+      "technology"
+    ]
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "actor": "Forever Security (Gal Weizman)",
+  "actor_type": "researcher",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-22"
+  },
+  "ai_role": "load-bearing",
+  "autonomy_level": "not-applicable",
+  "autonomy_pct": null,
+  "category": "agent-hijack-prompt-injection",
+  "confidence": "primary",
+  "date_disclosed": "2026-09-16",
+  "guardrail_bypass": [
+    "legitimate-tool-abuse"
+  ],
+  "id": "bragjack-browser-agent-hijack",
+  "impact": "Research demonstration only: with a malicious extension installed, built-in browser agents could be made to read local files and page contents, leak profile data and browsing history, take screenshots, and act on websites; the discloser shows email-leak demonstrations for two targets but does not report theft of real users' data. Bounties were paid by the five vendors per Forever Security (its two posts give slightly different totals).",
+  "last_updated": "2026-10-22",
+  "lifecycle_phases": [
+    "execution",
+    "exfiltration"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [
+      "CVE-2026-0628",
+      "CVE-2026-55945"
+    ],
+    "mitre_atlas": [
+      "AML.T0053",
+      "AML.T0085.001",
+      "AML.T0086"
+    ],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "Google fixed CVE-2026-0628 in Chrome 143.0.7499.192 (CVE record); Microsoft fixed CVE-2026-55945 in Microsoft Edge (MSRC)."
+  ],
+  "model_families": [
+    "gemini",
+    "claude",
+    "other"
+  ],
+  "models": [],
+  "name": "BragJack — one browser extension hijacks the built-in AI agents of five browsers",
+  "related": [],
+  "severity": "high",
+  "sources": [
+    {
+      "date": "2026-09-16",
+      "publisher": "Forever Security",
+      "title": "BragJack: How We Hijacked 5 Of The World's Most Popular Browsers Using Their Built-In AI Assistants",
+      "type": "first-party-disclosure",
+      "url": "https://forever.security/blog/bragjack-hijacking-5-browsers-via-built-in-ai-assistants/"
+    },
+    {
+      "date": "2026-09-16",
+      "publisher": "Forever Security",
+      "title": "BragJack [Technical Overview]: How We Hijacked Top 5 Browsers' Internal Agents With Just One Single Extension",
+      "type": "first-party-disclosure",
+      "url": "https://forever.security/blog/bragjack-attack-hijacks-every-browser-agent/"
+    },
+    {
+      "date": "2026-01-07",
+      "publisher": "NVD / NIST",
+      "title": "CVE-2026-0628 Detail",
+      "type": "government-advisory",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-0628"
+    },
+    {
+      "date": "2026-07-03",
+      "publisher": "NVD / NIST",
+      "title": "CVE-2026-55945 Detail",
+      "type": "government-advisory",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-55945"
+    },
+    {
+      "date": "2026-07-03",
+      "publisher": "Microsoft Security Response Center",
+      "title": "Microsoft Edge (Chromium-based) Information Disclosure Vulnerability (CVE-2026-55945), CSAF advisory",
+      "type": "vendor-report",
+      "url": "https://msrc.microsoft.com/csaf/advisories/2026/msrc_cve-2026-55945.json"
+    }
+  ],
+  "status": "confirmed",
+  "summary": "Forever Security (researcher Gal Weizman) disclosed BragJack on 2026-09-16, research showing that a single browser extension with standard permissions could take over the built-in AI assistants of Google Chrome (Gemini), Microsoft Edge (Copilot / Edge Actions), Opera Neon, Perplexity Comet and the Claude in Chrome extension. Rather than prompt injection, the extension forced prompts into the assistants and weakened protections on their privileged pages, so the agents could be made to read local files and page contents, leak profile data or browsing history, take screenshots, or act on websites, depending on the browser. The technique requires a malicious extension already installed, and the research does not report theft of real users' data. Google and Microsoft issued CVE-2026-0628 (Chrome) and CVE-2026-55945 (Edge), and the discloser lists bounties from all five vendors.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": []
+  }
+}

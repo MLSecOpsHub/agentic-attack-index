@@ -1,0 +1,87 @@
+id: unit42-bugster-hermes-deepseek-multi-domain-cybercrime
+name: "BUGSTER: criminal ran DeepSeek-backed Hermes Agent profiles for credential theft and a university database exfiltration in India"
+summary: >-
+  Palo Alto Networks Unit 42 reported on 2026-10-21 an investigation into the
+  operational environment of a financially motivated, English-speaking
+  criminal operating under the handle BUGSTER, with no prior reporting. The
+  actor configured the open-source Hermes Agent framework with DeepSeek V4 as
+  its reasoning engine, controlled through Telegram, and used the Cursor IDE
+  as a secondary tool, with safety controls disabled on both through
+  prompt-level overrides and configuration changes. Unit 42 states the actor
+  relied on AI-generated scripts and reconnaissance reports: an AI-generated
+  credential brute-force campaign against an Indian university's website
+  flagged one valid login, and a confirmed intrusion against a second Indian
+  public university exfiltrated a database of more than 5,200 records
+  including student and faculty personal information. The actor also
+  enumerated an Indian e-commerce site, used dedicated Hermes profiles as
+  advisors for a VoIP fraud operation that appeared to be still in planning,
+  and ran pipelines for Wi-Fi password cracking and cryptocurrency-holder
+  reconnaissance. Unit 42 says the actor experimented with other models
+  before choosing DeepSeek V4, and that several unrelated actors are adopting
+  the same Hermes and DeepSeek combination. No victim is named.
+date_disclosed: 2026-10-21 # Unit 42 post "Published: October 21, 2026".
+status: reported # Single vendor investigation.
+confidence: primary # Unit 42 analysed the actor's operational environment directly.
+category: ai-orchestrated-campaign
+severity: medium # More than 5,200 PII records exfiltrated from one university (Unit 42).
+models:
+  - "DeepSeek V4" # Hermes Agent reasoning engine (Unit 42, Table 1).
+  # Cursor IDE was configured with multiple models (Claude Opus 4.8, GPT-5.5, Composer 2.5, others) per Unit 42 Table 1;
+  # Unit 42 does not attribute specific operations to them. GLM 5.2 and OpenRouter models were tested, not operationalised.
+model_families:
+  - deepseek
+actor: "BUGSTER (handle; financially motivated English-speaking criminal operator with no prior reporting, per Unit 42)"
+actor_type: single-operator # Unit 42 describes a single actor.
+autonomy_pct: null
+# The actor directed the Telegram-controlled assistant conversationally and
+# used AI-generated tooling; Unit 42 does not document end-to-end autonomous runs.
+autonomy_level: human-in-the-loop
+guardrail_bypass:
+  - jailbreak # System-prompt override to defeat model safety controls (Unit 42).
+  - open-weight-model # Unit 42 cites DeepSeek's minimal safety controls and low cost as a driver.
+ai_role: significant # AI produced the tooling, reconnaissance reports and advice; the actor ran the operations.
+related:
+  - unit42-hermes-deepseek-autonomous-campaign # Same Hermes + DeepSeek toolchain; Unit 42 treats the actors as separate.
+mitigations: [] # TODO: source. Unit 42 lists only its own product coverage.
+targets:
+  orgs_affected: null # One confirmed database exfiltration, one valid credential flagged at a second university, one e-commerce site enumerated.
+  records_exfiltrated: 5200 # "more than 5,200 records" (Unit 42); a minimum.
+  sectors:
+    - education # Indian universities.
+    - retail # Indian e-commerce site enumerated.
+  countries:
+    - IN
+lifecycle_phases:
+  - recon # Subdomain and API enumeration.
+  - resource-dev # Hermes profiles, C2 listener, credential-scanning toolkit.
+  - initial-access
+  - credential-access # Credential brute force; weak administrator password obtained.
+  - exfiltration # University database exfiltrated.
+mappings:
+  mitre_atlas:
+    - AML.T0016.002 # Obtain Capabilities: Generative AI (DeepSeek V4)
+    - AML.T0016.004 # Obtain Capabilities: AI Agent Tools (Hermes Agent framework)
+    - AML.T0054 # LLM Jailbreak (system-prompt override)
+    - AML.T0102 # Generate Malicious Commands (AI-generated brute-force and enumeration tooling)
+  mitre_atlas_case_studies: []
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: [] # OWASP Top 10 for Agentic Applications, ASI01–ASI10 (pinned in schema/owasp-asi.json; method in docs/owasp-asi-mapping.md)
+  cve: []
+  aiid: []
+impact: >-
+  Per Unit 42: a database of more than 5,200 records, including student and
+  faculty personal information and an administrator credential, exfiltrated
+  from an Indian public university; a valid login identified at a second
+  Indian university; storefront token, admin contacts and merchant IDs
+  extracted from an Indian e-commerce site. VoIP fraud was in planning only.
+sources:
+  - title: "“Next Exploit Opportunities”: How a Threat Actor Used AI to Help Plan and Execute Multiple Types of Cybercrime Activities"
+    url: "https://unit42.paloaltonetworks.com/ai-assisted-cybercrime-analysis/"
+    publisher: "Unit 42 (Palo Alto Networks)"
+    type: vendor-report
+    date: 2026-10-21
+added:
+  date: 2026-10-22
+  by: "MLSecOpsHub"
+last_updated: 2026-10-22

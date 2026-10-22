@@ -1,0 +1,84 @@
+{
+  "actor": "Varonis Threat Labs (Lior Adar)",
+  "actor_type": "researcher",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-22"
+  },
+  "ai_role": "load-bearing",
+  "autonomy_level": "not-applicable",
+  "autonomy_pct": null,
+  "category": "agent-hijack-prompt-injection",
+  "confidence": "primary",
+  "date_disclosed": "2026-08-18",
+  "guardrail_bypass": [
+    "indirect-prompt-injection"
+  ],
+  "id": "cosnitch-copilot-personal",
+  "impact": "Demonstrated exfiltration of email content (including plaintext credentials found in test mail), calendar details, Drive file metadata, chat history and memory, and persistent memory poisoning that Varonis says survives password changes and session revocation. Mitigated by Microsoft; Varonis has seen no evidence of in-the-wild exploitation.",
+  "last_updated": "2026-10-22",
+  "lifecycle_phases": [
+    "initial-access",
+    "execution",
+    "persistence",
+    "exfiltration"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [
+      "CVE-2026-24301"
+    ],
+    "mitre_atlas": [
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0080.000",
+      "AML.T0085.001",
+      "AML.T0086"
+    ],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "Microsoft fully mitigated the vulnerability; no customer action is required (MSRC).",
+    "Varonis: audit and remove unneeded Copilot-connected apps, apply access reviews and anomaly detection to Copilot as a privileged insider, scrutinise external AI-assistant links, and read prefilled prompts before running them."
+  ],
+  "model_families": [
+    "other"
+  ],
+  "models": [],
+  "name": "CoSnitch — one-click data exfiltration and memory poisoning in Microsoft Copilot Personal (CVE-2026-24301)",
+  "related": [],
+  "severity": "high",
+  "sources": [
+    {
+      "date": "2026-08-18",
+      "publisher": "Varonis Threat Labs",
+      "title": "CoSnitch: When Your AI Assistant Becomes Its Own Whistleblower",
+      "type": "first-party-disclosure",
+      "url": "https://www.varonis.com/blog/cosnitch"
+    },
+    {
+      "date": "2026-08-18",
+      "publisher": "NVD / NIST",
+      "title": "CVE-2026-24301 Detail",
+      "type": "government-advisory",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-24301"
+    },
+    {
+      "date": "2026-08-18",
+      "publisher": "Microsoft Security Response Center",
+      "title": "Microsoft Copilot Information Disclosure Vulnerability (CVE-2026-24301), CSAF advisory",
+      "type": "vendor-report",
+      "url": "https://msrc.microsoft.com/csaf/advisories/2026/msrc_cve-2026-24301.json"
+    }
+  ],
+  "status": "confirmed",
+  "summary": "Varonis Threat Labs (researcher Lior Adar) disclosed CoSnitch, a one-click vulnerability in Microsoft Copilot Personal. A crafted link could make an authenticated Copilot session run attacker-supplied instructions without confirmation, query connected services such as Gmail, Drive, Calendar and OneDrive, and send the results to an attacker-controlled endpoint through Copilot's URL-fetch capability. A second chain used indirect prompt injection in a summarised webpage to write attacker instructions into persistent Copilot memory. Reported in December 2025; Microsoft assigned CVE-2026-24301 (Information Disclosure, CVSS 8.8) and states it was fully mitigated on 2026-08-18.",
+  "targets": {
+    "countries": [],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": []
+  }
+}

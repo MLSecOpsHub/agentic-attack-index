@@ -1,0 +1,81 @@
+id: cosnitch-copilot-personal
+name: "CoSnitch — one-click data exfiltration and memory poisoning in Microsoft Copilot Personal (CVE-2026-24301)"
+summary: >-
+  Varonis Threat Labs (researcher Lior Adar) disclosed CoSnitch, a one-click
+  vulnerability in Microsoft Copilot Personal. A crafted link could make an
+  authenticated Copilot session run attacker-supplied instructions without
+  confirmation, query connected services such as Gmail, Drive, Calendar and
+  OneDrive, and send the results to an attacker-controlled endpoint through
+  Copilot's URL-fetch capability. A second chain used indirect prompt injection
+  in a summarised webpage to write attacker instructions into persistent
+  Copilot memory. Reported in December 2025; Microsoft assigned CVE-2026-24301
+  (Information Disclosure, CVSS 8.8) and states it was fully mitigated on
+  2026-08-18.
+date_disclosed: 2026-08-18 # MSRC/NVD publication date; Varonis page shows "Last updated August 18, 2026".
+status: confirmed # Demonstration; not observed in the wild (Varonis; MSRC: Exploited: No). Confirmed on the first-party Microsoft CVE, as echoleak.
+confidence: primary # Varonis is the discloser; MSRC is the vendor.
+category: agent-hijack-prompt-injection
+severity: high # CVSS 8.8 per MSRC; Varonis calls it "critical".
+models: [] # Underlying model not named by Varonis.
+model_families:
+  - other
+actor: "Varonis Threat Labs (Lior Adar)" # MSRC also credits Anshuman Goel (Microsoft) and Spandan Pokhrel on the same CVE.
+actor_type: researcher
+autonomy_pct: null
+autonomy_level: not-applicable # The agent was the hijacked component.
+guardrail_bypass:
+  - indirect-prompt-injection # Varonis: indirect prompt injection via summarised web content; the link chain pre-filled and auto-ran a prompt.
+ai_role: load-bearing
+related: []
+mitigations:
+  - "Microsoft fully mitigated the vulnerability; no customer action is required (MSRC)."
+  - "Varonis: audit and remove unneeded Copilot-connected apps, apply access reviews and anomaly detection to Copilot as a privileged insider, scrutinise external AI-assistant links, and read prefilled prompts before running them."
+targets:
+  orgs_affected: null
+  records_exfiltrated: null
+  sectors: []
+  countries: []
+lifecycle_phases:
+  - initial-access
+  - execution
+  - persistence # Attacker instructions written to persistent Copilot memory (Varonis).
+  - exfiltration
+mappings:
+  mitre_atlas:
+    - AML.T0051.000 # LLM Prompt Injection: Direct (pre-filled prompt auto-run from a link)
+    - AML.T0051.001 # LLM Prompt Injection: Indirect (summarised webpage)
+    - AML.T0080.000 # AI Agent Context Poisoning: Memory
+    - AML.T0085.001 # Data from AI Services: AI Agent Tools (connected Gmail, Drive, Calendar, OneDrive)
+    - AML.T0086 # Exfiltration via AI Agent Tool Invocation (URL-fetch capability)
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: [] # OWASP Top 10 for Agentic Applications, ASI01–ASI10 (pinned in schema/owasp-asi.json; method in docs/owasp-asi-mapping.md)
+  cve:
+    - CVE-2026-24301
+  aiid: []
+impact: >-
+  Demonstrated exfiltration of email content (including plaintext credentials
+  found in test mail), calendar details, Drive file metadata, chat history and
+  memory, and persistent memory poisoning that Varonis says survives password
+  changes and session revocation. Mitigated by Microsoft; Varonis has seen no
+  evidence of in-the-wild exploitation.
+sources:
+  - title: "CoSnitch: When Your AI Assistant Becomes Its Own Whistleblower"
+    url: "https://www.varonis.com/blog/cosnitch"
+    publisher: "Varonis Threat Labs"
+    type: first-party-disclosure
+    date: 2026-08-18 # "Last updated" date on the page; no original publication date shown.
+  - title: "CVE-2026-24301 Detail"
+    url: "https://nvd.nist.gov/vuln/detail/CVE-2026-24301"
+    publisher: "NVD / NIST"
+    type: government-advisory
+    date: 2026-08-18
+  - title: "Microsoft Copilot Information Disclosure Vulnerability (CVE-2026-24301), CSAF advisory"
+    url: "https://msrc.microsoft.com/csaf/advisories/2026/msrc_cve-2026-24301.json"
+    publisher: "Microsoft Security Response Center"
+    type: vendor-report
+    date: 2026-08-18
+added:
+  date: 2026-10-22
+  by: "MLSecOpsHub"
+last_updated: 2026-10-22

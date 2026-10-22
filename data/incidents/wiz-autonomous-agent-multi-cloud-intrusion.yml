@@ -1,0 +1,84 @@
+id: wiz-autonomous-agent-multi-cloud-intrusion
+name: "AI agent system ran an end-to-end intrusion across a multi-cloud organisation's AWS, GCP and Kubernetes estate"
+summary: >-
+  Wiz's Customer Incident Response Team reported on 2026-10-19 an
+  investigation in which, it says, an AI agent system ran an intrusion
+  against a large multi-cloud organisation from start to finish. Per Wiz, the
+  agent probed internet-facing services, gained initial access through a
+  known remote-code-execution flaw in an exposed management interface,
+  harvested Kubernetes, cloud-metadata, CI/CD and secret-store credentials,
+  pivoted between AWS and GCP, abused a compromised identity-provider
+  administrative key, escalated to cluster-admin through the GitOps
+  pipeline, gained administrative access across the AWS Organization,
+  planted persistence in Kubernetes workloads, and moved data out through
+  alternative channels when storage routes were denied. Wiz bases its
+  assessment that an AI agent ran the operation on behavioural evidence:
+  hundreds to thousands of actions per hour without human-like pauses,
+  simultaneous activity across platforms, immediate rewriting and retrying of
+  failed scripts, generated-style code, and resource names framing the
+  activity as security testing. The same source address scanned more than
+  600 other Wiz customer environments in the same window. Wiz does not name
+  the victim, the model, the agent framework or a threat actor.
+date_disclosed: 2026-10-19
+status: reported # Single vendor investigation; no second publisher or victim disclosure.
+confidence: primary # Wiz CIRT investigated the intrusion in the victim environment directly.
+category: autonomous-attack
+severity: high # Administrative access across the victim's AWS Organization and data exfiltration; one organisation.
+models: [] # TODO: source. Wiz does not identify a model.
+model_families:
+  - other # Model and agent framework not identified by Wiz.
+actor: Unknown # Wiz names no threat actor or group.
+actor_type: unknown
+autonomy_pct: null
+autonomy_level: unknown # Wiz says the agent ran the operation "from start to finish" but does not describe the degree of human oversight.
+guardrail_bypass:
+  - unknown # No model or framework identified.
+# Wiz's AI determination is behavioural inference from activity patterns and code
+# style; no agent logs, prompts or framework artefacts were recovered per the post.
+ai_role: significant
+related: []
+mitigations:
+  - "Wiz recommends unifying cloud, Kubernetes, identity, CI/CD and SaaS logs and correlating alerts across them, because the activity spanned many platforms at once."
+  - "Rotate all credentials on compromised resources and check linked identities for misuse; maintain runtime visibility on endpoints, runners and workloads."
+  - "Enforce isolation between environments, limit cross-system trust, and continuously reduce the external attack surface."
+targets:
+  orgs_affected: 1 # One victim organisation; the 600+ other environments were scanned, not reported compromised.
+  records_exfiltrated: null # Wiz reports no data volume.
+  sectors: [] # Not disclosed by Wiz.
+  countries: [] # Not disclosed by Wiz.
+lifecycle_phases:
+  - recon # Probing of internet-facing services and scanning of 600+ environments.
+  - initial-access # Known RCE in an exposed management interface.
+  - credential-access # Kubernetes, metadata, CI/CD, vault and secret credentials.
+  - privilege-escalation # Cluster-admin via GitOps; AWS Organization admin.
+  - persistence # Backdoored pods and a self-healing workload.
+  - exfiltration
+mappings:
+  mitre_atlas:
+    - AML.T0016.002 # Obtain Capabilities: Generative AI
+    - AML.T0102 # Generate Malicious Commands (agent wrote and rewrote its own scripts, per Wiz)
+    - AML.T0116 # Autonomous Reconnaissance
+    - AML.T0117 # Autonomous Attack-Path Adaptation (switched channels and retried when routes failed, per Wiz)
+  mitre_atlas_case_studies: []
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: [] # OWASP Top 10 for Agentic Applications, ASI01–ASI10 (pinned in schema/owasp-asi.json; method in docs/owasp-asi-mapping.md)
+  cve: [] # Wiz does not state a CVE id.
+  aiid: []
+impact: >-
+  Per Wiz: credentials harvested across Kubernetes, cloud, CI/CD and secret
+  stores; a new user created through a compromised identity-provider key;
+  credentials minted across dozens of GCP identities; administrative access
+  across the victim's AWS Organization; persistence in Kubernetes workloads;
+  and data exfiltrated through alternative channels after storage routes
+  were denied. Data volume not reported.
+sources:
+  - title: "Loud, Fast, and Everywhere: Anatomy of a Real AI-Driven Cloud Attack"
+    url: "https://www.wiz.io/blog/anatomy-of-ai-driven-cloud-attacks"
+    publisher: "Wiz"
+    type: vendor-report
+    date: 2026-10-19
+added:
+  date: 2026-10-22
+  by: "MLSecOpsHub"
+last_updated: 2026-10-22

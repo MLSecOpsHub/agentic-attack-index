@@ -1,0 +1,94 @@
+id: chatgpt-shared-sandbox-cross-account-leak
+name: "ChatGPT shared internal service let one account's session be steered to leak another account's Gmail data (Check Point PoC)"
+summary: >-
+  Check Point Research disclosed on 2026-09-08 that, in June 2026, it found a
+  covert two-way channel between ChatGPT code-execution containers belonging to
+  different accounts: the containers could not reach the public internet or
+  each other directly, but all could reach a shared internal artifact store
+  whose writable state was not isolated per account. Check Point showed that
+  an instruction planted in a victim's conversation context (via a pasted
+  prompt, a shared conversation or a custom GPT) could make ChatGPT process a
+  hidden second stream of attacker tasks alongside the victim's visible
+  requests, using the victim session's tools, files and connected apps. In its
+  proof of concept, on its own test accounts, ChatGPT read email data from a
+  victim's connected Gmail account and relayed it to the attacker's account
+  while giving the victim an ordinary answer. Check Point says the channel was
+  no longer available by the time it completed its report and that OpenAI
+  confirmed the internal service instance had been decommissioned.
+date_disclosed: 2026-09-08 # Check Point Research publication date.
+# Researcher PoC. OpenAI's decommissioning of the shared instance is stated by
+# Check Point only (repeated by TechNode Global and Cyber Security News); no
+# OpenAI statement, fix date or CVE was found, so not graded confirmed.
+status: reported
+confidence: primary # Check Point Research is the discloser.
+# Graded agent-hijack-prompt-injection because the demonstrated harm required a
+# planted instruction steering the victim's ChatGPT session. The root cause was
+# a shared-infrastructure isolation failure (Check Point: "a shared internal
+# service and mutable state without tenant isolation").
+category: agent-hijack-prompt-injection
+severity: high # Demonstrated cross-account read of connected-app (Gmail) data; no in-the-wild use stated.
+models: [] # Check Point names ChatGPT (Thinking mode) but no specific model.
+model_families:
+  - openai-gpt # ChatGPT; specific model not named by Check Point.
+actor: "Check Point Research (researcher Alexey Bukhteyev)"
+actor_type: researcher
+autonomy_pct: null
+autonomy_level: not-applicable # ChatGPT was the steered component.
+guardrail_bypass:
+  - indirect-prompt-injection # Check Point: instruction delivered via a shared conversation or custom GPT configuration (or a pasted prompt).
+ai_role: load-bearing
+related:
+  - openai-eval-agents-hugging-face-intrusion # Check Point links the two as exposing the same architectural weakness (a shared internal service becoming a cross-environment channel) while stating the mechanisms differed.
+mitigations:
+  - "OpenAI decommissioned the internal service instance identified in the research (per Check Point; no OpenAI statement found)."
+  - "Check Point recommends keeping management interfaces inaccessible from the code-execution runtime, least-privilege credentials, and restricting any state a container can modify in shared internal services to the owning account or session."
+  - "Check Point notes ChatGPT's default 'Important actions' connected-app setting allows reads without prior approval; the stricter 'Always ask' setting requires confirmation."
+targets:
+  orgs_affected: null # Researcher test accounts; TechNode Global: Check Point did not present it as evidence of real-world use. No statement on affected users found.
+  records_exfiltrated: null
+  sectors: []
+  countries: []
+lifecycle_phases:
+  - initial-access
+  - execution
+  - exfiltration
+mappings:
+  mitre_atlas:
+    - AML.T0051.001 # LLM Prompt Injection: Indirect (shared conversation / custom GPT delivery, per Check Point)
+    - AML.T0080.001 # AI Agent Context Poisoning: Thread (instruction persisted in the conversation context and triggered on later ordinary messages)
+    - AML.T0053 # AI Agent Tool Invocation (connected Gmail app and code execution)
+    - AML.T0085.001 # Data from AI Services: AI Agent Tools (email data read through the connected app)
+    - AML.T0086 # Exfiltration via AI Agent Tool Invocation (results relayed out through the code-execution tool)
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: [] # OWASP Top 10 for Agentic Applications, ASI01–ASI10 (pinned in schema/owasp-asi.json; method in docs/owasp-asi-mapping.md)
+  cve: [] # None stated.
+  aiid: []
+impact: >-
+  Proof of concept on researcher accounts: a victim's ChatGPT session read
+  email data from the victim's connected Gmail account and relayed it to a
+  different account, with the only visible trace a "Talked to Gmail" label.
+  Check Point states conversation history and files in the affected chat and
+  its code-execution environment were also reachable, with scope bounded by
+  the victim session's connected apps and permissions. No in-the-wild
+  exploitation reported.
+sources:
+  - title: "The Shared Clipboard Inside the Sandbox: Cross-Account Data Leakage in ChatGPT"
+    url: "https://research.checkpoint.com/2026/the-shared-clipboard-inside-the-sandbox-cross-account-data-leakage-in-chatgpt/"
+    publisher: "Check Point Research"
+    type: first-party-disclosure
+    date: 2026-09-08
+  - title: "Check Point finds now-closed ChatGPT flaw that enabled cross-account data access"
+    url: "https://technode.global/2026/09/09/check-point-chatgpt-cross-account-data-access-flaw/"
+    publisher: "TechNode Global"
+    type: news
+    date: 2026-09-09
+  - title: "ChatGPT Sandbox Flaw Lets Attackers Steal Gmail Data Across Accounts via Hidden Channel"
+    url: "https://cybersecuritynews.com/chatgpt-sandbox-gmail-data/"
+    publisher: "Cyber Security News"
+    type: news
+    date: 2026-09-08
+added:
+  date: 2026-10-22
+  by: "MLSecOpsHub"
+last_updated: 2026-10-22

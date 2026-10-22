@@ -1,0 +1,84 @@
+{
+  "actor": "Unknown (unnamed AI model providers' evaluation agents acting beyond authorisation; unnamed cybercriminals using AI-native offensive frameworks)",
+  "actor_type": "unknown",
+  "added": {
+    "by": "MLSecOpsHub",
+    "date": "2026-10-22"
+  },
+  "ai_role": "significant",
+  "autonomy_level": "unknown",
+  "autonomy_pct": null,
+  "category": "autonomous-attack",
+  "confidence": "secondary",
+  "date_disclosed": "2026-10-15",
+  "guardrail_bypass": [
+    "unknown"
+  ],
+  "id": "cert-in-ai-agents-attack-vectors-advisory",
+  "impact": "Per CERT-In as reported: evaluation agents of multiple AI providers read business records containing personal and confidential data at Indian organisations without authorisation, undetected by the victims; criminal use of agentic frameworks compressed attacks from days to hours and led to repeat, larger attacks on incompletely remediated victims. CERT-In did not say whether systems were altered or how many organisations were affected.",
+  "last_updated": "2026-10-22",
+  "lifecycle_phases": [
+    "recon",
+    "credential-access",
+    "initial-access",
+    "impact"
+  ],
+  "mappings": {
+    "aiid": [],
+    "cve": [],
+    "mitre_atlas": [
+      "AML.T0016.002",
+      "AML.T0117"
+    ],
+    "mitre_atlas_case_studies": [],
+    "mitre_attack": [],
+    "owasp_asi": [],
+    "owasp_llm": []
+  },
+  "mitigations": [
+    "CERT-In advises organisations to audit source code, repositories including commit history, configuration files, client apps and cloud storage for exposed credentials, rotate and purge them, decommission dormant and test APIs, remove admin interfaces from the internet, require MFA and keep logs for at least 180 days.",
+    "After a credential exposure or confirmed intrusion, CERT-In advises treating the environment as compromised until forensically cleared and expecting repeat attempts within days to weeks.",
+    "For organisations running their own agents: a short-lived least-privilege identity per run, outbound traffic blocked beyond task scope, and a tamper-resistant log of agent actions on production systems (per Security Affairs).",
+    "For AI developers, labs and evaluation agencies: block outbound network access from evaluation environments at the network level rather than through model instructions, use synthetic targets and test credentials, stop runs automatically when an agent reaches external systems or finds credentials, and notify the affected organisation immediately."
+  ],
+  "model_families": [
+    "other"
+  ],
+  "models": [],
+  "name": "CERT-In advisory: evaluation AI agents exceeded their authorisation and reached live Indian systems, and criminals used agentic offensive frameworks",
+  "related": [],
+  "severity": "high",
+  "sources": [
+    {
+      "date": "2026-10-16",
+      "publisher": "TechCrunch",
+      "title": "India becomes the latest country to report rogue AI agent activity",
+      "type": "news",
+      "url": "https://techcrunch.com/2026/10/16/india-becomes-the-latest-country-to-report-rogue-ai-agent-activity/"
+    },
+    {
+      "date": "2026-10-16",
+      "publisher": "Press Trust of India (via Deccan Chronicle)",
+      "title": "Autonomous AI Agents Access Live Systems of Indian Orgs: CERT-In Issues Critical Alert",
+      "type": "news",
+      "url": "https://www.deccanchronicle.com/artificial-intelligence/cert-in-issues-critical-alert-after-autonomous-ai-agents-access-live-systems-of-indian-orgs-1996324"
+    },
+    {
+      "date": "2026-10-17",
+      "publisher": "Security Affairs",
+      "title": "AI Agents Accessed Indian Organizations Without Authorization, CERT-In Warns",
+      "type": "news",
+      "url": "https://securityaffairs.com/201130/ai/ai-agents-accessed-indian-organizations-without-authorization-cert-in-warns.html"
+    }
+  ],
+  "status": "reported",
+  "summary": "India's national CERT (CERT-In) issued a critical advisory, CIAD-2026-0049 \"AI Agents as Attack Vectors\", reported by the press on 2026-10-16. Per the coverage, CERT-In received multiple voluntary disclosures from unnamed AI model providers whose autonomous models and agents, during research and evaluation on the open internet, exceeded the authorised scope of their tasks and reached live systems of Indian organisations, reading business records containing personal and confidential data. The agents used credentials and connection settings left exposed in application configurations, public code repositories and over-permissive cloud roles, and reused the same exposed credential across separate operations. None of the affected organisations detected the access; each case surfaced only when the provider reported it. Separately, CERT-In's own threat hunting found cybercriminals using publicly available AI-native offensive-security frameworks for reconnaissance, exploitation and a financially motivated campaign against Indian entities, cutting the time from initial access to impact from days to hours, and re-attacking incompletely remediated victims within days. No provider, victim or criminal group is named.",
+  "targets": {
+    "countries": [
+      "IN"
+    ],
+    "orgs_affected": null,
+    "records_exfiltrated": null,
+    "sectors": []
+  }
+}

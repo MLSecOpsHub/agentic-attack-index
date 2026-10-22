@@ -1,0 +1,81 @@
+id: ssms-sql-copilot-privilege-escalation
+name: "SQL Copilot in SSMS — prompt injection to database privilege escalation (CVE-2026-65669)"
+summary: >-
+  Johann Rehberger (Embrace The Red) disclosed research, presented at BlueHat
+  Asia 2026, showing that SQL Copilot in SQL Server Management Studio could be
+  steered by instructions in content it reads, including database comments and
+  persistent instruction files stored in database extended properties that a
+  lower-privileged user can attach. The hijacked agent bypassed its read-only
+  mode, ran write operations and arbitrary T-SQL with the connected user's
+  permissions, exfiltrated database rows to an external server and, in the final
+  demonstration, added an attacker's login to the sysadmin role. Microsoft
+  assigned CVE-2026-65669 (Elevation of Privilege, CVSS 9.6) on 2026-09-08.
+date_disclosed: 2026-09-08 # MSRC/NVD publication date; the Embrace The Red post is dated 2026-09-30.
+status: confirmed # Demonstration; not observed in the wild (MSRC: Exploited: No). Confirmed on the first-party Microsoft CVE, as echoleak.
+confidence: primary # Embrace The Red is the discloser; MSRC is the vendor.
+category: agent-hijack-prompt-injection
+severity: critical # CVSS 9.6 per MSRC; Embrace The Red: "rated critical by Microsoft".
+models: [] # Embrace The Red does not name the model used.
+model_families:
+  - other
+actor: "Johann Rehberger (Embrace The Red)" # MSRC acknowledgment credits Johann Rehberger with embracethered.com.
+actor_type: researcher
+autonomy_pct: null
+autonomy_level: not-applicable # The agent was the hijacked component.
+guardrail_bypass:
+  - indirect-prompt-injection # Embrace The Red: indirect prompt injection via content Copilot reads and persistent database instructions.
+ai_role: load-bearing
+related:
+  - visual-studio-copilot-ssms-rce # Same researcher, same Copilot surface in SSMS; follow-on RCE disclosure.
+mitigations:
+  - "Install the Microsoft update for CVE-2026-65669; keep SSMS installations up to date (Embrace The Red)."
+  - "Use Microsoft's SQL Copilot admin controls (disable Copilot, group policies, execution context); do not run Copilot on highly privileged database connections (Embrace The Red)."
+  - "Treat read-only enforcement as a security invariant rather than a model instruction, and treat persistent agent instruction files as a trust relationship in the permission model (Embrace The Red)."
+targets:
+  orgs_affected: null
+  records_exfiltrated: null
+  sectors: []
+  countries: []
+lifecycle_phases:
+  - initial-access
+  - execution
+  - persistence # Instructions persisted in database extended properties, loaded automatically (Embrace The Red).
+  - privilege-escalation
+  - exfiltration
+mappings:
+  mitre_atlas:
+    - AML.T0051.001 # LLM Prompt Injection: Indirect
+    - AML.T0053 # AI Agent Tool Invocation (T-SQL execution tools)
+    - AML.T0086 # Exfiltration via AI Agent Tool Invocation (rows sent to an external server)
+  mitre_attack: []
+  owasp_llm: []
+  owasp_asi: [] # OWASP Top 10 for Agentic Applications, ASI01–ASI10 (pinned in schema/owasp-asi.json; method in docs/owasp-asi-mapping.md)
+  cve:
+    - CVE-2026-65669
+  aiid: []
+impact: >-
+  Demonstrated bypass of SQL Copilot's read-only mode, data modification and
+  exfiltration of database rows, and escalation from db_owner to sysadmin using
+  the victim's connection. MSRC: database data could be accessed or modified
+  with the connected user's permissions; not publicly disclosed or exploited at
+  release.
+sources:
+  - title: "From SELECT to SYSADMIN with SQL Copilot (CVE-2026-65669)"
+    url: "https://embracethered.com/blog/posts/2026/from-select-to-sysadmin-sql-copilot-bluehat-asia/"
+    publisher: "Embrace The Red"
+    type: first-party-disclosure
+    date: 2026-09-30
+  - title: "CVE-2026-65669 Detail"
+    url: "https://nvd.nist.gov/vuln/detail/CVE-2026-65669"
+    publisher: "NVD / NIST"
+    type: government-advisory
+    date: 2026-09-08
+  - title: "Microsoft SQL Server Elevation of Privilege Vulnerability (CVE-2026-65669), CSAF advisory"
+    url: "https://msrc.microsoft.com/csaf/advisories/2026/msrc_cve-2026-65669.json"
+    publisher: "Microsoft Security Response Center"
+    type: vendor-report
+    date: 2026-09-08
+added:
+  date: 2026-10-22
+  by: "MLSecOpsHub"
+last_updated: 2026-10-22

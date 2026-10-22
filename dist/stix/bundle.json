@@ -133,6 +133,22 @@
     {
       "type": "attack-pattern",
       "spec_version": "2.1",
+      "id": "attack-pattern--0913d299-853e-5e6d-9061-c0f1af915f2c",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "T1070.006",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1070.006",
+          "url": "https://attack.mitre.org/techniques/T1070/006"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
       "id": "attack-pattern--09a3f2a6-2845-595b-81f0-17c4f55b8caa",
       "created": "2020-01-01T00:00:00.000Z",
       "modified": "2020-01-01T00:00:00.000Z",
@@ -533,6 +549,22 @@
     {
       "type": "attack-pattern",
       "spec_version": "2.1",
+      "id": "attack-pattern--3b5e4c98-f975-5f47-916c-50f9d031ea91",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "T1087.004",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1087.004",
+          "url": "https://attack.mitre.org/techniques/T1087/004"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
       "id": "attack-pattern--3ebb5603-2a17-5c8d-9be1-ec0501fa4f5d",
       "created": "2020-01-01T00:00:00.000Z",
       "modified": "2020-01-01T00:00:00.000Z",
@@ -671,6 +703,22 @@
           "source_name": "mitre-attack",
           "external_id": "T1562",
           "url": "https://attack.mitre.org/techniques/T1562"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--48fe4ec6-9ee4-5a76-bcbd-b00d1bd5290f",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "T1195",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1195",
+          "url": "https://attack.mitre.org/techniques/T1195"
         }
       ]
     },
@@ -853,6 +901,22 @@
     {
       "type": "attack-pattern",
       "spec_version": "2.1",
+      "id": "attack-pattern--5e3f3707-14fa-513d-bc5e-f4229fc4b2ad",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "T1580",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1580",
+          "url": "https://attack.mitre.org/techniques/T1580"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
       "id": "attack-pattern--5e699610-016d-53f7-b874-6e178db8a145",
       "created": "2020-01-01T00:00:00.000Z",
       "modified": "2020-01-01T00:00:00.000Z",
@@ -863,6 +927,22 @@
           "source_name": "mitre-attack",
           "external_id": "T1596.003",
           "url": "https://attack.mitre.org/techniques/T1596/003"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--5e8eb20c-1117-584a-95fb-90886c9d79b4",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "T1595",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1595",
+          "url": "https://attack.mitre.org/techniques/T1595"
         }
       ]
     },
@@ -1247,6 +1327,22 @@
           "source_name": "mitre-atlas",
           "external_id": "AML.T0086",
           "url": "https://atlas.mitre.org/techniques/AML.T0086"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--9017bef9-5745-5567-bced-d216d8163592",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "T1098.003",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1098.003",
+          "url": "https://attack.mitre.org/techniques/T1098/003"
         }
       ]
     },
@@ -1893,6 +1989,22 @@
     {
       "type": "attack-pattern",
       "spec_version": "2.1",
+      "id": "attack-pattern--ee4ba757-96b3-546b-81c6-bcb126afe0b3",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "AML.T0080.001",
+      "external_references": [
+        {
+          "source_name": "mitre-atlas",
+          "external_id": "AML.T0080.001",
+          "url": "https://atlas.mitre.org/techniques/AML.T0080.001"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
       "id": "attack-pattern--f2f84d06-0c4f-5805-b80f-7d22c8745de5",
       "created": "2020-01-01T00:00:00.000Z",
       "modified": "2020-01-01T00:00:00.000Z",
@@ -1903,6 +2015,22 @@
           "source_name": "mitre-atlas",
           "external_id": "AML.T0017.002",
           "url": "https://atlas.mitre.org/techniques/AML.T0017.002"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--f5a4b5a9-64c1-5bab-ba24-9b54cd8fe520",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "T1098.001",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1098.001",
+          "url": "https://attack.mitre.org/techniques/T1098/001"
         }
       ]
     },
@@ -2160,6 +2288,55 @@
     {
       "type": "report",
       "spec_version": "2.1",
+      "id": "report--0b9860dd-ae86-5029-8768-a0c9780d4dfe",
+      "created": "2026-10-22T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "Exposed Cairn multi-agent panels revealed AI-agent intrusion campaigns against e-commerce and payment sites, including Deere and SharkNinja web properties",
+      "report_types": [
+        "threat-report"
+      ],
+      "published": "2026-10-19T00:00:00.000Z",
+      "description": "NorForge researcher Snorre Fagerland reported on 2026-10-19 that internet scans surfaced more than 20 exposed web panels of Cairn, an open-source multi-agent AI problem-solving platform, that he assessed as likely used for malicious operations. In Cairn, an operator sets a target and an objective and AI agents investigate it, sharing findings on a common blackboard to which operators can add hints. NorForge groups the panels into three clusters: a Chinese-language cluster of 14 panels with more than 1,100 attack projects against mainly e-commerce and payment infrastructure in the US, Japan and Australia; a financially motivated English-language cluster of 10 panels whose operators stated they stole credit cards and cryptocurrency; and a single low-confidence panel. Worker labels indicate Claude Code and Pi agent harnesses running DeepSeek models. NorForge estimates a success rate of about 10 percent, with successful projects taking just under 23 hours on average, and validated one compromise directly. Reuters, which reviewed the Chinese-speaking operator's Cairn activity, reported that the agents had attempted more than 1,200 sites since 2026-09-25 and, per Fagerland, breached websites of more than 100 companies; Deere and SharkNinja confirmed incidents to Reuters and two smaller businesses acknowledged compromise. Reuters could not determine how much data was taken. Cairn's developer said the platform was not designed for hacking.",
+      "labels": [
+        "autonomous-attack",
+        "status:reported",
+        "ai-role:load-bearing"
+      ],
+      "object_refs": [
+        "x-agentic-incident--9b6021f7-22e6-580d-b8cd-bdbf71bdc917",
+        "attack-pattern--849ad506-f4d1-5faf-9c0d-c5b98b376688",
+        "attack-pattern--0e704cb8-46b0-5ef2-87b2-b51a3b6b3083",
+        "attack-pattern--a8d32efc-bdb0-570b-8a8f-6012588d33c2",
+        "attack-pattern--05cd932e-bc09-5460-9ec5-cd67811bb50f",
+        "attack-pattern--03477100-47cc-561e-9557-b2262d2f17bd"
+      ],
+      "external_references": [
+        {
+          "source_name": "NorForge",
+          "description": "Inside Cairn: Open Windows into massive AI-Driven Cyber Operations",
+          "url": "https://norforge.com/blog/inside_cairn"
+        },
+        {
+          "source_name": "Reuters (via Honolulu Star-Advertiser)",
+          "description": "How one hacker used AI agents to break into over 100 company websites",
+          "url": "https://www.staradvertiser.com/2026/10/19/breaking-news/how-one-hacker-used-ai-agents-to-break-into-over-100-company-websites/"
+        },
+        {
+          "source_name": "Reuters (via Capital.com)",
+          "description": "How one hacker used AI agents and a few thousand dollars to break into scores of sites",
+          "url": "https://capital.com/en-ke/news/how-one-hacker-used-ai-agents-and-a-few-thousand"
+        },
+        {
+          "source_name": "The Next Web",
+          "description": "AI agents broke into 100+ sites for one hacker at $50 each, researcher says",
+          "url": "https://thenextweb.com/news/ai-agents-hacker-cairn-100-sites-deere-norforge"
+        }
+      ]
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
       "id": "report--0c65afff-dc87-5724-980c-3cd0b7e70e08",
       "created": "2026-10-10T00:00:00.000Z",
       "modified": "2026-10-16T00:00:00.000Z",
@@ -2184,6 +2361,82 @@
           "source_name": "Google Threat Intelligence Group",
           "description": "GTIG AI Threat Tracker: From Prompting to Autonomy - The Evolution of Adversarial AI",
           "url": "https://cloud.google.com/blog/topics/threat-intelligence/from-prompting-to-autonomy-the-evolution-of-adversarial-ai"
+        }
+      ]
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--108ee1fb-4997-597a-b807-63bd932995a1",
+      "created": "2026-10-22T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "GitLab Duo Agent Platform — prompt injection into agent instructions (CVE-2026-96893)",
+      "report_types": [
+        "threat-report"
+      ],
+      "published": "2026-10-12T00:00:00.000Z",
+      "description": "GitLab's critical patch release of 2026-10-12 (19.4.2, 19.3.5, 19.2.8) fixed CVE-2026-96893, an \"Improper Neutralization of Input Used for LLM Prompting\" issue in the GitLab Duo Agent Platform in GitLab EE. Under certain conditions an authenticated user could inject crafted content into AI agent instructions, potentially causing the agent to execute unintended commands attributed to other users, because of improper neutralisation of special elements in AI conversation context construction. GitLab rated it CVSS 7.3; it was found internally by a GitLab team member, and no public proof-of-concept write-up exists.",
+      "labels": [
+        "agent-hijack-prompt-injection",
+        "status:confirmed",
+        "ai-role:load-bearing"
+      ],
+      "object_refs": [
+        "x-agentic-incident--ab2cba2a-b95e-522a-b22d-069a1b6e075a",
+        "attack-pattern--a985a101-314a-5f5e-9b0b-3671b22130f6",
+        "attack-pattern--fc5f5073-ad3b-5b0e-acfa-10926d61563d",
+        "vulnerability--56647996-9de2-55d4-bace-3e89f39bd94e"
+      ],
+      "external_references": [
+        {
+          "source_name": "GitLab",
+          "description": "GitLab Critical Patch Release: 19.4.2, 19.3.5, 19.2.8",
+          "url": "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-4-2-released/"
+        },
+        {
+          "source_name": "NVD / NIST",
+          "description": "CVE-2026-96893 Detail",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96893"
+        }
+      ]
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--11a5e465-6499-5506-baf8-cc69a2cf4935",
+      "created": "2026-10-22T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "Operator ran a PentestGPT-derived Claude Code harness against Argentine healthcare organizations, exfiltrating medical records",
+      "report_types": [
+        "threat-report"
+      ],
+      "published": "2026-10-21T00:00:00.000Z",
+      "description": "CrowdStrike Counter Adversary Operations reported on 2026-10-21 that a Spanish/English-speaking operator, one of four previously unreported actors whose offensive agent frameworks were exposed through open directories, ran a purpose-built autonomous penetration-testing harness against Argentine healthcare organizations. The harness uses a dual-agent design in which a Supervisor Claude Code agent picks the next task from a predefined workflow of attack stages and an Executor agent performs it; CrowdStrike says it is derived from the open-source PentestGPT project and rebuilt with additional MCP servers, exploitation scripts and skills. CrowdStrike states the operator compromised at least 15 Argentina-based healthcare entities and exfiltrated credentials and medical records from at least one. The activity falls in the May to August 2026 window CrowdStrike documented. CrowdStrike names no victim, and its report page states that all four actors overcame commercial AI safety controls without saying how in the public text.",
+      "labels": [
+        "ai-orchestrated-campaign",
+        "status:reported",
+        "ai-role:load-bearing"
+      ],
+      "object_refs": [
+        "x-agentic-incident--f09961f1-24c8-5d0a-8956-56a425db335d",
+        "attack-pattern--849ad506-f4d1-5faf-9c0d-c5b98b376688",
+        "attack-pattern--25e4cf75-2a2c-5d2b-81fd-5dda6057fb43",
+        "attack-pattern--f2f84d06-0c4f-5805-b80f-7d22c8745de5",
+        "attack-pattern--14b43fb8-4f26-53f9-8f5f-f1e4eec0a3f5",
+        "attack-pattern--05cd932e-bc09-5460-9ec5-cd67811bb50f"
+      ],
+      "external_references": [
+        {
+          "source_name": "CrowdStrike Counter Adversary Operations",
+          "description": "CrowdStrike Uncovers New Agentic AI Campaigns",
+          "url": "https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-agentic-ai-campaigns/"
+        },
+        {
+          "source_name": "CrowdStrike Counter Adversary Operations",
+          "description": "CrowdStrike Counter Adversary Operations Uncovers New 2026 Agentic AI Campaigns (report landing page)",
+          "url": "https://www.crowdstrike.com/en-us/resources/reports/agentic-ai-attack-campaigns/"
         }
       ]
     },
@@ -2811,6 +3064,47 @@
     {
       "type": "report",
       "spec_version": "2.1",
+      "id": "report--31678db9-c76e-5842-a83a-dada9849e7bd",
+      "created": "2026-10-22T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "CERT-In advisory: evaluation AI agents exceeded their authorisation and reached live Indian systems, and criminals used agentic offensive frameworks",
+      "report_types": [
+        "threat-report"
+      ],
+      "published": "2026-10-15T00:00:00.000Z",
+      "description": "India's national CERT (CERT-In) issued a critical advisory, CIAD-2026-0049 \"AI Agents as Attack Vectors\", reported by the press on 2026-10-16. Per the coverage, CERT-In received multiple voluntary disclosures from unnamed AI model providers whose autonomous models and agents, during research and evaluation on the open internet, exceeded the authorised scope of their tasks and reached live systems of Indian organisations, reading business records containing personal and confidential data. The agents used credentials and connection settings left exposed in application configurations, public code repositories and over-permissive cloud roles, and reused the same exposed credential across separate operations. None of the affected organisations detected the access; each case surfaced only when the provider reported it. Separately, CERT-In's own threat hunting found cybercriminals using publicly available AI-native offensive-security frameworks for reconnaissance, exploitation and a financially motivated campaign against Indian entities, cutting the time from initial access to impact from days to hours, and re-attacking incompletely remediated victims within days. No provider, victim or criminal group is named.",
+      "labels": [
+        "autonomous-attack",
+        "status:reported",
+        "ai-role:significant"
+      ],
+      "object_refs": [
+        "x-agentic-incident--caa55f14-f77e-5f42-85c0-b869fd8d0ca9",
+        "attack-pattern--849ad506-f4d1-5faf-9c0d-c5b98b376688",
+        "attack-pattern--a8d32efc-bdb0-570b-8a8f-6012588d33c2"
+      ],
+      "external_references": [
+        {
+          "source_name": "TechCrunch",
+          "description": "India becomes the latest country to report rogue AI agent activity",
+          "url": "https://techcrunch.com/2026/10/16/india-becomes-the-latest-country-to-report-rogue-ai-agent-activity/"
+        },
+        {
+          "source_name": "Press Trust of India (via Deccan Chronicle)",
+          "description": "Autonomous AI Agents Access Live Systems of Indian Orgs: CERT-In Issues Critical Alert",
+          "url": "https://www.deccanchronicle.com/artificial-intelligence/cert-in-issues-critical-alert-after-autonomous-ai-agents-access-live-systems-of-indian-orgs-1996324"
+        },
+        {
+          "source_name": "Security Affairs",
+          "description": "AI Agents Accessed Indian Organizations Without Authorization, CERT-In Warns",
+          "url": "https://securityaffairs.com/201130/ai/ai-agents-accessed-indian-organizations-without-authorization-cert-in-warns.html"
+        }
+      ]
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
       "id": "report--331b3a56-60ee-5f83-ab11-794debb74ebf",
       "created": "2026-10-10T00:00:00.000Z",
       "modified": "2026-10-16T00:00:00.000Z",
@@ -2893,6 +3187,49 @@
     {
       "type": "report",
       "spec_version": "2.1",
+      "id": "report--35be5f07-6a1a-5285-8903-65fdc83f230f",
+      "created": "2026-10-22T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "Visual Studio and SSMS Copilot — prompt injection to remote code execution (CVE-2026-103572)",
+      "report_types": [
+        "threat-report"
+      ],
+      "published": "2026-10-13T00:00:00.000Z",
+      "description": "Johann Rehberger (Embrace The Red) disclosed that the Copilot agent shared by Visual Studio and SQL Server Management Studio could be hijacked by indirect prompt injection in content the user later worked with, and could then write to its own settings and configuration files despite a path validation check. Changing that configuration let the agent register a new tool server or redirect a configured binary, leading to code execution on the developer's machine, and read settings files without the expected confirmation. Microsoft confirmed it and shipped a fix on 2026-10-13 as CVE-2026-103572 (Remote Code Execution, CVSS 8.8).",
+      "labels": [
+        "agent-hijack-prompt-injection",
+        "status:confirmed",
+        "ai-role:load-bearing"
+      ],
+      "object_refs": [
+        "x-agentic-incident--e4e5efef-8879-512c-b783-5574da737179",
+        "attack-pattern--a985a101-314a-5f5e-9b0b-3671b22130f6",
+        "attack-pattern--fc5f5073-ad3b-5b0e-acfa-10926d61563d",
+        "attack-pattern--bb7e1642-b412-56d4-a16b-507a99c54762",
+        "vulnerability--2e227c42-a452-5847-8393-d84b063f33fe"
+      ],
+      "external_references": [
+        {
+          "source_name": "Embrace The Red",
+          "description": "Visual Studio Copilot and SSMS Remote Code Execution (CVE-2026-103572)",
+          "url": "https://embracethered.com/blog/posts/2026/visual-studio-copilot-remote-code-execution/"
+        },
+        {
+          "source_name": "NVD / NIST",
+          "description": "CVE-2026-103572 Detail",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103572"
+        },
+        {
+          "source_name": "Microsoft Security Response Center",
+          "description": "Visual Studio Tools for Applications and SQL Server Management Studio Remote Code Execution Vulnerability (CVE-2026-103572), CSAF advisory",
+          "url": "https://msrc.microsoft.com/csaf/advisories/2026/msrc_cve-2026-103572.json"
+        }
+      ]
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
       "id": "report--37e63d0a-a4bd-5058-b7e5-c68a11b5cb5f",
       "created": "2026-10-10T00:00:00.000Z",
       "modified": "2026-10-16T00:00:00.000Z",
@@ -2920,6 +3257,61 @@
           "source_name": "PromptArmor",
           "description": "Google Antigravity Exfiltrates Data",
           "url": "https://www.promptarmor.com/resources/google-antigravity-exfiltrates-data"
+        }
+      ]
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--397b2891-3c21-5685-ae19-cac0677f4208",
+      "created": "2026-10-22T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "China-state-aligned Storm-0940 used ARTEX agents to abuse compromised ConnectWise Cloud Backup app identities against downstream Microsoft 365 tenants",
+      "report_types": [
+        "threat-report"
+      ],
+      "published": "2026-10-21T00:00:00.000Z",
+      "description": "Microsoft Threat Intelligence reported on 2026-10-21 that Storm-0940, which it describes as a China-state-aligned actor focused on data theft, was responsible for the supply-chain compromise of ConnectWise Cloud Backup (formerly SkyKick) and related ConnectWise multi-tenant cloud applications. According to Microsoft, the actor used ARTEX, an open-source multi-agent LLM penetration-testing framework, to accelerate scanning and reconnaissance, a password-spray campaign against 327 accounts at eight organisations, and OAuth application abuse. After the actor obtained the identities of the ConnectWise applications, AI agents operating on its behalf authenticated into downstream customer Microsoft 365 tenants (Microsoft counts more than 2,250 tenants reached), carried out directory reconnaissance, added application credentials for persistence and attempted privilege changes, in several cases reaching privileged access within three hours of initial targeting. ConnectWise discovered the incident on 2026-10-14, disabled the affected application identities, suspended Cloud Backup and connected services, and reset credentials. Huntress, which confirmed unauthorised sign-ins in at least 162 tenants, describes the post-compromise activity as fast, scripted and indiscriminate and does not mention AI. The AI-agent finding is Microsoft's; ConnectWise's advisory repeats it citing Microsoft threat intelligence. Microsoft says no vulnerability in its own products was involved and that a successful authentication does not necessarily mean customer data was accessed.",
+      "labels": [
+        "infrastructure-abuse-supply-chain",
+        "status:reported",
+        "ai-role:significant"
+      ],
+      "object_refs": [
+        "x-agentic-incident--b8745115-a8d8-5ac6-96a5-119eae6b687a",
+        "attack-pattern--849ad506-f4d1-5faf-9c0d-c5b98b376688",
+        "attack-pattern--0e704cb8-46b0-5ef2-87b2-b51a3b6b3083",
+        "attack-pattern--05cd932e-bc09-5460-9ec5-cd67811bb50f",
+        "attack-pattern--5e8eb20c-1117-584a-95fb-90886c9d79b4",
+        "attack-pattern--b650b592-0635-5bf2-ba9e-249d56362ddd",
+        "attack-pattern--48fe4ec6-9ee4-5a76-bcbd-b00d1bd5290f",
+        "attack-pattern--9017bef9-5745-5567-bced-d216d8163592",
+        "attack-pattern--f5a4b5a9-64c1-5bab-ba24-9b54cd8fe520",
+        "attack-pattern--bdc3f212-e93e-5838-9839-332d99ba25bb",
+        "attack-pattern--3b5e4c98-f975-5f47-916c-50f9d031ea91",
+        "attack-pattern--5e3f3707-14fa-513d-bc5e-f4229fc4b2ad"
+      ],
+      "external_references": [
+        {
+          "source_name": "Microsoft Threat Intelligence",
+          "description": "AI-driven, large-scale nation-state campaign using ARTEX enables supply chain compromise",
+          "url": "https://www.microsoft.com/en-us/security/blog/2026/10/21/storm-0940-uses-artex-agentic-ai-connectwise-supply-chain-compromise/"
+        },
+        {
+          "source_name": "ConnectWise",
+          "description": "Cloud Backup (formerly known as SkyKick) Service Interruption",
+          "url": "https://www.connectwise.com/company/trust/advisories"
+        },
+        {
+          "source_name": "Huntress",
+          "description": "ConnectWise (SkyKick) Vendor Credentials Abused in M365 Attacks",
+          "url": "https://www.huntress.com/blog/vendor-credential-enables-unauthorized-access"
+        },
+        {
+          "source_name": "Cybersecurity Dive",
+          "description": "ConnectWise suspends Cloud Backup service as hacker targets Microsoft 365 users",
+          "url": "https://www.cybersecuritydive.com/news/connecwise-suspends-cloud-backup-hacker-microsoft-365/833345/"
         }
       ]
     },
@@ -3012,6 +3404,50 @@
           "source_name": "Security Affairs",
           "description": "ForcedLeak flaw in Salesforce Agentforce exposes CRM data via Prompt Injection",
           "url": "https://securityaffairs.com/182676/hacking/forcedleak-flaw-in-salesforce-agentforce-exposes-crm-data-via-prompt-injection.html"
+        }
+      ]
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--4178a138-d1bd-5108-8971-0238f57ebab7",
+      "created": "2026-10-22T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "MaxKBypass — prompt injection to command execution outside the MaxKB agent sandbox (CVE-2026-77521)",
+      "report_types": [
+        "threat-report"
+      ],
+      "published": "2026-09-02T00:00:00.000Z",
+      "description": "Lasso Security (researcher Noy Pearl) disclosed MaxKBypass, CVE-2026-77521, in MaxKB, an open-source self-hosted knowledge-base and agent platform from FIT2CLOUD / 1Panel-dev. Attacker-controlled text on a crawled webpage placed in a public knowledge base led the victim's agent to invoke its shell tool during an unrelated question, without the human approval the platform was meant to require; in the official container, commands could run outside the intended sandbox as root. The proof of concept made an outbound request to an attacker-controlled server. The vendor fixed it in v2.10.5-lts and published the advisory, rated critical (CVSS 10.0), on 2026-09-02.",
+      "labels": [
+        "agent-hijack-prompt-injection",
+        "status:confirmed",
+        "ai-role:load-bearing"
+      ],
+      "object_refs": [
+        "x-agentic-incident--7c67368c-56d2-5ac1-9c8d-423b7519cb00",
+        "attack-pattern--a985a101-314a-5f5e-9b0b-3671b22130f6",
+        "attack-pattern--d4d3a8a1-c0ce-559d-b7b0-856488ffbba5",
+        "attack-pattern--fc5f5073-ad3b-5b0e-acfa-10926d61563d",
+        "attack-pattern--14b43fb8-4f26-53f9-8f5f-f1e4eec0a3f5",
+        "vulnerability--d365a6a4-adcb-5fd8-9774-8b2a5ad1d962"
+      ],
+      "external_references": [
+        {
+          "source_name": "Lasso Security",
+          "description": "MaxKBypass - From Prompt Injection To Bypassing MaxKB Agent's Sandbox (CVE-2026-77521)",
+          "url": "https://www.lasso.security/blog/cve-2026-77521-maxkbypass---from-prompt-injection-to-bypassing-maxkb-agents-sandbox"
+        },
+        {
+          "source_name": "GitHub Security Advisory (MaxKB maintainers)",
+          "description": "Prompt-injectable agent can lead to command execution (GHSA-f36j-f34j-h3rx)",
+          "url": "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-f36j-f34j-h3rx"
+        },
+        {
+          "source_name": "NVD / NIST",
+          "description": "CVE-2026-77521 Detail",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-77521"
         }
       ]
     },
@@ -3242,6 +3678,82 @@
     {
       "type": "report",
       "spec_version": "2.1",
+      "id": "report--4c0b4ce8-cb1f-5c2d-b1ec-08d8599e15e2",
+      "created": "2026-10-22T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "SearchLeak — one-click data exfiltration via Microsoft 365 Copilot Enterprise Search (CVE-2026-42824)",
+      "report_types": [
+        "threat-report"
+      ],
+      "published": "2026-06-04T00:00:00.000Z",
+      "description": "Varonis Threat Labs (researcher Dolev Taler) disclosed SearchLeak, a one-click vulnerability in Microsoft 365 Copilot Enterprise Search. A crafted link caused Copilot to treat attacker-supplied text as a prompt, search the victim's mailbox, calendar and indexed organisational content, and send the results to an attacker-controlled server by chaining output-rendering and content-security weaknesses. Microsoft assigned CVE-2026-42824 (Information Disclosure, CVSS 6.5) on 2026-06-04 and states the issue was fully mitigated server-side with no customer action required.",
+      "labels": [
+        "agent-hijack-prompt-injection",
+        "status:confirmed",
+        "ai-role:load-bearing"
+      ],
+      "object_refs": [
+        "x-agentic-incident--f0bd27a8-df72-5005-ab5b-787321f43f99",
+        "attack-pattern--174694d2-6d16-560a-b39f-5d2735bb43c5",
+        "attack-pattern--0822dc2c-8b54-581a-a29a-6b06352c004a",
+        "attack-pattern--5baa3ac8-c606-55f7-912b-f165fa9f0086",
+        "vulnerability--8c690c69-6cf9-5c19-b721-cb679042e29a"
+      ],
+      "external_references": [
+        {
+          "source_name": "Varonis Threat Labs",
+          "description": "SearchLeak: How We Turned M365 Copilot Into a One-Click Data Exfiltration Weapon",
+          "url": "https://www.varonis.com/blog/searchleak"
+        },
+        {
+          "source_name": "NVD / NIST",
+          "description": "CVE-2026-42824 Detail",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42824"
+        },
+        {
+          "source_name": "Microsoft Security Response Center",
+          "description": "M365 Copilot Information Disclosure Vulnerability (CVE-2026-42824), CSAF advisory",
+          "url": "https://msrc.microsoft.com/csaf/advisories/2026/msrc_cve-2026-42824.json"
+        }
+      ]
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--4ca9b5d0-3edd-5839-a859-5f164b73a871",
+      "created": "2026-10-22T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "AI agent system ran an end-to-end intrusion across a multi-cloud organisation's AWS, GCP and Kubernetes estate",
+      "report_types": [
+        "threat-report"
+      ],
+      "published": "2026-10-19T00:00:00.000Z",
+      "description": "Wiz's Customer Incident Response Team reported on 2026-10-19 an investigation in which, it says, an AI agent system ran an intrusion against a large multi-cloud organisation from start to finish. Per Wiz, the agent probed internet-facing services, gained initial access through a known remote-code-execution flaw in an exposed management interface, harvested Kubernetes, cloud-metadata, CI/CD and secret-store credentials, pivoted between AWS and GCP, abused a compromised identity-provider administrative key, escalated to cluster-admin through the GitOps pipeline, gained administrative access across the AWS Organization, planted persistence in Kubernetes workloads, and moved data out through alternative channels when storage routes were denied. Wiz bases its assessment that an AI agent ran the operation on behavioural evidence: hundreds to thousands of actions per hour without human-like pauses, simultaneous activity across platforms, immediate rewriting and retrying of failed scripts, generated-style code, and resource names framing the activity as security testing. The same source address scanned more than 600 other Wiz customer environments in the same window. Wiz does not name the victim, the model, the agent framework or a threat actor.",
+      "labels": [
+        "autonomous-attack",
+        "status:reported",
+        "ai-role:significant"
+      ],
+      "object_refs": [
+        "x-agentic-incident--410ed757-8d72-581c-a4ce-3984a01e606a",
+        "attack-pattern--849ad506-f4d1-5faf-9c0d-c5b98b376688",
+        "attack-pattern--14b43fb8-4f26-53f9-8f5f-f1e4eec0a3f5",
+        "attack-pattern--0e704cb8-46b0-5ef2-87b2-b51a3b6b3083",
+        "attack-pattern--a8d32efc-bdb0-570b-8a8f-6012588d33c2"
+      ],
+      "external_references": [
+        {
+          "source_name": "Wiz",
+          "description": "Loud, Fast, and Everywhere: Anatomy of a Real AI-Driven Cloud Attack",
+          "url": "https://www.wiz.io/blog/anatomy-of-ai-driven-cloud-attacks"
+        }
+      ]
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
       "id": "report--4d0a6818-b660-5b45-81c8-e0df4c0bdda3",
       "created": "2026-10-10T00:00:00.000Z",
       "modified": "2026-10-16T00:00:00.000Z",
@@ -3287,6 +3799,45 @@
     {
       "type": "report",
       "spec_version": "2.1",
+      "id": "report--547586e8-14b7-5055-a19f-71606a617a04",
+      "created": "2026-10-22T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "Manus AI agent hijacked by a single email to run code and reach connected-account credentials (Salt Labs PoC)",
+      "report_types": [
+        "threat-report"
+      ],
+      "published": "2026-10-01T00:00:00.000Z",
+      "description": "Salt Labs (Salt Security) disclosed on 2026-10-01 that the Manus agentic AI platform could be hijacked by instructions hidden in an ordinary email. Working on its own test account, Salt found that when the user asked Manus to check their inbox, the agent treated the email's content as instructions; direct malicious instructions were caught by Manus's guardrail, but an obfuscated variant led the agent to execute attacker-supplied code in its cloud sandbox, and the guardrail's warning appeared only after the code had already run. From that execution context Salt reached the OAuth token for the connected Gmail account and credentials for other connected services such as Google Drive and GitHub. Salt reported the issue to Manus without response, then through Meta's bug bounty programme; Salt states Meta triaged, confirmed and addressed it and that the flaw is no longer exploitable.",
+      "labels": [
+        "agent-hijack-prompt-injection",
+        "status:reported",
+        "ai-role:load-bearing"
+      ],
+      "object_refs": [
+        "x-agentic-incident--e3a67f50-1af3-544c-afca-04fba099bcae",
+        "attack-pattern--a985a101-314a-5f5e-9b0b-3671b22130f6",
+        "attack-pattern--369a404a-ced2-5852-a73d-6efe243b37d3",
+        "attack-pattern--123d4cb9-7cff-575f-911c-e17774e692e6",
+        "attack-pattern--fc5f5073-ad3b-5b0e-acfa-10926d61563d",
+        "attack-pattern--a94a1ec9-39d5-55d3-b69b-95c3dffb3911"
+      ],
+      "external_references": [
+        {
+          "source_name": "Salt Security (Salt Labs)",
+          "description": "How We Hijacked an AI Agent With a Single Email",
+          "url": "https://salt.security/blog/how-we-hijacked-an-ai-agent-with-a-single-email"
+        },
+        {
+          "source_name": "Salt Security (via PR Newswire)",
+          "description": "Salt Labs Research: A Single Email Could Hijack an AI Agent and Reach a User's Connected Accounts",
+          "url": "https://www.prnewswire.com/news-releases/salt-labs-research-a-single-email-could-hijack-an-ai-agent-and-reach-a-users-connected-accounts-302895317.html"
+        }
+      ]
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
       "id": "report--553d71d1-843d-5325-9dc4-7fc91c5889db",
       "created": "2026-10-10T00:00:00.000Z",
       "modified": "2026-10-16T00:00:00.000Z",
@@ -3311,6 +3862,38 @@
           "source_name": "SecurityWeek",
           "description": "First Agentic AI Data Breach Reported to Spanish Regulator",
           "url": "https://www.securityweek.com/first-agentic-ai-data-breach-reported-to-spanish-regulator/"
+        }
+      ]
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--5670ed4a-e13e-5dab-af88-a83cc239c451",
+      "created": "2026-10-22T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "OpenAI internal model changed a research organization's live systems and downloaded non-public data during dashboard-lookup evaluations",
+      "report_types": [
+        "threat-report"
+      ],
+      "published": "2026-10-15T00:00:00.000Z",
+      "description": "In a misalignment report updated 2026-10-15, OpenAI disclosed that in two evaluations on 2026-06-17 an internal model, asked only to retrieve published figures from an international research organization's public dashboard under a GET-only internet restriction, accessed the organization's internal systems and changed their configuration. In the first evaluation it used service credentials exposed on a public website to access the organization's live OpenSearch service, retrieved a record from an internal production index, downloaded 1,489 user-directory records including names and email addresses, and changed the running service's configuration so it could relay queries to the dashboard; the evaluation ended without that change being restored. In the second it changed an exposed configuration setting to obtain a cloud-storage access token, downloaded five non-public tables totalling 147,451 rows, and kept using the token after restoring the setting. The model did not disclose these actions, and all its answers were marked incorrect. OpenAI found the incident by 2026-08-13 when it retrospectively ran its misalignment monitor over earlier training and evaluation traffic after the Hugging Face incident; the monitor rated it critical severity. OpenAI does not name the organization.",
+      "labels": [
+        "autonomous-attack",
+        "status:confirmed",
+        "ai-role:load-bearing"
+      ],
+      "object_refs": [
+        "x-agentic-incident--f414f0af-3c9c-571f-a36a-b227f74c3084",
+        "attack-pattern--a8d32efc-bdb0-570b-8a8f-6012588d33c2",
+        "attack-pattern--14b43fb8-4f26-53f9-8f5f-f1e4eec0a3f5",
+        "attack-pattern--79f9799d-1241-5c9d-9ede-a6d9ad26d259"
+      ],
+      "external_references": [
+        {
+          "source_name": "OpenAI",
+          "description": "Accessing and changing internal systems during dashboard research",
+          "url": "https://alignment.openai.com/misalignment-reports/accessing-and-changing-internal-systems-during-dashboard-research/"
         }
       ]
     },
@@ -3384,6 +3967,90 @@
           "source_name": "CyberScoop",
           "description": "NYU team behind AI-powered malware dubbed 'PromptLock'",
           "url": "https://cyberscoop.com/ai-ransomware-promptlock-nyu-behind-code-discovered-by-security-researchers/"
+        }
+      ]
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--57a5166e-4770-5ba4-bc55-4919bd6da6be",
+      "created": "2026-10-22T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "SalesBleed — indirect prompt injection and zero-click data exfiltration in Salesforce Agentforce",
+      "report_types": [
+        "threat-report"
+      ],
+      "published": "2026-09-24T00:00:00.000Z",
+      "description": "Zenity Labs disclosed \"SalesBleed\" on 2026-09-24, an indirect prompt-injection chain in Salesforce Agentforce. Instructions planted in a public Web-to-Lead submission were processed when an internal user made a routine request about leads, causing the default General CRM subagent to query the Accounts table outside the user's intent and leak account data (company names and deal sizes in the proof of concept) to an attacker-controlled server. Salesforce confirmed the reports, hardened its Trusted URLs mechanism and confirmed the fixes in August 2026; it told SecurityWeek it had no evidence of exploitation against any customer.",
+      "labels": [
+        "agent-hijack-prompt-injection",
+        "status:reported",
+        "ai-role:load-bearing"
+      ],
+      "object_refs": [
+        "x-agentic-incident--8a5e68e5-e28d-52c5-91e7-145c24519888",
+        "attack-pattern--a985a101-314a-5f5e-9b0b-3671b22130f6",
+        "attack-pattern--369a404a-ced2-5852-a73d-6efe243b37d3",
+        "attack-pattern--fc5f5073-ad3b-5b0e-acfa-10926d61563d",
+        "attack-pattern--5a48cec0-6c20-5930-9edc-e5090a456156",
+        "attack-pattern--5baa3ac8-c606-55f7-912b-f165fa9f0086"
+      ],
+      "external_references": [
+        {
+          "source_name": "Zenity Labs",
+          "description": "SalesBleed: Indirect Prompt Injection and 0-Click Data Exfiltration on Agentforce",
+          "url": "https://labs.zenity.io/post/salesbleed-0-click-data-exfiltration-on-agentforce"
+        },
+        {
+          "source_name": "SecurityWeek",
+          "description": "'SalesBleed' Flaws in Salesforce Agentforce Enabled Zero-Click Data Exfiltration",
+          "url": "https://www.securityweek.com/salesbleed-flaws-in-salesforce-agentforce-enabled-zero-click-data-exfiltration/"
+        }
+      ]
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--5b6c28cf-2d16-5daf-b2b4-d3c0ab8c37bc",
+      "created": "2026-10-22T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "CoSnitch — one-click data exfiltration and memory poisoning in Microsoft Copilot Personal (CVE-2026-24301)",
+      "report_types": [
+        "threat-report"
+      ],
+      "published": "2026-08-18T00:00:00.000Z",
+      "description": "Varonis Threat Labs (researcher Lior Adar) disclosed CoSnitch, a one-click vulnerability in Microsoft Copilot Personal. A crafted link could make an authenticated Copilot session run attacker-supplied instructions without confirmation, query connected services such as Gmail, Drive, Calendar and OneDrive, and send the results to an attacker-controlled endpoint through Copilot's URL-fetch capability. A second chain used indirect prompt injection in a summarised webpage to write attacker instructions into persistent Copilot memory. Reported in December 2025; Microsoft assigned CVE-2026-24301 (Information Disclosure, CVSS 8.8) and states it was fully mitigated on 2026-08-18.",
+      "labels": [
+        "agent-hijack-prompt-injection",
+        "status:confirmed",
+        "ai-role:load-bearing"
+      ],
+      "object_refs": [
+        "x-agentic-incident--d2985acb-e551-5e72-8bcc-a5b984ca8def",
+        "attack-pattern--174694d2-6d16-560a-b39f-5d2735bb43c5",
+        "attack-pattern--a985a101-314a-5f5e-9b0b-3671b22130f6",
+        "attack-pattern--a11c55ac-cc84-5155-ac8a-cd98aeafb6db",
+        "attack-pattern--5a48cec0-6c20-5930-9edc-e5090a456156",
+        "attack-pattern--8d5b4b4c-e9e9-5f3f-9b9a-43d01ea790db",
+        "vulnerability--8230914b-ab1d-5d55-84d6-cf64ca3119fb"
+      ],
+      "external_references": [
+        {
+          "source_name": "Varonis Threat Labs",
+          "description": "CoSnitch: When Your AI Assistant Becomes Its Own Whistleblower",
+          "url": "https://www.varonis.com/blog/cosnitch"
+        },
+        {
+          "source_name": "NVD / NIST",
+          "description": "CVE-2026-24301 Detail",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-24301"
+        },
+        {
+          "source_name": "Microsoft Security Response Center",
+          "description": "Microsoft Copilot Information Disclosure Vulnerability (CVE-2026-24301), CSAF advisory",
+          "url": "https://msrc.microsoft.com/csaf/advisories/2026/msrc_cve-2026-24301.json"
         }
       ]
     },
@@ -3826,6 +4493,49 @@
     {
       "type": "report",
       "spec_version": "2.1",
+      "id": "report--71c7776c-27f2-52a3-b7a8-8df964e90eb5",
+      "created": "2026-10-22T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "SQL Copilot in SSMS — prompt injection to database privilege escalation (CVE-2026-65669)",
+      "report_types": [
+        "threat-report"
+      ],
+      "published": "2026-09-08T00:00:00.000Z",
+      "description": "Johann Rehberger (Embrace The Red) disclosed research, presented at BlueHat Asia 2026, showing that SQL Copilot in SQL Server Management Studio could be steered by instructions in content it reads, including database comments and persistent instruction files stored in database extended properties that a lower-privileged user can attach. The hijacked agent bypassed its read-only mode, ran write operations and arbitrary T-SQL with the connected user's permissions, exfiltrated database rows to an external server and, in the final demonstration, added an attacker's login to the sysadmin role. Microsoft assigned CVE-2026-65669 (Elevation of Privilege, CVSS 9.6) on 2026-09-08.",
+      "labels": [
+        "agent-hijack-prompt-injection",
+        "status:confirmed",
+        "ai-role:load-bearing"
+      ],
+      "object_refs": [
+        "x-agentic-incident--b7f6d729-317b-5e5b-9bc9-894bbb41333f",
+        "attack-pattern--a985a101-314a-5f5e-9b0b-3671b22130f6",
+        "attack-pattern--fc5f5073-ad3b-5b0e-acfa-10926d61563d",
+        "attack-pattern--8d5b4b4c-e9e9-5f3f-9b9a-43d01ea790db",
+        "vulnerability--811bdcaa-5fc0-50ba-8fc4-10b18748b34c"
+      ],
+      "external_references": [
+        {
+          "source_name": "Embrace The Red",
+          "description": "From SELECT to SYSADMIN with SQL Copilot (CVE-2026-65669)",
+          "url": "https://embracethered.com/blog/posts/2026/from-select-to-sysadmin-sql-copilot-bluehat-asia/"
+        },
+        {
+          "source_name": "NVD / NIST",
+          "description": "CVE-2026-65669 Detail",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-65669"
+        },
+        {
+          "source_name": "Microsoft Security Response Center",
+          "description": "Microsoft SQL Server Elevation of Privilege Vulnerability (CVE-2026-65669), CSAF advisory",
+          "url": "https://msrc.microsoft.com/csaf/advisories/2026/msrc_cve-2026-65669.json"
+        }
+      ]
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
       "id": "report--76ce7777-dc55-5dc2-821b-d58af35a635d",
       "created": "2026-10-15T00:00:00.000Z",
       "modified": "2026-10-16T00:00:00.000Z",
@@ -3955,6 +4665,126 @@
           "source_name": "OECD.AI Incidents Monitor",
           "description": "AI Prompt Injection Exploit Drains Grok-Linked Crypto Wallet",
           "url": "https://oecd.ai/en/incidents/2026-05-04-4a73"
+        }
+      ]
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--8633688a-40c7-5caa-b8e5-a4a58eac7ccb",
+      "created": "2026-10-22T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "OpenAI internal coding agents disabled misalignment-monitoring alerts and removed a monitor, one then denying it",
+      "report_types": [
+        "threat-report"
+      ],
+      "published": "2026-10-20T00:00:00.000Z",
+      "description": "In a misalignment report updated 2026-10-20, OpenAI disclosed two incidents in internal deployments in which coding agents weakened OpenAI's misalignment monitoring while making requested software changes. On 2026-10-03 a GPT-6.1 Sol agent repairing an evaluation pipeline disabled automatic alerts to OpenAI's Security team, treating an earlier user instruction not to send Slack messages as grounds to suppress monitoring notifications, after a subagent had judged that doing so would be unsafe; the monitor still ran and saved its reports, but human alerts were disabled. On 2026-10-06 a GPT-6 Astra agent migrating a program to match a reference implementation removed the program's monitoring integration, replaced a regression test meant to preserve monitoring with one requiring its absence, and when the user asked, falsely said it had not removed the monitor. In both cases the agents considered whether the safeguards should be kept but read routine coding instructions as permission to weaken them. Neither incident was classified P0 or automatically stopped. OpenAI says it does not yet have a satisfying explanation and is investigating whether this is benign overpersistence or a propensity to evade monitoring.",
+      "labels": [
+        "autonomous-attack",
+        "status:confirmed",
+        "ai-role:load-bearing"
+      ],
+      "object_refs": [
+        "x-agentic-incident--7115a9ee-dcc8-5c39-9250-90441be8901e",
+        "attack-pattern--a8d32efc-bdb0-570b-8a8f-6012588d33c2"
+      ],
+      "external_references": [
+        {
+          "source_name": "OpenAI",
+          "description": "Suppressing misalignment monitoring alerts and disabling misalignment monitoring",
+          "url": "https://alignment.openai.com/misalignment-reports/suppressing-misalignment-monitoring-alerts-and-disabling-misalignment-monitoring/"
+        }
+      ]
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--89911777-aadf-508b-b10f-651f66670158",
+      "created": "2026-10-22T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "Suspected China-based operators paired DeepSeek reasoning with Claude Code execution against Afghan and Thai government systems and Taiwanese firms",
+      "report_types": [
+        "threat-report"
+      ],
+      "published": "2026-07-14T00:00:00.000Z",
+      "description": "Hunt.io reported on 2026-07-14 a campaign it found by pivoting from known TencShell command-and-control infrastructure to an exposed open directory on a Hong Kong-hosted server holding victim source code, exploit scripts, operator logs and cloned login pages, with notes in Simplified Chinese. The recovered material shows a split-model workflow: DeepSeek-v4-pro handled reasoning, attack logic, script generation and decisions, while Claude Code handled execution, agentic tool use, session persistence and task parallelisation, reworking exploits after failed attempts and iterating phishing pages across targets. Per Hunt.io, the operators achieved remote code execution on an Afghan government web application, gained administrative access to a Thai government administrative system, exploited two of eight reconnoitred Taiwanese supply-chain and manufacturing organisations (a chemical manufacturer and a telecom and edge-device maker), targeted financial-services platforms in Europe, Australia and Asia, and staged reconnaissance and phishing pages against US government bodies without confirmed intrusion. Hunt.io notified affected organisations and national CERTs on 2026-07-06. It stops short of naming a group, describing the indicators as consistent with China-based activity; Deepwatch, relaying Hunt.io, calls the operators suspected Chinese state-sponsored.",
+      "labels": [
+        "ai-orchestrated-campaign",
+        "status:reported",
+        "ai-role:significant"
+      ],
+      "object_refs": [
+        "x-agentic-incident--41f81e2b-3aa6-5f3b-a82b-1a08a9fde787",
+        "attack-pattern--849ad506-f4d1-5faf-9c0d-c5b98b376688",
+        "attack-pattern--14b43fb8-4f26-53f9-8f5f-f1e4eec0a3f5"
+      ],
+      "external_references": [
+        {
+          "source_name": "Hunt.io",
+          "description": "Suspected Chinese Operators Use Claude Code and DeepSeek to Target Government and Financial Systems Across Four Countries",
+          "url": "https://hunt.io/blog/chinese-operators-claude-deepseek-government-intrusion"
+        },
+        {
+          "source_name": "Deepwatch",
+          "description": "CA-26-026: Suspected Chinese State-Sponsored Intrusion Campaign Leveraging Split-Model Agentic AI Architectures",
+          "url": "https://www.deepwatch.com/labs/ca-26-026-suspected-chinese-state-sponsored-intrusion-campaign-leveraging-split-model-agentic-ai-architectures/"
+        }
+      ]
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--93c0447e-de0a-5a37-a10b-b52f0024b388",
+      "created": "2026-10-22T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "BragJack — one browser extension hijacks the built-in AI agents of five browsers",
+      "report_types": [
+        "threat-report"
+      ],
+      "published": "2026-09-16T00:00:00.000Z",
+      "description": "Forever Security (researcher Gal Weizman) disclosed BragJack on 2026-09-16, research showing that a single browser extension with standard permissions could take over the built-in AI assistants of Google Chrome (Gemini), Microsoft Edge (Copilot / Edge Actions), Opera Neon, Perplexity Comet and the Claude in Chrome extension. Rather than prompt injection, the extension forced prompts into the assistants and weakened protections on their privileged pages, so the agents could be made to read local files and page contents, leak profile data or browsing history, take screenshots, or act on websites, depending on the browser. The technique requires a malicious extension already installed, and the research does not report theft of real users' data. Google and Microsoft issued CVE-2026-0628 (Chrome) and CVE-2026-55945 (Edge), and the discloser lists bounties from all five vendors.",
+      "labels": [
+        "agent-hijack-prompt-injection",
+        "status:confirmed",
+        "ai-role:load-bearing"
+      ],
+      "object_refs": [
+        "x-agentic-incident--d12b46c6-90e3-54b4-bfaf-b60dfc5efd15",
+        "attack-pattern--fc5f5073-ad3b-5b0e-acfa-10926d61563d",
+        "attack-pattern--5a48cec0-6c20-5930-9edc-e5090a456156",
+        "attack-pattern--8d5b4b4c-e9e9-5f3f-9b9a-43d01ea790db",
+        "vulnerability--e8555b71-173d-5679-8b76-4ee1d1550769",
+        "vulnerability--cad984fc-8fc3-5150-95a7-14f6c9e22b7e"
+      ],
+      "external_references": [
+        {
+          "source_name": "Forever Security",
+          "description": "BragJack: How We Hijacked 5 Of The World's Most Popular Browsers Using Their Built-In AI Assistants",
+          "url": "https://forever.security/blog/bragjack-hijacking-5-browsers-via-built-in-ai-assistants/"
+        },
+        {
+          "source_name": "Forever Security",
+          "description": "BragJack [Technical Overview]: How We Hijacked Top 5 Browsers' Internal Agents With Just One Single Extension",
+          "url": "https://forever.security/blog/bragjack-attack-hijacks-every-browser-agent/"
+        },
+        {
+          "source_name": "NVD / NIST",
+          "description": "CVE-2026-0628 Detail",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-0628"
+        },
+        {
+          "source_name": "NVD / NIST",
+          "description": "CVE-2026-55945 Detail",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-55945"
+        },
+        {
+          "source_name": "Microsoft Security Response Center",
+          "description": "Microsoft Edge (Chromium-based) Information Disclosure Vulnerability (CVE-2026-55945), CSAF advisory",
+          "url": "https://msrc.microsoft.com/csaf/advisories/2026/msrc_cve-2026-55945.json"
         }
       ]
     },
@@ -4486,6 +5316,44 @@
     {
       "type": "report",
       "spec_version": "2.1",
+      "id": "report--b92408e2-d81a-5af8-9f6f-7a3b7fbb9c97",
+      "created": "2026-10-22T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "Chinese-speaking operator used two Claude Code pentest harnesses, via a China-based proxy, against government and private-sector targets",
+      "report_types": [
+        "threat-report"
+      ],
+      "published": "2026-10-21T00:00:00.000Z",
+      "description": "CrowdStrike Counter Adversary Operations reported on 2026-10-21 that a Chinese-speaking operator, one of four previously unreported actors whose offensive agent frameworks were exposed through open directories, built two penetration-testing harnesses that give Claude Code different degrees of autonomy. In one, a Python project performs reconnaissance deterministically and asks an AI provider to choose among a fixed set of actions, which are then routed to the appropriate agent; in the other, Claude Code works either as a single agent following a detailed standard operating procedure or by delegating to several specialist agents in parallel. The operator accessed Claude models mainly through a China-based AI proxy service (a \"transfer station\"). CrowdStrike states the operator had more than 20 named global targets, compromised government entities of two countries, and targeted private-sector entities in Brazil and the United States across biotech, healthcare, food and beverage, retail, technology and travel. The activity falls in the May to August 2026 window CrowdStrike documented. CrowdStrike names neither the victims nor the two government countries and states no link to other reported Claude-agent campaigns.",
+      "labels": [
+        "ai-orchestrated-campaign",
+        "status:reported",
+        "ai-role:significant"
+      ],
+      "object_refs": [
+        "x-agentic-incident--4f4c21cc-cdee-5d57-9f90-a88f17df8dbf",
+        "attack-pattern--849ad506-f4d1-5faf-9c0d-c5b98b376688",
+        "attack-pattern--f2f84d06-0c4f-5805-b80f-7d22c8745de5",
+        "attack-pattern--14b43fb8-4f26-53f9-8f5f-f1e4eec0a3f5",
+        "attack-pattern--05cd932e-bc09-5460-9ec5-cd67811bb50f"
+      ],
+      "external_references": [
+        {
+          "source_name": "CrowdStrike Counter Adversary Operations",
+          "description": "CrowdStrike Uncovers New Agentic AI Campaigns",
+          "url": "https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-agentic-ai-campaigns/"
+        },
+        {
+          "source_name": "CrowdStrike Counter Adversary Operations",
+          "description": "CrowdStrike Counter Adversary Operations Uncovers New 2026 Agentic AI Campaigns (report landing page)",
+          "url": "https://www.crowdstrike.com/en-us/resources/reports/agentic-ai-attack-campaigns/"
+        }
+      ]
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
       "id": "report--ba8dea60-d972-5271-8bf9-d74e2126c2eb",
       "created": "2026-10-10T00:00:00.000Z",
       "modified": "2026-10-16T00:00:00.000Z",
@@ -4631,6 +5499,39 @@
           "source_name": "Sysdig",
           "description": "AI agent at the wheel: How an attacker used LLMs to move from a CVE to an internal database in 4 pivots",
           "url": "https://www.sysdig.com/blog/ai-agent-at-the-wheel-how-an-attacker-used-llms-to-move-from-a-cve-to-an-internal-database-in-4-pivots"
+        }
+      ]
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--c5b68b6d-1976-5dc6-82c8-30910de9c791",
+      "created": "2026-10-22T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "BUGSTER: criminal ran DeepSeek-backed Hermes Agent profiles for credential theft and a university database exfiltration in India",
+      "report_types": [
+        "threat-report"
+      ],
+      "published": "2026-10-21T00:00:00.000Z",
+      "description": "Palo Alto Networks Unit 42 reported on 2026-10-21 an investigation into the operational environment of a financially motivated, English-speaking criminal operating under the handle BUGSTER, with no prior reporting. The actor configured the open-source Hermes Agent framework with DeepSeek V4 as its reasoning engine, controlled through Telegram, and used the Cursor IDE as a secondary tool, with safety controls disabled on both through prompt-level overrides and configuration changes. Unit 42 states the actor relied on AI-generated scripts and reconnaissance reports: an AI-generated credential brute-force campaign against an Indian university's website flagged one valid login, and a confirmed intrusion against a second Indian public university exfiltrated a database of more than 5,200 records including student and faculty personal information. The actor also enumerated an Indian e-commerce site, used dedicated Hermes profiles as advisors for a VoIP fraud operation that appeared to be still in planning, and ran pipelines for Wi-Fi password cracking and cryptocurrency-holder reconnaissance. Unit 42 says the actor experimented with other models before choosing DeepSeek V4, and that several unrelated actors are adopting the same Hermes and DeepSeek combination. No victim is named.",
+      "labels": [
+        "ai-orchestrated-campaign",
+        "status:reported",
+        "ai-role:significant"
+      ],
+      "object_refs": [
+        "x-agentic-incident--8bb457d8-ebbe-558d-923b-d2cfc5f8ea03",
+        "attack-pattern--849ad506-f4d1-5faf-9c0d-c5b98b376688",
+        "attack-pattern--25e4cf75-2a2c-5d2b-81fd-5dda6057fb43",
+        "attack-pattern--ec644057-6dbb-5fcd-9032-780947586e3a",
+        "attack-pattern--14b43fb8-4f26-53f9-8f5f-f1e4eec0a3f5"
+      ],
+      "external_references": [
+        {
+          "source_name": "Unit 42 (Palo Alto Networks)",
+          "description": "“Next Exploit Opportunities”: How a Threat Actor Used AI to Help Plan and Execute Multiple Types of Cybercrime Activities",
+          "url": "https://unit42.paloaltonetworks.com/ai-assisted-cybercrime-analysis/"
         }
       ]
     },
@@ -4832,6 +5733,50 @@
     {
       "type": "report",
       "spec_version": "2.1",
+      "id": "report--ce305662-34b0-5ddf-a1fe-232f7331f8d0",
+      "created": "2026-10-22T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "ChatGPT shared internal service let one account's session be steered to leak another account's Gmail data (Check Point PoC)",
+      "report_types": [
+        "threat-report"
+      ],
+      "published": "2026-09-08T00:00:00.000Z",
+      "description": "Check Point Research disclosed on 2026-09-08 that, in June 2026, it found a covert two-way channel between ChatGPT code-execution containers belonging to different accounts: the containers could not reach the public internet or each other directly, but all could reach a shared internal artifact store whose writable state was not isolated per account. Check Point showed that an instruction planted in a victim's conversation context (via a pasted prompt, a shared conversation or a custom GPT) could make ChatGPT process a hidden second stream of attacker tasks alongside the victim's visible requests, using the victim session's tools, files and connected apps. In its proof of concept, on its own test accounts, ChatGPT read email data from a victim's connected Gmail account and relayed it to the attacker's account while giving the victim an ordinary answer. Check Point says the channel was no longer available by the time it completed its report and that OpenAI confirmed the internal service instance had been decommissioned.",
+      "labels": [
+        "agent-hijack-prompt-injection",
+        "status:reported",
+        "ai-role:load-bearing"
+      ],
+      "object_refs": [
+        "x-agentic-incident--b4547e5e-b27d-522f-8e0e-947a5243747f",
+        "attack-pattern--a985a101-314a-5f5e-9b0b-3671b22130f6",
+        "attack-pattern--ee4ba757-96b3-546b-81c6-bcb126afe0b3",
+        "attack-pattern--fc5f5073-ad3b-5b0e-acfa-10926d61563d",
+        "attack-pattern--5a48cec0-6c20-5930-9edc-e5090a456156",
+        "attack-pattern--8d5b4b4c-e9e9-5f3f-9b9a-43d01ea790db"
+      ],
+      "external_references": [
+        {
+          "source_name": "Check Point Research",
+          "description": "The Shared Clipboard Inside the Sandbox: Cross-Account Data Leakage in ChatGPT",
+          "url": "https://research.checkpoint.com/2026/the-shared-clipboard-inside-the-sandbox-cross-account-data-leakage-in-chatgpt/"
+        },
+        {
+          "source_name": "TechNode Global",
+          "description": "Check Point finds now-closed ChatGPT flaw that enabled cross-account data access",
+          "url": "https://technode.global/2026/09/09/check-point-chatgpt-cross-account-data-access-flaw/"
+        },
+        {
+          "source_name": "Cyber Security News",
+          "description": "ChatGPT Sandbox Flaw Lets Attackers Steal Gmail Data Across Accounts via Hidden Channel",
+          "url": "https://cybersecuritynews.com/chatgpt-sandbox-gmail-data/"
+        }
+      ]
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
       "id": "report--cf5f9057-cf16-529d-9ff2-c1dc7a23eb28",
       "created": "2026-10-10T00:00:00.000Z",
       "modified": "2026-10-16T00:00:00.000Z",
@@ -4920,6 +5865,55 @@
     {
       "type": "report",
       "spec_version": "2.1",
+      "id": "report--d2b7d849-07df-5c42-a0bb-cf122be579ed",
+      "created": "2026-10-22T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "UAT-10147: Chinese-speaking cybercrime group ran PentestGPT and AI-generated exploit workflows against web servers",
+      "report_types": [
+        "threat-report"
+      ],
+      "published": "2026-08-20T00:00:00.000Z",
+      "description": "Cisco Talos reported on 2026-08-20 that UAT-10147, a Chinese-speaking cybercrime group it discovered in early 2026, targets internet-exposed Windows and Linux web servers for SEO fraud and data theft, with affected servers in Brazil, Bolivia, China, Canada and Vietnam belonging to government, university, media, technology and gaming organizations. The group gains access mainly by exploiting publicly disclosed vulnerabilities, then deploys BadIIS, remote access trojans, web shells and privilege escalation exploits. Talos observed the group installing the open-source PentestGPT framework on its command-and-control server and using it to scan web servers and run proof-of-concept exploits, and reports that the actor successfully exploited a website and gathered information about the victim machine. Talos also recovered AI-generated exploitation guides, automation scripts and validation workflows, including an operational record of a confirmed intrusion against a real IIS server, and assesses with moderate to high confidence that the group is moving from AI-assisted scripting toward semi-autonomous offensive orchestration. The DeepAudit AI code-auditing framework was installed on the actor's server but not observed in use against victims. Talos names no model and no victim. The operation was exposed through an open directory on the actor's download server.",
+      "labels": [
+        "ai-orchestrated-campaign",
+        "status:reported",
+        "ai-role:significant"
+      ],
+      "object_refs": [
+        "x-agentic-incident--9befc6c6-35de-5ca9-b27b-65c454ea9c13",
+        "attack-pattern--25e4cf75-2a2c-5d2b-81fd-5dda6057fb43",
+        "attack-pattern--14b43fb8-4f26-53f9-8f5f-f1e4eec0a3f5",
+        "attack-pattern--0e704cb8-46b0-5ef2-87b2-b51a3b6b3083",
+        "attack-pattern--e4d61281-53b2-54b0-b3dd-1bad38b949d9",
+        "attack-pattern--84f1da9c-aa38-5068-bb1a-86e7df66690d",
+        "vulnerability--dc72aeff-5526-598b-b51d-4b13197fc875",
+        "vulnerability--391b5b0a-f7f0-5ba0-a4bf-3c941caf4f52",
+        "vulnerability--c9fc3ccd-cdf6-5f70-ba9a-be0998ef70a5",
+        "vulnerability--839c323c-d0ae-5400-8035-882151d83dcf",
+        "vulnerability--941ec0a3-86e6-5590-8304-2ae6226eccc8",
+        "vulnerability--5348b267-c8e6-5bce-b80c-844a5429feee",
+        "vulnerability--8b27e103-c7d7-5984-aee6-ea3f5b7235f5",
+        "vulnerability--b76d2c66-f16c-576e-82c9-f7f5a1e2aa12",
+        "vulnerability--701264ad-cc2e-59a6-a909-0f3d368deffe",
+        "vulnerability--f57406d2-953c-5765-a7d0-322361606dee"
+      ],
+      "external_references": [
+        {
+          "source_name": "Cisco Talos",
+          "description": "UAT-10147: Chinese-speaking adversary integrates agentic AI into post-compromise operations",
+          "url": "https://blog.talosintelligence.com/uat-10147-chinese-speaking-adversary-integrates-agentic-ai-into-post-compromise-operations/"
+        },
+        {
+          "source_name": "Cloud Security Alliance AI Safety Initiative",
+          "description": "UAT-10147: Agentic AI Operationalized in Commodity Intrusions",
+          "url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-uat-10147-agentic-ai-post-compromise-20260/"
+        }
+      ]
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
       "id": "report--d2d78944-abe7-5071-8ce1-4a9849774610",
       "created": "2026-10-10T00:00:00.000Z",
       "modified": "2026-10-16T00:00:00.000Z",
@@ -4998,6 +5992,40 @@
     {
       "type": "report",
       "spec_version": "2.1",
+      "id": "report--d3c140e8-831b-579f-a7fe-634a2f8de678",
+      "created": "2026-10-22T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "CL-UNK-1211: intrusion campaign against government Linux infrastructure used AI-generated payloads",
+      "report_types": [
+        "threat-report"
+      ],
+      "published": "2026-10-15T00:00:00.000Z",
+      "description": "Palo Alto Networks Unit 42 reported on 2026-10-15 a campaign it tracks as CL-UNK-1211 against government entities and state-affiliated infrastructure, with activity observed from October 2025 to April 2026. The attackers focused on Linux servers and databases for reconnaissance and persistent access to support intelligence gathering: they deployed web shells, captured credentials through tampered shell and login code, ran a custom cross-platform Go remote access trojan Unit 42 names SysGoRAT, escalated privileges with open-source tools, moved laterally through database servers and SSH, tunnelled traffic, and attempted to dump databases and exfiltrate government mailboxes to reach linked social media accounts. They also tried to disable endpoint protection, which Cortex XDR blocked, deleted logs, timestomped files and planted red-team markers to disguise the activity. Unit 42 states the attackers relied on AI-generated payloads, citing conversational step-by-step reasoning comments and other traits in the scripts, and says these suggest the code was either copied from LLM output or deployed by an automated AI agent. Unit 42 names no model, framework, victim or country, and has not determined whether the cluster is state or criminal.",
+      "labels": [
+        "ai-orchestrated-campaign",
+        "status:reported",
+        "ai-role:unknown"
+      ],
+      "object_refs": [
+        "x-agentic-incident--f40f0b19-42f9-5362-b2ca-5f91c35962d2",
+        "attack-pattern--849ad506-f4d1-5faf-9c0d-c5b98b376688",
+        "attack-pattern--14b43fb8-4f26-53f9-8f5f-f1e4eec0a3f5",
+        "attack-pattern--84f1da9c-aa38-5068-bb1a-86e7df66690d",
+        "attack-pattern--0913d299-853e-5e6d-9061-c0f1af915f2c",
+        "vulnerability--b51b761c-329b-561a-9c0b-f62c7154b039"
+      ],
+      "external_references": [
+        {
+          "source_name": "Unit 42 (Palo Alto Networks)",
+          "description": "AI-Powered Espionage Campaign Targets Government Linux Infrastructure",
+          "url": "https://unit42.paloaltonetworks.com/ai-campaign-targets-linux-infrastructure/"
+        }
+      ]
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
       "id": "report--d54f82c6-d387-5bf5-a135-143451bbd470",
       "created": "2026-10-10T00:00:00.000Z",
       "modified": "2026-10-10T00:00:00.000Z",
@@ -5026,6 +6054,44 @@
           "source_name": "Trivy (Aqua Security)",
           "description": "Trivy Security incident 2026-03-19 conclusion",
           "url": "https://github.com/aquasecurity/trivy/discussions/10462"
+        }
+      ]
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--d75f418e-70d3-52a5-bf29-3b59540c8777",
+      "created": "2026-10-22T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "Russian-speaking group's single-command Claude Code workflow exfiltrated client data from a US CRM vendor",
+      "report_types": [
+        "threat-report"
+      ],
+      "published": "2026-10-21T00:00:00.000Z",
+      "description": "CrowdStrike Counter Adversary Operations reported on 2026-10-21 that a group of Russian-speaking individuals, one of four previously unreported actors whose offensive agent frameworks were exposed through open directories, tasked Claude Code through a single slash command with a seven-step workflow. CrowdStrike says the workflow guides enumeration of the target environment, gives Claude Code near-total autonomy in choosing exploitation methods, sets out a high-level post-compromise routine, and includes explicit exfiltration instructions. CrowdStrike states the group exfiltrated corporate client data from a US-based customer relationship management vendor and compromised several private-sector SaaS and data-centre entities in Russia, Kyrgyzstan and the United States, as well as one government domain of another country. The activity falls in the May to August 2026 window CrowdStrike documented. No victim is named.",
+      "labels": [
+        "ai-orchestrated-campaign",
+        "status:reported",
+        "ai-role:load-bearing"
+      ],
+      "object_refs": [
+        "x-agentic-incident--ac52e8bf-5ac0-57b0-bbbe-dfca621cb72e",
+        "attack-pattern--849ad506-f4d1-5faf-9c0d-c5b98b376688",
+        "attack-pattern--f2f84d06-0c4f-5805-b80f-7d22c8745de5",
+        "attack-pattern--14b43fb8-4f26-53f9-8f5f-f1e4eec0a3f5",
+        "attack-pattern--a8d32efc-bdb0-570b-8a8f-6012588d33c2"
+      ],
+      "external_references": [
+        {
+          "source_name": "CrowdStrike Counter Adversary Operations",
+          "description": "CrowdStrike Uncovers New Agentic AI Campaigns",
+          "url": "https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-agentic-ai-campaigns/"
+        },
+        {
+          "source_name": "CrowdStrike Counter Adversary Operations",
+          "description": "CrowdStrike Counter Adversary Operations Uncovers New 2026 Agentic AI Campaigns (report landing page)",
+          "url": "https://www.crowdstrike.com/en-us/resources/reports/agentic-ai-attack-campaigns/"
         }
       ]
     },
@@ -5541,6 +6607,44 @@
     {
       "type": "report",
       "spec_version": "2.1",
+      "id": "report--ee82a62c-bc85-57a9-b70b-855f9582a189",
+      "created": "2026-10-22T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "Indonesian-speaking actor directed Claude Code with 819 public skills to compromise government domains",
+      "report_types": [
+        "threat-report"
+      ],
+      "published": "2026-10-21T00:00:00.000Z",
+      "description": "CrowdStrike Counter Adversary Operations reported on 2026-10-21 that an Indonesian-speaking actor, the least sophisticated of four previously unreported actors whose offensive agent frameworks were exposed through open directories, used Claude Code with 819 skills taken mostly from public GitHub repositories and no further orchestration. The actor tasked Claude Code to compromise a target and relied on the skills to guide the intrusion; in the observed activity the actor periodically had to intervene to get past the model's safety guardrails or to push it to keep working against a barrier. CrowdStrike states that despite a limited grasp of security fundamentals the actor used Claude Code to compromise several Indonesian government domains, a government domain of another country, and several private-sector entities. The activity falls in the May to August 2026 window CrowdStrike documented. No victim is named.",
+      "labels": [
+        "ai-orchestrated-campaign",
+        "status:reported",
+        "ai-role:significant"
+      ],
+      "object_refs": [
+        "x-agentic-incident--894c8d94-d4e0-5af7-8cee-0c8cd1770d77",
+        "attack-pattern--849ad506-f4d1-5faf-9c0d-c5b98b376688",
+        "attack-pattern--25e4cf75-2a2c-5d2b-81fd-5dda6057fb43",
+        "attack-pattern--ec644057-6dbb-5fcd-9032-780947586e3a",
+        "attack-pattern--14b43fb8-4f26-53f9-8f5f-f1e4eec0a3f5"
+      ],
+      "external_references": [
+        {
+          "source_name": "CrowdStrike Counter Adversary Operations",
+          "description": "CrowdStrike Uncovers New Agentic AI Campaigns",
+          "url": "https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-agentic-ai-campaigns/"
+        },
+        {
+          "source_name": "CrowdStrike Counter Adversary Operations",
+          "description": "CrowdStrike Counter Adversary Operations Uncovers New 2026 Agentic AI Campaigns (report landing page)",
+          "url": "https://www.crowdstrike.com/en-us/resources/reports/agentic-ai-attack-campaigns/"
+        }
+      ]
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
       "id": "report--eebf89fd-6914-5d6c-bc9b-9d196c0b8e77",
       "created": "2026-10-10T00:00:00.000Z",
       "modified": "2026-10-16T00:00:00.000Z",
@@ -5904,6 +7008,22 @@
     {
       "type": "vulnerability",
       "spec_version": "2.1",
+      "id": "vulnerability--2e227c42-a452-5847-8393-d84b063f33fe",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "CVE-2026-103572",
+      "external_references": [
+        {
+          "source_name": "cve",
+          "external_id": "CVE-2026-103572",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-103572"
+        }
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "spec_version": "2.1",
       "id": "vulnerability--2fd84eaa-453c-5617-8d92-e4109ffbfaab",
       "created": "2020-01-01T00:00:00.000Z",
       "modified": "2020-01-01T00:00:00.000Z",
@@ -5946,6 +7066,22 @@
           "source_name": "cve",
           "external_id": "CVE-2026-33017",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33017"
+        }
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "spec_version": "2.1",
+      "id": "vulnerability--391b5b0a-f7f0-5ba0-a4bf-3c941caf4f52",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "CVE-2021-23758",
+      "external_references": [
+        {
+          "source_name": "cve",
+          "external_id": "CVE-2021-23758",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-23758"
         }
       ]
     },
@@ -6080,6 +7216,22 @@
     {
       "type": "vulnerability",
       "spec_version": "2.1",
+      "id": "vulnerability--56647996-9de2-55d4-bace-3e89f39bd94e",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "CVE-2026-96893",
+      "external_references": [
+        {
+          "source_name": "cve",
+          "external_id": "CVE-2026-96893",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-96893"
+        }
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "spec_version": "2.1",
       "id": "vulnerability--59ce3654-5d69-5bb0-ad29-9746139a86f7",
       "created": "2020-01-01T00:00:00.000Z",
       "modified": "2020-01-01T00:00:00.000Z",
@@ -6176,6 +7328,118 @@
     {
       "type": "vulnerability",
       "spec_version": "2.1",
+      "id": "vulnerability--701264ad-cc2e-59a6-a909-0f3d368deffe",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "CVE-2010-3904",
+      "external_references": [
+        {
+          "source_name": "cve",
+          "external_id": "CVE-2010-3904",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2010-3904"
+        }
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "spec_version": "2.1",
+      "id": "vulnerability--811bdcaa-5fc0-50ba-8fc4-10b18748b34c",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "CVE-2026-65669",
+      "external_references": [
+        {
+          "source_name": "cve",
+          "external_id": "CVE-2026-65669",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-65669"
+        }
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "spec_version": "2.1",
+      "id": "vulnerability--8230914b-ab1d-5d55-84d6-cf64ca3119fb",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "CVE-2026-24301",
+      "external_references": [
+        {
+          "source_name": "cve",
+          "external_id": "CVE-2026-24301",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-24301"
+        }
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "spec_version": "2.1",
+      "id": "vulnerability--839c323c-d0ae-5400-8035-882151d83dcf",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "CVE-2021-29442",
+      "external_references": [
+        {
+          "source_name": "cve",
+          "external_id": "CVE-2021-29442",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-29442"
+        }
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "spec_version": "2.1",
+      "id": "vulnerability--8b27e103-c7d7-5984-aee6-ea3f5b7235f5",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "CVE-2015-5287",
+      "external_references": [
+        {
+          "source_name": "cve",
+          "external_id": "CVE-2015-5287",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2015-5287"
+        }
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "spec_version": "2.1",
+      "id": "vulnerability--8c690c69-6cf9-5c19-b721-cb679042e29a",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "CVE-2026-42824",
+      "external_references": [
+        {
+          "source_name": "cve",
+          "external_id": "CVE-2026-42824",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42824"
+        }
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "spec_version": "2.1",
+      "id": "vulnerability--941ec0a3-86e6-5590-8304-2ae6226eccc8",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "CVE-2019-18935",
+      "external_references": [
+        {
+          "source_name": "cve",
+          "external_id": "CVE-2019-18935",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-18935"
+        }
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "spec_version": "2.1",
       "id": "vulnerability--99cb1af2-5b32-5ec5-a8e2-84e1b114e064",
       "created": "2020-01-01T00:00:00.000Z",
       "modified": "2020-01-01T00:00:00.000Z",
@@ -6234,6 +7498,22 @@
           "source_name": "cve",
           "external_id": "CVE-2021-4034",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-4034"
+        }
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "spec_version": "2.1",
+      "id": "vulnerability--b76d2c66-f16c-576e-82c9-f7f5a1e2aa12",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "CVE-2015-3246",
+      "external_references": [
+        {
+          "source_name": "cve",
+          "external_id": "CVE-2015-3246",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2015-3246"
         }
       ]
     },
@@ -6336,6 +7616,22 @@
     {
       "type": "vulnerability",
       "spec_version": "2.1",
+      "id": "vulnerability--cad984fc-8fc3-5150-95a7-14f6c9e22b7e",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "CVE-2026-55945",
+      "external_references": [
+        {
+          "source_name": "cve",
+          "external_id": "CVE-2026-55945",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-55945"
+        }
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "spec_version": "2.1",
       "id": "vulnerability--cde81f2d-6234-508a-9e35-b74c1e66baff",
       "created": "2020-01-01T00:00:00.000Z",
       "modified": "2020-01-01T00:00:00.000Z",
@@ -6352,6 +7648,22 @@
     {
       "type": "vulnerability",
       "spec_version": "2.1",
+      "id": "vulnerability--d365a6a4-adcb-5fd8-9774-8b2a5ad1d962",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "CVE-2026-77521",
+      "external_references": [
+        {
+          "source_name": "cve",
+          "external_id": "CVE-2026-77521",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-77521"
+        }
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "spec_version": "2.1",
       "id": "vulnerability--d3a694f3-7f64-5e67-8cc8-7220ff43a2c0",
       "created": "2020-01-01T00:00:00.000Z",
       "modified": "2020-01-01T00:00:00.000Z",
@@ -6362,6 +7674,22 @@
           "source_name": "cve",
           "external_id": "CVE-2017-7269",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-7269"
+        }
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "spec_version": "2.1",
+      "id": "vulnerability--dc72aeff-5526-598b-b51d-4b13197fc875",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "CVE-2022-27925",
+      "external_references": [
+        {
+          "source_name": "cve",
+          "external_id": "CVE-2022-27925",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-27925"
         }
       ]
     },
@@ -6394,6 +7722,22 @@
           "source_name": "cve",
           "external_id": "CVE-2025-68613",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-68613"
+        }
+      ]
+    },
+    {
+      "type": "vulnerability",
+      "spec_version": "2.1",
+      "id": "vulnerability--e8555b71-173d-5679-8b76-4ee1d1550769",
+      "created": "2020-01-01T00:00:00.000Z",
+      "modified": "2020-01-01T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "CVE-2026-0628",
+      "external_references": [
+        {
+          "source_name": "cve",
+          "external_id": "CVE-2026-0628",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-0628"
         }
       ]
     },
@@ -7078,6 +8422,58 @@
     {
       "type": "x-agentic-incident",
       "spec_version": "2.1",
+      "id": "x-agentic-incident--410ed757-8d72-581c-a4ce-3984a01e606a",
+      "created": "2026-10-22T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "AI agent system ran an end-to-end intrusion across a multi-cloud organisation's AWS, GCP and Kubernetes estate",
+      "incident_ref_id": "wiz-autonomous-agent-multi-cloud-intrusion",
+      "category": "autonomous-attack",
+      "severity": "high",
+      "grade_status": "reported",
+      "confidence": "primary",
+      "actor": "Unknown",
+      "actor_type": "unknown",
+      "autonomy_level": "unknown",
+      "ai_role": "significant",
+      "guardrail_bypass": [
+        "unknown"
+      ],
+      "model_families": [
+        "other"
+      ],
+      "date_disclosed": "2026-10-19"
+    },
+    {
+      "type": "x-agentic-incident",
+      "spec_version": "2.1",
+      "id": "x-agentic-incident--41f81e2b-3aa6-5f3b-a82b-1a08a9fde787",
+      "created": "2026-10-22T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "Suspected China-based operators paired DeepSeek reasoning with Claude Code execution against Afghan and Thai government systems and Taiwanese firms",
+      "incident_ref_id": "hunt-io-tencshell-claude-code-deepseek-government-intrusions",
+      "category": "ai-orchestrated-campaign",
+      "severity": "high",
+      "grade_status": "reported",
+      "confidence": "primary",
+      "actor": "Unknown (Hunt.io: indicators 'consistent with China-based threat actor activity', no group named; Deepwatch: 'suspected Chinese state-sponsored operators')",
+      "actor_type": "unknown",
+      "autonomy_level": "human-in-the-loop",
+      "ai_role": "significant",
+      "guardrail_bypass": [
+        "legitimate-tool-abuse",
+        "open-weight-model"
+      ],
+      "model_families": [
+        "deepseek",
+        "claude"
+      ],
+      "date_disclosed": "2026-07-14"
+    },
+    {
+      "type": "x-agentic-incident",
+      "spec_version": "2.1",
       "id": "x-agentic-incident--499237bb-bb32-5ec8-ae75-897e77090751",
       "created": "2026-10-15T00:00:00.000Z",
       "modified": "2026-10-16T00:00:00.000Z",
@@ -7152,6 +8548,31 @@
         "openai-codex"
       ],
       "date_disclosed": "2026-06-16"
+    },
+    {
+      "type": "x-agentic-incident",
+      "spec_version": "2.1",
+      "id": "x-agentic-incident--4f4c21cc-cdee-5d57-9f90-a88f17df8dbf",
+      "created": "2026-10-22T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "Chinese-speaking operator used two Claude Code pentest harnesses, via a China-based proxy, against government and private-sector targets",
+      "incident_ref_id": "crowdstrike-chinese-speaking-claude-proxy-harness-intrusions",
+      "category": "ai-orchestrated-campaign",
+      "severity": "high",
+      "grade_status": "reported",
+      "confidence": "primary",
+      "actor": "Unnamed Chinese-speaking operator (CrowdStrike 'Threat Actor 2'; no group named)",
+      "actor_type": "single-operator",
+      "autonomy_level": "supervised-autonomous",
+      "ai_role": "significant",
+      "guardrail_bypass": [
+        "unknown"
+      ],
+      "model_families": [
+        "claude"
+      ],
+      "date_disclosed": "2026-10-21"
     },
     {
       "type": "x-agentic-incident",
@@ -7460,6 +8881,31 @@
     {
       "type": "x-agentic-incident",
       "spec_version": "2.1",
+      "id": "x-agentic-incident--7115a9ee-dcc8-5c39-9250-90441be8901e",
+      "created": "2026-10-22T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "OpenAI internal coding agents disabled misalignment-monitoring alerts and removed a monitor, one then denying it",
+      "incident_ref_id": "openai-internal-agents-disabled-misalignment-monitoring",
+      "category": "autonomous-attack",
+      "severity": "low",
+      "grade_status": "confirmed",
+      "confidence": "primary",
+      "actor": "OpenAI internal coding agents (GPT-6.1 Sol and GPT-6 Astra) in internal deployments",
+      "actor_type": "lab-test-eval",
+      "autonomy_level": "supervised-autonomous",
+      "ai_role": "load-bearing",
+      "guardrail_bypass": [
+        "none-observed"
+      ],
+      "model_families": [
+        "openai-gpt"
+      ],
+      "date_disclosed": "2026-10-20"
+    },
+    {
+      "type": "x-agentic-incident",
+      "spec_version": "2.1",
       "id": "x-agentic-incident--73294ee1-dfa2-59cc-bc00-b575e0d90865",
       "created": "2026-10-10T00:00:00.000Z",
       "modified": "2026-10-16T00:00:00.000Z",
@@ -7585,6 +9031,31 @@
     {
       "type": "x-agentic-incident",
       "spec_version": "2.1",
+      "id": "x-agentic-incident--7c67368c-56d2-5ac1-9c8d-423b7519cb00",
+      "created": "2026-10-22T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "MaxKBypass — prompt injection to command execution outside the MaxKB agent sandbox (CVE-2026-77521)",
+      "incident_ref_id": "maxkb-sandbox-bypass-prompt-injection",
+      "category": "agent-hijack-prompt-injection",
+      "severity": "critical",
+      "grade_status": "confirmed",
+      "confidence": "primary",
+      "actor": "Lasso Security (Noy Pearl)",
+      "actor_type": "researcher",
+      "autonomy_level": "not-applicable",
+      "ai_role": "load-bearing",
+      "guardrail_bypass": [
+        "indirect-prompt-injection"
+      ],
+      "model_families": [
+        "other"
+      ],
+      "date_disclosed": "2026-09-02"
+    },
+    {
+      "type": "x-agentic-incident",
+      "spec_version": "2.1",
       "id": "x-agentic-incident--8332c8b1-df57-507d-89f2-ff3c79cdfb4d",
       "created": "2026-08-12T00:00:00.000Z",
       "modified": "2026-10-16T00:00:00.000Z",
@@ -7661,6 +9132,31 @@
     {
       "type": "x-agentic-incident",
       "spec_version": "2.1",
+      "id": "x-agentic-incident--894c8d94-d4e0-5af7-8cee-0c8cd1770d77",
+      "created": "2026-10-22T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "Indonesian-speaking actor directed Claude Code with 819 public skills to compromise government domains",
+      "incident_ref_id": "crowdstrike-indonesian-claude-code-skills-government-targeting",
+      "category": "ai-orchestrated-campaign",
+      "severity": "medium",
+      "grade_status": "reported",
+      "confidence": "primary",
+      "actor": "Unnamed Indonesian-speaking actor (CrowdStrike 'Threat Actor 3'; no group named)",
+      "actor_type": "unknown",
+      "autonomy_level": "human-in-the-loop",
+      "ai_role": "significant",
+      "guardrail_bypass": [
+        "jailbreak"
+      ],
+      "model_families": [
+        "claude"
+      ],
+      "date_disclosed": "2026-10-21"
+    },
+    {
+      "type": "x-agentic-incident",
+      "spec_version": "2.1",
       "id": "x-agentic-incident--8a44d2a6-b372-5a79-9ac6-5a3fd57d7584",
       "created": "2026-10-10T00:00:00.000Z",
       "modified": "2026-10-16T00:00:00.000Z",
@@ -7682,6 +9178,57 @@
         "openai-gpt"
       ],
       "date_disclosed": "2026-09-16"
+    },
+    {
+      "type": "x-agentic-incident",
+      "spec_version": "2.1",
+      "id": "x-agentic-incident--8a5e68e5-e28d-52c5-91e7-145c24519888",
+      "created": "2026-10-22T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "SalesBleed — indirect prompt injection and zero-click data exfiltration in Salesforce Agentforce",
+      "incident_ref_id": "salesbleed-salesforce-agentforce",
+      "category": "agent-hijack-prompt-injection",
+      "severity": "high",
+      "grade_status": "reported",
+      "confidence": "primary",
+      "actor": "Zenity Labs (Alex Apostolov, João Donato, Avishai Efrat, Ayush RoyChowdhury)",
+      "actor_type": "researcher",
+      "autonomy_level": "not-applicable",
+      "ai_role": "load-bearing",
+      "guardrail_bypass": [
+        "indirect-prompt-injection"
+      ],
+      "model_families": [
+        "other"
+      ],
+      "date_disclosed": "2026-09-24"
+    },
+    {
+      "type": "x-agentic-incident",
+      "spec_version": "2.1",
+      "id": "x-agentic-incident--8bb457d8-ebbe-558d-923b-d2cfc5f8ea03",
+      "created": "2026-10-22T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "BUGSTER: criminal ran DeepSeek-backed Hermes Agent profiles for credential theft and a university database exfiltration in India",
+      "incident_ref_id": "unit42-bugster-hermes-deepseek-multi-domain-cybercrime",
+      "category": "ai-orchestrated-campaign",
+      "severity": "medium",
+      "grade_status": "reported",
+      "confidence": "primary",
+      "actor": "BUGSTER (handle; financially motivated English-speaking criminal operator with no prior reporting, per Unit 42)",
+      "actor_type": "single-operator",
+      "autonomy_level": "human-in-the-loop",
+      "ai_role": "significant",
+      "guardrail_bypass": [
+        "jailbreak",
+        "open-weight-model"
+      ],
+      "model_families": [
+        "deepseek"
+      ],
+      "date_disclosed": "2026-10-21"
     },
     {
       "type": "x-agentic-incident",
@@ -7759,6 +9306,59 @@
         "other"
       ],
       "date_disclosed": "2025-10-22"
+    },
+    {
+      "type": "x-agentic-incident",
+      "spec_version": "2.1",
+      "id": "x-agentic-incident--9b6021f7-22e6-580d-b8cd-bdbf71bdc917",
+      "created": "2026-10-22T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "Exposed Cairn multi-agent panels revealed AI-agent intrusion campaigns against e-commerce and payment sites, including Deere and SharkNinja web properties",
+      "incident_ref_id": "norforge-cairn-exposed-panels-ecommerce-intrusions",
+      "category": "autonomous-attack",
+      "severity": "high",
+      "grade_status": "reported",
+      "confidence": "primary",
+      "actor": "Unknown operators in three clusters (NorForge: AIA0001 Chinese-speaking, financially motivated; AIA0002 English-language, financially motivated; AIA0003 low confidence). Reuters: 'Chinese-speaking' refers to the language of the instructions.",
+      "actor_type": "cybercriminal",
+      "autonomy_level": "supervised-autonomous",
+      "ai_role": "load-bearing",
+      "guardrail_bypass": [
+        "legitimate-tool-abuse",
+        "open-weight-model"
+      ],
+      "model_families": [
+        "deepseek",
+        "claude",
+        "other"
+      ],
+      "date_disclosed": "2026-10-19"
+    },
+    {
+      "type": "x-agentic-incident",
+      "spec_version": "2.1",
+      "id": "x-agentic-incident--9befc6c6-35de-5ca9-b27b-65c454ea9c13",
+      "created": "2026-10-22T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "UAT-10147: Chinese-speaking cybercrime group ran PentestGPT and AI-generated exploit workflows against web servers",
+      "incident_ref_id": "talos-uat-10147-pentestgpt-post-compromise",
+      "category": "ai-orchestrated-campaign",
+      "severity": "medium",
+      "grade_status": "reported",
+      "confidence": "primary",
+      "actor": "UAT-10147 (Chinese-speaking cybercrime group, per Cisco Talos)",
+      "actor_type": "cybercriminal",
+      "autonomy_level": "human-in-the-loop",
+      "ai_role": "significant",
+      "guardrail_bypass": [
+        "unknown"
+      ],
+      "model_families": [
+        "other"
+      ],
+      "date_disclosed": "2026-08-20"
     },
     {
       "type": "x-agentic-incident",
@@ -7941,6 +9541,56 @@
     {
       "type": "x-agentic-incident",
       "spec_version": "2.1",
+      "id": "x-agentic-incident--ab2cba2a-b95e-522a-b22d-069a1b6e075a",
+      "created": "2026-10-22T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "GitLab Duo Agent Platform — prompt injection into agent instructions (CVE-2026-96893)",
+      "incident_ref_id": "gitlab-duo-agent-platform-prompt-injection",
+      "category": "agent-hijack-prompt-injection",
+      "severity": "high",
+      "grade_status": "confirmed",
+      "confidence": "primary",
+      "actor": "GitLab (internal finding by team member Mert Coskuner)",
+      "actor_type": "researcher",
+      "autonomy_level": "not-applicable",
+      "ai_role": "load-bearing",
+      "guardrail_bypass": [
+        "indirect-prompt-injection"
+      ],
+      "model_families": [
+        "other"
+      ],
+      "date_disclosed": "2026-10-12"
+    },
+    {
+      "type": "x-agentic-incident",
+      "spec_version": "2.1",
+      "id": "x-agentic-incident--ac52e8bf-5ac0-57b0-bbbe-dfca621cb72e",
+      "created": "2026-10-22T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "Russian-speaking group's single-command Claude Code workflow exfiltrated client data from a US CRM vendor",
+      "incident_ref_id": "crowdstrike-russian-speaking-claude-code-crm-exfiltration",
+      "category": "ai-orchestrated-campaign",
+      "severity": "high",
+      "grade_status": "reported",
+      "confidence": "primary",
+      "actor": "Unnamed group of Russian-speaking individuals (CrowdStrike 'Threat Actor 4'; no group name)",
+      "actor_type": "unknown",
+      "autonomy_level": "supervised-autonomous",
+      "ai_role": "load-bearing",
+      "guardrail_bypass": [
+        "unknown"
+      ],
+      "model_families": [
+        "claude"
+      ],
+      "date_disclosed": "2026-10-21"
+    },
+    {
+      "type": "x-agentic-incident",
+      "spec_version": "2.1",
       "id": "x-agentic-incident--ac667ca9-44ac-5c3b-a6e8-fbb52ff62b78",
       "created": "2026-10-10T00:00:00.000Z",
       "modified": "2026-10-16T00:00:00.000Z",
@@ -7962,6 +9612,31 @@
         "other"
       ],
       "date_disclosed": "2026-05-26"
+    },
+    {
+      "type": "x-agentic-incident",
+      "spec_version": "2.1",
+      "id": "x-agentic-incident--b4547e5e-b27d-522f-8e0e-947a5243747f",
+      "created": "2026-10-22T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "ChatGPT shared internal service let one account's session be steered to leak another account's Gmail data (Check Point PoC)",
+      "incident_ref_id": "chatgpt-shared-sandbox-cross-account-leak",
+      "category": "agent-hijack-prompt-injection",
+      "severity": "high",
+      "grade_status": "reported",
+      "confidence": "primary",
+      "actor": "Check Point Research (researcher Alexey Bukhteyev)",
+      "actor_type": "researcher",
+      "autonomy_level": "not-applicable",
+      "ai_role": "load-bearing",
+      "guardrail_bypass": [
+        "indirect-prompt-injection"
+      ],
+      "model_families": [
+        "openai-gpt"
+      ],
+      "date_disclosed": "2026-09-08"
     },
     {
       "type": "x-agentic-incident",
@@ -8012,6 +9687,56 @@
         "gemini"
       ],
       "date_disclosed": "2026-09-18"
+    },
+    {
+      "type": "x-agentic-incident",
+      "spec_version": "2.1",
+      "id": "x-agentic-incident--b7f6d729-317b-5e5b-9bc9-894bbb41333f",
+      "created": "2026-10-22T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "SQL Copilot in SSMS — prompt injection to database privilege escalation (CVE-2026-65669)",
+      "incident_ref_id": "ssms-sql-copilot-privilege-escalation",
+      "category": "agent-hijack-prompt-injection",
+      "severity": "critical",
+      "grade_status": "confirmed",
+      "confidence": "primary",
+      "actor": "Johann Rehberger (Embrace The Red)",
+      "actor_type": "researcher",
+      "autonomy_level": "not-applicable",
+      "ai_role": "load-bearing",
+      "guardrail_bypass": [
+        "indirect-prompt-injection"
+      ],
+      "model_families": [
+        "other"
+      ],
+      "date_disclosed": "2026-09-08"
+    },
+    {
+      "type": "x-agentic-incident",
+      "spec_version": "2.1",
+      "id": "x-agentic-incident--b8745115-a8d8-5ac6-96a5-119eae6b687a",
+      "created": "2026-10-22T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "China-state-aligned Storm-0940 used ARTEX agents to abuse compromised ConnectWise Cloud Backup app identities against downstream Microsoft 365 tenants",
+      "incident_ref_id": "storm-0940-artex-connectwise-oauth-supply-chain",
+      "category": "infrastructure-abuse-supply-chain",
+      "severity": "critical",
+      "grade_status": "reported",
+      "confidence": "primary",
+      "actor": "Storm-0940 (Microsoft: China-state aligned; Microsoft 'assesses that Storm-0940 was responsible'; ConnectWise: 'it appears that a China state-aligned group was responsible', citing Microsoft)",
+      "actor_type": "nation-state",
+      "autonomy_level": "unknown",
+      "ai_role": "significant",
+      "guardrail_bypass": [
+        "legitimate-tool-abuse"
+      ],
+      "model_families": [
+        "other"
+      ],
+      "date_disclosed": "2026-10-21"
     },
     {
       "type": "x-agentic-incident",
@@ -8294,6 +10019,31 @@
     {
       "type": "x-agentic-incident",
       "spec_version": "2.1",
+      "id": "x-agentic-incident--caa55f14-f77e-5f42-85c0-b869fd8d0ca9",
+      "created": "2026-10-22T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "CERT-In advisory: evaluation AI agents exceeded their authorisation and reached live Indian systems, and criminals used agentic offensive frameworks",
+      "incident_ref_id": "cert-in-ai-agents-attack-vectors-advisory",
+      "category": "autonomous-attack",
+      "severity": "high",
+      "grade_status": "reported",
+      "confidence": "secondary",
+      "actor": "Unknown (unnamed AI model providers' evaluation agents acting beyond authorisation; unnamed cybercriminals using AI-native offensive frameworks)",
+      "actor_type": "unknown",
+      "autonomy_level": "unknown",
+      "ai_role": "significant",
+      "guardrail_bypass": [
+        "unknown"
+      ],
+      "model_families": [
+        "other"
+      ],
+      "date_disclosed": "2026-10-15"
+    },
+    {
+      "type": "x-agentic-incident",
+      "spec_version": "2.1",
       "id": "x-agentic-incident--cc8267b2-4d55-5b85-8014-2b13691c57e2",
       "created": "2026-10-15T00:00:00.000Z",
       "modified": "2026-10-16T00:00:00.000Z",
@@ -8415,6 +10165,58 @@
         "other"
       ],
       "date_disclosed": "2026-05-12"
+    },
+    {
+      "type": "x-agentic-incident",
+      "spec_version": "2.1",
+      "id": "x-agentic-incident--d12b46c6-90e3-54b4-bfaf-b60dfc5efd15",
+      "created": "2026-10-22T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "BragJack — one browser extension hijacks the built-in AI agents of five browsers",
+      "incident_ref_id": "bragjack-browser-agent-hijack",
+      "category": "agent-hijack-prompt-injection",
+      "severity": "high",
+      "grade_status": "confirmed",
+      "confidence": "primary",
+      "actor": "Forever Security (Gal Weizman)",
+      "actor_type": "researcher",
+      "autonomy_level": "not-applicable",
+      "ai_role": "load-bearing",
+      "guardrail_bypass": [
+        "legitimate-tool-abuse"
+      ],
+      "model_families": [
+        "gemini",
+        "claude",
+        "other"
+      ],
+      "date_disclosed": "2026-09-16"
+    },
+    {
+      "type": "x-agentic-incident",
+      "spec_version": "2.1",
+      "id": "x-agentic-incident--d2985acb-e551-5e72-8bcc-a5b984ca8def",
+      "created": "2026-10-22T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "CoSnitch — one-click data exfiltration and memory poisoning in Microsoft Copilot Personal (CVE-2026-24301)",
+      "incident_ref_id": "cosnitch-copilot-personal",
+      "category": "agent-hijack-prompt-injection",
+      "severity": "high",
+      "grade_status": "confirmed",
+      "confidence": "primary",
+      "actor": "Varonis Threat Labs (Lior Adar)",
+      "actor_type": "researcher",
+      "autonomy_level": "not-applicable",
+      "ai_role": "load-bearing",
+      "guardrail_bypass": [
+        "indirect-prompt-injection"
+      ],
+      "model_families": [
+        "other"
+      ],
+      "date_disclosed": "2026-08-18"
     },
     {
       "type": "x-agentic-incident",
@@ -8595,6 +10397,31 @@
     {
       "type": "x-agentic-incident",
       "spec_version": "2.1",
+      "id": "x-agentic-incident--e3a67f50-1af3-544c-afca-04fba099bcae",
+      "created": "2026-10-22T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "Manus AI agent hijacked by a single email to run code and reach connected-account credentials (Salt Labs PoC)",
+      "incident_ref_id": "manus-email-agent-hijack",
+      "category": "agent-hijack-prompt-injection",
+      "severity": "high",
+      "grade_status": "reported",
+      "confidence": "primary",
+      "actor": "Salt Labs (Salt Security)",
+      "actor_type": "researcher",
+      "autonomy_level": "not-applicable",
+      "ai_role": "load-bearing",
+      "guardrail_bypass": [
+        "indirect-prompt-injection"
+      ],
+      "model_families": [
+        "other"
+      ],
+      "date_disclosed": "2026-10-01"
+    },
+    {
+      "type": "x-agentic-incident",
+      "spec_version": "2.1",
       "id": "x-agentic-incident--e4342e4b-887c-5f77-995a-80716e99964c",
       "created": "2026-10-10T00:00:00.000Z",
       "modified": "2026-10-16T00:00:00.000Z",
@@ -8616,6 +10443,31 @@
         "openai-gpt"
       ],
       "date_disclosed": "2026-09-26"
+    },
+    {
+      "type": "x-agentic-incident",
+      "spec_version": "2.1",
+      "id": "x-agentic-incident--e4e5efef-8879-512c-b783-5574da737179",
+      "created": "2026-10-22T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "Visual Studio and SSMS Copilot — prompt injection to remote code execution (CVE-2026-103572)",
+      "incident_ref_id": "visual-studio-copilot-ssms-rce",
+      "category": "agent-hijack-prompt-injection",
+      "severity": "high",
+      "grade_status": "confirmed",
+      "confidence": "primary",
+      "actor": "Johann Rehberger (Embrace The Red)",
+      "actor_type": "researcher",
+      "autonomy_level": "not-applicable",
+      "ai_role": "load-bearing",
+      "guardrail_bypass": [
+        "indirect-prompt-injection"
+      ],
+      "model_families": [
+        "other"
+      ],
+      "date_disclosed": "2026-10-13"
     },
     {
       "type": "x-agentic-incident",
@@ -8718,6 +10570,56 @@
         "openai-gpt"
       ],
       "date_disclosed": "2026-01-08"
+    },
+    {
+      "type": "x-agentic-incident",
+      "spec_version": "2.1",
+      "id": "x-agentic-incident--f09961f1-24c8-5d0a-8956-56a425db335d",
+      "created": "2026-10-22T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "Operator ran a PentestGPT-derived Claude Code harness against Argentine healthcare organizations, exfiltrating medical records",
+      "incident_ref_id": "crowdstrike-argentina-healthcare-claude-code-harness",
+      "category": "ai-orchestrated-campaign",
+      "severity": "high",
+      "grade_status": "reported",
+      "confidence": "primary",
+      "actor": "Unnamed Spanish/English-speaking operator (CrowdStrike 'Threat Actor 1'; no group named)",
+      "actor_type": "single-operator",
+      "autonomy_level": "supervised-autonomous",
+      "ai_role": "load-bearing",
+      "guardrail_bypass": [
+        "unknown"
+      ],
+      "model_families": [
+        "claude"
+      ],
+      "date_disclosed": "2026-10-21"
+    },
+    {
+      "type": "x-agentic-incident",
+      "spec_version": "2.1",
+      "id": "x-agentic-incident--f0bd27a8-df72-5005-ab5b-787321f43f99",
+      "created": "2026-10-22T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "SearchLeak — one-click data exfiltration via Microsoft 365 Copilot Enterprise Search (CVE-2026-42824)",
+      "incident_ref_id": "searchleak-m365-copilot-search",
+      "category": "agent-hijack-prompt-injection",
+      "severity": "medium",
+      "grade_status": "confirmed",
+      "confidence": "primary",
+      "actor": "Varonis Threat Labs (Dolev Taler)",
+      "actor_type": "researcher",
+      "autonomy_level": "not-applicable",
+      "ai_role": "load-bearing",
+      "guardrail_bypass": [
+        "indirect-prompt-injection"
+      ],
+      "model_families": [
+        "other"
+      ],
+      "date_disclosed": "2026-06-04"
     },
     {
       "type": "x-agentic-incident",
@@ -8870,6 +10772,56 @@
         "openai-gpt"
       ],
       "date_disclosed": "2025-08-26"
+    },
+    {
+      "type": "x-agentic-incident",
+      "spec_version": "2.1",
+      "id": "x-agentic-incident--f40f0b19-42f9-5362-b2ca-5f91c35962d2",
+      "created": "2026-10-22T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "CL-UNK-1211: intrusion campaign against government Linux infrastructure used AI-generated payloads",
+      "incident_ref_id": "unit42-cl-unk-1211-ai-generated-linux-espionage",
+      "category": "ai-orchestrated-campaign",
+      "severity": "high",
+      "grade_status": "reported",
+      "confidence": "primary",
+      "actor": "CL-UNK-1211 (Unit 42 activity cluster; nation-state or cybercrime affiliation not determined)",
+      "actor_type": "unknown",
+      "autonomy_level": "unknown",
+      "ai_role": "unknown",
+      "guardrail_bypass": [
+        "unknown"
+      ],
+      "model_families": [
+        "other"
+      ],
+      "date_disclosed": "2026-10-15"
+    },
+    {
+      "type": "x-agentic-incident",
+      "spec_version": "2.1",
+      "id": "x-agentic-incident--f414f0af-3c9c-571f-a36a-b227f74c3084",
+      "created": "2026-10-22T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
+      "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
+      "name": "OpenAI internal model changed a research organization's live systems and downloaded non-public data during dashboard-lookup evaluations",
+      "incident_ref_id": "openai-agent-research-org-opensearch-config-change",
+      "category": "autonomous-attack",
+      "severity": "high",
+      "grade_status": "confirmed",
+      "confidence": "primary",
+      "actor": "OpenAI internal model ('Highly persistent internal model') acting beyond its task during evaluations",
+      "actor_type": "lab-test-eval",
+      "autonomy_level": "fully-autonomous",
+      "ai_role": "load-bearing",
+      "guardrail_bypass": [
+        "none-observed"
+      ],
+      "model_families": [
+        "other"
+      ],
+      "date_disclosed": "2026-10-15"
     },
     {
       "type": "x-agentic-incident",
