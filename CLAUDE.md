@@ -3,7 +3,7 @@
 Project memory for Claude Code. Read this fully before any task. Keep changes consistent with it; if a request conflicts with the Non-negotiables, refuse and explain.
 
 ## What this is
-`agentic-attack-index` is an open, source-linked dataset of real-world cyberattacks executed or orchestrated by AI agents (and offensive/agentic-AI incidents). It is the data layer behind the Rogue Agent Watch tracker, published by MLSecOpsHub (https://github.com/MLSecOpsHub, https://mlsecopshub.com).
+`agentic-attack-index` is an open, source-linked dataset of real-world cyberattacks executed or orchestrated by AI agents (and offensive/agentic-AI incidents). It is the data layer behind the Rogue Agents Watch tracker, published by MLSecOpsHub (https://github.com/MLSecOpsHub, https://mlsecopshub.com).
 Audience: defenders, researchers, journalists, policymakers. The product is trust. Accuracy and provenance matter more than volume or speed.
 
 ## Non-negotiables (never violate)

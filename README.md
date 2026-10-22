@@ -1,6 +1,6 @@
 # Agentic Attack Index
 
-An open, source-linked dataset of real-world cyberattacks executed or orchestrated by AI agents, plus notable offensive/agentic-AI incidents. This repository is the data layer behind the **Rogue Agent Watch** tracker, published by [MLSecOpsHub](https://mlsecopshub.com).
+An open, source-linked dataset of real-world cyberattacks executed or orchestrated by AI agents, plus notable offensive/agentic-AI incidents. This repository is the data layer behind the **Rogue Agents Watch** tracker, published by [MLSecOpsHub](https://mlsecopshub.com).
 
 > The product is trust: every factual field in every record is backed by a cited, resolvable source. Accuracy and provenance matter more than volume or speed.
 

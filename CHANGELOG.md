@@ -17,6 +17,12 @@ dataset version tracks `package.json` and `CITATION.cff` (kept in sync by
   2026-02-19) as a source and logged the change in `revisions[]`.
 
 ### Fixed
+- `CITATION.cff`: `url` now points at the dataset's own landing page (the
+  repository) instead of the organization homepage, so citations generated
+  from the file resolve to the dataset (issue #28). `repository-code` is
+  unchanged. The tracker's name is spelled "Rogue Agents Watch" in the
+  abstract and in README, package.json and CLAUDE.md, matching the site. No
+  DOI is added because none has been minted.
 - `npm test` runs `node --test` with no path argument and relies on Node's
   default test discovery (`test/*.test.mjs`). The former bare `test/`
   directory argument failed on Node 24 (`Cannot find module '.../test'`), and
