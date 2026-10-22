@@ -16,6 +16,11 @@ dataset version tracks `package.json` and `CITATION.cff` (kept in sync by
   timeline. Added Cline's GitHub Security Advisory (GHSA-9ppg-jx86-fqw7,
   2026-02-19) as a source and logged the change in `revisions[]`.
 
+### Fixed
+- `npm test` passes `node --test` the glob `test/**/*.test.mjs` instead of the
+  bare `test/` directory, which Node 24 no longer resolves to the test files
+  (it failed with `Cannot find module '.../test'`).
+
 ## [0.8.0] - 2026-10-16
 
 ### Added
