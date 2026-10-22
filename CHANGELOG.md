@@ -7,6 +7,19 @@ dataset version tracks `package.json` and `CITATION.cff` (kept in sync by
 
 ## [Unreleased]
 
+### Fixed
+- `npm run linkcheck` re-checks every failed HEAD request with GET before
+  judging a URL, instead of only after a 403, 405 or 501. MSRC's CSAF
+  advisories answer HEAD with 404 but serve the page to GET, so the five
+  advisories cited by the 2026-10-22 records were being reported dead.
+  When an `archive_url` also fails, the run now prints the archive's own
+  error, so a rate-limited Wayback can be told apart from a missing snapshot
+  (issue #25). The URL check lives in `scripts/resolve.mjs` and is covered by
+  offline tests against a local server.
+- The scheduled linkcheck issue now lists the failing and archive-recovered
+  URLs first. It used to paste only the last 5,000 characters of the log,
+  which cut the dead URLs out of issue #25.
+
 ### Data
 - Backfilled 58 `archive_url` Wayback snapshots across 37 records, covering
   the sources of the 24 records added on 2026-10-22 and earlier gaps. Every

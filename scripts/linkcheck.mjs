@@ -10,8 +10,8 @@
 //   DEAD     — url is dead and there is no working archive_url. This fails the run.
 import path from 'node:path';
 import { listIncidentFiles, loadIncident } from './lib.mjs';
+import { resolveUrl as resolve } from './resolve.mjs';
 
-const TIMEOUT_MS = 15_000;
 // url -> { ids: Set<string>, archives: Set<string> }
 const sources = new Map();
 
@@ -32,41 +32,6 @@ if (sources.size === 0) {
   process.exit(0);
 }
 
-// Transient failures that warrant a retry rather than a verdict. Web archives
-// (archive.org) rate-limit and 5xx under load, so a single hiccup must not
-// declare an otherwise-archived source dead.
-const RETRIES = 2;
-const RETRY_BACKOFF_MS = 1_500;
-const isTransientStatus = (status) => status === 429 || (status >= 500 && status <= 599);
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-
-// Returns null if the URL resolves, else a short problem string. Transient
-// network/timeout errors and 429/5xx responses are retried before giving up.
-async function resolve(url) {
-  const attempt = async (method) =>
-    fetch(url, {
-      method,
-      redirect: 'follow',
-      signal: AbortSignal.timeout(TIMEOUT_MS),
-      headers: { 'user-agent': 'agentic-attack-index-linkcheck' },
-    });
-  let lastProblem = 'unknown error';
-  for (let i = 0; i <= RETRIES; i++) {
-    try {
-      let res = await attempt('HEAD');
-      // Some servers reject HEAD; retry those with GET before failing.
-      if (!res.ok && [403, 405, 501].includes(res.status)) res = await attempt('GET');
-      if (res.ok) return null;
-      lastProblem = `HTTP ${res.status}`;
-      if (!isTransientStatus(res.status)) return lastProblem;
-    } catch (e) {
-      lastProblem = e.name === 'TimeoutError' ? `timeout after ${TIMEOUT_MS}ms` : e.message;
-    }
-    if (i < RETRIES) await sleep(RETRY_BACKOFF_MS * (i + 1));
-  }
-  return lastProblem;
-}
-
 const warnings = []; // ARCHIVED
 const dead = []; // DEAD
 
@@ -80,11 +45,14 @@ for (const [url, { ids, archives }] of sources) {
 
   // url is down — try to fall back to an archive snapshot.
   let recovered = null;
+  const archiveProblems = [];
   for (const archive of archives) {
-    if ((await resolve(archive)) === null) {
+    const archiveProblem = await resolve(archive);
+    if (archiveProblem === null) {
       recovered = archive;
       break;
     }
+    archiveProblems.push(archiveProblem);
   }
 
   if (recovered) {
@@ -92,7 +60,11 @@ for (const [url, { ids, archives }] of sources) {
     console.warn(`  ⚠ ${url} — ${urlProblem}; served from archive: ${recovered} (used by: ${usedBy})`);
   } else {
     dead.push({ url, usedBy, urlProblem });
-    const note = archives.size ? '; archive_url also unreachable' : '; no archive_url on record';
+    // Name the archive's own failure so a flaky Wayback (429/timeout) can be
+    // told apart from a snapshot that is really gone.
+    const note = archives.size
+      ? `; archive_url also unreachable (${archiveProblems.join(', ')})`
+      : '; no archive_url on record';
     console.error(`  ✗ ${url} — ${urlProblem}${note} (used by: ${usedBy})`);
   }
 }

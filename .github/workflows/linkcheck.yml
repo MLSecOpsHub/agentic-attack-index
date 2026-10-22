@@ -36,12 +36,17 @@ jobs:
         with:
           script: |
             const fs = require('fs');
-            const log = fs.readFileSync('linkcheck.log', 'utf8').slice(-5000);
+            const full = fs.readFileSync('linkcheck.log', 'utf8');
+            // Lead with the failing lines: the full log is long and a plain tail
+            // can cut off the dead URLs, which sit wherever they fall in the run.
+            const failing = full.split('\n').filter((l) => /^\s*[✗⚠]/.test(l)).join('\n');
+            const summary = full.split('\n').filter((l) => /^linkcheck:/.test(l)).join('\n');
+            const log = `${failing}\n\n${summary}`.slice(0, 60000);
             const title = 'linkcheck: broken source URL(s) detected';
             const marker = '<!-- linkcheck-bot -->';
             const body = `${marker}\nThe scheduled linkcheck found unreachable source URLs. ` +
               `Fix the broken \`sources[].url\` value(s) (and optionally add an \`archive_url\` snapshot for resilience).\n\n` +
-              `Run: [${context.runId}](${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId})\n\n` +
+              `Run: [${context.runId}](${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}) (full log there; failing and archive-recovered URLs below).\n\n` +
               '```\n' + log + '\n```';
             const label = 'linkcheck';
 
