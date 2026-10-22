@@ -16,7 +16,7 @@ summary: >-
   not identify the publishing party. Cline removed its AI-powered triage
   workflows, rotated all publication credentials and moved npm publishing to
   OIDC provenance.
-date_disclosed: 2026-02-09 # Researcher's public disclosure; the unauthorized release followed on 2026-02-17 and Cline's post-mortem on 2026-02-24.
+date_disclosed: 2026-02-17 # Date of the unauthorized cline@2.3.0 publish (03:26 PT) and of Cline's same-day public deprecation of it (by 11:23 PT), per the Cline post-mortem timeline; the npm registry still carries the "SECURITY: do not install this version" deprecation. The researcher's vulnerability disclosure preceded it on 2026-02-09; the GitHub advisory followed on 2026-02-19 and the post-mortem on 2026-02-24.
 status: confirmed # First-party post-mortem from Cline plus the researcher's independent write-up.
 confidence: primary
 category: agent-hijack-prompt-injection
@@ -62,7 +62,7 @@ mappings:
   mitre_attack: []
   owasp_llm: []
   owasp_asi: []
-  cve: [] # Cline's advisory for the unauthorized release is GHSA-9ppg-jx86-fqw7; no CVE is stated.
+  cve: [] # Cline's advisory for the unauthorized release is GHSA-9ppg-jx86-fqw7 (cited in sources); no CVE is stated.
   aiid: []
 impact: >-
   Unauthorized cline@2.3.0 published to npm and available for about eight
@@ -81,7 +81,21 @@ sources:
     publisher: "Adnan Khan"
     type: blog
     date: 2026-02-09
+  - title: "GHSA-9ppg-jx86-fqw7: Unauthorized npm publish of cline@2.3.0 with modified postinstall script"
+    url: "https://github.com/advisories/GHSA-9ppg-jx86-fqw7"
+    publisher: "Cline (GitHub Security Advisory)"
+    type: first-party-disclosure
+    date: 2026-02-19
 added:
   date: 2026-10-10
   by: "MLSecOpsHub"
-last_updated: 2026-10-16
+revisions:
+  - date: 2026-10-22
+    note: >-
+      date_disclosed corrected from 2026-02-09 to 2026-02-17 (issue #27). The
+      earlier value was the date the researcher publicly disclosed the
+      CI/CD vulnerability; the incident this record describes is the
+      unauthorized cline@2.3.0 npm publish, which occurred and was publicly
+      deprecated by Cline on 2026-02-17 per the Cline post-mortem timeline.
+      Added the GitHub Security Advisory (published 2026-02-19) as a source.
+last_updated: 2026-10-22

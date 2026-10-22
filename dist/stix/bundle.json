@@ -4754,13 +4754,13 @@
       "spec_version": "2.1",
       "id": "report--cbc226a8-15cb-596e-a207-e7079f4ec6a0",
       "created": "2026-10-10T00:00:00.000Z",
-      "modified": "2026-10-16T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
       "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
       "name": "Clinejection: prompt injection of Cline's Claude issue-triage workflow led to an unauthorized npm release",
       "report_types": [
         "threat-report"
       ],
-      "published": "2026-02-09T00:00:00.000Z",
+      "published": "2026-02-17T00:00:00.000Z",
       "description": "Security researcher Adnan Khan found in late December 2025 that the Cline project's GitHub issue-triage workflow, which ran the Anthropic claude-code-action with shell access on issues filed by any user, could be steered by a crafted issue into exposing publication credentials. Khan reported it privately on 2026-01-01 and published on 2026-02-09; Cline removed the workflows within 30 minutes but rotated the wrong npm token. Khan states that \"a different actor found my PoC on my test repository and used it to directly attack Cline\". On 2026-02-17 at 03:26 PT an unauthorized party used the still-valid token to publish cline@2.3.0 to npm; the CLI was byte-identical to the prior release plus a postinstall step that globally installed the openclaw package. A corrected version shipped about eight hours later. Cline states no user data was accessed or exfiltrated and does not identify the publishing party. Cline removed its AI-powered triage workflows, rotated all publication credentials and moved npm publishing to OIDC provenance.",
       "labels": [
         "agent-hijack-prompt-injection",
@@ -4788,6 +4788,11 @@
           "source_name": "Adnan Khan",
           "description": "Clinejection — Compromising Cline's Production Releases just by Prompting an Issue Triager",
           "url": "https://adnanthekhan.com/posts/clinejection/"
+        },
+        {
+          "source_name": "Cline (GitHub Security Advisory)",
+          "description": "GHSA-9ppg-jx86-fqw7: Unauthorized npm publish of cline@2.3.0 with modified postinstall script",
+          "url": "https://github.com/advisories/GHSA-9ppg-jx86-fqw7"
         }
       ]
     },
@@ -6619,7 +6624,7 @@
       "spec_version": "2.1",
       "id": "x-agentic-incident--169adc12-6588-50cd-8f4c-bda0a329a5fe",
       "created": "2026-10-10T00:00:00.000Z",
-      "modified": "2026-10-16T00:00:00.000Z",
+      "modified": "2026-10-22T00:00:00.000Z",
       "created_by_ref": "identity--657378bc-aa82-5efd-a2eb-e1ec0452c85e",
       "name": "Clinejection: prompt injection of Cline's Claude issue-triage workflow led to an unauthorized npm release",
       "incident_ref_id": "clinejection-cline-triage-npm-publish",
@@ -6637,7 +6642,7 @@
       "model_families": [
         "claude"
       ],
-      "date_disclosed": "2026-02-09"
+      "date_disclosed": "2026-02-17"
     },
     {
       "type": "x-agentic-incident",

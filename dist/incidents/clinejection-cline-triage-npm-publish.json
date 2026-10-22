@@ -10,13 +10,13 @@
   "autonomy_pct": null,
   "category": "agent-hijack-prompt-injection",
   "confidence": "primary",
-  "date_disclosed": "2026-02-09",
+  "date_disclosed": "2026-02-17",
   "guardrail_bypass": [
     "indirect-prompt-injection"
   ],
   "id": "clinejection-cline-triage-npm-publish",
   "impact": "Unauthorized cline@2.3.0 published to npm and available for about eight hours; the package added a postinstall step that globally installed another package. Cline states no user data was accessed or exfiltrated.",
-  "last_updated": "2026-10-16",
+  "last_updated": "2026-10-22",
   "lifecycle_phases": [
     "initial-access",
     "credential-access",
@@ -55,6 +55,12 @@
     "nx-s1ngularity-supply-chain",
     "camoleak-github-copilot-chat"
   ],
+  "revisions": [
+    {
+      "date": "2026-10-22",
+      "note": "date_disclosed corrected from 2026-02-09 to 2026-02-17 (issue #27). The earlier value was the date the researcher publicly disclosed the CI/CD vulnerability; the incident this record describes is the unauthorized cline@2.3.0 npm publish, which occurred and was publicly deprecated by Cline on 2026-02-17 per the Cline post-mortem timeline. Added the GitHub Security Advisory (published 2026-02-19) as a source."
+    }
+  ],
   "severity": "high",
   "sources": [
     {
@@ -72,6 +78,13 @@
       "title": "Clinejection — Compromising Cline's Production Releases just by Prompting an Issue Triager",
       "type": "blog",
       "url": "https://adnanthekhan.com/posts/clinejection/"
+    },
+    {
+      "date": "2026-02-19",
+      "publisher": "Cline (GitHub Security Advisory)",
+      "title": "GHSA-9ppg-jx86-fqw7: Unauthorized npm publish of cline@2.3.0 with modified postinstall script",
+      "type": "first-party-disclosure",
+      "url": "https://github.com/advisories/GHSA-9ppg-jx86-fqw7"
     }
   ],
   "status": "confirmed",

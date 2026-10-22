@@ -7,6 +7,15 @@ dataset version tracks `package.json` and `CITATION.cff` (kept in sync by
 
 ## [Unreleased]
 
+### Changed
+- `clinejection-cline-triage-npm-publish`: `date_disclosed` corrected from
+  2026-02-09 to 2026-02-17 (issue #27). The old value was the researcher's
+  public disclosure of the CI/CD vulnerability; the incident the record
+  describes is the unauthorized cline@2.3.0 npm publish, which occurred and
+  was publicly deprecated by Cline on 2026-02-17 per Cline's post-mortem
+  timeline. Added Cline's GitHub Security Advisory (GHSA-9ppg-jx86-fqw7,
+  2026-02-19) as a source and logged the change in `revisions[]`.
+
 ## [0.8.0] - 2026-10-16
 
 ### Added
