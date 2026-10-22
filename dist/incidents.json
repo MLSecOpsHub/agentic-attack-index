@@ -281,6 +281,7 @@
         "url": "https://therecord.media/gen-ai-fortigate-hackers-russia"
       },
       {
+        "archive_url": "https://web.archive.org/web/20261015100049/https://www.bleepingcomputer.com/news/security/cyberstrikeai-tool-adopted-by-hackers-for-ai-powered-attacks/",
         "date": "2026-03-02",
         "publisher": "BleepingComputer",
         "title": "CyberStrikeAI tool adopted by hackers for AI-powered attacks",
@@ -643,6 +644,7 @@
     "severity": "high",
     "sources": [
       {
+        "archive_url": "https://web.archive.org/web/20261022052134/https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
         "date": "2026-07-30",
         "publisher": "Anthropic",
         "title": "Investigating three real-world incidents in our cybersecurity evaluations",
@@ -759,6 +761,7 @@
         "url": "https://6abc.com/post/anthropic-ai-model-submitted-false-tip-unsolved-murder-philadelphia-police-say/19925243/"
       },
       {
+        "archive_url": "https://web.archive.org/web/20261015100305/https://www.aljazeera.com/news/2026/10/10/anthropic-ai-model-submits-false-homicide-tip-to-philadelphia-police",
         "date": "2026-10-10",
         "publisher": "Al Jazeera",
         "title": "Anthropic AI model submits false homicide tip to Philadelphia police",
@@ -870,6 +873,7 @@
         "url": "https://www.crowdstrike.com/en-us/blog/unknown-threat-actor-uses-artex-to-target-south-korean-finance/"
       },
       {
+        "archive_url": "https://web.archive.org/web/20261015100401/https://www.khan.co.kr/en/article/202610042320007",
         "date": "2026-10-04",
         "publisher": "The Kyunghyang Shinmun",
         "title": "The Korean financial sector was breached by a two-month-old Chinese AI",
@@ -877,6 +881,7 @@
         "url": "https://www.khan.co.kr/en/article/202610042320007"
       },
       {
+        "archive_url": "https://web.archive.org/web/20261020163604/https://www.bleepingcomputer.com/news/security/south-korea-probes-bank-breaches-amid-suspected-ai-powered-attacks/",
         "date": "2026-10-05",
         "publisher": "BleepingComputer",
         "title": "South Korea probes bank breaches amid suspected AI-powered attacks",
@@ -884,6 +889,7 @@
         "url": "https://www.bleepingcomputer.com/news/security/south-korea-probes-bank-breaches-amid-suspected-ai-powered-attacks/"
       },
       {
+        "archive_url": "https://web.archive.org/web/20261020163120/https://therecord.media/south-korean-bank-hacks-ai-agents",
         "date": "2026-10-06",
         "publisher": "The Record",
         "title": "South Korean officials believe AI agents were used to hack several banks",
@@ -899,6 +905,7 @@
         "url": "https://www.koreatimes.co.kr/business/banking-finance/20261007/explainer-how-ai-emerged-as-new-threat-in-koreas-bank-hacking-crisis"
       },
       {
+        "archive_url": "https://web.archive.org/web/20261017154454/https://www.bleepingcomputer.com/news/security/hacker-used-artex-ai-and-claude-agents-to-target-south-korean-banks/",
         "date": "2026-10-10",
         "publisher": "BleepingComputer",
         "title": "ARTEX AI, Claude agents used in cyberattacks on South Korean banks",
@@ -1135,6 +1142,7 @@
         "url": "https://socradar.io/blog/blackhatsect0r-dxqrtxx-operation-server/"
       },
       {
+        "archive_url": "https://web.archive.org/web/20261019135519/https://threatmon.io/16415-stolen-passwords-one-open-door-how-blackhatsect0r-dxqrtxx-exposed-themselves/",
         "date": "2026-09-28",
         "publisher": "ThreatMon",
         "title": "16,415 Stolen Passwords, One Open Door: How Blackhatsect0r & DXQRTXX Exposed Themselves",
@@ -1213,6 +1221,7 @@
     "severity": "high",
     "sources": [
       {
+        "archive_url": "https://web.archive.org/web/20260917125143/https://forever.security/blog/bragjack-hijacking-5-browsers-via-built-in-ai-assistants",
         "date": "2026-09-16",
         "publisher": "Forever Security",
         "title": "BragJack: How We Hijacked 5 Of The World's Most Popular Browsers Using Their Built-In AI Assistants",
@@ -1220,6 +1229,7 @@
         "url": "https://forever.security/blog/bragjack-hijacking-5-browsers-via-built-in-ai-assistants/"
       },
       {
+        "archive_url": "https://web.archive.org/web/20261006152723/https://forever.security/blog/bragjack-attack-hijacks-every-browser-agent",
         "date": "2026-09-16",
         "publisher": "Forever Security",
         "title": "BragJack [Technical Overview]: How We Hijacked Top 5 Browsers' Internal Agents With Just One Single Extension",
@@ -1227,6 +1237,7 @@
         "url": "https://forever.security/blog/bragjack-attack-hijacks-every-browser-agent/"
       },
       {
+        "archive_url": "https://web.archive.org/web/20260917053847/https://nvd.nist.gov/vuln/detail/cve-2026-0628",
         "date": "2026-01-07",
         "publisher": "NVD / NIST",
         "title": "CVE-2026-0628 Detail",
@@ -1234,6 +1245,7 @@
         "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-0628"
       },
       {
+        "archive_url": "https://web.archive.org/web/20260707142033/https://nvd.nist.gov/vuln/detail/CVE-2026-55945",
         "date": "2026-07-03",
         "publisher": "NVD / NIST",
         "title": "CVE-2026-55945 Detail",
@@ -1487,6 +1499,7 @@
     "severity": "high",
     "sources": [
       {
+        "archive_url": "https://web.archive.org/web/20261022075847/https://techcrunch.com/2026/10/16/india-becomes-the-latest-country-to-report-rogue-ai-agent-activity/",
         "date": "2026-10-16",
         "publisher": "TechCrunch",
         "title": "India becomes the latest country to report rogue AI agent activity",
@@ -1494,6 +1507,7 @@
         "url": "https://techcrunch.com/2026/10/16/india-becomes-the-latest-country-to-report-rogue-ai-agent-activity/"
       },
       {
+        "archive_url": "https://web.archive.org/web/20261017153713/https://www.deccanchronicle.com/artificial-intelligence/cert-in-issues-critical-alert-after-autonomous-ai-agents-access-live-systems-of-indian-orgs-1996324",
         "date": "2026-10-16",
         "publisher": "Press Trust of India (via Deccan Chronicle)",
         "title": "Autonomous AI Agents Access Live Systems of Indian Orgs: CERT-In Issues Critical Alert",
@@ -1501,6 +1515,7 @@
         "url": "https://www.deccanchronicle.com/artificial-intelligence/cert-in-issues-critical-alert-after-autonomous-ai-agents-access-live-systems-of-indian-orgs-1996324"
       },
       {
+        "archive_url": "https://web.archive.org/web/20261017170846/https://securityaffairs.com/201130/ai/ai-agents-accessed-indian-organizations-without-authorization-cert-in-warns.html",
         "date": "2026-10-17",
         "publisher": "Security Affairs",
         "title": "AI Agents Accessed Indian Organizations Without Authorization, CERT-In Warns",
@@ -1573,6 +1588,7 @@
     "severity": "high",
     "sources": [
       {
+        "archive_url": "https://web.archive.org/web/20261010190010/https://research.checkpoint.com/2026/the-shared-clipboard-inside-the-sandbox-cross-account-data-leakage-in-chatgpt/",
         "date": "2026-09-08",
         "publisher": "Check Point Research",
         "title": "The Shared Clipboard Inside the Sandbox: Cross-Account Data Leakage in ChatGPT",
@@ -1587,6 +1603,7 @@
         "url": "https://technode.global/2026/09/09/check-point-chatgpt-cross-account-data-access-flaw/"
       },
       {
+        "archive_url": "https://web.archive.org/web/20260914132717/https://cybersecuritynews.com/chatgpt-sandbox-gmail-data/",
         "date": "2026-09-08",
         "publisher": "Cyber Security News",
         "title": "ChatGPT Sandbox Flaw Lets Attackers Steal Gmail Data Across Accounts via Hidden Channel",
@@ -1661,6 +1678,7 @@
         "url": "https://www.promptarmor.com/resources/claude-cowork-exfiltrates-files"
       },
       {
+        "archive_url": "https://web.archive.org/web/20261015100818/https://the-decoder.com/claude-cowork-hit-with-file-stealing-prompt-injection-days-after-anthropics-launch/",
         "date": "2026-01-14",
         "publisher": "The Decoder",
         "title": "Claude Cowork hit with file-stealing prompt injection days after Anthropic's launch",
@@ -1840,6 +1858,7 @@
         "url": "https://adnanthekhan.com/posts/clinejection/"
       },
       {
+        "archive_url": "https://web.archive.org/web/20260928141357/https://github.com/advisories/GHSA-9ppg-jx86-fqw7",
         "date": "2026-02-19",
         "publisher": "Cline (GitHub Security Advisory)",
         "title": "GHSA-9ppg-jx86-fqw7: Unauthorized npm publish of cline@2.3.0 with modified postinstall script",
@@ -2068,6 +2087,7 @@
         "url": "https://www.varonis.com/blog/cosnitch"
       },
       {
+        "archive_url": "https://web.archive.org/web/20261012142738/https://nvd.nist.gov/vuln/detail/cve-2026-24301",
         "date": "2026-08-18",
         "publisher": "NVD / NIST",
         "title": "CVE-2026-24301 Detail",
@@ -2145,6 +2165,7 @@
     "severity": "high",
     "sources": [
       {
+        "archive_url": "https://web.archive.org/web/20261021153114/https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-agentic-ai-campaigns/",
         "date": "2026-10-21",
         "publisher": "CrowdStrike Counter Adversary Operations",
         "title": "CrowdStrike Uncovers New Agentic AI Campaigns",
@@ -2224,6 +2245,7 @@
     "severity": "high",
     "sources": [
       {
+        "archive_url": "https://web.archive.org/web/20261021153114/https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-agentic-ai-campaigns/",
         "date": "2026-10-21",
         "publisher": "CrowdStrike Counter Adversary Operations",
         "title": "CrowdStrike Uncovers New Agentic AI Campaigns",
@@ -2307,6 +2329,7 @@
     "severity": "medium",
     "sources": [
       {
+        "archive_url": "https://web.archive.org/web/20261021153114/https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-agentic-ai-campaigns/",
         "date": "2026-10-21",
         "publisher": "CrowdStrike Counter Adversary Operations",
         "title": "CrowdStrike Uncovers New Agentic AI Campaigns",
@@ -2314,6 +2337,7 @@
         "url": "https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-agentic-ai-campaigns/"
       },
       {
+        "archive_url": "https://web.archive.org/web/20261022102617/https://www.crowdstrike.com/en-us/resources/reports/agentic-ai-attack-campaigns/",
         "date": "2026-10-21",
         "publisher": "CrowdStrike Counter Adversary Operations",
         "title": "CrowdStrike Counter Adversary Operations Uncovers New 2026 Agentic AI Campaigns (report landing page)",
@@ -2387,6 +2411,7 @@
     "severity": "high",
     "sources": [
       {
+        "archive_url": "https://web.archive.org/web/20261021153114/https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-agentic-ai-campaigns/",
         "date": "2026-10-21",
         "publisher": "CrowdStrike Counter Adversary Operations",
         "title": "CrowdStrike Uncovers New Agentic AI Campaigns",
@@ -2394,6 +2419,7 @@
         "url": "https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-agentic-ai-campaigns/"
       },
       {
+        "archive_url": "https://web.archive.org/web/20261022102617/https://www.crowdstrike.com/en-us/resources/reports/agentic-ai-attack-campaigns/",
         "date": "2026-10-21",
         "publisher": "CrowdStrike Counter Adversary Operations",
         "title": "CrowdStrike Counter Adversary Operations Uncovers New 2026 Agentic AI Campaigns (report landing page)",
@@ -3731,6 +3757,7 @@
     "severity": "high",
     "sources": [
       {
+        "archive_url": "https://web.archive.org/web/20261021201209/https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-4-2-released/",
         "date": "2026-10-12",
         "publisher": "GitLab",
         "title": "GitLab Critical Patch Release: 19.4.2, 19.3.5, 19.2.8",
@@ -3738,6 +3765,7 @@
         "url": "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-4-2-released/"
       },
       {
+        "archive_url": "https://web.archive.org/web/20261014180328/https://nvd.nist.gov/vuln/detail/cve-2026-96893",
         "date": "2026-10-13",
         "publisher": "NVD / NIST",
         "title": "CVE-2026-96893 Detail",
@@ -5130,6 +5158,7 @@
     "severity": "high",
     "sources": [
       {
+        "archive_url": "https://web.archive.org/web/20261009193151/https://hunt.io/blog/chinese-operators-claude-deepseek-government-intrusion",
         "date": "2026-07-14",
         "publisher": "Hunt.io",
         "title": "Suspected Chinese Operators Use Claude Code and DeepSeek to Target Government and Financial Systems Across Four Countries",
@@ -5591,6 +5620,7 @@
     "severity": "high",
     "sources": [
       {
+        "archive_url": "https://web.archive.org/web/20261017153950/https://salt.security/blog/how-we-hijacked-an-ai-agent-with-a-single-email",
         "date": "2026-10-01",
         "publisher": "Salt Security (Salt Labs)",
         "title": "How We Hijacked an AI Agent With a Single Email",
@@ -5598,6 +5628,7 @@
         "url": "https://salt.security/blog/how-we-hijacked-an-ai-agent-with-a-single-email"
       },
       {
+        "archive_url": "https://web.archive.org/web/20261002005405/https://www.prnewswire.com/news-releases/salt-labs-research-a-single-email-could-hijack-an-ai-agent-and-reach-a-users-connected-accounts-302895317.html",
         "date": "2026-10-01",
         "publisher": "Salt Security (via PR Newswire)",
         "title": "Salt Labs Research: A Single Email Could Hijack an AI Agent and Reach a User's Connected Accounts",
@@ -5666,6 +5697,7 @@
     "severity": "critical",
     "sources": [
       {
+        "archive_url": "https://web.archive.org/web/20260926130700/https://www.lasso.security/blog/cve-2026-77521-maxkbypass---from-prompt-injection-to-bypassing-maxkb-agents-sandbox",
         "date": "2026-09-10",
         "publisher": "Lasso Security",
         "title": "MaxKBypass - From Prompt Injection To Bypassing MaxKB Agent's Sandbox (CVE-2026-77521)",
@@ -5673,6 +5705,7 @@
         "url": "https://www.lasso.security/blog/cve-2026-77521-maxkbypass---from-prompt-injection-to-bypassing-maxkb-agents-sandbox"
       },
       {
+        "archive_url": "https://web.archive.org/web/20260922112237/https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-f36j-f34j-h3rx",
         "date": "2026-09-02",
         "publisher": "GitHub Security Advisory (MaxKB maintainers)",
         "title": "Prompt-injectable agent can lead to command execution (GHSA-f36j-f34j-h3rx)",
@@ -5923,6 +5956,7 @@
     "severity": "critical",
     "sources": [
       {
+        "archive_url": "https://web.archive.org/web/20261015234151/https://gambit.security/ai-assisted-breach-of-mexicos-government-infrastructure",
         "date": "2026-04-10",
         "publisher": "Gambit Security",
         "title": "The AI-Assisted Breach of Mexico's Government Infrastructure",
@@ -6371,6 +6405,7 @@
         "url": "https://capital.com/en-ke/news/how-one-hacker-used-ai-agents-and-a-few-thousand"
       },
       {
+        "archive_url": "https://web.archive.org/web/20261022033115/https://thenextweb.com/news/ai-agents-hacker-cairn-100-sites-deere-norforge",
         "date": "2026-10-19",
         "publisher": "The Next Web",
         "title": "AI agents broke into 100+ sites for one hacker at $50 each, researcher says",
@@ -6924,6 +6959,7 @@
     "severity": "high",
     "sources": [
       {
+        "archive_url": "https://web.archive.org/web/20261019125556/https://alignment.openai.com/misalignment-reports/accessing-and-changing-internal-systems-during-dashboard-research/",
         "date": "2026-10-15",
         "publisher": "OpenAI",
         "title": "Accessing and changing internal systems during dashboard research",
@@ -7176,6 +7212,7 @@
         "url": "https://www.itnews.com.au/news/nsw-national-parks-web-app-accessed-by-openai-agent-629402"
       },
       {
+        "archive_url": "https://web.archive.org/web/20261019135651/https://www.capitalbrief.com/briefing/openais-jason-kwon-promises-faster-notification-of-unauthorised-access-747293ec-e794-45d4-8ff9-f864c299cc76/",
         "date": "2026-10-06",
         "publisher": "Capital Brief",
         "title": "OpenAI's Jason Kwon promises faster notification of unauthorised access",
@@ -7262,6 +7299,7 @@
     "severity": "low",
     "sources": [
       {
+        "archive_url": "https://web.archive.org/web/20261015101356/https://techcrunch.com/2026/09/04/another-swarm-of-openai-agents-reached-the-open-internet-without-the-frontier-labs-knowledge/",
         "date": "2026-09-04",
         "publisher": "TechCrunch",
         "title": "Another swarm of OpenAI agents reached the open internet without the frontier lab's knowledge",
@@ -7374,6 +7412,7 @@
         "url": "https://research.jfrog.com/post/gemstuffer-openai-rubygems/"
       },
       {
+        "archive_url": "https://web.archive.org/web/20261014090406/https://blog.rubygems.org/2026/09/11/update-may-spam-publishing-campaign.html",
         "date": "2026-09-11",
         "publisher": "RubyGems",
         "title": "An update on the May spam-publishing campaign on rubygems.org",
@@ -7813,6 +7852,7 @@
     "severity": "low",
     "sources": [
       {
+        "archive_url": "https://web.archive.org/web/20261022044606/https://alignment.openai.com/misalignment-reports/suppressing-misalignment-monitoring-alerts-and-disabling-misalignment-monitoring/",
         "date": "2026-10-20",
         "publisher": "OpenAI",
         "title": "Suppressing misalignment monitoring alerts and disabling misalignment monitoring",
@@ -8033,6 +8073,7 @@
     "severity": "high",
     "sources": [
       {
+        "archive_url": "https://web.archive.org/web/20261015101700/https://www.greynoise.io/blog/ai-orchestrated-campaign-against-papercut-ng-mf",
         "date": "2026-09-09",
         "publisher": "GreyNoise",
         "title": "Agents Gone Wild: An AI-Orchestrated Global Campaign Against PaperCut NG/MF",
@@ -8853,6 +8894,7 @@
     "severity": "high",
     "sources": [
       {
+        "archive_url": "https://web.archive.org/web/20261010233937/https://labs.zenity.io/post/salesbleed-0-click-data-exfiltration-on-agentforce",
         "date": "2026-09-24",
         "publisher": "Zenity Labs",
         "title": "SalesBleed: Indirect Prompt Injection and 0-Click Data Exfiltration on Agentforce",
@@ -8860,6 +8902,7 @@
         "url": "https://labs.zenity.io/post/salesbleed-0-click-data-exfiltration-on-agentforce"
       },
       {
+        "archive_url": "https://web.archive.org/web/20261008030758/https://www.securityweek.com/salesbleed-flaws-in-salesforce-agentforce-enabled-zero-click-data-exfiltration/",
         "date": "2026-09-25",
         "publisher": "SecurityWeek",
         "title": "'SalesBleed' Flaws in Salesforce Agentforce Enabled Zero-Click Data Exfiltration",
@@ -8936,6 +8979,7 @@
         "url": "https://www.varonis.com/blog/searchleak"
       },
       {
+        "archive_url": "https://web.archive.org/web/20261004042853/https://nvd.nist.gov/vuln/detail/cve-2026-42824",
         "date": "2026-06-04",
         "publisher": "NVD / NIST",
         "title": "CVE-2026-42824 Detail",
@@ -9250,6 +9294,7 @@
     "severity": "high",
     "sources": [
       {
+        "archive_url": "https://web.archive.org/web/20261015101828/https://labs.zenity.io/post/attackers-target-agents-via-the-skill-supply-chain",
         "date": "2026-08-06",
         "publisher": "Zenity Labs",
         "title": "Attackers Target Agents via The Skill Supply Chain",
@@ -9265,6 +9310,7 @@
         "url": "https://www.csoonline.com/article/4206851/trojanized-ai-skills-gain-1.7m-installs-in-agent-targeted-attack.html"
       },
       {
+        "archive_url": "https://web.archive.org/web/20261015101917/https://osv.dev/vulnerability/MAL-2026-10484",
         "date": "2026-07-13",
         "publisher": "OSV (Open Source Vulnerabilities)",
         "title": "MAL-2026-10484: Malicious code in browser-use-headless (PyPI)",
@@ -9409,6 +9455,7 @@
     "severity": "critical",
     "sources": [
       {
+        "archive_url": "https://web.archive.org/web/20261014052359/https://embracethered.com/blog/posts/2026/from-select-to-sysadmin-sql-copilot-bluehat-asia/",
         "date": "2026-09-30",
         "publisher": "Embrace The Red",
         "title": "From SELECT to SYSADMIN with SQL Copilot (CVE-2026-65669)",
@@ -9416,6 +9463,7 @@
         "url": "https://embracethered.com/blog/posts/2026/from-select-to-sysadmin-sql-copilot-bluehat-asia/"
       },
       {
+        "archive_url": "https://web.archive.org/web/20260917092102/https://nvd.nist.gov/vuln/detail/cve-2026-65669",
         "date": "2026-09-08",
         "publisher": "NVD / NIST",
         "title": "CVE-2026-65669 Detail",
@@ -9511,6 +9559,7 @@
         "url": "https://www.microsoft.com/en-us/security/blog/2026/10/21/storm-0940-uses-artex-agentic-ai-connectwise-supply-chain-compromise/"
       },
       {
+        "archive_url": "https://web.archive.org/web/20261022053212/https://www.connectwise.com/company/trust/advisories",
         "date": "2026-10-16",
         "publisher": "ConnectWise",
         "title": "Cloud Backup (formerly known as SkyKick) Service Interruption",
@@ -9518,6 +9567,7 @@
         "url": "https://www.connectwise.com/company/trust/advisories"
       },
       {
+        "archive_url": "https://web.archive.org/web/20261020125001/https://www.huntress.com/blog/vendor-credential-enables-unauthorized-access",
         "date": "2026-10-16",
         "publisher": "Huntress",
         "title": "ConnectWise (SkyKick) Vendor Credentials Abused in M365 Attacks",
@@ -9525,6 +9575,7 @@
         "url": "https://www.huntress.com/blog/vendor-credential-enables-unauthorized-access"
       },
       {
+        "archive_url": "https://web.archive.org/web/20261022023925/https://www.cybersecuritydive.com/news/connecwise-suspends-cloud-backup-hacker-microsoft-365/833345/",
         "date": "2026-10-19",
         "publisher": "Cybersecurity Dive",
         "title": "ConnectWise suspends Cloud Backup service as hacker targets Microsoft 365 users",
@@ -9840,6 +9891,7 @@
     "severity": "medium",
     "sources": [
       {
+        "archive_url": "https://web.archive.org/web/20261011145429/https://blog.talosintelligence.com/uat-10147-chinese-speaking-adversary-integrates-agentic-ai-into-post-compromise-operations/",
         "date": "2026-08-20",
         "publisher": "Cisco Talos",
         "title": "UAT-10147: Chinese-speaking adversary integrates agentic AI into post-compromise operations",
@@ -9847,6 +9899,7 @@
         "url": "https://blog.talosintelligence.com/uat-10147-chinese-speaking-adversary-integrates-agentic-ai-into-post-compromise-operations/"
       },
       {
+        "archive_url": "https://web.archive.org/web/20261009232552/https://labs.cloudsecurityalliance.org/research/csa-research-note-uat-10147-agentic-ai-post-compromise-20260/",
         "date": "2026-08-21",
         "publisher": "Cloud Security Alliance AI Safety Initiative",
         "title": "UAT-10147: Agentic AI Operationalized in Commodity Intrusions",
@@ -10218,6 +10271,7 @@
     "severity": "medium",
     "sources": [
       {
+        "archive_url": "https://web.archive.org/web/20261022033920/https://unit42.paloaltonetworks.com/ai-assisted-cybercrime-analysis/",
         "date": "2026-10-21",
         "publisher": "Unit 42 (Palo Alto Networks)",
         "title": "“Next Exploit Opportunities”: How a Threat Actor Used AI to Help Plan and Execute Multiple Types of Cybercrime Activities",
@@ -10296,6 +10350,7 @@
     "severity": "high",
     "sources": [
       {
+        "archive_url": "https://web.archive.org/web/20261018190935/https://unit42.paloaltonetworks.com/ai-campaign-targets-linux-infrastructure/",
         "date": "2026-10-15",
         "publisher": "Unit 42 (Palo Alto Networks)",
         "title": "AI-Powered Espionage Campaign Targets Government Linux Infrastructure",
@@ -10418,6 +10473,7 @@
         "url": "https://unit42.paloaltonetworks.com/autonomous-ai-cyber-attack-campaign/"
       },
       {
+        "archive_url": "https://web.archive.org/web/20261015102057/https://rsoc.utexas.edu/news/ai-ran-cyberattack-campaign-its-own-and-it-picked-its-own-targets",
         "date": "2026-08-03",
         "publisher": "University of Texas Regional Security Operations Center",
         "title": "An AI ran a cyberattack campaign on its own, and it picked its own targets",
@@ -10494,6 +10550,7 @@
     "severity": "high",
     "sources": [
       {
+        "archive_url": "https://web.archive.org/web/20261019043238/https://embracethered.com/blog/posts/2026/visual-studio-copilot-remote-code-execution/",
         "date": "2026-10-13",
         "publisher": "Embrace The Red",
         "title": "Visual Studio Copilot and SSMS Remote Code Execution (CVE-2026-103572)",
@@ -10501,6 +10558,7 @@
         "url": "https://embracethered.com/blog/posts/2026/visual-studio-copilot-remote-code-execution/"
       },
       {
+        "archive_url": "https://web.archive.org/web/20261014014033/https://nvd.nist.gov/vuln/detail/cve-2026-103572",
         "date": "2026-10-13",
         "publisher": "NVD / NIST",
         "title": "CVE-2026-103572 Detail",

@@ -70,6 +70,7 @@ impact: >-
 sources:
   - title: "CrowdStrike Uncovers New Agentic AI Campaigns"
     url: "https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-agentic-ai-campaigns/"
+    archive_url: "https://web.archive.org/web/20261021153114/https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-agentic-ai-campaigns/"
     publisher: "CrowdStrike Counter Adversary Operations"
     type: vendor-report
     date: 2026-10-21

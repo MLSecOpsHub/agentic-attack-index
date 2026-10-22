@@ -50,6 +50,7 @@
   "severity": "critical",
   "sources": [
     {
+      "archive_url": "https://web.archive.org/web/20260926130700/https://www.lasso.security/blog/cve-2026-77521-maxkbypass---from-prompt-injection-to-bypassing-maxkb-agents-sandbox",
       "date": "2026-09-10",
       "publisher": "Lasso Security",
       "title": "MaxKBypass - From Prompt Injection To Bypassing MaxKB Agent's Sandbox (CVE-2026-77521)",
@@ -57,6 +58,7 @@
       "url": "https://www.lasso.security/blog/cve-2026-77521-maxkbypass---from-prompt-injection-to-bypassing-maxkb-agents-sandbox"
     },
     {
+      "archive_url": "https://web.archive.org/web/20260922112237/https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-f36j-f34j-h3rx",
       "date": "2026-09-02",
       "publisher": "GitHub Security Advisory (MaxKB maintainers)",
       "title": "Prompt-injectable agent can lead to command execution (GHSA-f36j-f34j-h3rx)",

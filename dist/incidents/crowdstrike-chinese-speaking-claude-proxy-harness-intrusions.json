@@ -50,6 +50,7 @@
   "severity": "high",
   "sources": [
     {
+      "archive_url": "https://web.archive.org/web/20261021153114/https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-agentic-ai-campaigns/",
       "date": "2026-10-21",
       "publisher": "CrowdStrike Counter Adversary Operations",
       "title": "CrowdStrike Uncovers New Agentic AI Campaigns",

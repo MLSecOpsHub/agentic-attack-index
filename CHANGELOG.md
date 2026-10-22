@@ -7,6 +7,13 @@ dataset version tracks `package.json` and `CITATION.cff` (kept in sync by
 
 ## [Unreleased]
 
+### Data
+- Backfilled 58 `archive_url` Wayback snapshots across 37 records, covering
+  the sources of the 24 records added on 2026-10-22 and earlier gaps. Every
+  change only adds an `archive_url`; no existing line was edited. Archive
+  coverage is now 242/261 sources; 19 could not be snapshotted in
+  this run and are left for the weekly archive workflow.
+
 ## [0.9.0] - 2026-10-22
 
 ### Data

@@ -75,6 +75,7 @@
   "severity": "critical",
   "sources": [
     {
+      "archive_url": "https://web.archive.org/web/20261015234151/https://gambit.security/ai-assisted-breach-of-mexicos-government-infrastructure",
       "date": "2026-04-10",
       "publisher": "Gambit Security",
       "title": "The AI-Assisted Breach of Mexico's Government Infrastructure",

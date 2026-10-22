@@ -60,6 +60,7 @@
   "severity": "high",
   "sources": [
     {
+      "archive_url": "https://web.archive.org/web/20261009193151/https://hunt.io/blog/chinese-operators-claude-deepseek-government-intrusion",
       "date": "2026-07-14",
       "publisher": "Hunt.io",
       "title": "Suspected Chinese Operators Use Claude Code and DeepSeek to Target Government and Financial Systems Across Four Countries",

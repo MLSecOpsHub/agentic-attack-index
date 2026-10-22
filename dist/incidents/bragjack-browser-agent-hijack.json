@@ -50,6 +50,7 @@
   "severity": "high",
   "sources": [
     {
+      "archive_url": "https://web.archive.org/web/20260917125143/https://forever.security/blog/bragjack-hijacking-5-browsers-via-built-in-ai-assistants",
       "date": "2026-09-16",
       "publisher": "Forever Security",
       "title": "BragJack: How We Hijacked 5 Of The World's Most Popular Browsers Using Their Built-In AI Assistants",
@@ -57,6 +58,7 @@
       "url": "https://forever.security/blog/bragjack-hijacking-5-browsers-via-built-in-ai-assistants/"
     },
     {
+      "archive_url": "https://web.archive.org/web/20261006152723/https://forever.security/blog/bragjack-attack-hijacks-every-browser-agent",
       "date": "2026-09-16",
       "publisher": "Forever Security",
       "title": "BragJack [Technical Overview]: How We Hijacked Top 5 Browsers' Internal Agents With Just One Single Extension",
@@ -64,6 +66,7 @@
       "url": "https://forever.security/blog/bragjack-attack-hijacks-every-browser-agent/"
     },
     {
+      "archive_url": "https://web.archive.org/web/20260917053847/https://nvd.nist.gov/vuln/detail/cve-2026-0628",
       "date": "2026-01-07",
       "publisher": "NVD / NIST",
       "title": "CVE-2026-0628 Detail",
@@ -71,6 +74,7 @@
       "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-0628"
     },
     {
+      "archive_url": "https://web.archive.org/web/20260707142033/https://nvd.nist.gov/vuln/detail/CVE-2026-55945",
       "date": "2026-07-03",
       "publisher": "NVD / NIST",
       "title": "CVE-2026-55945 Detail",

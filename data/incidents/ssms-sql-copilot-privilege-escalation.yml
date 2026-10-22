@@ -62,11 +62,13 @@ impact: >-
 sources:
   - title: "From SELECT to SYSADMIN with SQL Copilot (CVE-2026-65669)"
     url: "https://embracethered.com/blog/posts/2026/from-select-to-sysadmin-sql-copilot-bluehat-asia/"
+    archive_url: "https://web.archive.org/web/20261014052359/https://embracethered.com/blog/posts/2026/from-select-to-sysadmin-sql-copilot-bluehat-asia/"
     publisher: "Embrace The Red"
     type: first-party-disclosure
     date: 2026-09-30
   - title: "CVE-2026-65669 Detail"
     url: "https://nvd.nist.gov/vuln/detail/CVE-2026-65669"
+    archive_url: "https://web.archive.org/web/20260917092102/https://nvd.nist.gov/vuln/detail/cve-2026-65669"
     publisher: "NVD / NIST"
     type: government-advisory
     date: 2026-09-08

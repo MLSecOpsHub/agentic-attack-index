@@ -80,6 +80,7 @@ impact: >-
 sources:
   - title: "Investigating three real-world incidents in our cybersecurity evaluations"
     url: "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals"
+    archive_url: "https://web.archive.org/web/20261022052134/https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals"
     publisher: "Anthropic"
     type: first-party-disclosure
     date: 2026-07-30

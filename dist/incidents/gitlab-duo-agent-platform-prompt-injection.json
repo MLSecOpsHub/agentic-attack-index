@@ -45,6 +45,7 @@
   "severity": "high",
   "sources": [
     {
+      "archive_url": "https://web.archive.org/web/20261021201209/https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-4-2-released/",
       "date": "2026-10-12",
       "publisher": "GitLab",
       "title": "GitLab Critical Patch Release: 19.4.2, 19.3.5, 19.2.8",
@@ -52,6 +53,7 @@
       "url": "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-4-2-released/"
     },
     {
+      "archive_url": "https://web.archive.org/web/20261014180328/https://nvd.nist.gov/vuln/detail/cve-2026-96893",
       "date": "2026-10-13",
       "publisher": "NVD / NIST",
       "title": "CVE-2026-96893 Detail",

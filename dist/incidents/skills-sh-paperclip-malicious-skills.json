@@ -57,6 +57,7 @@
   "severity": "high",
   "sources": [
     {
+      "archive_url": "https://web.archive.org/web/20261015101828/https://labs.zenity.io/post/attackers-target-agents-via-the-skill-supply-chain",
       "date": "2026-08-06",
       "publisher": "Zenity Labs",
       "title": "Attackers Target Agents via The Skill Supply Chain",
@@ -72,6 +73,7 @@
       "url": "https://www.csoonline.com/article/4206851/trojanized-ai-skills-gain-1.7m-installs-in-agent-targeted-attack.html"
     },
     {
+      "archive_url": "https://web.archive.org/web/20261015101917/https://osv.dev/vulnerability/MAL-2026-10484",
       "date": "2026-07-13",
       "publisher": "OSV (Open Source Vulnerabilities)",
       "title": "MAL-2026-10484: Malicious code in browser-use-headless (PyPI)",

@@ -55,6 +55,7 @@
   "severity": "high",
   "sources": [
     {
+      "archive_url": "https://web.archive.org/web/20261018190935/https://unit42.paloaltonetworks.com/ai-campaign-targets-linux-infrastructure/",
       "date": "2026-10-15",
       "publisher": "Unit 42 (Palo Alto Networks)",
       "title": "AI-Powered Espionage Campaign Targets Government Linux Infrastructure",

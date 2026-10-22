@@ -70,6 +70,7 @@
       "url": "https://www.microsoft.com/en-us/security/blog/2026/10/21/storm-0940-uses-artex-agentic-ai-connectwise-supply-chain-compromise/"
     },
     {
+      "archive_url": "https://web.archive.org/web/20261022053212/https://www.connectwise.com/company/trust/advisories",
       "date": "2026-10-16",
       "publisher": "ConnectWise",
       "title": "Cloud Backup (formerly known as SkyKick) Service Interruption",
@@ -77,6 +78,7 @@
       "url": "https://www.connectwise.com/company/trust/advisories"
     },
     {
+      "archive_url": "https://web.archive.org/web/20261020125001/https://www.huntress.com/blog/vendor-credential-enables-unauthorized-access",
       "date": "2026-10-16",
       "publisher": "Huntress",
       "title": "ConnectWise (SkyKick) Vendor Credentials Abused in M365 Attacks",
@@ -84,6 +86,7 @@
       "url": "https://www.huntress.com/blog/vendor-credential-enables-unauthorized-access"
     },
     {
+      "archive_url": "https://web.archive.org/web/20261022023925/https://www.cybersecuritydive.com/news/connecwise-suspends-cloud-backup-hacker-microsoft-365/833345/",
       "date": "2026-10-19",
       "publisher": "Cybersecurity Dive",
       "title": "ConnectWise suspends Cloud Backup service as hacker targets Microsoft 365 users",

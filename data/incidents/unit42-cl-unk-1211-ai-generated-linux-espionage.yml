@@ -75,6 +75,7 @@ impact: >-
 sources:
   - title: "AI-Powered Espionage Campaign Targets Government Linux Infrastructure"
     url: "https://unit42.paloaltonetworks.com/ai-campaign-targets-linux-infrastructure/"
+    archive_url: "https://web.archive.org/web/20261018190935/https://unit42.paloaltonetworks.com/ai-campaign-targets-linux-infrastructure/"
     publisher: "Unit 42 (Palo Alto Networks)"
     type: vendor-report
     date: 2026-10-15

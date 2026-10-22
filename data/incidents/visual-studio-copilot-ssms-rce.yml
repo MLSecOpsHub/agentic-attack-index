@@ -61,11 +61,13 @@ impact: >-
 sources:
   - title: "Visual Studio Copilot and SSMS Remote Code Execution (CVE-2026-103572)"
     url: "https://embracethered.com/blog/posts/2026/visual-studio-copilot-remote-code-execution/"
+    archive_url: "https://web.archive.org/web/20261019043238/https://embracethered.com/blog/posts/2026/visual-studio-copilot-remote-code-execution/"
     publisher: "Embrace The Red"
     type: first-party-disclosure
     date: 2026-10-13
   - title: "CVE-2026-103572 Detail"
     url: "https://nvd.nist.gov/vuln/detail/CVE-2026-103572"
+    archive_url: "https://web.archive.org/web/20261014014033/https://nvd.nist.gov/vuln/detail/cve-2026-103572"
     publisher: "NVD / NIST"
     type: government-advisory
     date: 2026-10-13

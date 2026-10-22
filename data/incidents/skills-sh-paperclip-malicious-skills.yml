@@ -80,6 +80,7 @@ impact: >-
 sources:
   - title: "Attackers Target Agents via The Skill Supply Chain"
     url: "https://labs.zenity.io/post/attackers-target-agents-via-the-skill-supply-chain"
+    archive_url: "https://web.archive.org/web/20261015101828/https://labs.zenity.io/post/attackers-target-agents-via-the-skill-supply-chain"
     publisher: "Zenity Labs"
     type: vendor-report
     date: 2026-08-06
@@ -91,6 +92,7 @@ sources:
     date: 2026-08-07
   - title: "MAL-2026-10484: Malicious code in browser-use-headless (PyPI)"
     url: "https://osv.dev/vulnerability/MAL-2026-10484"
+    archive_url: "https://web.archive.org/web/20261015101917/https://osv.dev/vulnerability/MAL-2026-10484"
     publisher: "OSV (Open Source Vulnerabilities)"
     type: other
     date: 2026-07-13

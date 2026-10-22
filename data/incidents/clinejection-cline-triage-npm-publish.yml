@@ -83,6 +83,7 @@ sources:
     date: 2026-02-09
   - title: "GHSA-9ppg-jx86-fqw7: Unauthorized npm publish of cline@2.3.0 with modified postinstall script"
     url: "https://github.com/advisories/GHSA-9ppg-jx86-fqw7"
+    archive_url: "https://web.archive.org/web/20260928141357/https://github.com/advisories/GHSA-9ppg-jx86-fqw7"
     publisher: "Cline (GitHub Security Advisory)"
     type: first-party-disclosure
     date: 2026-02-19

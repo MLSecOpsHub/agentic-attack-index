@@ -52,6 +52,7 @@
   "severity": "high",
   "sources": [
     {
+      "archive_url": "https://web.archive.org/web/20261010233937/https://labs.zenity.io/post/salesbleed-0-click-data-exfiltration-on-agentforce",
       "date": "2026-09-24",
       "publisher": "Zenity Labs",
       "title": "SalesBleed: Indirect Prompt Injection and 0-Click Data Exfiltration on Agentforce",
@@ -59,6 +60,7 @@
       "url": "https://labs.zenity.io/post/salesbleed-0-click-data-exfiltration-on-agentforce"
     },
     {
+      "archive_url": "https://web.archive.org/web/20261008030758/https://www.securityweek.com/salesbleed-flaws-in-salesforce-agentforce-enabled-zero-click-data-exfiltration/",
       "date": "2026-09-25",
       "publisher": "SecurityWeek",
       "title": "'SalesBleed' Flaws in Salesforce Agentforce Enabled Zero-Click Data Exfiltration",

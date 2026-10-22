@@ -114,6 +114,7 @@ impact: >-
 sources:
   - title: "The AI-Assisted Breach of Mexico's Government Infrastructure"
     url: "https://gambit.security/ai-assisted-breach-of-mexicos-government-infrastructure"
+    archive_url: "https://web.archive.org/web/20261015234151/https://gambit.security/ai-assisted-breach-of-mexicos-government-infrastructure"
     publisher: "Gambit Security"
     type: vendor-report
     date: 2026-04-10 # Full technical report, released per Gambit's announcement of that date; the page itself carries no date.

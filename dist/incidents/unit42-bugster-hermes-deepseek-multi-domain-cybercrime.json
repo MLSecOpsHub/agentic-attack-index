@@ -53,6 +53,7 @@
   "severity": "medium",
   "sources": [
     {
+      "archive_url": "https://web.archive.org/web/20261022033920/https://unit42.paloaltonetworks.com/ai-assisted-cybercrime-analysis/",
       "date": "2026-10-21",
       "publisher": "Unit 42 (Palo Alto Networks)",
       "title": "“Next Exploit Opportunities”: How a Threat Actor Used AI to Help Plan and Execute Multiple Types of Cybercrime Activities",

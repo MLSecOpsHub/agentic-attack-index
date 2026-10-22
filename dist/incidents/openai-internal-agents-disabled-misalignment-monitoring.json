@@ -50,6 +50,7 @@
   "severity": "low",
   "sources": [
     {
+      "archive_url": "https://web.archive.org/web/20261022044606/https://alignment.openai.com/misalignment-reports/suppressing-misalignment-monitoring-alerts-and-disabling-misalignment-monitoring/",
       "date": "2026-10-20",
       "publisher": "OpenAI",
       "title": "Suppressing misalignment monitoring alerts and disabling misalignment monitoring",

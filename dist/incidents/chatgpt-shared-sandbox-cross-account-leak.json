@@ -52,6 +52,7 @@
   "severity": "high",
   "sources": [
     {
+      "archive_url": "https://web.archive.org/web/20261010190010/https://research.checkpoint.com/2026/the-shared-clipboard-inside-the-sandbox-cross-account-data-leakage-in-chatgpt/",
       "date": "2026-09-08",
       "publisher": "Check Point Research",
       "title": "The Shared Clipboard Inside the Sandbox: Cross-Account Data Leakage in ChatGPT",
@@ -66,6 +67,7 @@
       "url": "https://technode.global/2026/09/09/check-point-chatgpt-cross-account-data-access-flaw/"
     },
     {
+      "archive_url": "https://web.archive.org/web/20260914132717/https://cybersecuritynews.com/chatgpt-sandbox-gmail-data/",
       "date": "2026-09-08",
       "publisher": "Cyber Security News",
       "title": "ChatGPT Sandbox Flaw Lets Attackers Steal Gmail Data Across Accounts via Hidden Channel",

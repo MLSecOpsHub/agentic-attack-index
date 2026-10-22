@@ -128,6 +128,7 @@ sources:
     date: 2026-07-30
   - title: "An AI ran a cyberattack campaign on its own, and it picked its own targets"
     url: "https://rsoc.utexas.edu/news/ai-ran-cyberattack-campaign-its-own-and-it-picked-its-own-targets"
+    archive_url: "https://web.archive.org/web/20261015102057/https://rsoc.utexas.edu/news/ai-ran-cyberattack-campaign-its-own-and-it-picked-its-own-targets"
     publisher: "University of Texas Regional Security Operations Center" # Analysis relaying Unit 42; not independent investigation.
     type: blog
     date: 2026-08-03

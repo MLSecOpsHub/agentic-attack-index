@@ -1,12 +1,12 @@
 {
   "dataset_version": "0.9.0",
-  "unreleased_changes": false,
+  "unreleased_changes": true,
   "schema": "https://raw.githubusercontent.com/MLSecOpsHub/agentic-attack-index/main/schema/incident.schema.json",
   "total": 123,
   "archive_coverage": {
     "sources": 261,
-    "archived": 184,
-    "pct": 70
+    "archived": 242,
+    "pct": 93
   },
   "geo_coverage": {
     "records": 24,
