@@ -17,9 +17,11 @@ dataset version tracks `package.json` and `CITATION.cff` (kept in sync by
   2026-02-19) as a source and logged the change in `revisions[]`.
 
 ### Fixed
-- `npm test` passes `node --test` the glob `test/**/*.test.mjs` instead of the
-  bare `test/` directory, which Node 24 no longer resolves to the test files
-  (it failed with `Cannot find module '.../test'`).
+- `npm test` runs `node --test` with no path argument and relies on Node's
+  default test discovery (`test/*.test.mjs`). The former bare `test/`
+  directory argument failed on Node 24 (`Cannot find module '.../test'`), and
+  the quoted glob briefly used instead failed on the Node 20 CI runners, which
+  predate glob support in `node --test`. Verified on Node 20, 22 and 24.
 
 ## [0.8.0] - 2026-10-16
 

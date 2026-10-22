@@ -20,7 +20,7 @@
     "archive": "node scripts/archive.mjs",
     "atlas:update": "node scripts/atlas-ids.mjs",
     "new:incident": "node scripts/new-incident.mjs",
-    "test": "npm run validate && npm run build && node --test \"test/**/*.test.mjs\""
+    "test": "npm run validate && npm run build && node --test"
   },
   "dependencies": {
     "ajv": "^8.17.1",
